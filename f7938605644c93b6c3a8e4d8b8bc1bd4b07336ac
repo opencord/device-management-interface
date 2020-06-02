@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb85fc57_bd9d25dd",
+        "filename": "protos/devmanagement/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-02T14:58:26Z",
+      "side": 1,
+      "message": "out of consistency with other pros under VOLTHA I\u0027d like to call the folder device_management instead of devmanagement",
+      "revId": "f7938605644c93b6c3a8e4d8b8bc1bd4b07336ac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f07a8d2_0cc2a6fd",
+        "filename": "protos/devmanagement/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-02T14:58:26Z",
+      "side": 1,
+      "message": "some general file comments would be appreciated. e.g. \n/*\n* Common structures across all the device management protos. \n*/\n\nthis comment is valid for all files.",
+      "revId": "f7938605644c93b6c3a8e4d8b8bc1bd4b07336ac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "166a66f6_8fa5ecc3",
+        "filename": "protos/devmanagement/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-02T14:58:26Z",
+      "side": 1,
+      "message": "as per our discussion please add a comment to the name here",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 20
+      },
+      "revId": "f7938605644c93b6c3a8e4d8b8bc1bd4b07336ac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04f0e00d_2a7eaf63",
+        "filename": "protos/devmanagement/hw_metrics_mgmt_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-02T14:58:26Z",
+      "side": 1,
+      "message": "trailing space",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 29
+      },
+      "revId": "f7938605644c93b6c3a8e4d8b8bc1bd4b07336ac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "68cbd2ac_e238015c",
+        "filename": "protos/devmanagement/sw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-02T14:58:26Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "f7938605644c93b6c3a8e4d8b8bc1bd4b07336ac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
