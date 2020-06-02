@@ -1,0 +1,118 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
+
+// The model used to represent the event data on the SensorData of a component as described
+// in RFC8348 (https://tools.ietf.org/html/rfc8348)
+
+// Management of Metrics and protos for encoding of Metrics
+
+enum MetricNames {
+    METRIC_NAME_UNDEFINED = 0;
+
+    // FAN related metrics
+    METRIC_FAN_SPEED = 1;
+
+    // CPU related metrics
+    METRIC_CPU_TEMP = 100;
+    METRIC_CPU_USAGE_PERCENTAGE = 101;
+
+    // Transceiver related metrics
+    METRIC_TRANSCEIVER_TEMP = 200;
+    METRIC_TRANSCEIVER_VOLTAGE = 201;
+    METRIC_TRANSCEIVER_BIAS = 202;
+    METRIC_TRANSCEIVER_RX_POWER = 203;
+    METRIC_TRANSCEIVER_TX_POWER = 204;
+    METRIC_TRANSCEIVER_WAVELENGTH = 205;
+
+    // Disk related metrics
+    METRIC_DISK_TEMP = 300;
+    METRIC_DISK_CAPACITY = 301;
+    METRIC_DISK_USAGE = 302;
+    METRIC_DISK_USAGE_PERCENTAGE = 303;
+    METRIC_DISK_READ_WRITE_PERCENTAGE = 304;
+    METRIC_DISK_FAULTY_CELLS_PERCENTAGE = 305;
+
+    // RAM related metrics
+    METRIC_RAM_TEMP = 400;
+    METRIC_RAM_CAPACITY = 401;
+    METRIC_RAM_USAGE = 402;
+    METRIC_RAM_USAGE_PERCENTAGE = 403;
+
+    // Power related metrics
+    METRIC_POWER_MAX = 500;
+    METRIC_POWER_USAGE = 501;
+    METRIC_POWER_USAGE_PERCENTAGE = 502;
+
+    // Chassis related metrics
+    METRIC_INNER_SURROUNDING_TEMP = 600;
+}
+
+message MetricConfig {
+    MetricNames metric_id = 1;
+    bool is_configured = 2;
+    uint32 poll_interval = 3;
+}
+
+message MetricsConfig {
+    repeated MetricConfig metrics = 1;
+}
+
+message ListMetricsResponse {
+    Status status = 1;
+    Reason reason = 2;
+    MetricsConfig metrics = 3;
+}
+
+message MetricsConfigurationRequest {
+    Uuid device_uuid = 1;
+    oneof operation {
+        MetricsConfig changes = 2;
+        bool reset_to_default = 3;
+    }
+}
+
+message MetricsConfigurationResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
+message MetricMetaData {
+    Uuid device_uuid = 1;
+    // uuid of the component
+    Uuid component_uuid = 2;
+    string component_name = 3;
+}
+
+message Metric {
+    MetricNames metric_id = 1;
+    MetricMetaData metric_metadata = 2;
+    ComponentSensorData value = 3;
+}
+
+message GetMetricRequest {
+    MetricMetaData meta_data = 1;
+    MetricNames metric_id = 2;
+}
+
+service NativeMetricsManagementService {
+
+    // List the supported metrics for the passed device.
+    // This would be the first call that you make to know about the metrics that a particular device supports and
+    // then use the UpdateMetricsConfiguration API to monitor only the required metrics.
+    rpc ListMetrics(HardwareID) returns(ListMetricsResponse);
+
+    // Updates the configuration of the list of metrics in the request
+    // Acts upon single metric configuration, collection of a single metric can be started/stopped
+    // by changing its configuration.
+    //
+    // This configuration is persisted across restart of the device or the device manager
+    rpc UpdateMetricsConfiguration(MetricsConfigurationRequest) returns(MetricsConfigurationResponse);
+
+    // Get the instantenous value of a metric
+    rpc GetMetric(GetMetricRequest) returns(Metric);
+}

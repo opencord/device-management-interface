@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/hw.proto";
+import "dmi/sw_image.proto";
+
+// The software management concept described here is aligned with WT-383a3 (Revision: 06 April 2020).
+// In particular Section 11 Software management
+// TODO check model
+
+// Protos for managing the software on a hardware device
+
+message SoftwareVersionInformation {
+    repeated ImageVersion active_versions = 1;
+    repeated ImageVersion standby_versions = 2;
+}
+
+message DownloadImageRequest {
+    Uuid device_uuid = 1;
+    ImageInformation image_info = 2;
+}
+
+service NativeSoftwareManagementService {
+    // Get the software version information of the Active and Standby images
+    rpc GetSoftwareVersion(HardwareID) returns(SoftwareVersionInformation);
+
+    // Downloads and installs the image in the standby partition, returns the status/progress of the Install
+    rpc DownloadImage(DownloadImageRequest) returns(stream ImageStatus);
+
+    // Activates and runs the OLT with the image in the standby partition. If things are fine this image will 
+    // henceforth be marked as the Active Partition. The old working image would remain on the Standby partition.
+    // Any possibly required (sub-)steps like "commit" are left to the "Device Manager"
+    rpc ActivateImage(HardwareID) returns(stream ImageStatus);
+
+    // Marks the image in the Standby as Active and reboots the device, so that it boots from that image which was in the standby.
+    // This API is to be used if operator wants to go back to the pervious software
+    rpc RevertToStandbyImage(HardwareID) returns(stream ImageStatus);
+
+    // If needed we can add this later
+    //rpc SubscribeToEvents() returns (stream );
+}
