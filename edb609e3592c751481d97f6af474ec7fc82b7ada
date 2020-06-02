@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "089a8a56_af35bb68",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-06-02T09:50:14Z",
+      "side": 1,
+      "message": "could you remove the trailing white spaces from this file",
+      "revId": "edb609e3592c751481d97f6af474ec7fc82b7ada",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e52485c0_6116beb6",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-06-02T09:50:14Z",
+      "side": 1,
+      "message": "typo.. \"such\"",
+      "revId": "edb609e3592c751481d97f6af474ec7fc82b7ada",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
