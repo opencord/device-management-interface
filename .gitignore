@@ -1,0 +1,27 @@
+# python related
+*.pyc
+*.egg-info
+dist
+build
+.tox
+venv_protos
+
+# go related
+go_temp
+
+# java related
+java_temp
+java
+
+# generated files that shouldn't be committed
+*_pb2.py
+*_pb2_grpc.py
+*.desc
+
+# tesing related
+.coverage
+*coverage.xml
+*results.xml
+
+# IDEs
+.idea
