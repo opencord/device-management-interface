@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package devmanagement;
+
+enum Status {
+    UNDEFINED_STATUS = 0;
+    OK = 1;
+    ERROR = 2;
+}
+
+enum Reason {
+    UNDEFINED_REASON = 0;
+    UNKNOWN_DEVICE = 1;
+    INTERNAL_ERROR = 2;
+    WRONG_METRIC = 3;
+    WRONG_EVENT = 4;
+}

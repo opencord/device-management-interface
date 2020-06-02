@@ -1,0 +1,49 @@
+syntax = "proto3";
+package devmanagement;
+
+import "devmanagement/commons.proto";
+
+message ImageVersion {
+    string image_name = 1;
+    string version = 2;
+}
+
+message ImageInformation {
+    ImageVersion image = 1;
+    // Script used by the device specific managers to install the image.
+    // Script must be included in the object downloaded from the image_url
+    string image_install_script = 2;
+    // Location of the image and installation script, authentication (user/pass) if any should be in the url string
+    string image_url = 3;
+    // SHA-256 sum of the image (sha256sum on Linux)
+    string sha256sum = 5;
+}
+
+message ImageStatus {
+    enum ImageState {
+        UNDEFINED_STATE = 0;
+        COPYING_IMAGE = 1;
+        INSTALLING_IMAGE = 2;
+        COMMITING_IMAGE = 3;
+        REBOOTING_DEVICE = 4;
+        UPGRADE_COMPLETE = 5;
+        UPGRADE_FAILED = 6;
+        ACTIVATION_COMPLETE = 7;
+        ACTIVATION_FAILED = 8;
+    }
+
+    enum Reason {
+        UNDEFINED_READON = 0;
+        ERROR_IN_REQUEST = 1;
+        INTERNAL_ERROR = 2;
+        DEVICE_IN_WRONG_STATE = 3;
+        INVALID_IMAGE = 4;
+        WRONG_IMAGE_CHECKSUM = 5;
+    }
+
+    Status status  = 1;
+    Reason reason = 2;
+    ImageState state = 3;
+    // description contains more information about the current state of the procedure and is device dependant
+    string description = 4;
+}

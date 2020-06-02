@@ -1,0 +1,188 @@
+syntax = "proto3";
+package devmanagement;
+
+import "google/protobuf/timestamp.proto";
+
+// The model used to represent a HW is based on RFC8348 (https://tools.ietf.org/html/rfc8348)
+
+message Uuid {
+    string uuid = 1;
+}
+
+message HardwareID {
+    Uuid uuid = 1;
+}
+
+message Uri {
+    string uri = 1;
+}
+
+enum ComponentType {
+    COMPONENT_TYPE_UNDEFINED = 0;
+    COMPONENT_TYPE_UNKNOWN = 1;
+    COMPONENT_TYPE_CHASSIS = 2;
+    COMPONENT_TYPE_BACKPLANE = 3;
+    COMPONENT_TYPE_CONTAINER = 4;
+    COMPONENT_TYPE_POWER_SUPPLY = 5;
+    COMPONENT_TYPE_FAN = 6;
+    COMPONENT_TYPE_SENSOR = 7;
+    COMPONENT_TYPE_MODULE = 8;
+    COMPONENT_TYPE_PORT = 9;
+    COMPONENT_TYPE_CPU = 10;
+    COMPONENT_TYPE_BATTERY = 11;
+    COMPONENT_TYPE_STORAGE = 12;
+    COMPONENT_TYPE_MEMORY = 13;
+    COMPONENT_TYPE_TRANSCEIVER = 14;
+}
+
+enum ComponentAdminState {
+    COMP_ADMIN_STATE_UNDEFINED = 0;
+    COMP_ADMIN_STATE_UNKNOWN = 1;
+    COMP_ADMIN_STATE_LOCKED = 2;
+    COMP_ADMIN_STATE_SHUTTING_DOWN = 3;
+    COMP_ADMIN_STATE_UNLOCKED = 4;
+}
+
+enum ComponentOperState {
+    COMP_OPER_STATE_UNDEFINED = 0;
+    COMP_OPER_STATE_UNKNOWN = 1;
+    COMP_OPER_STATE_DISABLED = 2;
+    COMP_OPER_STATE_ENABLED = 3;
+    COMP_OPER_STATE_TESTING = 4;
+}
+
+enum ComponentUsageState {
+    COMP_USAGE_STATE_UNDEFINED = 0;
+    COMP_USAGE_STATE_UNKNOWN = 1;
+    COMP_USAGE_STATE_IDLE = 2;
+    COMP_USAGE_STATE_ACTIVE = 3;
+    COMP_USAGE_STATE_BUSY = 4;
+}
+
+enum ComponentAlarmState {
+    COMP_ALARM_STATE_UNDEFINED = 0;
+    COMP_ALARM_STATE_UNKNOWN = 1;
+    COMP_ALARM_STATE_UNDER_REPAIR= 2;
+    COMP_ALARM_STATE_CRITICAL = 3;
+    COMP_ALARM_STATE_MAJOR = 4;
+    COMP_ALARM_STATE_MINOR = 5;
+    COMP_ALARM_STATE_WARNING = 6;
+    COMP_ALARM_STATE_INTERMEDIATE = 7;
+}
+
+enum ComponentStandbyState {
+    COMP_STANDBY_STATE_UNDEFINED = 0;
+    COMP_STANDBY_STATE_UNKNOWN = 1;
+    COMP_STANDBY_STATE_HOT = 2;
+    COMP_STANDBY_STATE_COLD = 3;
+    COMP_STANDBY_STATE_PROVIDING_SERVICE = 4;
+}
+
+message ComponentState {
+    google.protobuf.Timestamp state_last_changed = 1;
+    ComponentAdminState admin_state = 2;
+    ComponentOperState oper_state = 3;
+    ComponentUsageState usage_state = 4;
+    ComponentAlarmState alarm_state = 5;
+    ComponentStandbyState standby_state = 6;
+}
+
+enum SensorValueType {
+    SENSOR_VALUE_TYPE_UNDEFINED = 0;
+    SENSOR_VALUE_TYPE_OTHER = 1;
+    SENSOR_VALUE_TYPE_UNKNOWN = 2;
+    SENSOR_VALUE_TYPE_VOLTS_AC = 3;
+    SENSOR_VALUE_TYPE_VOLTS_DC = 4;
+    SENSOR_VALUE_TYPE_AMPERES = 5;
+    SENSOR_VALUE_TYPE_WATTS = 6;
+    SENSOR_VALUE_TYPE_HERTZ = 7;
+    SENSOR_VALUE_TYPE_CELSIUS = 8;
+    SENSOR_VALUE_TYPE_PERCENT_RH = 9;
+    SENSOR_VALUE_TYPE_RPM = 10;
+    SENSOR_VALUE_TYPE_CMM = 11;
+    SENSOR_VALUE_TYPE_TRUTH_VALUE = 12;
+}
+
+enum SensorValueScale {
+    SENSOR_VALUE_SCALE_UNDEFINED = 0;
+    SENSOR_VALUE_SCALE_YOCTO = 1;
+    SENSOR_VALUE_SCALE_ZEPTO = 2;
+    SENSOR_VALUE_SCALE_ATTO = 3;
+    SENSOR_VALUE_SCALE_FEMTO = 4;
+    SENSOR_VALUE_SCALE_PICO = 5;
+    SENSOR_VALUE_SCALE_NANO = 6;
+    SENSOR_VALUE_SCALE_MICRO = 7;
+    SENSOR_VALUE_SCALE_MILLI = 8;
+    SENSOR_VALUE_SCALE_UNITS = 9;
+    SENSOR_VALUE_SCALE_KILO = 10;
+    SENSOR_VALUE_SCALE_MEGA = 11;
+    SENSOR_VALUE_SCALE_GIGA = 12;
+    SENSOR_VALUE_SCALE_TERA = 13;
+    SENSOR_VALUE_SCALE_PETA = 14;
+    SENSOR_VALUE_SCALE_EXA = 15;
+    SENSOR_VALUE_SCALE_ZETTA = 16;
+    SENSOR_VALUE_SCALE_YOTTA =17;
+}
+
+enum SensorStatus {
+    SENSOR_STATUS_UNDEFINED = 0;
+    SENSOR_STATUS_OK = 1;
+    SENSOR_STATUS_UNAVAILABLE = 2;
+    SENSOR_STATUS_NONOPERATIONAL = 3;
+}
+
+message ComponentSensorData {
+    int32 value = 1;
+    SensorValueType type = 2;
+    SensorValueScale scale = 3;
+    int32 precision = 4;
+    SensorStatus status = 5;
+    string units_display = 6;
+    google.protobuf.Timestamp timestamp = 7;
+    uint32 value_update_rate = 8;
+    // data_type can be of the string representation of MetricNames or something else as well
+    string data_type = 9;
+}
+
+message Component {
+    string name = 1;
+    ComponentType class = 2;
+    string description = 3;
+    Component parent = 4;
+    int32 parent_rel_pos = 5;
+    repeated Component children = 6;
+    string hardware_rev = 7;
+    string firmware_rev = 8;
+    string software_rev = 9;
+    string serial_num = 10;
+    string mfg_name = 11;
+    string model_name = 12;
+    string alias = 13;
+    string asset_id = 14;
+    bool is_fru = 15;
+    google.protobuf.Timestamp mfg_date = 16;
+    Uri uri = 17;
+    Uuid uuid= 18;
+    ComponentState state = 19;
+    repeated ComponentSensorData sensor_data = 20;
+}
+
+message Hardware {
+    google.protobuf.Timestamp last_change = 1;
+    // Each HW has one parent/root and all other components are children of this
+    // The class of the root component would be set as UNDEFINED
+    Component root = 2;
+    // TODO: Authetication?
+}
+
+// The attributes of a component which are modifiable from the client side
+message ModifiableComponent {
+    string name = 1;
+    ComponentType class = 2;
+    Component parent = 3;
+    int32 parent_rel_pos = 4;
+    string alias = 5;
+    string asset_id = 6;
+    Uri uri = 7;
+    ComponentAdminState admin_state = 8;
+}
