@@ -1,8 +1,11 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/commons.proto";
-import "devmanagement/hw.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+
+package device_management;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
 
 // The model used to represent the event data on the SensorData of a component as described
 // in RFC8348 (https://tools.ietf.org/html/rfc8348)

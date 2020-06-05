@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package devmanagement;
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+
+package dmi;
 
 enum Status {
     UNDEFINED_STATUS = 0;

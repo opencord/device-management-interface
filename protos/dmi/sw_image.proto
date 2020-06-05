@@ -1,7 +1,10 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/commons.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+
+package device_management;
+
+import "dmi/commons.proto";
 
 message ImageVersion {
     string image_name = 1;

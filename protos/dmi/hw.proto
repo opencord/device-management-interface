@@ -1,7 +1,11 @@
 syntax = "proto3";
-package devmanagement;
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+
+package device_management;
 
 import "google/protobuf/timestamp.proto";
+
 
 // The model used to represent a HW is based on RFC8348 (https://tools.ietf.org/html/rfc8348)
 
