@@ -1,8 +1,8 @@
 syntax = "proto3";
 package devmanagement;
 
-import "devmanagement/commons.proto";
-import "devmanagement/hw.proto";
+import "device_management/commons.proto";
+import "device_management/hw.proto";
 import "google/protobuf/timestamp.proto";
 
 enum EventIds {

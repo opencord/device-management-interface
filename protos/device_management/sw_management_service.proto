@@ -1,8 +1,8 @@
 syntax = "proto3";
 package devmanagement;
 
-import "devmanagement/hw.proto";
-import "devmanagement/sw_image.proto";
+import "device_management/hw.proto";
+import "device_management/sw_image.proto";
 
 // The software management concept described here is aligned with WT-383a3 (Revision: 06 April 2020).
 // In particular Section 11 Software management

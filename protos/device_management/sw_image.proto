@@ -1,7 +1,7 @@
 syntax = "proto3";
 package devmanagement;
 
-import "devmanagement/commons.proto";
+import "device_management/commons.proto";
 
 message ImageVersion {
     string image_name = 1;
