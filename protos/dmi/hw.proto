@@ -1,5 +1,7 @@
 syntax = "proto3";
-package devmanagement;
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
 
 import "google/protobuf/timestamp.proto";
 
@@ -145,6 +147,7 @@ message ComponentSensorData {
 }
 
 message Component {
+    // The name of a component uniquely identifies an component within the Hardware
     string name = 1;
     ComponentType class = 2;
     string description = 3;
@@ -162,6 +165,7 @@ message Component {
     bool is_fru = 15;
     google.protobuf.Timestamp mfg_date = 16;
     Uri uri = 17;
+    // The uuid of the component uniquely identifies the component across the entire system
     Uuid uuid= 18;
     ComponentState state = 19;
     repeated ComponentSensorData sensor_data = 20;
@@ -177,6 +181,8 @@ message Hardware {
 
 // The attributes of a component which are modifiable from the client side
 message ModifiableComponent {
+    // The name has to be unique for each component within the hardware and implementations need to 
+    // ascertain this when modifying the name
     string name = 1;
     ComponentType class = 2;
     Component parent = 3;

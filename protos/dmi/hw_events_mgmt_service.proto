@@ -1,9 +1,13 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/commons.proto";
-import "devmanagement/hw.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
 import "google/protobuf/timestamp.proto";
+
+// Management of Events and protos for encoding of Events
 
 enum EventIds {
     EVENT_NAME_UNDEFINED = 0;
@@ -101,10 +105,10 @@ message EventsConfigurationResponse {
 }
 
 message EventMetaData {
-    Uuid device_uuid = 2;
+    Uuid device_uuid = 1;
     // uuid of the component
-    Uuid component_uuid = 3;
-    string component_name = 4;
+    Uuid component_uuid = 2;
+    string component_name = 3;
 }
 
 message Event {

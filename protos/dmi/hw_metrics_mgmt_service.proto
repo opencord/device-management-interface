@@ -1,11 +1,15 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/commons.proto";
-import "devmanagement/hw.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
 
 // The model used to represent the event data on the SensorData of a component as described
 // in RFC8348 (https://tools.ietf.org/html/rfc8348)
+
+// Management of Metrics and protos for encoding of Metrics
 
 enum MetricNames {
     METRIC_NAME_UNDEFINED = 0;
@@ -78,10 +82,10 @@ message MetricsConfigurationResponse {
 }
 
 message MetricMetaData {
-    Uuid device_uuid = 2;
+    Uuid device_uuid = 1;
     // uuid of the component
-    Uuid component_uuid = 3; 
-    string component_name = 4;
+    Uuid component_uuid = 2;
+    string component_name = 3;
 }
 
 message Metric {

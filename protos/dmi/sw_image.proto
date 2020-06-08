@@ -1,7 +1,11 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/commons.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+
+// Protos for modeling a software image and it's status
 
 message ImageVersion {
     string image_name = 1;

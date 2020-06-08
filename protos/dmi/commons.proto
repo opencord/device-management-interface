@@ -1,6 +1,9 @@
 syntax = "proto3";
 
-package devmanagement;
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+// Common structures used across the different Device Management services
 
 enum Status {
     UNDEFINED_STATUS = 0;
@@ -8,6 +11,7 @@ enum Status {
     ERROR = 2;
 }
 
+// Reason for the failure of request
 enum Reason {
     UNDEFINED_REASON = 0;
     UNKNOWN_DEVICE = 1;

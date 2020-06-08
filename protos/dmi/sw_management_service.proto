@@ -1,12 +1,16 @@
 syntax = "proto3";
-package devmanagement;
 
-import "devmanagement/hw.proto";
-import "devmanagement/sw_image.proto";
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/hw.proto";
+import "dmi/sw_image.proto";
 
 // The software management concept described here is aligned with WT-383a3 (Revision: 06 April 2020).
 // In particular Section 11 Software management
-// TODO check model 
+// TODO check model
+
+// Protos for managing the software on a hardware device
 
 message SoftwareVersionInformation {
     repeated ImageVersion active_versions = 1;
