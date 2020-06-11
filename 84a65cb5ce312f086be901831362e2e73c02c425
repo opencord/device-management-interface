@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "841713e2_7c5a0f7c",
+        "filename": "test/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-06-11T16:04:49Z",
+      "side": 1,
+      "message": "Should this be dmi-protos?",
+      "revId": "84a65cb5ce312f086be901831362e2e73c02c425",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69ec85cb_63d3f82f",
+        "filename": "test/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-06-11T16:04:49Z",
+      "side": 1,
+      "message": "Should we start with 1.0-SNAPSHOT?",
+      "revId": "84a65cb5ce312f086be901831362e2e73c02c425",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cfd7ea5f_6605666e",
+        "filename": "test/test-go-proto-consistency.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-06-11T16:04:49Z",
+      "side": 1,
+      "message": "dmi.pb instead of voltha.pb?",
+      "revId": "84a65cb5ce312f086be901831362e2e73c02c425",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
