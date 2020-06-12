@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1f9be12_aa2d6e2f",
+        "filename": "protos/dmi/hw_metrics_mgmt_service.proto",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-12T16:01:07Z",
+      "side": 1,
+      "message": "please provide comment with unit of time and default expected value. Possibly use Duration from protobuf. If request goes under the minimum it\u0027s denied.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "3bd5add3d806fff6facdf8b5aa7b06230304b177",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
