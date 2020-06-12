@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
+import "google/protobuf/timestamp.proto";
+
+// Management of Events and protos for encoding of Events
+
+enum EventIds {
+    EVENT_NAME_UNDEFINED = 0;
+
+    // Events from the Transceivers
+    EVENT_TRANSCEIVER_PLUG_OUT = 100;
+    EVENT_TRANSCEIVER_PLUG_IN = 101;
+    EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD = 102;
+    EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD = 103;
+    EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD = 104;
+    EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD = 105;
+    EVENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD = 106;
+    EVENT_TRANSCEIVER_CURRENT_BELOW_THRESHOLD = 107;
+    EVENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD = 108;
+    EVENT_TRANSCEIVER_RX_POWER_BELOW_THRESHOLD = 109;
+    EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD = 110;
+    EVENT_TRANSCEIVER_TX_POWER_BELOW_THRESHOLD = 111;
+    EVENT_TRANSCEIVER_FAILURE = 112;
+
+    // Events from the PSU
+    EVENT_PSU_PLUG_OUT = 200;
+    EVENT_PSU_PLUG_IN = 201;
+    EVENT_PSU_FAILURE = 202;
+
+    // Events for the Fans
+    EVENT_FAN_FAILURE = 300;
+    EVENT_FAN_PLUG_OUT = 301;
+    EVENT_FAN_PLUG_IN = 302;
+
+    // Events for the CPUs
+    EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL = 400;
+    EVENT_CPU_TEMPERATURE_ABOVE_FATAL = 401;
+
+    // Events for the complete HW Device
+    EVENT_HW_DEVICE_RESET = 500;
+    EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL = 501;
+    EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL = 502;
+
+    // More to be added
+}
+
+message ValueType {
+    oneof val{
+        int64 int_val = 1;
+        uint64 uint_val = 2;
+        float float_val = 3;
+    }
+}
+
+message WaterMarks {
+    ValueType high = 1;
+    ValueType low = 2;
+}
+
+message Thresholds {
+    oneof threshold {
+        WaterMarks upper = 1;
+        WaterMarks lower = 2;
+    }
+}
+
+message ThresholdInformation {
+    ValueType observed_value = 1;
+    Thresholds thresholds = 2;
+}
+
+message EventCfg {
+    EventIds event_id = 1;
+    bool is_configured = 2;
+    // Optional threshold values, applicable only for some specific events
+    Thresholds thresholds = 3;
+}
+
+message EventsCfg {
+    repeated EventCfg items = 1;
+}
+
+message ListEventsResponse {
+    Status status = 1;
+    Reason reason = 2;
+    EventsCfg events = 3;
+}
+
+message EventsConfigurationRequest {
+    Uuid device_uuid = 1;
+    oneof operation {
+        EventsCfg changes = 2;
+        bool reset_to_default = 3;
+    }
+}
+
+message EventsConfigurationResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
+message EventMetaData {
+    Uuid device_uuid = 1;
+    // uuid of the component
+    Uuid component_uuid = 2;
+    string component_name = 3;
+}
+
+// The Events are conveyed to external systems by submitting them on a kafka bus.
+// The topic to which are Events are submitted would be configured as startup
+// configuration of the components
+
+message Event {
+    EventMetaData event_metadata = 1;
+    EventIds event_id = 2;
+    google.protobuf.Timestamp raised_ts = 3;
+    // Optional threshold information for an event
+    ThresholdInformation threshold_info = 4;
+    // Any additional info regarding the event
+    string add_info = 5;
+}
+
+service NativeEventsManagementService {
+
+    // List the supported events for the passed device
+    rpc ListEvents(HardwareID) returns(ListEventsResponse);
+
+    // Updates the configuration of the list of events in the request
+    // The default behaviour of the device is to report all the supported events
+    // This configuration is persisted across reboots of the device or the device manager
+    rpc UpdateEventsConfiguration(EventsConfigurationRequest) returns(EventsConfigurationResponse);
+}

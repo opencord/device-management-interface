@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
+package dmi;
+
+import "dmi/commons.proto";
+import "dmi/hw.proto";
+
+// Protos for the management of a hardware and it's components
+
+message PhysicalInventoryRequest {
+    Uuid device_uuid = 1;
+}
+
+message PhysicalInventoryResponse {
+    Status status = 1;
+    Reason reason = 2;
+    Hardware inventory = 3;
+}
+
+message HWComponentInfoGetRequest {
+    Uuid device_uuid = 1;
+    Uuid component_uuid = 2;
+    string component_name = 3;
+}
+
+message HWComponentInfoSetRequest {
+    Uuid device_uuid = 1;
+    Uuid component_uuid = 2;
+    string component_name = 3;
+    ModifiableComponent changes = 4;
+}
+
+message HWComponentInfoSetResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
+message StartManagingDeviceResponse {
+    Status status = 1;
+    Reason reason = 2;
+    Uuid device_uuid = 3;
+}
+
+service NativeHWManagementService {
+    // Initializes context for a device and sets up required states
+    rpc StartManagingDevice(Hardware) returns(stream StartManagingDeviceResponse);
+
+    // Get the HW inventory details of the Device
+    rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
+
+    // Get the details of a particular HW component
+    rpc GetHWComponentInfo(HWComponentInfoGetRequest) returns(stream Component);
+
+    // Sets the permissible attributes of a HW component
+    rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResponse);
+}
