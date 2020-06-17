@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84b1cacf_1c523196",
+        "filename": "docs/EventsMetrics.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-17T14:43:55Z",
+      "side": 1,
+      "message": "I\u0027d put a . here and put the following as a new sentence, while giving one background of why Kafka was chosen",
+      "revId": "2c39f69cbe3ae713900b23e79fafa97f1b5d27f2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de0c1d1e_a7090c1d",
+        "filename": "docs/EventsMetrics.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-17T14:43:55Z",
+      "side": 1,
+      "message": "new line",
+      "revId": "2c39f69cbe3ae713900b23e79fafa97f1b5d27f2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
