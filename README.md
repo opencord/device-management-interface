@@ -1,11 +1,13 @@
 # Device Management Interface
-##Overview
+## Overview
 This repository holds the `.proto` files and documentation for the device management interface.
 
 The proto files and APIs are based on [RFC-8348](https://tools.ietf.org/html/rfc8348) from IETF and WT-383 from BBF
 and are intended to be used over gRPC to communicate from an NMS/EMS to a device manager.
 The device manager will then translate the commands to the device native interface (e.g. Redfish or NETCONF with
 proprietary yang models).
+
+Related documentations can be found in the [docs/](./docs) directory
 
 More details are upcoming.
 
