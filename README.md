@@ -7,6 +7,8 @@ and are intended to be used over gRPC to communicate from an NMS/EMS to a device
 The device manager will then translate the commands to the device native interface (e.g. Redfish or NETCONF with
 proprietary yang models).
 
+Related documentations can be found in the [docs/](./docs) directory
+
 More details are upcoming.
 
 ## Meetings
