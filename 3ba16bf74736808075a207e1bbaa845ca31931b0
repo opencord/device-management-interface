@@ -16,6 +16,24 @@
       "revId": "3ba16bf74736808075a207e1bbaa845ca31931b0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef3e0260_5d9288d1",
+        "filename": "go.mod",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-06-18T09:11:58Z",
+      "side": 1,
+      "message": "Correction: no \"/v1\" add the end.",
+      "parentUuid": "319b8b5a_f8f30acc",
+      "revId": "3ba16bf74736808075a207e1bbaa845ca31931b0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
