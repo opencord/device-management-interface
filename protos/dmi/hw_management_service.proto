@@ -44,7 +44,15 @@ message StartManagingDeviceResponse {
 
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
-    rpc StartManagingDevice(Hardware) returns(stream StartManagingDeviceResponse);
+    // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
+    // and their meanings in this context is mentioned below:
+    // name = The unique name that needs to be assigned to this hardware;
+    // class = COMPONENT_TYPE_UNDEFINED;
+    // parent = nil;
+    // alias = Optional;
+    // asset_id = Optional;
+    // uri = IP Address of the Hardware;
+    rpc StartManagingDevice(ModifiableComponent) returns(stream StartManagingDeviceResponse);
 
     // Get the HW inventory details of the Device
     rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
