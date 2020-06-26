@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ef30c6e_75fffbb8",
+        "filename": "ManagingDevice.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-26T12:22:45Z",
+      "side": 1,
+      "message": "remove double space between Device and Manager",
+      "revId": "403b88671ec9e81c300c33f1c36782ca5da22285",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99985ab8_cf9a1635",
+        "filename": "ManagingDevice.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-26T12:22:45Z",
+      "side": 1,
+      "message": "remove trailing spaces",
+      "revId": "403b88671ec9e81c300c33f1c36782ca5da22285",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2da903de_753f9470",
+        "filename": "ManagingDevice.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-26T12:22:45Z",
+      "side": 1,
+      "message": "same",
+      "revId": "403b88671ec9e81c300c33f1c36782ca5da22285",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
