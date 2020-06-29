@@ -4,7 +4,7 @@ The events and periodic metrics are asynchronously sent out by implementations o
 
 Kafka has been chosen as a means to export from the device manager as it is suitable for handling asynchronous events. Persistence for the events and metrics can be easily achieved using kafka. Moreover kafka gives the flexibilites of handling and processing of the events and metrics by different/mulitple north-bound components/processes. Implementations could choose to have different services (with potentially multiple instances) handling the events and metrics.
 
-![Events and Metrics](events_metrics.png "Events and Metrics flow")
+![Events and Metrics](images/events_metrics.png "Events and Metrics flow")
 
 The kafka topics to which these are written should be configurable at startup of the components, so that different deployments have the flexibility of choosing those.
 The recomendation is to use **dm.events** for the events and **dm.metrics** for the metrics as the names of the kafka topics.
