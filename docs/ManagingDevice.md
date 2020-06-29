@@ -3,7 +3,7 @@
 The first API that a NEM would need to excute to start managing a hardware is the StartManagingDevice.
 
 ## StartManagingDevice
-![Managing a Device](managing_device.png "Start Managing an OLT")
+![Managing a Device](images/managing_device.png "Start Managing an OLT")
 ``` protobuf
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
