@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "793f04be_21b4ee85",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-30T07:30:20Z",
+      "side": 1,
+      "message": "I\u0027d clarify that this API applies only to OLT and not ONU",
+      "revId": "aa03882cd26370c2f035607c86f8f20ade375fd6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d96ce7b0_741948b6",
         "filename": "docs/DeviceImageManagement.md",
         "patchSetId": 1
