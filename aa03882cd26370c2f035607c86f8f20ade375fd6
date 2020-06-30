@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d96ce7b0_741948b6",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-30T07:29:50Z",
+      "side": 1,
+      "message": "standby image also image instead of mage",
+      "revId": "aa03882cd26370c2f035607c86f8f20ade375fd6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b08f3617_a0fed073",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-30T07:29:50Z",
+      "side": 1,
+      "message": "typo \"important\"",
+      "revId": "aa03882cd26370c2f035607c86f8f20ade375fd6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "218369ea_c829bf29",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-30T07:29:50Z",
+      "side": 1,
+      "message": "I would put a paragraph break here",
+      "revId": "aa03882cd26370c2f035607c86f8f20ade375fd6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f283b38_717364f5",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-06-30T07:29:50Z",
+      "side": 1,
+      "message": "stores, also \"soft reboot\" instead of \"normal\"",
+      "revId": "aa03882cd26370c2f035607c86f8f20ade375fd6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
