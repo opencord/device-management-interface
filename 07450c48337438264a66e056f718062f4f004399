@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbc772f4_0c43b36a",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-07-01T11:25:02Z",
+      "side": 1,
+      "message": "Didn\u0027t we talk about sanity checks of the Device Manager before committing the image? This might be depending on the actual implementation.",
+      "range": {
+        "startLine": 29,
+        "startChar": 189,
+        "endLine": 29,
+        "endChar": 236
+      },
+      "revId": "07450c48337438264a66e056f718062f4f004399",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a49a058f_8bd0387d",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-07-01T11:25:02Z",
+      "side": 1,
+      "message": "The device always runs some sanity checks. Perhaps the Device Manager is not running checks (see comment before).",
+      "range": {
+        "startLine": 31,
+        "startChar": 139,
+        "endLine": 31,
+        "endChar": 208
+      },
+      "revId": "07450c48337438264a66e056f718062f4f004399",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9613eedf_0da48750",
+        "filename": "docs/DeviceImageManagement.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-07-01T11:25:02Z",
+      "side": 1,
+      "message": "I feel that RevertToStandbyImage is a dangerous command. As I understand it you can download something to the standby partition and then call RevertToStandbyImage. In this case you would not fallback to the standby image but the new one without doing any checks.",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "07450c48337438264a66e056f718062f4f004399",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
