@@ -26,6 +26,13 @@ The NEM would wait for the `StartManagingDeviceResponse` before it will do any f
 
 *The device manager implementation should ensure that the `uuid` returned is universally unique and* ***does not change across reboots of the device.*** An example could be that the device manager first connects to the device and learns the serial number of the device and then uses this serial number to generate the `uuid` for the device.
 
+## StopManagingDevice
+``` protobuf
+// Stop management of a device and clean up any context caches for that device
+rpc StopManagingDevice(StopManagingDeviceRequest) returns(StopManagingDeviceResponse);
+```
+This RPC is to be used when a device is to be released from the system and no longer needs to be managed.
+
 ## GetPhysicalInventory
 ``` protobuf
 // Get the HW inventory details of the Device
