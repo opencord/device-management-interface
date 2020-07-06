@@ -42,6 +42,15 @@ message StartManagingDeviceResponse {
     Uuid device_uuid = 3;
 }
 
+message StopManagingDeviceRequest {
+    string name = 1;
+}
+
+message StopManagingDeviceResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -53,6 +62,9 @@ service NativeHWManagementService {
     // asset_id = Optional;
     // uri = IP Address of the Hardware;
     rpc StartManagingDevice(ModifiableComponent) returns(stream StartManagingDeviceResponse);
+
+    // Stop management of a device and clean up any context and caches for that device
+    rpc StopManagingDevice(StopManagingDeviceRequest) returns(StopManagingDeviceResponse);
 
     // Get the HW inventory details of the Device
     rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
