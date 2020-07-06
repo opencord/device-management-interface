@@ -34,6 +34,24 @@
       "revId": "09df9012ac744defe21bf9804c16b2264047080a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe08e897_72800139",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-07-06T16:50:22Z",
+      "side": 1,
+      "message": "What I was thinking is that for a request like Stop... the server can\u0027t say that I can\u0027t stop now... So I thought a return of a status from the server is not needed.\n\nThe caller just needs to make sure that the RPC has successfully landed in the server and that it can make out if it does not get any error in the gprc API call (if it gets any errors there it can find out more from the return codes, for e.g. Deadline Exceeded)\n\nLet me know your thoughts... basically what I am asking is that if the server always has to return a \"OK\" then why have that return result.",
+      "parentUuid": "bf453ad7_b22ca903",
+      "revId": "09df9012ac744defe21bf9804c16b2264047080a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
