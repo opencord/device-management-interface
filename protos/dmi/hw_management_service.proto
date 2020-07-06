@@ -3,6 +3,8 @@ syntax = "proto3";
 option go_package = "github.com/opencord/device-management-interface/v3/go/dmi";
 package dmi;
 
+import "google/protobuf/empty.proto";
+
 import "dmi/commons.proto";
 import "dmi/hw.proto";
 
@@ -42,6 +44,10 @@ message StartManagingDeviceResponse {
     Uuid device_uuid = 3;
 }
 
+message StopManagingDeviceRequest {
+    string name = 1;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -53,6 +59,9 @@ service NativeHWManagementService {
     // asset_id = Optional;
     // uri = IP Address of the Hardware;
     rpc StartManagingDevice(ModifiableComponent) returns(stream StartManagingDeviceResponse);
+
+    // Stop management of a device and clean up any context and caches for that device
+    rpc StopManagingDevice(StopManagingDeviceRequest) returns(google.protobuf.Empty);
 
     // Get the HW inventory details of the Device
     rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
