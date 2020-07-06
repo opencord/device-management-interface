@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f808e6c3_a43eaaad",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T14:53:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53794884_55f77a55",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 92
+      },
+      "revId": "3f7ccfced80a851c13bca934157943d32673ab8d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92a7bd2e_6c6a8898",
         "filename": "docs/RpcGuidelines.md",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "89112327_671e3e1b",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T14:53:43Z",
+      "side": 1,
+      "message": "again, it\u0027s a generic concept, no need",
+      "parentUuid": "9e31b538_594d4b03",
+      "range": {
+        "startLine": 13,
+        "startChar": 87,
+        "endLine": 13,
+        "endChar": 97
+      },
+      "revId": "3f7ccfced80a851c13bca934157943d32673ab8d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2977e258_f9bd7e90",
         "filename": "docs/RpcGuidelines.md",
         "patchSetId": 4
@@ -91,6 +139,30 @@
       "revId": "3f7ccfced80a851c13bca934157943d32673ab8d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "124c75d9_24b29663",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T14:53:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2977e258_f9bd7e90",
+      "range": {
+        "startLine": 16,
+        "startChar": 77,
+        "endLine": 16,
+        "endChar": 94
+      },
+      "revId": "3f7ccfced80a851c13bca934157943d32673ab8d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
