@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84c289fc_1d744998",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-07-06T13:06:52Z",
+      "side": 1,
+      "message": "Is \"google.protobuf.Empty\" a good choice? Don\u0027t we need at least some OK, NOT-OK?",
+      "revId": "09df9012ac744defe21bf9804c16b2264047080a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
