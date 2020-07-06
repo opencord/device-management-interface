@@ -16,6 +16,24 @@
       "revId": "09df9012ac744defe21bf9804c16b2264047080a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf453ad7_b22ca903",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T14:58:01Z",
+      "side": 1,
+      "message": "https://github.com/googleapis/api-common-protos/blob/87185dfffad4afa5a33a8c153f0e1ea53b4f85dc/google/rpc/status.proto possibly ?",
+      "parentUuid": "84c289fc_1d744998",
+      "revId": "09df9012ac744defe21bf9804c16b2264047080a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
