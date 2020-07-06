@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "72251404_1522cdc5",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T12:02:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4af5358e_c181d6c6",
+      "revId": "0921bccd21fde5fdca6b4d4668fab21af9921982",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96518bb6_bd44bd61",
         "filename": "docs/RpcGuidelines.md",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "0921bccd21fde5fdca6b4d4668fab21af9921982",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2133247_83e3a6ea",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-06T12:02:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96518bb6_bd44bd61",
+      "revId": "0921bccd21fde5fdca6b4d4668fab21af9921982",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
