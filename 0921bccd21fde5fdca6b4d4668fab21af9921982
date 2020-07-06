@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4af5358e_c181d6c6",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-07-06T11:55:44Z",
+      "side": 1,
+      "message": "Check if the trailing spaces need to be removed.\n\nI have also been doing it... but really don\u0027t know the reason why we need to remove the trailing white spaces 😊",
+      "revId": "0921bccd21fde5fdca6b4d4668fab21af9921982",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96518bb6_bd44bd61",
+        "filename": "docs/RpcGuidelines.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-07-06T11:55:44Z",
+      "side": 1,
+      "message": "it is required that the component \"to the\" returns.\n\nThe \"to the can be removed",
+      "revId": "0921bccd21fde5fdca6b4d4668fab21af9921982",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
