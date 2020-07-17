@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00fac125_b5e743dc",
+        "filename": "protos/dmi/sw_image.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-17T12:56:03Z",
+      "side": 1,
+      "message": "avoid space",
+      "revId": "4bee3a48e3eb7a48bf1d419c98e47e639430528e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
