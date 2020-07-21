@@ -151,7 +151,8 @@ message Component {
     string name = 1;
     ComponentType class = 2;
     string description = 3;
-    Component parent = 4;
+    // The name of the parent of this component, empty "" in case of the root component
+    string parent = 4;
     int32 parent_rel_pos = 5;
     repeated Component children = 6;
     string hardware_rev = 7;
