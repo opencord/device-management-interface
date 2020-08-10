@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21588b11_be38ebdc",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "Comment only mentions Go, not Python",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f2816ae_98179569",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "Please remove line.",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "332c9e85_8dfb2588",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "Replace with empty line.",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ba0e2a1_181a227a",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "Have a look at https://github.com/opencord/voltha-protos/blob/2b52e7173715467c91b77564f711b3ad7571ca48/Makefile#L89",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee94fafa_e76b9bf8",
+        "filename": "test/test-python-proto-consistency.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "\"python\" instead of \"go\"",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5403b64_93c93d66",
+        "filename": "test/test-python-proto-consistency.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-10T13:18:47Z",
+      "side": 1,
+      "message": "\"python\" instead of go",
+      "revId": "a3752ecc4c66e57efc4ca11430560ed729a0b79a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
