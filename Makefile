@@ -25,34 +25,50 @@ PROTOC    = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell
 PROTOC_SH = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/go/src/github.com/opencord/device-management-interface/v3 $(shell test -t 0 && echo "-it") --workdir=/go/src/github.com/opencord/device-management-interface/v3 voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc sh -c
 GO        = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") -v gocache:/.cache -v gocache-${VOLTHA_TOOLS_VERSION}:/go/pkg voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-golang go
 
-# Function to extract the last path component from go_package line in .proto files
-define go_package_path
-$(shell grep go_package $(1) | sed -n 's/.*\/\(.*\)";/\1/p')
+# Function to extract the last path component from package line in .proto files
+define if_package_path
+$(shell grep if_package $(1) | sed -n 's/.*\/\(.*\)";/\1/p')
 endef
 
 # Variables
 PROTO_FILES := $(sort $(wildcard protos/dmi/*.proto))
 
 PROTO_GO_DEST_DIR := go
-PROTO_GO_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_GO_DEST_DIR)/$(call go_package_path,$(f))/%.pb.go,$(f)))
+PROTO_GO_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_GO_DEST_DIR)/$(call if_package_path,$(f))/%.pb.go,$(f)))
+
+PROTO_PYTHON_DEST_DIR := python
+PROTO_PYTHON_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_PYTHON_DEST_DIR)/$(call if_package_path,$(f))/%.pb2.py,$(f)))
+
 # Force pb file to be regenrated every time.  Otherwise the make process assumes generated version is still valid
 .PHONY: dmi.pb
 
 print:
 	@echo "Proto files: $(PROTO_FILES)"
 	@echo "Go PB files: $(PROTO_GO_PB)"
+	@echo "python PB files: $(PROTO_PYTHON_PB)"
 
 # Generic targets
 protos: go-protos
 
 build: protos
 
-test: go-test
+test: go-test python-test
+
 
 venv_protos:
 	virtualenv -p python3 $@;\
 	source ./$@/bin/activate ; set -u ;\
 	pip install grpcio-tools googleapis-common-protos
+
+# python targets
+python-protos: dmi.pb
+	@echo "Creating *.py.pb files"
+	@${PROTOC_SH} " \
+	  set -e -o pipefail; \
+	  for x in ${PROTO_FILES}; do \
+	    echo \$$x; \
+	    protoc --python_out=python -I protos \$$x; \
+	  done"
 
 # Go targets
 go-protos: dmi.pb
@@ -74,3 +90,8 @@ dmi.pb:
 go-test:
 	test/test-go-proto-consistency.sh
 	${GO} mod verify
+
+python-test:
+	test/test-python-proto-consistency.sh
+	#${GO} mod verify
+	echo "any check available? as it is with the go prototypes ?"
