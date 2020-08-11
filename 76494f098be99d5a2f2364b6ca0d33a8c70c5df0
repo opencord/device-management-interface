@@ -16,6 +16,23 @@
       "revId": "76494f098be99d5a2f2364b6ca0d33a8c70c5df0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10f6afcc_401e238a",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-08-11T09:46:55Z",
+      "side": 1,
+      "message": "I guess we need some basic test at least. Please have a look at \n\nhttps://github.com/opencord/voltha-protos/blob/2b52e7173715467c91b77564f711b3ad7571ca48/Makefile#L89",
+      "revId": "76494f098be99d5a2f2364b6ca0d33a8c70c5df0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
