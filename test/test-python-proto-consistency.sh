@@ -33,7 +33,7 @@ if [ "$STAGED" == "staged" ] || [ "$UNTRACKED" != "" ]; then
 fi
 
 # delete and regenerate python protos
-rm -rf python/dmi.pb2 python/*/*.pb2.py python_temp
+rm -rf python/dmi/*
 make python-protos
 
 # Running git status ensures correct git diff-index picks up changes

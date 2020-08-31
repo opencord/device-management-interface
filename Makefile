@@ -48,7 +48,7 @@ print:
 	@echo "python PB files: $(PROTO_PYTHON_PB)"
 
 # Generic targets
-protos: go-protos
+protos: go-protos python-protos
 
 build: protos
 
@@ -61,14 +61,20 @@ venv_protos:
 	pip install grpcio-tools googleapis-common-protos
 
 # python targets
-python-protos: dmi.pb
-	@echo "Creating *.py.pb files"
-	@${PROTOC_SH} " \
-	  set -e -o pipefail; \
-	  for x in ${PROTO_FILES}; do \
-	    echo \$$x; \
-	    protoc --python_out=python -I protos \$$x; \
-	  done"
+python-protos: venv_protos
+	@echo "Creating *.pb2.pv and *.pb2_grpc.py files"
+	source ./venv_protos/bin/activate ; set -u ;\
+	for x in $(PROTO_FILES) ; do \
+	  echo $$x; \
+	  python -m grpc_tools.protoc \
+	  -I protos \
+	  --python_out=python \
+	  --grpc_python_out=python \
+	  --descriptor_set_out=$(PROTO_PYTHON_DEST_DIR)/$(basename $(notdir $<)).desc \
+	  --include_imports \
+	  --include_source_info \
+	  $$x;\
+	done
 
 # Go targets
 go-protos: dmi.pb
