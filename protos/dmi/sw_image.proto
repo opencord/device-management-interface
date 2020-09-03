@@ -30,7 +30,7 @@ message ImageStatus {
         UNDEFINED_STATE = 0;
         COPYING_IMAGE = 1;
         INSTALLING_IMAGE = 2;
-        COMMITING_IMAGE = 3;
+        COMMITTING_IMAGE = 3;
         REBOOTING_DEVICE = 4;
         UPGRADE_COMPLETE = 5;
         UPGRADE_FAILED = 6;

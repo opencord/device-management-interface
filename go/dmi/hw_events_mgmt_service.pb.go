@@ -975,7 +975,7 @@ type NativeEventsManagementServiceClient interface {
 	// List the supported events for the passed device
 	ListEvents(ctx context.Context, in *HardwareID, opts ...grpc.CallOption) (*ListEventsResponse, error)
 	// Updates the configuration of the list of events in the request
-	// The default behaviour of the device is to report all the supported events
+	// The default behavior of the device is to report all the supported events
 	// This configuration is persisted across reboots of the device or the device manager
 	UpdateEventsConfiguration(ctx context.Context, in *EventsConfigurationRequest, opts ...grpc.CallOption) (*EventsConfigurationResponse, error)
 }
@@ -1011,7 +1011,7 @@ type NativeEventsManagementServiceServer interface {
 	// List the supported events for the passed device
 	ListEvents(context.Context, *HardwareID) (*ListEventsResponse, error)
 	// Updates the configuration of the list of events in the request
-	// The default behaviour of the device is to report all the supported events
+	// The default behavior of the device is to report all the supported events
 	// This configuration is persisted across reboots of the device or the device manager
 	UpdateEventsConfiguration(context.Context, *EventsConfigurationRequest) (*EventsConfigurationResponse, error)
 }

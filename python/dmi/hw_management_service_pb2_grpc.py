@@ -33,7 +33,7 @@ class NativeHWManagementServiceStub(object):
         self.GetHWComponentInfo = channel.unary_stream(
                 '/dmi.NativeHWManagementService/GetHWComponentInfo',
                 request_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoGetRequest.SerializeToString,
-                response_deserializer=dmi_dot_hw__pb2.Component.FromString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoGetResponse.FromString,
                 )
         self.SetHWComponentInfo = channel.unary_unary(
                 '/dmi.NativeHWManagementService/SetHWComponentInfo',
@@ -109,7 +109,7 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
             'GetHWComponentInfo': grpc.unary_stream_rpc_method_handler(
                     servicer.GetHWComponentInfo,
                     request_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoGetRequest.FromString,
-                    response_serializer=dmi_dot_hw__pb2.Component.SerializeToString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoGetResponse.SerializeToString,
             ),
             'SetHWComponentInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.SetHWComponentInfo,
@@ -190,7 +190,7 @@ class NativeHWManagementService(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/dmi.NativeHWManagementService/GetHWComponentInfo',
             dmi_dot_hw__management__service__pb2.HWComponentInfoGetRequest.SerializeToString,
-            dmi_dot_hw__pb2.Component.FromString,
+            dmi_dot_hw__management__service__pb2.HWComponentInfoGetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

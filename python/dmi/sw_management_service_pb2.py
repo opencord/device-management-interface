@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from dmi import commons_pb2 as dmi_dot_commons__pb2
 from dmi import hw_pb2 as dmi_dot_hw__pb2
 from dmi import sw_image_pb2 as dmi_dot_sw__image__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation2\x9c\x02\n\x1fNativeSoftwareManagementService\x12\x46\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a\x1f.dmi.SoftwareVersionInformation\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"\x90\x01\n%GetSoftwareVersionInformationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12-\n\x04info\x18\x03 \x01(\x0b\x32\x1f.dmi.SoftwareVersionInformation\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation2\xa7\x02\n\x1fNativeSoftwareManagementService\x12Q\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a*.dmi.GetSoftwareVersionInformationResponse\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
-  dependencies=[dmi_dot_hw__pb2.DESCRIPTOR,dmi_dot_sw__image__pb2.DESCRIPTOR,])
+  dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,dmi_dot_sw__image__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,54 @@ _SOFTWAREVERSIONINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=191,
+  serialized_start=93,
+  serialized_end=210,
+)
+
+
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE = _descriptor.Descriptor(
+  name='GetSoftwareVersionInformationResponse',
+  full_name='dmi.GetSoftwareVersionInformationResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.GetSoftwareVersionInformationResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.GetSoftwareVersionInformationResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='info', full_name='dmi.GetSoftwareVersionInformationResponse.info', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=213,
+  serialized_end=357,
 )
 
 
@@ -101,15 +148,19 @@ _DOWNLOADIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=193,
-  serialized_end=290,
+  serialized_start=359,
+  serialized_end=456,
 )
 
 _SOFTWAREVERSIONINFORMATION.fields_by_name['active_versions'].message_type = dmi_dot_sw__image__pb2._IMAGEVERSION
 _SOFTWAREVERSIONINFORMATION.fields_by_name['standby_versions'].message_type = dmi_dot_sw__image__pb2._IMAGEVERSION
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['info'].message_type = _SOFTWAREVERSIONINFORMATION
 _DOWNLOADIMAGEREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _DOWNLOADIMAGEREQUEST.fields_by_name['image_info'].message_type = dmi_dot_sw__image__pb2._IMAGEINFORMATION
 DESCRIPTOR.message_types_by_name['SoftwareVersionInformation'] = _SOFTWAREVERSIONINFORMATION
+DESCRIPTOR.message_types_by_name['GetSoftwareVersionInformationResponse'] = _GETSOFTWAREVERSIONINFORMATIONRESPONSE
 DESCRIPTOR.message_types_by_name['DownloadImageRequest'] = _DOWNLOADIMAGEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -119,6 +170,13 @@ SoftwareVersionInformation = _reflection.GeneratedProtocolMessageType('SoftwareV
   # @@protoc_insertion_point(class_scope:dmi.SoftwareVersionInformation)
   })
 _sym_db.RegisterMessage(SoftwareVersionInformation)
+
+GetSoftwareVersionInformationResponse = _reflection.GeneratedProtocolMessageType('GetSoftwareVersionInformationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETSOFTWAREVERSIONINFORMATIONRESPONSE,
+  '__module__' : 'dmi.sw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.GetSoftwareVersionInformationResponse)
+  })
+_sym_db.RegisterMessage(GetSoftwareVersionInformationResponse)
 
 DownloadImageRequest = _reflection.GeneratedProtocolMessageType('DownloadImageRequest', (_message.Message,), {
   'DESCRIPTOR' : _DOWNLOADIMAGEREQUEST,
@@ -137,8 +195,8 @@ _NATIVESOFTWAREMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=293,
-  serialized_end=577,
+  serialized_start=459,
+  serialized_end=754,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetSoftwareVersion',
@@ -146,7 +204,7 @@ _NATIVESOFTWAREMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=dmi_dot_hw__pb2._HARDWAREID,
-    output_type=_SOFTWAREVERSIONINFORMATION,
+    output_type=_GETSOFTWAREVERSIONINFORMATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

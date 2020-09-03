@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason2\xbf\x03\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12\x46\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x0e.dmi.Component0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason2\xd0\x03\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,])
 
@@ -152,6 +152,52 @@ _HWCOMPONENTINFOGETREQUEST = _descriptor.Descriptor(
 )
 
 
+_HWCOMPONENTINFOGETRESPONSE = _descriptor.Descriptor(
+  name='HWComponentInfoGetResponse',
+  full_name='dmi.HWComponentInfoGetResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.HWComponentInfoGetResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.HWComponentInfoGetResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='component', full_name='dmi.HWComponentInfoGetResponse.component', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=374,
+  serialized_end=495,
+)
+
+
 _HWCOMPONENTINFOSETREQUEST = _descriptor.Descriptor(
   name='HWComponentInfoSetRequest',
   full_name='dmi.HWComponentInfoSetRequest',
@@ -200,8 +246,8 @@ _HWCOMPONENTINFOSETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=375,
-  serialized_end=536,
+  serialized_start=498,
+  serialized_end=659,
 )
 
 
@@ -239,8 +285,8 @@ _HWCOMPONENTINFOSETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=538,
-  serialized_end=624,
+  serialized_start=661,
+  serialized_end=747,
 )
 
 
@@ -285,8 +331,8 @@ _STARTMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=745,
+  serialized_start=749,
+  serialized_end=868,
 )
 
 
@@ -317,8 +363,8 @@ _STOPMANAGINGDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=747,
-  serialized_end=788,
+  serialized_start=870,
+  serialized_end=911,
 )
 
 
@@ -356,8 +402,8 @@ _STOPMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=790,
-  serialized_end=876,
+  serialized_start=913,
+  serialized_end=999,
 )
 
 _PHYSICALINVENTORYREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
@@ -366,6 +412,9 @@ _PHYSICALINVENTORYRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons_
 _PHYSICALINVENTORYRESPONSE.fields_by_name['inventory'].message_type = dmi_dot_hw__pb2._HARDWARE
 _HWCOMPONENTINFOGETREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOGETREQUEST.fields_by_name['component_uuid'].message_type = dmi_dot_hw__pb2._UUID
+_HWCOMPONENTINFOGETRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_HWCOMPONENTINFOGETRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_HWCOMPONENTINFOGETRESPONSE.fields_by_name['component'].message_type = dmi_dot_hw__pb2._COMPONENT
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['component_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['changes'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
@@ -379,6 +428,7 @@ _STOPMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons
 DESCRIPTOR.message_types_by_name['PhysicalInventoryRequest'] = _PHYSICALINVENTORYREQUEST
 DESCRIPTOR.message_types_by_name['PhysicalInventoryResponse'] = _PHYSICALINVENTORYRESPONSE
 DESCRIPTOR.message_types_by_name['HWComponentInfoGetRequest'] = _HWCOMPONENTINFOGETREQUEST
+DESCRIPTOR.message_types_by_name['HWComponentInfoGetResponse'] = _HWCOMPONENTINFOGETRESPONSE
 DESCRIPTOR.message_types_by_name['HWComponentInfoSetRequest'] = _HWCOMPONENTINFOSETREQUEST
 DESCRIPTOR.message_types_by_name['HWComponentInfoSetResponse'] = _HWCOMPONENTINFOSETRESPONSE
 DESCRIPTOR.message_types_by_name['StartManagingDeviceResponse'] = _STARTMANAGINGDEVICERESPONSE
@@ -406,6 +456,13 @@ HWComponentInfoGetRequest = _reflection.GeneratedProtocolMessageType('HWComponen
   # @@protoc_insertion_point(class_scope:dmi.HWComponentInfoGetRequest)
   })
 _sym_db.RegisterMessage(HWComponentInfoGetRequest)
+
+HWComponentInfoGetResponse = _reflection.GeneratedProtocolMessageType('HWComponentInfoGetResponse', (_message.Message,), {
+  'DESCRIPTOR' : _HWCOMPONENTINFOGETRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.HWComponentInfoGetResponse)
+  })
+_sym_db.RegisterMessage(HWComponentInfoGetResponse)
 
 HWComponentInfoSetRequest = _reflection.GeneratedProtocolMessageType('HWComponentInfoSetRequest', (_message.Message,), {
   'DESCRIPTOR' : _HWCOMPONENTINFOSETREQUEST,
@@ -452,8 +509,8 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=879,
-  serialized_end=1326,
+  serialized_start=1002,
+  serialized_end=1466,
   methods=[
   _descriptor.MethodDescriptor(
     name='StartManagingDevice',
@@ -491,7 +548,7 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     index=3,
     containing_service=None,
     input_type=_HWCOMPONENTINFOGETREQUEST,
-    output_type=dmi_dot_hw__pb2._COMPONENT,
+    output_type=_HWCOMPONENTINFOGETRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

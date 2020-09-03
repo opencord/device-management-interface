@@ -19,7 +19,7 @@ class NativeSoftwareManagementServiceStub(object):
         self.GetSoftwareVersion = channel.unary_unary(
                 '/dmi.NativeSoftwareManagementService/GetSoftwareVersion',
                 request_serializer=dmi_dot_hw__pb2.HardwareID.SerializeToString,
-                response_deserializer=dmi_dot_sw__management__service__pb2.SoftwareVersionInformation.FromString,
+                response_deserializer=dmi_dot_sw__management__service__pb2.GetSoftwareVersionInformationResponse.FromString,
                 )
         self.DownloadImage = channel.unary_stream(
                 '/dmi.NativeSoftwareManagementService/DownloadImage',
@@ -66,7 +66,7 @@ class NativeSoftwareManagementServiceServicer(object):
 
     def RevertToStandbyImage(self, request, context):
         """Marks the image in the Standby as Active and reboots the device, so that it boots from that image which was in the standby.
-        This API is to be used if operator wants to go back to the pervious software
+        This API is to be used if operator wants to go back to the previous software
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -78,7 +78,7 @@ def add_NativeSoftwareManagementServiceServicer_to_server(servicer, server):
             'GetSoftwareVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.GetSoftwareVersion,
                     request_deserializer=dmi_dot_hw__pb2.HardwareID.FromString,
-                    response_serializer=dmi_dot_sw__management__service__pb2.SoftwareVersionInformation.SerializeToString,
+                    response_serializer=dmi_dot_sw__management__service__pb2.GetSoftwareVersionInformationResponse.SerializeToString,
             ),
             'DownloadImage': grpc.unary_stream_rpc_method_handler(
                     servicer.DownloadImage,
@@ -118,7 +118,7 @@ class NativeSoftwareManagementService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeSoftwareManagementService/GetSoftwareVersion',
             dmi_dot_hw__pb2.HardwareID.SerializeToString,
-            dmi_dot_sw__management__service__pb2.SoftwareVersionInformation.FromString,
+            dmi_dot_sw__management__service__pb2.GetSoftwareVersionInformationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

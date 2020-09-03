@@ -39,7 +39,7 @@ class NativeEventsManagementServiceServicer(object):
 
     def UpdateEventsConfiguration(self, request, context):
         """Updates the configuration of the list of events in the request
-        The default behaviour of the device is to report all the supported events
+        The default behavior of the device is to report all the supported events
         This configuration is persisted across reboots of the device or the device manager
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

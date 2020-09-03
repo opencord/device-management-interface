@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!dmi/hw_metrics_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\"a\n\x0cMetricConfig\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12\x15\n\rpoll_interval\x18\x03 \x01(\r\"3\n\rMetricsConfig\x12\"\n\x07metrics\x18\x01 \x03(\x0b\x32\x11.dmi.MetricConfig\"t\n\x13ListMetricsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12#\n\x07metrics\x18\x03 \x01(\x0b\x32\x12.dmi.MetricsConfig\"\x8d\x01\n\x1bMetricsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12%\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x12.dmi.MetricsConfigH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"X\n\x1cMetricsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"k\n\x0eMetricMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\x84\x01\n\x06Metric\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12,\n\x0fmetric_metadata\x18\x02 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12\'\n\x05value\x18\x03 \x01(\x0b\x32\x18.dmi.ComponentSensorData\"_\n\x10GetMetricRequest\x12&\n\tmeta_data\x18\x01 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12#\n\tmetric_id\x18\x02 \x01(\x0e\x32\x10.dmi.MetricNames*\xd9\x05\n\x0bMetricNames\x12\x19\n\x15METRIC_NAME_UNDEFINED\x10\x00\x12\x14\n\x10METRIC_FAN_SPEED\x10\x01\x12\x13\n\x0fMETRIC_CPU_TEMP\x10\x64\x12\x1f\n\x1bMETRIC_CPU_USAGE_PERCENTAGE\x10\x65\x12\x1c\n\x17METRIC_TRANSCEIVER_TEMP\x10\xc8\x01\x12\x1f\n\x1aMETRIC_TRANSCEIVER_VOLTAGE\x10\xc9\x01\x12\x1c\n\x17METRIC_TRANSCEIVER_BIAS\x10\xca\x01\x12 \n\x1bMETRIC_TRANSCEIVER_RX_POWER\x10\xcb\x01\x12 \n\x1bMETRIC_TRANSCEIVER_TX_POWER\x10\xcc\x01\x12\"\n\x1dMETRIC_TRANSCEIVER_WAVELENGTH\x10\xcd\x01\x12\x15\n\x10METRIC_DISK_TEMP\x10\xac\x02\x12\x19\n\x14METRIC_DISK_CAPACITY\x10\xad\x02\x12\x16\n\x11METRIC_DISK_USAGE\x10\xae\x02\x12!\n\x1cMETRIC_DISK_USAGE_PERCENTAGE\x10\xaf\x02\x12&\n!METRIC_DISK_READ_WRITE_PERCENTAGE\x10\xb0\x02\x12(\n#METRIC_DISK_FAULTY_CELLS_PERCENTAGE\x10\xb1\x02\x12\x14\n\x0fMETRIC_RAM_TEMP\x10\x90\x03\x12\x18\n\x13METRIC_RAM_CAPACITY\x10\x91\x03\x12\x15\n\x10METRIC_RAM_USAGE\x10\x92\x03\x12 \n\x1bMETRIC_RAM_USAGE_PERCENTAGE\x10\x93\x03\x12\x15\n\x10METRIC_POWER_MAX\x10\xf4\x03\x12\x17\n\x12METRIC_POWER_USAGE\x10\xf5\x03\x12\"\n\x1dMETRIC_POWER_USAGE_PERCENTAGE\x10\xf6\x03\x12\"\n\x1dMETRIC_INNER_SURROUNDING_TEMP\x10\xd8\x04\x32\xee\x01\n\x1eNativeMetricsManagementService\x12\x38\n\x0bListMetrics\x12\x0f.dmi.HardwareID\x1a\x18.dmi.ListMetricsResponse\x12\x61\n\x1aUpdateMetricsConfiguration\x12 .dmi.MetricsConfigurationRequest\x1a!.dmi.MetricsConfigurationResponse\x12/\n\tGetMetric\x12\x15.dmi.GetMetricRequest\x1a\x0b.dmi.MetricB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n!dmi/hw_metrics_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\"a\n\x0cMetricConfig\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12\x15\n\rpoll_interval\x18\x03 \x01(\r\"3\n\rMetricsConfig\x12\"\n\x07metrics\x18\x01 \x03(\x0b\x32\x11.dmi.MetricConfig\"t\n\x13ListMetricsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12#\n\x07metrics\x18\x03 \x01(\x0b\x32\x12.dmi.MetricsConfig\"\x8d\x01\n\x1bMetricsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12%\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x12.dmi.MetricsConfigH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"X\n\x1cMetricsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"k\n\x0eMetricMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\x84\x01\n\x06Metric\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12,\n\x0fmetric_metadata\x18\x02 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12\'\n\x05value\x18\x03 \x01(\x0b\x32\x18.dmi.ComponentSensorData\"_\n\x10GetMetricRequest\x12&\n\tmeta_data\x18\x01 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12#\n\tmetric_id\x18\x02 \x01(\x0e\x32\x10.dmi.MetricNames\"j\n\x11GetMetricResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1b\n\x06metric\x18\x03 \x01(\x0b\x32\x0b.dmi.Metric*\xd9\x05\n\x0bMetricNames\x12\x19\n\x15METRIC_NAME_UNDEFINED\x10\x00\x12\x14\n\x10METRIC_FAN_SPEED\x10\x01\x12\x13\n\x0fMETRIC_CPU_TEMP\x10\x64\x12\x1f\n\x1bMETRIC_CPU_USAGE_PERCENTAGE\x10\x65\x12\x1c\n\x17METRIC_TRANSCEIVER_TEMP\x10\xc8\x01\x12\x1f\n\x1aMETRIC_TRANSCEIVER_VOLTAGE\x10\xc9\x01\x12\x1c\n\x17METRIC_TRANSCEIVER_BIAS\x10\xca\x01\x12 \n\x1bMETRIC_TRANSCEIVER_RX_POWER\x10\xcb\x01\x12 \n\x1bMETRIC_TRANSCEIVER_TX_POWER\x10\xcc\x01\x12\"\n\x1dMETRIC_TRANSCEIVER_WAVELENGTH\x10\xcd\x01\x12\x15\n\x10METRIC_DISK_TEMP\x10\xac\x02\x12\x19\n\x14METRIC_DISK_CAPACITY\x10\xad\x02\x12\x16\n\x11METRIC_DISK_USAGE\x10\xae\x02\x12!\n\x1cMETRIC_DISK_USAGE_PERCENTAGE\x10\xaf\x02\x12&\n!METRIC_DISK_READ_WRITE_PERCENTAGE\x10\xb0\x02\x12(\n#METRIC_DISK_FAULTY_CELLS_PERCENTAGE\x10\xb1\x02\x12\x14\n\x0fMETRIC_RAM_TEMP\x10\x90\x03\x12\x18\n\x13METRIC_RAM_CAPACITY\x10\x91\x03\x12\x15\n\x10METRIC_RAM_USAGE\x10\x92\x03\x12 \n\x1bMETRIC_RAM_USAGE_PERCENTAGE\x10\x93\x03\x12\x15\n\x10METRIC_POWER_MAX\x10\xf4\x03\x12\x17\n\x12METRIC_POWER_USAGE\x10\xf5\x03\x12\"\n\x1dMETRIC_POWER_USAGE_PERCENTAGE\x10\xf6\x03\x12\"\n\x1dMETRIC_INNER_SURROUNDING_TEMP\x10\xd8\x04\x32\xf9\x01\n\x1eNativeMetricsManagementService\x12\x38\n\x0bListMetrics\x12\x0f.dmi.HardwareID\x1a\x18.dmi.ListMetricsResponse\x12\x61\n\x1aUpdateMetricsConfiguration\x12 .dmi.MetricsConfigurationRequest\x1a!.dmi.MetricsConfigurationResponse\x12:\n\tGetMetric\x12\x15.dmi.GetMetricRequest\x1a\x16.dmi.GetMetricResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,])
 
@@ -156,8 +156,8 @@ _METRICNAMES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=921,
-  serialized_end=1650,
+  serialized_start=1029,
+  serialized_end=1758,
 )
 _sym_db.RegisterEnumDescriptor(_METRICNAMES)
 
@@ -533,6 +533,52 @@ _GETMETRICREQUEST = _descriptor.Descriptor(
   serialized_end=918,
 )
 
+
+_GETMETRICRESPONSE = _descriptor.Descriptor(
+  name='GetMetricResponse',
+  full_name='dmi.GetMetricResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.GetMetricResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.GetMetricResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metric', full_name='dmi.GetMetricResponse.metric', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=920,
+  serialized_end=1026,
+)
+
 _METRICCONFIG.fields_by_name['metric_id'].enum_type = _METRICNAMES
 _METRICSCONFIG.fields_by_name['metrics'].message_type = _METRICCONFIG
 _LISTMETRICSRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
@@ -555,6 +601,9 @@ _METRIC.fields_by_name['metric_metadata'].message_type = _METRICMETADATA
 _METRIC.fields_by_name['value'].message_type = dmi_dot_hw__pb2._COMPONENTSENSORDATA
 _GETMETRICREQUEST.fields_by_name['meta_data'].message_type = _METRICMETADATA
 _GETMETRICREQUEST.fields_by_name['metric_id'].enum_type = _METRICNAMES
+_GETMETRICRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_GETMETRICRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETMETRICRESPONSE.fields_by_name['metric'].message_type = _METRIC
 DESCRIPTOR.message_types_by_name['MetricConfig'] = _METRICCONFIG
 DESCRIPTOR.message_types_by_name['MetricsConfig'] = _METRICSCONFIG
 DESCRIPTOR.message_types_by_name['ListMetricsResponse'] = _LISTMETRICSRESPONSE
@@ -563,6 +612,7 @@ DESCRIPTOR.message_types_by_name['MetricsConfigurationResponse'] = _METRICSCONFI
 DESCRIPTOR.message_types_by_name['MetricMetaData'] = _METRICMETADATA
 DESCRIPTOR.message_types_by_name['Metric'] = _METRIC
 DESCRIPTOR.message_types_by_name['GetMetricRequest'] = _GETMETRICREQUEST
+DESCRIPTOR.message_types_by_name['GetMetricResponse'] = _GETMETRICRESPONSE
 DESCRIPTOR.enum_types_by_name['MetricNames'] = _METRICNAMES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -622,6 +672,13 @@ GetMetricRequest = _reflection.GeneratedProtocolMessageType('GetMetricRequest', 
   })
 _sym_db.RegisterMessage(GetMetricRequest)
 
+GetMetricResponse = _reflection.GeneratedProtocolMessageType('GetMetricResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETMETRICRESPONSE,
+  '__module__' : 'dmi.hw_metrics_mgmt_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.GetMetricResponse)
+  })
+_sym_db.RegisterMessage(GetMetricResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -632,8 +689,8 @@ _NATIVEMETRICSMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1653,
-  serialized_end=1891,
+  serialized_start=1761,
+  serialized_end=2010,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListMetrics',
@@ -661,7 +718,7 @@ _NATIVEMETRICSMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=_GETMETRICREQUEST,
-    output_type=_METRIC,
+    output_type=_GETMETRICRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -28,7 +28,7 @@ class NativeMetricsManagementServiceStub(object):
         self.GetMetric = channel.unary_unary(
                 '/dmi.NativeMetricsManagementService/GetMetric',
                 request_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.SerializeToString,
-                response_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.Metric.FromString,
+                response_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.FromString,
                 )
 
 
@@ -78,7 +78,7 @@ def add_NativeMetricsManagementServiceServicer_to_server(servicer, server):
             'GetMetric': grpc.unary_unary_rpc_method_handler(
                     servicer.GetMetric,
                     request_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.FromString,
-                    response_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.Metric.SerializeToString,
+                    response_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -137,6 +137,6 @@ class NativeMetricsManagementService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeMetricsManagementService/GetMetric',
             dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.SerializeToString,
-            dmi_dot_hw__metrics__mgmt__service__pb2.Metric.FromString,
+            dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

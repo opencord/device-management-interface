@@ -106,6 +106,12 @@ message GetMetricRequest {
     MetricNames metric_id = 2;
 }
 
+message GetMetricResponse {
+    Status status = 1;
+    Reason reason = 2;
+    Metric metric = 3;
+}
+
 service NativeMetricsManagementService {
 
     // List the supported metrics for the passed device.
@@ -121,5 +127,5 @@ service NativeMetricsManagementService {
     rpc UpdateMetricsConfiguration(MetricsConfigurationRequest) returns(MetricsConfigurationResponse);
 
     // Get the instantenous value of a metric
-    rpc GetMetric(GetMetricRequest) returns(Metric);
+    rpc GetMetric(GetMetricRequest) returns(GetMetricResponse);
 }

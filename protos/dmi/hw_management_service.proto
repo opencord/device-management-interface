@@ -24,6 +24,12 @@ message HWComponentInfoGetRequest {
     string component_name = 3;
 }
 
+message HWComponentInfoGetResponse {
+    Status status = 1;
+    Reason reason = 2;
+    Component component = 3;
+}
+
 message HWComponentInfoSetRequest {
     Uuid device_uuid = 1;
     Uuid component_uuid = 2;
@@ -70,7 +76,7 @@ service NativeHWManagementService {
     rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
 
     // Get the details of a particular HW component
-    rpc GetHWComponentInfo(HWComponentInfoGetRequest) returns(stream Component);
+    rpc GetHWComponentInfo(HWComponentInfoGetRequest) returns(stream HWComponentInfoGetResponse);
 
     // Sets the permissible attributes of a HW component
     rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResponse);
