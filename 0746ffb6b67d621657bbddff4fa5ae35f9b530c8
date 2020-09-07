@@ -1,0 +1,9 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Holger Schulz <holger.schulz@adtran.com>
+Code-Review+1: uwe ottrembka <uwe.ottrembka@adtran.com>
+Code-Review+2: Andrea Campanella <andrea@opennetworking.org>
+Submitted-by: Andrea Campanella <andrea@opennetworking.org>
+Submitted-at: Mon, 07 Sep 2020 08:47:23 +0000
+Reviewed-on: https://gerrit.opencord.org/c/device-management-interface/+/20358
+Project: device-management-interface
+Branch: refs/heads/master
