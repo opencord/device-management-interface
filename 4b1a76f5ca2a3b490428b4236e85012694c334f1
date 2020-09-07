@@ -16,6 +16,23 @@
       "revId": "4b1a76f5ca2a3b490428b4236e85012694c334f1",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46e719bf_71fd4d12",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-09-07T07:36:04Z",
+      "side": 1,
+      "message": "I agree to Andrea. We should only add types especially if they are part of the original RFC 8348.",
+      "revId": "4b1a76f5ca2a3b490428b4236e85012694c334f1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
