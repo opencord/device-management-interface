@@ -5,6 +5,7 @@ package dmi;
 
 import "dmi/commons.proto";
 import "dmi/hw.proto";
+import "google/protobuf/empty.proto";
 
 // Protos for the management of a hardware and it's components
 
@@ -57,6 +58,12 @@ message StopManagingDeviceResponse {
     Reason reason = 2;
 }
 
+message ManagedDevicesResponse {
+    string name = 1;
+    Uuid device_uuid = 2;
+    Uri uri = 3;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -71,6 +78,9 @@ service NativeHWManagementService {
 
     // Stop management of a device and clean up any context and caches for that device
     rpc StopManagingDevice(StopManagingDeviceRequest) returns(StopManagingDeviceResponse);
+
+    // Returns al list of managed devices with their identifiers and names
+    rpc GetManagedDevices(google.protobuf.Empty) returns(ManagedDevicesResponse);
 
     // Get the HW inventory details of the Device
     rpc GetPhysicalInventory(PhysicalInventoryRequest) returns(stream PhysicalInventoryResponse);
