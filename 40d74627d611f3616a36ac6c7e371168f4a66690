@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bbcb6949_2c8b8d9d",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-09-22T12:59:03Z",
+      "side": 1,
+      "message": "yes, thanks. Can I return directly a modifiable component ?",
+      "parentUuid": "f0eebf46_29f53b64",
+      "revId": "40d74627d611f3616a36ac6c7e371168f4a66690",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7396bbd2_37ae2f52",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "40d74627d611f3616a36ac6c7e371168f4a66690",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4eae6ec9_13a7af32",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-09-22T12:59:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7396bbd2_37ae2f52",
+      "revId": "40d74627d611f3616a36ac6c7e371168f4a66690",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
