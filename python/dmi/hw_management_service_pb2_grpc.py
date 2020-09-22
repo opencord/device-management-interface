@@ -4,6 +4,7 @@ import grpc
 
 from dmi import hw_management_service_pb2 as dmi_dot_hw__management__service__pb2
 from dmi import hw_pb2 as dmi_dot_hw__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NativeHWManagementServiceStub(object):
@@ -24,6 +25,11 @@ class NativeHWManagementServiceStub(object):
                 '/dmi.NativeHWManagementService/StopManagingDevice',
                 request_serializer=dmi_dot_hw__management__service__pb2.StopManagingDeviceRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.StopManagingDeviceResponse.FromString,
+                )
+        self.GetManagedDevices = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetManagedDevices',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.ManagedDevicesResponse.FromString,
                 )
         self.GetPhysicalInventory = channel.unary_stream(
                 '/dmi.NativeHWManagementService/GetPhysicalInventory',
@@ -67,6 +73,13 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetManagedDevices(self, request, context):
+        """Returns an object containing a list of devices managed by this entity
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetPhysicalInventory(self, request, context):
         """Get the HW inventory details of the Device
         """
@@ -100,6 +113,11 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.StopManagingDevice,
                     request_deserializer=dmi_dot_hw__management__service__pb2.StopManagingDeviceRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.StopManagingDeviceResponse.SerializeToString,
+            ),
+            'GetManagedDevices': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetManagedDevices,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.ManagedDevicesResponse.SerializeToString,
             ),
             'GetPhysicalInventory': grpc.unary_stream_rpc_method_handler(
                     servicer.GetPhysicalInventory,
@@ -157,6 +175,23 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/StopManagingDevice',
             dmi_dot_hw__management__service__pb2.StopManagingDeviceRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.StopManagingDeviceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetManagedDevices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetManagedDevices',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__management__service__pb2.ManagedDevicesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
