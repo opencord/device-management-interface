@@ -1,0 +1,9 @@
+Code-Review+1: Amit Ghosh <amit.ghosh@radisys.com>
+Code-Review+1: uwe ottrembka <uwe.ottrembka@adtran.com>
+Code-Review+2: Andrea Campanella <andrea@opennetworking.org>
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Submitted-by: Andrea Campanella <andrea@opennetworking.org>
+Submitted-at: Wed, 23 Sep 2020 09:00:02 +0000
+Reviewed-on: https://gerrit.opencord.org/c/device-management-interface/+/20685
+Project: device-management-interface
+Branch: refs/heads/master
