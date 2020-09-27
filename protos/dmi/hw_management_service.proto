@@ -62,6 +62,33 @@ message ManagedDevicesResponse {
     repeated ModifiableComponent devices = 1;
 }
 
+message SetLoggingEndpointRequest {
+    string logging_endpoint = 1;
+    string logging_protocol = 2;
+}
+
+message SetRemoteEndpointResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
+message GetLoggingEndpointResponse {
+    Status status = 1;
+    Reason reason = 2;
+    string logging_endpoint = 3;
+    string logging_protocol = 4;
+}
+
+message SetMsgBusEndpointRequest {
+    string msgbus_endpoint = 1;
+}
+
+message GetMsgBusEndpointResponse {
+    Status status = 1;
+    Reason reason = 2;
+    string msgbus_endpoint = 3;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -88,4 +115,16 @@ service NativeHWManagementService {
 
     // Sets the permissible attributes of a HW component
     rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResponse);
+
+    // Sets the location to which logs need to be shipped
+    rpc SetLoggingEndpoint(SetLoggingEndpointRequest) returns(SetRemoteEndpointResponse);
+
+    // Gets the configured location to which the logs are being shipped
+    rpc GetLoggingEndpoint(google.protobuf.Empty) returns(GetLoggingEndpointResponse);
+
+    // Sets the location of the Message Bus to which events and metrics are shipped
+    rpc SetMsgBusEndpoint(SetMsgBusEndpointRequest) returns(SetRemoteEndpointResponse);
+
+    // Gets the configured location to which the events and metrics are being shipped
+    rpc GetMsgBusEndpoint(google.protobuf.Empty) returns(GetMsgBusEndpointResponse);
 }

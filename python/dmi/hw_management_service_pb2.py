@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent2\x9a\x04\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent\"O\n\x19SetLoggingEndpointRequest\x12\x18\n\x10logging_endpoint\x18\x01 \x01(\t\x12\x18\n\x10logging_protocol\x18\x02 \x01(\t\"U\n\x19SetRemoteEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"\x8a\x01\n\x1aGetLoggingEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x18\n\x10logging_endpoint\x18\x03 \x01(\t\x12\x18\n\x10logging_protocol\x18\x04 \x01(\t\"3\n\x18SetMsgBusEndpointRequest\x12\x17\n\x0fmsgbus_endpoint\x18\x01 \x01(\t\"n\n\x19GetMsgBusEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x17\n\x0fmsgbus_endpoint\x18\x03 \x01(\t2\xe0\x06\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponse\x12T\n\x12SetLoggingEndpoint\x12\x1e.dmi.SetLoggingEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12M\n\x12GetLoggingEndpoint\x12\x16.google.protobuf.Empty\x1a\x1f.dmi.GetLoggingEndpointResponse\x12R\n\x11SetMsgBusEndpoint\x12\x1d.dmi.SetMsgBusEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12K\n\x11GetMsgBusEndpoint\x12\x16.google.protobuf.Empty\x1a\x1e.dmi.GetMsgBusEndpointResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -439,6 +439,215 @@ _MANAGEDDEVICESRESPONSE = _descriptor.Descriptor(
   serialized_end=1097,
 )
 
+
+_SETLOGGINGENDPOINTREQUEST = _descriptor.Descriptor(
+  name='SetLoggingEndpointRequest',
+  full_name='dmi.SetLoggingEndpointRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='logging_endpoint', full_name='dmi.SetLoggingEndpointRequest.logging_endpoint', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_protocol', full_name='dmi.SetLoggingEndpointRequest.logging_protocol', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1099,
+  serialized_end=1178,
+)
+
+
+_SETREMOTEENDPOINTRESPONSE = _descriptor.Descriptor(
+  name='SetRemoteEndpointResponse',
+  full_name='dmi.SetRemoteEndpointResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.SetRemoteEndpointResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.SetRemoteEndpointResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1180,
+  serialized_end=1265,
+)
+
+
+_GETLOGGINGENDPOINTRESPONSE = _descriptor.Descriptor(
+  name='GetLoggingEndpointResponse',
+  full_name='dmi.GetLoggingEndpointResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.GetLoggingEndpointResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.GetLoggingEndpointResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_endpoint', full_name='dmi.GetLoggingEndpointResponse.logging_endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_protocol', full_name='dmi.GetLoggingEndpointResponse.logging_protocol', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1268,
+  serialized_end=1406,
+)
+
+
+_SETMSGBUSENDPOINTREQUEST = _descriptor.Descriptor(
+  name='SetMsgBusEndpointRequest',
+  full_name='dmi.SetMsgBusEndpointRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='msgbus_endpoint', full_name='dmi.SetMsgBusEndpointRequest.msgbus_endpoint', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1408,
+  serialized_end=1459,
+)
+
+
+_GETMSGBUSENDPOINTRESPONSE = _descriptor.Descriptor(
+  name='GetMsgBusEndpointResponse',
+  full_name='dmi.GetMsgBusEndpointResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.GetMsgBusEndpointResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.GetMsgBusEndpointResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msgbus_endpoint', full_name='dmi.GetMsgBusEndpointResponse.msgbus_endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1461,
+  serialized_end=1571,
+)
+
 _PHYSICALINVENTORYREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _PHYSICALINVENTORYRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
 _PHYSICALINVENTORYRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
@@ -459,6 +668,12 @@ _STARTMANAGINGDEVICERESPONSE.fields_by_name['device_uuid'].message_type = dmi_do
 _STOPMANAGINGDEVICERESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
 _STOPMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
 _MANAGEDDEVICESRESPONSE.fields_by_name['devices'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
+_SETREMOTEENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_SETREMOTEENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETLOGGINGENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_GETLOGGINGENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETMSGBUSENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_GETMSGBUSENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
 DESCRIPTOR.message_types_by_name['PhysicalInventoryRequest'] = _PHYSICALINVENTORYREQUEST
 DESCRIPTOR.message_types_by_name['PhysicalInventoryResponse'] = _PHYSICALINVENTORYRESPONSE
 DESCRIPTOR.message_types_by_name['HWComponentInfoGetRequest'] = _HWCOMPONENTINFOGETREQUEST
@@ -469,6 +684,11 @@ DESCRIPTOR.message_types_by_name['StartManagingDeviceResponse'] = _STARTMANAGING
 DESCRIPTOR.message_types_by_name['StopManagingDeviceRequest'] = _STOPMANAGINGDEVICEREQUEST
 DESCRIPTOR.message_types_by_name['StopManagingDeviceResponse'] = _STOPMANAGINGDEVICERESPONSE
 DESCRIPTOR.message_types_by_name['ManagedDevicesResponse'] = _MANAGEDDEVICESRESPONSE
+DESCRIPTOR.message_types_by_name['SetLoggingEndpointRequest'] = _SETLOGGINGENDPOINTREQUEST
+DESCRIPTOR.message_types_by_name['SetRemoteEndpointResponse'] = _SETREMOTEENDPOINTRESPONSE
+DESCRIPTOR.message_types_by_name['GetLoggingEndpointResponse'] = _GETLOGGINGENDPOINTRESPONSE
+DESCRIPTOR.message_types_by_name['SetMsgBusEndpointRequest'] = _SETMSGBUSENDPOINTREQUEST
+DESCRIPTOR.message_types_by_name['GetMsgBusEndpointResponse'] = _GETMSGBUSENDPOINTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 PhysicalInventoryRequest = _reflection.GeneratedProtocolMessageType('PhysicalInventoryRequest', (_message.Message,), {
@@ -541,6 +761,41 @@ ManagedDevicesResponse = _reflection.GeneratedProtocolMessageType('ManagedDevice
   })
 _sym_db.RegisterMessage(ManagedDevicesResponse)
 
+SetLoggingEndpointRequest = _reflection.GeneratedProtocolMessageType('SetLoggingEndpointRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SETLOGGINGENDPOINTREQUEST,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.SetLoggingEndpointRequest)
+  })
+_sym_db.RegisterMessage(SetLoggingEndpointRequest)
+
+SetRemoteEndpointResponse = _reflection.GeneratedProtocolMessageType('SetRemoteEndpointResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SETREMOTEENDPOINTRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.SetRemoteEndpointResponse)
+  })
+_sym_db.RegisterMessage(SetRemoteEndpointResponse)
+
+GetLoggingEndpointResponse = _reflection.GeneratedProtocolMessageType('GetLoggingEndpointResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETLOGGINGENDPOINTRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.GetLoggingEndpointResponse)
+  })
+_sym_db.RegisterMessage(GetLoggingEndpointResponse)
+
+SetMsgBusEndpointRequest = _reflection.GeneratedProtocolMessageType('SetMsgBusEndpointRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SETMSGBUSENDPOINTREQUEST,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.SetMsgBusEndpointRequest)
+  })
+_sym_db.RegisterMessage(SetMsgBusEndpointRequest)
+
+GetMsgBusEndpointResponse = _reflection.GeneratedProtocolMessageType('GetMsgBusEndpointResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETMSGBUSENDPOINTRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.GetMsgBusEndpointResponse)
+  })
+_sym_db.RegisterMessage(GetMsgBusEndpointResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -551,8 +806,8 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1100,
-  serialized_end=1638,
+  serialized_start=1574,
+  serialized_end=2438,
   methods=[
   _descriptor.MethodDescriptor(
     name='StartManagingDevice',
@@ -611,6 +866,46 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_HWCOMPONENTINFOSETREQUEST,
     output_type=_HWCOMPONENTINFOSETRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetLoggingEndpoint',
+    full_name='dmi.NativeHWManagementService.SetLoggingEndpoint',
+    index=6,
+    containing_service=None,
+    input_type=_SETLOGGINGENDPOINTREQUEST,
+    output_type=_SETREMOTEENDPOINTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetLoggingEndpoint',
+    full_name='dmi.NativeHWManagementService.GetLoggingEndpoint',
+    index=7,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_GETLOGGINGENDPOINTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetMsgBusEndpoint',
+    full_name='dmi.NativeHWManagementService.SetMsgBusEndpoint',
+    index=8,
+    containing_service=None,
+    input_type=_SETMSGBUSENDPOINTREQUEST,
+    output_type=_SETREMOTEENDPOINTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetMsgBusEndpoint',
+    full_name='dmi.NativeHWManagementService.GetMsgBusEndpoint',
+    index=9,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_GETMSGBUSENDPOINTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

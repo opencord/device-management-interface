@@ -46,6 +46,26 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.FromString,
                 )
+        self.SetLoggingEndpoint = channel.unary_unary(
+                '/dmi.NativeHWManagementService/SetLoggingEndpoint',
+                request_serializer=dmi_dot_hw__management__service__pb2.SetLoggingEndpointRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.FromString,
+                )
+        self.GetLoggingEndpoint = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetLoggingEndpoint',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.FromString,
+                )
+        self.SetMsgBusEndpoint = channel.unary_unary(
+                '/dmi.NativeHWManagementService/SetMsgBusEndpoint',
+                request_serializer=dmi_dot_hw__management__service__pb2.SetMsgBusEndpointRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.FromString,
+                )
+        self.GetMsgBusEndpoint = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetMsgBusEndpoint',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -101,6 +121,34 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetLoggingEndpoint(self, request, context):
+        """Sets the location to which logs need to be shipped
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLoggingEndpoint(self, request, context):
+        """Gets the configured location to which the logs are being shipped
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetMsgBusEndpoint(self, request, context):
+        """Sets the location of the Message Bus to which events and metrics are shipped
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMsgBusEndpoint(self, request, context):
+        """Gets the configured location to which the events and metrics are being shipped
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -133,6 +181,26 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.SetHWComponentInfo,
                     request_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.SerializeToString,
+            ),
+            'SetLoggingEndpoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetLoggingEndpoint,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.SetLoggingEndpointRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.SerializeToString,
+            ),
+            'GetLoggingEndpoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLoggingEndpoint,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.SerializeToString,
+            ),
+            'SetMsgBusEndpoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetMsgBusEndpoint,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.SetMsgBusEndpointRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.SerializeToString,
+            ),
+            'GetMsgBusEndpoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMsgBusEndpoint,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -243,5 +311,73 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetHWComponentInfo',
             dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetLoggingEndpoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetLoggingEndpoint',
+            dmi_dot_hw__management__service__pb2.SetLoggingEndpointRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLoggingEndpoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetLoggingEndpoint',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetMsgBusEndpoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetMsgBusEndpoint',
+            dmi_dot_hw__management__service__pb2.SetMsgBusEndpointRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.SetRemoteEndpointResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMsgBusEndpoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetMsgBusEndpoint',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
