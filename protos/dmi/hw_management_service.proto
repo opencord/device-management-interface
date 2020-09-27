@@ -43,6 +43,11 @@ message HWComponentInfoSetResponse {
     Reason reason = 2;
 }
 
+message StartManagingDeviceRequest {
+    ModifiableComponent root = 1;
+    SetRemoteEndpointsRequest endpoints_cfg = 2;
+}
+
 message StartManagingDeviceResponse {
     Status status = 1;
     Reason reason = 2;
@@ -60,6 +65,27 @@ message StopManagingDeviceResponse {
 
 message ManagedDevicesResponse {
     repeated ModifiableComponent devices = 1;
+}
+
+message SetRemoteEndpointsRequest {
+    bool update_logging_endpoint = 1;
+    string logging_endpoint = 2;
+    string logging_protocol = 3;
+    bool update_kafka_endpoint = 4;
+    string kafka_endpoint = 5;
+}
+
+message SetRemoteEndpointsResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
+message GetRemoteEndpointsResponse {
+    Status status = 1;
+    Reason reason = 2;
+    string logging_endpoint = 3;
+    string logging_protocol = 4;
+    string kafka_endpoint = 5;
 }
 
 service NativeHWManagementService {
@@ -88,4 +114,10 @@ service NativeHWManagementService {
 
     // Sets the permissible attributes of a HW component
     rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResponse);
+
+    // Sets the configuration for the remote endpoints
+    rpc SetRemoteEndpoints(SetRemoteEndpointsRequest) returns(SetRemoteEndpointsResponse);
+
+    // Gets the currently configured remote endpoints
+    rpc GetRemoteEndpoints(google.protobuf.Empty) returns(GetRemoteEndpointsResponse);
 }

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent2\x9a\x04\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"{\n\x1aStartManagingDeviceRequest\x12&\n\x04root\x18\x01 \x01(\x0b\x32\x18.dmi.ModifiableComponent\x12\x35\n\rendpoints_cfg\x18\x02 \x01(\x0b\x32\x1e.dmi.SetRemoteEndpointsRequest\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent\"\xa7\x01\n\x19SetRemoteEndpointsRequest\x12\x1f\n\x17update_logging_endpoint\x18\x01 \x01(\x08\x12\x18\n\x10logging_endpoint\x18\x02 \x01(\t\x12\x18\n\x10logging_protocol\x18\x03 \x01(\t\x12\x1d\n\x15update_kafka_endpoint\x18\x04 \x01(\x08\x12\x16\n\x0ekafka_endpoint\x18\x05 \x01(\t\"V\n\x1aSetRemoteEndpointsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"\xa2\x01\n\x1aGetRemoteEndpointsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x18\n\x10logging_endpoint\x18\x03 \x01(\t\x12\x18\n\x10logging_protocol\x18\x04 \x01(\t\x12\x16\n\x0ekafka_endpoint\x18\x05 \x01(\t2\xc0\x05\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponse\x12U\n\x12SetRemoteEndpoints\x12\x1e.dmi.SetRemoteEndpointsRequest\x1a\x1f.dmi.SetRemoteEndpointsResponse\x12M\n\x12GetRemoteEndpoints\x12\x16.google.protobuf.Empty\x1a\x1f.dmi.GetRemoteEndpointsResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -291,6 +291,45 @@ _HWCOMPONENTINFOSETRESPONSE = _descriptor.Descriptor(
 )
 
 
+_STARTMANAGINGDEVICEREQUEST = _descriptor.Descriptor(
+  name='StartManagingDeviceRequest',
+  full_name='dmi.StartManagingDeviceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='root', full_name='dmi.StartManagingDeviceRequest.root', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='endpoints_cfg', full_name='dmi.StartManagingDeviceRequest.endpoints_cfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=778,
+  serialized_end=901,
+)
+
+
 _STARTMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   name='StartManagingDeviceResponse',
   full_name='dmi.StartManagingDeviceResponse',
@@ -332,8 +371,8 @@ _STARTMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=778,
-  serialized_end=897,
+  serialized_start=903,
+  serialized_end=1022,
 )
 
 
@@ -364,8 +403,8 @@ _STOPMANAGINGDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=940,
+  serialized_start=1024,
+  serialized_end=1065,
 )
 
 
@@ -403,8 +442,8 @@ _STOPMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=942,
-  serialized_end=1028,
+  serialized_start=1067,
+  serialized_end=1153,
 )
 
 
@@ -435,8 +474,167 @@ _MANAGEDDEVICESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1097,
+  serialized_start=1155,
+  serialized_end=1222,
+)
+
+
+_SETREMOTEENDPOINTSREQUEST = _descriptor.Descriptor(
+  name='SetRemoteEndpointsRequest',
+  full_name='dmi.SetRemoteEndpointsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='update_logging_endpoint', full_name='dmi.SetRemoteEndpointsRequest.update_logging_endpoint', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_endpoint', full_name='dmi.SetRemoteEndpointsRequest.logging_endpoint', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_protocol', full_name='dmi.SetRemoteEndpointsRequest.logging_protocol', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update_kafka_endpoint', full_name='dmi.SetRemoteEndpointsRequest.update_kafka_endpoint', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kafka_endpoint', full_name='dmi.SetRemoteEndpointsRequest.kafka_endpoint', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1225,
+  serialized_end=1392,
+)
+
+
+_SETREMOTEENDPOINTSRESPONSE = _descriptor.Descriptor(
+  name='SetRemoteEndpointsResponse',
+  full_name='dmi.SetRemoteEndpointsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.SetRemoteEndpointsResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.SetRemoteEndpointsResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1394,
+  serialized_end=1480,
+)
+
+
+_GETREMOTEENDPOINTSRESPONSE = _descriptor.Descriptor(
+  name='GetRemoteEndpointsResponse',
+  full_name='dmi.GetRemoteEndpointsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='dmi.GetRemoteEndpointsResponse.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='dmi.GetRemoteEndpointsResponse.reason', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_endpoint', full_name='dmi.GetRemoteEndpointsResponse.logging_endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logging_protocol', full_name='dmi.GetRemoteEndpointsResponse.logging_protocol', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kafka_endpoint', full_name='dmi.GetRemoteEndpointsResponse.kafka_endpoint', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1483,
+  serialized_end=1645,
 )
 
 _PHYSICALINVENTORYREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
@@ -453,22 +651,32 @@ _HWCOMPONENTINFOSETREQUEST.fields_by_name['component_uuid'].message_type = dmi_d
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['changes'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
 _HWCOMPONENTINFOSETRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
 _HWCOMPONENTINFOSETRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_STARTMANAGINGDEVICEREQUEST.fields_by_name['root'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
+_STARTMANAGINGDEVICEREQUEST.fields_by_name['endpoints_cfg'].message_type = _SETREMOTEENDPOINTSREQUEST
 _STARTMANAGINGDEVICERESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
 _STARTMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
 _STARTMANAGINGDEVICERESPONSE.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _STOPMANAGINGDEVICERESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
 _STOPMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
 _MANAGEDDEVICESRESPONSE.fields_by_name['devices'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
+_SETREMOTEENDPOINTSRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_SETREMOTEENDPOINTSRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETREMOTEENDPOINTSRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
+_GETREMOTEENDPOINTSRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
 DESCRIPTOR.message_types_by_name['PhysicalInventoryRequest'] = _PHYSICALINVENTORYREQUEST
 DESCRIPTOR.message_types_by_name['PhysicalInventoryResponse'] = _PHYSICALINVENTORYRESPONSE
 DESCRIPTOR.message_types_by_name['HWComponentInfoGetRequest'] = _HWCOMPONENTINFOGETREQUEST
 DESCRIPTOR.message_types_by_name['HWComponentInfoGetResponse'] = _HWCOMPONENTINFOGETRESPONSE
 DESCRIPTOR.message_types_by_name['HWComponentInfoSetRequest'] = _HWCOMPONENTINFOSETREQUEST
 DESCRIPTOR.message_types_by_name['HWComponentInfoSetResponse'] = _HWCOMPONENTINFOSETRESPONSE
+DESCRIPTOR.message_types_by_name['StartManagingDeviceRequest'] = _STARTMANAGINGDEVICEREQUEST
 DESCRIPTOR.message_types_by_name['StartManagingDeviceResponse'] = _STARTMANAGINGDEVICERESPONSE
 DESCRIPTOR.message_types_by_name['StopManagingDeviceRequest'] = _STOPMANAGINGDEVICEREQUEST
 DESCRIPTOR.message_types_by_name['StopManagingDeviceResponse'] = _STOPMANAGINGDEVICERESPONSE
 DESCRIPTOR.message_types_by_name['ManagedDevicesResponse'] = _MANAGEDDEVICESRESPONSE
+DESCRIPTOR.message_types_by_name['SetRemoteEndpointsRequest'] = _SETREMOTEENDPOINTSREQUEST
+DESCRIPTOR.message_types_by_name['SetRemoteEndpointsResponse'] = _SETREMOTEENDPOINTSRESPONSE
+DESCRIPTOR.message_types_by_name['GetRemoteEndpointsResponse'] = _GETREMOTEENDPOINTSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 PhysicalInventoryRequest = _reflection.GeneratedProtocolMessageType('PhysicalInventoryRequest', (_message.Message,), {
@@ -513,6 +721,13 @@ HWComponentInfoSetResponse = _reflection.GeneratedProtocolMessageType('HWCompone
   })
 _sym_db.RegisterMessage(HWComponentInfoSetResponse)
 
+StartManagingDeviceRequest = _reflection.GeneratedProtocolMessageType('StartManagingDeviceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _STARTMANAGINGDEVICEREQUEST,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.StartManagingDeviceRequest)
+  })
+_sym_db.RegisterMessage(StartManagingDeviceRequest)
+
 StartManagingDeviceResponse = _reflection.GeneratedProtocolMessageType('StartManagingDeviceResponse', (_message.Message,), {
   'DESCRIPTOR' : _STARTMANAGINGDEVICERESPONSE,
   '__module__' : 'dmi.hw_management_service_pb2'
@@ -541,6 +756,27 @@ ManagedDevicesResponse = _reflection.GeneratedProtocolMessageType('ManagedDevice
   })
 _sym_db.RegisterMessage(ManagedDevicesResponse)
 
+SetRemoteEndpointsRequest = _reflection.GeneratedProtocolMessageType('SetRemoteEndpointsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SETREMOTEENDPOINTSREQUEST,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.SetRemoteEndpointsRequest)
+  })
+_sym_db.RegisterMessage(SetRemoteEndpointsRequest)
+
+SetRemoteEndpointsResponse = _reflection.GeneratedProtocolMessageType('SetRemoteEndpointsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SETREMOTEENDPOINTSRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.SetRemoteEndpointsResponse)
+  })
+_sym_db.RegisterMessage(SetRemoteEndpointsResponse)
+
+GetRemoteEndpointsResponse = _reflection.GeneratedProtocolMessageType('GetRemoteEndpointsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETREMOTEENDPOINTSRESPONSE,
+  '__module__' : 'dmi.hw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.GetRemoteEndpointsResponse)
+  })
+_sym_db.RegisterMessage(GetRemoteEndpointsResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -551,8 +787,8 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1100,
-  serialized_end=1638,
+  serialized_start=1648,
+  serialized_end=2352,
   methods=[
   _descriptor.MethodDescriptor(
     name='StartManagingDevice',
@@ -611,6 +847,26 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_HWCOMPONENTINFOSETREQUEST,
     output_type=_HWCOMPONENTINFOSETRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetRemoteEndpoints',
+    full_name='dmi.NativeHWManagementService.SetRemoteEndpoints',
+    index=6,
+    containing_service=None,
+    input_type=_SETREMOTEENDPOINTSREQUEST,
+    output_type=_SETREMOTEENDPOINTSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetRemoteEndpoints',
+    full_name='dmi.NativeHWManagementService.GetRemoteEndpoints',
+    index=7,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_GETREMOTEENDPOINTSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
