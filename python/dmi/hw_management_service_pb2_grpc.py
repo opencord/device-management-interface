@@ -46,6 +46,16 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.FromString,
                 )
+        self.SetRemoteEndpoints = channel.unary_unary(
+                '/dmi.NativeHWManagementService/SetRemoteEndpoints',
+                request_serializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointsRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointsResponse.FromString,
+                )
+        self.GetRemoteEndpoints = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetRemoteEndpoints',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetRemoteEndpointsResponse.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -101,6 +111,20 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetRemoteEndpoints(self, request, context):
+        """Sets the configuration for the remote endpoints
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRemoteEndpoints(self, request, context):
+        """Gets the currently configured remote endpoints
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -133,6 +157,16 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.SetHWComponentInfo,
                     request_deserializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.SerializeToString,
+            ),
+            'SetRemoteEndpoints': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetRemoteEndpoints,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointsRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.SetRemoteEndpointsResponse.SerializeToString,
+            ),
+            'GetRemoteEndpoints': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRemoteEndpoints,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetRemoteEndpointsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -243,5 +277,39 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetHWComponentInfo',
             dmi_dot_hw__management__service__pb2.HWComponentInfoSetRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.HWComponentInfoSetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetRemoteEndpoints(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetRemoteEndpoints',
+            dmi_dot_hw__management__service__pb2.SetRemoteEndpointsRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.SetRemoteEndpointsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRemoteEndpoints(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetRemoteEndpoints',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetRemoteEndpointsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
