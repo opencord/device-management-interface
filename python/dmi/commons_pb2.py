@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*1\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\x06\n\x02OK\x10\x01\x12\t\n\x05\x45RROR\x10\x02*i\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*1\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\x06\n\x02OK\x10\x01\x12\t\n\x05\x45RROR\x10\x02*\xc4\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x05\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x06\x12\x18\n\x14KAFKA_ENDPOINT_ERROR\x10\x07\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
 )
 
 _STATUS = _descriptor.EnumDescriptor(
@@ -86,11 +86,26 @@ _REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOGGING_ENDPOINT_ERROR', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOGGING_ENDPOINT_PROTOCOL_ERROR', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='KAFKA_ENDPOINT_ERROR', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=77,
-  serialized_end=182,
+  serialized_start=78,
+  serialized_end=274,
 )
 _sym_db.RegisterEnumDescriptor(_REASON)
 
@@ -103,6 +118,9 @@ UNKNOWN_DEVICE = 1
 INTERNAL_ERROR = 2
 WRONG_METRIC = 3
 WRONG_EVENT = 4
+LOGGING_ENDPOINT_ERROR = 5
+LOGGING_ENDPOINT_PROTOCOL_ERROR = 6
+KAFKA_ENDPOINT_ERROR = 7
 
 
 DESCRIPTOR.enum_types_by_name['Status'] = _STATUS
