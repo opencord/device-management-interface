@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04a4db47_94039284",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-01T09:21:53Z",
+      "side": 1,
+      "message": "UUID is missing to identify the device.",
+      "revId": "f04b68ffaa05dbafd84e1e44a6aef380a15caf6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a6a1cab_23988751",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-01T09:21:53Z",
+      "side": 1,
+      "message": "UUID is missing.",
+      "revId": "f04b68ffaa05dbafd84e1e44a6aef380a15caf6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
