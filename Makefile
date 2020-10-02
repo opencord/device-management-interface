@@ -36,8 +36,8 @@ PROTO_FILES := $(sort $(wildcard protos/dmi/*.proto))
 PROTO_GO_DEST_DIR := go
 PROTO_GO_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_GO_DEST_DIR)/$(call if_package_path,$(f))/%.pb.go,$(f)))
 
-PROTO_PYTHON_DEST_DIR := python
-PROTO_PYTHON_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_PYTHON_DEST_DIR)/$(call if_package_path,$(f))/%.pb2.py,$(f)))
+PROTO_PYTHON_DEST_DIR := python/dmi
+PROTO_PYTHON_PB2 := $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_PYTHON_DEST_DIR)/%_pb2.py,$(f)))
 
 # Force pb file to be regenrated every time.  Otherwise the make process assumes generated version is still valid
 .PHONY: dmi.pb
@@ -60,21 +60,19 @@ venv_protos:
 	source ./$@/bin/activate ; set -u ;\
 	pip install grpcio-tools googleapis-common-protos
 
-# python targets
-python-protos: venv_protos
-	@echo "Creating *.pb2.pv and *.pb2_grpc.py files"
+# Python targets
+python-protos: $(PROTO_PYTHON_PB2)
+
+$(PROTO_PYTHON_DEST_DIR)/%_pb2.py: protos/dmi/%.proto Makefile venv_protos
 	source ./venv_protos/bin/activate ; set -u ;\
-	for x in $(PROTO_FILES) ; do \
-	  echo $$x; \
-	  python -m grpc_tools.protoc \
-	  -I protos \
-	  --python_out=python \
-	  --grpc_python_out=python \
-	  --descriptor_set_out=$(PROTO_PYTHON_DEST_DIR)/$(basename $(notdir $<)).desc \
-	  --include_imports \
-	  --include_source_info \
-	  $$x;\
-	done
+	python -m grpc_tools.protoc \
+    -I protos \
+    --python_out=python \
+    --grpc_python_out=python \
+    --descriptor_set_out=$(PROTO_PYTHON_DEST_DIR)/$(basename $(notdir $<)).desc \
+    --include_imports \
+    --include_source_info \
+    $<
 
 # Go targets
 go-protos: dmi.pb
@@ -99,4 +97,8 @@ go-test:
 
 python-test: tox.ini
 	test/test-python-proto-consistency.sh
-	tox 
+	tox
+
+python-build: setup.py python-protos
+	rm -rf dist/
+	python ./setup.py sdist
