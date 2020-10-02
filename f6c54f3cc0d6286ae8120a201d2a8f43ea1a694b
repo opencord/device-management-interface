@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7dab3383_140865e8",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-10-02T14:00:57Z",
+      "side": 1,
+      "message": "The code browser was updated, so this link would be better: https://gerrit.opencord.org/plugins/gitiles/device-management-interface",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 79
+      },
+      "revId": "f6c54f3cc0d6286ae8120a201d2a8f43ea1a694b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
