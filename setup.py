@@ -26,7 +26,7 @@ setup(
     description='Protobuf interface definitions',
     author='VOLTHA project',
     author_email='voltha-dev@opencord.org',
-    url='https://otti@gerrit.opencord.org/a/device-management-interface',
+    url='https://gerrit.opencord.org/gitweb?p=device-management-interface.git',
     license='Apache Software License',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -34,7 +34,7 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3.6',
     ],
-    keywords='protobuf voltha',
+    keywords='protobuf device-management-interface voltha',
     packages = find_packages(where="python"),
     package_dir = {"": "python"},
     install_requires = [
