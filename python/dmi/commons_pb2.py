@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*1\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\x06\n\x02OK\x10\x01\x12\t\n\x05\x45RROR\x10\x02*\xc4\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x05\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x06\x12\x18\n\x14KAFKA_ENDPOINT_ERROR\x10\x07\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*8\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\x06\n\x02OK\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xc4\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x05\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x06\x12\x18\n\x14KAFKA_ENDPOINT_ERROR\x10\x07*?\n\x08LogLevel\x12\t\n\x05TRACE\x10\x00\x12\t\n\x05\x44\x45\x42UG\x10\x01\x12\x08\n\x04INFO\x10\x02\x12\x08\n\x04WARN\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
 )
 
 _STATUS = _descriptor.EnumDescriptor(
@@ -41,7 +41,7 @@ _STATUS = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ERROR', index=2, number=2,
+      name='STATUS_ERROR', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -49,7 +49,7 @@ _STATUS = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=26,
-  serialized_end=75,
+  serialized_end=82,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS)
 
@@ -104,15 +104,56 @@ _REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=78,
-  serialized_end=274,
+  serialized_start=85,
+  serialized_end=281,
 )
 _sym_db.RegisterEnumDescriptor(_REASON)
 
 Reason = enum_type_wrapper.EnumTypeWrapper(_REASON)
+_LOGLEVEL = _descriptor.EnumDescriptor(
+  name='LogLevel',
+  full_name='dmi.LogLevel',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TRACE', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DEBUG', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INFO', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='WARN', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=283,
+  serialized_end=346,
+)
+_sym_db.RegisterEnumDescriptor(_LOGLEVEL)
+
+LogLevel = enum_type_wrapper.EnumTypeWrapper(_LOGLEVEL)
 UNDEFINED_STATUS = 0
 OK = 1
-ERROR = 2
+STATUS_ERROR = 2
 UNDEFINED_REASON = 0
 UNKNOWN_DEVICE = 1
 INTERNAL_ERROR = 2
@@ -121,10 +162,16 @@ WRONG_EVENT = 4
 LOGGING_ENDPOINT_ERROR = 5
 LOGGING_ENDPOINT_PROTOCOL_ERROR = 6
 KAFKA_ENDPOINT_ERROR = 7
+TRACE = 0
+DEBUG = 1
+INFO = 2
+WARN = 3
+ERROR = 4
 
 
 DESCRIPTOR.enum_types_by_name['Status'] = _STATUS
 DESCRIPTOR.enum_types_by_name['Reason'] = _REASON
+DESCRIPTOR.enum_types_by_name['LogLevel'] = _LOGLEVEL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
