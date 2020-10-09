@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "930ba949_0ff8849b",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "If we change the below to STATUS_ERROR then should we change the OK as well to STATUS_OK? Just more uniform",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a8f6cd2_8d05d1ab",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "Should we keep it simple and have the option of setting the log levels of a single device in one RPC call? Basically suggesting that get the uuid out of the SetDeviceLogLevel message to this one.",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f22a2932_46badaf2",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "Would it be fair to define a behavior saying that if NO package names are specified, then all the levels of all the packages supported by the device are returned?",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a36c3fe_c844ee81",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "Won\u0027t we need the status and reason fields here to signal errors... for eg if requesting loglevel for an unknown package",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee22bb0a_ce2a3169",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "Just for consistency can we name the attribute as \"package\" here instead of component?",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98fdcbcd_e0ec8dfe",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-09T15:57:04Z",
+      "side": 1,
+      "message": "Isn\u0027t this RPC the same as/subset of the GetLogLevelResponse. This one returns only the package  name, where as that one returns both the name and current log level. Should we retrain only the GetLoglevelRequest/Response and remove this Request/Response?",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
