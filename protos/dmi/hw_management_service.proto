@@ -90,6 +90,44 @@ message GetMsgBusEndpointResponse {
     string msgbus_endpoint = 3;
 }
 
+message EntitiesLogLevel {
+    LogLevel logLevel = 1;
+    repeated string entities = 2;
+}
+
+message SetLogLevelRequest {
+    Uuid device_uuid = 1;
+    repeated EntitiesLogLevel loglevels = 2;
+}
+
+message SetLogLevelResponse {
+    repeated DeviceLogResponse responses = 1;
+}
+
+message DeviceLogResponse{
+    Uuid device_uuid = 1;
+    Status status = 2;
+    Reason reason = 3;
+}
+
+message GetLogLevelRequest {
+    Uuid device_uuid = 1;
+    repeated string entities = 2;
+}
+
+message GetLogLevelResponse {
+    Uuid device_uuid = 1;
+    repeated EntitiesLogLevel logLevels = 3;
+    Status status = 4;
+    Reason reason = 5;
+}
+
+message GetLoggableEntitiesRequest {
+    Uuid device_uuid = 1;
+}
+
+
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -128,4 +166,18 @@ service NativeHWManagementService {
 
     // Gets the configured location to which the events and metrics are being shipped
     rpc GetMsgBusEndpoint(google.protobuf.Empty) returns(GetMsgBusEndpointResponse);
+
+    // Gets the entities of a device on which log can be configured. A few are expected, like OS, PON Management etc.
+    // In general an entity is any item within an hardware system that can emit logs, e.g. service, process, subsystem,
+    // interface, package etc.
+    rpc GetLoggableEntities(GetLoggableEntitiesRequest) returns(GetLogLevelResponse);
+
+    // Sets the log level for one or more devices for each given entity to a certain level.
+    // If only one EntitiesLogLevel is provided for the device and that request contains only a log level with
+    // no entity in the list it's assumed that the caller wants to set that level for all the entities.
+    rpc SetLogLevel(SetLogLevelRequest) returns(SetLogLevelResponse);
+
+    // Gets the configured log level for a certain entity on a certain device.
+    // If no entity is specified in the request all the entities with their log level should be returned.
+    rpc GetLogLevel(GetLogLevelRequest) returns(GetLogLevelResponse);
 }

@@ -66,6 +66,21 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.FromString,
                 )
+        self.GetLoggableEntities = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetLoggableEntities',
+                request_serializer=dmi_dot_hw__management__service__pb2.GetLoggableEntitiesRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
+                )
+        self.SetLogLevel = channel.unary_unary(
+                '/dmi.NativeHWManagementService/SetLogLevel',
+                request_serializer=dmi_dot_hw__management__service__pb2.SetLogLevelRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.SetLogLevelResponse.FromString,
+                )
+        self.GetLogLevel = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetLogLevel',
+                request_serializer=dmi_dot_hw__management__service__pb2.GetLogLevelRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -149,6 +164,32 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetLoggableEntities(self, request, context):
+        """Gets the entities of a device on which log can be configured. A few are expected, like OS, PON Management etc.
+        In general an entity is any item within an hardware system that can emit logs, e.g. service, process, subsystem,
+        interface, package etc.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetLogLevel(self, request, context):
+        """Sets the log level for one or more devices for each given entity to a certain level.
+        If only one EntitiesLogLevel is provided for the device and that request contains only a log level with
+        no entity in the list it's assumed that the caller wants to set that level for all the entities.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLogLevel(self, request, context):
+        """Gets the configured log level for a certain entity on a certain device.
+        If no entity is specified in the request all the entities with their log level should be returned.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -201,6 +242,21 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.GetMsgBusEndpoint,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.SerializeToString,
+            ),
+            'GetLoggableEntities': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLoggableEntities,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.GetLoggableEntitiesRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.SerializeToString,
+            ),
+            'SetLogLevel': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetLogLevel,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.SetLogLevelRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.SetLogLevelResponse.SerializeToString,
+            ),
+            'GetLogLevel': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLogLevel,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.GetLogLevelRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -379,5 +435,56 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetMsgBusEndpoint',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             dmi_dot_hw__management__service__pb2.GetMsgBusEndpointResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLoggableEntities(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetLoggableEntities',
+            dmi_dot_hw__management__service__pb2.GetLoggableEntitiesRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetLogLevel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetLogLevel',
+            dmi_dot_hw__management__service__pb2.SetLogLevelRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.SetLogLevelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLogLevel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetLogLevel',
+            dmi_dot_hw__management__service__pb2.GetLogLevelRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
