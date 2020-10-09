@@ -7,8 +7,8 @@ package dmi;
 
 enum Status {
     UNDEFINED_STATUS = 0;
-    OK = 1;
-    ERROR = 2;
+    OK_STATUS = 1;
+    ERROR_STATUS = 2;
 }
 
 // Reason for the failure of request
@@ -21,4 +21,13 @@ enum Reason {
     LOGGING_ENDPOINT_ERROR = 5;
     LOGGING_ENDPOINT_PROTOCOL_ERROR = 6;
     KAFKA_ENDPOINT_ERROR = 7;
+}
+
+//Log Level
+enum LogLevel {
+    TRACE = 0;
+    DEBUG = 1;
+    INFO  = 2;
+    WARN  = 3;
+    ERROR = 4;
 }

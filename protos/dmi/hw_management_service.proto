@@ -90,6 +90,48 @@ message GetMsgBusEndpointResponse {
     string msgbus_endpoint = 3;
 }
 
+message PackagesLogLevel {
+    LogLevel logLevel = 1;
+    repeated string packages = 2;
+}
+
+message SetDeviceLogLevel {
+    Uuid device_uuid = 1;
+    repeated PackagesLogLevel loglevels = 2;
+}
+
+message SetLogLevelRequest {
+    repeated SetDeviceLogLevel requests = 1;
+}
+
+message SetLogLevelResponse {
+    repeated DeviceLogResponse responses = 1;
+}
+
+message DeviceLogResponse{
+    Uuid device_uuid = 1;
+    Status status = 2;
+    Reason reason = 3;
+}
+
+message GetLogLevelRequest {
+    Uuid device_uuid = 1;
+    repeated string packages = 2;
+}
+
+message GetLogLevelResponse {
+    Uuid device_uuid = 1;
+    repeated PackagesLogLevel logLevels = 3;
+    Status status = 4;
+    Reason reason = 5;
+}
+
+message GetLoggablePackagesRequest {
+    Uuid device_uuid = 1;
+}
+
+
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -128,4 +170,16 @@ service NativeHWManagementService {
 
     // Gets the configured location to which the events and metrics are being shipped
     rpc GetMsgBusEndpoint(google.protobuf.Empty) returns(GetMsgBusEndpointResponse);
+
+    // Gets the packages of a device on which log can be configured. A few are expected, like OS, PON Management etc.
+    rpc GetLoggablePackage(GetLoggablePackagesRequest) returns(GetLogLevelResponse);
+
+    // Sets the log level for one or more devices for each given package certain level.
+    // If only one PackageLogLevel is provided for a device and that request contains only a log level with
+    // no package in the list it's assumed that the caller wants to set that level for all the packages.
+    rpc SetLogLevel(SetLogLevelRequest) returns(SetLogLevelResponse);
+
+    // Gets the configured log level for a certain package on a certain device.
+    // If no package is specified in the request all the packages with their log level should be returned.
+    rpc GetLogLevel(GetLogLevelRequest) returns(GetLogLevelResponse);
 }
