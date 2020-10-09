@@ -90,6 +90,52 @@ message GetMsgBusEndpointResponse {
     string msgbus_endpoint = 3;
 }
 
+message PackagesLogLevel {
+    repeated string package = 1;
+    LogLevel logLevel = 2;
+}
+
+message SetDeviceLogLevel {
+    Uuid device_uuid = 1;
+    repeated PackagesLogLevel loglevel = 2;
+}
+
+message SetLogLevelRequest {
+    repeated SetDeviceLogLevel requests = 1;
+}
+
+message SetLogLevelResponse {
+    repeated DeviceLogResponse responses = 1;
+}
+
+message DeviceLogResponse{
+    Uuid device_uuid = 1;
+    Status status = 2;
+    Reason reason = 3;
+}
+
+message GetLogLevelRequest {
+    Uuid device_uuid = 1;
+    repeated string package = 2;
+}
+
+message GetLogLevelResponse {
+    Uuid device_uuid = 1;
+    LogLevel logLevel = 2;
+    string component = 3;
+}
+
+message GetLoggablePackagesRequest {
+    Uuid device_uuid = 1;
+}
+
+message GetLoggablePackagesResponse {
+    Uuid device_uuid = 1;
+    repeated string packages = 2;
+}
+
+
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -128,4 +174,14 @@ service NativeHWManagementService {
 
     // Gets the configured location to which the events and metrics are being shipped
     rpc GetMsgBusEndpoint(google.protobuf.Empty) returns(GetMsgBusEndpointResponse);
+
+    // Gets the packages of a device on which log can be configured. A few are expected, like OS, PON Management etc.
+    rpc GetLoggablePackage(GetLoggablePackagesRequest) returns(GetLoggablePackagesResponse);
+
+    // Sets the log level for a package on one or more devices to a certain level.
+    // If no package is provided it's assumed that the caller wants to set that level for all the packages.
+    rpc SetLogLevel(SetLogLevelRequest) returns(SetLogLevelResponse);
+
+    // Gets the configured log level for a certain package on a certain device.
+    rpc GetLogLevel(GetLogLevelRequest) returns(GetLogLevelResponse);
 }
