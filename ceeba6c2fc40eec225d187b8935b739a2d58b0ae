@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6794ff_6390bee0",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-09T14:06:16Z",
+      "side": 1,
+      "message": "This seems a bit confusing to me. It means that I could attempt to set a log level on a package that does not exist on a device. I think we want the larger messages that is repeated and allows for separate package specifications for each device?\n\nmessage SetPackageLogLevel {\n    string package \u003d 1;      // we could repeat this if we wanted to allow the same log level on multiple packages to be set.\n    LogLevel logLevel \u003d 2;\n}\n\nmessage SetDeviceLogLevel {\n    Uuid device_uuid \u003d 1;\n    repeated SetPackageLogLevel \u003d 2;\n}\n\nmessage SetLogLevelRequest {\n    repeated SetDeviceLogLevel \u003d 1;\n}",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 0
+      },
+      "revId": "ceeba6c2fc40eec225d187b8935b739a2d58b0ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
