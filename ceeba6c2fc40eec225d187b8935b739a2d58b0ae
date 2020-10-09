@@ -22,6 +22,30 @@
       "revId": "ceeba6c2fc40eec225d187b8935b739a2d58b0ae",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ab0b6d1_e70eeabc",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-09T14:14:33Z",
+      "side": 1,
+      "message": "makes sense to me as a suggestion, implemented. Thanks!",
+      "parentUuid": "7a6794ff_6390bee0",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 0
+      },
+      "revId": "ceeba6c2fc40eec225d187b8935b739a2d58b0ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
