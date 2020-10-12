@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "3880097a_296aa029",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T12:33:17Z",
+      "side": 1,
+      "message": "precisely, proto compiler complains, they have to be in two different packages altogether. An option is importing gate google protobuf Status. Thoughts ? https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto",
+      "parentUuid": "57627a13_1b601674",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e1306c80_5ca5958f",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
