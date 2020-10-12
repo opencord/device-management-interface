@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "57627a13_1b601674",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-12T12:27:41Z",
+      "side": 1,
+      "message": "Really? You cannot have two enums with different names but the same elements? Like this?\n\nenum Status {\n  UNDEFINED \u003d 0;\n  OK \u003d 1;\n  ERROR \u003d 2;\n}\n\nenum LogLevel {\n  ERROR \u003d 0;\n}",
+      "parentUuid": "4f36c2f0_9b3f6de9",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e1306c80_5ca5958f",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
