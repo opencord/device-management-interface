@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "38228ceb_8b607495",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-12T07:57:16Z",
+      "side": 1,
+      "message": "I would remove the STATUS instead. Look into the Go implementation, there you have Status_STATUS_ERROR which looks odd.",
+      "parentUuid": "43f07b6c_61e9825b",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1306c80_5ca5958f",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-12T07:57:16Z",
+      "side": 1,
+      "message": "Hmm, I do not really like the name \"package\". What about component or service?",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a8f6cd2_8d05d1ab",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -174,6 +209,23 @@
       "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb7b6234_3980f3fa",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-12T07:57:16Z",
+      "side": 1,
+      "message": "As I commented before, I more like the name component ...",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     },
     {
       "key": {
