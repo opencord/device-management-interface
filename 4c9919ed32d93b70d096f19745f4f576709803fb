@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "43f07b6c_61e9825b",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "moved them all to *_STATUS to be consistent with the Undefined.",
+      "parentUuid": "930ba949_0ff8849b",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a8f6cd2_8d05d1ab",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2020-10-09T15:57:04Z",
       "side": 1,
       "message": "Should we keep it simple and have the option of setting the log levels of a single device in one RPC call? Basically suggesting that get the uuid out of the SetDeviceLogLevel message to this one.",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d22bce98_f5f48842",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "not having it in this message allows you to set multiple levels on multiple devices at the same time. I\u0027d keep it as is but add a comment below. if a SetDeviceLogLevel does have only 1 PackagesLogLevel with and empty package list that level is intended for all the device\u0027s packages.",
+      "parentUuid": "2a8f6cd2_8d05d1ab",
       "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "c2a3f878_0af2382f",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "yes, documenting",
+      "parentUuid": "f22a2932_46badaf2",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0a36c3fe_c844ee81",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -67,6 +121,24 @@
       "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "493256cf_8e8ee0c9",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a36c3fe_c844ee81",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "6db9579d_04da9497",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee22bb0a_ce2a3169",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98fdcbcd_e0ec8dfe",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -101,6 +191,24 @@
       "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbebf598_0e1d41d7",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T07:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98fdcbcd_e0ec8dfe",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
