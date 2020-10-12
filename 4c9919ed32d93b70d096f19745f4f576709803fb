@@ -109,6 +109,24 @@
     },
     {
       "key": {
+        "uuid": "5bfacb91_fcb05309",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-10-12T14:57:05Z",
+      "side": 1,
+      "message": "That is sad :(",
+      "parentUuid": "3880097a_296aa029",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e1306c80_5ca5958f",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
