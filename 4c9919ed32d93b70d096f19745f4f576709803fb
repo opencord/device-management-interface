@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "4f36c2f0_9b3f6de9",
+        "filename": "protos/dmi/commons.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T08:20:16Z",
+      "side": 1,
+      "message": "I can\u0027t remove the status because it conflict otherwise with the LogLevel ERROR enum.",
+      "parentUuid": "38228ceb_8b607495",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e1306c80_5ca5958f",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "writtenOn": "2020-10-12T07:57:16Z",
       "side": 1,
       "message": "Hmm, I do not really like the name \"package\". What about component or service?",
+      "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0b518a7_14fbbf89",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-12T08:20:16Z",
+      "side": 1,
+      "message": "service is ok for me, let\u0027s hear other\u0027s opinion but I can change that easily",
+      "parentUuid": "e1306c80_5ca5958f",
       "revId": "4c9919ed32d93b70d096f19745f4f576709803fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
