@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19b85414_e5b959c2",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-13T14:14:43Z",
+      "side": 1,
+      "message": "i agree that package was a bad name choice, just not sure \"entities\" is better. we are likely talking about a grouping of capabilities or a sub-section of the implementation. we might want to look around and see if other projects have used a consistent term. of the ones talked about i like component the best, but in the end it isn\u0027t that critical as this can be surfaced in the UI/CLI in any form.",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 24
+      },
+      "revId": "e326b10cea47916b45e8eee679055d8490b599c0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
