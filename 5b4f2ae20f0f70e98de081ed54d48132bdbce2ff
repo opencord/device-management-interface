@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4332e5c0_583ece52",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-10-14T08:59:56Z",
+      "side": 1,
+      "message": "can we have 1,2,3,4 instead of 1,3,4,5",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 9
+      },
+      "revId": "5b4f2ae20f0f70e98de081ed54d48132bdbce2ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
