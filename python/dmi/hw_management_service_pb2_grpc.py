@@ -53,7 +53,7 @@ class NativeHWManagementServiceStub(object):
                 )
         self.GetLoggingEndpoint = channel.unary_unary(
                 '/dmi.NativeHWManagementService/GetLoggingEndpoint',
-                request_serializer=dmi_dot_hw__pb2.Uuid.SerializeToString,
+                request_serializer=dmi_dot_hw__pb2.HardwareID.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.FromString,
                 )
         self.SetMsgBusEndpoint = channel.unary_unary(
@@ -230,7 +230,7 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
             ),
             'GetLoggingEndpoint': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLoggingEndpoint,
-                    request_deserializer=dmi_dot_hw__pb2.Uuid.FromString,
+                    request_deserializer=dmi_dot_hw__pb2.HardwareID.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.SerializeToString,
             ),
             'SetMsgBusEndpoint': grpc.unary_unary_rpc_method_handler(
@@ -399,7 +399,7 @@ class NativeHWManagementService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetLoggingEndpoint',
-            dmi_dot_hw__pb2.Uuid.SerializeToString,
+            dmi_dot_hw__pb2.HardwareID.SerializeToString,
             dmi_dot_hw__management__service__pb2.GetLoggingEndpointResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
