@@ -36,6 +36,11 @@ class NativeSoftwareManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__pb2.HardwareID.SerializeToString,
                 response_deserializer=dmi_dot_sw__image__pb2.ImageStatus.FromString,
                 )
+        self.UpdateStartupConfiguration = channel.unary_stream(
+                '/dmi.NativeSoftwareManagementService/UpdateStartupConfiguration',
+                request_serializer=dmi_dot_sw__management__service__pb2.ConfigRequest.SerializeToString,
+                response_deserializer=dmi_dot_sw__management__service__pb2.ConfigResponse.FromString,
+                )
 
 
 class NativeSoftwareManagementServiceServicer(object):
@@ -72,6 +77,13 @@ class NativeSoftwareManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateStartupConfiguration(self, request, context):
+        """This API can be used to let the devices pickup their properitary configuration which they need at startup.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeSoftwareManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -94,6 +106,11 @@ def add_NativeSoftwareManagementServiceServicer_to_server(servicer, server):
                     servicer.RevertToStandbyImage,
                     request_deserializer=dmi_dot_hw__pb2.HardwareID.FromString,
                     response_serializer=dmi_dot_sw__image__pb2.ImageStatus.SerializeToString,
+            ),
+            'UpdateStartupConfiguration': grpc.unary_stream_rpc_method_handler(
+                    servicer.UpdateStartupConfiguration,
+                    request_deserializer=dmi_dot_sw__management__service__pb2.ConfigRequest.FromString,
+                    response_serializer=dmi_dot_sw__management__service__pb2.ConfigResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -170,5 +187,22 @@ class NativeSoftwareManagementService(object):
         return grpc.experimental.unary_stream(request, target, '/dmi.NativeSoftwareManagementService/RevertToStandbyImage',
             dmi_dot_hw__pb2.HardwareID.SerializeToString,
             dmi_dot_sw__image__pb2.ImageStatus.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateStartupConfiguration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/dmi.NativeSoftwareManagementService/UpdateStartupConfiguration',
+            dmi_dot_sw__management__service__pb2.ConfigRequest.SerializeToString,
+            dmi_dot_sw__management__service__pb2.ConfigResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

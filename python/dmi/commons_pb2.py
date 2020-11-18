@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*?\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\r\n\tOK_STATUS\x10\x01\x12\x10\n\x0c\x45RROR_STATUS\x10\x02*\xdc\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x05\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x06\x12\x18\n\x14KAFKA_ENDPOINT_ERROR\x10\x07\x12\x16\n\x12UNKNOWN_LOG_ENTITY\x10\x08*?\n\x08LogLevel\x12\t\n\x05TRACE\x10\x00\x12\t\n\x05\x44\x45\x42UG\x10\x01\x12\x08\n\x04INFO\x10\x02\x12\x08\n\x04WARN\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x11\x64mi/commons.proto\x12\x03\x64mi*?\n\x06Status\x12\x14\n\x10UNDEFINED_STATUS\x10\x00\x12\r\n\tOK_STATUS\x10\x01\x12\x10\n\x0c\x45RROR_STATUS\x10\x02*\x8b\x02\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x10\n\x0cWRONG_METRIC\x10\x03\x12\x0f\n\x0bWRONG_EVENT\x10\x04\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x05\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x06\x12\x18\n\x14KAFKA_ENDPOINT_ERROR\x10\x07\x12\x16\n\x12UNKNOWN_LOG_ENTITY\x10\x08\x12\x19\n\x15\x45RROR_FETCHING_CONFIG\x10\t\x12\x12\n\x0eINVALID_CONFIG\x10\n*?\n\x08LogLevel\x12\t\n\x05TRACE\x10\x00\x12\t\n\x05\x44\x45\x42UG\x10\x01\x12\x08\n\x04INFO\x10\x02\x12\x08\n\x04WARN\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
 )
 
 _STATUS = _descriptor.EnumDescriptor(
@@ -106,11 +106,21 @@ _REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR_FETCHING_CONFIG', index=9, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INVALID_CONFIG', index=10, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=92,
-  serialized_end=312,
+  serialized_end=359,
 )
 _sym_db.RegisterEnumDescriptor(_REASON)
 
@@ -150,8 +160,8 @@ _LOGLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=314,
-  serialized_end=377,
+  serialized_start=361,
+  serialized_end=424,
 )
 _sym_db.RegisterEnumDescriptor(_LOGLEVEL)
 
@@ -168,6 +178,8 @@ LOGGING_ENDPOINT_ERROR = 5
 LOGGING_ENDPOINT_PROTOCOL_ERROR = 6
 KAFKA_ENDPOINT_ERROR = 7
 UNKNOWN_LOG_ENTITY = 8
+ERROR_FETCHING_CONFIG = 9
+INVALID_CONFIG = 10
 TRACE = 0
 DEBUG = 1
 INFO = 2

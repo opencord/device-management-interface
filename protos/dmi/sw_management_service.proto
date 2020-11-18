@@ -29,6 +29,19 @@ message DownloadImageRequest {
     ImageInformation image_info = 2;
 }
 
+message ConfigRequest {
+    Uuid device_uuid = 1;
+    // Location of the configuration file, authentication (user/pass) if any should be in the url string
+    // The image_url would contain the protocol, credentials, the IP address/DNS of the server and the path of the file
+    // e.g. sftp://download_user:download_pass@192.168.0.1:22/OLT-configs/config-v1.2.3.xml
+    string config_url = 2;
+}
+
+message ConfigResponse {
+    Status status = 1;
+    Reason reason = 2;
+}
+
 service NativeSoftwareManagementService {
     // Get the software version information of the Active and Standby images
     rpc GetSoftwareVersion(HardwareID) returns(GetSoftwareVersionInformationResponse);
@@ -44,6 +57,9 @@ service NativeSoftwareManagementService {
     // Marks the image in the Standby as Active and reboots the device, so that it boots from that image which was in the standby.
     // This API is to be used if operator wants to go back to the previous software
     rpc RevertToStandbyImage(HardwareID) returns(stream ImageStatus);
+
+    // This API can be used to let the devices pickup their properitary configuration which they need at startup.
+    rpc UpdateStartupConfiguration(ConfigRequest) returns(stream ConfigResponse);
 
     // If needed we can add this later
     //rpc SubscribeToEvents() returns (stream );
