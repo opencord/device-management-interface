@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f856202_8c3a473a",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-11-18T09:51:29Z",
+      "side": 1,
+      "message": "This has to return a stream (like DownloadImage).",
+      "revId": "dfb2e2f97446aaa3c310fdcd2507a746bf8a7eeb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
