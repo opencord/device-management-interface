@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ae11fd0_f0c209e6",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-11-19T15:14:44Z",
+      "side": 1,
+      "message": "config_url",
+      "revId": "ee867bf9bcb0385d4eae8575e9b97fdb914c40a0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
