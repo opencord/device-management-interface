@@ -70,6 +70,24 @@
       "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a00d09e5_958d3898",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-12-11T15:14:54Z",
+      "side": 1,
+      "message": "I would propose _UNDEFINED as 0 and _NONE as 1 (or 8).",
+      "parentUuid": "26512296_ef2c4ae5",
+      "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
