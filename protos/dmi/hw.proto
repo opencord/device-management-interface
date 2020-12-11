@@ -71,7 +71,7 @@ enum ComponentAlarmState {
     COMP_ALARM_STATE_MAJOR = 4;
     COMP_ALARM_STATE_MINOR = 5;
     COMP_ALARM_STATE_WARNING = 6;
-    COMP_ALARM_STATE_INTERMEDIATE = 7;
+    COMP_ALARM_STATE_INDETERMINATE = 7;
 }
 
 enum ComponentStandbyState {
