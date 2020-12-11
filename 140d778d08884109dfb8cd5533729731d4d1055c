@@ -16,6 +16,24 @@
       "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12b55e64_073ca201",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2020-12-11T14:26:04Z",
+      "side": 1,
+      "message": "The last name was changed to INDETERMINATE which would also mean cannot determine or UNDEFINED. So changed the name of UNDEFINED to NONE.. NONE in this case means that there is no Alarm is set which we would have signalled using the UNDEFINED before this patchset.",
+      "parentUuid": "d3e3178f_b8bead28",
+      "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
