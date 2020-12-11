@@ -34,6 +34,24 @@
       "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a21934a_8c128ff6",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-12-11T14:51:17Z",
+      "side": 1,
+      "message": "Had a look into RFC8348 and noticed that they are using a bitset and not enums. Thus no alarm there simply means \"do not set any bit\". You converted the bitset to enums and now need an additional value. So, yes adding the COMP_ALARM_STATE_NONE is a good idea. But it is still a bit unconsistent because for all other enums in hw.proto you added an additional \"UNDEFINED\" as the zero value which is a value not in the RFC8348 and which should normally not be used.",
+      "parentUuid": "12b55e64_073ca201",
+      "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
