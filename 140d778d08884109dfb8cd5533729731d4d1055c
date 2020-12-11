@@ -52,6 +52,24 @@
       "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26512296_ef2c4ae5",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-12-11T14:58:36Z",
+      "side": 1,
+      "message": "my take here is that we should be consistent, either we move the 0 value to NONE in all the places or we use UNDEFINED as 0 for all enums. which one is best I don\u0027t particularly care.",
+      "parentUuid": "1a21934a_8c128ff6",
+      "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
