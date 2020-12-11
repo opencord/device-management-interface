@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3e3178f_b8bead28",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2020-12-11T13:25:36Z",
+      "side": 1,
+      "message": "Why \"NONE\"? Isn\u0027t the first value always \"UNDEFINED\"?",
+      "revId": "140d778d08884109dfb8cd5533729731d4d1055c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
