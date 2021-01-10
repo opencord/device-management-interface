@@ -45,6 +45,11 @@ message ImageStatus {
         DEVICE_IN_WRONG_STATE = 3;
         INVALID_IMAGE = 4;
         WRONG_IMAGE_CHECKSUM = 5;
+        OPERATION_ALREADY_IN_PROGRESS = 6;
+        UNKNOWN_DEVICE = 7;
+        // The DM implementations should have retry mechanisms (timeout values dependant on specific implementations)
+        // and even after those if the operation cannot be completed/reached then return error with reason as DEVICE_NOT_REACHABLE
+        DEVICE_NOT_REACHABLE = 8;
     }
 
     Status status  = 1;

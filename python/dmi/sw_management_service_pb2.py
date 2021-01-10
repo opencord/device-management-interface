@@ -22,11 +22,86 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"\x90\x01\n%GetSoftwareVersionInformationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12-\n\x04info\x18\x03 \x01(\x0b\x32\x1f.dmi.SoftwareVersionInformation\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation\"C\n\rConfigRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x12\n\nconfig_url\x18\x02 \x01(\t\"J\n\x0e\x43onfigResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason2\xf0\x02\n\x1fNativeSoftwareManagementService\x12Q\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a*.dmi.GetSoftwareVersionInformationResponse\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12G\n\x1aUpdateStartupConfiguration\x12\x12.dmi.ConfigRequest\x1a\x13.dmi.ConfigResponse0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"\xfe\x01\n%GetSoftwareVersionInformationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x41\n\x06reason\x18\x02 \x01(\x0e\x32\x31.dmi.GetSoftwareVersionInformationResponse.Reason\x12-\n\x04info\x18\x03 \x01(\x0b\x32\x1f.dmi.SoftwareVersionInformation\"F\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation\"C\n\rConfigRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x12\n\nconfig_url\x18\x02 \x01(\t\"\xf4\x01\n\x0e\x43onfigResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12*\n\x06reason\x18\x02 \x01(\x0e\x32\x1a.dmi.ConfigResponse.Reason\"\x98\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x19\n\x15\x45RROR_FETCHING_CONFIG\x10\x03\x12\x12\n\x0eINVALID_CONFIG\x10\x04\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x05\x32\xf0\x02\n\x1fNativeSoftwareManagementService\x12Q\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a*.dmi.GetSoftwareVersionInformationResponse\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12G\n\x1aUpdateStartupConfiguration\x12\x12.dmi.ConfigRequest\x1a\x13.dmi.ConfigResponse0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,dmi_dot_sw__image__pb2.DESCRIPTOR,])
 
 
+
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.GetSoftwareVersionInformationResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=397,
+  serialized_end=467,
+)
+_sym_db.RegisterEnumDescriptor(_GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON)
+
+_CONFIGRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.ConfigResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR_FETCHING_CONFIG', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INVALID_CONFIG', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='OPERATION_ALREADY_IN_PROGRESS', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=730,
+  serialized_end=882,
+)
+_sym_db.RegisterEnumDescriptor(_CONFIGRESPONSE_REASON)
 
 
 _SOFTWAREVERSIONINFORMATION = _descriptor.Descriptor(
@@ -102,6 +177,7 @@ _GETSOFTWAREVERSIONINFORMATIONRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -110,7 +186,7 @@ _GETSOFTWAREVERSIONINFORMATIONRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=213,
-  serialized_end=357,
+  serialized_end=467,
 )
 
 
@@ -148,8 +224,8 @@ _DOWNLOADIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=359,
-  serialized_end=456,
+  serialized_start=469,
+  serialized_end=566,
 )
 
 
@@ -187,8 +263,8 @@ _CONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=458,
-  serialized_end=525,
+  serialized_start=568,
+  serialized_end=635,
 )
 
 
@@ -219,6 +295,7 @@ _CONFIGRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _CONFIGRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -226,20 +303,22 @@ _CONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=601,
+  serialized_start=638,
+  serialized_end=882,
 )
 
 _SOFTWAREVERSIONINFORMATION.fields_by_name['active_versions'].message_type = dmi_dot_sw__image__pb2._IMAGEVERSION
 _SOFTWAREVERSIONINFORMATION.fields_by_name['standby_versions'].message_type = dmi_dot_sw__image__pb2._IMAGEVERSION
 _GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['reason'].enum_type = _GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON
 _GETSOFTWAREVERSIONINFORMATIONRESPONSE.fields_by_name['info'].message_type = _SOFTWAREVERSIONINFORMATION
+_GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON.containing_type = _GETSOFTWAREVERSIONINFORMATIONRESPONSE
 _DOWNLOADIMAGEREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _DOWNLOADIMAGEREQUEST.fields_by_name['image_info'].message_type = dmi_dot_sw__image__pb2._IMAGEINFORMATION
 _CONFIGREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _CONFIGRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_CONFIGRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_CONFIGRESPONSE.fields_by_name['reason'].enum_type = _CONFIGRESPONSE_REASON
+_CONFIGRESPONSE_REASON.containing_type = _CONFIGRESPONSE
 DESCRIPTOR.message_types_by_name['SoftwareVersionInformation'] = _SOFTWAREVERSIONINFORMATION
 DESCRIPTOR.message_types_by_name['GetSoftwareVersionInformationResponse'] = _GETSOFTWAREVERSIONINFORMATIONRESPONSE
 DESCRIPTOR.message_types_by_name['DownloadImageRequest'] = _DOWNLOADIMAGEREQUEST
@@ -292,8 +371,8 @@ _NATIVESOFTWAREMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=604,
-  serialized_end=972,
+  serialized_start=885,
+  serialized_end=1253,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetSoftwareVersion',

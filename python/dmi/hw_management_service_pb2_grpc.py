@@ -103,6 +103,8 @@ class NativeHWManagementServiceServicer(object):
 
     def StopManagingDevice(self, request, context):
         """Stop management of a device and clean up any context and caches for that device
+        This rpc can be called at any time, even before the StartManagingDevice operation
+        has completed, and should be able to cleanup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
