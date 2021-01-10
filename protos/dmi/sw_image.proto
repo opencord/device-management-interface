@@ -45,6 +45,8 @@ message ImageStatus {
         DEVICE_IN_WRONG_STATE = 3;
         INVALID_IMAGE = 4;
         WRONG_IMAGE_CHECKSUM = 5;
+        OPERATION_ALREADY_IN_PROGRESS = 6;
+        UNKNOWN_DEVICE = 7;
     }
 
     Status status  = 1;

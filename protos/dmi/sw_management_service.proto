@@ -19,6 +19,11 @@ message SoftwareVersionInformation {
 }
 
 message GetSoftwareVersionInformationResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+    }
     Status status = 1;
     Reason reason = 2;
     SoftwareVersionInformation info = 3;
@@ -38,6 +43,13 @@ message ConfigRequest {
 }
 
 message ConfigResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+        ERROR_FETCHING_CONFIG = 3;
+        INVALID_CONFIG = 4;
+    }
     Status status = 1;
     Reason reason = 2;
 }
