@@ -67,6 +67,11 @@ message MetricsConfig {
 }
 
 message ListMetricsResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+    }
     Status status = 1;
     Reason reason = 2;
     MetricsConfig metrics = 3;
@@ -81,6 +86,13 @@ message MetricsConfigurationRequest {
 }
 
 message MetricsConfigurationResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+        POLL_INTERVAL_UNSUPPORTED = 3;
+        INVALID_METRIC = 4;
+    }
     Status status = 1;
     Reason reason = 2;
 }
@@ -107,6 +119,13 @@ message GetMetricRequest {
 }
 
 message GetMetricResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        UNKNOWN_COMPONENT = 2;
+        INTERNAL_ERROR = 3;
+        INVALID_METRIC = 4;
+    }
     Status status = 1;
     Reason reason = 2;
     Metric metric = 3;

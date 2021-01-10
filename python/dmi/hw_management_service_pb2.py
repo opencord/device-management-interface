@@ -22,11 +22,351 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"w\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"y\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"V\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"w\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"V\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent\"o\n\x19SetLoggingEndpointRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x18\n\x10logging_endpoint\x18\x02 \x01(\t\x12\x18\n\x10logging_protocol\x18\x03 \x01(\t\"U\n\x19SetRemoteEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\"\x8a\x01\n\x1aGetLoggingEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x18\n\x10logging_endpoint\x18\x03 \x01(\t\x12\x18\n\x10logging_protocol\x18\x04 \x01(\t\"3\n\x18SetMsgBusEndpointRequest\x12\x17\n\x0fmsgbus_endpoint\x18\x01 \x01(\t\"n\n\x19GetMsgBusEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x02 \x01(\x0e\x32\x0b.dmi.Reason\x12\x17\n\x0fmsgbus_endpoint\x18\x03 \x01(\t\"E\n\x10\x45ntitiesLogLevel\x12\x1f\n\x08logLevel\x18\x01 \x01(\x0e\x32\r.dmi.LogLevel\x12\x10\n\x08\x65ntities\x18\x02 \x03(\t\"^\n\x12SetLogLevelRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12(\n\tloglevels\x18\x02 \x03(\x0b\x32\x15.dmi.EntitiesLogLevel\"o\n\x13SetLogLevelResponse\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x1b\n\x06status\x18\x02 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x03 \x01(\x0e\x32\x0b.dmi.Reason\"F\n\x12GetLogLevelRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x10\n\x08\x65ntities\x18\x02 \x03(\t\"\x99\x01\n\x13GetLogLevelResponse\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12(\n\tlogLevels\x18\x02 \x03(\x0b\x32\x15.dmi.EntitiesLogLevel\x12\x1b\n\x06status\x18\x03 \x01(\x0e\x32\x0b.dmi.Status\x12\x1b\n\x06reason\x18\x04 \x01(\x0e\x32\x0b.dmi.Reason\"<\n\x1aGetLoggableEntitiesRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid2\xaf\x08\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponse\x12T\n\x12SetLoggingEndpoint\x12\x1e.dmi.SetLoggingEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12\x46\n\x12GetLoggingEndpoint\x12\x0f.dmi.HardwareID\x1a\x1f.dmi.GetLoggingEndpointResponse\x12R\n\x11SetMsgBusEndpoint\x12\x1d.dmi.SetMsgBusEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12K\n\x11GetMsgBusEndpoint\x12\x16.google.protobuf.Empty\x1a\x1e.dmi.GetMsgBusEndpointResponse\x12P\n\x13GetLoggableEntities\x12\x1f.dmi.GetLoggableEntitiesRequest\x1a\x18.dmi.GetLogLevelResponse\x12@\n\x0bSetLogLevel\x12\x17.dmi.SetLogLevelRequest\x1a\x18.dmi.SetLogLevelResponse\x12@\n\x0bGetLogLevel\x12\x17.dmi.GetLogLevelRequest\x1a\x18.dmi.GetLogLevelResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x1f\x64mi/hw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1bgoogle/protobuf/empty.proto\":\n\x18PhysicalInventoryRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"\xd9\x01\n\x19PhysicalInventoryResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x35\n\x06reason\x18\x02 \x01(\x0e\x32%.dmi.PhysicalInventoryResponse.Reason\x12 \n\tinventory\x18\x03 \x01(\x0b\x32\r.dmi.Hardware\"F\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\"v\n\x19HWComponentInfoGetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\xf3\x01\n\x1aHWComponentInfoGetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x36\n\x06reason\x18\x02 \x01(\x0e\x32&.dmi.HWComponentInfoGetResponse.Reason\x12!\n\tcomponent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\"]\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x15\n\x11UNKNOWN_COMPONENT\x10\x02\x12\x12\n\x0eINTERNAL_ERROR\x10\x03\"\xa1\x01\n\x19HWComponentInfoSetRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\x12)\n\x07\x63hanges\x18\x04 \x01(\x0b\x32\x18.dmi.ModifiableComponent\"\xe4\x01\n\x1aHWComponentInfoSetResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x36\n\x06reason\x18\x02 \x01(\x0e\x32&.dmi.HWComponentInfoSetResponse.Reason\"q\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x15\n\x11UNKNOWN_COMPONENT\x10\x02\x12\x12\n\x0eINVALID_PARAMS\x10\x03\x12\x12\n\x0eINTERNAL_ERROR\x10\x04\"\x9b\x02\n\x1bStartManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x37\n\x06reason\x18\x02 \x01(\x0e\x32\'.dmi.StartManagingDeviceResponse.Reason\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x03 \x01(\x0b\x32\t.dmi.Uuid\"\x85\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x1a\n\x16\x44\x45VICE_ALREADY_MANAGED\x10\x01\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x02\x12\x12\n\x0eINVALID_PARAMS\x10\x03\x12\x12\n\x0eINTERNAL_ERROR\x10\x04\")\n\x19StopManagingDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\xa5\x01\n\x1aStopManagingDeviceResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x36\n\x06reason\x18\x02 \x01(\x0e\x32&.dmi.StopManagingDeviceResponse.Reason\"2\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\"C\n\x16ManagedDevicesResponse\x12)\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x18.dmi.ModifiableComponent\"o\n\x19SetLoggingEndpointRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x18\n\x10logging_endpoint\x18\x02 \x01(\t\x12\x18\n\x10logging_protocol\x18\x03 \x01(\t\"\x94\x02\n\x19SetRemoteEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x35\n\x06reason\x18\x02 \x01(\x0e\x32%.dmi.SetRemoteEndpointResponse.Reason\"\xa2\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x1a\n\x16LOGGING_ENDPOINT_ERROR\x10\x03\x12#\n\x1fLOGGING_ENDPOINT_PROTOCOL_ERROR\x10\x04\x12\x19\n\x15MSGBUS_ENDPOINT_ERROR\x10\x05\"\xed\x01\n\x1aGetLoggingEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x36\n\x06reason\x18\x02 \x01(\x0e\x32&.dmi.GetLoggingEndpointResponse.Reason\x12\x18\n\x10logging_endpoint\x18\x03 \x01(\t\x12\x18\n\x10logging_protocol\x18\x04 \x01(\t\"F\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\"3\n\x18SetMsgBusEndpointRequest\x12\x17\n\x0fmsgbus_endpoint\x18\x01 \x01(\t\"\xbc\x01\n\x19GetMsgBusEndpointResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x35\n\x06reason\x18\x02 \x01(\x0e\x32%.dmi.GetMsgBusEndpointResponse.Reason\x12\x17\n\x0fmsgbus_endpoint\x18\x03 \x01(\t\"2\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eINTERNAL_ERROR\x10\x01\"E\n\x10\x45ntitiesLogLevel\x12\x1f\n\x08logLevel\x18\x01 \x01(\x0e\x32\r.dmi.LogLevel\x12\x10\n\x08\x65ntities\x18\x02 \x03(\t\"^\n\x12SetLogLevelRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12(\n\tloglevels\x18\x02 \x03(\x0b\x32\x15.dmi.EntitiesLogLevel\"\xe3\x01\n\x13SetLogLevelResponse\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x1b\n\x06status\x18\x02 \x01(\x0e\x32\x0b.dmi.Status\x12/\n\x06reason\x18\x03 \x01(\x0e\x32\x1f.dmi.SetLogLevelResponse.Reason\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12UNKNOWN_LOG_ENTITY\x10\x03\"F\n\x12GetLogLevelRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x10\n\x08\x65ntities\x18\x02 \x03(\t\"\x8d\x02\n\x13GetLogLevelResponse\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12(\n\tlogLevels\x18\x02 \x03(\x0b\x32\x15.dmi.EntitiesLogLevel\x12\x1b\n\x06status\x18\x03 \x01(\x0e\x32\x0b.dmi.Status\x12/\n\x06reason\x18\x04 \x01(\x0e\x32\x1f.dmi.GetLogLevelResponse.Reason\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12UNKNOWN_LOG_ENTITY\x10\x03\"<\n\x1aGetLoggableEntitiesRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid2\xaf\x08\n\x19NativeHWManagementService\x12S\n\x13StartManagingDevice\x12\x18.dmi.ModifiableComponent\x1a .dmi.StartManagingDeviceResponse0\x01\x12U\n\x12StopManagingDevice\x12\x1e.dmi.StopManagingDeviceRequest\x1a\x1f.dmi.StopManagingDeviceResponse\x12H\n\x11GetManagedDevices\x12\x16.google.protobuf.Empty\x1a\x1b.dmi.ManagedDevicesResponse\x12W\n\x14GetPhysicalInventory\x12\x1d.dmi.PhysicalInventoryRequest\x1a\x1e.dmi.PhysicalInventoryResponse0\x01\x12W\n\x12GetHWComponentInfo\x12\x1e.dmi.HWComponentInfoGetRequest\x1a\x1f.dmi.HWComponentInfoGetResponse0\x01\x12U\n\x12SetHWComponentInfo\x12\x1e.dmi.HWComponentInfoSetRequest\x1a\x1f.dmi.HWComponentInfoSetResponse\x12T\n\x12SetLoggingEndpoint\x12\x1e.dmi.SetLoggingEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12\x46\n\x12GetLoggingEndpoint\x12\x0f.dmi.HardwareID\x1a\x1f.dmi.GetLoggingEndpointResponse\x12R\n\x11SetMsgBusEndpoint\x12\x1d.dmi.SetMsgBusEndpointRequest\x1a\x1e.dmi.SetRemoteEndpointResponse\x12K\n\x11GetMsgBusEndpoint\x12\x16.google.protobuf.Empty\x1a\x1e.dmi.GetMsgBusEndpointResponse\x12P\n\x13GetLoggableEntities\x12\x1f.dmi.GetLoggableEntitiesRequest\x1a\x18.dmi.GetLogLevelResponse\x12@\n\x0bSetLogLevel\x12\x17.dmi.SetLogLevelRequest\x1a\x18.dmi.SetLogLevelResponse\x12@\n\x0bGetLogLevel\x12\x17.dmi.GetLogLevelRequest\x1a\x18.dmi.GetLogLevelResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 
+
+_PHYSICALINVENTORYRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.PhysicalInventoryResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=310,
+  serialized_end=380,
+)
+_sym_db.RegisterEnumDescriptor(_PHYSICALINVENTORYRESPONSE_REASON)
+
+_HWCOMPONENTINFOGETRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.HWComponentInfoGetResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_COMPONENT', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=653,
+  serialized_end=746,
+)
+_sym_db.RegisterEnumDescriptor(_HWCOMPONENTINFOGETRESPONSE_REASON)
+
+_HWCOMPONENTINFOSETRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.HWComponentInfoSetResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_COMPONENT', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INVALID_PARAMS', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1028,
+  serialized_end=1141,
+)
+_sym_db.RegisterEnumDescriptor(_HWCOMPONENTINFOSETRESPONSE_REASON)
+
+_STARTMANAGINGDEVICERESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.StartManagingDeviceResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_ALREADY_MANAGED', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='OPERATION_ALREADY_IN_PROGRESS', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INVALID_PARAMS', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1294,
+  serialized_end=1427,
+)
+_sym_db.RegisterEnumDescriptor(_STARTMANAGINGDEVICERESPONSE_REASON)
+
+_STOPMANAGINGDEVICERESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.StopManagingDeviceResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=310,
+  serialized_end=360,
+)
+_sym_db.RegisterEnumDescriptor(_STOPMANAGINGDEVICERESPONSE_REASON)
+
+_SETREMOTEENDPOINTRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.SetRemoteEndpointResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOGGING_ENDPOINT_ERROR', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOGGING_ENDPOINT_PROTOCOL_ERROR', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MSGBUS_ENDPOINT_ERROR', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1937,
+  serialized_end=2099,
+)
+_sym_db.RegisterEnumDescriptor(_SETREMOTEENDPOINTRESPONSE_REASON)
+
+_GETLOGGINGENDPOINTRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.GetLoggingEndpointResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=310,
+  serialized_end=380,
+)
+_sym_db.RegisterEnumDescriptor(_GETLOGGINGENDPOINTRESPONSE_REASON)
+
+_GETMSGBUSENDPOINTRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.GetMsgBusEndpointResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2533,
+  serialized_end=2583,
+)
+_sym_db.RegisterEnumDescriptor(_GETMSGBUSENDPOINTRESPONSE_REASON)
+
+_SETLOGLEVELRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.SetLogLevelResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_LOG_ENTITY', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2886,
+  serialized_end=2980,
+)
+_sym_db.RegisterEnumDescriptor(_SETLOGLEVELRESPONSE_REASON)
+
+_GETLOGLEVELRESPONSE_REASON = _descriptor.EnumDescriptor(
+  name='Reason',
+  full_name='dmi.GetLogLevelResponse.Reason',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNDEFINED_REASON', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_DEVICE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_ERROR', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN_LOG_ENTITY', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2886,
+  serialized_end=2980,
+)
+_sym_db.RegisterEnumDescriptor(_GETLOGLEVELRESPONSE_REASON)
 
 
 _PHYSICALINVENTORYREQUEST = _descriptor.Descriptor(
@@ -95,6 +435,7 @@ _PHYSICALINVENTORYRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _PHYSICALINVENTORYRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -102,8 +443,8 @@ _PHYSICALINVENTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=162,
-  serialized_end=281,
+  serialized_start=163,
+  serialized_end=380,
 )
 
 
@@ -148,8 +489,8 @@ _HWCOMPONENTINFOGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=283,
-  serialized_end=401,
+  serialized_start=382,
+  serialized_end=500,
 )
 
 
@@ -187,6 +528,7 @@ _HWCOMPONENTINFOGETRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _HWCOMPONENTINFOGETRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -194,8 +536,8 @@ _HWCOMPONENTINFOGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=403,
-  serialized_end=524,
+  serialized_start=503,
+  serialized_end=746,
 )
 
 
@@ -247,8 +589,8 @@ _HWCOMPONENTINFOSETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=688,
+  serialized_start=749,
+  serialized_end=910,
 )
 
 
@@ -279,6 +621,7 @@ _HWCOMPONENTINFOSETRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _HWCOMPONENTINFOSETRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -286,8 +629,8 @@ _HWCOMPONENTINFOSETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=690,
-  serialized_end=776,
+  serialized_start=913,
+  serialized_end=1141,
 )
 
 
@@ -325,6 +668,7 @@ _STARTMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _STARTMANAGINGDEVICERESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -332,8 +676,8 @@ _STARTMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=778,
-  serialized_end=897,
+  serialized_start=1144,
+  serialized_end=1427,
 )
 
 
@@ -364,8 +708,8 @@ _STOPMANAGINGDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=940,
+  serialized_start=1429,
+  serialized_end=1470,
 )
 
 
@@ -396,6 +740,7 @@ _STOPMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _STOPMANAGINGDEVICERESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -403,8 +748,8 @@ _STOPMANAGINGDEVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=942,
-  serialized_end=1028,
+  serialized_start=1473,
+  serialized_end=1638,
 )
 
 
@@ -435,8 +780,8 @@ _MANAGEDDEVICESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1097,
+  serialized_start=1640,
+  serialized_end=1707,
 )
 
 
@@ -481,8 +826,8 @@ _SETLOGGINGENDPOINTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1099,
-  serialized_end=1210,
+  serialized_start=1709,
+  serialized_end=1820,
 )
 
 
@@ -513,6 +858,7 @@ _SETREMOTEENDPOINTRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _SETREMOTEENDPOINTRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -520,8 +866,8 @@ _SETREMOTEENDPOINTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1297,
+  serialized_start=1823,
+  serialized_end=2099,
 )
 
 
@@ -566,6 +912,7 @@ _GETLOGGINGENDPOINTRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _GETLOGGINGENDPOINTRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -573,8 +920,8 @@ _GETLOGGINGENDPOINTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1300,
-  serialized_end=1438,
+  serialized_start=2102,
+  serialized_end=2339,
 )
 
 
@@ -605,8 +952,8 @@ _SETMSGBUSENDPOINTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1440,
-  serialized_end=1491,
+  serialized_start=2341,
+  serialized_end=2392,
 )
 
 
@@ -644,6 +991,7 @@ _GETMSGBUSENDPOINTRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _GETMSGBUSENDPOINTRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -651,8 +999,8 @@ _GETMSGBUSENDPOINTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1493,
-  serialized_end=1603,
+  serialized_start=2395,
+  serialized_end=2583,
 )
 
 
@@ -690,8 +1038,8 @@ _ENTITIESLOGLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=1674,
+  serialized_start=2585,
+  serialized_end=2654,
 )
 
 
@@ -729,8 +1077,8 @@ _SETLOGLEVELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1676,
-  serialized_end=1770,
+  serialized_start=2656,
+  serialized_end=2750,
 )
 
 
@@ -768,6 +1116,7 @@ _SETLOGLEVELRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _SETLOGLEVELRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -775,8 +1124,8 @@ _SETLOGLEVELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1772,
-  serialized_end=1883,
+  serialized_start=2753,
+  serialized_end=2980,
 )
 
 
@@ -814,8 +1163,8 @@ _GETLOGLEVELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1885,
-  serialized_end=1955,
+  serialized_start=2982,
+  serialized_end=3052,
 )
 
 
@@ -860,6 +1209,7 @@ _GETLOGLEVELRESPONSE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _GETLOGLEVELRESPONSE_REASON,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -867,8 +1217,8 @@ _GETLOGLEVELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1958,
-  serialized_end=2111,
+  serialized_start=3055,
+  serialized_end=3324,
 )
 
 
@@ -899,48 +1249,58 @@ _GETLOGGABLEENTITIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2113,
-  serialized_end=2173,
+  serialized_start=3326,
+  serialized_end=3386,
 )
 
 _PHYSICALINVENTORYREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _PHYSICALINVENTORYRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_PHYSICALINVENTORYRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_PHYSICALINVENTORYRESPONSE.fields_by_name['reason'].enum_type = _PHYSICALINVENTORYRESPONSE_REASON
 _PHYSICALINVENTORYRESPONSE.fields_by_name['inventory'].message_type = dmi_dot_hw__pb2._HARDWARE
+_PHYSICALINVENTORYRESPONSE_REASON.containing_type = _PHYSICALINVENTORYRESPONSE
 _HWCOMPONENTINFOGETREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOGETREQUEST.fields_by_name['component_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOGETRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_HWCOMPONENTINFOGETRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_HWCOMPONENTINFOGETRESPONSE.fields_by_name['reason'].enum_type = _HWCOMPONENTINFOGETRESPONSE_REASON
 _HWCOMPONENTINFOGETRESPONSE.fields_by_name['component'].message_type = dmi_dot_hw__pb2._COMPONENT
+_HWCOMPONENTINFOGETRESPONSE_REASON.containing_type = _HWCOMPONENTINFOGETRESPONSE
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['component_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _HWCOMPONENTINFOSETREQUEST.fields_by_name['changes'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
 _HWCOMPONENTINFOSETRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_HWCOMPONENTINFOSETRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_HWCOMPONENTINFOSETRESPONSE.fields_by_name['reason'].enum_type = _HWCOMPONENTINFOSETRESPONSE_REASON
+_HWCOMPONENTINFOSETRESPONSE_REASON.containing_type = _HWCOMPONENTINFOSETRESPONSE
 _STARTMANAGINGDEVICERESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_STARTMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_STARTMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = _STARTMANAGINGDEVICERESPONSE_REASON
 _STARTMANAGINGDEVICERESPONSE.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
+_STARTMANAGINGDEVICERESPONSE_REASON.containing_type = _STARTMANAGINGDEVICERESPONSE
 _STOPMANAGINGDEVICERESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_STOPMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_STOPMANAGINGDEVICERESPONSE.fields_by_name['reason'].enum_type = _STOPMANAGINGDEVICERESPONSE_REASON
+_STOPMANAGINGDEVICERESPONSE_REASON.containing_type = _STOPMANAGINGDEVICERESPONSE
 _MANAGEDDEVICESRESPONSE.fields_by_name['devices'].message_type = dmi_dot_hw__pb2._MODIFIABLECOMPONENT
 _SETLOGGINGENDPOINTREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _SETREMOTEENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_SETREMOTEENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_SETREMOTEENDPOINTRESPONSE.fields_by_name['reason'].enum_type = _SETREMOTEENDPOINTRESPONSE_REASON
+_SETREMOTEENDPOINTRESPONSE_REASON.containing_type = _SETREMOTEENDPOINTRESPONSE
 _GETLOGGINGENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_GETLOGGINGENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETLOGGINGENDPOINTRESPONSE.fields_by_name['reason'].enum_type = _GETLOGGINGENDPOINTRESPONSE_REASON
+_GETLOGGINGENDPOINTRESPONSE_REASON.containing_type = _GETLOGGINGENDPOINTRESPONSE
 _GETMSGBUSENDPOINTRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_GETMSGBUSENDPOINTRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETMSGBUSENDPOINTRESPONSE.fields_by_name['reason'].enum_type = _GETMSGBUSENDPOINTRESPONSE_REASON
+_GETMSGBUSENDPOINTRESPONSE_REASON.containing_type = _GETMSGBUSENDPOINTRESPONSE
 _ENTITIESLOGLEVEL.fields_by_name['logLevel'].enum_type = dmi_dot_commons__pb2._LOGLEVEL
 _SETLOGLEVELREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _SETLOGLEVELREQUEST.fields_by_name['loglevels'].message_type = _ENTITIESLOGLEVEL
 _SETLOGLEVELRESPONSE.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _SETLOGLEVELRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_SETLOGLEVELRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_SETLOGLEVELRESPONSE.fields_by_name['reason'].enum_type = _SETLOGLEVELRESPONSE_REASON
+_SETLOGLEVELRESPONSE_REASON.containing_type = _SETLOGLEVELRESPONSE
 _GETLOGLEVELREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _GETLOGLEVELRESPONSE.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 _GETLOGLEVELRESPONSE.fields_by_name['logLevels'].message_type = _ENTITIESLOGLEVEL
 _GETLOGLEVELRESPONSE.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_GETLOGLEVELRESPONSE.fields_by_name['reason'].enum_type = dmi_dot_commons__pb2._REASON
+_GETLOGLEVELRESPONSE.fields_by_name['reason'].enum_type = _GETLOGLEVELRESPONSE_REASON
+_GETLOGLEVELRESPONSE_REASON.containing_type = _GETLOGLEVELRESPONSE
 _GETLOGGABLEENTITIESREQUEST.fields_by_name['device_uuid'].message_type = dmi_dot_hw__pb2._UUID
 DESCRIPTOR.message_types_by_name['PhysicalInventoryRequest'] = _PHYSICALINVENTORYREQUEST
 DESCRIPTOR.message_types_by_name['PhysicalInventoryResponse'] = _PHYSICALINVENTORYRESPONSE
@@ -1122,8 +1482,8 @@ _NATIVEHWMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2176,
-  serialized_end=3247,
+  serialized_start=3389,
+  serialized_end=4460,
   methods=[
   _descriptor.MethodDescriptor(
     name='StartManagingDevice',

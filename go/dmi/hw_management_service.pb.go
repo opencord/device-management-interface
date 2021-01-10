@@ -23,6 +23,316 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type PhysicalInventoryResponse_Reason int32
+
+const (
+	PhysicalInventoryResponse_UNDEFINED_REASON PhysicalInventoryResponse_Reason = 0
+	PhysicalInventoryResponse_UNKNOWN_DEVICE   PhysicalInventoryResponse_Reason = 1
+	PhysicalInventoryResponse_INTERNAL_ERROR   PhysicalInventoryResponse_Reason = 2
+)
+
+var PhysicalInventoryResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "INTERNAL_ERROR",
+}
+
+var PhysicalInventoryResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON": 0,
+	"UNKNOWN_DEVICE":   1,
+	"INTERNAL_ERROR":   2,
+}
+
+func (x PhysicalInventoryResponse_Reason) String() string {
+	return proto.EnumName(PhysicalInventoryResponse_Reason_name, int32(x))
+}
+
+func (PhysicalInventoryResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{1, 0}
+}
+
+type HWComponentInfoGetResponse_Reason int32
+
+const (
+	HWComponentInfoGetResponse_UNDEFINED_REASON  HWComponentInfoGetResponse_Reason = 0
+	HWComponentInfoGetResponse_UNKNOWN_DEVICE    HWComponentInfoGetResponse_Reason = 1
+	HWComponentInfoGetResponse_UNKNOWN_COMPONENT HWComponentInfoGetResponse_Reason = 2
+	HWComponentInfoGetResponse_INTERNAL_ERROR    HWComponentInfoGetResponse_Reason = 3
+)
+
+var HWComponentInfoGetResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "UNKNOWN_COMPONENT",
+	3: "INTERNAL_ERROR",
+}
+
+var HWComponentInfoGetResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":  0,
+	"UNKNOWN_DEVICE":    1,
+	"UNKNOWN_COMPONENT": 2,
+	"INTERNAL_ERROR":    3,
+}
+
+func (x HWComponentInfoGetResponse_Reason) String() string {
+	return proto.EnumName(HWComponentInfoGetResponse_Reason_name, int32(x))
+}
+
+func (HWComponentInfoGetResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{3, 0}
+}
+
+type HWComponentInfoSetResponse_Reason int32
+
+const (
+	HWComponentInfoSetResponse_UNDEFINED_REASON  HWComponentInfoSetResponse_Reason = 0
+	HWComponentInfoSetResponse_UNKNOWN_DEVICE    HWComponentInfoSetResponse_Reason = 1
+	HWComponentInfoSetResponse_UNKNOWN_COMPONENT HWComponentInfoSetResponse_Reason = 2
+	HWComponentInfoSetResponse_INVALID_PARAMS    HWComponentInfoSetResponse_Reason = 3
+	HWComponentInfoSetResponse_INTERNAL_ERROR    HWComponentInfoSetResponse_Reason = 4
+)
+
+var HWComponentInfoSetResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "UNKNOWN_COMPONENT",
+	3: "INVALID_PARAMS",
+	4: "INTERNAL_ERROR",
+}
+
+var HWComponentInfoSetResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":  0,
+	"UNKNOWN_DEVICE":    1,
+	"UNKNOWN_COMPONENT": 2,
+	"INVALID_PARAMS":    3,
+	"INTERNAL_ERROR":    4,
+}
+
+func (x HWComponentInfoSetResponse_Reason) String() string {
+	return proto.EnumName(HWComponentInfoSetResponse_Reason_name, int32(x))
+}
+
+func (HWComponentInfoSetResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{5, 0}
+}
+
+type StartManagingDeviceResponse_Reason int32
+
+const (
+	StartManagingDeviceResponse_UNDEFINED_REASON StartManagingDeviceResponse_Reason = 0
+	// DEVICE_ALREADY_MANAGED is returned when StartManagingDevice is called again for the same name AFTER a previously
+	// successful StartManagingDevice operation
+	StartManagingDeviceResponse_DEVICE_ALREADY_MANAGED StartManagingDeviceResponse_Reason = 1
+	// OPERATION_ALREADY_IN_PROGRESS is returned when StartManagingDevice is called again for the same name BEFORE
+	// a previous StartManagingDevice operation has completed
+	StartManagingDeviceResponse_OPERATION_ALREADY_IN_PROGRESS StartManagingDeviceResponse_Reason = 2
+	StartManagingDeviceResponse_INVALID_PARAMS                StartManagingDeviceResponse_Reason = 3
+	StartManagingDeviceResponse_INTERNAL_ERROR                StartManagingDeviceResponse_Reason = 4
+)
+
+var StartManagingDeviceResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "DEVICE_ALREADY_MANAGED",
+	2: "OPERATION_ALREADY_IN_PROGRESS",
+	3: "INVALID_PARAMS",
+	4: "INTERNAL_ERROR",
+}
+
+var StartManagingDeviceResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":              0,
+	"DEVICE_ALREADY_MANAGED":        1,
+	"OPERATION_ALREADY_IN_PROGRESS": 2,
+	"INVALID_PARAMS":                3,
+	"INTERNAL_ERROR":                4,
+}
+
+func (x StartManagingDeviceResponse_Reason) String() string {
+	return proto.EnumName(StartManagingDeviceResponse_Reason_name, int32(x))
+}
+
+func (StartManagingDeviceResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{6, 0}
+}
+
+// The only case in which an error is expected is if the name of the
+// device to be stopped is not found
+type StopManagingDeviceResponse_Reason int32
+
+const (
+	StopManagingDeviceResponse_UNDEFINED_REASON StopManagingDeviceResponse_Reason = 0
+	StopManagingDeviceResponse_UNKNOWN_DEVICE   StopManagingDeviceResponse_Reason = 1
+)
+
+var StopManagingDeviceResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+}
+
+var StopManagingDeviceResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON": 0,
+	"UNKNOWN_DEVICE":   1,
+}
+
+func (x StopManagingDeviceResponse_Reason) String() string {
+	return proto.EnumName(StopManagingDeviceResponse_Reason_name, int32(x))
+}
+
+func (StopManagingDeviceResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{8, 0}
+}
+
+type SetRemoteEndpointResponse_Reason int32
+
+const (
+	SetRemoteEndpointResponse_UNDEFINED_REASON                SetRemoteEndpointResponse_Reason = 0
+	SetRemoteEndpointResponse_UNKNOWN_DEVICE                  SetRemoteEndpointResponse_Reason = 1
+	SetRemoteEndpointResponse_INTERNAL_ERROR                  SetRemoteEndpointResponse_Reason = 2
+	SetRemoteEndpointResponse_LOGGING_ENDPOINT_ERROR          SetRemoteEndpointResponse_Reason = 3
+	SetRemoteEndpointResponse_LOGGING_ENDPOINT_PROTOCOL_ERROR SetRemoteEndpointResponse_Reason = 4
+	SetRemoteEndpointResponse_MSGBUS_ENDPOINT_ERROR           SetRemoteEndpointResponse_Reason = 5
+)
+
+var SetRemoteEndpointResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "INTERNAL_ERROR",
+	3: "LOGGING_ENDPOINT_ERROR",
+	4: "LOGGING_ENDPOINT_PROTOCOL_ERROR",
+	5: "MSGBUS_ENDPOINT_ERROR",
+}
+
+var SetRemoteEndpointResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":                0,
+	"UNKNOWN_DEVICE":                  1,
+	"INTERNAL_ERROR":                  2,
+	"LOGGING_ENDPOINT_ERROR":          3,
+	"LOGGING_ENDPOINT_PROTOCOL_ERROR": 4,
+	"MSGBUS_ENDPOINT_ERROR":           5,
+}
+
+func (x SetRemoteEndpointResponse_Reason) String() string {
+	return proto.EnumName(SetRemoteEndpointResponse_Reason_name, int32(x))
+}
+
+func (SetRemoteEndpointResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{11, 0}
+}
+
+type GetLoggingEndpointResponse_Reason int32
+
+const (
+	GetLoggingEndpointResponse_UNDEFINED_REASON GetLoggingEndpointResponse_Reason = 0
+	GetLoggingEndpointResponse_UNKNOWN_DEVICE   GetLoggingEndpointResponse_Reason = 1
+	GetLoggingEndpointResponse_INTERNAL_ERROR   GetLoggingEndpointResponse_Reason = 2
+)
+
+var GetLoggingEndpointResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "INTERNAL_ERROR",
+}
+
+var GetLoggingEndpointResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON": 0,
+	"UNKNOWN_DEVICE":   1,
+	"INTERNAL_ERROR":   2,
+}
+
+func (x GetLoggingEndpointResponse_Reason) String() string {
+	return proto.EnumName(GetLoggingEndpointResponse_Reason_name, int32(x))
+}
+
+func (GetLoggingEndpointResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{12, 0}
+}
+
+type GetMsgBusEndpointResponse_Reason int32
+
+const (
+	GetMsgBusEndpointResponse_UNDEFINED_REASON GetMsgBusEndpointResponse_Reason = 0
+	GetMsgBusEndpointResponse_INTERNAL_ERROR   GetMsgBusEndpointResponse_Reason = 1
+)
+
+var GetMsgBusEndpointResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "INTERNAL_ERROR",
+}
+
+var GetMsgBusEndpointResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON": 0,
+	"INTERNAL_ERROR":   1,
+}
+
+func (x GetMsgBusEndpointResponse_Reason) String() string {
+	return proto.EnumName(GetMsgBusEndpointResponse_Reason_name, int32(x))
+}
+
+func (GetMsgBusEndpointResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{14, 0}
+}
+
+type SetLogLevelResponse_Reason int32
+
+const (
+	SetLogLevelResponse_UNDEFINED_REASON   SetLogLevelResponse_Reason = 0
+	SetLogLevelResponse_UNKNOWN_DEVICE     SetLogLevelResponse_Reason = 1
+	SetLogLevelResponse_INTERNAL_ERROR     SetLogLevelResponse_Reason = 2
+	SetLogLevelResponse_UNKNOWN_LOG_ENTITY SetLogLevelResponse_Reason = 3
+)
+
+var SetLogLevelResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "INTERNAL_ERROR",
+	3: "UNKNOWN_LOG_ENTITY",
+}
+
+var SetLogLevelResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":   0,
+	"UNKNOWN_DEVICE":     1,
+	"INTERNAL_ERROR":     2,
+	"UNKNOWN_LOG_ENTITY": 3,
+}
+
+func (x SetLogLevelResponse_Reason) String() string {
+	return proto.EnumName(SetLogLevelResponse_Reason_name, int32(x))
+}
+
+func (SetLogLevelResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{17, 0}
+}
+
+type GetLogLevelResponse_Reason int32
+
+const (
+	GetLogLevelResponse_UNDEFINED_REASON   GetLogLevelResponse_Reason = 0
+	GetLogLevelResponse_UNKNOWN_DEVICE     GetLogLevelResponse_Reason = 1
+	GetLogLevelResponse_INTERNAL_ERROR     GetLogLevelResponse_Reason = 2
+	GetLogLevelResponse_UNKNOWN_LOG_ENTITY GetLogLevelResponse_Reason = 3
+)
+
+var GetLogLevelResponse_Reason_name = map[int32]string{
+	0: "UNDEFINED_REASON",
+	1: "UNKNOWN_DEVICE",
+	2: "INTERNAL_ERROR",
+	3: "UNKNOWN_LOG_ENTITY",
+}
+
+var GetLogLevelResponse_Reason_value = map[string]int32{
+	"UNDEFINED_REASON":   0,
+	"UNKNOWN_DEVICE":     1,
+	"INTERNAL_ERROR":     2,
+	"UNKNOWN_LOG_ENTITY": 3,
+}
+
+func (x GetLogLevelResponse_Reason) String() string {
+	return proto.EnumName(GetLogLevelResponse_Reason_name, int32(x))
+}
+
+func (GetLogLevelResponse_Reason) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_eae902e73066286d, []int{19, 0}
+}
+
 type PhysicalInventoryRequest struct {
 	DeviceUuid           *Uuid    `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -63,12 +373,12 @@ func (m *PhysicalInventoryRequest) GetDeviceUuid() *Uuid {
 }
 
 type PhysicalInventoryResponse struct {
-	Status               Status    `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason    `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	Inventory            *Hardware `protobuf:"bytes,3,opt,name=inventory,proto3" json:"inventory,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	Status               Status                           `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               PhysicalInventoryResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.PhysicalInventoryResponse_Reason" json:"reason,omitempty"`
+	Inventory            *Hardware                        `protobuf:"bytes,3,opt,name=inventory,proto3" json:"inventory,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                         `json:"-"`
+	XXX_unrecognized     []byte                           `json:"-"`
+	XXX_sizecache        int32                            `json:"-"`
 }
 
 func (m *PhysicalInventoryResponse) Reset()         { *m = PhysicalInventoryResponse{} }
@@ -103,11 +413,11 @@ func (m *PhysicalInventoryResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *PhysicalInventoryResponse) GetReason() Reason {
+func (m *PhysicalInventoryResponse) GetReason() PhysicalInventoryResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return PhysicalInventoryResponse_UNDEFINED_REASON
 }
 
 func (m *PhysicalInventoryResponse) GetInventory() *Hardware {
@@ -173,12 +483,12 @@ func (m *HWComponentInfoGetRequest) GetComponentName() string {
 }
 
 type HWComponentInfoGetResponse struct {
-	Status               Status     `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason     `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	Component            *Component `protobuf:"bytes,3,opt,name=component,proto3" json:"component,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
-	XXX_unrecognized     []byte     `json:"-"`
-	XXX_sizecache        int32      `json:"-"`
+	Status               Status                            `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               HWComponentInfoGetResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.HWComponentInfoGetResponse_Reason" json:"reason,omitempty"`
+	Component            *Component                        `protobuf:"bytes,3,opt,name=component,proto3" json:"component,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
+	XXX_unrecognized     []byte                            `json:"-"`
+	XXX_sizecache        int32                             `json:"-"`
 }
 
 func (m *HWComponentInfoGetResponse) Reset()         { *m = HWComponentInfoGetResponse{} }
@@ -213,11 +523,11 @@ func (m *HWComponentInfoGetResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *HWComponentInfoGetResponse) GetReason() Reason {
+func (m *HWComponentInfoGetResponse) GetReason() HWComponentInfoGetResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return HWComponentInfoGetResponse_UNDEFINED_REASON
 }
 
 func (m *HWComponentInfoGetResponse) GetComponent() *Component {
@@ -291,11 +601,11 @@ func (m *HWComponentInfoSetRequest) GetChanges() *ModifiableComponent {
 }
 
 type HWComponentInfoSetResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                            `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               HWComponentInfoSetResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.HWComponentInfoSetResponse_Reason" json:"reason,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
+	XXX_unrecognized     []byte                            `json:"-"`
+	XXX_sizecache        int32                             `json:"-"`
 }
 
 func (m *HWComponentInfoSetResponse) Reset()         { *m = HWComponentInfoSetResponse{} }
@@ -330,20 +640,20 @@ func (m *HWComponentInfoSetResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *HWComponentInfoSetResponse) GetReason() Reason {
+func (m *HWComponentInfoSetResponse) GetReason() HWComponentInfoSetResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return HWComponentInfoSetResponse_UNDEFINED_REASON
 }
 
 type StartManagingDeviceResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	DeviceUuid           *Uuid    `protobuf:"bytes,3,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                             `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               StartManagingDeviceResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.StartManagingDeviceResponse_Reason" json:"reason,omitempty"`
+	DeviceUuid           *Uuid                              `protobuf:"bytes,3,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *StartManagingDeviceResponse) Reset()         { *m = StartManagingDeviceResponse{} }
@@ -378,11 +688,11 @@ func (m *StartManagingDeviceResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *StartManagingDeviceResponse) GetReason() Reason {
+func (m *StartManagingDeviceResponse) GetReason() StartManagingDeviceResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return StartManagingDeviceResponse_UNDEFINED_REASON
 }
 
 func (m *StartManagingDeviceResponse) GetDeviceUuid() *Uuid {
@@ -432,11 +742,11 @@ func (m *StopManagingDeviceRequest) GetName() string {
 }
 
 type StopManagingDeviceResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                            `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               StopManagingDeviceResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.StopManagingDeviceResponse_Reason" json:"reason,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
+	XXX_unrecognized     []byte                            `json:"-"`
+	XXX_sizecache        int32                             `json:"-"`
 }
 
 func (m *StopManagingDeviceResponse) Reset()         { *m = StopManagingDeviceResponse{} }
@@ -471,11 +781,11 @@ func (m *StopManagingDeviceResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *StopManagingDeviceResponse) GetReason() Reason {
+func (m *StopManagingDeviceResponse) GetReason() StopManagingDeviceResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return StopManagingDeviceResponse_UNDEFINED_REASON
 }
 
 type ManagedDevicesResponse struct {
@@ -573,11 +883,11 @@ func (m *SetLoggingEndpointRequest) GetLoggingProtocol() string {
 }
 
 type SetRemoteEndpointResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                           `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               SetRemoteEndpointResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.SetRemoteEndpointResponse_Reason" json:"reason,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                         `json:"-"`
+	XXX_unrecognized     []byte                           `json:"-"`
+	XXX_sizecache        int32                            `json:"-"`
 }
 
 func (m *SetRemoteEndpointResponse) Reset()         { *m = SetRemoteEndpointResponse{} }
@@ -612,21 +922,21 @@ func (m *SetRemoteEndpointResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *SetRemoteEndpointResponse) GetReason() Reason {
+func (m *SetRemoteEndpointResponse) GetReason() SetRemoteEndpointResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return SetRemoteEndpointResponse_UNDEFINED_REASON
 }
 
 type GetLoggingEndpointResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	LoggingEndpoint      string   `protobuf:"bytes,3,opt,name=logging_endpoint,json=loggingEndpoint,proto3" json:"logging_endpoint,omitempty"`
-	LoggingProtocol      string   `protobuf:"bytes,4,opt,name=logging_protocol,json=loggingProtocol,proto3" json:"logging_protocol,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                            `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               GetLoggingEndpointResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.GetLoggingEndpointResponse_Reason" json:"reason,omitempty"`
+	LoggingEndpoint      string                            `protobuf:"bytes,3,opt,name=logging_endpoint,json=loggingEndpoint,proto3" json:"logging_endpoint,omitempty"`
+	LoggingProtocol      string                            `protobuf:"bytes,4,opt,name=logging_protocol,json=loggingProtocol,proto3" json:"logging_protocol,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
+	XXX_unrecognized     []byte                            `json:"-"`
+	XXX_sizecache        int32                             `json:"-"`
 }
 
 func (m *GetLoggingEndpointResponse) Reset()         { *m = GetLoggingEndpointResponse{} }
@@ -661,11 +971,11 @@ func (m *GetLoggingEndpointResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *GetLoggingEndpointResponse) GetReason() Reason {
+func (m *GetLoggingEndpointResponse) GetReason() GetLoggingEndpointResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return GetLoggingEndpointResponse_UNDEFINED_REASON
 }
 
 func (m *GetLoggingEndpointResponse) GetLoggingEndpoint() string {
@@ -722,12 +1032,12 @@ func (m *SetMsgBusEndpointRequest) GetMsgbusEndpoint() string {
 }
 
 type GetMsgBusEndpointResponse struct {
-	Status               Status   `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	MsgbusEndpoint       string   `protobuf:"bytes,3,opt,name=msgbus_endpoint,json=msgbusEndpoint,proto3" json:"msgbus_endpoint,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Status               Status                           `protobuf:"varint,1,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               GetMsgBusEndpointResponse_Reason `protobuf:"varint,2,opt,name=reason,proto3,enum=dmi.GetMsgBusEndpointResponse_Reason" json:"reason,omitempty"`
+	MsgbusEndpoint       string                           `protobuf:"bytes,3,opt,name=msgbus_endpoint,json=msgbusEndpoint,proto3" json:"msgbus_endpoint,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                         `json:"-"`
+	XXX_unrecognized     []byte                           `json:"-"`
+	XXX_sizecache        int32                            `json:"-"`
 }
 
 func (m *GetMsgBusEndpointResponse) Reset()         { *m = GetMsgBusEndpointResponse{} }
@@ -762,11 +1072,11 @@ func (m *GetMsgBusEndpointResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *GetMsgBusEndpointResponse) GetReason() Reason {
+func (m *GetMsgBusEndpointResponse) GetReason() GetMsgBusEndpointResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return GetMsgBusEndpointResponse_UNDEFINED_REASON
 }
 
 func (m *GetMsgBusEndpointResponse) GetMsgbusEndpoint() string {
@@ -871,12 +1181,12 @@ func (m *SetLogLevelRequest) GetLoglevels() []*EntitiesLogLevel {
 }
 
 type SetLogLevelResponse struct {
-	DeviceUuid           *Uuid    `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
-	Status               Status   `protobuf:"varint,2,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason   `protobuf:"varint,3,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	DeviceUuid           *Uuid                      `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
+	Status               Status                     `protobuf:"varint,2,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               SetLogLevelResponse_Reason `protobuf:"varint,3,opt,name=reason,proto3,enum=dmi.SetLogLevelResponse_Reason" json:"reason,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
+	XXX_unrecognized     []byte                     `json:"-"`
+	XXX_sizecache        int32                      `json:"-"`
 }
 
 func (m *SetLogLevelResponse) Reset()         { *m = SetLogLevelResponse{} }
@@ -918,11 +1228,11 @@ func (m *SetLogLevelResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *SetLogLevelResponse) GetReason() Reason {
+func (m *SetLogLevelResponse) GetReason() SetLogLevelResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return SetLogLevelResponse_UNDEFINED_REASON
 }
 
 type GetLogLevelRequest struct {
@@ -973,13 +1283,13 @@ func (m *GetLogLevelRequest) GetEntities() []string {
 }
 
 type GetLogLevelResponse struct {
-	DeviceUuid           *Uuid               `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
-	LogLevels            []*EntitiesLogLevel `protobuf:"bytes,2,rep,name=logLevels,proto3" json:"logLevels,omitempty"`
-	Status               Status              `protobuf:"varint,3,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
-	Reason               Reason              `protobuf:"varint,4,opt,name=reason,proto3,enum=dmi.Reason" json:"reason,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
-	XXX_unrecognized     []byte              `json:"-"`
-	XXX_sizecache        int32               `json:"-"`
+	DeviceUuid           *Uuid                      `protobuf:"bytes,1,opt,name=device_uuid,json=deviceUuid,proto3" json:"device_uuid,omitempty"`
+	LogLevels            []*EntitiesLogLevel        `protobuf:"bytes,2,rep,name=logLevels,proto3" json:"logLevels,omitempty"`
+	Status               Status                     `protobuf:"varint,3,opt,name=status,proto3,enum=dmi.Status" json:"status,omitempty"`
+	Reason               GetLogLevelResponse_Reason `protobuf:"varint,4,opt,name=reason,proto3,enum=dmi.GetLogLevelResponse_Reason" json:"reason,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
+	XXX_unrecognized     []byte                     `json:"-"`
+	XXX_sizecache        int32                      `json:"-"`
 }
 
 func (m *GetLogLevelResponse) Reset()         { *m = GetLogLevelResponse{} }
@@ -1028,11 +1338,11 @@ func (m *GetLogLevelResponse) GetStatus() Status {
 	return Status_UNDEFINED_STATUS
 }
 
-func (m *GetLogLevelResponse) GetReason() Reason {
+func (m *GetLogLevelResponse) GetReason() GetLogLevelResponse_Reason {
 	if m != nil {
 		return m.Reason
 	}
-	return Reason_UNDEFINED_REASON
+	return GetLogLevelResponse_UNDEFINED_REASON
 }
 
 type GetLoggableEntitiesRequest struct {
@@ -1075,6 +1385,16 @@ func (m *GetLoggableEntitiesRequest) GetDeviceUuid() *Uuid {
 }
 
 func init() {
+	proto.RegisterEnum("dmi.PhysicalInventoryResponse_Reason", PhysicalInventoryResponse_Reason_name, PhysicalInventoryResponse_Reason_value)
+	proto.RegisterEnum("dmi.HWComponentInfoGetResponse_Reason", HWComponentInfoGetResponse_Reason_name, HWComponentInfoGetResponse_Reason_value)
+	proto.RegisterEnum("dmi.HWComponentInfoSetResponse_Reason", HWComponentInfoSetResponse_Reason_name, HWComponentInfoSetResponse_Reason_value)
+	proto.RegisterEnum("dmi.StartManagingDeviceResponse_Reason", StartManagingDeviceResponse_Reason_name, StartManagingDeviceResponse_Reason_value)
+	proto.RegisterEnum("dmi.StopManagingDeviceResponse_Reason", StopManagingDeviceResponse_Reason_name, StopManagingDeviceResponse_Reason_value)
+	proto.RegisterEnum("dmi.SetRemoteEndpointResponse_Reason", SetRemoteEndpointResponse_Reason_name, SetRemoteEndpointResponse_Reason_value)
+	proto.RegisterEnum("dmi.GetLoggingEndpointResponse_Reason", GetLoggingEndpointResponse_Reason_name, GetLoggingEndpointResponse_Reason_value)
+	proto.RegisterEnum("dmi.GetMsgBusEndpointResponse_Reason", GetMsgBusEndpointResponse_Reason_name, GetMsgBusEndpointResponse_Reason_value)
+	proto.RegisterEnum("dmi.SetLogLevelResponse_Reason", SetLogLevelResponse_Reason_name, SetLogLevelResponse_Reason_value)
+	proto.RegisterEnum("dmi.GetLogLevelResponse_Reason", GetLogLevelResponse_Reason_name, GetLogLevelResponse_Reason_value)
 	proto.RegisterType((*PhysicalInventoryRequest)(nil), "dmi.PhysicalInventoryRequest")
 	proto.RegisterType((*PhysicalInventoryResponse)(nil), "dmi.PhysicalInventoryResponse")
 	proto.RegisterType((*HWComponentInfoGetRequest)(nil), "dmi.HWComponentInfoGetRequest")
@@ -1101,69 +1421,89 @@ func init() {
 func init() { proto.RegisterFile("dmi/hw_management_service.proto", fileDescriptor_eae902e73066286d) }
 
 var fileDescriptor_eae902e73066286d = []byte{
-	// 988 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x57, 0x51, 0x6f, 0xe3, 0x44,
-	0x10, 0x96, 0x9b, 0xea, 0xae, 0x99, 0x70, 0xed, 0x75, 0x0b, 0x47, 0xe2, 0x8a, 0x5e, 0x65, 0x84,
-	0xb8, 0x03, 0x2e, 0x39, 0xa5, 0x4f, 0x88, 0x17, 0x74, 0x77, 0xbd, 0xa4, 0x22, 0x3d, 0x55, 0x36,
-	0xa7, 0x0a, 0x84, 0x54, 0x39, 0xf1, 0xc4, 0x5d, 0xc9, 0xde, 0x0d, 0xf1, 0x3a, 0xa7, 0xfe, 0x06,
-	0x24, 0x1e, 0x80, 0x57, 0x24, 0xfe, 0x01, 0x7f, 0x80, 0x07, 0x7e, 0x04, 0x3f, 0x08, 0x79, 0x77,
-	0xed, 0xd8, 0x89, 0xdd, 0x0b, 0xbd, 0x54, 0xe2, 0x2d, 0xf6, 0x7e, 0xfb, 0xcd, 0xcc, 0x37, 0xe3,
-	0x99, 0x09, 0x3c, 0xf4, 0x42, 0xda, 0xb9, 0x7c, 0x73, 0x11, 0xba, 0xcc, 0xf5, 0x31, 0x44, 0x26,
-	0x2e, 0x22, 0x9c, 0xce, 0xe8, 0x08, 0xdb, 0x93, 0x29, 0x17, 0x9c, 0xd4, 0xbc, 0x90, 0x9a, 0xbb,
-	0x09, 0x6a, 0xc4, 0xc3, 0x90, 0xb3, 0x48, 0xbd, 0x37, 0xdf, 0x53, 0x17, 0xf5, 0xd3, 0xbe, 0xcf,
-	0xb9, 0x1f, 0x60, 0x47, 0x3e, 0x0d, 0xe3, 0x71, 0x07, 0xc3, 0x89, 0xb8, 0x52, 0x87, 0xd6, 0x4b,
-	0x68, 0x9e, 0x5d, 0x5e, 0x45, 0x74, 0xe4, 0x06, 0x27, 0x6c, 0x86, 0x4c, 0xf0, 0xe9, 0x95, 0x8d,
-	0x3f, 0xc6, 0x18, 0x09, 0xf2, 0x19, 0x34, 0x3c, 0x4c, 0xcc, 0x5d, 0xc4, 0x31, 0xf5, 0x9a, 0xc6,
-	0xa1, 0xf1, 0xa8, 0xd1, 0xad, 0xb7, 0xbd, 0x90, 0xb6, 0x5f, 0xc7, 0xd4, 0xb3, 0x41, 0x9d, 0x26,
-	0xbf, 0xad, 0x5f, 0x0c, 0x68, 0x95, 0x10, 0x45, 0x13, 0xce, 0x22, 0x24, 0x1f, 0xc3, 0x9d, 0x48,
-	0xb8, 0x22, 0x8e, 0x24, 0xc9, 0x76, 0xb7, 0x21, 0x49, 0x1c, 0xf9, 0xca, 0xd6, 0x47, 0x09, 0x68,
-	0x8a, 0x6e, 0xc4, 0x59, 0x73, 0x23, 0x07, 0xb2, 0xe5, 0x2b, 0x5b, 0x1f, 0x91, 0xcf, 0xa1, 0x4e,
-	0x53, 0xfa, 0x66, 0x4d, 0x7a, 0x74, 0x4f, 0xe2, 0xfa, 0xee, 0xd4, 0x7b, 0xe3, 0x4e, 0xd1, 0x9e,
-	0x9f, 0x5b, 0x7f, 0x18, 0xd0, 0xea, 0x9f, 0x3f, 0xe7, 0xe1, 0x84, 0x33, 0x64, 0xe2, 0x84, 0x8d,
-	0x79, 0x0f, 0xc5, 0x0d, 0xc2, 0x23, 0x4f, 0x61, 0x7b, 0x94, 0xd2, 0x28, 0xf8, 0xc6, 0x22, 0xfc,
-	0x5e, 0x06, 0x90, 0x37, 0x3e, 0xc9, 0xdf, 0x60, 0x6e, 0x88, 0xd2, 0xdb, 0x7a, 0x0e, 0xf6, 0xca,
-	0x0d, 0xd1, 0xfa, 0xcd, 0x00, 0xb3, 0xcc, 0xc5, 0xb5, 0x0b, 0xf7, 0x05, 0xd4, 0x33, 0xcb, 0x5a,
-	0xb8, 0x6d, 0x89, 0xcb, 0x6c, 0xdb, 0x73, 0x80, 0xf5, 0xcf, 0xb2, 0x72, 0xce, 0xff, 0x4b, 0x39,
-	0xd2, 0x85, 0xbb, 0xa3, 0x4b, 0x97, 0xf9, 0x18, 0x35, 0x37, 0x25, 0x63, 0x53, 0x32, 0x9e, 0x72,
-	0x8f, 0x8e, 0xa9, 0x3b, 0x0c, 0x70, 0x1e, 0x58, 0x0a, 0xb4, 0xc6, 0x4b, 0x62, 0x3b, 0xb7, 0x21,
-	0xb6, 0xf5, 0xab, 0x01, 0xfb, 0x8e, 0x70, 0xa7, 0xe2, 0x34, 0xf9, 0x74, 0x29, 0xf3, 0x5f, 0x48,
-	0x41, 0x6e, 0x21, 0xad, 0x0b, 0xa9, 0xa8, 0x5d, 0xf7, 0x8d, 0x76, 0xa0, 0xe5, 0x08, 0x3e, 0x59,
-	0xf4, 0x49, 0xe5, 0x94, 0xc0, 0xa6, 0xd4, 0xda, 0x90, 0x5a, 0xcb, 0xdf, 0x89, 0x5c, 0x65, 0x17,
-	0xd6, 0x2e, 0xd7, 0x00, 0x1e, 0x48, 0x1b, 0xe8, 0x29, 0x13, 0x51, 0x66, 0xa3, 0x0b, 0x77, 0x55,
-	0x00, 0x89, 0x91, 0xda, 0xf5, 0x49, 0xd6, 0x40, 0xeb, 0x77, 0x03, 0x5a, 0x0e, 0x8a, 0x01, 0xf7,
-	0x13, 0xa7, 0x8f, 0x99, 0x37, 0xe1, 0x94, 0xdd, 0xa8, 0x76, 0x1f, 0xc3, 0xfd, 0x40, 0xb1, 0x5c,
-	0xa0, 0xa6, 0x91, 0x61, 0xd4, 0xed, 0x9d, 0xa0, 0xc8, 0x9e, 0x87, 0xca, 0xc6, 0x3a, 0xe2, 0x81,
-	0x2e, 0xdb, 0x14, 0x7a, 0xa6, 0x5f, 0x5b, 0x28, 0xdd, 0xb3, 0x31, 0xe4, 0x02, 0xe7, 0xde, 0xad,
-	0x5d, 0xd4, 0xbf, 0x0c, 0x30, 0x7b, 0x25, 0x32, 0xac, 0xbd, 0x04, 0xcb, 0x54, 0xaa, 0xad, 0xae,
-	0xd2, 0x66, 0xb9, 0x4a, 0xcf, 0xa1, 0xe9, 0xa0, 0x38, 0x8d, 0xfc, 0x67, 0x71, 0xb4, 0x98, 0xc3,
-	0x4f, 0x61, 0x27, 0x8c, 0xfc, 0x61, 0x1c, 0xcd, 0x0d, 0xaa, 0xb2, 0xdd, 0x56, 0xaf, 0x53, 0xbc,
-	0xf5, 0xb3, 0x01, 0xad, 0xde, 0x32, 0xcb, 0xda, 0x25, 0x28, 0x71, 0xa8, 0x56, 0xea, 0xd0, 0x77,
-	0x70, 0xff, 0x98, 0x09, 0x2a, 0x28, 0x46, 0x03, 0xee, 0x0f, 0x70, 0x86, 0x01, 0x79, 0x0c, 0x5b,
-	0x81, 0xfe, 0xad, 0x1d, 0x51, 0x13, 0x2d, 0x05, 0xd8, 0xd9, 0x31, 0x31, 0x61, 0x0b, 0xf5, 0xf5,
-	0xe6, 0xc6, 0x61, 0xed, 0x51, 0xdd, 0xce, 0x9e, 0xad, 0x18, 0x88, 0xaa, 0x7a, 0x75, 0xe9, 0x06,
-	0xe5, 0x7e, 0x04, 0xf5, 0x20, 0xd9, 0x14, 0x66, 0x18, 0x28, 0xfa, 0x46, 0xf7, 0x03, 0x89, 0x5c,
-	0x74, 0xd9, 0x9e, 0xe3, 0xac, 0x9f, 0x0c, 0xd8, 0x2b, 0xd8, 0xd5, 0xe2, 0xfe, 0x17, 0xc3, 0xf3,
-	0x44, 0x6c, 0xac, 0x92, 0x88, 0x5a, 0x75, 0xd1, 0xff, 0x00, 0xa4, 0xf7, 0x6e, 0x22, 0x5c, 0x27,
-	0xf1, 0xdf, 0x06, 0xec, 0xf5, 0xde, 0x31, 0x56, 0x25, 0xf2, 0x60, 0x45, 0x91, 0x15, 0x2e, 0x27,
-	0x50, 0x6d, 0x15, 0x81, 0x36, 0xab, 0x05, 0xea, 0x67, 0x4d, 0x21, 0xe9, 0x9e, 0xa9, 0xcd, 0x1b,
-	0x08, 0xd5, 0xfd, 0x73, 0x0b, 0x5a, 0xaf, 0x5c, 0x41, 0x67, 0xd8, 0x3f, 0x3f, 0xcd, 0x36, 0x54,
-	0x47, 0x2d, 0xa8, 0xc4, 0x81, 0xbd, 0x92, 0x01, 0x48, 0x2a, 0xdb, 0xb7, 0x79, 0x98, 0x86, 0x54,
-	0x35, 0x34, 0x9f, 0x1a, 0xe4, 0x35, 0x90, 0xe5, 0x79, 0x44, 0x0e, 0xf4, 0xcd, 0x8a, 0xc9, 0x66,
-	0x3e, 0xac, 0x3c, 0xd7, 0xe9, 0xeb, 0xc3, 0x6e, 0xd2, 0x24, 0x0a, 0x13, 0x88, 0x3c, 0x68, 0xab,
-	0xb5, 0xb9, 0x9d, 0xae, 0xcd, 0xed, 0xe3, 0x64, 0x6d, 0x36, 0xf7, 0x55, 0x04, 0xe5, 0xe3, 0xea,
-	0x1c, 0xde, 0xef, 0xa1, 0x58, 0xda, 0x83, 0xc9, 0x47, 0xf2, 0x52, 0xd5, 0xa2, 0x6d, 0x1e, 0x54,
-	0x1d, 0x67, 0x91, 0x9f, 0xcb, 0xba, 0x5e, 0xd8, 0x5d, 0x74, 0xe4, 0x95, 0x1b, 0xae, 0x8e, 0xbc,
-	0x7a, 0xbd, 0xd4, 0x92, 0xae, 0x48, 0xec, 0xbc, 0x85, 0x38, 0xbf, 0x4a, 0x7d, 0x9b, 0x36, 0xa3,
-	0x42, 0xfb, 0xd7, 0x99, 0xaa, 0x9a, 0xcd, 0x66, 0x76, 0x5e, 0x31, 0x1c, 0x5f, 0xa6, 0x5f, 0x77,
-	0x81, 0x75, 0xa7, 0xb0, 0xff, 0x9f, 0xbc, 0xd0, 0xde, 0x5d, 0x33, 0xfb, 0x6c, 0xd8, 0x5d, 0x9a,
-	0x2d, 0x3a, 0x47, 0x55, 0x33, 0xe7, 0xad, 0xbe, 0x7d, 0xa3, 0x8a, 0xa8, 0xc8, 0x59, 0x55, 0x44,
-	0x07, 0xa9, 0x87, 0x15, 0x93, 0xe9, 0x2c, 0xed, 0x33, 0x85, 0xaf, 0x94, 0x14, 0x02, 0x2b, 0xf9,
-	0x7e, 0xcd, 0x66, 0x0e, 0x50, 0x6c, 0x51, 0x5f, 0x43, 0x23, 0xd7, 0xa5, 0xc9, 0x87, 0xb9, 0x4c,
-	0xe4, 0x5b, 0xa5, 0x66, 0x70, 0xca, 0x19, 0x7a, 0x4b, 0x0c, 0xbd, 0x2a, 0x86, 0x12, 0x1f, 0x9e,
-	0x7d, 0xf5, 0xfd, 0x97, 0x3e, 0x15, 0x97, 0xf1, 0xb0, 0x3d, 0xe2, 0x61, 0x87, 0x4f, 0x90, 0x8d,
-	0xf8, 0xd4, 0xeb, 0xa8, 0x9e, 0xf2, 0x64, 0xfe, 0x2f, 0xf7, 0x09, 0x65, 0x02, 0xa7, 0x63, 0x77,
-	0x84, 0x9d, 0xd9, 0x51, 0xc7, 0xe7, 0x1d, 0x2f, 0xa4, 0xc3, 0x3b, 0x52, 0xc2, 0xa3, 0x7f, 0x03,
-	0x00, 0x00, 0xff, 0xff, 0x3a, 0x27, 0xf3, 0x9c, 0x15, 0x0f, 0x00, 0x00,
+	// 1298 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x58, 0x5f, 0x6f, 0xdb, 0x54,
+	0x14, 0xc7, 0x71, 0xe9, 0x96, 0x53, 0xd6, 0xa5, 0x77, 0x5b, 0x49, 0x3c, 0xad, 0x1d, 0x9e, 0xc6,
+	0x36, 0x60, 0xc9, 0x94, 0x3d, 0x20, 0x84, 0xf8, 0x93, 0x35, 0xae, 0x6b, 0x2d, 0xb1, 0xa3, 0xeb,
+	0x74, 0xd5, 0x10, 0x60, 0xb9, 0xf1, 0x6d, 0x6a, 0x29, 0xb6, 0xb3, 0xd8, 0xc9, 0xb4, 0x0f, 0xc0,
+	0x2b, 0xdf, 0x00, 0x81, 0x10, 0xef, 0xbc, 0x80, 0xf8, 0x22, 0x3c, 0xf2, 0x31, 0x78, 0x07, 0xf9,
+	0x5e, 0x3b, 0x7f, 0x1c, 0x3b, 0x69, 0x9b, 0x4a, 0xf0, 0x16, 0xfb, 0x9e, 0xfb, 0xf3, 0x39, 0xe7,
+	0x77, 0xee, 0xef, 0x9e, 0x13, 0xd8, 0xb5, 0x1c, 0xbb, 0x72, 0xfa, 0xda, 0x70, 0x4c, 0xd7, 0xec,
+	0x12, 0x87, 0xb8, 0x81, 0xe1, 0x93, 0xc1, 0xc8, 0xee, 0x90, 0x72, 0x7f, 0xe0, 0x05, 0x1e, 0xe2,
+	0x2d, 0xc7, 0x16, 0xb6, 0x42, 0xab, 0x8e, 0xe7, 0x38, 0x9e, 0xeb, 0xb3, 0xf7, 0xc2, 0x3b, 0x6c,
+	0x63, 0xf4, 0x74, 0xbb, 0xeb, 0x79, 0xdd, 0x1e, 0xa9, 0xd0, 0xa7, 0xe3, 0xe1, 0x49, 0x85, 0x38,
+	0xfd, 0xe0, 0x0d, 0x5b, 0x14, 0xf7, 0xa1, 0xd8, 0x3a, 0x7d, 0xe3, 0xdb, 0x1d, 0xb3, 0xa7, 0xb8,
+	0x23, 0xe2, 0x06, 0xde, 0xe0, 0x0d, 0x26, 0xaf, 0x86, 0xc4, 0x0f, 0xd0, 0x07, 0xb0, 0x61, 0x91,
+	0xf0, 0x73, 0xc6, 0x70, 0x68, 0x5b, 0x45, 0xee, 0x2e, 0xf7, 0x70, 0xa3, 0x9a, 0x2f, 0x5b, 0x8e,
+	0x5d, 0x3e, 0x1c, 0xda, 0x16, 0x06, 0xb6, 0x1a, 0xfe, 0x16, 0xff, 0xe6, 0xa0, 0x94, 0x02, 0xe4,
+	0xf7, 0x3d, 0xd7, 0x27, 0xe8, 0x1e, 0xac, 0xfb, 0x81, 0x19, 0x0c, 0x7d, 0x0a, 0xb2, 0x59, 0xdd,
+	0xa0, 0x20, 0x3a, 0x7d, 0x85, 0xa3, 0x25, 0xf4, 0x19, 0xac, 0x0f, 0x88, 0xe9, 0x7b, 0x6e, 0x31,
+	0x47, 0x8d, 0xee, 0x53, 0xa3, 0x4c, 0xd0, 0x32, 0xa6, 0xc6, 0x38, 0xda, 0x84, 0x3e, 0x84, 0xbc,
+	0x1d, 0xdb, 0x14, 0x79, 0xea, 0xeb, 0x35, 0x8a, 0x70, 0x60, 0x0e, 0xac, 0xd7, 0xe6, 0x80, 0xe0,
+	0xc9, 0xba, 0xb8, 0x0f, 0xeb, 0x6c, 0x3b, 0xba, 0x09, 0x85, 0x43, 0xb5, 0x2e, 0xed, 0x2b, 0xaa,
+	0x54, 0x37, 0xb0, 0x54, 0xd3, 0x35, 0xb5, 0xf0, 0x16, 0x42, 0xb0, 0x79, 0xa8, 0x3e, 0x57, 0xb5,
+	0x23, 0xd5, 0xa8, 0x4b, 0x2f, 0x94, 0x3d, 0xa9, 0xc0, 0x85, 0xef, 0x14, 0xb5, 0x2d, 0x61, 0xb5,
+	0xd6, 0x30, 0x24, 0x8c, 0x35, 0x5c, 0xc8, 0x89, 0x3f, 0x71, 0x50, 0x3a, 0x38, 0xda, 0xf3, 0x9c,
+	0xbe, 0xe7, 0x12, 0x37, 0x50, 0xdc, 0x13, 0x4f, 0x26, 0xc1, 0x05, 0x12, 0x88, 0x9e, 0xc0, 0x66,
+	0x27, 0x86, 0x61, 0xe6, 0xb9, 0xa4, 0xf9, 0xb5, 0xb1, 0x01, 0xdd, 0x71, 0x7f, 0x7a, 0x87, 0x6b,
+	0x3a, 0x84, 0x46, 0x9d, 0x9f, 0x32, 0x53, 0x4d, 0x87, 0x88, 0xdf, 0xe7, 0x40, 0x48, 0x73, 0xf1,
+	0x3c, 0xd4, 0x7c, 0x9e, 0xa0, 0xe6, 0x7d, 0x96, 0xd8, 0x4c, 0xd4, 0x24, 0x37, 0x1f, 0x41, 0x7e,
+	0xec, 0x54, 0xc4, 0xcd, 0x26, 0x85, 0x18, 0x03, 0xe0, 0x89, 0x81, 0xf8, 0xcd, 0x05, 0xc8, 0xb9,
+	0x05, 0x5b, 0xf1, 0xbb, 0x3d, 0xad, 0xd9, 0xd2, 0x54, 0x49, 0x6d, 0x17, 0x72, 0x29, 0x9c, 0xf1,
+	0xe2, 0x9f, 0xf3, 0x9c, 0xe9, 0xff, 0x2f, 0xce, 0x50, 0x15, 0xae, 0x74, 0x4e, 0x4d, 0xb7, 0x4b,
+	0xfc, 0xe2, 0x1a, 0x45, 0x2c, 0x52, 0xc4, 0xa6, 0x67, 0xd9, 0x27, 0xb6, 0x79, 0xdc, 0x23, 0x93,
+	0xbc, 0xc5, 0x86, 0xe1, 0x09, 0x14, 0xd2, 0xc2, 0xba, 0x74, 0x9e, 0xf5, 0x4c, 0x9e, 0xc5, 0x57,
+	0x97, 0xcc, 0xdc, 0x8b, 0x5a, 0x43, 0xa9, 0x1b, 0xad, 0x1a, 0xae, 0x35, 0xf5, 0x02, 0x9f, 0xc2,
+	0xe6, 0x9a, 0xf8, 0x47, 0x0e, 0x6e, 0xeb, 0x81, 0x39, 0x08, 0x9a, 0xa1, 0x4a, 0xda, 0x6e, 0xb7,
+	0x4e, 0xf9, 0x39, 0x5f, 0xdc, 0x5f, 0x24, 0xe2, 0x7e, 0x10, 0x1b, 0x65, 0xc1, 0x26, 0x0b, 0x3c,
+	0x51, 0x35, 0xfc, 0x22, 0xa9, 0xfc, 0x8e, 0x5b, 0x92, 0x25, 0x01, 0xb6, 0x59, 0x76, 0x8c, 0x5a,
+	0x03, 0x4b, 0xb5, 0xfa, 0x4b, 0xa3, 0x59, 0x53, 0x6b, 0xb2, 0x54, 0x2f, 0x70, 0xe8, 0x3d, 0xb8,
+	0xa3, 0xb5, 0x24, 0x5c, 0x6b, 0x2b, 0x9a, 0x3a, 0x5e, 0x56, 0x54, 0xa3, 0x85, 0x35, 0x19, 0x4b,
+	0xba, 0x7e, 0x8e, 0xcc, 0x55, 0xa0, 0xa4, 0x07, 0x5e, 0x3f, 0x19, 0x20, 0x3b, 0x06, 0x08, 0xd6,
+	0x68, 0x79, 0x72, 0xb4, 0x3c, 0xe9, 0x6f, 0xf1, 0x77, 0x0e, 0x84, 0xb4, 0x1d, 0xab, 0x57, 0x58,
+	0x36, 0x6a, 0xb2, 0xc2, 0xaa, 0xe7, 0xaf, 0x30, 0xb1, 0x01, 0xdb, 0x14, 0x9c, 0x58, 0x0c, 0xdb,
+	0x1f, 0xbb, 0x5c, 0x85, 0x2b, 0x8c, 0x98, 0xd0, 0x67, 0x7e, 0xf1, 0x39, 0x8b, 0x0c, 0xc5, 0x1f,
+	0x38, 0x28, 0xe9, 0x24, 0x68, 0x78, 0xdd, 0xd0, 0x5b, 0xc9, 0xb5, 0xfa, 0x9e, 0xed, 0x5e, 0x48,
+	0x3e, 0x1e, 0x41, 0xa1, 0xc7, 0x50, 0x0c, 0x12, 0xc1, 0xd0, 0xac, 0xe4, 0xf1, 0xf5, 0xde, 0x2c,
+	0xfa, 0xb4, 0x29, 0xbd, 0xb7, 0x3b, 0x5e, 0x2f, 0x52, 0x8e, 0xd8, 0xb4, 0x15, 0xbd, 0x16, 0x7f,
+	0xc9, 0x51, 0xff, 0x30, 0x71, 0xbc, 0x80, 0x4c, 0xdc, 0x5b, 0xfd, 0x26, 0xce, 0x04, 0x4d, 0x72,
+	0xf4, 0x33, 0x77, 0x39, 0xb7, 0x6b, 0x78, 0x10, 0x1a, 0x9a, 0x2c, 0x2b, 0xaa, 0x6c, 0x48, 0x6a,
+	0xbd, 0xa5, 0x29, 0x6a, 0x3b, 0x56, 0x71, 0x74, 0x0f, 0x76, 0xe7, 0xd6, 0x5a, 0x58, 0x6b, 0x6b,
+	0x7b, 0xda, 0xb8, 0xc4, 0x51, 0x09, 0x6e, 0x35, 0x75, 0xf9, 0xd9, 0xa1, 0x9e, 0xdc, 0xff, 0xb6,
+	0xf8, 0x63, 0x0e, 0x04, 0x39, 0x85, 0xc6, 0xd5, 0x8b, 0x39, 0x1b, 0x35, 0xa9, 0x1a, 0x69, 0x05,
+	0xc0, 0x9f, 0xbd, 0x00, 0xd6, 0xd2, 0x0b, 0xe0, 0xb2, 0x7a, 0x9b, 0x3d, 0x28, 0xea, 0x24, 0x68,
+	0xfa, 0xdd, 0x67, 0x43, 0x3f, 0x59, 0xe6, 0x0f, 0xe0, 0xba, 0xe3, 0x77, 0x8f, 0x87, 0xfe, 0xc4,
+	0x71, 0xa6, 0x14, 0x9b, 0xec, 0x75, 0x6c, 0x2f, 0xfe, 0xc5, 0x41, 0x49, 0x9e, 0x47, 0x59, 0xbd,
+	0x1a, 0x33, 0x41, 0x93, 0x49, 0x4e, 0x71, 0x95, 0x4f, 0x75, 0xf5, 0x0c, 0xd2, 0x92, 0xc8, 0x11,
+	0x27, 0xbe, 0x84, 0x82, 0xe4, 0x06, 0x76, 0x60, 0x13, 0xbf, 0xe1, 0x75, 0x1b, 0x64, 0x44, 0x7a,
+	0xe8, 0x11, 0x5c, 0xed, 0x45, 0xbf, 0xa3, 0xb0, 0x58, 0x1f, 0x1a, 0x1b, 0xe0, 0xf1, 0x32, 0x12,
+	0xe0, 0x2a, 0x89, 0xb6, 0x17, 0x73, 0x77, 0xf9, 0x87, 0x79, 0x3c, 0x7e, 0x16, 0x87, 0x80, 0x98,
+	0xcc, 0xb0, 0x4d, 0x17, 0xd0, 0x97, 0xa7, 0x90, 0xef, 0x85, 0x9d, 0xff, 0x88, 0xf4, 0x18, 0xfc,
+	0x46, 0xf5, 0x16, 0xb5, 0x4c, 0xba, 0x8c, 0x27, 0x76, 0xe2, 0x3f, 0x1c, 0xdc, 0x98, 0xf9, 0x6e,
+	0x44, 0xd5, 0x79, 0x3e, 0x3c, 0xa1, 0x35, 0x97, 0x4d, 0xeb, 0xc7, 0x63, 0x5a, 0x79, 0x6a, 0xb4,
+	0x1b, 0x8b, 0x4c, 0xf2, 0xd3, 0x49, 0x79, 0xf9, 0xf6, 0x92, 0xd4, 0x65, 0x1b, 0x50, 0x6c, 0xd7,
+	0xd0, 0x42, 0x15, 0x69, 0x2b, 0xed, 0x97, 0x05, 0x5e, 0xfc, 0x1a, 0x90, 0xbc, 0x5a, 0xe2, 0x17,
+	0xd1, 0xfa, 0x5b, 0x0e, 0x6e, 0xc8, 0x2b, 0xe6, 0x97, 0x11, 0xdb, 0x38, 0x23, 0xb1, 0xcc, 0x6e,
+	0x8a, 0x14, 0xfe, 0x2c, 0xa4, 0xac, 0x4d, 0x91, 0x22, 0xff, 0xf7, 0xa4, 0x1c, 0x8c, 0xd5, 0x3a,
+	0xbc, 0x96, 0xe3, 0x38, 0x2f, 0x40, 0x4e, 0xf5, 0xd7, 0xab, 0x50, 0x52, 0xcd, 0xc0, 0x1e, 0x91,
+	0x83, 0xa3, 0xe6, 0x78, 0xb2, 0xd6, 0xd9, 0x60, 0x8d, 0x74, 0xb8, 0x91, 0xd2, 0xf6, 0xa1, 0xcc,
+	0xbe, 0x40, 0xb8, 0xbb, 0xac, 0x55, 0x7c, 0xc2, 0xa1, 0x43, 0x40, 0xf3, 0x1d, 0x0e, 0xda, 0xc9,
+	0x6c, 0x7d, 0x68, 0x50, 0xc2, 0xee, 0x92, 0xd6, 0x08, 0x1d, 0xc0, 0x56, 0xa8, 0x82, 0x33, 0xad,
+	0x0d, 0xda, 0x2e, 0xb3, 0x71, 0xbf, 0x1c, 0x8f, 0xfb, 0x65, 0x29, 0x1c, 0xf7, 0x85, 0xdb, 0x2c,
+	0x82, 0xf4, 0x3e, 0xe8, 0x08, 0x6e, 0xca, 0x24, 0x98, 0x1b, 0xb5, 0xd1, 0x9d, 0xac, 0x11, 0x9c,
+	0x79, 0xb8, 0xb3, 0x78, 0x42, 0x7f, 0xc2, 0xa1, 0x23, 0x7a, 0x96, 0x12, 0x03, 0x44, 0x14, 0x79,
+	0xe6, 0xdc, 0x1c, 0x45, 0x9e, 0x3d, 0x5e, 0x46, 0x29, 0x3d, 0x23, 0xb0, 0xbe, 0x04, 0x78, 0x7a,
+	0x4a, 0x6a, 0xc7, 0xa2, 0x3b, 0x73, 0xf9, 0xee, 0x4c, 0x49, 0x53, 0x4a, 0xd3, 0x27, 0xec, 0x2c,
+	0xee, 0x8f, 0xd0, 0x7e, 0xac, 0x28, 0x33, 0xa8, 0xd7, 0x67, 0xfe, 0x9d, 0x50, 0xea, 0xc2, 0xee,
+	0x92, 0xf6, 0x01, 0x61, 0xd8, 0x9a, 0xbb, 0x91, 0x23, 0x8e, 0xb2, 0x6e, 0xea, 0xa5, 0xbe, 0x3d,
+	0x67, 0x45, 0x34, 0x8b, 0x99, 0x55, 0x44, 0x3b, 0x8b, 0xaf, 0x5e, 0xd4, 0x8a, 0xb5, 0x6d, 0xe6,
+	0x94, 0xa2, 0x99, 0xc0, 0x52, 0xce, 0xaf, 0x50, 0xcc, 0x92, 0x19, 0xf4, 0x25, 0x6c, 0x4c, 0x5d,
+	0x09, 0xe8, 0xdd, 0xf9, 0x4b, 0x62, 0x1a, 0x41, 0x4f, 0x47, 0x90, 0xe7, 0x10, 0xe4, 0x2c, 0x84,
+	0x14, 0x1f, 0x9e, 0x7d, 0xfa, 0xd5, 0x27, 0x5d, 0x3b, 0x38, 0x1d, 0x1e, 0x97, 0x3b, 0x9e, 0x53,
+	0xf1, 0xfa, 0xc4, 0xed, 0x78, 0x03, 0xab, 0xc2, 0x34, 0xe5, 0xf1, 0xe4, 0xdf, 0xb9, 0xc7, 0xb6,
+	0x1b, 0x90, 0xc1, 0x89, 0xd9, 0x21, 0x95, 0xd1, 0xd3, 0x4a, 0xd7, 0xab, 0x58, 0x8e, 0x7d, 0xbc,
+	0x4e, 0x53, 0xf8, 0xf4, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xd9, 0x06, 0x92, 0xce, 0xcd, 0x13,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1189,6 +1529,8 @@ type NativeHWManagementServiceClient interface {
 	// uri = IP Address of the Hardware;
 	StartManagingDevice(ctx context.Context, in *ModifiableComponent, opts ...grpc.CallOption) (NativeHWManagementService_StartManagingDeviceClient, error)
 	// Stop management of a device and clean up any context and caches for that device
+	// This rpc can be called at any time, even before the StartManagingDevice operation
+	// has completed, and should be able to cleanup.
 	StopManagingDevice(ctx context.Context, in *StopManagingDeviceRequest, opts ...grpc.CallOption) (*StopManagingDeviceResponse, error)
 	// Returns an object containing a list of devices managed by this entity
 	GetManagedDevices(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*ManagedDevicesResponse, error)
@@ -1426,6 +1768,8 @@ type NativeHWManagementServiceServer interface {
 	// uri = IP Address of the Hardware;
 	StartManagingDevice(*ModifiableComponent, NativeHWManagementService_StartManagingDeviceServer) error
 	// Stop management of a device and clean up any context and caches for that device
+	// This rpc can be called at any time, even before the StartManagingDevice operation
+	// has completed, and should be able to cleanup.
 	StopManagingDevice(context.Context, *StopManagingDeviceRequest) (*StopManagingDeviceResponse, error)
 	// Returns an object containing a list of devices managed by this entity
 	GetManagedDevices(context.Context, *empty.Empty) (*ManagedDevicesResponse, error)
