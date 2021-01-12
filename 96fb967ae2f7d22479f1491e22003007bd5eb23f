@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b583b641_5cc990af",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T17:56:05Z",
+      "side": 1,
+      "message": "I think we should be able to differentiate between the two situations. For e.g. in case the reason returned in is DEVICE_ALREADY_MANAGED the user assumes that it was already added earlier and could go onto the next step of his processing. Whereas if the reason returned is OPERATION_ALREADY_IN_PROGRESS, maybe that the RPC is running for a long time and the user wants to cancel this by calling StopManagingDevice. I think it would help in differentiating the two.",
+      "parentUuid": "87a0f626_ecac0ef4",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea15232c_cdc972e9",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "d59e4ce8_7b63d233",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T17:56:05Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "ea15232c_cdc972e9",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b62a275_7c096505",
         "filename": "protos/dmi/sw_image.proto",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2021-01-12T15:39:54Z",
       "side": 1,
       "message": "No DEVICE_NOT_REACHABLE?",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec31687c_6b1cc468",
+        "filename": "protos/dmi/sw_image.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T17:56:05Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "5b62a275_7c096505",
       "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
