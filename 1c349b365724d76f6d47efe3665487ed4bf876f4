@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc677ad2_e46661d0",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Typo: Unnown \u003d\u003e Unknown",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55eba4c8_c69b7164",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Typo: Unnown \u003d\u003e Unknown",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "816a20ff_46fe3ef1",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Typo: Unnown \u003d\u003e Unknown",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f9f2e7a_990ddc46",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Why do we need this? I thought we will only return when the device was reached and retry forever?",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6fba7c8_2f95598a",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Why no INTERNAL_ERROR?",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f293265_0a1b2d6f",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Why no INTERNAL_ERROR?",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50374352_f022f35c",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Please add DEVICE_NOT_REACHABLE",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39892c6c_f4d48c25",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T11:06:17Z",
+      "side": 1,
+      "message": "Please add DEVICE_NOT_REACHABLE",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
