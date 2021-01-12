@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "59cad288_cda7074f",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T14:28:07Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "dc677ad2_e46661d0",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "55eba4c8_c69b7164",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "3c6be282_df7b22d8",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T14:28:07Z",
+      "side": 1,
+      "message": "I removed the NOT_REACHABLE and introduced a different one. Let me know your thoughts.",
+      "parentUuid": "8f9f2e7a_990ddc46",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b6fba7c8_2f95598a",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -81,6 +117,24 @@
       "writtenOn": "2021-01-12T11:06:17Z",
       "side": 1,
       "message": "Why no INTERNAL_ERROR?",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1ae0b1e_2d1a9e4c",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T14:28:07Z",
+      "side": 1,
+      "message": "I thought that the only case where the user can do something about a failure in the StopManagingDevice is when he passes a wrong name (UNKNOWN_DEVICE). Generally this API would be called when the OLT is being removed from the POD or there was an error in StartManagingDevice/StartManagingDevice takes too long and in any of these cases the user can\u0027t do anything else.\n\nI am considering this API something like a delete, which is like forced and we can\u0027t say that we cannot delete.\n\nLet me know your thoughts",
+      "parentUuid": "b6fba7c8_2f95598a",
       "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "9553b46e_0f665d33",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T14:28:07Z",
+      "side": 1,
+      "message": "added",
+      "parentUuid": "6f293265_0a1b2d6f",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50374352_f022f35c",
         "filename": "protos/dmi/sw_management_service.proto",
         "patchSetId": 2
@@ -115,6 +187,24 @@
       "writtenOn": "2021-01-12T11:06:17Z",
       "side": 1,
       "message": "Please add DEVICE_NOT_REACHABLE",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8a9ce4a_6dc5cc0b",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-01-12T14:28:07Z",
+      "side": 1,
+      "message": "Have removed the only one place where we suggested DEVICE_NOT_REACHABLE. In all cases of non reachability, the DM can retry and finally give up when the grpc times out/context deadline exceeded.",
+      "parentUuid": "50374352_f022f35c",
       "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
