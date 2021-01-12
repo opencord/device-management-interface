@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "759b15f5_0a6c2578",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59cad288_cda7074f",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "55eba4c8_c69b7164",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -51,6 +69,24 @@
       "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f94d5f6_518fcc15",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55eba4c8_c69b7164",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "f823873e_1e9c6531",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3c6be282_df7b22d8",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6fba7c8_2f95598a",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 2
@@ -138,6 +192,24 @@
       "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "266d50e2_d749a449",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "c1ae0b1e_2d1a9e4c",
+      "revId": "1c349b365724d76f6d47efe3665487ed4bf876f4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87a0f626_ecac0ef4",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "Do we really need that? I would propose to also return DEVICE_ALREADY_MANAGED  in that case.",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea15232c_cdc972e9",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "INTERNAL_ERROR is still missing.",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b62a275_7c096505",
+        "filename": "protos/dmi/sw_image.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-12T15:39:54Z",
+      "side": 1,
+      "message": "No DEVICE_NOT_REACHABLE?",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
