@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f751ce43_8d7cab60",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-13T08:43:01Z",
+      "side": 1,
+      "message": "remove space",
+      "revId": "dbb637cb8099daebb3b8d9f36cf41eb62e2dd5ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
