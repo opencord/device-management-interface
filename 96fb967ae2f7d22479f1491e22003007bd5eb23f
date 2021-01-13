@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "13d4a878_97862a3d",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-13T09:56:40Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "761bd0f8_6f6d4cf9",
+      "revId": "96fb967ae2f7d22479f1491e22003007bd5eb23f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea15232c_cdc972e9",
         "filename": "protos/dmi/hw_management_service.proto",
         "patchSetId": 3
