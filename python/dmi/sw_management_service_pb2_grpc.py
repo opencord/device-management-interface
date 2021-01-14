@@ -41,6 +41,11 @@ class NativeSoftwareManagementServiceStub(object):
                 request_serializer=dmi_dot_sw__management__service__pb2.ConfigRequest.SerializeToString,
                 response_deserializer=dmi_dot_sw__management__service__pb2.ConfigResponse.FromString,
                 )
+        self.GetStartupConfigurationInfo = channel.unary_unary(
+                '/dmi.NativeSoftwareManagementService/GetStartupConfigurationInfo',
+                request_serializer=dmi_dot_sw__management__service__pb2.StartupConfigInfoRequest.SerializeToString,
+                response_deserializer=dmi_dot_sw__management__service__pb2.StartupConfigInfoResponse.FromString,
+                )
 
 
 class NativeSoftwareManagementServiceServicer(object):
@@ -84,6 +89,13 @@ class NativeSoftwareManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetStartupConfigurationInfo(self, request, context):
+        """This API can be used to retrieve information about the current startup configuration that a device is using
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeSoftwareManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -111,6 +123,11 @@ def add_NativeSoftwareManagementServiceServicer_to_server(servicer, server):
                     servicer.UpdateStartupConfiguration,
                     request_deserializer=dmi_dot_sw__management__service__pb2.ConfigRequest.FromString,
                     response_serializer=dmi_dot_sw__management__service__pb2.ConfigResponse.SerializeToString,
+            ),
+            'GetStartupConfigurationInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStartupConfigurationInfo,
+                    request_deserializer=dmi_dot_sw__management__service__pb2.StartupConfigInfoRequest.FromString,
+                    response_serializer=dmi_dot_sw__management__service__pb2.StartupConfigInfoResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -204,5 +221,22 @@ class NativeSoftwareManagementService(object):
         return grpc.experimental.unary_stream(request, target, '/dmi.NativeSoftwareManagementService/UpdateStartupConfiguration',
             dmi_dot_sw__management__service__pb2.ConfigRequest.SerializeToString,
             dmi_dot_sw__management__service__pb2.ConfigResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetStartupConfigurationInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeSoftwareManagementService/GetStartupConfigurationInfo',
+            dmi_dot_sw__management__service__pb2.StartupConfigInfoRequest.SerializeToString,
+            dmi_dot_sw__management__service__pb2.StartupConfigInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

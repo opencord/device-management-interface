@@ -55,6 +55,27 @@ message ConfigResponse {
     Reason reason = 2;
 }
 
+message StartupConfigInfoRequest {
+    Uuid device_uuid = 1;
+}
+
+message StartupConfigInfoResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+    }
+    Status status = 1;
+    Reason reason = 2;
+    // The config_url is an optional attribute, the device manager could return the location from
+    // where the config was downloaded. Also it would not be present/empty for a fresh device into which the
+    // startup config would have been installed in the factory.
+    string config_url = 3;
+    // The version of the startup configuration. It is recommended to use semVer, but the DM implementations
+    // and operators could choose any other format as well.
+    string version = 4;
+}
+
 service NativeSoftwareManagementService {
     // Get the software version information of the Active and Standby images
     rpc GetSoftwareVersion(HardwareID) returns(GetSoftwareVersionInformationResponse);
@@ -73,6 +94,9 @@ service NativeSoftwareManagementService {
 
     // This API can be used to let the devices pickup their properitary configuration which they need at startup.
     rpc UpdateStartupConfiguration(ConfigRequest) returns(stream ConfigResponse);
+
+    // This API can be used to retrieve information about the current startup configuration that a device is using
+    rpc GetStartupConfigurationInfo(StartupConfigInfoRequest) returns(StartupConfigInfoResponse);
 
     // If needed we can add this later
     //rpc SubscribeToEvents() returns (stream );
