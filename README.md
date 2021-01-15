@@ -10,7 +10,7 @@ proprietary yang models).
 Related documentations can be found in the [docs/](./docs) directory.
 
 For anybody looking to implement a Device Manager component we suggest looking at the [RPC guidelines](docs/RpcGuidelines.md).
-Then Each API in the `.proto` files has an explanation in its own `.md` file.
+Then Each API in the `.proto` files has an explanation in its own `.md` file. Examples of the APIs can be found [here](docs/Examples.md)
 
 ## Meetings
 
