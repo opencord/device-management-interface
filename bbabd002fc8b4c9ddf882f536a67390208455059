@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14a31afd_0c0b294f",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-20T10:44:53Z",
+      "side": 1,
+      "message": "Remove \"Then\" before \"Each API ...\".",
+      "revId": "bbabd002fc8b4c9ddf882f536a67390208455059",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13b324f9_15817c51",
+        "filename": "docs/Examples.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-01-20T10:44:53Z",
+      "side": 1,
+      "message": "Is there something like a \"DeviceManagement Server\" already defined? Or should we simply say \"implements the Device Management Interface\"?",
+      "revId": "bbabd002fc8b4c9ddf882f536a67390208455059",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
