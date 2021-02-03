@@ -34,9 +34,13 @@ enum ComponentType {
     COMPONENT_TYPE_BATTERY = 11;
     COMPONENT_TYPE_STORAGE = 12;
     COMPONENT_TYPE_MEMORY = 13;
+    // A component of type "TRANSCEIVER" could have 0 or more components of type "PORT" as children.
     COMPONENT_TYPE_TRANSCEIVER = 14;
-    COMPONENT_TYPE_GPON_TRANSCEIVER = 15;
-    COMPONENT_TYPE_XGS_PON_TRANSCEIVER = 16;
+    // Removing the below two specific types of transceivers as we introduce a specific attribute
+    // called type of the transeiver which can be used to convey the same information
+    // Will deprecate these two in the future.
+    //COMPONENT_TYPE_GPON_TRANSCEIVER = 15;
+    //COMPONENT_TYPE_XGS_PON_TRANSCEIVER = 16;
 }
 
 enum ComponentAdminState {
@@ -148,12 +152,95 @@ message ComponentSensorData {
     string data_type = 9;
 }
 
+message PortComponentAttributes{
+    enum ConnectorType {
+        CONNECTOR_TYPE_UNDEFINED = 0;
+        RJ45 = 1;
+        FIBER_LC = 2;
+        FIBER_SC_PC = 3;
+        FIBER_MPO = 4;
+    }
+    enum Speed {
+        SPEED_UNDEFINED = 0;
+        DYNAMIC = 1;
+        GIGABIT_1 = 2;
+        GIGABIT_10 = 3;
+        GIGABIT_25 = 4;
+        GIGABIT_40 = 5;
+        GIGABIT_100 = 6;
+        GIGABIT_400 = 7;
+        MEGABIT_2500 = 8;
+        MEGABIT_1250 = 9;
+    }
+    enum Protocol {
+        PROTOCOL_UNDEFINED = 0;
+        ETHERNET = 1;
+        GPON = 2;
+        XGPON = 3;
+        XGSPON = 4;
+        GFAST = 5;
+        SERIAL = 6;
+        EPON = 7;
+    }
+    ConnectorType connector_type = 1;
+    Speed speed = 2;
+    Protocol protocol = 3;
+    string physical_label = 4;
+}
+
+message ContainerComponentAttributes{
+    string physical_label = 1;
+}
+
+message PsuComponentAttributes{
+    enum SupportedVoltage {
+        SUPPORTED_VOLTAGE_UNDEFINED = 0;
+        V48 = 1;
+        V230 = 2;
+        V115 = 3;
+    }
+    SupportedVoltage supported_voltage = 1;
+}
+
+message TransceiverComponentsAttributes{
+    enum FormFactor {
+        FORM_FACTOR_UNKNOWN = 0;
+        QSFP = 1;
+        QSFP_PLUS = 2;
+        QSFP28 = 3;
+        SFP = 4;
+        SFP_PLUS = 5;
+        XFP = 6;
+        CFP4 = 7;
+        CFP2 = 8;
+        CPAK = 9;
+        X2 = 10;
+        OTHER = 11;
+        CFP = 12;
+        CFP2_ACO = 13;
+        CFP2_DCO = 14;
+    }
+
+    enum Type {
+        TYPE_UNKNOWN = 0;
+        ETHERNET = 1;
+        GPON = 2;
+        XGPON = 3;
+        XGSPON = 4;
+        CPON = 5;
+        NG_PON2 = 6;
+        EPON = 7;
+    }
+    FormFactor form_factor = 1;
+    Type trans_type = 2;
+}
+
 message Component {
-    // The name of a component uniquely identifies an component within the Hardware
+    // The name of a component uniquely identifies a component within the hardware
     string name = 1;
     ComponentType class = 2;
     string description = 3;
-    // The name of the parent of this component, empty "" in case of the root component
+    // The name of the parent of this component, empty string("") in case of the root component
     string parent = 4;
     int32 parent_rel_pos = 5;
     repeated Component children = 6;
@@ -162,6 +249,8 @@ message Component {
     string software_rev = 9;
     string serial_num = 10;
     string mfg_name = 11;
+    // Apart from the definition of this attribute as defined in RFC 8348, implementations could choose to carry
+    // the manufacturer's part number in this attribute.
     string model_name = 12;
     string alias = 13;
     string asset_id = 14;
@@ -172,6 +261,13 @@ message Component {
     Uuid uuid= 18;
     ComponentState state = 19;
     repeated ComponentSensorData sensor_data = 20;
+    // The attribute 'specific' can be populated for components where more details are required by the users of the DMI interface
+    oneof specific {
+        PortComponentAttributes port_attr = 50;
+        ContainerComponentAttributes container_attr = 51;
+        PsuComponentAttributes psu_attr = 52;
+        TransceiverComponentsAttributes transceiver_attr = 53;
+    }
 }
 
 message Hardware {
@@ -179,7 +275,9 @@ message Hardware {
     // Each HW has one parent/root and all other components are children of this
     // The class of the root component would be set as UNDEFINED
     Component root = 2;
-    // TODO: Authetication?
+    // TODO: Authentication?
+    // Timestamp at which the hardware last booted
+    google.protobuf.Timestamp last_booted = 3;
 }
 
 // The attributes of a component which are modifiable from the client side

@@ -1,5 +1,7 @@
 # Device Management Interface
+
 ## Overview
+
 This repository holds the `.proto` files and documentation for the device management interface.
 
 The proto files and APIs are based on [RFC-8348](https://tools.ietf.org/html/rfc8348) from IETF and WT-383 from BBF
@@ -10,7 +12,7 @@ proprietary yang models).
 Related documentations can be found in the [docs/](./docs) directory.
 
 For anybody looking to implement a Device Manager component we suggest looking at the [RPC guidelines](docs/RpcGuidelines.md).
-Then Each API in the `.proto` files has an explanation in its own `.md` file. Examples of the APIs can be found [here](docs/Examples.md)
+Each API in the `.proto` files has an explanation in its own `.md` file. Examples of the APIs can be found [here](docs/Examples.md)
 
 ## Meetings
 
