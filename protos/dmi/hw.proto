@@ -34,9 +34,13 @@ enum ComponentType {
     COMPONENT_TYPE_BATTERY = 11;
     COMPONENT_TYPE_STORAGE = 12;
     COMPONENT_TYPE_MEMORY = 13;
+    // The transceiver type of components could have 0 or more Port type of components as children
     COMPONENT_TYPE_TRANSCEIVER = 14;
-    COMPONENT_TYPE_GPON_TRANSCEIVER = 15;
-    COMPONENT_TYPE_XGS_PON_TRANSCEIVER = 16;
+    // Removing the below two specific types of transceivers as we introduce a specific attribute
+    // called type of the transeiver which can be used to convey the same information
+    // Will deprecate these two in the future.
+    //COMPONENT_TYPE_GPON_TRANSCEIVER = 15;
+    //COMPONENT_TYPE_XGS_PON_TRANSCEIVER = 16;
 }
 
 enum ComponentAdminState {
@@ -148,6 +152,84 @@ message ComponentSensorData {
     string data_type = 9;
 }
 
+message PortComponentAttributes{
+    enum ConnectorType {
+        FORM_UNDEFINED = 0;
+        RJ45 = 1;
+        FIBER_LC = 2;
+        FIBER_SC_PC = 3;
+        FIBER_MPO = 4;
+    }
+    enum Speed {
+        SPEED_UNDEFINED = 0;
+        DYNAMIC = 1;
+        GIGABIT_1 = 2;
+        GIGABIT_10 = 3;
+        GIGABIT_100 = 4;
+        GIGABIT_400 = 5;
+        GIGABIT_2_5 = 6;
+    }
+    enum Protocol {
+        PROTO_UNDEFINED = 0;
+        ETHERNET = 1;
+        GPON = 2;
+        XGPON = 3;
+        XGSPON = 4;
+        GFAST = 5;
+        SERIAL = 6;
+    }
+    ConnectorType connector_type = 1;
+    Speed speed = 2;
+    Protocol protocol = 3;
+    string phyiscal_label = 4;
+}
+
+message ContainerComponentAttributes{
+    string phyiscal_label = 1;
+}
+
+message PsuComponentAttributes{
+    enum SupportedVoltage {
+        UNDEFINED = 0;
+        V48 = 1;
+        V230 = 2;
+        V115 = 3;
+    }
+    SupportedVoltage supported_voltage = 1;
+}
+
+message TransceiverComponentsAttributes{
+
+    enum FormFactor {
+        FormFactor_UNKNOWN = 0;
+        QSFP = 1;
+        QSFP_PLUS = 2;
+        QSFP28 = 3;
+        SFP = 4;
+        SFP_PLUS = 5;
+        XFP = 6;
+        CFP4 = 7;
+        CFP2 = 8;
+        CPAK = 9;
+        X2 = 10;
+        OTHER = 11;
+        CFP = 12;
+        CFP2_ACO = 13;
+    }
+
+    enum Type {
+        Type_UNKNOWN = 0;
+        ETHERNET = 1;
+        GPON = 2;
+        XGPON = 3;
+        XGSPON = 4;
+        CPON = 5;
+        NG_PON2 = 6;
+    }
+    FormFactor form_factor = 1;
+    Type trans_type = 2;
+}
+
 message Component {
     // The name of a component uniquely identifies an component within the Hardware
     string name = 1;
@@ -162,6 +244,8 @@ message Component {
     string software_rev = 9;
     string serial_num = 10;
     string mfg_name = 11;
+    // Apart from the definition of this attribute as defined in RFC 8348, implementations could choose to carry 
+    // the manufacturer part number in this attribute.
     string model_name = 12;
     string alias = 13;
     string asset_id = 14;
@@ -172,6 +256,12 @@ message Component {
     Uuid uuid= 18;
     ComponentState state = 19;
     repeated ComponentSensorData sensor_data = 20;
+    oneof specifc {
+        PortComponentAttributes port_attr = 50;
+        ContainerComponentAttributes container_attr = 51;
+        PsuComponentAttributes psu_attr = 52;
+        TransceiverComponentsAttributes transceiver_attr = 53;
+    }
 }
 
 message Hardware {
@@ -180,6 +270,8 @@ message Hardware {
     // The class of the root component would be set as UNDEFINED
     Component root = 2;
     // TODO: Authetication?
+    // Timestamp at which the hardware last booted
+    google.protobuf.Timestamp last_booted = 3;
 }
 
 // The attributes of a component which are modifiable from the client side
