@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cc645f4_e1459c76",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "commenting them out is effectively deprecating them right away as they will not appear anymore, if we want to have deprecation policy they need to be left in.",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46507286_6d1b6770",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "some documentation on when to use this could be appreciated.",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "641b5747_a8a68373",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "what is 2_5 ? \nalso you are missing 25 and 40",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4fc8653_baf3741c",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "missing EPON",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edf518ad_be4ec25e",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "CFP2_DCO",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33be93e8_71f700f6",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "EPON",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0b95d2d_b24cca2f",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-04T16:00:14Z",
+      "side": 1,
+      "message": "useless space",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
