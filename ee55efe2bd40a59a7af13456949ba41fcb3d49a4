@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0c9460ec_c8daae22",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "Yes agreed, I will uncomment these before the merge. I commented these so that they come to notice :)",
+      "parentUuid": "2cc645f4_e1459c76",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "46507286_6d1b6770",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2021-02-04T16:00:14Z",
       "side": 1,
       "message": "some documentation on when to use this could be appreciated.",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ea167fa_26820e4e",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "Have added comments below where the message is used within the Component. Please check if it makes sense or let me know if you are looking for anything specific.",
+      "parentUuid": "46507286_6d1b6770",
       "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "c125f1a6_881a54f9",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "641b5747_a8a68373",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e4fc8653_baf3741c",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2021-02-04T16:00:14Z",
       "side": 1,
       "message": "missing EPON",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd220d8b_edc5a073",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4fc8653_baf3741c",
       "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "2c791d13_c370c53b",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "edf518ad_be4ec25e",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "33be93e8_71f700f6",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 1
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9807616b_3e3a24c1",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33be93e8_71f700f6",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b0b95d2d_b24cca2f",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 1
@@ -115,6 +223,24 @@
       "writtenOn": "2021-02-04T16:00:14Z",
       "side": 1,
       "message": "useless space",
+      "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20e8346b_35bd91d4",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-02-04T16:55:49Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b0b95d2d_b24cca2f",
       "revId": "ee55efe2bd40a59a7af13456949ba41fcb3d49a4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
