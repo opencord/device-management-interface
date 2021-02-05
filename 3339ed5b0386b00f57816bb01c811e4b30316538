@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d5de48d_608fbde6",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000656
+      },
+      "writtenOn": "2021-02-05T08:07:14Z",
+      "side": 1,
+      "message": "I am not really the expert, RJ45 with 1G ? no lower possible or make it no sense ? As I already told it, I am not the expert ;)",
+      "range": {
+        "startLine": 155,
+        "startChar": 8,
+        "endLine": 155,
+        "endChar": 31
+      },
+      "revId": "3339ed5b0386b00f57816bb01c811e4b30316538",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
