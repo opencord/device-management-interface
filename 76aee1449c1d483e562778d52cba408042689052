@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28771e7b_d0c432fd",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-18T15:46:04Z",
+      "side": 1,
+      "message": "add the reach of the fiber and also add the support wavelengths",
+      "revId": "76aee1449c1d483e562778d52cba408042689052",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
