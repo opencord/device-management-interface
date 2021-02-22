@@ -107,6 +107,7 @@ message ListEventsResponse {
         UNDEFINED_REASON = 0;
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
     }
     Status status = 1;
     Reason reason = 2;
@@ -127,6 +128,7 @@ message EventsConfigurationResponse {
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
         INVALID_CONFIG = 3;
+        DEVICE_UNREACHABLE = 4;
     }
     Status status = 1;
     Reason reason = 2;

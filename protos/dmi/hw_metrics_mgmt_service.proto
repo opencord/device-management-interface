@@ -71,6 +71,7 @@ message ListMetricsResponse {
         UNDEFINED_REASON = 0;
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
     }
     Status status = 1;
     Reason reason = 2;
@@ -92,6 +93,7 @@ message MetricsConfigurationResponse {
         INTERNAL_ERROR = 2;
         POLL_INTERVAL_UNSUPPORTED = 3;
         INVALID_METRIC = 4;
+        DEVICE_UNREACHABLE = 5;
     }
     Status status = 1;
     Reason reason = 2;
@@ -125,6 +127,7 @@ message GetMetricResponse {
         UNKNOWN_COMPONENT = 2;
         INTERNAL_ERROR = 3;
         INVALID_METRIC = 4;
+        DEVICE_UNREACHABLE = 5;
     }
     Status status = 1;
     Reason reason = 2;

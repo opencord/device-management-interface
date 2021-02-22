@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!dmi/hw_metrics_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\"a\n\x0cMetricConfig\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12\x15\n\rpoll_interval\x18\x03 \x01(\r\"3\n\rMetricsConfig\x12\"\n\x07metrics\x18\x01 \x03(\x0b\x32\x11.dmi.MetricConfig\"\xd0\x01\n\x13ListMetricsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12/\n\x06reason\x18\x02 \x01(\x0e\x32\x1f.dmi.ListMetricsResponse.Reason\x12#\n\x07metrics\x18\x03 \x01(\x0b\x32\x12.dmi.MetricsConfig\"F\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\"\x8d\x01\n\x1bMetricsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12%\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x12.dmi.MetricsConfigH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"\xf0\x01\n\x1cMetricsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x38\n\x06reason\x18\x02 \x01(\x0e\x32(.dmi.MetricsConfigurationResponse.Reason\"y\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x1d\n\x19POLL_INTERVAL_UNSUPPORTED\x10\x03\x12\x12\n\x0eINVALID_METRIC\x10\x04\"k\n\x0eMetricMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\x84\x01\n\x06Metric\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12,\n\x0fmetric_metadata\x18\x02 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12\'\n\x05value\x18\x03 \x01(\x0b\x32\x18.dmi.ComponentSensorData\"_\n\x10GetMetricRequest\x12&\n\tmeta_data\x18\x01 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12#\n\tmetric_id\x18\x02 \x01(\x0e\x32\x10.dmi.MetricNames\"\xef\x01\n\x11GetMetricResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12-\n\x06reason\x18\x02 \x01(\x0e\x32\x1d.dmi.GetMetricResponse.Reason\x12\x1b\n\x06metric\x18\x03 \x01(\x0b\x32\x0b.dmi.Metric\"q\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x15\n\x11UNKNOWN_COMPONENT\x10\x02\x12\x12\n\x0eINTERNAL_ERROR\x10\x03\x12\x12\n\x0eINVALID_METRIC\x10\x04*\xd9\x05\n\x0bMetricNames\x12\x19\n\x15METRIC_NAME_UNDEFINED\x10\x00\x12\x14\n\x10METRIC_FAN_SPEED\x10\x01\x12\x13\n\x0fMETRIC_CPU_TEMP\x10\x64\x12\x1f\n\x1bMETRIC_CPU_USAGE_PERCENTAGE\x10\x65\x12\x1c\n\x17METRIC_TRANSCEIVER_TEMP\x10\xc8\x01\x12\x1f\n\x1aMETRIC_TRANSCEIVER_VOLTAGE\x10\xc9\x01\x12\x1c\n\x17METRIC_TRANSCEIVER_BIAS\x10\xca\x01\x12 \n\x1bMETRIC_TRANSCEIVER_RX_POWER\x10\xcb\x01\x12 \n\x1bMETRIC_TRANSCEIVER_TX_POWER\x10\xcc\x01\x12\"\n\x1dMETRIC_TRANSCEIVER_WAVELENGTH\x10\xcd\x01\x12\x15\n\x10METRIC_DISK_TEMP\x10\xac\x02\x12\x19\n\x14METRIC_DISK_CAPACITY\x10\xad\x02\x12\x16\n\x11METRIC_DISK_USAGE\x10\xae\x02\x12!\n\x1cMETRIC_DISK_USAGE_PERCENTAGE\x10\xaf\x02\x12&\n!METRIC_DISK_READ_WRITE_PERCENTAGE\x10\xb0\x02\x12(\n#METRIC_DISK_FAULTY_CELLS_PERCENTAGE\x10\xb1\x02\x12\x14\n\x0fMETRIC_RAM_TEMP\x10\x90\x03\x12\x18\n\x13METRIC_RAM_CAPACITY\x10\x91\x03\x12\x15\n\x10METRIC_RAM_USAGE\x10\x92\x03\x12 \n\x1bMETRIC_RAM_USAGE_PERCENTAGE\x10\x93\x03\x12\x15\n\x10METRIC_POWER_MAX\x10\xf4\x03\x12\x17\n\x12METRIC_POWER_USAGE\x10\xf5\x03\x12\"\n\x1dMETRIC_POWER_USAGE_PERCENTAGE\x10\xf6\x03\x12\"\n\x1dMETRIC_INNER_SURROUNDING_TEMP\x10\xd8\x04\x32\xf9\x01\n\x1eNativeMetricsManagementService\x12\x38\n\x0bListMetrics\x12\x0f.dmi.HardwareID\x1a\x18.dmi.ListMetricsResponse\x12\x61\n\x1aUpdateMetricsConfiguration\x12 .dmi.MetricsConfigurationRequest\x1a!.dmi.MetricsConfigurationResponse\x12:\n\tGetMetric\x12\x15.dmi.GetMetricRequest\x1a\x16.dmi.GetMetricResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n!dmi/hw_metrics_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\"a\n\x0cMetricConfig\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12\x15\n\rpoll_interval\x18\x03 \x01(\r\"3\n\rMetricsConfig\x12\"\n\x07metrics\x18\x01 \x03(\x0b\x32\x11.dmi.MetricConfig\"\xe8\x01\n\x13ListMetricsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12/\n\x06reason\x18\x02 \x01(\x0e\x32\x1f.dmi.ListMetricsResponse.Reason\x12#\n\x07metrics\x18\x03 \x01(\x0b\x32\x12.dmi.MetricsConfig\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"\x8d\x01\n\x1bMetricsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12%\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x12.dmi.MetricsConfigH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"\x89\x02\n\x1cMetricsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x38\n\x06reason\x18\x02 \x01(\x0e\x32(.dmi.MetricsConfigurationResponse.Reason\"\x91\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x1d\n\x19POLL_INTERVAL_UNSUPPORTED\x10\x03\x12\x12\n\x0eINVALID_METRIC\x10\x04\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x05\"k\n\x0eMetricMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\x84\x01\n\x06Metric\x12#\n\tmetric_id\x18\x01 \x01(\x0e\x32\x10.dmi.MetricNames\x12,\n\x0fmetric_metadata\x18\x02 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12\'\n\x05value\x18\x03 \x01(\x0b\x32\x18.dmi.ComponentSensorData\"_\n\x10GetMetricRequest\x12&\n\tmeta_data\x18\x01 \x01(\x0b\x32\x13.dmi.MetricMetaData\x12#\n\tmetric_id\x18\x02 \x01(\x0e\x32\x10.dmi.MetricNames\"\x88\x02\n\x11GetMetricResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12-\n\x06reason\x18\x02 \x01(\x0e\x32\x1d.dmi.GetMetricResponse.Reason\x12\x1b\n\x06metric\x18\x03 \x01(\x0b\x32\x0b.dmi.Metric\"\x89\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x15\n\x11UNKNOWN_COMPONENT\x10\x02\x12\x12\n\x0eINTERNAL_ERROR\x10\x03\x12\x12\n\x0eINVALID_METRIC\x10\x04\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x05*\xd9\x05\n\x0bMetricNames\x12\x19\n\x15METRIC_NAME_UNDEFINED\x10\x00\x12\x14\n\x10METRIC_FAN_SPEED\x10\x01\x12\x13\n\x0fMETRIC_CPU_TEMP\x10\x64\x12\x1f\n\x1bMETRIC_CPU_USAGE_PERCENTAGE\x10\x65\x12\x1c\n\x17METRIC_TRANSCEIVER_TEMP\x10\xc8\x01\x12\x1f\n\x1aMETRIC_TRANSCEIVER_VOLTAGE\x10\xc9\x01\x12\x1c\n\x17METRIC_TRANSCEIVER_BIAS\x10\xca\x01\x12 \n\x1bMETRIC_TRANSCEIVER_RX_POWER\x10\xcb\x01\x12 \n\x1bMETRIC_TRANSCEIVER_TX_POWER\x10\xcc\x01\x12\"\n\x1dMETRIC_TRANSCEIVER_WAVELENGTH\x10\xcd\x01\x12\x15\n\x10METRIC_DISK_TEMP\x10\xac\x02\x12\x19\n\x14METRIC_DISK_CAPACITY\x10\xad\x02\x12\x16\n\x11METRIC_DISK_USAGE\x10\xae\x02\x12!\n\x1cMETRIC_DISK_USAGE_PERCENTAGE\x10\xaf\x02\x12&\n!METRIC_DISK_READ_WRITE_PERCENTAGE\x10\xb0\x02\x12(\n#METRIC_DISK_FAULTY_CELLS_PERCENTAGE\x10\xb1\x02\x12\x14\n\x0fMETRIC_RAM_TEMP\x10\x90\x03\x12\x18\n\x13METRIC_RAM_CAPACITY\x10\x91\x03\x12\x15\n\x10METRIC_RAM_USAGE\x10\x92\x03\x12 \n\x1bMETRIC_RAM_USAGE_PERCENTAGE\x10\x93\x03\x12\x15\n\x10METRIC_POWER_MAX\x10\xf4\x03\x12\x17\n\x12METRIC_POWER_USAGE\x10\xf5\x03\x12\"\n\x1dMETRIC_POWER_USAGE_PERCENTAGE\x10\xf6\x03\x12\"\n\x1dMETRIC_INNER_SURROUNDING_TEMP\x10\xd8\x04\x32\xf9\x01\n\x1eNativeMetricsManagementService\x12\x38\n\x0bListMetrics\x12\x0f.dmi.HardwareID\x1a\x18.dmi.ListMetricsResponse\x12\x61\n\x1aUpdateMetricsConfiguration\x12 .dmi.MetricsConfigurationRequest\x1a!.dmi.MetricsConfigurationResponse\x12:\n\tGetMetric\x12\x15.dmi.GetMetricRequest\x1a\x16.dmi.GetMetricResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,])
 
@@ -156,8 +156,8 @@ _METRICNAMES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1409,
-  serialized_end=2138,
+  serialized_start=1483,
+  serialized_end=2212,
 )
 _sym_db.RegisterEnumDescriptor(_METRICNAMES)
 
@@ -210,11 +210,16 @@ _LISTMETRICSRESPONSE_REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_UNREACHABLE', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=366,
-  serialized_end=436,
+  serialized_end=460,
 )
 _sym_db.RegisterEnumDescriptor(_LISTMETRICSRESPONSE_REASON)
 
@@ -250,11 +255,16 @@ _METRICSCONFIGURATIONRESPONSE_REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_UNREACHABLE', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=702,
-  serialized_end=823,
+  serialized_start=727,
+  serialized_end=872,
 )
 _sym_db.RegisterEnumDescriptor(_METRICSCONFIGURATIONRESPONSE_REASON)
 
@@ -290,11 +300,16 @@ _GETMETRICRESPONSE_REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_UNREACHABLE', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1293,
-  serialized_end=1406,
+  serialized_start=1343,
+  serialized_end=1480,
 )
 _sym_db.RegisterEnumDescriptor(_GETMETRICRESPONSE_REASON)
 
@@ -420,7 +435,7 @@ _LISTMETRICSRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=228,
-  serialized_end=436,
+  serialized_end=460,
 )
 
 
@@ -470,8 +485,8 @@ _METRICSCONFIGURATIONREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=439,
-  serialized_end=580,
+  serialized_start=463,
+  serialized_end=604,
 )
 
 
@@ -510,8 +525,8 @@ _METRICSCONFIGURATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=583,
-  serialized_end=823,
+  serialized_start=607,
+  serialized_end=872,
 )
 
 
@@ -556,8 +571,8 @@ _METRICMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=932,
+  serialized_start=874,
+  serialized_end=981,
 )
 
 
@@ -602,8 +617,8 @@ _METRIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1067,
+  serialized_start=984,
+  serialized_end=1116,
 )
 
 
@@ -641,8 +656,8 @@ _GETMETRICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1164,
+  serialized_start=1118,
+  serialized_end=1213,
 )
 
 
@@ -688,8 +703,8 @@ _GETMETRICRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1167,
-  serialized_end=1406,
+  serialized_start=1216,
+  serialized_end=1480,
 )
 
 _METRICCONFIG.fields_by_name['metric_id'].enum_type = _METRICNAMES
@@ -805,8 +820,8 @@ _NATIVEMETRICSMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2141,
-  serialized_end=2390,
+  serialized_start=2215,
+  serialized_end=2464,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListMetrics',

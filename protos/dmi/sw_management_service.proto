@@ -23,6 +23,7 @@ message GetSoftwareVersionInformationResponse {
         UNDEFINED_REASON = 0;
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
     }
     Status status = 1;
     Reason reason = 2;
@@ -50,6 +51,7 @@ message ConfigResponse {
         ERROR_FETCHING_CONFIG = 3;
         INVALID_CONFIG = 4;
         OPERATION_ALREADY_IN_PROGRESS = 5;
+        DEVICE_UNREACHABLE = 6;
     }
     Status status = 1;
     Reason reason = 2;
@@ -64,6 +66,7 @@ message StartupConfigInfoResponse {
         UNDEFINED_REASON = 0;
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
     }
     Status status = 1;
     Reason reason = 2;
