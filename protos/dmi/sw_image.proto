@@ -57,4 +57,5 @@ message ImageStatus {
     ImageState state = 3;
     // description contains more information about the current state of the procedure and is device dependant
     string description = 4;
+    string reason_detail = 5;
 }

@@ -76,6 +76,7 @@ message ListMetricsResponse {
     Status status = 1;
     Reason reason = 2;
     MetricsConfig metrics = 3;
+    string reason_detail = 4;
 }
 
 message MetricsConfigurationRequest {
@@ -97,6 +98,7 @@ message MetricsConfigurationResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message MetricMetaData {
@@ -132,6 +134,7 @@ message GetMetricResponse {
     Status status = 1;
     Reason reason = 2;
     Metric metric = 3;
+    string reason_detail = 4;
 }
 
 service NativeMetricsManagementService {
