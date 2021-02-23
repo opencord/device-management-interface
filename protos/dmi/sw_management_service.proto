@@ -28,6 +28,7 @@ message GetSoftwareVersionInformationResponse {
     Status status = 1;
     Reason reason = 2;
     SoftwareVersionInformation info = 3;
+    string reason_detail = 4;
 }
 
 message DownloadImageRequest {
@@ -55,6 +56,7 @@ message ConfigResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message StartupConfigInfoRequest {
@@ -77,6 +79,7 @@ message StartupConfigInfoResponse {
     // The version of the startup configuration. It is recommended to use semVer, but the DM implementations
     // and operators could choose any other format as well.
     string version = 4;
+    string reason_detail = 5;
 }
 
 service NativeSoftwareManagementService {

@@ -23,6 +23,10 @@ message PhysicalInventoryResponse {
     Status status = 1;
     Reason reason = 2;
     Hardware inventory = 3;
+    // It is recommended that upstream components/users of the DMI interface
+    // do not really interpret/parse the reson_detail, but rather use it for
+    // display purposes to the end user or use it for logging the error
+    string reason_detail = 4;
 }
 
 message HWComponentInfoGetRequest {
@@ -42,6 +46,7 @@ message HWComponentInfoGetResponse {
     Status status = 1;
     Reason reason = 2;
     Component component = 3;
+    string reason_detail = 4;
 }
 
 message HWComponentInfoSetRequest {
@@ -62,6 +67,7 @@ message HWComponentInfoSetResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message StartManagingDeviceResponse {
@@ -79,6 +85,7 @@ message StartManagingDeviceResponse {
     Status status = 1;
     Reason reason = 2;
     Uuid device_uuid = 3;
+    string reason_detail = 4;
 }
 
 message StopManagingDeviceRequest {
@@ -94,6 +101,7 @@ message StopManagingDeviceResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message ManagedDevicesResponse {
@@ -118,6 +126,7 @@ message SetRemoteEndpointResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message GetLoggingEndpointResponse {
@@ -131,6 +140,7 @@ message GetLoggingEndpointResponse {
     Reason reason = 2;
     string logging_endpoint = 3;
     string logging_protocol = 4;
+    string reason_detail = 5;
 }
 
 message SetMsgBusEndpointRequest {
@@ -146,6 +156,7 @@ message GetMsgBusEndpointResponse {
     Status status = 1;
     Reason reason = 2;
     string msgbus_endpoint = 3;
+    string reason_detail = 4;
 }
 
 message EntitiesLogLevel {
@@ -169,6 +180,7 @@ message SetLogLevelResponse {
     Uuid device_uuid = 1;
     Status status = 2;
     Reason reason = 3;
+    string reason_detail = 4;
 }
 
 message GetLogLevelRequest {
@@ -188,6 +200,7 @@ message GetLogLevelResponse {
     repeated EntitiesLogLevel logLevels = 2;
     Status status = 3;
     Reason reason = 4;
+    string reason_detail = 5;
 }
 
 message GetLoggableEntitiesRequest {

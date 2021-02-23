@@ -112,6 +112,7 @@ message ListEventsResponse {
     Status status = 1;
     Reason reason = 2;
     EventsCfg events = 3;
+    string reason_detail = 4;
 }
 
 message EventsConfigurationRequest {
@@ -132,6 +133,7 @@ message EventsConfigurationResponse {
     }
     Status status = 1;
     Reason reason = 2;
+    string reason_detail = 3;
 }
 
 message EventMetaData {

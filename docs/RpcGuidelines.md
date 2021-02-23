@@ -21,3 +21,11 @@ contain the elements that the device supports through a more complete protocol a
 Each API of the `.protos` contained in the [protos](../protos/) directory has his set of specific elements that
 need to be taken into account, such as how to generate events and handle different states of operations.
 Please refer to each of those files.
+
+## Errors returned in the response messages
+
+Each of the response messages of the RPCs have a field called `status` which says if there is an application level error in execution of the RPC or not.
+
+When the `status` field indicates that there is an error; the `reason` field would give more information about the error.
+
+There is also another field in the response messages called `reason_detail` which can carry a free form, vendor specific string describing the error. It is recommended that upstream components/users of the DMI interface do not really interpret/parse this field, but rather use it for display purposes to the end user or use it for logging the error.
