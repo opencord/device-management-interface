@@ -109,6 +109,9 @@ enum DataValueType {
     VALUE_TYPE_RPM = 10;
     VALUE_TYPE_CMM = 11;
     VALUE_TYPE_TRUTH_VALUE = 12;
+    VALUE_TYPE_PERCENT = 13;
+    VALUE_TYPE_METERS = 14;
+    VALUE_TYPE_BYTES = 15;
 }
 
 enum ValueScale {
