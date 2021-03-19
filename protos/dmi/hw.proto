@@ -36,11 +36,6 @@ enum ComponentType {
     COMPONENT_TYPE_MEMORY = 13;
     // A component of type "TRANSCEIVER" could have 0 or more components of type "PORT" as children.
     COMPONENT_TYPE_TRANSCEIVER = 14;
-    // Removing the below two specific types of transceivers as we introduce a specific attribute
-    // called type of the transeiver which can be used to convey the same information
-    // Will deprecate these two in the future.
-    //COMPONENT_TYPE_GPON_TRANSCEIVER = 15;
-    //COMPONENT_TYPE_XGS_PON_TRANSCEIVER = 16;
 }
 
 enum ComponentAdminState {
@@ -162,6 +157,7 @@ message PortComponentAttributes{
         FIBER_LC = 2;
         FIBER_SC_PC = 3;
         FIBER_MPO = 4;
+        RS232 = 5;
     }
     enum Speed {
         SPEED_UNDEFINED = 0;
@@ -184,6 +180,7 @@ message PortComponentAttributes{
         GFAST = 5;
         SERIAL = 6;
         EPON = 7;
+        BITS = 8;
     }
     ConnectorType connector_type = 1;
     Speed speed = 2;
