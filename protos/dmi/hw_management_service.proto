@@ -97,15 +97,26 @@ message StopManagingDeviceResponse {
     // device to be stopped is not found
     enum Reason {
         UNDEFINED_REASON = 0;
-        UNKNOWN_DEVICE= 1;
+        UNKNOWN_DEVICE = 1;
     }
     Status status = 1;
     Reason reason = 2;
     string reason_detail = 3;
 }
 
+message ManagedDeviceInfo {
+    ModifiableComponent info = 1;
+    Uuid device_uuid = 2;
+}
+
 message ManagedDevicesResponse {
-    repeated ModifiableComponent devices = 1;
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        INTERNAL_ERROR = 1;
+    }
+    Status status = 1;
+    Reason reason = 2;
+    repeated ManagedDeviceInfo devices = 3;
 }
 
 message SetLoggingEndpointRequest {
