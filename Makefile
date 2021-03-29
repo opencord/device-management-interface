@@ -136,7 +136,7 @@ grpc:
         make -C $(GRPC_DST); \
         sudo make -C $(GRPC_DST) install; \
         sudo ldconfig; \
-		cp grpc/grpc_cpp_plugin /usr/local/bin/grpc_cpp_plugin; \
+		cp grpc/bins/opt/grpc_cpp_plugin /usr/local/bin/grpc_cpp_plugin; \
     fi;
 
 go-test:
