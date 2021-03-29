@@ -102,6 +102,7 @@ go-protos: dmi.pb
 cpp-protos: dmi.cpp
 	echo "Creating *.go.pb for cpp files" 
 	set -e -o pipefail; \
+	mkdir cpp; \
 	for x in ${PROTO_FILES}; do \
 		echo $$x; \
 		protoc --grpc_out=$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos $$x; \
