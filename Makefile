@@ -23,8 +23,9 @@ GRPC_CPP_PLUGIN = grpc_cpp_plugin
 GRPC_CPP_PLUGIN_PATH ?= $(shell which grpc_cpp_plugin)
 
 GRPC_ADDR = https://github.com/grpc/grpc
-GRPC_DST = $(PWD)/grpc
+GRPC_DST = $(PWD)/../grpc
 GRPC_VER = v1.27.0
+GRPC_LIB = /usr/local/lib/libprotobuf.so.22
 LIBGRPC_PATH=$(shell pkg-config --libs-only-L grpc | sed s/-L// | sed s/\ //g)
 # set default shell options
 SHELL = bash -e -o pipefail
@@ -102,7 +103,6 @@ go-protos: dmi.pb
 cpp-protos: dmi.cpp
 	echo "Creating *.go.pb for cpp files" 
 	set -e -o pipefail; \
-	mkdir cpp; \
 	for x in ${PROTO_FILES}; do \
 		echo $$x; \
 		protoc --grpc_out=$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos $$x; \
@@ -137,7 +137,7 @@ grpc:
         make -C $(GRPC_DST); \
         sudo make -C $(GRPC_DST) install; \
         sudo ldconfig; \
-		cp grpc/bins/opt/grpc_cpp_plugin /usr/local/bin/grpc_cpp_plugin; \
+		cp $(GRPC_DST)/bins/opt/grpc_cpp_plugin /usr/local/bin/grpc_cpp_plugin; \
     fi;
 
 go-test:
