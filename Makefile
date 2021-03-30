@@ -117,7 +117,7 @@ dmi.pb:
 
 dmi.cpp: grpc
 	echo "Creating $@"
-	${PROTOC} -I protos \
+	protoc -I protos \
 	  --include_imports --include_source_info \
 	  --descriptor_set_out=$@ \
 	  ${PROTO_FILES}
