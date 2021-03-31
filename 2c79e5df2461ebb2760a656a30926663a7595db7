@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8eb27f46_74b1de94",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-03-31T15:39:41Z",
+      "side": 1,
+      "message": "Do we need this dmi.cpp target? It\u0027s doing exactly the same thing as dmi.pb",
+      "revId": "2c79e5df2461ebb2760a656a30926663a7595db7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
