@@ -15,6 +15,9 @@
 # Makefile for device-management-interface
 default: test
 
+# initialize path of grpc_cpp_plugin binary
+GRPC_CPP_PLUGIN_PATH ?= $(shell which grpc_cpp_plugin)
+
 # set default shell options
 SHELL = bash -e -o pipefail
 
@@ -39,6 +42,8 @@ PROTO_GO_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO
 PROTO_PYTHON_DEST_DIR := python/dmi
 PROTO_PYTHON_PB2 := $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_PYTHON_DEST_DIR)/%_pb2.py,$(f)))
 
+PROTO_CPP_DEST_DIR := cpp
+PROTO_CPP_PB := $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_CPP_DEST_DIR)/$(call if_package_path,$(f))/%.pb.cc,$(f)))
 # Force pb file to be regenrated every time.  Otherwise the make process assumes generated version is still valid
 .PHONY: dmi.pb
 
@@ -48,11 +53,11 @@ print:
 	@echo "python PB files: $(PROTO_PYTHON_PB)"
 
 # Generic targets
-protos: go-protos python-protos
+protos: go-protos python-protos cpp-protos
 
 build: protos
 
-test: go-test python-test
+test: go-test python-test cpp-test
 
 
 venv_protos:
@@ -91,6 +96,16 @@ dmi.pb:
 	  --descriptor_set_out=$@ \
 	  ${PROTO_FILES}
 
+# Cpp targets
+cpp-protos: dmi.pb
+	echo "Creating *.pb.cpp files"
+	@${PROTOC_SH} " \
+      set -e -o pipefail; \
+      for x in ${PROTO_FILES}; do \
+		echo \$$x; \
+		protoc --cpp_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos \$$x; \
+	  done"
+
 go-test:
 	test/test-go-proto-consistency.sh
 	${GO} mod verify
@@ -102,3 +117,6 @@ python-test: tox.ini
 python-build: setup.py python-protos
 	rm -rf dist/
 	python ./setup.py sdist
+
+cpp-test:
+	test/test-cpp-proto-consistency.sh
