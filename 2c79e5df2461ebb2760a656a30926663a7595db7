@@ -34,6 +34,24 @@
       "revId": "2c79e5df2461ebb2760a656a30926663a7595db7",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9da451fd_ff2fadfd",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000790
+      },
+      "writtenOn": "2021-03-31T16:45:00Z",
+      "side": 1,
+      "message": "Thanks for reviewing Amit and Andrea. Agreed will remove dmi.cpp and use dmi.pb",
+      "parentUuid": "52395eaa_3e2391b8",
+      "revId": "2c79e5df2461ebb2760a656a30926663a7595db7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
