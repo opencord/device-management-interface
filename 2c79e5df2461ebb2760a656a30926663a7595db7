@@ -16,6 +16,24 @@
       "revId": "2c79e5df2461ebb2760a656a30926663a7595db7",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52395eaa_3e2391b8",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-03-31T16:00:02Z",
+      "side": 1,
+      "message": "agreed with Amit, please remove and use the dmi.pb",
+      "parentUuid": "8eb27f46_74b1de94",
+      "revId": "2c79e5df2461ebb2760a656a30926663a7595db7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
