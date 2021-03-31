@@ -97,19 +97,12 @@ dmi.pb:
 	  ${PROTO_FILES}
 
 # Cpp targets
-cpp-protos: dmi.cpp
+cpp-protos: dmi.pb
 	echo "Creating *.pb.cpp files"
 	for x in ${PROTO_FILES}; do \
 		echo $$x; \
 		protoc --grpc_out=$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos $$x; \
 	done
-
-dmi.cpp:
-	echo "Creating $@"
-	protoc -I protos \
-	  --include_imports --include_source_info \
-	  --descriptor_set_out=$@ \
-	  ${PROTO_FILES}
 
 go-test:
 	test/test-go-proto-consistency.sh
