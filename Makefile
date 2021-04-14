@@ -22,7 +22,7 @@ GRPC_CPP_PLUGIN_PATH ?= $(shell which grpc_cpp_plugin)
 SHELL = bash -e -o pipefail
 
 # tool containers
-VOLTHA_TOOLS_VERSION ?= 2.0.0
+VOLTHA_TOOLS_VERSION ?= 2.5.0
 
 PROTOC    = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc protoc
 PROTOC_SH = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/go/src/github.com/opencord/device-management-interface/v3 $(shell test -t 0 && echo "-it") --workdir=/go/src/github.com/opencord/device-management-interface/v3 voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc sh -c
@@ -103,7 +103,8 @@ cpp-protos:
       set -e -o pipefail; \
       for x in ${PROTO_FILES}; do \
 		echo \$$x; \
-		protoc --cpp_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos \$$x; \
+		protoc --cpp_out=\$(PROTO_CPP_DEST_DIR) -I protos \$$x; \
+		protoc --grpc_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin -I protos \$$x; \
 	  done"
 
 go-test:
