@@ -104,6 +104,7 @@ cpp-protos:
       for x in ${PROTO_FILES}; do \
 		echo \$$x; \
 		protoc --cpp_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos \$$x; \
+		protoc --grpc_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` -I protos \$$x; \
 	  done"
 
 go-test:
