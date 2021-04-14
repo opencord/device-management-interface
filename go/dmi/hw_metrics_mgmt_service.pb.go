@@ -8,6 +8,8 @@ import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -925,6 +927,20 @@ type NativeMetricsManagementServiceServer interface {
 	UpdateMetricsConfiguration(context.Context, *MetricsConfigurationRequest) (*MetricsConfigurationResponse, error)
 	// Get the instantenous value of a metric
 	GetMetric(context.Context, *GetMetricRequest) (*GetMetricResponse, error)
+}
+
+// UnimplementedNativeMetricsManagementServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNativeMetricsManagementServiceServer struct {
+}
+
+func (*UnimplementedNativeMetricsManagementServiceServer) ListMetrics(ctx context.Context, req *HardwareID) (*ListMetricsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListMetrics not implemented")
+}
+func (*UnimplementedNativeMetricsManagementServiceServer) UpdateMetricsConfiguration(ctx context.Context, req *MetricsConfigurationRequest) (*MetricsConfigurationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateMetricsConfiguration not implemented")
+}
+func (*UnimplementedNativeMetricsManagementServiceServer) GetMetric(ctx context.Context, req *GetMetricRequest) (*GetMetricResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMetric not implemented")
 }
 
 func RegisterNativeMetricsManagementServiceServer(s *grpc.Server, srv NativeMetricsManagementServiceServer) {

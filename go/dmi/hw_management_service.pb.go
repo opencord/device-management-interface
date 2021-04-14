@@ -9,6 +9,8 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -2003,6 +2005,50 @@ type NativeHWManagementServiceServer interface {
 	// Gets the configured log level for a certain entity on a certain device.
 	// If no entity is specified in the request all the entities with their log level should be returned.
 	GetLogLevel(context.Context, *GetLogLevelRequest) (*GetLogLevelResponse, error)
+}
+
+// UnimplementedNativeHWManagementServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNativeHWManagementServiceServer struct {
+}
+
+func (*UnimplementedNativeHWManagementServiceServer) StartManagingDevice(req *ModifiableComponent, srv NativeHWManagementService_StartManagingDeviceServer) error {
+	return status.Errorf(codes.Unimplemented, "method StartManagingDevice not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) StopManagingDevice(ctx context.Context, req *StopManagingDeviceRequest) (*StopManagingDeviceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopManagingDevice not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetManagedDevices(ctx context.Context, req *empty.Empty) (*ManagedDevicesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetManagedDevices not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetPhysicalInventory(req *PhysicalInventoryRequest, srv NativeHWManagementService_GetPhysicalInventoryServer) error {
+	return status.Errorf(codes.Unimplemented, "method GetPhysicalInventory not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetHWComponentInfo(req *HWComponentInfoGetRequest, srv NativeHWManagementService_GetHWComponentInfoServer) error {
+	return status.Errorf(codes.Unimplemented, "method GetHWComponentInfo not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) SetHWComponentInfo(ctx context.Context, req *HWComponentInfoSetRequest) (*HWComponentInfoSetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetHWComponentInfo not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) SetLoggingEndpoint(ctx context.Context, req *SetLoggingEndpointRequest) (*SetRemoteEndpointResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetLoggingEndpoint not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetLoggingEndpoint(ctx context.Context, req *HardwareID) (*GetLoggingEndpointResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLoggingEndpoint not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) SetMsgBusEndpoint(ctx context.Context, req *SetMsgBusEndpointRequest) (*SetRemoteEndpointResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetMsgBusEndpoint not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetMsgBusEndpoint(ctx context.Context, req *empty.Empty) (*GetMsgBusEndpointResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMsgBusEndpoint not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetLoggableEntities(ctx context.Context, req *GetLoggableEntitiesRequest) (*GetLogLevelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLoggableEntities not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) SetLogLevel(ctx context.Context, req *SetLogLevelRequest) (*SetLogLevelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetLogLevel not implemented")
+}
+func (*UnimplementedNativeHWManagementServiceServer) GetLogLevel(ctx context.Context, req *GetLogLevelRequest) (*GetLogLevelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLogLevel not implemented")
 }
 
 func RegisterNativeHWManagementServiceServer(s *grpc.Server, srv NativeHWManagementServiceServer) {

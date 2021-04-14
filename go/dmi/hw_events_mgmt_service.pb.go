@@ -9,6 +9,8 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -1105,6 +1107,17 @@ type NativeEventsManagementServiceServer interface {
 	// The default behavior of the device is to report all the supported events
 	// This configuration is persisted across reboots of the device or the device manager
 	UpdateEventsConfiguration(context.Context, *EventsConfigurationRequest) (*EventsConfigurationResponse, error)
+}
+
+// UnimplementedNativeEventsManagementServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedNativeEventsManagementServiceServer struct {
+}
+
+func (*UnimplementedNativeEventsManagementServiceServer) ListEvents(ctx context.Context, req *HardwareID) (*ListEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListEvents not implemented")
+}
+func (*UnimplementedNativeEventsManagementServiceServer) UpdateEventsConfiguration(ctx context.Context, req *EventsConfigurationRequest) (*EventsConfigurationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateEventsConfiguration not implemented")
 }
 
 func RegisterNativeEventsManagementServiceServer(s *grpc.Server, srv NativeEventsManagementServiceServer) {
