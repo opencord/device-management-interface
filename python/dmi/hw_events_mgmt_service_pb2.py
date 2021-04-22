@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 from dmi import commons_pb2 as dmi_dot_commons__pb2
 from dmi import hw_pb2 as dmi_dot_hw__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n dmi/hw_events_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"N\n\tValueType\x12\x11\n\x07int_val\x18\x01 \x01(\x03H\x00\x12\x12\n\x08uint_val\x18\x02 \x01(\x04H\x00\x12\x13\n\tfloat_val\x18\x03 \x01(\x02H\x00\x42\x05\n\x03val\"G\n\nWaterMarks\x12\x1c\n\x04high\x18\x01 \x01(\x0b\x32\x0e.dmi.ValueType\x12\x1b\n\x03low\x18\x02 \x01(\x0b\x32\x0e.dmi.ValueType\"]\n\nThresholds\x12 \n\x05upper\x18\x01 \x01(\x0b\x32\x0f.dmi.WaterMarksH\x00\x12 \n\x05lower\x18\x02 \x01(\x0b\x32\x0f.dmi.WaterMarksH\x00\x42\x0b\n\tthreshold\"c\n\x14ThresholdInformation\x12&\n\x0eobserved_value\x18\x01 \x01(\x0b\x32\x0e.dmi.ValueType\x12#\n\nthresholds\x18\x02 \x01(\x0b\x32\x0f.dmi.Thresholds\"g\n\x08\x45ventCfg\x12\x1f\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\r.dmi.EventIds\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12#\n\nthresholds\x18\x03 \x01(\x0b\x32\x0f.dmi.Thresholds\")\n\tEventsCfg\x12\x1c\n\x05items\x18\x01 \x03(\x0b\x32\r.dmi.EventCfg\"\xf8\x01\n\x12ListEventsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12.\n\x06reason\x18\x02 \x01(\x0e\x32\x1e.dmi.ListEventsResponse.Reason\x12\x1e\n\x06\x65vents\x18\x03 \x01(\x0b\x32\x0e.dmi.EventsCfg\x12\x15\n\rreason_detail\x18\x04 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"\x88\x01\n\x1a\x45ventsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x0e.dmi.EventsCfgH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"\xfe\x01\n\x1b\x45ventsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x37\n\x06reason\x18\x02 \x01(\x0e\x32\'.dmi.EventsConfigurationResponse.Reason\x12\x15\n\rreason_detail\x18\x03 \x01(\t\"r\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x12\n\x0eINVALID_CONFIG\x10\x03\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x04\"j\n\rEventMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\xc8\x01\n\x05\x45vent\x12*\n\x0e\x65vent_metadata\x18\x01 \x01(\x0b\x32\x12.dmi.EventMetaData\x12\x1f\n\x08\x65vent_id\x18\x02 \x01(\x0e\x32\r.dmi.EventIds\x12-\n\traised_ts\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0ethreshold_info\x18\x04 \x01(\x0b\x32\x19.dmi.ThresholdInformation\x12\x10\n\x08\x61\x64\x64_info\x18\x05 \x01(\t*\xd1\x0e\n\x08\x45ventIds\x12\x18\n\x14\x45VENT_NAME_UNDEFINED\x10\x00\x12\x1e\n\x1a\x45VENT_TRANSCEIVER_PLUG_OUT\x10\x64\x12\x1d\n\x19\x45VENT_TRANSCEIVER_PLUG_IN\x10\x65\x12-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD\x10\x66\x12-\n)EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD\x10g\x12\x31\n-EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD\x10h\x12\x31\n-EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD\x10i\x12-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD\x10j\x12-\n)EVENT_TRANSCEIVER_CURRENT_BELOW_THRESHOLD\x10k\x12.\n*EVENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD\x10l\x12.\n*EVENT_TRANSCEIVER_RX_POWER_BELOW_THRESHOLD\x10m\x12.\n*EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\x10n\x12.\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THRESHOLD\x10o\x12\x1d\n\x19\x45VENT_TRANSCEIVER_FAILURE\x10p\x12\x37\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD_RECOVERED\x10q\x12\x37\n3EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD_RECOVERED\x10r\x12;\n7EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD_RECOVERED\x10s\x12;\n7EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD_RECOVERED\x10t\x12\x37\n3EVENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD_RECOVERED\x10u\x12\x37\n3EVENT_TRANSCEIVER_CURRENT_BELOW_THRESHOLD_RECOVERED\x10v\x12\x38\n4EVENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECOVERED\x10w\x12\x38\n4EVENT_TRANSCEIVER_RX_POWER_BELOW_THRESHOLD_RECOVERED\x10x\x12\x38\n4EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERED\x10y\x12\x38\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_THRESHOLD_RECOVERED\x10z\x12\'\n#EVENT_TRANSCEIVER_FAILURE_RECOVERED\x10{\x12\x17\n\x12\x45VENT_PSU_PLUG_OUT\x10\xc8\x01\x12\x16\n\x11\x45VENT_PSU_PLUG_IN\x10\xc9\x01\x12\x16\n\x11\x45VENT_PSU_FAILURE\x10\xca\x01\x12 \n\x1b\x45VENT_PSU_FAILURE_RECOVERED\x10\xcb\x01\x12\x16\n\x11\x45VENT_FAN_FAILURE\x10\xac\x02\x12\x17\n\x12\x45VENT_FAN_PLUG_OUT\x10\xad\x02\x12\x16\n\x11\x45VENT_FAN_PLUG_IN\x10\xae\x02\x12 \n\x1b\x45VENT_FAN_FAILURE_RECOVERED\x10\xaf\x02\x12)\n$EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL\x10\x90\x03\x12&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\x10\x91\x03\x12\x33\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_RECOVERED\x10\x92\x03\x12\x30\n+EVENT_CPU_TEMPERATURE_ABOVE_FATAL_RECOVERED\x10\x93\x03\x12\x1a\n\x15\x45VENT_HW_DEVICE_RESET\x10\xf4\x03\x12/\n*EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL\x10\xf5\x03\x12,\n\'EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL\x10\xf6\x03\x12\x39\n4EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERED\x10\xf7\x03\x12\x36\n1EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL_RECOVERED\x10\xf8\x03\x32\xb7\x01\n\x1dNativeEventsManagementService\x12\x36\n\nListEvents\x12\x0f.dmi.HardwareID\x1a\x17.dmi.ListEventsResponse\x12^\n\x19UpdateEventsConfiguration\x12\x1f.dmi.EventsConfigurationRequest\x1a .dmi.EventsConfigurationResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n dmi/hw_events_mgmt_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"N\n\tValueType\x12\x11\n\x07int_val\x18\x01 \x01(\x03H\x00\x12\x12\n\x08uint_val\x18\x02 \x01(\x04H\x00\x12\x13\n\tfloat_val\x18\x03 \x01(\x02H\x00\x42\x05\n\x03val\"G\n\nWaterMarks\x12\x1c\n\x04high\x18\x01 \x01(\x0b\x32\x0e.dmi.ValueType\x12\x1b\n\x03low\x18\x02 \x01(\x0b\x32\x0e.dmi.ValueType\"]\n\nThresholds\x12 \n\x05upper\x18\x01 \x01(\x0b\x32\x0f.dmi.WaterMarksH\x00\x12 \n\x05lower\x18\x02 \x01(\x0b\x32\x0f.dmi.WaterMarksH\x00\x42\x0b\n\tthreshold\"c\n\x14ThresholdInformation\x12&\n\x0eobserved_value\x18\x01 \x01(\x0b\x32\x0e.dmi.ValueType\x12#\n\nthresholds\x18\x02 \x01(\x0b\x32\x0f.dmi.Thresholds\"g\n\x08\x45ventCfg\x12\x1f\n\x08\x65vent_id\x18\x01 \x01(\x0e\x32\r.dmi.EventIds\x12\x15\n\ris_configured\x18\x02 \x01(\x08\x12#\n\nthresholds\x18\x03 \x01(\x0b\x32\x0f.dmi.Thresholds\")\n\tEventsCfg\x12\x1c\n\x05items\x18\x01 \x03(\x0b\x32\r.dmi.EventCfg\"\xf8\x01\n\x12ListEventsResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12.\n\x06reason\x18\x02 \x01(\x0e\x32\x1e.dmi.ListEventsResponse.Reason\x12\x1e\n\x06\x65vents\x18\x03 \x01(\x0b\x32\x0e.dmi.EventsCfg\x12\x15\n\rreason_detail\x18\x04 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"\x88\x01\n\x1a\x45ventsConfigurationRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x07\x63hanges\x18\x02 \x01(\x0b\x32\x0e.dmi.EventsCfgH\x00\x12\x1a\n\x10reset_to_default\x18\x03 \x01(\x08H\x00\x42\x0b\n\toperation\"\xfe\x01\n\x1b\x45ventsConfigurationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x37\n\x06reason\x18\x02 \x01(\x0e\x32\'.dmi.EventsConfigurationResponse.Reason\x12\x15\n\rreason_detail\x18\x03 \x01(\t\"r\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x12\n\x0eINVALID_CONFIG\x10\x03\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x04\"j\n\rEventMetaData\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12!\n\x0e\x63omponent_uuid\x18\x02 \x01(\x0b\x32\t.dmi.Uuid\x12\x16\n\x0e\x63omponent_name\x18\x03 \x01(\t\"\xc8\x01\n\x05\x45vent\x12*\n\x0e\x65vent_metadata\x18\x01 \x01(\x0b\x32\x12.dmi.EventMetaData\x12\x1f\n\x08\x65vent_id\x18\x02 \x01(\x0e\x32\r.dmi.EventIds\x12-\n\traised_ts\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x0ethreshold_info\x18\x04 \x01(\x0b\x32\x19.dmi.ThresholdInformation\x12\x10\n\x08\x61\x64\x64_info\x18\x05 \x01(\t*\xd1\x0e\n\x08\x45ventIds\x12\x18\n\x14\x45VENT_NAME_UNDEFINED\x10\x00\x12\x1e\n\x1a\x45VENT_TRANSCEIVER_PLUG_OUT\x10\x64\x12\x1d\n\x19\x45VENT_TRANSCEIVER_PLUG_IN\x10\x65\x12-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD\x10\x66\x12-\n)EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD\x10g\x12\x31\n-EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD\x10h\x12\x31\n-EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD\x10i\x12-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD\x10j\x12-\n)EVENT_TRANSCEIVER_CURRENT_BELOW_THRESHOLD\x10k\x12.\n*EVENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD\x10l\x12.\n*EVENT_TRANSCEIVER_RX_POWER_BELOW_THRESHOLD\x10m\x12.\n*EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\x10n\x12.\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THRESHOLD\x10o\x12\x1d\n\x19\x45VENT_TRANSCEIVER_FAILURE\x10p\x12\x37\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD_RECOVERED\x10q\x12\x37\n3EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD_RECOVERED\x10r\x12;\n7EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD_RECOVERED\x10s\x12;\n7EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD_RECOVERED\x10t\x12\x37\n3EVENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD_RECOVERED\x10u\x12\x37\n3EVENT_TRANSCEIVER_CURRENT_BELOW_THRESHOLD_RECOVERED\x10v\x12\x38\n4EVENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECOVERED\x10w\x12\x38\n4EVENT_TRANSCEIVER_RX_POWER_BELOW_THRESHOLD_RECOVERED\x10x\x12\x38\n4EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERED\x10y\x12\x38\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_THRESHOLD_RECOVERED\x10z\x12\'\n#EVENT_TRANSCEIVER_FAILURE_RECOVERED\x10{\x12\x17\n\x12\x45VENT_PSU_PLUG_OUT\x10\xc8\x01\x12\x16\n\x11\x45VENT_PSU_PLUG_IN\x10\xc9\x01\x12\x16\n\x11\x45VENT_PSU_FAILURE\x10\xca\x01\x12 \n\x1b\x45VENT_PSU_FAILURE_RECOVERED\x10\xcb\x01\x12\x16\n\x11\x45VENT_FAN_FAILURE\x10\xac\x02\x12\x17\n\x12\x45VENT_FAN_PLUG_OUT\x10\xad\x02\x12\x16\n\x11\x45VENT_FAN_PLUG_IN\x10\xae\x02\x12 \n\x1b\x45VENT_FAN_FAILURE_RECOVERED\x10\xaf\x02\x12)\n$EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL\x10\x90\x03\x12&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\x10\x91\x03\x12\x33\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_RECOVERED\x10\x92\x03\x12\x30\n+EVENT_CPU_TEMPERATURE_ABOVE_FATAL_RECOVERED\x10\x93\x03\x12\x1a\n\x15\x45VENT_HW_DEVICE_RESET\x10\xf4\x03\x12/\n*EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL\x10\xf5\x03\x12,\n\'EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL\x10\xf6\x03\x12\x39\n4EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERED\x10\xf7\x03\x12\x36\n1EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL_RECOVERED\x10\xf8\x03\x32\xed\x01\n\x1dNativeEventsManagementService\x12\x36\n\nListEvents\x12\x0f.dmi.HardwareID\x1a\x17.dmi.ListEventsResponse\x12^\n\x19UpdateEventsConfiguration\x12\x1f.dmi.EventsConfigurationRequest\x1a .dmi.EventsConfigurationResponse\x12\x34\n\x0cStreamEvents\x12\x16.google.protobuf.Empty\x1a\n.dmi.Event0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
-  dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,dmi_dot_hw__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 _EVENTIDS = _descriptor.EnumDescriptor(
   name='EventIds',
@@ -247,8 +248,8 @@ _EVENTIDS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1563,
-  serialized_end=3436,
+  serialized_start=1592,
+  serialized_end=3465,
 )
 _sym_db.RegisterEnumDescriptor(_EVENTIDS)
 
@@ -327,8 +328,8 @@ _LISTEVENTSRESPONSE_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=759,
-  serialized_end=853,
+  serialized_start=788,
+  serialized_end=882,
 )
 _sym_db.RegisterEnumDescriptor(_LISTEVENTSRESPONSE_REASON)
 
@@ -367,8 +368,8 @@ _EVENTSCONFIGURATIONRESPONSE_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1135,
-  serialized_end=1249,
+  serialized_start=1164,
+  serialized_end=1278,
 )
 _sym_db.RegisterEnumDescriptor(_EVENTSCONFIGURATIONRESPONSE_REASON)
 
@@ -419,8 +420,8 @@ _VALUETYPE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=107,
-  serialized_end=185,
+  serialized_start=136,
+  serialized_end=214,
 )
 
 
@@ -458,8 +459,8 @@ _WATERMARKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=258,
+  serialized_start=216,
+  serialized_end=287,
 )
 
 
@@ -502,8 +503,8 @@ _THRESHOLDS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=260,
-  serialized_end=353,
+  serialized_start=289,
+  serialized_end=382,
 )
 
 
@@ -541,8 +542,8 @@ _THRESHOLDINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=454,
+  serialized_start=384,
+  serialized_end=483,
 )
 
 
@@ -587,8 +588,8 @@ _EVENTCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=456,
-  serialized_end=559,
+  serialized_start=485,
+  serialized_end=588,
 )
 
 
@@ -619,8 +620,8 @@ _EVENTSCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=602,
+  serialized_start=590,
+  serialized_end=631,
 )
 
 
@@ -673,8 +674,8 @@ _LISTEVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=605,
-  serialized_end=853,
+  serialized_start=634,
+  serialized_end=882,
 )
 
 
@@ -724,8 +725,8 @@ _EVENTSCONFIGURATIONREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=856,
-  serialized_end=992,
+  serialized_start=885,
+  serialized_end=1021,
 )
 
 
@@ -771,8 +772,8 @@ _EVENTSCONFIGURATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=995,
-  serialized_end=1249,
+  serialized_start=1024,
+  serialized_end=1278,
 )
 
 
@@ -817,8 +818,8 @@ _EVENTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1251,
-  serialized_end=1357,
+  serialized_start=1280,
+  serialized_end=1386,
 )
 
 
@@ -877,8 +878,8 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1360,
-  serialized_end=1560,
+  serialized_start=1389,
+  serialized_end=1589,
 )
 
 _VALUETYPE.oneofs_by_name['val'].fields.append(
@@ -1027,8 +1028,8 @@ _NATIVEEVENTSMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3439,
-  serialized_end=3622,
+  serialized_start=3468,
+  serialized_end=3705,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListEvents',
@@ -1047,6 +1048,16 @@ _NATIVEEVENTSMANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_EVENTSCONFIGURATIONREQUEST,
     output_type=_EVENTSCONFIGURATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StreamEvents',
+    full_name='dmi.NativeEventsManagementService.StreamEvents',
+    index=2,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_EVENT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

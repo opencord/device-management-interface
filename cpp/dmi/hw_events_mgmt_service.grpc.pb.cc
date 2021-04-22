@@ -24,6 +24,7 @@ namespace dmi {
 static const char* NativeEventsManagementService_method_names[] = {
   "/dmi.NativeEventsManagementService/ListEvents",
   "/dmi.NativeEventsManagementService/UpdateEventsConfiguration",
+  "/dmi.NativeEventsManagementService/StreamEvents",
 };
 
 std::unique_ptr< NativeEventsManagementService::Stub> NativeEventsManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -35,6 +36,7 @@ std::unique_ptr< NativeEventsManagementService::Stub> NativeEventsManagementServ
 NativeEventsManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_ListEvents_(NativeEventsManagementService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateEventsConfiguration_(NativeEventsManagementService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StreamEvents_(NativeEventsManagementService_method_names[2], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status NativeEventsManagementService::Stub::ListEvents(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::dmi::ListEventsResponse* response) {
@@ -93,6 +95,22 @@ void NativeEventsManagementService::Stub::experimental_async::UpdateEventsConfig
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::EventsConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEventsConfiguration_, context, request, false);
 }
 
+::grpc::ClientReader< ::dmi::Event>* NativeEventsManagementService::Stub::StreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::Event>::Create(channel_.get(), rpcmethod_StreamEvents_, context, request);
+}
+
+void NativeEventsManagementService::Stub::experimental_async::StreamEvents(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Event>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::Event>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamEvents_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::dmi::Event>* NativeEventsManagementService::Stub::AsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Event>::Create(channel_.get(), cq, rpcmethod_StreamEvents_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::Event>* NativeEventsManagementService::Stub::PrepareAsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Event>::Create(channel_.get(), cq, rpcmethod_StreamEvents_, context, request, false, nullptr);
+}
+
 NativeEventsManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeEventsManagementService_method_names[0],
@@ -114,6 +132,16 @@ NativeEventsManagementService::Service::Service() {
              ::dmi::EventsConfigurationResponse* resp) {
                return service->UpdateEventsConfiguration(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeEventsManagementService_method_names[2],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeEventsManagementService::Service, ::google::protobuf::Empty, ::dmi::Event>(
+          [](NativeEventsManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::grpc_impl::ServerWriter<::dmi::Event>* writer) {
+               return service->StreamEvents(ctx, req, writer);
+             }, this)));
 }
 
 NativeEventsManagementService::Service::~Service() {
@@ -130,6 +158,13 @@ NativeEventsManagementService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeEventsManagementService::Service::StreamEvents(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::dmi::Event>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 

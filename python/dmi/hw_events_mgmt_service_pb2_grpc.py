@@ -4,6 +4,7 @@ import grpc
 
 from dmi import hw_events_mgmt_service_pb2 as dmi_dot_hw__events__mgmt__service__pb2
 from dmi import hw_pb2 as dmi_dot_hw__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NativeEventsManagementServiceStub(object):
@@ -24,6 +25,11 @@ class NativeEventsManagementServiceStub(object):
                 '/dmi.NativeEventsManagementService/UpdateEventsConfiguration',
                 request_serializer=dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationResponse.FromString,
+                )
+        self.StreamEvents = channel.unary_stream(
+                '/dmi.NativeEventsManagementService/StreamEvents',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__events__mgmt__service__pb2.Event.FromString,
                 )
 
 
@@ -46,6 +52,13 @@ class NativeEventsManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StreamEvents(self, request, context):
+        """Initiate the server streaming of the events
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeEventsManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -58,6 +71,11 @@ def add_NativeEventsManagementServiceServicer_to_server(servicer, server):
                     servicer.UpdateEventsConfiguration,
                     request_deserializer=dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationRequest.FromString,
                     response_serializer=dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationResponse.SerializeToString,
+            ),
+            'StreamEvents': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamEvents,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__events__mgmt__service__pb2.Event.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -100,5 +118,22 @@ class NativeEventsManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeEventsManagementService/UpdateEventsConfiguration',
             dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationRequest.SerializeToString,
             dmi_dot_hw__events__mgmt__service__pb2.EventsConfigurationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StreamEvents(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/dmi.NativeEventsManagementService/StreamEvents',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__events__mgmt__service__pb2.Event.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

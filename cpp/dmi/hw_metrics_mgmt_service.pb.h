@@ -34,6 +34,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "dmi/commons.pb.h"
 #include "dmi/hw.pb.h"
+#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto

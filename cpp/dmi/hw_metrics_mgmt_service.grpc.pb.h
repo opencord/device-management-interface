@@ -66,6 +66,16 @@ class NativeMetricsManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetMetricResponse>> PrepareAsyncGetMetric(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetMetricResponse>>(PrepareAsyncGetMetricRaw(context, request, cq));
     }
+    // Initiate the server streaming of the metrics
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::Metric>> StreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::Metric>>(StreamMetricsRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>> AsyncStreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>>(AsyncStreamMetricsRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>> PrepareAsyncStreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>>(PrepareAsyncStreamMetricsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -114,6 +124,12 @@ class NativeMetricsManagementService final {
       #else
       virtual void GetMetric(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMetricResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Initiate the server streaming of the metrics
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::ClientReadReactor< ::dmi::Metric>* reactor) = 0;
+      #else
+      virtual void StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Metric>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -129,6 +145,9 @@ class NativeMetricsManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::MetricsConfigurationResponse>* PrepareAsyncUpdateMetricsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetMetricResponse>* AsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetMetricResponse>* PrepareAsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::dmi::Metric>* StreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>* AsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::Metric>* PrepareAsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -153,6 +172,15 @@ class NativeMetricsManagementService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>> PrepareAsyncGetMetric(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>>(PrepareAsyncGetMetricRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::dmi::Metric>> StreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::dmi::Metric>>(StreamMetricsRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Metric>> AsyncStreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Metric>>(AsyncStreamMetricsRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Metric>> PrepareAsyncStreamMetrics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Metric>>(PrepareAsyncStreamMetricsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -193,6 +221,11 @@ class NativeMetricsManagementService final {
       #else
       void GetMetric(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMetricResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::ClientReadReactor< ::dmi::Metric>* reactor) override;
+      #else
+      void StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Metric>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -210,9 +243,13 @@ class NativeMetricsManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::MetricsConfigurationResponse>* PrepareAsyncUpdateMetricsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>* AsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>* PrepareAsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::dmi::Metric>* StreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) override;
+    ::grpc::ClientAsyncReader< ::dmi::Metric>* AsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::dmi::Metric>* PrepareAsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListMetrics_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateMetricsConfiguration_;
     const ::grpc::internal::RpcMethod rpcmethod_GetMetric_;
+    const ::grpc::internal::RpcMethod rpcmethod_StreamMetrics_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -232,6 +269,8 @@ class NativeMetricsManagementService final {
     virtual ::grpc::Status UpdateMetricsConfiguration(::grpc::ServerContext* context, const ::dmi::MetricsConfigurationRequest* request, ::dmi::MetricsConfigurationResponse* response);
     // Get the instantenous value of a metric
     virtual ::grpc::Status GetMetric(::grpc::ServerContext* context, const ::dmi::GetMetricRequest* request, ::dmi::GetMetricResponse* response);
+    // Initiate the server streaming of the metrics
+    virtual ::grpc::Status StreamMetrics(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::dmi::Metric>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListMetrics : public BaseClass {
@@ -293,7 +332,27 @@ class NativeMetricsManagementService final {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListMetrics<WithAsyncMethod_UpdateMetricsConfiguration<WithAsyncMethod_GetMetric<Service > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_StreamMetrics() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStreamMetrics(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncWriter< ::dmi::Metric>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListMetrics<WithAsyncMethod_UpdateMetricsConfiguration<WithAsyncMethod_GetMetric<WithAsyncMethod_StreamMetrics<Service > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListMetrics : public BaseClass {
    private:
@@ -435,11 +494,49 @@ class NativeMetricsManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_StreamMetrics() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::google::protobuf::Empty, ::dmi::Metric>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request) { return this->StreamMetrics(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::dmi::Metric>* StreamMetrics(
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::Metric>* StreamMetrics(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_ListMetrics<ExperimentalWithCallbackMethod_UpdateMetricsConfiguration<ExperimentalWithCallbackMethod_GetMetric<Service > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_ListMetrics<ExperimentalWithCallbackMethod_UpdateMetricsConfiguration<ExperimentalWithCallbackMethod_GetMetric<ExperimentalWithCallbackMethod_StreamMetrics<Service > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_ListMetrics<ExperimentalWithCallbackMethod_UpdateMetricsConfiguration<ExperimentalWithCallbackMethod_GetMetric<Service > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_ListMetrics<ExperimentalWithCallbackMethod_UpdateMetricsConfiguration<ExperimentalWithCallbackMethod_GetMetric<ExperimentalWithCallbackMethod_StreamMetrics<Service > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ListMetrics : public BaseClass {
    private:
@@ -487,6 +584,23 @@ class NativeMetricsManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetMetric(::grpc::ServerContext* /*context*/, const ::dmi::GetMetricRequest* /*request*/, ::dmi::GetMetricResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_StreamMetrics() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -549,6 +663,26 @@ class NativeMetricsManagementService final {
     }
     void RequestGetMetric(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_StreamMetrics() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStreamMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -666,6 +800,44 @@ class NativeMetricsManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_StreamMetrics() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->StreamMetrics(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* StreamMetrics(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* StreamMetrics(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListMetrics : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -747,8 +919,35 @@ class NativeMetricsManagementService final {
     virtual ::grpc::Status StreamedGetMetric(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::GetMetricRequest,::dmi::GetMetricResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_ListMetrics<WithStreamedUnaryMethod_UpdateMetricsConfiguration<WithStreamedUnaryMethod_GetMetric<Service > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListMetrics<WithStreamedUnaryMethod_UpdateMetricsConfiguration<WithStreamedUnaryMethod_GetMetric<Service > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_StreamMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_StreamMetrics() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::google::protobuf::Empty, ::dmi::Metric>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::google::protobuf::Empty, ::dmi::Metric>* streamer) {
+                       return this->StreamedStreamMetrics(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_StreamMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status StreamMetrics(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Metric>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedStreamMetrics(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::google::protobuf::Empty,::dmi::Metric>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_StreamMetrics<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_ListMetrics<WithStreamedUnaryMethod_UpdateMetricsConfiguration<WithStreamedUnaryMethod_GetMetric<WithSplitStreamingMethod_StreamMetrics<Service > > > > StreamedService;
 };
 
 }  // namespace dmi

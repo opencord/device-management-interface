@@ -35,6 +35,7 @@
 #include "dmi/commons.pb.h"
 #include "dmi/hw.pb.h"
 #include <google/protobuf/timestamp.pb.h>
+#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto

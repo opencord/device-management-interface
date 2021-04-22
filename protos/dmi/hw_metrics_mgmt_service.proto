@@ -5,6 +5,7 @@ package dmi;
 
 import "dmi/commons.proto";
 import "dmi/hw.proto";
+import "google/protobuf/empty.proto";
 
 // The model used to represent the event data on the SensorData of a component as described
 // in RFC8348 (https://tools.ietf.org/html/rfc8348)
@@ -108,7 +109,7 @@ message MetricMetaData {
     string component_name = 3;
 }
 
-// The Metrics are conveyed to external systems by submitting them on a kafka bus.
+// The Metrics are conveyed to external systems either by submitting them on a message bus or using gRPC server streaming.
 // The topic to which are Metrics are submitted would be configured as startup
 // configuration of the components
 message Metric {
@@ -153,4 +154,7 @@ service NativeMetricsManagementService {
 
     // Get the instantenous value of a metric
     rpc GetMetric(GetMetricRequest) returns(GetMetricResponse);
+
+    // Initiate the server streaming of the metrics
+    rpc StreamMetrics(google.protobuf.Empty) returns(stream Metric);
 }

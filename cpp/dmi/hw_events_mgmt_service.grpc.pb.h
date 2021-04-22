@@ -54,6 +54,16 @@ class NativeEventsManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EventsConfigurationResponse>> PrepareAsyncUpdateEventsConfiguration(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EventsConfigurationResponse>>(PrepareAsyncUpdateEventsConfigurationRaw(context, request, cq));
     }
+    // Initiate the server streaming of the events
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::Event>> StreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::Event>>(StreamEventsRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Event>> AsyncStreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Event>>(AsyncStreamEventsRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Event>> PrepareAsyncStreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::Event>>(PrepareAsyncStreamEventsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -85,6 +95,12 @@ class NativeEventsManagementService final {
       #else
       virtual void UpdateEventsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EventsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Initiate the server streaming of the events
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void StreamEvents(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::ClientReadReactor< ::dmi::Event>* reactor) = 0;
+      #else
+      virtual void StreamEvents(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Event>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -98,6 +114,9 @@ class NativeEventsManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ListEventsResponse>* PrepareAsyncListEventsRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EventsConfigurationResponse>* AsyncUpdateEventsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EventsConfigurationResponse>* PrepareAsyncUpdateEventsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::dmi::Event>* StreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::Event>* AsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::Event>* PrepareAsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -115,6 +134,15 @@ class NativeEventsManagementService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EventsConfigurationResponse>> PrepareAsyncUpdateEventsConfiguration(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EventsConfigurationResponse>>(PrepareAsyncUpdateEventsConfigurationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::dmi::Event>> StreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::dmi::Event>>(StreamEventsRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Event>> AsyncStreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Event>>(AsyncStreamEventsRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Event>> PrepareAsyncStreamEvents(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::Event>>(PrepareAsyncStreamEventsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -143,6 +171,11 @@ class NativeEventsManagementService final {
       #else
       void UpdateEventsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EventsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void StreamEvents(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::ClientReadReactor< ::dmi::Event>* reactor) override;
+      #else
+      void StreamEvents(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Event>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -158,8 +191,12 @@ class NativeEventsManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::ListEventsResponse>* PrepareAsyncListEventsRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::EventsConfigurationResponse>* AsyncUpdateEventsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::EventsConfigurationResponse>* PrepareAsyncUpdateEventsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::EventsConfigurationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::dmi::Event>* StreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) override;
+    ::grpc::ClientAsyncReader< ::dmi::Event>* AsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::dmi::Event>* PrepareAsyncStreamEventsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListEvents_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateEventsConfiguration_;
+    const ::grpc::internal::RpcMethod rpcmethod_StreamEvents_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -173,6 +210,8 @@ class NativeEventsManagementService final {
     // The default behavior of the device is to report all the supported events
     // This configuration is persisted across reboots of the device or the device manager
     virtual ::grpc::Status UpdateEventsConfiguration(::grpc::ServerContext* context, const ::dmi::EventsConfigurationRequest* request, ::dmi::EventsConfigurationResponse* response);
+    // Initiate the server streaming of the events
+    virtual ::grpc::Status StreamEvents(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::dmi::Event>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListEvents : public BaseClass {
@@ -214,7 +253,27 @@ class NativeEventsManagementService final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListEvents<WithAsyncMethod_UpdateEventsConfiguration<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_StreamEvents() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStreamEvents(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncWriter< ::dmi::Event>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(2, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListEvents<WithAsyncMethod_UpdateEventsConfiguration<WithAsyncMethod_StreamEvents<Service > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListEvents : public BaseClass {
    private:
@@ -309,11 +368,49 @@ class NativeEventsManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_StreamEvents() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::google::protobuf::Empty, ::dmi::Event>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request) { return this->StreamEvents(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::dmi::Event>* StreamEvents(
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::Event>* StreamEvents(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_ListEvents<ExperimentalWithCallbackMethod_UpdateEventsConfiguration<Service > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_ListEvents<ExperimentalWithCallbackMethod_UpdateEventsConfiguration<ExperimentalWithCallbackMethod_StreamEvents<Service > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_ListEvents<ExperimentalWithCallbackMethod_UpdateEventsConfiguration<Service > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_ListEvents<ExperimentalWithCallbackMethod_UpdateEventsConfiguration<ExperimentalWithCallbackMethod_StreamEvents<Service > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ListEvents : public BaseClass {
    private:
@@ -344,6 +441,23 @@ class NativeEventsManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status UpdateEventsConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::EventsConfigurationRequest* /*request*/, ::dmi::EventsConfigurationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_StreamEvents() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -386,6 +500,26 @@ class NativeEventsManagementService final {
     }
     void RequestUpdateEventsConfiguration(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_StreamEvents() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestStreamEvents(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(2, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -465,6 +599,44 @@ class NativeEventsManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_StreamEvents() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->StreamEvents(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* StreamEvents(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* StreamEvents(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListEvents : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -519,8 +691,35 @@ class NativeEventsManagementService final {
     virtual ::grpc::Status StreamedUpdateEventsConfiguration(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::EventsConfigurationRequest,::dmi::EventsConfigurationResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_ListEvents<WithStreamedUnaryMethod_UpdateEventsConfiguration<Service > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListEvents<WithStreamedUnaryMethod_UpdateEventsConfiguration<Service > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_StreamEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_StreamEvents() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::google::protobuf::Empty, ::dmi::Event>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::google::protobuf::Empty, ::dmi::Event>* streamer) {
+                       return this->StreamedStreamEvents(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_StreamEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status StreamEvents(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpc::ServerWriter< ::dmi::Event>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedStreamEvents(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::google::protobuf::Empty,::dmi::Event>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_StreamEvents<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_ListEvents<WithStreamedUnaryMethod_UpdateEventsConfiguration<WithSplitStreamingMethod_StreamEvents<Service > > > StreamedService;
 };
 
 }  // namespace dmi

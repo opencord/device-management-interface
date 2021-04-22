@@ -4,6 +4,7 @@ import grpc
 
 from dmi import hw_metrics_mgmt_service_pb2 as dmi_dot_hw__metrics__mgmt__service__pb2
 from dmi import hw_pb2 as dmi_dot_hw__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class NativeMetricsManagementServiceStub(object):
@@ -29,6 +30,11 @@ class NativeMetricsManagementServiceStub(object):
                 '/dmi.NativeMetricsManagementService/GetMetric',
                 request_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.FromString,
+                )
+        self.StreamMetrics = channel.unary_stream(
+                '/dmi.NativeMetricsManagementService/StreamMetrics',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.Metric.FromString,
                 )
 
 
@@ -62,6 +68,13 @@ class NativeMetricsManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StreamMetrics(self, request, context):
+        """Initiate the server streaming of the metrics
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeMetricsManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -79,6 +92,11 @@ def add_NativeMetricsManagementServiceServicer_to_server(servicer, server):
                     servicer.GetMetric,
                     request_deserializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.FromString,
                     response_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.SerializeToString,
+            ),
+            'StreamMetrics': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamMetrics,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__metrics__mgmt__service__pb2.Metric.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -138,5 +156,22 @@ class NativeMetricsManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeMetricsManagementService/GetMetric',
             dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricRequest.SerializeToString,
             dmi_dot_hw__metrics__mgmt__service__pb2.GetMetricResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StreamMetrics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/dmi.NativeMetricsManagementService/StreamMetrics',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__metrics__mgmt__service__pb2.Metric.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -25,6 +25,7 @@ static const char* NativeMetricsManagementService_method_names[] = {
   "/dmi.NativeMetricsManagementService/ListMetrics",
   "/dmi.NativeMetricsManagementService/UpdateMetricsConfiguration",
   "/dmi.NativeMetricsManagementService/GetMetric",
+  "/dmi.NativeMetricsManagementService/StreamMetrics",
 };
 
 std::unique_ptr< NativeMetricsManagementService::Stub> NativeMetricsManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -37,6 +38,7 @@ NativeMetricsManagementService::Stub::Stub(const std::shared_ptr< ::grpc::Channe
   : channel_(channel), rpcmethod_ListMetrics_(NativeMetricsManagementService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateMetricsConfiguration_(NativeMetricsManagementService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetMetric_(NativeMetricsManagementService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StreamMetrics_(NativeMetricsManagementService_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status NativeMetricsManagementService::Stub::ListMetrics(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::dmi::ListMetricsResponse* response) {
@@ -123,6 +125,22 @@ void NativeMetricsManagementService::Stub::experimental_async::GetMetric(::grpc:
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetMetricResponse>::Create(channel_.get(), cq, rpcmethod_GetMetric_, context, request, false);
 }
 
+::grpc::ClientReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::StreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::Metric>::Create(channel_.get(), rpcmethod_StreamMetrics_, context, request);
+}
+
+void NativeMetricsManagementService::Stub::experimental_async::StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Metric>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::Metric>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamMetrics_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::AsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Metric>::Create(channel_.get(), cq, rpcmethod_StreamMetrics_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::PrepareAsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Metric>::Create(channel_.get(), cq, rpcmethod_StreamMetrics_, context, request, false, nullptr);
+}
+
 NativeMetricsManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeMetricsManagementService_method_names[0],
@@ -154,6 +172,16 @@ NativeMetricsManagementService::Service::Service() {
              ::dmi::GetMetricResponse* resp) {
                return service->GetMetric(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeMetricsManagementService_method_names[3],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeMetricsManagementService::Service, ::google::protobuf::Empty, ::dmi::Metric>(
+          [](NativeMetricsManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::grpc_impl::ServerWriter<::dmi::Metric>* writer) {
+               return service->StreamMetrics(ctx, req, writer);
+             }, this)));
 }
 
 NativeMetricsManagementService::Service::~Service() {
@@ -177,6 +205,13 @@ NativeMetricsManagementService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeMetricsManagementService::Service::StreamMetrics(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::dmi::Metric>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
