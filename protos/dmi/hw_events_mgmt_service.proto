@@ -6,6 +6,7 @@ package dmi;
 import "dmi/commons.proto";
 import "dmi/hw.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 // Management of Events and protos for encoding of Events
 
@@ -143,8 +144,8 @@ message EventMetaData {
     string component_name = 3;
 }
 
-// The Events are conveyed to external systems by submitting them on a kafka bus.
-// The topic to which are Events are submitted would be configured as startup
+// The Events are conveyed to external systems either by submitting them on a message bus or using gRPC server streaming.
+// The message bus topic to which are Events are submitted would be configured as startup
 // configuration of the components
 
 message Event {
@@ -166,4 +167,7 @@ service NativeEventsManagementService {
     // The default behavior of the device is to report all the supported events
     // This configuration is persisted across reboots of the device or the device manager
     rpc UpdateEventsConfiguration(EventsConfigurationRequest) returns(EventsConfigurationResponse);
+
+    // Initiate the server streaming of the events
+    rpc StreamEvents(google.protobuf.Empty) returns(stream Event);
 }
