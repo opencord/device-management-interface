@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08196a87_52182aa7",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-04-22T10:03:23Z",
+      "side": 1,
+      "message": "I\u0027d call this streamEvents",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b724cd5_1b29b9da",
+        "filename": "protos/dmi/hw_metrics_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-04-22T10:03:23Z",
+      "side": 1,
+      "message": "streamMetrics",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
