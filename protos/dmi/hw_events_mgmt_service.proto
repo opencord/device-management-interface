@@ -166,4 +166,7 @@ service NativeEventsManagementService {
     // The default behavior of the device is to report all the supported events
     // This configuration is persisted across reboots of the device or the device manager
     rpc UpdateEventsConfiguration(EventsConfigurationRequest) returns(EventsConfigurationResponse);
+
+    // Enable the Event streaming for the device to push the events asynchronously on gRPC streams
+    rpc EnableEvent(Empty) returns(stream Event);
 }

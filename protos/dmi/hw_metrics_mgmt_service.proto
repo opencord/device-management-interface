@@ -153,4 +153,7 @@ service NativeMetricsManagementService {
 
     // Get the instantenous value of a metric
     rpc GetMetric(GetMetricRequest) returns(GetMetricResponse);
+
+    // Enable the Metric streaming for the device to push the metrics asynchronously on gRPC streams
+    rpc EnableMetric(Empty) returns(stream Metric);
 }
