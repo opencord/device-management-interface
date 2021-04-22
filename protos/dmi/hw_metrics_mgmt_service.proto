@@ -5,6 +5,7 @@ package dmi;
 
 import "dmi/commons.proto";
 import "dmi/hw.proto";
+import "google/protobuf/empty.proto";
 
 // The model used to represent the event data on the SensorData of a component as described
 // in RFC8348 (https://tools.ietf.org/html/rfc8348)
@@ -155,5 +156,5 @@ service NativeMetricsManagementService {
     rpc GetMetric(GetMetricRequest) returns(GetMetricResponse);
 
     // Enable the Metric streaming for the device to push the metrics asynchronously on gRPC streams
-    rpc EnableMetric(Empty) returns(stream Metric);
+    rpc EnableMetric(google.protobuf.Empty) returns(stream Metric);
 }

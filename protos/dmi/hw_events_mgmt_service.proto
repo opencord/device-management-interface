@@ -6,6 +6,7 @@ package dmi;
 import "dmi/commons.proto";
 import "dmi/hw.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 // Management of Events and protos for encoding of Events
 
@@ -168,5 +169,5 @@ service NativeEventsManagementService {
     rpc UpdateEventsConfiguration(EventsConfigurationRequest) returns(EventsConfigurationResponse);
 
     // Enable the Event streaming for the device to push the events asynchronously on gRPC streams
-    rpc EnableEvent(Empty) returns(stream Event);
+    rpc EnableEvent(google.protobuf.Empty) returns(stream Event);
 }
