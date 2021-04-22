@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "59ef7c68_dcc181a8",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-04-22T10:28:54Z",
+      "side": 1,
+      "message": "If we add gRPC streaming, then we also have to change the comment.",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a6791bf_c08370aa",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-04-22T10:28:54Z",
+      "side": 1,
+      "message": "I would not say \"for the device\" but \"for the device manager\". This gRPC could in principle also be used for a DM running off the device.\nIn general I think the comment has to be changed after the name of the rpc was changed. It should state that you create a stream for receiving future events.",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "08196a87_52182aa7",
         "filename": "protos/dmi/hw_events_mgmt_service.proto",
         "patchSetId": 1
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5dd382eb_b2f30412",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-04-22T10:28:54Z",
+      "side": 1,
+      "message": "I would also prefer a different name than \"EnableEvent\". \n\"SubscribeForEvents\" might be another alternative.",
+      "parentUuid": "08196a87_52182aa7",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b724cd5_1b29b9da",
         "filename": "protos/dmi/hw_metrics_mgmt_service.proto",
         "patchSetId": 1
@@ -30,6 +82,24 @@
       "writtenOn": "2021-04-22T10:03:23Z",
       "side": 1,
       "message": "streamMetrics",
+      "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7551beac_84720609",
+        "filename": "protos/dmi/hw_metrics_mgmt_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-04-22T10:28:54Z",
+      "side": 1,
+      "message": "\"SubscribeForMetrics\"?",
+      "parentUuid": "5b724cd5_1b29b9da",
       "revId": "c1b45ebad8bce3cfbb31a3183ba81b1b2926cefc",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
