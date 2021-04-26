@@ -5,20 +5,14 @@
 #include "dmi/hw_metrics_mgmt_service.pb.h"
 #include "dmi/hw_metrics_mgmt_service.grpc.pb.h"
 
-#include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
-#include <grpcpp/impl/codegen/channel_interface.h>
-#include <grpcpp/impl/codegen/client_unary_call.h>
-#include <grpcpp/impl/codegen/client_callback.h>
-#include <grpcpp/impl/codegen/message_allocator.h>
-#include <grpcpp/impl/codegen/method_handler.h>
-#include <grpcpp/impl/codegen/rpc_service_method.h>
-#include <grpcpp/impl/codegen/server_callback.h>
-#include <grpcpp/impl/codegen/server_callback_handlers.h>
-#include <grpcpp/impl/codegen/server_context.h>
-#include <grpcpp/impl/codegen/service_type.h>
-#include <grpcpp/impl/codegen/sync_stream.h>
+#include <grpc++/impl/codegen/async_stream.h>
+#include <grpc++/impl/codegen/async_unary_call.h>
+#include <grpc++/impl/codegen/channel_interface.h>
+#include <grpc++/impl/codegen/client_unary_call.h>
+#include <grpc++/impl/codegen/method_handler_impl.h>
+#include <grpc++/impl/codegen/rpc_service_method.h>
+#include <grpc++/impl/codegen/service_type.h>
+#include <grpc++/impl/codegen/sync_stream.h>
 namespace dmi {
 
 static const char* NativeMetricsManagementService_method_names[] = {
@@ -29,159 +23,70 @@ static const char* NativeMetricsManagementService_method_names[] = {
 };
 
 std::unique_ptr< NativeMetricsManagementService::Stub> NativeMetricsManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
-  (void)options;
   std::unique_ptr< NativeMetricsManagementService::Stub> stub(new NativeMetricsManagementService::Stub(channel));
   return stub;
 }
 
 NativeMetricsManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_ListMetrics_(NativeMetricsManagementService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateMetricsConfiguration_(NativeMetricsManagementService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetMetric_(NativeMetricsManagementService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_StreamMetrics_(NativeMetricsManagementService_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  : channel_(channel), rpcmethod_ListMetrics_(NativeMetricsManagementService_method_names[0], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateMetricsConfiguration_(NativeMetricsManagementService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMetric_(NativeMetricsManagementService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_StreamMetrics_(NativeMetricsManagementService_method_names[3], ::grpc::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status NativeMetricsManagementService::Stub::ListMetrics(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::dmi::ListMetricsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListMetrics_, context, request, response);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::ListMetrics(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::ListMetricsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMetrics_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::ListMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ListMetricsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMetrics_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::ListMetrics(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::ListMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMetrics_, context, request, response, reactor);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::ListMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ListMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMetrics_, context, request, response, reactor);
+  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_ListMetrics_, context, request, response);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::ListMetricsResponse>* NativeMetricsManagementService::Stub::AsyncListMetricsRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ListMetricsResponse>::Create(channel_.get(), cq, rpcmethod_ListMetrics_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::dmi::ListMetricsResponse>* NativeMetricsManagementService::Stub::PrepareAsyncListMetricsRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ListMetricsResponse>::Create(channel_.get(), cq, rpcmethod_ListMetrics_, context, request, false);
+  return new ::grpc::ClientAsyncResponseReader< ::dmi::ListMetricsResponse>(channel_.get(), cq, rpcmethod_ListMetrics_, context, request);
 }
 
 ::grpc::Status NativeMetricsManagementService::Stub::UpdateMetricsConfiguration(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest& request, ::dmi::MetricsConfigurationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateMetricsConfiguration_, context, request, response);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::UpdateMetricsConfiguration(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest* request, ::dmi::MetricsConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMetricsConfiguration_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::UpdateMetricsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::MetricsConfigurationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMetricsConfiguration_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::UpdateMetricsConfiguration(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest* request, ::dmi::MetricsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateMetricsConfiguration_, context, request, response, reactor);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::UpdateMetricsConfiguration(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::MetricsConfigurationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateMetricsConfiguration_, context, request, response, reactor);
+  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateMetricsConfiguration_, context, request, response);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::MetricsConfigurationResponse>* NativeMetricsManagementService::Stub::AsyncUpdateMetricsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::MetricsConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMetricsConfiguration_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::dmi::MetricsConfigurationResponse>* NativeMetricsManagementService::Stub::PrepareAsyncUpdateMetricsConfigurationRaw(::grpc::ClientContext* context, const ::dmi::MetricsConfigurationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::MetricsConfigurationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMetricsConfiguration_, context, request, false);
+  return new ::grpc::ClientAsyncResponseReader< ::dmi::MetricsConfigurationResponse>(channel_.get(), cq, rpcmethod_UpdateMetricsConfiguration_, context, request);
 }
 
 ::grpc::Status NativeMetricsManagementService::Stub::GetMetric(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::dmi::GetMetricResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetMetric_, context, request, response);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::GetMetric(::grpc::ClientContext* context, const ::dmi::GetMetricRequest* request, ::dmi::GetMetricResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMetric_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::GetMetric(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMetricResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMetric_, context, request, response, std::move(f));
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::GetMetric(::grpc::ClientContext* context, const ::dmi::GetMetricRequest* request, ::dmi::GetMetricResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMetric_, context, request, response, reactor);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::GetMetric(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMetricResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMetric_, context, request, response, reactor);
+  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetMetric_, context, request, response);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>* NativeMetricsManagementService::Stub::AsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetMetricResponse>::Create(channel_.get(), cq, rpcmethod_GetMetric_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>* NativeMetricsManagementService::Stub::PrepareAsyncGetMetricRaw(::grpc::ClientContext* context, const ::dmi::GetMetricRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetMetricResponse>::Create(channel_.get(), cq, rpcmethod_GetMetric_, context, request, false);
+  return new ::grpc::ClientAsyncResponseReader< ::dmi::GetMetricResponse>(channel_.get(), cq, rpcmethod_GetMetric_, context, request);
 }
 
 ::grpc::ClientReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::StreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::Metric>::Create(channel_.get(), rpcmethod_StreamMetrics_, context, request);
-}
-
-void NativeMetricsManagementService::Stub::experimental_async::StreamMetrics(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::dmi::Metric>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::Metric>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamMetrics_, context, request, reactor);
+  return new ::grpc::ClientReader< ::dmi::Metric>(channel_.get(), rpcmethod_StreamMetrics_, context, request);
 }
 
 ::grpc::ClientAsyncReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::AsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Metric>::Create(channel_.get(), cq, rpcmethod_StreamMetrics_, context, request, true, tag);
-}
-
-::grpc::ClientAsyncReader< ::dmi::Metric>* NativeMetricsManagementService::Stub::PrepareAsyncStreamMetricsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::Metric>::Create(channel_.get(), cq, rpcmethod_StreamMetrics_, context, request, false, nullptr);
+  return new ::grpc::ClientAsyncReader< ::dmi::Metric>(channel_.get(), cq, rpcmethod_StreamMetrics_, context, request, tag);
 }
 
 NativeMetricsManagementService::Service::Service() {
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
+  AddMethod(new ::grpc::RpcServiceMethod(
       NativeMetricsManagementService_method_names[0],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::HardwareID, ::dmi::ListMetricsResponse>(
-          [](NativeMetricsManagementService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::dmi::HardwareID* req,
-             ::dmi::ListMetricsResponse* resp) {
-               return service->ListMetrics(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::HardwareID, ::dmi::ListMetricsResponse>(
+          std::mem_fn(&NativeMetricsManagementService::Service::ListMetrics), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
       NativeMetricsManagementService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::MetricsConfigurationRequest, ::dmi::MetricsConfigurationResponse>(
-          [](NativeMetricsManagementService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::dmi::MetricsConfigurationRequest* req,
-             ::dmi::MetricsConfigurationResponse* resp) {
-               return service->UpdateMetricsConfiguration(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::MetricsConfigurationRequest, ::dmi::MetricsConfigurationResponse>(
+          std::mem_fn(&NativeMetricsManagementService::Service::UpdateMetricsConfiguration), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
       NativeMetricsManagementService_method_names[2],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::GetMetricRequest, ::dmi::GetMetricResponse>(
-          [](NativeMetricsManagementService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::dmi::GetMetricRequest* req,
-             ::dmi::GetMetricResponse* resp) {
-               return service->GetMetric(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ::grpc::RpcMethod::NORMAL_RPC,
+      new ::grpc::RpcMethodHandler< NativeMetricsManagementService::Service, ::dmi::GetMetricRequest, ::dmi::GetMetricResponse>(
+          std::mem_fn(&NativeMetricsManagementService::Service::GetMetric), this)));
+  AddMethod(new ::grpc::RpcServiceMethod(
       NativeMetricsManagementService_method_names[3],
-      ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< NativeMetricsManagementService::Service, ::google::protobuf::Empty, ::dmi::Metric>(
-          [](NativeMetricsManagementService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::grpc_impl::ServerWriter<::dmi::Metric>* writer) {
-               return service->StreamMetrics(ctx, req, writer);
-             }, this)));
+      ::grpc::RpcMethod::SERVER_STREAMING,
+      new ::grpc::ServerStreamingHandler< NativeMetricsManagementService::Service, ::google::protobuf::Empty, ::dmi::Metric>(
+          std::mem_fn(&NativeMetricsManagementService::Service::StreamMetrics), this)));
 }
 
 NativeMetricsManagementService::Service::~Service() {
