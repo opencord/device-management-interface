@@ -22,7 +22,7 @@ GRPC_CPP_PLUGIN_PATH ?= $(shell which grpc_cpp_plugin)
 SHELL = bash -e -o pipefail
 
 # tool containers
-VOLTHA_TOOLS_VERSION ?= 2.5.0
+VOLTHA_TOOLS_VERSION ?= 2.5.1
 
 PROTOC    = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc protoc
 PROTOC_SH = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/go/src/github.com/opencord/device-management-interface/v3 $(shell test -t 0 && echo "-it") --workdir=/go/src/github.com/opencord/device-management-interface/v3 voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc sh -c
