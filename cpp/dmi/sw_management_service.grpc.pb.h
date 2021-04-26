@@ -6,33 +6,28 @@
 
 #include "dmi/sw_management_service.pb.h"
 
-#include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
-#include <grpcpp/impl/codegen/client_callback.h>
-#include <grpcpp/impl/codegen/client_context.h>
-#include <grpcpp/impl/codegen/completion_queue.h>
-#include <grpcpp/impl/codegen/message_allocator.h>
-#include <grpcpp/impl/codegen/method_handler.h>
-#include <grpcpp/impl/codegen/proto_utils.h>
-#include <grpcpp/impl/codegen/rpc_method.h>
-#include <grpcpp/impl/codegen/server_callback.h>
-#include <grpcpp/impl/codegen/server_callback_handlers.h>
-#include <grpcpp/impl/codegen/server_context.h>
-#include <grpcpp/impl/codegen/service_type.h>
-#include <grpcpp/impl/codegen/status.h>
-#include <grpcpp/impl/codegen/stub_options.h>
-#include <grpcpp/impl/codegen/sync_stream.h>
+#include <grpc++/impl/codegen/async_stream.h>
+#include <grpc++/impl/codegen/async_unary_call.h>
+#include <grpc++/impl/codegen/method_handler_impl.h>
+#include <grpc++/impl/codegen/proto_utils.h>
+#include <grpc++/impl/codegen/rpc_method.h>
+#include <grpc++/impl/codegen/service_type.h>
+#include <grpc++/impl/codegen/status.h>
+#include <grpc++/impl/codegen/stub_options.h>
+#include <grpc++/impl/codegen/sync_stream.h>
+
+namespace grpc {
+class CompletionQueue;
+class Channel;
+class RpcService;
+class ServerCompletionQueue;
+class ServerContext;
+}  // namespace grpc
 
 namespace dmi {
 
 class NativeSoftwareManagementService final {
  public:
-  static constexpr char const* service_full_name() {
-    return "dmi.NativeSoftwareManagementService";
-  }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
@@ -41,18 +36,12 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>> AsyncGetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>>(AsyncGetSoftwareVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>> PrepareAsyncGetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>>(PrepareAsyncGetSoftwareVersionRaw(context, request, cq));
-    }
     // Downloads and installs the image in the standby partition, returns the status/progress of the Install
     std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::ImageStatus>> DownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::ImageStatus>>(DownloadImageRaw(context, request));
     }
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> AsyncDownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(AsyncDownloadImageRaw(context, request, cq, tag));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> PrepareAsyncDownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(PrepareAsyncDownloadImageRaw(context, request, cq));
     }
     // Activates and runs the OLT with the image in the standby partition. If things are fine this image will
     // henceforth be marked as the Active Partition. The old working image would remain on the Standby partition.
@@ -63,9 +52,6 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> AsyncActivateImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(AsyncActivateImageRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> PrepareAsyncActivateImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(PrepareAsyncActivateImageRaw(context, request, cq));
-    }
     // Marks the image in the Standby as Active and reboots the device, so that it boots from that image which was in the standby.
     // This API is to be used if operator wants to go back to the previous software
     std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::ImageStatus>> RevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request) {
@@ -74,9 +60,6 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> AsyncRevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(AsyncRevertToStandbyImageRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>> PrepareAsyncRevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>>(PrepareAsyncRevertToStandbyImageRaw(context, request, cq));
-    }
     // This API can be used to let the devices pickup their properitary configuration which they need at startup.
     std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::ConfigResponse>> UpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::ConfigResponse>>(UpdateStartupConfigurationRaw(context, request));
@@ -84,98 +67,22 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>> AsyncUpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>>(AsyncUpdateStartupConfigurationRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>> PrepareAsyncUpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>>(PrepareAsyncUpdateStartupConfigurationRaw(context, request, cq));
-    }
     // This API can be used to retrieve information about the current startup configuration that a device is using
     virtual ::grpc::Status GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::dmi::StartupConfigInfoResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>> AsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>>(AsyncGetStartupConfigurationInfoRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>> PrepareAsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>>(PrepareAsyncGetStartupConfigurationInfoRaw(context, request, cq));
-    }
-    class experimental_async_interface {
-     public:
-      virtual ~experimental_async_interface() {}
-      // Get the software version information of the Active and Standby images
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      // Downloads and installs the image in the standby partition, returns the status/progress of the Install
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DownloadImage(::grpc::ClientContext* context, ::dmi::DownloadImageRequest* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #else
-      virtual void DownloadImage(::grpc::ClientContext* context, ::dmi::DownloadImageRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #endif
-      // Activates and runs the OLT with the image in the standby partition. If things are fine this image will
-      // henceforth be marked as the Active Partition. The old working image would remain on the Standby partition.
-      // Any possibly required (sub-)steps like "commit" are left to the "Device Manager"
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void ActivateImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #else
-      virtual void ActivateImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #endif
-      // Marks the image in the Standby as Active and reboots the device, so that it boots from that image which was in the standby.
-      // This API is to be used if operator wants to go back to the previous software
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RevertToStandbyImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #else
-      virtual void RevertToStandbyImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) = 0;
-      #endif
-      // This API can be used to let the devices pickup their properitary configuration which they need at startup.
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateStartupConfiguration(::grpc::ClientContext* context, ::dmi::ConfigRequest* request, ::grpc::ClientReadReactor< ::dmi::ConfigResponse>* reactor) = 0;
-      #else
-      virtual void UpdateStartupConfiguration(::grpc::ClientContext* context, ::dmi::ConfigRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::ConfigResponse>* reactor) = 0;
-      #endif
-      // This API can be used to retrieve information about the current startup configuration that a device is using
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-    };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>* AsyncGetSoftwareVersionRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetSoftwareVersionInformationResponse>* PrepareAsyncGetSoftwareVersionRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::dmi::ImageStatus>* DownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* AsyncDownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* PrepareAsyncDownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::dmi::ImageStatus>* ActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* AsyncActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* PrepareAsyncActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::dmi::ImageStatus>* RevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* AsyncRevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ImageStatus>* PrepareAsyncRevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::dmi::ConfigResponse>* UpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>* AsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>* PrepareAsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>* AsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>* PrepareAsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -184,17 +91,11 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>> AsyncGetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>>(AsyncGetSoftwareVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>> PrepareAsyncGetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>>(PrepareAsyncGetSoftwareVersionRaw(context, request, cq));
-    }
     std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>> DownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>>(DownloadImageRaw(context, request));
     }
     std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> AsyncDownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(AsyncDownloadImageRaw(context, request, cq, tag));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> PrepareAsyncDownloadImage(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(PrepareAsyncDownloadImageRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>> ActivateImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>>(ActivateImageRaw(context, request));
@@ -202,17 +103,11 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> AsyncActivateImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(AsyncActivateImageRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> PrepareAsyncActivateImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(PrepareAsyncActivateImageRaw(context, request, cq));
-    }
     std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>> RevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::dmi::ImageStatus>>(RevertToStandbyImageRaw(context, request));
     }
     std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> AsyncRevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(AsyncRevertToStandbyImageRaw(context, request, cq, tag));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>> PrepareAsyncRevertToStandbyImage(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ImageStatus>>(PrepareAsyncRevertToStandbyImageRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientReader< ::dmi::ConfigResponse>> UpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::dmi::ConfigResponse>>(UpdateStartupConfigurationRaw(context, request));
@@ -220,96 +115,29 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>> AsyncUpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>>(AsyncUpdateStartupConfigurationRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>> PrepareAsyncUpdateStartupConfiguration(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>>(PrepareAsyncUpdateStartupConfigurationRaw(context, request, cq));
-    }
     ::grpc::Status GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::dmi::StartupConfigInfoResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>> AsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>>(AsyncGetStartupConfigurationInfoRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>> PrepareAsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>>(PrepareAsyncGetStartupConfigurationInfoRaw(context, request, cq));
-    }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
-     public:
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetSoftwareVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetSoftwareVersionInformationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DownloadImage(::grpc::ClientContext* context, ::dmi::DownloadImageRequest* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #else
-      void DownloadImage(::grpc::ClientContext* context, ::dmi::DownloadImageRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void ActivateImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #else
-      void ActivateImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RevertToStandbyImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #else
-      void RevertToStandbyImage(::grpc::ClientContext* context, ::dmi::HardwareID* request, ::grpc::experimental::ClientReadReactor< ::dmi::ImageStatus>* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateStartupConfiguration(::grpc::ClientContext* context, ::dmi::ConfigRequest* request, ::grpc::ClientReadReactor< ::dmi::ConfigResponse>* reactor) override;
-      #else
-      void UpdateStartupConfiguration(::grpc::ClientContext* context, ::dmi::ConfigRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::ConfigResponse>* reactor) override;
-      #endif
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-     private:
-      friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
-      Stub* stub() { return stub_; }
-      Stub* stub_;
-    };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>* AsyncGetSoftwareVersionRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::dmi::GetSoftwareVersionInformationResponse>* PrepareAsyncGetSoftwareVersionRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::dmi::ImageStatus>* DownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request) override;
     ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* AsyncDownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* PrepareAsyncDownloadImageRaw(::grpc::ClientContext* context, const ::dmi::DownloadImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::dmi::ImageStatus>* ActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request) override;
     ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* AsyncActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* PrepareAsyncActivateImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::dmi::ImageStatus>* RevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request) override;
     ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* AsyncRevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::dmi::ImageStatus>* PrepareAsyncRevertToStandbyImageRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::dmi::ConfigResponse>* UpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request) override;
     ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>* AsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>* PrepareAsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>* AsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>* PrepareAsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_GetSoftwareVersion_;
-    const ::grpc::internal::RpcMethod rpcmethod_DownloadImage_;
-    const ::grpc::internal::RpcMethod rpcmethod_ActivateImage_;
-    const ::grpc::internal::RpcMethod rpcmethod_RevertToStandbyImage_;
-    const ::grpc::internal::RpcMethod rpcmethod_UpdateStartupConfiguration_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetStartupConfigurationInfo_;
+    const ::grpc::RpcMethod rpcmethod_GetSoftwareVersion_;
+    const ::grpc::RpcMethod rpcmethod_DownloadImage_;
+    const ::grpc::RpcMethod rpcmethod_ActivateImage_;
+    const ::grpc::RpcMethod rpcmethod_RevertToStandbyImage_;
+    const ::grpc::RpcMethod rpcmethod_UpdateStartupConfiguration_;
+    const ::grpc::RpcMethod rpcmethod_GetStartupConfigurationInfo_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -336,7 +164,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_GetSoftwareVersion : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetSoftwareVersion() {
       ::grpc::Service::MarkMethodAsync(0);
@@ -345,7 +173,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
+    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -356,7 +184,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_DownloadImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DownloadImage() {
       ::grpc::Service::MarkMethodAsync(1);
@@ -365,7 +193,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status DownloadImage(::grpc::ServerContext* context, const ::dmi::DownloadImageRequest* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -376,7 +204,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_ActivateImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ActivateImage() {
       ::grpc::Service::MarkMethodAsync(2);
@@ -385,7 +213,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status ActivateImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -396,7 +224,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_RevertToStandbyImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_RevertToStandbyImage() {
       ::grpc::Service::MarkMethodAsync(3);
@@ -405,7 +233,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -416,7 +244,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_UpdateStartupConfiguration : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateStartupConfiguration() {
       ::grpc::Service::MarkMethodAsync(4);
@@ -425,7 +253,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
+    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* context, const ::dmi::ConfigRequest* request, ::grpc::ServerWriter< ::dmi::ConfigResponse>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -436,7 +264,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithAsyncMethod_GetStartupConfigurationInfo : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetStartupConfigurationInfo() {
       ::grpc::Service::MarkMethodAsync(5);
@@ -445,7 +273,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
+    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -455,260 +283,9 @@ class NativeSoftwareManagementService final {
   };
   typedef WithAsyncMethod_GetSoftwareVersion<WithAsyncMethod_DownloadImage<WithAsyncMethod_ActivateImage<WithAsyncMethod_RevertToStandbyImage<WithAsyncMethod_UpdateStartupConfiguration<WithAsyncMethod_GetStartupConfigurationInfo<Service > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetSoftwareVersion : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_GetSoftwareVersion() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response) { return this->GetSoftwareVersion(context, request, response); }));}
-    void SetMessageAllocatorFor_GetSoftwareVersion(
-        ::grpc::experimental::MessageAllocator< ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_GetSoftwareVersion() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetSoftwareVersion(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetSoftwareVersion(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_DownloadImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_DownloadImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::dmi::DownloadImageRequest, ::dmi::ImageStatus>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::DownloadImageRequest* request) { return this->DownloadImage(context, request); }));
-    }
-    ~ExperimentalWithCallbackMethod_DownloadImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::dmi::ImageStatus>* DownloadImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::ImageStatus>* DownloadImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_ActivateImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_ActivateImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::dmi::HardwareID, ::dmi::ImageStatus>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::HardwareID* request) { return this->ActivateImage(context, request); }));
-    }
-    ~ExperimentalWithCallbackMethod_ActivateImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::dmi::ImageStatus>* ActivateImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::ImageStatus>* ActivateImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_RevertToStandbyImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_RevertToStandbyImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::dmi::HardwareID, ::dmi::ImageStatus>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::HardwareID* request) { return this->RevertToStandbyImage(context, request); }));
-    }
-    ~ExperimentalWithCallbackMethod_RevertToStandbyImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::dmi::ImageStatus>* RevertToStandbyImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::ImageStatus>* RevertToStandbyImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::HardwareID* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_UpdateStartupConfiguration : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_UpdateStartupConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::dmi::ConfigRequest, ::dmi::ConfigResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::ConfigRequest* request) { return this->UpdateStartupConfiguration(context, request); }));
-    }
-    ~ExperimentalWithCallbackMethod_UpdateStartupConfiguration() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::dmi::ConfigResponse>* UpdateStartupConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::ConfigResponse>* UpdateStartupConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetStartupConfigurationInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_GetStartupConfigurationInfo() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response) { return this->GetStartupConfigurationInfo(context, request, response); }));}
-    void SetMessageAllocatorFor_GetStartupConfigurationInfo(
-        ::grpc::experimental::MessageAllocator< ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
-    #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_GetStartupConfigurationInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetStartupConfigurationInfo(
-      ::grpc::CallbackServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetStartupConfigurationInfo(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<Service > > > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<Service > > > > > > ExperimentalCallbackService;
-  template <class BaseClass>
   class WithGenericMethod_GetSoftwareVersion : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetSoftwareVersion() {
       ::grpc::Service::MarkMethodGeneric(0);
@@ -717,7 +294,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
+    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -725,7 +302,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithGenericMethod_DownloadImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DownloadImage() {
       ::grpc::Service::MarkMethodGeneric(1);
@@ -734,7 +311,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status DownloadImage(::grpc::ServerContext* context, const ::dmi::DownloadImageRequest* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -742,7 +319,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithGenericMethod_ActivateImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ActivateImage() {
       ::grpc::Service::MarkMethodGeneric(2);
@@ -751,7 +328,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status ActivateImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -759,7 +336,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithGenericMethod_RevertToStandbyImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_RevertToStandbyImage() {
       ::grpc::Service::MarkMethodGeneric(3);
@@ -768,7 +345,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -776,7 +353,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithGenericMethod_UpdateStartupConfiguration : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateStartupConfiguration() {
       ::grpc::Service::MarkMethodGeneric(4);
@@ -785,7 +362,7 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
+    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* context, const ::dmi::ConfigRequest* request, ::grpc::ServerWriter< ::dmi::ConfigResponse>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -793,7 +370,7 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithGenericMethod_GetStartupConfigurationInfo : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetStartupConfigurationInfo() {
       ::grpc::Service::MarkMethodGeneric(5);
@@ -802,380 +379,25 @@ class NativeSoftwareManagementService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
+    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-  };
-  template <class BaseClass>
-  class WithRawMethod_GetSoftwareVersion : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_GetSoftwareVersion() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_GetSoftwareVersion() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGetSoftwareVersion(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_DownloadImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_DownloadImage() {
-      ::grpc::Service::MarkMethodRaw(1);
-    }
-    ~WithRawMethod_DownloadImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestDownloadImage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(1, context, request, writer, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_ActivateImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_ActivateImage() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_ActivateImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestActivateImage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(2, context, request, writer, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_RevertToStandbyImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_RevertToStandbyImage() {
-      ::grpc::Service::MarkMethodRaw(3);
-    }
-    ~WithRawMethod_RevertToStandbyImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestRevertToStandbyImage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_UpdateStartupConfiguration : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_UpdateStartupConfiguration() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_UpdateStartupConfiguration() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestUpdateStartupConfiguration(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_GetStartupConfigurationInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_GetStartupConfigurationInfo() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_GetStartupConfigurationInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGetStartupConfigurationInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetSoftwareVersion : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_GetSoftwareVersion() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetSoftwareVersion(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_GetSoftwareVersion() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetSoftwareVersion(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetSoftwareVersion(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_DownloadImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_DownloadImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->DownloadImage(context, request); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_DownloadImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* DownloadImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* DownloadImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_ActivateImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_ActivateImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->ActivateImage(context, request); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_ActivateImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* ActivateImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* ActivateImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_RevertToStandbyImage : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_RevertToStandbyImage() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->RevertToStandbyImage(context, request); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_RevertToStandbyImage() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* RevertToStandbyImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* RevertToStandbyImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_UpdateStartupConfiguration : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_UpdateStartupConfiguration() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const::grpc::ByteBuffer* request) { return this->UpdateStartupConfiguration(context, request); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_UpdateStartupConfiguration() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* UpdateStartupConfiguration(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* UpdateStartupConfiguration(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetStartupConfigurationInfo : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_GetStartupConfigurationInfo() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetStartupConfigurationInfo(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_GetStartupConfigurationInfo() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetStartupConfigurationInfo(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetStartupConfigurationInfo(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetSoftwareVersion : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetSoftwareVersion() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
-                     ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>* streamer) {
-                       return this->StreamedGetSoftwareVersion(context,
-                         streamer);
-                  }));
+        new ::grpc::StreamedUnaryHandler< ::dmi::HardwareID, ::dmi::GetSoftwareVersionInformationResponse>(std::bind(&WithStreamedUnaryMethod_GetSoftwareVersion<BaseClass>::StreamedGetSoftwareVersion, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetSoftwareVersion() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::dmi::GetSoftwareVersionInformationResponse* /*response*/) override {
+    ::grpc::Status GetSoftwareVersion(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::dmi::GetSoftwareVersionInformationResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1185,24 +407,17 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetStartupConfigurationInfo : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetStartupConfigurationInfo() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
-                     ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>* streamer) {
-                       return this->StreamedGetStartupConfigurationInfo(context,
-                         streamer);
-                  }));
+        new ::grpc::StreamedUnaryHandler< ::dmi::StartupConfigInfoRequest, ::dmi::StartupConfigInfoResponse>(std::bind(&WithStreamedUnaryMethod_GetStartupConfigurationInfo<BaseClass>::StreamedGetStartupConfigurationInfo, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetStartupConfigurationInfo() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
+    ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1213,24 +428,17 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithSplitStreamingMethod_DownloadImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithSplitStreamingMethod_DownloadImage() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::SplitServerStreamingHandler<
-          ::dmi::DownloadImageRequest, ::dmi::ImageStatus>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
-                     ::dmi::DownloadImageRequest, ::dmi::ImageStatus>* streamer) {
-                       return this->StreamedDownloadImage(context,
-                         streamer);
-                  }));
+        new ::grpc::SplitServerStreamingHandler< ::dmi::DownloadImageRequest, ::dmi::ImageStatus>(std::bind(&WithSplitStreamingMethod_DownloadImage<BaseClass>::StreamedDownloadImage, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_DownloadImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DownloadImage(::grpc::ServerContext* /*context*/, const ::dmi::DownloadImageRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status DownloadImage(::grpc::ServerContext* context, const ::dmi::DownloadImageRequest* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1240,24 +448,17 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithSplitStreamingMethod_ActivateImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithSplitStreamingMethod_ActivateImage() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::SplitServerStreamingHandler<
-          ::dmi::HardwareID, ::dmi::ImageStatus>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
-                     ::dmi::HardwareID, ::dmi::ImageStatus>* streamer) {
-                       return this->StreamedActivateImage(context,
-                         streamer);
-                  }));
+        new ::grpc::SplitServerStreamingHandler< ::dmi::HardwareID, ::dmi::ImageStatus>(std::bind(&WithSplitStreamingMethod_ActivateImage<BaseClass>::StreamedActivateImage, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_ActivateImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ActivateImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status ActivateImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1267,24 +468,17 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithSplitStreamingMethod_RevertToStandbyImage : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithSplitStreamingMethod_RevertToStandbyImage() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::SplitServerStreamingHandler<
-          ::dmi::HardwareID, ::dmi::ImageStatus>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
-                     ::dmi::HardwareID, ::dmi::ImageStatus>* streamer) {
-                       return this->StreamedRevertToStandbyImage(context,
-                         streamer);
-                  }));
+        new ::grpc::SplitServerStreamingHandler< ::dmi::HardwareID, ::dmi::ImageStatus>(std::bind(&WithSplitStreamingMethod_RevertToStandbyImage<BaseClass>::StreamedRevertToStandbyImage, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_RevertToStandbyImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* /*context*/, const ::dmi::HardwareID* /*request*/, ::grpc::ServerWriter< ::dmi::ImageStatus>* /*writer*/) override {
+    ::grpc::Status RevertToStandbyImage(::grpc::ServerContext* context, const ::dmi::HardwareID* request, ::grpc::ServerWriter< ::dmi::ImageStatus>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1294,24 +488,17 @@ class NativeSoftwareManagementService final {
   template <class BaseClass>
   class WithSplitStreamingMethod_UpdateStartupConfiguration : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithSplitStreamingMethod_UpdateStartupConfiguration() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::SplitServerStreamingHandler<
-          ::dmi::ConfigRequest, ::dmi::ConfigResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
-                     ::dmi::ConfigRequest, ::dmi::ConfigResponse>* streamer) {
-                       return this->StreamedUpdateStartupConfiguration(context,
-                         streamer);
-                  }));
+        new ::grpc::SplitServerStreamingHandler< ::dmi::ConfigRequest, ::dmi::ConfigResponse>(std::bind(&WithSplitStreamingMethod_UpdateStartupConfiguration<BaseClass>::StreamedUpdateStartupConfiguration, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_UpdateStartupConfiguration() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* /*context*/, const ::dmi::ConfigRequest* /*request*/, ::grpc::ServerWriter< ::dmi::ConfigResponse>* /*writer*/) override {
+    ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* context, const ::dmi::ConfigRequest* request, ::grpc::ServerWriter< ::dmi::ConfigResponse>* writer) final override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
