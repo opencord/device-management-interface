@@ -111,6 +111,10 @@ class GetLoggableEntitiesRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<GetLoggableEntitiesRequest> _instance;
 } _GetLoggableEntitiesRequest_default_instance_;
+class HeartbeatDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Heartbeat> _instance;
+} _Heartbeat_default_instance_;
 }  // namespace dmi
 static void InitDefaultsPhysicalInventoryRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -438,6 +442,20 @@ static void InitDefaultsGetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservi
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {
       &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
 
+static void InitDefaultsHeartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_Heartbeat_default_instance_;
+    new (ptr) ::dmi::Heartbeat();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::Heartbeat::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Heartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsHeartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
 void InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_PhysicalInventoryRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PhysicalInventoryResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
@@ -461,9 +479,10 @@ void InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_GetLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GetLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Heartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[22];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[23];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[11];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto = nullptr;
 
@@ -642,6 +661,12 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2ep
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dmi::GetLoggableEntitiesRequest, device_uuid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::Heartbeat, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::Heartbeat, heartbeat_signature_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::PhysicalInventoryRequest)},
@@ -666,6 +691,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 151, -1, sizeof(::dmi::GetLogLevelRequest)},
   { 158, -1, sizeof(::dmi::GetLogLevelResponse)},
   { 168, -1, sizeof(::dmi::GetLoggableEntitiesRequest)},
+  { 174, -1, sizeof(::dmi::Heartbeat)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -691,12 +717,13 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLogLevelRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLogLevelResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLoggableEntitiesRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_Heartbeat_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   {}, AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, "dmi/hw_management_service.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 22, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
+  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 23, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
@@ -800,41 +827,43 @@ const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
   "ON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERR"
   "OR\020\002\022\026\n\022UNKNOWN_LOG_ENTITY\020\003\022\026\n\022DEVICE_U"
   "NREACHABLE\020\004\"<\n\032GetLoggableEntitiesReque"
-  "st\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid2\257\010\n\031N"
-  "ativeHWManagementService\022S\n\023StartManagin"
-  "gDevice\022\030.dmi.ModifiableComponent\032 .dmi."
-  "StartManagingDeviceResponse0\001\022U\n\022StopMan"
-  "agingDevice\022\036.dmi.StopManagingDeviceRequ"
-  "est\032\037.dmi.StopManagingDeviceResponse\022H\n\021"
-  "GetManagedDevices\022\026.google.protobuf.Empt"
-  "y\032\033.dmi.ManagedDevicesResponse\022W\n\024GetPhy"
-  "sicalInventory\022\035.dmi.PhysicalInventoryRe"
-  "quest\032\036.dmi.PhysicalInventoryResponse0\001\022"
-  "W\n\022GetHWComponentInfo\022\036.dmi.HWComponentI"
-  "nfoGetRequest\032\037.dmi.HWComponentInfoGetRe"
-  "sponse0\001\022U\n\022SetHWComponentInfo\022\036.dmi.HWC"
-  "omponentInfoSetRequest\032\037.dmi.HWComponent"
-  "InfoSetResponse\022T\n\022SetLoggingEndpoint\022\036."
-  "dmi.SetLoggingEndpointRequest\032\036.dmi.SetR"
-  "emoteEndpointResponse\022F\n\022GetLoggingEndpo"
-  "int\022\017.dmi.HardwareID\032\037.dmi.GetLoggingEnd"
-  "pointResponse\022R\n\021SetMsgBusEndpoint\022\035.dmi"
-  ".SetMsgBusEndpointRequest\032\036.dmi.SetRemot"
-  "eEndpointResponse\022K\n\021GetMsgBusEndpoint\022\026"
-  ".google.protobuf.Empty\032\036.dmi.GetMsgBusEn"
-  "dpointResponse\022P\n\023GetLoggableEntities\022\037."
-  "dmi.GetLoggableEntitiesRequest\032\030.dmi.Get"
-  "LogLevelResponse\022@\n\013SetLogLevel\022\027.dmi.Se"
-  "tLogLevelRequest\032\030.dmi.SetLogLevelRespon"
-  "se\022@\n\013GetLogLevel\022\027.dmi.GetLogLevelReque"
-  "st\032\030.dmi.GetLogLevelResponseB;Z9github.c"
-  "om/opencord/device-management-interface/"
-  "v3/go/dmib\006proto3"
+  "st\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\"(\n\tHe"
+  "artbeat\022\033\n\023heartbeat_signature\030\001 \001(\0072\351\010\n"
+  "\031NativeHWManagementService\022S\n\023StartManag"
+  "ingDevice\022\030.dmi.ModifiableComponent\032 .dm"
+  "i.StartManagingDeviceResponse0\001\022U\n\022StopM"
+  "anagingDevice\022\036.dmi.StopManagingDeviceRe"
+  "quest\032\037.dmi.StopManagingDeviceResponse\022H"
+  "\n\021GetManagedDevices\022\026.google.protobuf.Em"
+  "pty\032\033.dmi.ManagedDevicesResponse\022W\n\024GetP"
+  "hysicalInventory\022\035.dmi.PhysicalInventory"
+  "Request\032\036.dmi.PhysicalInventoryResponse0"
+  "\001\022W\n\022GetHWComponentInfo\022\036.dmi.HWComponen"
+  "tInfoGetRequest\032\037.dmi.HWComponentInfoGet"
+  "Response0\001\022U\n\022SetHWComponentInfo\022\036.dmi.H"
+  "WComponentInfoSetRequest\032\037.dmi.HWCompone"
+  "ntInfoSetResponse\022T\n\022SetLoggingEndpoint\022"
+  "\036.dmi.SetLoggingEndpointRequest\032\036.dmi.Se"
+  "tRemoteEndpointResponse\022F\n\022GetLoggingEnd"
+  "point\022\017.dmi.HardwareID\032\037.dmi.GetLoggingE"
+  "ndpointResponse\022R\n\021SetMsgBusEndpoint\022\035.d"
+  "mi.SetMsgBusEndpointRequest\032\036.dmi.SetRem"
+  "oteEndpointResponse\022K\n\021GetMsgBusEndpoint"
+  "\022\026.google.protobuf.Empty\032\036.dmi.GetMsgBus"
+  "EndpointResponse\022P\n\023GetLoggableEntities\022"
+  "\037.dmi.GetLoggableEntitiesRequest\032\030.dmi.G"
+  "etLogLevelResponse\022@\n\013SetLogLevel\022\027.dmi."
+  "SetLogLevelRequest\032\030.dmi.SetLogLevelResp"
+  "onse\022@\n\013GetLogLevel\022\027.dmi.GetLogLevelReq"
+  "uest\032\030.dmi.GetLogLevelResponse\0228\n\016Heartb"
+  "eatCheck\022\026.google.protobuf.Empty\032\016.dmi.H"
+  "eartbeatB;Z9github.com/opencord/device-m"
+  "anagement-interface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto,
-  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5177,
+  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5277,
 };
 
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto() {
@@ -10120,6 +10149,264 @@ void GetLoggableEntitiesRequest::InternalSwap(GetLoggableEntitiesRequest* other)
 }
 
 
+// ===================================================================
+
+void Heartbeat::InitAsDefaultInstance() {
+}
+class Heartbeat::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Heartbeat::kHeartbeatSignatureFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Heartbeat::Heartbeat()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.Heartbeat)
+}
+Heartbeat::Heartbeat(const Heartbeat& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  heartbeat_signature_ = from.heartbeat_signature_;
+  // @@protoc_insertion_point(copy_constructor:dmi.Heartbeat)
+}
+
+void Heartbeat::SharedCtor() {
+  heartbeat_signature_ = 0u;
+}
+
+Heartbeat::~Heartbeat() {
+  // @@protoc_insertion_point(destructor:dmi.Heartbeat)
+  SharedDtor();
+}
+
+void Heartbeat::SharedDtor() {
+}
+
+void Heartbeat::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Heartbeat& Heartbeat::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Heartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Heartbeat::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.Heartbeat)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  heartbeat_signature_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Heartbeat::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Heartbeat*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // fixed32 heartbeat_signature = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 13) goto handle_unusual;
+        msg->set_heartbeat_signature(::google::protobuf::io::UnalignedLoad<::google::protobuf::uint32>(ptr));
+        ptr += sizeof(::google::protobuf::uint32);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Heartbeat::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.Heartbeat)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // fixed32 heartbeat_signature = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (13 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &heartbeat_signature_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.Heartbeat)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.Heartbeat)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Heartbeat::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.Heartbeat)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // fixed32 heartbeat_signature = 1;
+  if (this->heartbeat_signature() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(1, this->heartbeat_signature(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.Heartbeat)
+}
+
+::google::protobuf::uint8* Heartbeat::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.Heartbeat)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // fixed32 heartbeat_signature = 1;
+  if (this->heartbeat_signature() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(1, this->heartbeat_signature(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.Heartbeat)
+  return target;
+}
+
+size_t Heartbeat::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.Heartbeat)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // fixed32 heartbeat_signature = 1;
+  if (this->heartbeat_signature() != 0) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Heartbeat::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.Heartbeat)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Heartbeat* source =
+      ::google::protobuf::DynamicCastToGenerated<Heartbeat>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.Heartbeat)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.Heartbeat)
+    MergeFrom(*source);
+  }
+}
+
+void Heartbeat::MergeFrom(const Heartbeat& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.Heartbeat)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.heartbeat_signature() != 0) {
+    set_heartbeat_signature(from.heartbeat_signature());
+  }
+}
+
+void Heartbeat::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.Heartbeat)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Heartbeat::CopyFrom(const Heartbeat& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.Heartbeat)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Heartbeat::IsInitialized() const {
+  return true;
+}
+
+void Heartbeat::Swap(Heartbeat* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Heartbeat::InternalSwap(Heartbeat* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(heartbeat_signature_, other->heartbeat_signature_);
+}
+
+::google::protobuf::Metadata Heartbeat::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dmi
 namespace google {
@@ -10189,6 +10476,9 @@ template<> PROTOBUF_NOINLINE ::dmi::GetLogLevelResponse* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::dmi::GetLoggableEntitiesRequest* Arena::CreateMaybeMessage< ::dmi::GetLoggableEntitiesRequest >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::GetLoggableEntitiesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::Heartbeat* Arena::CreateMaybeMessage< ::dmi::Heartbeat >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::Heartbeat >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

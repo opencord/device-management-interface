@@ -45,7 +45,7 @@ struct TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[22]
+  static const ::google::protobuf::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -83,6 +83,9 @@ extern HWComponentInfoSetRequestDefaultTypeInternal _HWComponentInfoSetRequest_d
 class HWComponentInfoSetResponse;
 class HWComponentInfoSetResponseDefaultTypeInternal;
 extern HWComponentInfoSetResponseDefaultTypeInternal _HWComponentInfoSetResponse_default_instance_;
+class Heartbeat;
+class HeartbeatDefaultTypeInternal;
+extern HeartbeatDefaultTypeInternal _Heartbeat_default_instance_;
 class ManagedDeviceInfo;
 class ManagedDeviceInfoDefaultTypeInternal;
 extern ManagedDeviceInfoDefaultTypeInternal _ManagedDeviceInfo_default_instance_;
@@ -132,6 +135,7 @@ template<> ::dmi::HWComponentInfoGetRequest* Arena::CreateMaybeMessage<::dmi::HW
 template<> ::dmi::HWComponentInfoGetResponse* Arena::CreateMaybeMessage<::dmi::HWComponentInfoGetResponse>(Arena*);
 template<> ::dmi::HWComponentInfoSetRequest* Arena::CreateMaybeMessage<::dmi::HWComponentInfoSetRequest>(Arena*);
 template<> ::dmi::HWComponentInfoSetResponse* Arena::CreateMaybeMessage<::dmi::HWComponentInfoSetResponse>(Arena*);
+template<> ::dmi::Heartbeat* Arena::CreateMaybeMessage<::dmi::Heartbeat>(Arena*);
 template<> ::dmi::ManagedDeviceInfo* Arena::CreateMaybeMessage<::dmi::ManagedDeviceInfo>(Arena*);
 template<> ::dmi::ManagedDevicesResponse* Arena::CreateMaybeMessage<::dmi::ManagedDevicesResponse>(Arena*);
 template<> ::dmi::PhysicalInventoryRequest* Arena::CreateMaybeMessage<::dmi::PhysicalInventoryRequest>(Arena*);
@@ -3754,6 +3758,118 @@ class GetLoggableEntitiesRequest final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Heartbeat final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.Heartbeat) */ {
+ public:
+  Heartbeat();
+  virtual ~Heartbeat();
+
+  Heartbeat(const Heartbeat& from);
+
+  inline Heartbeat& operator=(const Heartbeat& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Heartbeat(Heartbeat&& from) noexcept
+    : Heartbeat() {
+    *this = ::std::move(from);
+  }
+
+  inline Heartbeat& operator=(Heartbeat&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Heartbeat& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Heartbeat* internal_default_instance() {
+    return reinterpret_cast<const Heartbeat*>(
+               &_Heartbeat_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(Heartbeat* other);
+  friend void swap(Heartbeat& a, Heartbeat& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Heartbeat* New() const final {
+    return CreateMaybeMessage<Heartbeat>(nullptr);
+  }
+
+  Heartbeat* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Heartbeat>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Heartbeat& from);
+  void MergeFrom(const Heartbeat& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Heartbeat* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // fixed32 heartbeat_signature = 1;
+  void clear_heartbeat_signature();
+  static const int kHeartbeatSignatureFieldNumber = 1;
+  ::google::protobuf::uint32 heartbeat_signature() const;
+  void set_heartbeat_signature(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:dmi.Heartbeat)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint32 heartbeat_signature_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -6171,9 +6287,29 @@ inline void GetLoggableEntitiesRequest::set_allocated_device_uuid(::dmi::Uuid* d
   // @@protoc_insertion_point(field_set_allocated:dmi.GetLoggableEntitiesRequest.device_uuid)
 }
 
+// -------------------------------------------------------------------
+
+// Heartbeat
+
+// fixed32 heartbeat_signature = 1;
+inline void Heartbeat::clear_heartbeat_signature() {
+  heartbeat_signature_ = 0u;
+}
+inline ::google::protobuf::uint32 Heartbeat::heartbeat_signature() const {
+  // @@protoc_insertion_point(field_get:dmi.Heartbeat.heartbeat_signature)
+  return heartbeat_signature_;
+}
+inline void Heartbeat::set_heartbeat_signature(::google::protobuf::uint32 value) {
+  
+  heartbeat_signature_ = value;
+  // @@protoc_insertion_point(field_set:dmi.Heartbeat.heartbeat_signature)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

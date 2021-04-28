@@ -81,6 +81,11 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__management__service__pb2.GetLogLevelRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
                 )
+        self.HeartbeatCheck = channel.unary_unary(
+                '/dmi.NativeHWManagementService/HeartbeatCheck',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.Heartbeat.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -192,6 +197,13 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def HeartbeatCheck(self, request, context):
+        """Performs the heartbeat check
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -259,6 +271,11 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.GetLogLevel,
                     request_deserializer=dmi_dot_hw__management__service__pb2.GetLogLevelRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.GetLogLevelResponse.SerializeToString,
+            ),
+            'HeartbeatCheck': grpc.unary_unary_rpc_method_handler(
+                    servicer.HeartbeatCheck,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.Heartbeat.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -488,5 +505,22 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetLogLevel',
             dmi_dot_hw__management__service__pb2.GetLogLevelRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.GetLogLevelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HeartbeatCheck(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/HeartbeatCheck',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            dmi_dot_hw__management__service__pb2.Heartbeat.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
