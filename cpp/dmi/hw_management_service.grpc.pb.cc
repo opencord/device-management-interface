@@ -5,14 +5,20 @@
 #include "dmi/hw_management_service.pb.h"
 #include "dmi/hw_management_service.grpc.pb.h"
 
-#include <grpc++/impl/codegen/async_stream.h>
-#include <grpc++/impl/codegen/async_unary_call.h>
-#include <grpc++/impl/codegen/channel_interface.h>
-#include <grpc++/impl/codegen/client_unary_call.h>
-#include <grpc++/impl/codegen/method_handler_impl.h>
-#include <grpc++/impl/codegen/rpc_service_method.h>
-#include <grpc++/impl/codegen/service_type.h>
-#include <grpc++/impl/codegen/sync_stream.h>
+#include <functional>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/impl/codegen/channel_interface.h>
+#include <grpcpp/impl/codegen/client_unary_call.h>
+#include <grpcpp/impl/codegen/client_callback.h>
+#include <grpcpp/impl/codegen/message_allocator.h>
+#include <grpcpp/impl/codegen/method_handler.h>
+#include <grpcpp/impl/codegen/rpc_service_method.h>
+#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/codegen/server_callback_handlers.h>
+#include <grpcpp/impl/codegen/server_context.h>
+#include <grpcpp/impl/codegen/service_type.h>
+#include <grpcpp/impl/codegen/sync_stream.h>
 namespace dmi {
 
 static const char* NativeHWManagementService_method_names[] = {
@@ -32,196 +38,486 @@ static const char* NativeHWManagementService_method_names[] = {
 };
 
 std::unique_ptr< NativeHWManagementService::Stub> NativeHWManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
   std::unique_ptr< NativeHWManagementService::Stub> stub(new NativeHWManagementService::Stub(channel));
   return stub;
 }
 
 NativeHWManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_StartManagingDevice_(NativeHWManagementService_method_names[0], ::grpc::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_StopManagingDevice_(NativeHWManagementService_method_names[1], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetManagedDevices_(NativeHWManagementService_method_names[2], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPhysicalInventory_(NativeHWManagementService_method_names[3], ::grpc::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetHWComponentInfo_(NativeHWManagementService_method_names[4], ::grpc::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_SetHWComponentInfo_(NativeHWManagementService_method_names[5], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetLoggingEndpoint_(NativeHWManagementService_method_names[6], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLoggingEndpoint_(NativeHWManagementService_method_names[7], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetMsgBusEndpoint_(NativeHWManagementService_method_names[8], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetMsgBusEndpoint_(NativeHWManagementService_method_names[9], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLoggableEntities_(NativeHWManagementService_method_names[10], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetLogLevel_(NativeHWManagementService_method_names[11], ::grpc::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLogLevel_(NativeHWManagementService_method_names[12], ::grpc::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_StartManagingDevice_(NativeHWManagementService_method_names[0], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_StopManagingDevice_(NativeHWManagementService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetManagedDevices_(NativeHWManagementService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPhysicalInventory_(NativeHWManagementService_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetHWComponentInfo_(NativeHWManagementService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SetHWComponentInfo_(NativeHWManagementService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetLoggingEndpoint_(NativeHWManagementService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLoggingEndpoint_(NativeHWManagementService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetMsgBusEndpoint_(NativeHWManagementService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMsgBusEndpoint_(NativeHWManagementService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLoggableEntities_(NativeHWManagementService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetLogLevel_(NativeHWManagementService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLogLevel_(NativeHWManagementService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) {
-  return new ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>(channel_.get(), rpcmethod_StartManagingDevice_, context, request);
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::StartManagingDeviceResponse>::Create(channel_.get(), rpcmethod_StartManagingDevice_, context, request);
+}
+
+void NativeHWManagementService::Stub::experimental_async::StartManagingDevice(::grpc::ClientContext* context, ::dmi::ModifiableComponent* request, ::grpc::experimental::ClientReadReactor< ::dmi::StartManagingDeviceResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::StartManagingDeviceResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_StartManagingDevice_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::AsyncStartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return new ::grpc::ClientAsyncReader< ::dmi::StartManagingDeviceResponse>(channel_.get(), cq, rpcmethod_StartManagingDevice_, context, request, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::StartManagingDeviceResponse>::Create(channel_.get(), cq, rpcmethod_StartManagingDevice_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::PrepareAsyncStartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::StartManagingDeviceResponse>::Create(channel_.get(), cq, rpcmethod_StartManagingDevice_, context, request, false, nullptr);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::StopManagingDevice(::grpc::ClientContext* context, const ::dmi::StopManagingDeviceRequest& request, ::dmi::StopManagingDeviceResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_StopManagingDevice_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_StopManagingDevice_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::StopManagingDevice(::grpc::ClientContext* context, const ::dmi::StopManagingDeviceRequest* request, ::dmi::StopManagingDeviceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopManagingDevice_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::StopManagingDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StopManagingDeviceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopManagingDevice_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::StopManagingDevice(::grpc::ClientContext* context, const ::dmi::StopManagingDeviceRequest* request, ::dmi::StopManagingDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StopManagingDevice_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::StopManagingDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StopManagingDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StopManagingDevice_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::StopManagingDeviceResponse>* NativeHWManagementService::Stub::AsyncStopManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::StopManagingDeviceRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::StopManagingDeviceResponse>(channel_.get(), cq, rpcmethod_StopManagingDevice_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::StopManagingDeviceResponse>::Create(channel_.get(), cq, rpcmethod_StopManagingDevice_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::StopManagingDeviceResponse>* NativeHWManagementService::Stub::PrepareAsyncStopManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::StopManagingDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::StopManagingDeviceResponse>::Create(channel_.get(), cq, rpcmethod_StopManagingDevice_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::GetManagedDevices(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::dmi::ManagedDevicesResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetManagedDevices_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetManagedDevices_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetManagedDevices(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::ManagedDevicesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetManagedDevices_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetManagedDevices(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ManagedDevicesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetManagedDevices_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetManagedDevices(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::ManagedDevicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetManagedDevices_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetManagedDevices(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ManagedDevicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetManagedDevices_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::ManagedDevicesResponse>* NativeHWManagementService::Stub::AsyncGetManagedDevicesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::ManagedDevicesResponse>(channel_.get(), cq, rpcmethod_GetManagedDevices_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ManagedDevicesResponse>::Create(channel_.get(), cq, rpcmethod_GetManagedDevices_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::ManagedDevicesResponse>* NativeHWManagementService::Stub::PrepareAsyncGetManagedDevicesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ManagedDevicesResponse>::Create(channel_.get(), cq, rpcmethod_GetManagedDevices_, context, request, false);
 }
 
 ::grpc::ClientReader< ::dmi::PhysicalInventoryResponse>* NativeHWManagementService::Stub::GetPhysicalInventoryRaw(::grpc::ClientContext* context, const ::dmi::PhysicalInventoryRequest& request) {
-  return new ::grpc::ClientReader< ::dmi::PhysicalInventoryResponse>(channel_.get(), rpcmethod_GetPhysicalInventory_, context, request);
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::PhysicalInventoryResponse>::Create(channel_.get(), rpcmethod_GetPhysicalInventory_, context, request);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetPhysicalInventory(::grpc::ClientContext* context, ::dmi::PhysicalInventoryRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::PhysicalInventoryResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::PhysicalInventoryResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetPhysicalInventory_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::dmi::PhysicalInventoryResponse>* NativeHWManagementService::Stub::AsyncGetPhysicalInventoryRaw(::grpc::ClientContext* context, const ::dmi::PhysicalInventoryRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return new ::grpc::ClientAsyncReader< ::dmi::PhysicalInventoryResponse>(channel_.get(), cq, rpcmethod_GetPhysicalInventory_, context, request, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::PhysicalInventoryResponse>::Create(channel_.get(), cq, rpcmethod_GetPhysicalInventory_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::PhysicalInventoryResponse>* NativeHWManagementService::Stub::PrepareAsyncGetPhysicalInventoryRaw(::grpc::ClientContext* context, const ::dmi::PhysicalInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::PhysicalInventoryResponse>::Create(channel_.get(), cq, rpcmethod_GetPhysicalInventory_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::dmi::HWComponentInfoGetResponse>* NativeHWManagementService::Stub::GetHWComponentInfoRaw(::grpc::ClientContext* context, const ::dmi::HWComponentInfoGetRequest& request) {
-  return new ::grpc::ClientReader< ::dmi::HWComponentInfoGetResponse>(channel_.get(), rpcmethod_GetHWComponentInfo_, context, request);
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::HWComponentInfoGetResponse>::Create(channel_.get(), rpcmethod_GetHWComponentInfo_, context, request);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetHWComponentInfo(::grpc::ClientContext* context, ::dmi::HWComponentInfoGetRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::HWComponentInfoGetResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::HWComponentInfoGetResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_GetHWComponentInfo_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::dmi::HWComponentInfoGetResponse>* NativeHWManagementService::Stub::AsyncGetHWComponentInfoRaw(::grpc::ClientContext* context, const ::dmi::HWComponentInfoGetRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return new ::grpc::ClientAsyncReader< ::dmi::HWComponentInfoGetResponse>(channel_.get(), cq, rpcmethod_GetHWComponentInfo_, context, request, tag);
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::HWComponentInfoGetResponse>::Create(channel_.get(), cq, rpcmethod_GetHWComponentInfo_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::HWComponentInfoGetResponse>* NativeHWManagementService::Stub::PrepareAsyncGetHWComponentInfoRaw(::grpc::ClientContext* context, const ::dmi::HWComponentInfoGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::HWComponentInfoGetResponse>::Create(channel_.get(), cq, rpcmethod_GetHWComponentInfo_, context, request, false, nullptr);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::SetHWComponentInfo(::grpc::ClientContext* context, const ::dmi::HWComponentInfoSetRequest& request, ::dmi::HWComponentInfoSetResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetHWComponentInfo_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetHWComponentInfo_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetHWComponentInfo(::grpc::ClientContext* context, const ::dmi::HWComponentInfoSetRequest* request, ::dmi::HWComponentInfoSetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetHWComponentInfo_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetHWComponentInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::HWComponentInfoSetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetHWComponentInfo_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetHWComponentInfo(::grpc::ClientContext* context, const ::dmi::HWComponentInfoSetRequest* request, ::dmi::HWComponentInfoSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetHWComponentInfo_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetHWComponentInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::HWComponentInfoSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetHWComponentInfo_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::HWComponentInfoSetResponse>* NativeHWManagementService::Stub::AsyncSetHWComponentInfoRaw(::grpc::ClientContext* context, const ::dmi::HWComponentInfoSetRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::HWComponentInfoSetResponse>(channel_.get(), cq, rpcmethod_SetHWComponentInfo_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::HWComponentInfoSetResponse>::Create(channel_.get(), cq, rpcmethod_SetHWComponentInfo_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::HWComponentInfoSetResponse>* NativeHWManagementService::Stub::PrepareAsyncSetHWComponentInfoRaw(::grpc::ClientContext* context, const ::dmi::HWComponentInfoSetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::HWComponentInfoSetResponse>::Create(channel_.get(), cq, rpcmethod_SetHWComponentInfo_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::SetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::SetLoggingEndpointRequest& request, ::dmi::SetRemoteEndpointResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetLoggingEndpoint_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetLoggingEndpoint_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::SetLoggingEndpointRequest* request, ::dmi::SetRemoteEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetLoggingEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLoggingEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetRemoteEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetLoggingEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::SetLoggingEndpointRequest* request, ::dmi::SetRemoteEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetLoggingEndpoint_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLoggingEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetRemoteEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetLoggingEndpoint_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>* NativeHWManagementService::Stub::AsyncSetLoggingEndpointRaw(::grpc::ClientContext* context, const ::dmi::SetLoggingEndpointRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>(channel_.get(), cq, rpcmethod_SetLoggingEndpoint_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetRemoteEndpointResponse>::Create(channel_.get(), cq, rpcmethod_SetLoggingEndpoint_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>* NativeHWManagementService::Stub::PrepareAsyncSetLoggingEndpointRaw(::grpc::ClientContext* context, const ::dmi::SetLoggingEndpointRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetRemoteEndpointResponse>::Create(channel_.get(), cq, rpcmethod_SetLoggingEndpoint_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::GetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::dmi::GetLoggingEndpointResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetLoggingEndpoint_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLoggingEndpoint_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetLoggingEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLoggingEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggingEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLoggingEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLoggingEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggingEndpoint(::grpc::ClientContext* context, const ::dmi::HardwareID* request, ::dmi::GetLoggingEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLoggingEndpoint_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggingEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLoggingEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLoggingEndpoint_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::GetLoggingEndpointResponse>* NativeHWManagementService::Stub::AsyncGetLoggingEndpointRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::GetLoggingEndpointResponse>(channel_.get(), cq, rpcmethod_GetLoggingEndpoint_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLoggingEndpointResponse>::Create(channel_.get(), cq, rpcmethod_GetLoggingEndpoint_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetLoggingEndpointResponse>* NativeHWManagementService::Stub::PrepareAsyncGetLoggingEndpointRaw(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLoggingEndpointResponse>::Create(channel_.get(), cq, rpcmethod_GetLoggingEndpoint_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::SetMsgBusEndpoint(::grpc::ClientContext* context, const ::dmi::SetMsgBusEndpointRequest& request, ::dmi::SetRemoteEndpointResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetMsgBusEndpoint_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetMsgBusEndpoint_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetMsgBusEndpoint(::grpc::ClientContext* context, const ::dmi::SetMsgBusEndpointRequest* request, ::dmi::SetRemoteEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetMsgBusEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetMsgBusEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetRemoteEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetMsgBusEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetMsgBusEndpoint(::grpc::ClientContext* context, const ::dmi::SetMsgBusEndpointRequest* request, ::dmi::SetRemoteEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetMsgBusEndpoint_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetMsgBusEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetRemoteEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetMsgBusEndpoint_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>* NativeHWManagementService::Stub::AsyncSetMsgBusEndpointRaw(::grpc::ClientContext* context, const ::dmi::SetMsgBusEndpointRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>(channel_.get(), cq, rpcmethod_SetMsgBusEndpoint_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetRemoteEndpointResponse>::Create(channel_.get(), cq, rpcmethod_SetMsgBusEndpoint_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::SetRemoteEndpointResponse>* NativeHWManagementService::Stub::PrepareAsyncSetMsgBusEndpointRaw(::grpc::ClientContext* context, const ::dmi::SetMsgBusEndpointRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetRemoteEndpointResponse>::Create(channel_.get(), cq, rpcmethod_SetMsgBusEndpoint_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::GetMsgBusEndpoint(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::dmi::GetMsgBusEndpointResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetMsgBusEndpoint_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetMsgBusEndpoint_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetMsgBusEndpoint(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::GetMsgBusEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMsgBusEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetMsgBusEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMsgBusEndpointResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMsgBusEndpoint_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetMsgBusEndpoint(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::GetMsgBusEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMsgBusEndpoint_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetMsgBusEndpoint(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetMsgBusEndpointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMsgBusEndpoint_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::GetMsgBusEndpointResponse>* NativeHWManagementService::Stub::AsyncGetMsgBusEndpointRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::GetMsgBusEndpointResponse>(channel_.get(), cq, rpcmethod_GetMsgBusEndpoint_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetMsgBusEndpointResponse>::Create(channel_.get(), cq, rpcmethod_GetMsgBusEndpoint_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetMsgBusEndpointResponse>* NativeHWManagementService::Stub::PrepareAsyncGetMsgBusEndpointRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetMsgBusEndpointResponse>::Create(channel_.get(), cq, rpcmethod_GetMsgBusEndpoint_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::GetLoggableEntities(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest& request, ::dmi::GetLogLevelResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetLoggableEntities_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLoggableEntities_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggableEntities(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest* request, ::dmi::GetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLoggableEntities_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggableEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLoggableEntities_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggableEntities(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest* request, ::dmi::GetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLoggableEntities_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLoggableEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLoggableEntities_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* NativeHWManagementService::Stub::AsyncGetLoggableEntitiesRaw(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>(channel_.get(), cq, rpcmethod_GetLoggableEntities_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetLoggableEntities_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* NativeHWManagementService::Stub::PrepareAsyncGetLoggableEntitiesRaw(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetLoggableEntities_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::SetLogLevel(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest& request, ::dmi::SetLogLevelResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_SetLogLevel_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetLogLevel_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLogLevel(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest* request, ::dmi::SetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLogLevel(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest* request, ::dmi::SetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetLogLevel_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetLogLevel_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::SetLogLevelResponse>* NativeHWManagementService::Stub::AsyncSetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::SetLogLevelResponse>(channel_.get(), cq, rpcmethod_SetLogLevel_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_SetLogLevel_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::SetLogLevelResponse>* NativeHWManagementService::Stub::PrepareAsyncSetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_SetLogLevel_, context, request, false);
 }
 
 ::grpc::Status NativeHWManagementService::Stub::GetLogLevel(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::dmi::GetLogLevelResponse* response) {
-  return ::grpc::BlockingUnaryCall(channel_.get(), rpcmethod_GetLogLevel_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLogLevel_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLogLevel(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest* request, ::dmi::GetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLogLevel(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest* request, ::dmi::GetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLogLevel_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLogLevel_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* NativeHWManagementService::Stub::AsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
-  return new ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>(channel_.get(), cq, rpcmethod_GetLogLevel_, context, request);
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetLogLevel_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* NativeHWManagementService::Stub::PrepareAsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetLogLevel_, context, request, false);
 }
 
 NativeHWManagementService::Service::Service() {
-  AddMethod(new ::grpc::RpcServiceMethod(
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[0],
-      ::grpc::RpcMethod::SERVER_STREAMING,
-      new ::grpc::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::ModifiableComponent, ::dmi::StartManagingDeviceResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::StartManagingDevice), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::ModifiableComponent, ::dmi::StartManagingDeviceResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::ModifiableComponent* req,
+             ::grpc_impl::ServerWriter<::dmi::StartManagingDeviceResponse>* writer) {
+               return service->StartManagingDevice(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[1],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::StopManagingDeviceRequest, ::dmi::StopManagingDeviceResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::StopManagingDevice), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::StopManagingDeviceRequest, ::dmi::StopManagingDeviceResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::StopManagingDeviceRequest* req,
+             ::dmi::StopManagingDeviceResponse* resp) {
+               return service->StopManagingDevice(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[2],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::google::protobuf::Empty, ::dmi::ManagedDevicesResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetManagedDevices), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::google::protobuf::Empty, ::dmi::ManagedDevicesResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::dmi::ManagedDevicesResponse* resp) {
+               return service->GetManagedDevices(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[3],
-      ::grpc::RpcMethod::SERVER_STREAMING,
-      new ::grpc::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::PhysicalInventoryRequest, ::dmi::PhysicalInventoryResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetPhysicalInventory), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::PhysicalInventoryRequest, ::dmi::PhysicalInventoryResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::PhysicalInventoryRequest* req,
+             ::grpc_impl::ServerWriter<::dmi::PhysicalInventoryResponse>* writer) {
+               return service->GetPhysicalInventory(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[4],
-      ::grpc::RpcMethod::SERVER_STREAMING,
-      new ::grpc::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::HWComponentInfoGetRequest, ::dmi::HWComponentInfoGetResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetHWComponentInfo), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeHWManagementService::Service, ::dmi::HWComponentInfoGetRequest, ::dmi::HWComponentInfoGetResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::HWComponentInfoGetRequest* req,
+             ::grpc_impl::ServerWriter<::dmi::HWComponentInfoGetResponse>* writer) {
+               return service->GetHWComponentInfo(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[5],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::HWComponentInfoSetRequest, ::dmi::HWComponentInfoSetResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::SetHWComponentInfo), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::HWComponentInfoSetRequest, ::dmi::HWComponentInfoSetResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::HWComponentInfoSetRequest* req,
+             ::dmi::HWComponentInfoSetResponse* resp) {
+               return service->SetHWComponentInfo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[6],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetLoggingEndpointRequest, ::dmi::SetRemoteEndpointResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::SetLoggingEndpoint), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetLoggingEndpointRequest, ::dmi::SetRemoteEndpointResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::SetLoggingEndpointRequest* req,
+             ::dmi::SetRemoteEndpointResponse* resp) {
+               return service->SetLoggingEndpoint(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[7],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::HardwareID, ::dmi::GetLoggingEndpointResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetLoggingEndpoint), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::HardwareID, ::dmi::GetLoggingEndpointResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::HardwareID* req,
+             ::dmi::GetLoggingEndpointResponse* resp) {
+               return service->GetLoggingEndpoint(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[8],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetMsgBusEndpointRequest, ::dmi::SetRemoteEndpointResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::SetMsgBusEndpoint), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetMsgBusEndpointRequest, ::dmi::SetRemoteEndpointResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::SetMsgBusEndpointRequest* req,
+             ::dmi::SetRemoteEndpointResponse* resp) {
+               return service->SetMsgBusEndpoint(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[9],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::google::protobuf::Empty, ::dmi::GetMsgBusEndpointResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetMsgBusEndpoint), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::google::protobuf::Empty, ::dmi::GetMsgBusEndpointResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::dmi::GetMsgBusEndpointResponse* resp) {
+               return service->GetMsgBusEndpoint(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[10],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::GetLoggableEntitiesRequest, ::dmi::GetLogLevelResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetLoggableEntities), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::GetLoggableEntitiesRequest, ::dmi::GetLogLevelResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::GetLoggableEntitiesRequest* req,
+             ::dmi::GetLogLevelResponse* resp) {
+               return service->GetLoggableEntities(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[11],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetLogLevelRequest, ::dmi::SetLogLevelResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::SetLogLevel), this)));
-  AddMethod(new ::grpc::RpcServiceMethod(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetLogLevelRequest, ::dmi::SetLogLevelResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::SetLogLevelRequest* req,
+             ::dmi::SetLogLevelResponse* resp) {
+               return service->SetLogLevel(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[12],
-      ::grpc::RpcMethod::NORMAL_RPC,
-      new ::grpc::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::GetLogLevelRequest, ::dmi::GetLogLevelResponse>(
-          std::mem_fn(&NativeHWManagementService::Service::GetLogLevel), this)));
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::GetLogLevelRequest, ::dmi::GetLogLevelResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::GetLogLevelRequest* req,
+             ::dmi::GetLogLevelResponse* resp) {
+               return service->GetLogLevel(ctx, req, resp);
+             }, this)));
 }
 
 NativeHWManagementService::Service::~Service() {
