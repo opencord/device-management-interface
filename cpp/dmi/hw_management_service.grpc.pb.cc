@@ -35,6 +35,7 @@ static const char* NativeHWManagementService_method_names[] = {
   "/dmi.NativeHWManagementService/GetLoggableEntities",
   "/dmi.NativeHWManagementService/SetLogLevel",
   "/dmi.NativeHWManagementService/GetLogLevel",
+  "/dmi.NativeHWManagementService/HeartbeatCheck",
 };
 
 std::unique_ptr< NativeHWManagementService::Stub> NativeHWManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -57,6 +58,7 @@ NativeHWManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_GetLoggableEntities_(NativeHWManagementService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetLogLevel_(NativeHWManagementService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLogLevel_(NativeHWManagementService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HeartbeatCheck_(NativeHWManagementService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) {
@@ -387,6 +389,34 @@ void NativeHWManagementService::Stub::experimental_async::GetLogLevel(::grpc::Cl
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetLogLevel_, context, request, false);
 }
 
+::grpc::Status NativeHWManagementService::Stub::HeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::dmi::Heartbeat* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_HeartbeatCheck_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::HeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_HeartbeatCheck_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::HeartbeatCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::Heartbeat* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_HeartbeatCheck_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::HeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_HeartbeatCheck_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::HeartbeatCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::Heartbeat* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_HeartbeatCheck_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* NativeHWManagementService::Stub::AsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::Heartbeat>::Create(channel_.get(), cq, rpcmethod_HeartbeatCheck_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* NativeHWManagementService::Stub::PrepareAsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::Heartbeat>::Create(channel_.get(), cq, rpcmethod_HeartbeatCheck_, context, request, false);
+}
+
 NativeHWManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[0],
@@ -518,6 +548,16 @@ NativeHWManagementService::Service::Service() {
              ::dmi::GetLogLevelResponse* resp) {
                return service->GetLogLevel(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::google::protobuf::Empty, ::dmi::Heartbeat>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::dmi::Heartbeat* resp) {
+               return service->HeartbeatCheck(ctx, req, resp);
+             }, this)));
 }
 
 NativeHWManagementService::Service::~Service() {
@@ -608,6 +648,13 @@ NativeHWManagementService::Service::~Service() {
 }
 
 ::grpc::Status NativeHWManagementService::Service::GetLogLevel(::grpc::ServerContext* context, const ::dmi::GetLogLevelRequest* request, ::dmi::GetLogLevelResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response) {
   (void) context;
   (void) request;
   (void) response;

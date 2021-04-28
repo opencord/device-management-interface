@@ -218,6 +218,10 @@ message GetLoggableEntitiesRequest {
     Uuid device_uuid = 1;
 }
 
+message Heartbeat {
+    fixed32 heartbeat_signature = 1;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -272,4 +276,7 @@ service NativeHWManagementService {
     // Gets the configured log level for a certain entity on a certain device.
     // If no entity is specified in the request all the entities with their log level should be returned.
     rpc GetLogLevel(GetLogLevelRequest) returns(GetLogLevelResponse);
+
+    // Performs the heartbeat check
+    rpc HeartbeatCheck(google.protobuf.Empty) returns (Heartbeat);
 }
