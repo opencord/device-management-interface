@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78c76779_77e9635d",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-04-28T15:29:31Z",
+      "side": 1,
+      "message": "Instead of defining a new RPC can we look at https://github.com/grpc/grpc/blob/master/doc/health-checking.md and see if that meets our need?",
+      "revId": "c4393d19f2a07de5ffac002d61be1810e2a95a3b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
