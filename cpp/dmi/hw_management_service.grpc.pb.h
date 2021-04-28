@@ -117,6 +117,11 @@ class NativeHWManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetLogLevelResponse>> AsyncGetLogLevel(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetLogLevelResponse>>(AsyncGetLogLevelRaw(context, request, cq));
     }
+    // Performs the heartbeat check
+    virtual ::grpc::Status HeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::dmi::Heartbeat* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>> AsyncHeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>>(AsyncHeartbeatCheckRaw(context, request, cq));
+    }
   private:
     virtual ::grpc::ClientReaderInterface< ::dmi::StartManagingDeviceResponse>* StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::StartManagingDeviceResponse>* AsyncStartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
@@ -134,6 +139,7 @@ class NativeHWManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetLogLevelResponse>* AsyncGetLoggableEntitiesRaw(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetLogLevelResponse>* AsyncSetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetLogLevelResponse>* AsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>* AsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -196,6 +202,10 @@ class NativeHWManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>> AsyncGetLogLevel(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>>(AsyncGetLogLevelRaw(context, request, cq));
     }
+    ::grpc::Status HeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::dmi::Heartbeat* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>> AsyncHeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>>(AsyncHeartbeatCheckRaw(context, request, cq));
+    }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
@@ -215,6 +225,7 @@ class NativeHWManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* AsyncGetLoggableEntitiesRaw(::grpc::ClientContext* context, const ::dmi::GetLoggableEntitiesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::SetLogLevelResponse>* AsyncSetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* AsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* AsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::RpcMethod rpcmethod_StartManagingDevice_;
     const ::grpc::RpcMethod rpcmethod_StopManagingDevice_;
     const ::grpc::RpcMethod rpcmethod_GetManagedDevices_;
@@ -228,6 +239,7 @@ class NativeHWManagementService final {
     const ::grpc::RpcMethod rpcmethod_GetLoggableEntities_;
     const ::grpc::RpcMethod rpcmethod_SetLogLevel_;
     const ::grpc::RpcMethod rpcmethod_GetLogLevel_;
+    const ::grpc::RpcMethod rpcmethod_HeartbeatCheck_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -276,6 +288,8 @@ class NativeHWManagementService final {
     // Gets the configured log level for a certain entity on a certain device.
     // If no entity is specified in the request all the entities with their log level should be returned.
     virtual ::grpc::Status GetLogLevel(::grpc::ServerContext* context, const ::dmi::GetLogLevelRequest* request, ::dmi::GetLogLevelResponse* response);
+    // Performs the heartbeat check
+    virtual ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StartManagingDevice : public BaseClass {
@@ -537,7 +551,27 @@ class NativeHWManagementService final {
       ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<Service > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_HeartbeatCheck : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_HeartbeatCheck() {
+      ::grpc::Service::MarkMethodAsync(13);
+    }
+    ~WithAsyncMethod_HeartbeatCheck() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHeartbeatCheck(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::dmi::Heartbeat>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_StartManagingDevice : public BaseClass {
    private:
@@ -760,6 +794,23 @@ class NativeHWManagementService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_HeartbeatCheck : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_HeartbeatCheck() {
+      ::grpc::Service::MarkMethodGeneric(13);
+    }
+    ~WithGenericMethod_HeartbeatCheck() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StopManagingDevice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -959,7 +1010,27 @@ class NativeHWManagementService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetLogLevel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::GetLogLevelRequest,::dmi::GetLogLevelResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<Service > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_HeartbeatCheck : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_HeartbeatCheck() {
+      ::grpc::Service::MarkMethodStreamed(13,
+        new ::grpc::StreamedUnaryHandler< ::google::protobuf::Empty, ::dmi::Heartbeat>(std::bind(&WithStreamedUnaryMethod_HeartbeatCheck<BaseClass>::StreamedHeartbeatCheck, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_HeartbeatCheck() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response) final override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedHeartbeatCheck(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::dmi::Heartbeat>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<Service > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_StartManagingDevice : public BaseClass {
    private:
@@ -1021,7 +1092,7 @@ class NativeHWManagementService final {
     virtual ::grpc::Status StreamedGetHWComponentInfo(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::HWComponentInfoGetRequest,::dmi::HWComponentInfoGetResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_StartManagingDevice<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<Service > > > SplitStreamedService;
-  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<Service > > > > > > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace dmi
