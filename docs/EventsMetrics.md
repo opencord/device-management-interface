@@ -28,3 +28,5 @@ message Event {
 }
 ```
 Note: The on-demand metrics query using the API `GetMetric` would be passed back over GRPC and not over the kafka bus.
+
+The device shall not locally persist the Events across the reboot. The NEM implementations are expected to purge all the events on the device reboot, as the device shall detect and report the Events afresh after the reboot.

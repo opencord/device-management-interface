@@ -57,5 +57,11 @@ rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResp
 In the call to this RPC, both the `name` and the `uuid` of the component need to be passed in the `HWComponentInfoSetRequest`.
 
 Using this RPC, it is possible to modify the `name` of a component, and the Device Manager has to ensure that the name is unique, else it should return an error for this RPC. Although the `name` can be modified, it is recommended that NEM implementations do not do this because Device Managers and take advantage of this and come up with efficient implementations.
+## HeartbeatCheck
+``` protobuf
+// Performs the heartbeat check
+rpc HeartbeatCheck(google.protobuf.Empty) returns (Heartbeat);
+```
+This RPC is used to perform the hearbeat check for the connectivity. When the gRPC server streaming is used for conveying the Events and Metrics to external systems, on the connectivity break and reestablishment, the server streaming RPCs need to be established again.
 
 
