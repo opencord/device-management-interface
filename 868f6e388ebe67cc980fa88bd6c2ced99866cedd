@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43936747_3e2d7d2f",
+        "filename": "VERSION",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-05-12T09:05:12Z",
+      "side": 1,
+      "message": "If it is *-dev then you don\u0027t need to change the numbers... so you can leave it at 1.0.0-dev. Or we should just release it as 1.0.1 (only patch level change). @Andrea any comments on this from you?",
+      "revId": "868f6e388ebe67cc980fa88bd6c2ced99866cedd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52473ded_4d12dbdd",
+        "filename": "docs/EventsMetrics.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-05-12T09:05:12Z",
+      "side": 1,
+      "message": "can we say \"purge all the unresolved events (events for which the corresponding RECOVERED events have not yet been sent\"",
+      "revId": "868f6e388ebe67cc980fa88bd6c2ced99866cedd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f612c94_19349c86",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-05-12T09:05:12Z",
+      "side": 1,
+      "message": "Can you put in a newline before the start of this section \"Heaartbeat Check\"",
+      "revId": "868f6e388ebe67cc980fa88bd6c2ced99866cedd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
