@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "58e23dfd_b32c3b61",
+        "filename": "VERSION",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-05-12T11:53:13Z",
+      "side": 1,
+      "message": "agreed with Amit, please leave this to 1.0.0-dev",
+      "parentUuid": "43936747_3e2d7d2f",
+      "revId": "868f6e388ebe67cc980fa88bd6c2ced99866cedd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "52473ded_4d12dbdd",
         "filename": "docs/EventsMetrics.md",
         "patchSetId": 1
