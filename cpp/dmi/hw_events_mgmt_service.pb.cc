@@ -428,7 +428,7 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "\022\037\n\010event_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\trai"
   "sed_ts\030\003 \001(\0132\032.google.protobuf.Timestamp"
   "\0221\n\016threshold_info\030\004 \001(\0132\031.dmi.Threshold"
-  "Information\022\020\n\010add_info\030\005 \001(\t*\321\016\n\010EventI"
+  "Information\022\020\n\010add_info\030\005 \001(\t*\356\016\n\010EventI"
   "ds\022\030\n\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TR"
   "ANSCEIVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVE"
   "R_PLUG_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE"
@@ -475,20 +475,21 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "ICE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_"
   "HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_REC"
   "OVERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE"
-  "_ABOVE_FATAL_RECOVERED\020\370\0032\355\001\n\035NativeEven"
-  "tsManagementService\0226\n\nListEvents\022\017.dmi."
-  "HardwareID\032\027.dmi.ListEventsResponse\022^\n\031U"
-  "pdateEventsConfiguration\022\037.dmi.EventsCon"
-  "figurationRequest\032 .dmi.EventsConfigurat"
-  "ionResponse\0224\n\014StreamEvents\022\026.google.pro"
-  "tobuf.Empty\032\n.dmi.Event0\001B;Z9github.com/"
-  "opencord/device-management-interface/v3/"
-  "go/dmib\006proto3"
+  "_ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DE"
+  "VICE_REBOOT\020\371\0032\355\001\n\035NativeEventsManagemen"
+  "tService\0226\n\nListEvents\022\017.dmi.HardwareID\032"
+  "\027.dmi.ListEventsResponse\022^\n\031UpdateEvents"
+  "Configuration\022\037.dmi.EventsConfigurationR"
+  "equest\032 .dmi.EventsConfigurationResponse"
+  "\0224\n\014StreamEvents\022\026.google.protobuf.Empty"
+  "\032\n.dmi.Event0\001B;Z9github.com/opencord/de"
+  "vice-management-interface/v3/go/dmib\006pro"
+  "to3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 3774,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 3803,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -605,6 +606,7 @@ bool EventIds_IsValid(int value) {
     case 502:
     case 503:
     case 504:
+    case 505:
       return true;
     default:
       return false;

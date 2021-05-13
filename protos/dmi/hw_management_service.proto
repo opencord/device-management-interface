@@ -222,6 +222,23 @@ message Heartbeat {
     fixed32 heartbeat_signature = 1;
 }
 
+message RebootDeviceRequest {
+    Uuid device_uuid = 1;
+}
+
+message RebootDeviceResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
+    }
+    Uuid device_uuid = 1;
+    Status status = 3;
+    Reason reason = 4;
+    string reason_detail = 5;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -279,4 +296,7 @@ service NativeHWManagementService {
 
     // Performs the heartbeat check
     rpc HeartbeatCheck(google.protobuf.Empty) returns (Heartbeat);
+
+    // Performs the reboot of the device
+    rpc RebootDevice(RebootDeviceRequest) returns(RebootDeviceResponse);
 }

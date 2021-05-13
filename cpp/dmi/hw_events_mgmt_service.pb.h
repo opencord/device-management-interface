@@ -195,12 +195,13 @@ enum EventIds {
   EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL = 502,
   EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERED = 503,
   EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL_RECOVERED = 504,
+  EVENT_HW_DEVICE_REBOOT = 505,
   EventIds_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   EventIds_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool EventIds_IsValid(int value);
 const EventIds EventIds_MIN = EVENT_NAME_UNDEFINED;
-const EventIds EventIds_MAX = EVENT_HW_DEVICE_TEMPERATURE_ABOVE_FATAL_RECOVERED;
+const EventIds EventIds_MAX = EVENT_HW_DEVICE_REBOOT;
 const int EventIds_ARRAYSIZE = EventIds_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EventIds_descriptor();
