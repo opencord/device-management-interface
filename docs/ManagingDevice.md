@@ -66,4 +66,11 @@ rpc HeartbeatCheck(google.protobuf.Empty) returns (Heartbeat);
 ```
 This RPC is used to perform the hearbeat check for the connectivity. When the gRPC server streaming is used for conveying the Events and Metrics to external systems, on the connectivity break and reestablishment, the server streaming RPCs need to be established again.
 
+## RebootDevice
+``` protobuf
+// Performs the reboot of the device
+rpc RebootDevice(RebootDeviceRequest) returns (RebootDeviceResponse);
+```
+This RPC is used to administratively reboot the device. 
+
 
