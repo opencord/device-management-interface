@@ -45,7 +45,7 @@ struct TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[23]
+  static const ::google::protobuf::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -98,6 +98,12 @@ extern PhysicalInventoryRequestDefaultTypeInternal _PhysicalInventoryRequest_def
 class PhysicalInventoryResponse;
 class PhysicalInventoryResponseDefaultTypeInternal;
 extern PhysicalInventoryResponseDefaultTypeInternal _PhysicalInventoryResponse_default_instance_;
+class RebootDeviceRequest;
+class RebootDeviceRequestDefaultTypeInternal;
+extern RebootDeviceRequestDefaultTypeInternal _RebootDeviceRequest_default_instance_;
+class RebootDeviceResponse;
+class RebootDeviceResponseDefaultTypeInternal;
+extern RebootDeviceResponseDefaultTypeInternal _RebootDeviceResponse_default_instance_;
 class SetLogLevelRequest;
 class SetLogLevelRequestDefaultTypeInternal;
 extern SetLogLevelRequestDefaultTypeInternal _SetLogLevelRequest_default_instance_;
@@ -140,6 +146,8 @@ template<> ::dmi::ManagedDeviceInfo* Arena::CreateMaybeMessage<::dmi::ManagedDev
 template<> ::dmi::ManagedDevicesResponse* Arena::CreateMaybeMessage<::dmi::ManagedDevicesResponse>(Arena*);
 template<> ::dmi::PhysicalInventoryRequest* Arena::CreateMaybeMessage<::dmi::PhysicalInventoryRequest>(Arena*);
 template<> ::dmi::PhysicalInventoryResponse* Arena::CreateMaybeMessage<::dmi::PhysicalInventoryResponse>(Arena*);
+template<> ::dmi::RebootDeviceRequest* Arena::CreateMaybeMessage<::dmi::RebootDeviceRequest>(Arena*);
+template<> ::dmi::RebootDeviceResponse* Arena::CreateMaybeMessage<::dmi::RebootDeviceResponse>(Arena*);
 template<> ::dmi::SetLogLevelRequest* Arena::CreateMaybeMessage<::dmi::SetLogLevelRequest>(Arena*);
 template<> ::dmi::SetLogLevelResponse* Arena::CreateMaybeMessage<::dmi::SetLogLevelResponse>(Arena*);
 template<> ::dmi::SetLoggingEndpointRequest* Arena::CreateMaybeMessage<::dmi::SetLoggingEndpointRequest>(Arena*);
@@ -408,6 +416,29 @@ inline bool GetLogLevelResponse_Reason_Parse(
     const ::std::string& name, GetLogLevelResponse_Reason* value) {
   return ::google::protobuf::internal::ParseNamedEnum<GetLogLevelResponse_Reason>(
     GetLogLevelResponse_Reason_descriptor(), name, value);
+}
+enum RebootDeviceResponse_Reason {
+  RebootDeviceResponse_Reason_UNDEFINED_REASON = 0,
+  RebootDeviceResponse_Reason_UNKNOWN_DEVICE = 1,
+  RebootDeviceResponse_Reason_INTERNAL_ERROR = 2,
+  RebootDeviceResponse_Reason_DEVICE_UNREACHABLE = 3,
+  RebootDeviceResponse_Reason_RebootDeviceResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  RebootDeviceResponse_Reason_RebootDeviceResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool RebootDeviceResponse_Reason_IsValid(int value);
+const RebootDeviceResponse_Reason RebootDeviceResponse_Reason_Reason_MIN = RebootDeviceResponse_Reason_UNDEFINED_REASON;
+const RebootDeviceResponse_Reason RebootDeviceResponse_Reason_Reason_MAX = RebootDeviceResponse_Reason_DEVICE_UNREACHABLE;
+const int RebootDeviceResponse_Reason_Reason_ARRAYSIZE = RebootDeviceResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* RebootDeviceResponse_Reason_descriptor();
+inline const ::std::string& RebootDeviceResponse_Reason_Name(RebootDeviceResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    RebootDeviceResponse_Reason_descriptor(), value);
+}
+inline bool RebootDeviceResponse_Reason_Parse(
+    const ::std::string& name, RebootDeviceResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<RebootDeviceResponse_Reason>(
+    RebootDeviceResponse_Reason_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -3870,6 +3901,285 @@ class Heartbeat final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class RebootDeviceRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.RebootDeviceRequest) */ {
+ public:
+  RebootDeviceRequest();
+  virtual ~RebootDeviceRequest();
+
+  RebootDeviceRequest(const RebootDeviceRequest& from);
+
+  inline RebootDeviceRequest& operator=(const RebootDeviceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RebootDeviceRequest(RebootDeviceRequest&& from) noexcept
+    : RebootDeviceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RebootDeviceRequest& operator=(RebootDeviceRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const RebootDeviceRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RebootDeviceRequest* internal_default_instance() {
+    return reinterpret_cast<const RebootDeviceRequest*>(
+               &_RebootDeviceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(RebootDeviceRequest* other);
+  friend void swap(RebootDeviceRequest& a, RebootDeviceRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RebootDeviceRequest* New() const final {
+    return CreateMaybeMessage<RebootDeviceRequest>(nullptr);
+  }
+
+  RebootDeviceRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RebootDeviceRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RebootDeviceRequest& from);
+  void MergeFrom(const RebootDeviceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RebootDeviceRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // @@protoc_insertion_point(class_scope:dmi.RebootDeviceRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::dmi::Uuid* device_uuid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RebootDeviceResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.RebootDeviceResponse) */ {
+ public:
+  RebootDeviceResponse();
+  virtual ~RebootDeviceResponse();
+
+  RebootDeviceResponse(const RebootDeviceResponse& from);
+
+  inline RebootDeviceResponse& operator=(const RebootDeviceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RebootDeviceResponse(RebootDeviceResponse&& from) noexcept
+    : RebootDeviceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RebootDeviceResponse& operator=(RebootDeviceResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const RebootDeviceResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RebootDeviceResponse* internal_default_instance() {
+    return reinterpret_cast<const RebootDeviceResponse*>(
+               &_RebootDeviceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(RebootDeviceResponse* other);
+  friend void swap(RebootDeviceResponse& a, RebootDeviceResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RebootDeviceResponse* New() const final {
+    return CreateMaybeMessage<RebootDeviceResponse>(nullptr);
+  }
+
+  RebootDeviceResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RebootDeviceResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RebootDeviceResponse& from);
+  void MergeFrom(const RebootDeviceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RebootDeviceResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef RebootDeviceResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    RebootDeviceResponse_Reason_UNDEFINED_REASON;
+  static const Reason UNKNOWN_DEVICE =
+    RebootDeviceResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason INTERNAL_ERROR =
+    RebootDeviceResponse_Reason_INTERNAL_ERROR;
+  static const Reason DEVICE_UNREACHABLE =
+    RebootDeviceResponse_Reason_DEVICE_UNREACHABLE;
+  static inline bool Reason_IsValid(int value) {
+    return RebootDeviceResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    RebootDeviceResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    RebootDeviceResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    RebootDeviceResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return RebootDeviceResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return RebootDeviceResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return RebootDeviceResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 5;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 5;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.Status status = 3;
+  void clear_status();
+  static const int kStatusFieldNumber = 3;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.RebootDeviceResponse.Reason reason = 4;
+  void clear_reason();
+  static const int kReasonFieldNumber = 4;
+  ::dmi::RebootDeviceResponse_Reason reason() const;
+  void set_reason(::dmi::RebootDeviceResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.RebootDeviceResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -6305,9 +6615,147 @@ inline void Heartbeat::set_heartbeat_signature(::google::protobuf::uint32 value)
   // @@protoc_insertion_point(field_set:dmi.Heartbeat.heartbeat_signature)
 }
 
+// -------------------------------------------------------------------
+
+// RebootDeviceRequest
+
+// .dmi.Uuid device_uuid = 1;
+inline bool RebootDeviceRequest::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& RebootDeviceRequest::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.RebootDeviceRequest.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* RebootDeviceRequest::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.RebootDeviceRequest.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* RebootDeviceRequest::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.RebootDeviceRequest.device_uuid)
+  return device_uuid_;
+}
+inline void RebootDeviceRequest::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.RebootDeviceRequest.device_uuid)
+}
+
+// -------------------------------------------------------------------
+
+// RebootDeviceResponse
+
+// .dmi.Status status = 3;
+inline void RebootDeviceResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status RebootDeviceResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.RebootDeviceResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void RebootDeviceResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.RebootDeviceResponse.status)
+}
+
+// .dmi.RebootDeviceResponse.Reason reason = 4;
+inline void RebootDeviceResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::RebootDeviceResponse_Reason RebootDeviceResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.RebootDeviceResponse.reason)
+  return static_cast< ::dmi::RebootDeviceResponse_Reason >(reason_);
+}
+inline void RebootDeviceResponse::set_reason(::dmi::RebootDeviceResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.RebootDeviceResponse.reason)
+}
+
+// string reason_detail = 5;
+inline void RebootDeviceResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& RebootDeviceResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.RebootDeviceResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void RebootDeviceResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.RebootDeviceResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void RebootDeviceResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.RebootDeviceResponse.reason_detail)
+}
+#endif
+inline void RebootDeviceResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.RebootDeviceResponse.reason_detail)
+}
+inline void RebootDeviceResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.RebootDeviceResponse.reason_detail)
+}
+inline ::std::string* RebootDeviceResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.RebootDeviceResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RebootDeviceResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.RebootDeviceResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RebootDeviceResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.RebootDeviceResponse.reason_detail)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -6414,6 +6862,11 @@ template <> struct is_proto_enum< ::dmi::GetLogLevelResponse_Reason> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::GetLogLevelResponse_Reason>() {
   return ::dmi::GetLogLevelResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::RebootDeviceResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::RebootDeviceResponse_Reason>() {
+  return ::dmi::RebootDeviceResponse_Reason_descriptor();
 }
 
 }  // namespace protobuf
