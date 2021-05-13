@@ -169,6 +169,14 @@ class NativeHWManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>> PrepareAsyncHeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>>(PrepareAsyncHeartbeatCheckRaw(context, request, cq));
     }
+    // Performs the reboot of the device
+    virtual ::grpc::Status RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::dmi::RebootDeviceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>> AsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>>(AsyncRebootDeviceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>> PrepareAsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>>(PrepareAsyncRebootDeviceRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -348,6 +356,19 @@ class NativeHWManagementService final {
       #else
       virtual void HeartbeatCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::Heartbeat* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Performs the reboot of the device
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -388,6 +409,8 @@ class NativeHWManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetLogLevelResponse>* PrepareAsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>* AsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>* PrepareAsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>* AsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>* PrepareAsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -495,6 +518,13 @@ class NativeHWManagementService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>> PrepareAsyncHeartbeatCheck(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>>(PrepareAsyncHeartbeatCheckRaw(context, request, cq));
+    }
+    ::grpc::Status RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::dmi::RebootDeviceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>> AsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>>(AsyncRebootDeviceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>> PrepareAsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>>(PrepareAsyncRebootDeviceRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -646,6 +676,18 @@ class NativeHWManagementService final {
       #else
       void HeartbeatCheck(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::Heartbeat* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)>) override;
+      void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -688,6 +730,8 @@ class NativeHWManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::GetLogLevelResponse>* PrepareAsyncGetLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* AsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* PrepareAsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* AsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* PrepareAsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StartManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_StopManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_GetManagedDevices_;
@@ -702,6 +746,7 @@ class NativeHWManagementService final {
     const ::grpc::internal::RpcMethod rpcmethod_SetLogLevel_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLogLevel_;
     const ::grpc::internal::RpcMethod rpcmethod_HeartbeatCheck_;
+    const ::grpc::internal::RpcMethod rpcmethod_RebootDevice_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -752,6 +797,8 @@ class NativeHWManagementService final {
     virtual ::grpc::Status GetLogLevel(::grpc::ServerContext* context, const ::dmi::GetLogLevelRequest* request, ::dmi::GetLogLevelResponse* response);
     // Performs the heartbeat check
     virtual ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response);
+    // Performs the reboot of the device
+    virtual ::grpc::Status RebootDevice(::grpc::ServerContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StartManagingDevice : public BaseClass {
@@ -1033,7 +1080,27 @@ class NativeHWManagementService final {
       ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RebootDevice() {
+      ::grpc::Service::MarkMethodAsync(14);
+    }
+    ~WithAsyncMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRebootDevice(::grpc::ServerContext* context, ::dmi::RebootDeviceRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::RebootDeviceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<WithAsyncMethod_RebootDevice<Service > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_StartManagingDevice : public BaseClass {
    private:
@@ -1665,11 +1732,58 @@ class NativeHWManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_RebootDevice() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(14,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response) { return this->RebootDevice(context, request, response); }));}
+    void SetMessageAllocatorFor_RebootDevice(
+        ::grpc::experimental::MessageAllocator< ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RebootDevice(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RebootDevice(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<Service > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<Service > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StartManagingDevice : public BaseClass {
    private:
@@ -1904,6 +2018,23 @@ class NativeHWManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status HeartbeatCheck(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::dmi::Heartbeat* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RebootDevice() {
+      ::grpc::Service::MarkMethodGeneric(14);
+    }
+    ~WithGenericMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2186,6 +2317,26 @@ class NativeHWManagementService final {
     }
     void RequestHeartbeatCheck(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RebootDevice() {
+      ::grpc::Service::MarkMethodRaw(14);
+    }
+    ~WithRawMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRebootDevice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2721,6 +2872,44 @@ class NativeHWManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_RebootDevice() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(14,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RebootDevice(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RebootDevice(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RebootDevice(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StopManagingDevice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3017,7 +3206,34 @@ class NativeHWManagementService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedHeartbeatCheck(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::dmi::Heartbeat>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<Service > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RebootDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RebootDevice() {
+      ::grpc::Service::MarkMethodStreamed(14,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>* streamer) {
+                       return this->StreamedRebootDevice(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RebootDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRebootDevice(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::RebootDeviceRequest,::dmi::RebootDeviceResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<Service > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_StartManagingDevice : public BaseClass {
    private:
@@ -3100,7 +3316,7 @@ class NativeHWManagementService final {
     virtual ::grpc::Status StreamedGetHWComponentInfo(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::HWComponentInfoGetRequest,::dmi::HWComponentInfoGetResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_StartManagingDevice<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<Service > > > SplitStreamedService;
-  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<Service > > > > > > > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<Service > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace dmi

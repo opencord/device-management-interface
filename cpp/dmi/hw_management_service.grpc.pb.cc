@@ -36,6 +36,7 @@ static const char* NativeHWManagementService_method_names[] = {
   "/dmi.NativeHWManagementService/SetLogLevel",
   "/dmi.NativeHWManagementService/GetLogLevel",
   "/dmi.NativeHWManagementService/HeartbeatCheck",
+  "/dmi.NativeHWManagementService/RebootDevice",
 };
 
 std::unique_ptr< NativeHWManagementService::Stub> NativeHWManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -59,6 +60,7 @@ NativeHWManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_SetLogLevel_(NativeHWManagementService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLogLevel_(NativeHWManagementService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_HeartbeatCheck_(NativeHWManagementService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RebootDevice_(NativeHWManagementService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) {
@@ -417,6 +419,34 @@ void NativeHWManagementService::Stub::experimental_async::HeartbeatCheck(::grpc:
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::Heartbeat>::Create(channel_.get(), cq, rpcmethod_HeartbeatCheck_, context, request, false);
 }
 
+::grpc::Status NativeHWManagementService::Stub::RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::dmi::RebootDeviceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RebootDevice_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RebootDevice_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RebootDevice_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::RebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RebootDevice_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RebootDevice_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* NativeHWManagementService::Stub::AsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::RebootDeviceResponse>::Create(channel_.get(), cq, rpcmethod_RebootDevice_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* NativeHWManagementService::Stub::PrepareAsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::RebootDeviceResponse>::Create(channel_.get(), cq, rpcmethod_RebootDevice_, context, request, false);
+}
+
 NativeHWManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[0],
@@ -558,6 +588,16 @@ NativeHWManagementService::Service::Service() {
              ::dmi::Heartbeat* resp) {
                return service->HeartbeatCheck(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::RebootDeviceRequest, ::dmi::RebootDeviceResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::RebootDeviceRequest* req,
+             ::dmi::RebootDeviceResponse* resp) {
+               return service->RebootDevice(ctx, req, resp);
+             }, this)));
 }
 
 NativeHWManagementService::Service::~Service() {
@@ -655,6 +695,13 @@ NativeHWManagementService::Service::~Service() {
 }
 
 ::grpc::Status NativeHWManagementService::Service::HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::RebootDevice(::grpc::ServerContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
