@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcfb98af_a629bd76",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-05-14T12:04:24Z",
+      "side": 1,
+      "message": "Although it\u0027s obvious, but can you add here in the description that server side implementations should reboot the device only after successfully returning this RPC?",
+      "revId": "8f5385b0e5694b03adb429164adc4ff1c0eb079f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b17db60_d612dff5",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-05-14T12:04:24Z",
+      "side": 1,
+      "message": "I don\u0027t think the device_uuid is needed in the response",
+      "revId": "8f5385b0e5694b03adb429164adc4ff1c0eb079f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
