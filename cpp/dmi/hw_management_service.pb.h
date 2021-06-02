@@ -238,12 +238,14 @@ enum StartManagingDeviceResponse_Reason {
   StartManagingDeviceResponse_Reason_OPERATION_ALREADY_IN_PROGRESS = 2,
   StartManagingDeviceResponse_Reason_INVALID_PARAMS = 3,
   StartManagingDeviceResponse_Reason_INTERNAL_ERROR = 4,
+  StartManagingDeviceResponse_Reason_AUTHENTICATION_FAILURE = 5,
+  StartManagingDeviceResponse_Reason_INCOMPATIBLE_DEVICE = 6,
   StartManagingDeviceResponse_Reason_StartManagingDeviceResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   StartManagingDeviceResponse_Reason_StartManagingDeviceResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool StartManagingDeviceResponse_Reason_IsValid(int value);
 const StartManagingDeviceResponse_Reason StartManagingDeviceResponse_Reason_Reason_MIN = StartManagingDeviceResponse_Reason_UNDEFINED_REASON;
-const StartManagingDeviceResponse_Reason StartManagingDeviceResponse_Reason_Reason_MAX = StartManagingDeviceResponse_Reason_INTERNAL_ERROR;
+const StartManagingDeviceResponse_Reason StartManagingDeviceResponse_Reason_Reason_MAX = StartManagingDeviceResponse_Reason_INCOMPATIBLE_DEVICE;
 const int StartManagingDeviceResponse_Reason_Reason_ARRAYSIZE = StartManagingDeviceResponse_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* StartManagingDeviceResponse_Reason_descriptor();
@@ -1469,6 +1471,10 @@ class StartManagingDeviceResponse final :
     StartManagingDeviceResponse_Reason_INVALID_PARAMS;
   static const Reason INTERNAL_ERROR =
     StartManagingDeviceResponse_Reason_INTERNAL_ERROR;
+  static const Reason AUTHENTICATION_FAILURE =
+    StartManagingDeviceResponse_Reason_AUTHENTICATION_FAILURE;
+  static const Reason INCOMPATIBLE_DEVICE =
+    StartManagingDeviceResponse_Reason_INCOMPATIBLE_DEVICE;
   static inline bool Reason_IsValid(int value) {
     return StartManagingDeviceResponse_Reason_IsValid(value);
   }
