@@ -81,6 +81,12 @@ message StartManagingDeviceResponse {
         OPERATION_ALREADY_IN_PROGRESS = 2;
         INVALID_PARAMS = 3;
         INTERNAL_ERROR = 4;
+        // AUTHENTICATION_FAILURE is returned when the device management software/server is not able to connect to the underlying
+        // hardware because of authentication failures
+        AUTHENTICATION_FAILURE = 5;
+        // INCOMPATIBLE_DEVICE is returned when there is a mismatch between the device management software/server and the underlying
+        // hardware
+        INCOMPATIBLE_DEVICE = 6;
     }
     Status status = 1;
     Reason reason = 2;
