@@ -186,6 +186,20 @@ message PortComponentAttributes{
     Speed speed = 2;
     Protocol protocol = 3;
     string physical_label = 4;
+    // The mapping_label can be used to map ports between the DMI interface and other systems like VOLTHA
+    // The value of the mapping_label should be exactly the same as generated for the same port by the other 
+    // system
+    string mapping_label = 5;
+
+    // The pon_id and pon_id_trasmit_periodicity attributes are valid only for ports of type GPON, XGPON and XGSPON
+    string pon_id = 6;
+    uint32 pon_id_trasmit_periodicity = 7;
+}
+
+message PortComponentChangeAttributes {
+    // The pon_id and pon_id_trasmit_periodicity attributes are valid only for ports of type GPON, XGPON and XGSPON
+    string pon_id = 1;
+    uint32 pon_id_trasmit_periodicity = 2; // The value is in seconds and defaults to 10 seconds
 }
 
 message ContainerComponentAttributes{
@@ -299,4 +313,8 @@ message ModifiableComponent {
     string asset_id = 6;
     Uri uri = 7;
     ComponentAdminState admin_state = 8;
+    // The attribute 'specific' can be populated for specific class of components
+    oneof specific {
+        PortComponentChangeAttributes port_attr = 50;
+    }
 }
