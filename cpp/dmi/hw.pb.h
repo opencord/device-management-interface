@@ -43,7 +43,7 @@ struct TableStruct_dmi_2fhw_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[12]
+  static const ::google::protobuf::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -72,9 +72,15 @@ extern HardwareIDDefaultTypeInternal _HardwareID_default_instance_;
 class ModifiableComponent;
 class ModifiableComponentDefaultTypeInternal;
 extern ModifiableComponentDefaultTypeInternal _ModifiableComponent_default_instance_;
+class PonIdConfig;
+class PonIdConfigDefaultTypeInternal;
+extern PonIdConfigDefaultTypeInternal _PonIdConfig_default_instance_;
 class PortComponentAttributes;
 class PortComponentAttributesDefaultTypeInternal;
 extern PortComponentAttributesDefaultTypeInternal _PortComponentAttributes_default_instance_;
+class PortComponentChangeAttributes;
+class PortComponentChangeAttributesDefaultTypeInternal;
+extern PortComponentChangeAttributesDefaultTypeInternal _PortComponentChangeAttributes_default_instance_;
 class PsuComponentAttributes;
 class PsuComponentAttributesDefaultTypeInternal;
 extern PsuComponentAttributesDefaultTypeInternal _PsuComponentAttributes_default_instance_;
@@ -97,7 +103,9 @@ template<> ::dmi::ContainerComponentAttributes* Arena::CreateMaybeMessage<::dmi:
 template<> ::dmi::Hardware* Arena::CreateMaybeMessage<::dmi::Hardware>(Arena*);
 template<> ::dmi::HardwareID* Arena::CreateMaybeMessage<::dmi::HardwareID>(Arena*);
 template<> ::dmi::ModifiableComponent* Arena::CreateMaybeMessage<::dmi::ModifiableComponent>(Arena*);
+template<> ::dmi::PonIdConfig* Arena::CreateMaybeMessage<::dmi::PonIdConfig>(Arena*);
 template<> ::dmi::PortComponentAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentAttributes>(Arena*);
+template<> ::dmi::PortComponentChangeAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentChangeAttributes>(Arena*);
 template<> ::dmi::PsuComponentAttributes* Arena::CreateMaybeMessage<::dmi::PsuComponentAttributes>(Arena*);
 template<> ::dmi::TransceiverComponentsAttributes* Arena::CreateMaybeMessage<::dmi::TransceiverComponentsAttributes>(Arena*);
 template<> ::dmi::Uri* Arena::CreateMaybeMessage<::dmi::Uri>(Arena*);
@@ -1443,6 +1451,29 @@ class PortComponentAttributes final :
   ::std::string* release_physical_label();
   void set_allocated_physical_label(::std::string* physical_label);
 
+  // string mapping_label = 5;
+  void clear_mapping_label();
+  static const int kMappingLabelFieldNumber = 5;
+  const ::std::string& mapping_label() const;
+  void set_mapping_label(const ::std::string& value);
+  #if LANG_CXX11
+  void set_mapping_label(::std::string&& value);
+  #endif
+  void set_mapping_label(const char* value);
+  void set_mapping_label(const char* value, size_t size);
+  ::std::string* mutable_mapping_label();
+  ::std::string* release_mapping_label();
+  void set_allocated_mapping_label(::std::string* mapping_label);
+
+  // .dmi.PonIdConfig pon_id_config = 6;
+  bool has_pon_id_config() const;
+  void clear_pon_id_config();
+  static const int kPonIdConfigFieldNumber = 6;
+  const ::dmi::PonIdConfig& pon_id_config() const;
+  ::dmi::PonIdConfig* release_pon_id_config();
+  ::dmi::PonIdConfig* mutable_pon_id_config();
+  void set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config);
+
   // .dmi.PortComponentAttributes.ConnectorType connector_type = 1;
   void clear_connector_type();
   static const int kConnectorTypeFieldNumber = 1;
@@ -1467,9 +1498,253 @@ class PortComponentAttributes final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr physical_label_;
+  ::google::protobuf::internal::ArenaStringPtr mapping_label_;
+  ::dmi::PonIdConfig* pon_id_config_;
   int connector_type_;
   int speed_;
   int protocol_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PortComponentChangeAttributes final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.PortComponentChangeAttributes) */ {
+ public:
+  PortComponentChangeAttributes();
+  virtual ~PortComponentChangeAttributes();
+
+  PortComponentChangeAttributes(const PortComponentChangeAttributes& from);
+
+  inline PortComponentChangeAttributes& operator=(const PortComponentChangeAttributes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PortComponentChangeAttributes(PortComponentChangeAttributes&& from) noexcept
+    : PortComponentChangeAttributes() {
+    *this = ::std::move(from);
+  }
+
+  inline PortComponentChangeAttributes& operator=(PortComponentChangeAttributes&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PortComponentChangeAttributes& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PortComponentChangeAttributes* internal_default_instance() {
+    return reinterpret_cast<const PortComponentChangeAttributes*>(
+               &_PortComponentChangeAttributes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(PortComponentChangeAttributes* other);
+  friend void swap(PortComponentChangeAttributes& a, PortComponentChangeAttributes& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PortComponentChangeAttributes* New() const final {
+    return CreateMaybeMessage<PortComponentChangeAttributes>(nullptr);
+  }
+
+  PortComponentChangeAttributes* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PortComponentChangeAttributes>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PortComponentChangeAttributes& from);
+  void MergeFrom(const PortComponentChangeAttributes& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PortComponentChangeAttributes* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.PonIdConfig pon_id_config = 1;
+  bool has_pon_id_config() const;
+  void clear_pon_id_config();
+  static const int kPonIdConfigFieldNumber = 1;
+  const ::dmi::PonIdConfig& pon_id_config() const;
+  ::dmi::PonIdConfig* release_pon_id_config();
+  ::dmi::PonIdConfig* mutable_pon_id_config();
+  void set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config);
+
+  // @@protoc_insertion_point(class_scope:dmi.PortComponentChangeAttributes)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::dmi::PonIdConfig* pon_id_config_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PonIdConfig final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.PonIdConfig) */ {
+ public:
+  PonIdConfig();
+  virtual ~PonIdConfig();
+
+  PonIdConfig(const PonIdConfig& from);
+
+  inline PonIdConfig& operator=(const PonIdConfig& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PonIdConfig(PonIdConfig&& from) noexcept
+    : PonIdConfig() {
+    *this = ::std::move(from);
+  }
+
+  inline PonIdConfig& operator=(PonIdConfig&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PonIdConfig& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PonIdConfig* internal_default_instance() {
+    return reinterpret_cast<const PonIdConfig*>(
+               &_PonIdConfig_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(PonIdConfig* other);
+  friend void swap(PonIdConfig& a, PonIdConfig& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PonIdConfig* New() const final {
+    return CreateMaybeMessage<PonIdConfig>(nullptr);
+  }
+
+  PonIdConfig* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PonIdConfig>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PonIdConfig& from);
+  void MergeFrom(const PonIdConfig& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PonIdConfig* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes pon_id = 1;
+  void clear_pon_id();
+  static const int kPonIdFieldNumber = 1;
+  const ::std::string& pon_id() const;
+  void set_pon_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_pon_id(::std::string&& value);
+  #endif
+  void set_pon_id(const char* value);
+  void set_pon_id(const void* value, size_t size);
+  ::std::string* mutable_pon_id();
+  ::std::string* release_pon_id();
+  void set_allocated_pon_id(::std::string* pon_id);
+
+  // uint32 pon_id_transmit_periodicity = 2;
+  void clear_pon_id_transmit_periodicity();
+  static const int kPonIdTransmitPeriodicityFieldNumber = 2;
+  ::google::protobuf::uint32 pon_id_transmit_periodicity() const;
+  void set_pon_id_transmit_periodicity(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:dmi.PonIdConfig)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr pon_id_;
+  ::google::protobuf::uint32 pon_id_transmit_periodicity_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
@@ -1513,7 +1788,7 @@ class ContainerComponentAttributes final :
                &_ContainerComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(ContainerComponentAttributes* other);
   friend void swap(ContainerComponentAttributes& a, ContainerComponentAttributes& b) {
@@ -1633,7 +1908,7 @@ class PsuComponentAttributes final :
                &_PsuComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(PsuComponentAttributes* other);
   friend void swap(PsuComponentAttributes& a, PsuComponentAttributes& b) {
@@ -1775,7 +2050,7 @@ class TransceiverComponentsAttributes final :
                &_TransceiverComponentsAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(TransceiverComponentsAttributes* other);
   friend void swap(TransceiverComponentsAttributes& a, TransceiverComponentsAttributes& b) {
@@ -2041,7 +2316,7 @@ class Component final :
                &_Component_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(Component* other);
   friend void swap(Component& a, Component& b) {
@@ -2452,7 +2727,7 @@ class Hardware final :
                &_Hardware_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(Hardware* other);
   friend void swap(Hardware& a, Hardware& b) {
@@ -2581,13 +2856,18 @@ class ModifiableComponent final :
   }
   static const ModifiableComponent& default_instance();
 
+  enum SpecificCase {
+    kPortAttr = 50,
+    SPECIFIC_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const ModifiableComponent* internal_default_instance() {
     return reinterpret_cast<const ModifiableComponent*>(
                &_ModifiableComponent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(ModifiableComponent* other);
   friend void swap(ModifiableComponent& a, ModifiableComponent& b) {
@@ -2722,9 +3002,24 @@ class ModifiableComponent final :
   ::dmi::ComponentAdminState admin_state() const;
   void set_admin_state(::dmi::ComponentAdminState value);
 
+  // .dmi.PortComponentChangeAttributes port_attr = 50;
+  bool has_port_attr() const;
+  void clear_port_attr();
+  static const int kPortAttrFieldNumber = 50;
+  const ::dmi::PortComponentChangeAttributes& port_attr() const;
+  ::dmi::PortComponentChangeAttributes* release_port_attr();
+  ::dmi::PortComponentChangeAttributes* mutable_port_attr();
+  void set_allocated_port_attr(::dmi::PortComponentChangeAttributes* port_attr);
+
+  void clear_specific();
+  SpecificCase specific_case() const;
   // @@protoc_insertion_point(class_scope:dmi.ModifiableComponent)
  private:
   class HasBitSetters;
+  void set_has_port_attr();
+
+  inline bool has_specific() const;
+  inline void clear_has_specific();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -2735,7 +3030,13 @@ class ModifiableComponent final :
   int class__;
   ::google::protobuf::int32 parent_rel_pos_;
   int admin_state_;
+  union SpecificUnion {
+    SpecificUnion() {}
+    ::dmi::PortComponentChangeAttributes* port_attr_;
+  } specific_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
 // ===================================================================
@@ -3371,6 +3672,236 @@ inline void PortComponentAttributes::set_allocated_physical_label(::std::string*
   }
   physical_label_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), physical_label);
   // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentAttributes.physical_label)
+}
+
+// string mapping_label = 5;
+inline void PortComponentAttributes::clear_mapping_label() {
+  mapping_label_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PortComponentAttributes::mapping_label() const {
+  // @@protoc_insertion_point(field_get:dmi.PortComponentAttributes.mapping_label)
+  return mapping_label_.GetNoArena();
+}
+inline void PortComponentAttributes::set_mapping_label(const ::std::string& value) {
+  
+  mapping_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.PortComponentAttributes.mapping_label)
+}
+#if LANG_CXX11
+inline void PortComponentAttributes::set_mapping_label(::std::string&& value) {
+  
+  mapping_label_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.PortComponentAttributes.mapping_label)
+}
+#endif
+inline void PortComponentAttributes::set_mapping_label(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mapping_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.PortComponentAttributes.mapping_label)
+}
+inline void PortComponentAttributes::set_mapping_label(const char* value, size_t size) {
+  
+  mapping_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.PortComponentAttributes.mapping_label)
+}
+inline ::std::string* PortComponentAttributes::mutable_mapping_label() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.PortComponentAttributes.mapping_label)
+  return mapping_label_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PortComponentAttributes::release_mapping_label() {
+  // @@protoc_insertion_point(field_release:dmi.PortComponentAttributes.mapping_label)
+  
+  return mapping_label_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PortComponentAttributes::set_allocated_mapping_label(::std::string* mapping_label) {
+  if (mapping_label != nullptr) {
+    
+  } else {
+    
+  }
+  mapping_label_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), mapping_label);
+  // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentAttributes.mapping_label)
+}
+
+// .dmi.PonIdConfig pon_id_config = 6;
+inline bool PortComponentAttributes::has_pon_id_config() const {
+  return this != internal_default_instance() && pon_id_config_ != nullptr;
+}
+inline void PortComponentAttributes::clear_pon_id_config() {
+  if (GetArenaNoVirtual() == nullptr && pon_id_config_ != nullptr) {
+    delete pon_id_config_;
+  }
+  pon_id_config_ = nullptr;
+}
+inline const ::dmi::PonIdConfig& PortComponentAttributes::pon_id_config() const {
+  const ::dmi::PonIdConfig* p = pon_id_config_;
+  // @@protoc_insertion_point(field_get:dmi.PortComponentAttributes.pon_id_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::PonIdConfig*>(
+      &::dmi::_PonIdConfig_default_instance_);
+}
+inline ::dmi::PonIdConfig* PortComponentAttributes::release_pon_id_config() {
+  // @@protoc_insertion_point(field_release:dmi.PortComponentAttributes.pon_id_config)
+  
+  ::dmi::PonIdConfig* temp = pon_id_config_;
+  pon_id_config_ = nullptr;
+  return temp;
+}
+inline ::dmi::PonIdConfig* PortComponentAttributes::mutable_pon_id_config() {
+  
+  if (pon_id_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::PonIdConfig>(GetArenaNoVirtual());
+    pon_id_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.PortComponentAttributes.pon_id_config)
+  return pon_id_config_;
+}
+inline void PortComponentAttributes::set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete pon_id_config_;
+  }
+  if (pon_id_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      pon_id_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pon_id_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pon_id_config_ = pon_id_config;
+  // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentAttributes.pon_id_config)
+}
+
+// -------------------------------------------------------------------
+
+// PortComponentChangeAttributes
+
+// .dmi.PonIdConfig pon_id_config = 1;
+inline bool PortComponentChangeAttributes::has_pon_id_config() const {
+  return this != internal_default_instance() && pon_id_config_ != nullptr;
+}
+inline void PortComponentChangeAttributes::clear_pon_id_config() {
+  if (GetArenaNoVirtual() == nullptr && pon_id_config_ != nullptr) {
+    delete pon_id_config_;
+  }
+  pon_id_config_ = nullptr;
+}
+inline const ::dmi::PonIdConfig& PortComponentChangeAttributes::pon_id_config() const {
+  const ::dmi::PonIdConfig* p = pon_id_config_;
+  // @@protoc_insertion_point(field_get:dmi.PortComponentChangeAttributes.pon_id_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::PonIdConfig*>(
+      &::dmi::_PonIdConfig_default_instance_);
+}
+inline ::dmi::PonIdConfig* PortComponentChangeAttributes::release_pon_id_config() {
+  // @@protoc_insertion_point(field_release:dmi.PortComponentChangeAttributes.pon_id_config)
+  
+  ::dmi::PonIdConfig* temp = pon_id_config_;
+  pon_id_config_ = nullptr;
+  return temp;
+}
+inline ::dmi::PonIdConfig* PortComponentChangeAttributes::mutable_pon_id_config() {
+  
+  if (pon_id_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::PonIdConfig>(GetArenaNoVirtual());
+    pon_id_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.PortComponentChangeAttributes.pon_id_config)
+  return pon_id_config_;
+}
+inline void PortComponentChangeAttributes::set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete pon_id_config_;
+  }
+  if (pon_id_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      pon_id_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pon_id_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pon_id_config_ = pon_id_config;
+  // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentChangeAttributes.pon_id_config)
+}
+
+// -------------------------------------------------------------------
+
+// PonIdConfig
+
+// bytes pon_id = 1;
+inline void PonIdConfig::clear_pon_id() {
+  pon_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PonIdConfig::pon_id() const {
+  // @@protoc_insertion_point(field_get:dmi.PonIdConfig.pon_id)
+  return pon_id_.GetNoArena();
+}
+inline void PonIdConfig::set_pon_id(const ::std::string& value) {
+  
+  pon_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.PonIdConfig.pon_id)
+}
+#if LANG_CXX11
+inline void PonIdConfig::set_pon_id(::std::string&& value) {
+  
+  pon_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.PonIdConfig.pon_id)
+}
+#endif
+inline void PonIdConfig::set_pon_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pon_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.PonIdConfig.pon_id)
+}
+inline void PonIdConfig::set_pon_id(const void* value, size_t size) {
+  
+  pon_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.PonIdConfig.pon_id)
+}
+inline ::std::string* PonIdConfig::mutable_pon_id() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.PonIdConfig.pon_id)
+  return pon_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PonIdConfig::release_pon_id() {
+  // @@protoc_insertion_point(field_release:dmi.PonIdConfig.pon_id)
+  
+  return pon_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PonIdConfig::set_allocated_pon_id(::std::string* pon_id) {
+  if (pon_id != nullptr) {
+    
+  } else {
+    
+  }
+  pon_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pon_id);
+  // @@protoc_insertion_point(field_set_allocated:dmi.PonIdConfig.pon_id)
+}
+
+// uint32 pon_id_transmit_periodicity = 2;
+inline void PonIdConfig::clear_pon_id_transmit_periodicity() {
+  pon_id_transmit_periodicity_ = 0u;
+}
+inline ::google::protobuf::uint32 PonIdConfig::pon_id_transmit_periodicity() const {
+  // @@protoc_insertion_point(field_get:dmi.PonIdConfig.pon_id_transmit_periodicity)
+  return pon_id_transmit_periodicity_;
+}
+inline void PonIdConfig::set_pon_id_transmit_periodicity(::google::protobuf::uint32 value) {
+  
+  pon_id_transmit_periodicity_ = value;
+  // @@protoc_insertion_point(field_set:dmi.PonIdConfig.pon_id_transmit_periodicity)
 }
 
 // -------------------------------------------------------------------
@@ -5097,9 +5628,63 @@ inline void ModifiableComponent::set_admin_state(::dmi::ComponentAdminState valu
   // @@protoc_insertion_point(field_set:dmi.ModifiableComponent.admin_state)
 }
 
+// .dmi.PortComponentChangeAttributes port_attr = 50;
+inline bool ModifiableComponent::has_port_attr() const {
+  return specific_case() == kPortAttr;
+}
+inline void ModifiableComponent::set_has_port_attr() {
+  _oneof_case_[0] = kPortAttr;
+}
+inline void ModifiableComponent::clear_port_attr() {
+  if (has_port_attr()) {
+    delete specific_.port_attr_;
+    clear_has_specific();
+  }
+}
+inline ::dmi::PortComponentChangeAttributes* ModifiableComponent::release_port_attr() {
+  // @@protoc_insertion_point(field_release:dmi.ModifiableComponent.port_attr)
+  if (has_port_attr()) {
+    clear_has_specific();
+      ::dmi::PortComponentChangeAttributes* temp = specific_.port_attr_;
+    specific_.port_attr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::PortComponentChangeAttributes& ModifiableComponent::port_attr() const {
+  // @@protoc_insertion_point(field_get:dmi.ModifiableComponent.port_attr)
+  return has_port_attr()
+      ? *specific_.port_attr_
+      : *reinterpret_cast< ::dmi::PortComponentChangeAttributes*>(&::dmi::_PortComponentChangeAttributes_default_instance_);
+}
+inline ::dmi::PortComponentChangeAttributes* ModifiableComponent::mutable_port_attr() {
+  if (!has_port_attr()) {
+    clear_specific();
+    set_has_port_attr();
+    specific_.port_attr_ = CreateMaybeMessage< ::dmi::PortComponentChangeAttributes >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.ModifiableComponent.port_attr)
+  return specific_.port_attr_;
+}
+
+inline bool ModifiableComponent::has_specific() const {
+  return specific_case() != SPECIFIC_NOT_SET;
+}
+inline void ModifiableComponent::clear_has_specific() {
+  _oneof_case_[0] = SPECIFIC_NOT_SET;
+}
+inline ModifiableComponent::SpecificCase ModifiableComponent::specific_case() const {
+  return ModifiableComponent::SpecificCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x64mi/hw.proto\x12\x03\x64mi\x1a\x1fgoogle/protobuf/timestamp.proto\"\x14\n\x04Uuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"%\n\nHardwareID\x12\x17\n\x04uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"\x12\n\x03Uri\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xb5\x02\n\x0e\x43omponentState\x12\x36\n\x12state_last_changed\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x0b\x61\x64min_state\x18\x02 \x01(\x0e\x32\x18.dmi.ComponentAdminState\x12+\n\noper_state\x18\x03 \x01(\x0e\x32\x17.dmi.ComponentOperState\x12-\n\x0busage_state\x18\x04 \x01(\x0e\x32\x18.dmi.ComponentUsageState\x12-\n\x0b\x61larm_state\x18\x05 \x01(\x0e\x32\x18.dmi.ComponentAlarmState\x12\x31\n\rstandby_state\x18\x06 \x01(\x0e\x32\x1a.dmi.ComponentStandbyState\"\x90\x02\n\x13\x43omponentSensorData\x12\r\n\x05value\x18\x01 \x01(\x05\x12 \n\x04type\x18\x02 \x01(\x0e\x32\x12.dmi.DataValueType\x12\x1e\n\x05scale\x18\x03 \x01(\x0e\x32\x0f.dmi.ValueScale\x12\x11\n\tprecision\x18\x04 \x01(\x05\x12!\n\x06status\x18\x05 \x01(\x0e\x32\x11.dmi.SensorStatus\x12\x15\n\runits_display\x18\x06 \x01(\t\x12-\n\ttimestamp\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11value_update_rate\x18\x08 \x01(\r\x12\x11\n\tdata_type\x18\t \x01(\t\"\x82\x05\n\x17PortComponentAttributes\x12\x42\n\x0e\x63onnector_type\x18\x01 \x01(\x0e\x32*.dmi.PortComponentAttributes.ConnectorType\x12\x31\n\x05speed\x18\x02 \x01(\x0e\x32\".dmi.PortComponentAttributes.Speed\x12\x37\n\x08protocol\x18\x03 \x01(\x0e\x32%.dmi.PortComponentAttributes.Protocol\x12\x16\n\x0ephysical_label\x18\x04 \x01(\t\"p\n\rConnectorType\x12\x1c\n\x18\x43ONNECTOR_TYPE_UNDEFINED\x10\x00\x12\x08\n\x04RJ45\x10\x01\x12\x0c\n\x08\x46IBER_LC\x10\x02\x12\x0f\n\x0b\x46IBER_SC_PC\x10\x03\x12\r\n\tFIBER_MPO\x10\x04\x12\t\n\x05RS232\x10\x05\"\xae\x01\n\x05Speed\x12\x13\n\x0fSPEED_UNDEFINED\x10\x00\x12\x0b\n\x07\x44YNAMIC\x10\x01\x12\r\n\tGIGABIT_1\x10\x02\x12\x0e\n\nGIGABIT_10\x10\x03\x12\x0e\n\nGIGABIT_25\x10\x04\x12\x0e\n\nGIGABIT_40\x10\x05\x12\x0f\n\x0bGIGABIT_100\x10\x06\x12\x0f\n\x0bGIGABIT_400\x10\x07\x12\x10\n\x0cMEGABIT_2500\x10\x08\x12\x10\n\x0cMEGABIT_1250\x10\t\"|\n\x08Protocol\x12\x16\n\x12PROTOCOL_UNDEFINED\x10\x00\x12\x0c\n\x08\x45THERNET\x10\x01\x12\x08\n\x04GPON\x10\x02\x12\t\n\x05XGPON\x10\x03\x12\n\n\x06XGSPON\x10\x04\x12\t\n\x05GFAST\x10\x05\x12\n\n\x06SERIAL\x10\x06\x12\x08\n\x04\x45PON\x10\x07\x12\x08\n\x04\x42ITS\x10\x08\"6\n\x1c\x43ontainerComponentAttributes\x12\x16\n\x0ephysical_label\x18\x01 \x01(\t\"\xb3\x01\n\x16PsuComponentAttributes\x12G\n\x11supported_voltage\x18\x01 \x01(\x0e\x32,.dmi.PsuComponentAttributes.SupportedVoltage\"P\n\x10SupportedVoltage\x12\x1f\n\x1bSUPPORTED_VOLTAGE_UNDEFINED\x10\x00\x12\x07\n\x03V48\x10\x01\x12\x08\n\x04V230\x10\x02\x12\x08\n\x04V115\x10\x03\"\xef\x04\n\x1fTransceiverComponentsAttributes\x12\x44\n\x0b\x66orm_factor\x18\x01 \x01(\x0e\x32/.dmi.TransceiverComponentsAttributes.FormFactor\x12=\n\ntrans_type\x18\x02 \x01(\x0e\x32).dmi.TransceiverComponentsAttributes.Type\x12\x14\n\x0cmax_distance\x18\x03 \x01(\r\x12+\n\x12max_distance_scale\x18\x04 \x01(\x0e\x32\x0f.dmi.ValueScale\x12\x15\n\rrx_wavelength\x18\x05 \x03(\r\x12\x15\n\rtx_wavelength\x18\x06 \x03(\r\x12)\n\x10wavelength_scale\x18\x07 \x01(\x0e\x32\x0f.dmi.ValueScale\"\xc0\x01\n\nFormFactor\x12\x17\n\x13\x46ORM_FACTOR_UNKNOWN\x10\x00\x12\x08\n\x04QSFP\x10\x01\x12\r\n\tQSFP_PLUS\x10\x02\x12\n\n\x06QSFP28\x10\x03\x12\x07\n\x03SFP\x10\x04\x12\x0c\n\x08SFP_PLUS\x10\x05\x12\x07\n\x03XFP\x10\x06\x12\x08\n\x04\x43\x46P4\x10\x07\x12\x08\n\x04\x43\x46P2\x10\x08\x12\x08\n\x04\x43PAK\x10\t\x12\x06\n\x02X2\x10\n\x12\t\n\x05OTHER\x10\x0b\x12\x07\n\x03\x43\x46P\x10\x0c\x12\x0c\n\x08\x43\x46P2_ACO\x10\r\x12\x0c\n\x08\x43\x46P2_DCO\x10\x0e\"h\n\x04Type\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x0c\n\x08\x45THERNET\x10\x01\x12\x08\n\x04GPON\x10\x02\x12\t\n\x05XGPON\x10\x03\x12\n\n\x06XGSPON\x10\x04\x12\x08\n\x04\x43PON\x10\x05\x12\x0b\n\x07NG_PON2\x10\x06\x12\x08\n\x04\x45PON\x10\x07\"\xe8\x05\n\tComponent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x05\x63lass\x18\x02 \x01(\x0e\x32\x12.dmi.ComponentType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0e\n\x06parent\x18\x04 \x01(\t\x12\x16\n\x0eparent_rel_pos\x18\x05 \x01(\x05\x12 \n\x08\x63hildren\x18\x06 \x03(\x0b\x32\x0e.dmi.Component\x12\x14\n\x0chardware_rev\x18\x07 \x01(\t\x12\x14\n\x0c\x66irmware_rev\x18\x08 \x01(\t\x12\x14\n\x0csoftware_rev\x18\t \x01(\t\x12\x12\n\nserial_num\x18\n \x01(\t\x12\x10\n\x08mfg_name\x18\x0b \x01(\t\x12\x12\n\nmodel_name\x18\x0c \x01(\t\x12\r\n\x05\x61lias\x18\r \x01(\t\x12\x10\n\x08\x61sset_id\x18\x0e \x01(\t\x12\x0e\n\x06is_fru\x18\x0f \x01(\x08\x12,\n\x08mfg_date\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\x03uri\x18\x11 \x01(\x0b\x32\x08.dmi.Uri\x12\x17\n\x04uuid\x18\x12 \x01(\x0b\x32\t.dmi.Uuid\x12\"\n\x05state\x18\x13 \x01(\x0b\x32\x13.dmi.ComponentState\x12-\n\x0bsensor_data\x18\x14 \x03(\x0b\x32\x18.dmi.ComponentSensorData\x12\x31\n\tport_attr\x18\x32 \x01(\x0b\x32\x1c.dmi.PortComponentAttributesH\x00\x12;\n\x0e\x63ontainer_attr\x18\x33 \x01(\x0b\x32!.dmi.ContainerComponentAttributesH\x00\x12/\n\x08psu_attr\x18\x34 \x01(\x0b\x32\x1b.dmi.PsuComponentAttributesH\x00\x12@\n\x10transceiver_attr\x18\x35 \x01(\x0b\x32$.dmi.TransceiverComponentsAttributesH\x00\x42\n\n\x08specific\"\x8a\x01\n\x08Hardware\x12/\n\x0blast_change\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1c\n\x04root\x18\x02 \x01(\x0b\x32\x0e.dmi.Component\x12/\n\x0blast_booted\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xe5\x01\n\x13ModifiableComponent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x05\x63lass\x18\x02 \x01(\x0e\x32\x12.dmi.ComponentType\x12\x1e\n\x06parent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\x12\x16\n\x0eparent_rel_pos\x18\x04 \x01(\x05\x12\r\n\x05\x61lias\x18\x05 \x01(\t\x12\x10\n\x08\x61sset_id\x18\x06 \x01(\t\x12\x15\n\x03uri\x18\x07 \x01(\x0b\x32\x08.dmi.Uri\x12-\n\x0b\x61\x64min_state\x18\x08 \x01(\x0e\x32\x18.dmi.ComponentAdminState*\xb4\x03\n\rComponentType\x12\x1c\n\x18\x43OMPONENT_TYPE_UNDEFINED\x10\x00\x12\x1a\n\x16\x43OMPONENT_TYPE_UNKNOWN\x10\x01\x12\x1a\n\x16\x43OMPONENT_TYPE_CHASSIS\x10\x02\x12\x1c\n\x18\x43OMPONENT_TYPE_BACKPLANE\x10\x03\x12\x1c\n\x18\x43OMPONENT_TYPE_CONTAINER\x10\x04\x12\x1f\n\x1b\x43OMPONENT_TYPE_POWER_SUPPLY\x10\x05\x12\x16\n\x12\x43OMPONENT_TYPE_FAN\x10\x06\x12\x19\n\x15\x43OMPONENT_TYPE_SENSOR\x10\x07\x12\x19\n\x15\x43OMPONENT_TYPE_MODULE\x10\x08\x12\x17\n\x13\x43OMPONENT_TYPE_PORT\x10\t\x12\x16\n\x12\x43OMPONENT_TYPE_CPU\x10\n\x12\x1a\n\x16\x43OMPONENT_TYPE_BATTERY\x10\x0b\x12\x1a\n\x16\x43OMPONENT_TYPE_STORAGE\x10\x0c\x12\x19\n\x15\x43OMPONENT_TYPE_MEMORY\x10\r\x12\x1e\n\x1a\x43OMPONENT_TYPE_TRANSCEIVER\x10\x0e*\xb3\x01\n\x13\x43omponentAdminState\x12\x1e\n\x1a\x43OMP_ADMIN_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_ADMIN_STATE_UNKNOWN\x10\x01\x12\x1b\n\x17\x43OMP_ADMIN_STATE_LOCKED\x10\x02\x12\"\n\x1e\x43OMP_ADMIN_STATE_SHUTTING_DOWN\x10\x03\x12\x1d\n\x19\x43OMP_ADMIN_STATE_UNLOCKED\x10\x04*\xa8\x01\n\x12\x43omponentOperState\x12\x1d\n\x19\x43OMP_OPER_STATE_UNDEFINED\x10\x00\x12\x1b\n\x17\x43OMP_OPER_STATE_UNKNOWN\x10\x01\x12\x1c\n\x18\x43OMP_OPER_STATE_DISABLED\x10\x02\x12\x1b\n\x17\x43OMP_OPER_STATE_ENABLED\x10\x03\x12\x1b\n\x17\x43OMP_OPER_STATE_TESTING\x10\x04*\xa6\x01\n\x13\x43omponentUsageState\x12\x1e\n\x1a\x43OMP_USAGE_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_USAGE_STATE_UNKNOWN\x10\x01\x12\x19\n\x15\x43OMP_USAGE_STATE_IDLE\x10\x02\x12\x1b\n\x17\x43OMP_USAGE_STATE_ACTIVE\x10\x03\x12\x19\n\x15\x43OMP_USAGE_STATE_BUSY\x10\x04*\x8f\x02\n\x13\x43omponentAlarmState\x12\x1e\n\x1a\x43OMP_ALARM_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_ALARM_STATE_UNKNOWN\x10\x01\x12!\n\x1d\x43OMP_ALARM_STATE_UNDER_REPAIR\x10\x02\x12\x1d\n\x19\x43OMP_ALARM_STATE_CRITICAL\x10\x03\x12\x1a\n\x16\x43OMP_ALARM_STATE_MAJOR\x10\x04\x12\x1a\n\x16\x43OMP_ALARM_STATE_MINOR\x10\x05\x12\x1c\n\x18\x43OMP_ALARM_STATE_WARNING\x10\x06\x12\"\n\x1e\x43OMP_ALARM_STATE_INDETERMINATE\x10\x07*\xbc\x01\n\x15\x43omponentStandbyState\x12 \n\x1c\x43OMP_STANDBY_STATE_UNDEFINED\x10\x00\x12\x1e\n\x1a\x43OMP_STANDBY_STATE_UNKNOWN\x10\x01\x12\x1a\n\x16\x43OMP_STANDBY_STATE_HOT\x10\x02\x12\x1b\n\x17\x43OMP_STANDBY_STATE_COLD\x10\x03\x12(\n$COMP_STANDBY_STATE_PROVIDING_SERVICE\x10\x04*\x89\x03\n\rDataValueType\x12\x18\n\x14VALUE_TYPE_UNDEFINED\x10\x00\x12\x14\n\x10VALUE_TYPE_OTHER\x10\x01\x12\x16\n\x12VALUE_TYPE_UNKNOWN\x10\x02\x12\x17\n\x13VALUE_TYPE_VOLTS_AC\x10\x03\x12\x17\n\x13VALUE_TYPE_VOLTS_DC\x10\x04\x12\x16\n\x12VALUE_TYPE_AMPERES\x10\x05\x12\x14\n\x10VALUE_TYPE_WATTS\x10\x06\x12\x14\n\x10VALUE_TYPE_HERTZ\x10\x07\x12\x16\n\x12VALUE_TYPE_CELSIUS\x10\x08\x12\x19\n\x15VALUE_TYPE_PERCENT_RH\x10\t\x12\x12\n\x0eVALUE_TYPE_RPM\x10\n\x12\x12\n\x0eVALUE_TYPE_CMM\x10\x0b\x12\x1a\n\x16VALUE_TYPE_TRUTH_VALUE\x10\x0c\x12\x16\n\x12VALUE_TYPE_PERCENT\x10\r\x12\x15\n\x11VALUE_TYPE_METERS\x10\x0e\x12\x14\n\x10VALUE_TYPE_BYTES\x10\x0f*\xa4\x03\n\nValueScale\x12\x19\n\x15VALUE_SCALE_UNDEFINED\x10\x00\x12\x15\n\x11VALUE_SCALE_YOCTO\x10\x01\x12\x15\n\x11VALUE_SCALE_ZEPTO\x10\x02\x12\x14\n\x10VALUE_SCALE_ATTO\x10\x03\x12\x15\n\x11VALUE_SCALE_FEMTO\x10\x04\x12\x14\n\x10VALUE_SCALE_PICO\x10\x05\x12\x14\n\x10VALUE_SCALE_NANO\x10\x06\x12\x15\n\x11VALUE_SCALE_MICRO\x10\x07\x12\x15\n\x11VALUE_SCALE_MILLI\x10\x08\x12\x15\n\x11VALUE_SCALE_UNITS\x10\t\x12\x14\n\x10VALUE_SCALE_KILO\x10\n\x12\x14\n\x10VALUE_SCALE_MEGA\x10\x0b\x12\x14\n\x10VALUE_SCALE_GIGA\x10\x0c\x12\x14\n\x10VALUE_SCALE_TERA\x10\r\x12\x14\n\x10VALUE_SCALE_PETA\x10\x0e\x12\x13\n\x0fVALUE_SCALE_EXA\x10\x0f\x12\x15\n\x11VALUE_SCALE_ZETTA\x10\x10\x12\x15\n\x11VALUE_SCALE_YOTTA\x10\x11*\x82\x01\n\x0cSensorStatus\x12\x1b\n\x17SENSOR_STATUS_UNDEFINED\x10\x00\x12\x14\n\x10SENSOR_STATUS_OK\x10\x01\x12\x1d\n\x19SENSOR_STATUS_UNAVAILABLE\x10\x02\x12 \n\x1cSENSOR_STATUS_NONOPERATIONAL\x10\x03\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
+  serialized_pb=b'\n\x0c\x64mi/hw.proto\x12\x03\x64mi\x1a\x1fgoogle/protobuf/timestamp.proto\"\x14\n\x04Uuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"%\n\nHardwareID\x12\x17\n\x04uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"\x12\n\x03Uri\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xb5\x02\n\x0e\x43omponentState\x12\x36\n\x12state_last_changed\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\x0b\x61\x64min_state\x18\x02 \x01(\x0e\x32\x18.dmi.ComponentAdminState\x12+\n\noper_state\x18\x03 \x01(\x0e\x32\x17.dmi.ComponentOperState\x12-\n\x0busage_state\x18\x04 \x01(\x0e\x32\x18.dmi.ComponentUsageState\x12-\n\x0b\x61larm_state\x18\x05 \x01(\x0e\x32\x18.dmi.ComponentAlarmState\x12\x31\n\rstandby_state\x18\x06 \x01(\x0e\x32\x1a.dmi.ComponentStandbyState\"\x90\x02\n\x13\x43omponentSensorData\x12\r\n\x05value\x18\x01 \x01(\x05\x12 \n\x04type\x18\x02 \x01(\x0e\x32\x12.dmi.DataValueType\x12\x1e\n\x05scale\x18\x03 \x01(\x0e\x32\x0f.dmi.ValueScale\x12\x11\n\tprecision\x18\x04 \x01(\x05\x12!\n\x06status\x18\x05 \x01(\x0e\x32\x11.dmi.SensorStatus\x12\x15\n\runits_display\x18\x06 \x01(\t\x12-\n\ttimestamp\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11value_update_rate\x18\x08 \x01(\r\x12\x11\n\tdata_type\x18\t \x01(\t\"\xc2\x05\n\x17PortComponentAttributes\x12\x42\n\x0e\x63onnector_type\x18\x01 \x01(\x0e\x32*.dmi.PortComponentAttributes.ConnectorType\x12\x31\n\x05speed\x18\x02 \x01(\x0e\x32\".dmi.PortComponentAttributes.Speed\x12\x37\n\x08protocol\x18\x03 \x01(\x0e\x32%.dmi.PortComponentAttributes.Protocol\x12\x16\n\x0ephysical_label\x18\x04 \x01(\t\x12\x15\n\rmapping_label\x18\x05 \x01(\t\x12\'\n\rpon_id_config\x18\x06 \x01(\x0b\x32\x10.dmi.PonIdConfig\"p\n\rConnectorType\x12\x1c\n\x18\x43ONNECTOR_TYPE_UNDEFINED\x10\x00\x12\x08\n\x04RJ45\x10\x01\x12\x0c\n\x08\x46IBER_LC\x10\x02\x12\x0f\n\x0b\x46IBER_SC_PC\x10\x03\x12\r\n\tFIBER_MPO\x10\x04\x12\t\n\x05RS232\x10\x05\"\xae\x01\n\x05Speed\x12\x13\n\x0fSPEED_UNDEFINED\x10\x00\x12\x0b\n\x07\x44YNAMIC\x10\x01\x12\r\n\tGIGABIT_1\x10\x02\x12\x0e\n\nGIGABIT_10\x10\x03\x12\x0e\n\nGIGABIT_25\x10\x04\x12\x0e\n\nGIGABIT_40\x10\x05\x12\x0f\n\x0bGIGABIT_100\x10\x06\x12\x0f\n\x0bGIGABIT_400\x10\x07\x12\x10\n\x0cMEGABIT_2500\x10\x08\x12\x10\n\x0cMEGABIT_1250\x10\t\"|\n\x08Protocol\x12\x16\n\x12PROTOCOL_UNDEFINED\x10\x00\x12\x0c\n\x08\x45THERNET\x10\x01\x12\x08\n\x04GPON\x10\x02\x12\t\n\x05XGPON\x10\x03\x12\n\n\x06XGSPON\x10\x04\x12\t\n\x05GFAST\x10\x05\x12\n\n\x06SERIAL\x10\x06\x12\x08\n\x04\x45PON\x10\x07\x12\x08\n\x04\x42ITS\x10\x08\"H\n\x1dPortComponentChangeAttributes\x12\'\n\rpon_id_config\x18\x01 \x01(\x0b\x32\x10.dmi.PonIdConfig\"B\n\x0bPonIdConfig\x12\x0e\n\x06pon_id\x18\x01 \x01(\x0c\x12#\n\x1bpon_id_transmit_periodicity\x18\x02 \x01(\r\"6\n\x1c\x43ontainerComponentAttributes\x12\x16\n\x0ephysical_label\x18\x01 \x01(\t\"\xb3\x01\n\x16PsuComponentAttributes\x12G\n\x11supported_voltage\x18\x01 \x01(\x0e\x32,.dmi.PsuComponentAttributes.SupportedVoltage\"P\n\x10SupportedVoltage\x12\x1f\n\x1bSUPPORTED_VOLTAGE_UNDEFINED\x10\x00\x12\x07\n\x03V48\x10\x01\x12\x08\n\x04V230\x10\x02\x12\x08\n\x04V115\x10\x03\"\xef\x04\n\x1fTransceiverComponentsAttributes\x12\x44\n\x0b\x66orm_factor\x18\x01 \x01(\x0e\x32/.dmi.TransceiverComponentsAttributes.FormFactor\x12=\n\ntrans_type\x18\x02 \x01(\x0e\x32).dmi.TransceiverComponentsAttributes.Type\x12\x14\n\x0cmax_distance\x18\x03 \x01(\r\x12+\n\x12max_distance_scale\x18\x04 \x01(\x0e\x32\x0f.dmi.ValueScale\x12\x15\n\rrx_wavelength\x18\x05 \x03(\r\x12\x15\n\rtx_wavelength\x18\x06 \x03(\r\x12)\n\x10wavelength_scale\x18\x07 \x01(\x0e\x32\x0f.dmi.ValueScale\"\xc0\x01\n\nFormFactor\x12\x17\n\x13\x46ORM_FACTOR_UNKNOWN\x10\x00\x12\x08\n\x04QSFP\x10\x01\x12\r\n\tQSFP_PLUS\x10\x02\x12\n\n\x06QSFP28\x10\x03\x12\x07\n\x03SFP\x10\x04\x12\x0c\n\x08SFP_PLUS\x10\x05\x12\x07\n\x03XFP\x10\x06\x12\x08\n\x04\x43\x46P4\x10\x07\x12\x08\n\x04\x43\x46P2\x10\x08\x12\x08\n\x04\x43PAK\x10\t\x12\x06\n\x02X2\x10\n\x12\t\n\x05OTHER\x10\x0b\x12\x07\n\x03\x43\x46P\x10\x0c\x12\x0c\n\x08\x43\x46P2_ACO\x10\r\x12\x0c\n\x08\x43\x46P2_DCO\x10\x0e\"h\n\x04Type\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x0c\n\x08\x45THERNET\x10\x01\x12\x08\n\x04GPON\x10\x02\x12\t\n\x05XGPON\x10\x03\x12\n\n\x06XGSPON\x10\x04\x12\x08\n\x04\x43PON\x10\x05\x12\x0b\n\x07NG_PON2\x10\x06\x12\x08\n\x04\x45PON\x10\x07\"\xe8\x05\n\tComponent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x05\x63lass\x18\x02 \x01(\x0e\x32\x12.dmi.ComponentType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0e\n\x06parent\x18\x04 \x01(\t\x12\x16\n\x0eparent_rel_pos\x18\x05 \x01(\x05\x12 \n\x08\x63hildren\x18\x06 \x03(\x0b\x32\x0e.dmi.Component\x12\x14\n\x0chardware_rev\x18\x07 \x01(\t\x12\x14\n\x0c\x66irmware_rev\x18\x08 \x01(\t\x12\x14\n\x0csoftware_rev\x18\t \x01(\t\x12\x12\n\nserial_num\x18\n \x01(\t\x12\x10\n\x08mfg_name\x18\x0b \x01(\t\x12\x12\n\nmodel_name\x18\x0c \x01(\t\x12\r\n\x05\x61lias\x18\r \x01(\t\x12\x10\n\x08\x61sset_id\x18\x0e \x01(\t\x12\x0e\n\x06is_fru\x18\x0f \x01(\x08\x12,\n\x08mfg_date\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\x03uri\x18\x11 \x01(\x0b\x32\x08.dmi.Uri\x12\x17\n\x04uuid\x18\x12 \x01(\x0b\x32\t.dmi.Uuid\x12\"\n\x05state\x18\x13 \x01(\x0b\x32\x13.dmi.ComponentState\x12-\n\x0bsensor_data\x18\x14 \x03(\x0b\x32\x18.dmi.ComponentSensorData\x12\x31\n\tport_attr\x18\x32 \x01(\x0b\x32\x1c.dmi.PortComponentAttributesH\x00\x12;\n\x0e\x63ontainer_attr\x18\x33 \x01(\x0b\x32!.dmi.ContainerComponentAttributesH\x00\x12/\n\x08psu_attr\x18\x34 \x01(\x0b\x32\x1b.dmi.PsuComponentAttributesH\x00\x12@\n\x10transceiver_attr\x18\x35 \x01(\x0b\x32$.dmi.TransceiverComponentsAttributesH\x00\x42\n\n\x08specific\"\x8a\x01\n\x08Hardware\x12/\n\x0blast_change\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1c\n\x04root\x18\x02 \x01(\x0b\x32\x0e.dmi.Component\x12/\n\x0blast_booted\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xaa\x02\n\x13ModifiableComponent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x05\x63lass\x18\x02 \x01(\x0e\x32\x12.dmi.ComponentType\x12\x1e\n\x06parent\x18\x03 \x01(\x0b\x32\x0e.dmi.Component\x12\x16\n\x0eparent_rel_pos\x18\x04 \x01(\x05\x12\r\n\x05\x61lias\x18\x05 \x01(\t\x12\x10\n\x08\x61sset_id\x18\x06 \x01(\t\x12\x15\n\x03uri\x18\x07 \x01(\x0b\x32\x08.dmi.Uri\x12-\n\x0b\x61\x64min_state\x18\x08 \x01(\x0e\x32\x18.dmi.ComponentAdminState\x12\x37\n\tport_attr\x18\x32 \x01(\x0b\x32\".dmi.PortComponentChangeAttributesH\x00\x42\n\n\x08specific*\xb4\x03\n\rComponentType\x12\x1c\n\x18\x43OMPONENT_TYPE_UNDEFINED\x10\x00\x12\x1a\n\x16\x43OMPONENT_TYPE_UNKNOWN\x10\x01\x12\x1a\n\x16\x43OMPONENT_TYPE_CHASSIS\x10\x02\x12\x1c\n\x18\x43OMPONENT_TYPE_BACKPLANE\x10\x03\x12\x1c\n\x18\x43OMPONENT_TYPE_CONTAINER\x10\x04\x12\x1f\n\x1b\x43OMPONENT_TYPE_POWER_SUPPLY\x10\x05\x12\x16\n\x12\x43OMPONENT_TYPE_FAN\x10\x06\x12\x19\n\x15\x43OMPONENT_TYPE_SENSOR\x10\x07\x12\x19\n\x15\x43OMPONENT_TYPE_MODULE\x10\x08\x12\x17\n\x13\x43OMPONENT_TYPE_PORT\x10\t\x12\x16\n\x12\x43OMPONENT_TYPE_CPU\x10\n\x12\x1a\n\x16\x43OMPONENT_TYPE_BATTERY\x10\x0b\x12\x1a\n\x16\x43OMPONENT_TYPE_STORAGE\x10\x0c\x12\x19\n\x15\x43OMPONENT_TYPE_MEMORY\x10\r\x12\x1e\n\x1a\x43OMPONENT_TYPE_TRANSCEIVER\x10\x0e*\xb3\x01\n\x13\x43omponentAdminState\x12\x1e\n\x1a\x43OMP_ADMIN_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_ADMIN_STATE_UNKNOWN\x10\x01\x12\x1b\n\x17\x43OMP_ADMIN_STATE_LOCKED\x10\x02\x12\"\n\x1e\x43OMP_ADMIN_STATE_SHUTTING_DOWN\x10\x03\x12\x1d\n\x19\x43OMP_ADMIN_STATE_UNLOCKED\x10\x04*\xa8\x01\n\x12\x43omponentOperState\x12\x1d\n\x19\x43OMP_OPER_STATE_UNDEFINED\x10\x00\x12\x1b\n\x17\x43OMP_OPER_STATE_UNKNOWN\x10\x01\x12\x1c\n\x18\x43OMP_OPER_STATE_DISABLED\x10\x02\x12\x1b\n\x17\x43OMP_OPER_STATE_ENABLED\x10\x03\x12\x1b\n\x17\x43OMP_OPER_STATE_TESTING\x10\x04*\xa6\x01\n\x13\x43omponentUsageState\x12\x1e\n\x1a\x43OMP_USAGE_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_USAGE_STATE_UNKNOWN\x10\x01\x12\x19\n\x15\x43OMP_USAGE_STATE_IDLE\x10\x02\x12\x1b\n\x17\x43OMP_USAGE_STATE_ACTIVE\x10\x03\x12\x19\n\x15\x43OMP_USAGE_STATE_BUSY\x10\x04*\x8f\x02\n\x13\x43omponentAlarmState\x12\x1e\n\x1a\x43OMP_ALARM_STATE_UNDEFINED\x10\x00\x12\x1c\n\x18\x43OMP_ALARM_STATE_UNKNOWN\x10\x01\x12!\n\x1d\x43OMP_ALARM_STATE_UNDER_REPAIR\x10\x02\x12\x1d\n\x19\x43OMP_ALARM_STATE_CRITICAL\x10\x03\x12\x1a\n\x16\x43OMP_ALARM_STATE_MAJOR\x10\x04\x12\x1a\n\x16\x43OMP_ALARM_STATE_MINOR\x10\x05\x12\x1c\n\x18\x43OMP_ALARM_STATE_WARNING\x10\x06\x12\"\n\x1e\x43OMP_ALARM_STATE_INDETERMINATE\x10\x07*\xbc\x01\n\x15\x43omponentStandbyState\x12 \n\x1c\x43OMP_STANDBY_STATE_UNDEFINED\x10\x00\x12\x1e\n\x1a\x43OMP_STANDBY_STATE_UNKNOWN\x10\x01\x12\x1a\n\x16\x43OMP_STANDBY_STATE_HOT\x10\x02\x12\x1b\n\x17\x43OMP_STANDBY_STATE_COLD\x10\x03\x12(\n$COMP_STANDBY_STATE_PROVIDING_SERVICE\x10\x04*\x89\x03\n\rDataValueType\x12\x18\n\x14VALUE_TYPE_UNDEFINED\x10\x00\x12\x14\n\x10VALUE_TYPE_OTHER\x10\x01\x12\x16\n\x12VALUE_TYPE_UNKNOWN\x10\x02\x12\x17\n\x13VALUE_TYPE_VOLTS_AC\x10\x03\x12\x17\n\x13VALUE_TYPE_VOLTS_DC\x10\x04\x12\x16\n\x12VALUE_TYPE_AMPERES\x10\x05\x12\x14\n\x10VALUE_TYPE_WATTS\x10\x06\x12\x14\n\x10VALUE_TYPE_HERTZ\x10\x07\x12\x16\n\x12VALUE_TYPE_CELSIUS\x10\x08\x12\x19\n\x15VALUE_TYPE_PERCENT_RH\x10\t\x12\x12\n\x0eVALUE_TYPE_RPM\x10\n\x12\x12\n\x0eVALUE_TYPE_CMM\x10\x0b\x12\x1a\n\x16VALUE_TYPE_TRUTH_VALUE\x10\x0c\x12\x16\n\x12VALUE_TYPE_PERCENT\x10\r\x12\x15\n\x11VALUE_TYPE_METERS\x10\x0e\x12\x14\n\x10VALUE_TYPE_BYTES\x10\x0f*\xa4\x03\n\nValueScale\x12\x19\n\x15VALUE_SCALE_UNDEFINED\x10\x00\x12\x15\n\x11VALUE_SCALE_YOCTO\x10\x01\x12\x15\n\x11VALUE_SCALE_ZEPTO\x10\x02\x12\x14\n\x10VALUE_SCALE_ATTO\x10\x03\x12\x15\n\x11VALUE_SCALE_FEMTO\x10\x04\x12\x14\n\x10VALUE_SCALE_PICO\x10\x05\x12\x14\n\x10VALUE_SCALE_NANO\x10\x06\x12\x15\n\x11VALUE_SCALE_MICRO\x10\x07\x12\x15\n\x11VALUE_SCALE_MILLI\x10\x08\x12\x15\n\x11VALUE_SCALE_UNITS\x10\t\x12\x14\n\x10VALUE_SCALE_KILO\x10\n\x12\x14\n\x10VALUE_SCALE_MEGA\x10\x0b\x12\x14\n\x10VALUE_SCALE_GIGA\x10\x0c\x12\x14\n\x10VALUE_SCALE_TERA\x10\r\x12\x14\n\x10VALUE_SCALE_PETA\x10\x0e\x12\x13\n\x0fVALUE_SCALE_EXA\x10\x0f\x12\x15\n\x11VALUE_SCALE_ZETTA\x10\x10\x12\x15\n\x11VALUE_SCALE_YOTTA\x10\x11*\x82\x01\n\x0cSensorStatus\x12\x1b\n\x17SENSOR_STATUS_UNDEFINED\x10\x00\x12\x14\n\x10SENSOR_STATUS_OK\x10\x01\x12\x1d\n\x19SENSOR_STATUS_UNAVAILABLE\x10\x02\x12 \n\x1cSENSOR_STATUS_NONOPERATIONAL\x10\x03\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -110,8 +110,8 @@ _COMPONENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3352,
-  serialized_end=3788,
+  serialized_start=3627,
+  serialized_end=4063,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTTYPE)
 
@@ -151,8 +151,8 @@ _COMPONENTADMINSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3791,
-  serialized_end=3970,
+  serialized_start=4066,
+  serialized_end=4245,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTADMINSTATE)
 
@@ -192,8 +192,8 @@ _COMPONENTOPERSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3973,
-  serialized_end=4141,
+  serialized_start=4248,
+  serialized_end=4416,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTOPERSTATE)
 
@@ -233,8 +233,8 @@ _COMPONENTUSAGESTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4144,
-  serialized_end=4310,
+  serialized_start=4419,
+  serialized_end=4585,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTUSAGESTATE)
 
@@ -289,8 +289,8 @@ _COMPONENTALARMSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4313,
-  serialized_end=4584,
+  serialized_start=4588,
+  serialized_end=4859,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTALARMSTATE)
 
@@ -330,8 +330,8 @@ _COMPONENTSTANDBYSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4587,
-  serialized_end=4775,
+  serialized_start=4862,
+  serialized_end=5050,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENTSTANDBYSTATE)
 
@@ -426,8 +426,8 @@ _DATAVALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4778,
-  serialized_end=5171,
+  serialized_start=5053,
+  serialized_end=5446,
 )
 _sym_db.RegisterEnumDescriptor(_DATAVALUETYPE)
 
@@ -532,8 +532,8 @@ _VALUESCALE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5174,
-  serialized_end=5594,
+  serialized_start=5449,
+  serialized_end=5869,
 )
 _sym_db.RegisterEnumDescriptor(_VALUESCALE)
 
@@ -568,8 +568,8 @@ _SENSORSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5597,
-  serialized_end=5727,
+  serialized_start=5872,
+  serialized_end=6002,
 )
 _sym_db.RegisterEnumDescriptor(_SENSORSTATUS)
 
@@ -697,8 +697,8 @@ _PORTCOMPONENTATTRIBUTES_CONNECTORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=950,
-  serialized_end=1062,
+  serialized_start=1014,
+  serialized_end=1126,
 )
 _sym_db.RegisterEnumDescriptor(_PORTCOMPONENTATTRIBUTES_CONNECTORTYPE)
 
@@ -762,8 +762,8 @@ _PORTCOMPONENTATTRIBUTES_SPEED = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1065,
-  serialized_end=1239,
+  serialized_start=1129,
+  serialized_end=1303,
 )
 _sym_db.RegisterEnumDescriptor(_PORTCOMPONENTATTRIBUTES_SPEED)
 
@@ -822,8 +822,8 @@ _PORTCOMPONENTATTRIBUTES_PROTOCOL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1241,
-  serialized_end=1365,
+  serialized_start=1305,
+  serialized_end=1429,
 )
 _sym_db.RegisterEnumDescriptor(_PORTCOMPONENTATTRIBUTES_PROTOCOL)
 
@@ -857,8 +857,8 @@ _PSUCOMPONENTATTRIBUTES_SUPPORTEDVOLTAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1523,
-  serialized_end=1603,
+  serialized_start=1729,
+  serialized_end=1809,
 )
 _sym_db.RegisterEnumDescriptor(_PSUCOMPONENTATTRIBUTES_SUPPORTEDVOLTAGE)
 
@@ -947,8 +947,8 @@ _TRANSCEIVERCOMPONENTSATTRIBUTES_FORMFACTOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1931,
-  serialized_end=2123,
+  serialized_start=2137,
+  serialized_end=2329,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSCEIVERCOMPONENTSATTRIBUTES_FORMFACTOR)
 
@@ -1002,8 +1002,8 @@ _TRANSCEIVERCOMPONENTSATTRIBUTES_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2125,
-  serialized_end=2229,
+  serialized_start=2331,
+  serialized_end=2435,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSCEIVERCOMPONENTSATTRIBUTES_TYPE)
 
@@ -1295,6 +1295,20 @@ _PORTCOMPONENTATTRIBUTES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mapping_label', full_name='dmi.PortComponentAttributes.mapping_label', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pon_id_config', full_name='dmi.PortComponentAttributes.pon_id_config', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1311,7 +1325,78 @@ _PORTCOMPONENTATTRIBUTES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=723,
-  serialized_end=1365,
+  serialized_end=1429,
+)
+
+
+_PORTCOMPONENTCHANGEATTRIBUTES = _descriptor.Descriptor(
+  name='PortComponentChangeAttributes',
+  full_name='dmi.PortComponentChangeAttributes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pon_id_config', full_name='dmi.PortComponentChangeAttributes.pon_id_config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1431,
+  serialized_end=1503,
+)
+
+
+_PONIDCONFIG = _descriptor.Descriptor(
+  name='PonIdConfig',
+  full_name='dmi.PonIdConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pon_id', full_name='dmi.PonIdConfig.pon_id', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pon_id_transmit_periodicity', full_name='dmi.PonIdConfig.pon_id_transmit_periodicity', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1505,
+  serialized_end=1571,
 )
 
 
@@ -1342,8 +1427,8 @@ _CONTAINERCOMPONENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1367,
-  serialized_end=1421,
+  serialized_start=1573,
+  serialized_end=1627,
 )
 
 
@@ -1375,8 +1460,8 @@ _PSUCOMPONENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1424,
-  serialized_end=1603,
+  serialized_start=1630,
+  serialized_end=1809,
 )
 
 
@@ -1451,8 +1536,8 @@ _TRANSCEIVERCOMPONENTSATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1606,
-  serialized_end=2229,
+  serialized_start=1812,
+  serialized_end=2435,
 )
 
 
@@ -1649,8 +1734,8 @@ _COMPONENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2232,
-  serialized_end=2976,
+  serialized_start=2438,
+  serialized_end=3182,
 )
 
 
@@ -1695,8 +1780,8 @@ _HARDWARE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2979,
-  serialized_end=3117,
+  serialized_start=3185,
+  serialized_end=3323,
 )
 
 
@@ -1764,6 +1849,13 @@ _MODIFIABLECOMPONENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port_attr', full_name='dmi.ModifiableComponent.port_attr', index=8,
+      number=50, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1775,9 +1867,14 @@ _MODIFIABLECOMPONENT = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='specific', full_name='dmi.ModifiableComponent.specific',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=3120,
-  serialized_end=3349,
+  serialized_start=3326,
+  serialized_end=3624,
 )
 
 _HARDWAREID.fields_by_name['uuid'].message_type = _UUID
@@ -1794,9 +1891,11 @@ _COMPONENTSENSORDATA.fields_by_name['timestamp'].message_type = google_dot_proto
 _PORTCOMPONENTATTRIBUTES.fields_by_name['connector_type'].enum_type = _PORTCOMPONENTATTRIBUTES_CONNECTORTYPE
 _PORTCOMPONENTATTRIBUTES.fields_by_name['speed'].enum_type = _PORTCOMPONENTATTRIBUTES_SPEED
 _PORTCOMPONENTATTRIBUTES.fields_by_name['protocol'].enum_type = _PORTCOMPONENTATTRIBUTES_PROTOCOL
+_PORTCOMPONENTATTRIBUTES.fields_by_name['pon_id_config'].message_type = _PONIDCONFIG
 _PORTCOMPONENTATTRIBUTES_CONNECTORTYPE.containing_type = _PORTCOMPONENTATTRIBUTES
 _PORTCOMPONENTATTRIBUTES_SPEED.containing_type = _PORTCOMPONENTATTRIBUTES
 _PORTCOMPONENTATTRIBUTES_PROTOCOL.containing_type = _PORTCOMPONENTATTRIBUTES
+_PORTCOMPONENTCHANGEATTRIBUTES.fields_by_name['pon_id_config'].message_type = _PONIDCONFIG
 _PSUCOMPONENTATTRIBUTES.fields_by_name['supported_voltage'].enum_type = _PSUCOMPONENTATTRIBUTES_SUPPORTEDVOLTAGE
 _PSUCOMPONENTATTRIBUTES_SUPPORTEDVOLTAGE.containing_type = _PSUCOMPONENTATTRIBUTES
 _TRANSCEIVERCOMPONENTSATTRIBUTES.fields_by_name['form_factor'].enum_type = _TRANSCEIVERCOMPONENTSATTRIBUTES_FORMFACTOR
@@ -1835,12 +1934,18 @@ _MODIFIABLECOMPONENT.fields_by_name['class'].enum_type = _COMPONENTTYPE
 _MODIFIABLECOMPONENT.fields_by_name['parent'].message_type = _COMPONENT
 _MODIFIABLECOMPONENT.fields_by_name['uri'].message_type = _URI
 _MODIFIABLECOMPONENT.fields_by_name['admin_state'].enum_type = _COMPONENTADMINSTATE
+_MODIFIABLECOMPONENT.fields_by_name['port_attr'].message_type = _PORTCOMPONENTCHANGEATTRIBUTES
+_MODIFIABLECOMPONENT.oneofs_by_name['specific'].fields.append(
+  _MODIFIABLECOMPONENT.fields_by_name['port_attr'])
+_MODIFIABLECOMPONENT.fields_by_name['port_attr'].containing_oneof = _MODIFIABLECOMPONENT.oneofs_by_name['specific']
 DESCRIPTOR.message_types_by_name['Uuid'] = _UUID
 DESCRIPTOR.message_types_by_name['HardwareID'] = _HARDWAREID
 DESCRIPTOR.message_types_by_name['Uri'] = _URI
 DESCRIPTOR.message_types_by_name['ComponentState'] = _COMPONENTSTATE
 DESCRIPTOR.message_types_by_name['ComponentSensorData'] = _COMPONENTSENSORDATA
 DESCRIPTOR.message_types_by_name['PortComponentAttributes'] = _PORTCOMPONENTATTRIBUTES
+DESCRIPTOR.message_types_by_name['PortComponentChangeAttributes'] = _PORTCOMPONENTCHANGEATTRIBUTES
+DESCRIPTOR.message_types_by_name['PonIdConfig'] = _PONIDCONFIG
 DESCRIPTOR.message_types_by_name['ContainerComponentAttributes'] = _CONTAINERCOMPONENTATTRIBUTES
 DESCRIPTOR.message_types_by_name['PsuComponentAttributes'] = _PSUCOMPONENTATTRIBUTES
 DESCRIPTOR.message_types_by_name['TransceiverComponentsAttributes'] = _TRANSCEIVERCOMPONENTSATTRIBUTES
@@ -1899,6 +2004,20 @@ PortComponentAttributes = _reflection.GeneratedProtocolMessageType('PortComponen
   # @@protoc_insertion_point(class_scope:dmi.PortComponentAttributes)
   })
 _sym_db.RegisterMessage(PortComponentAttributes)
+
+PortComponentChangeAttributes = _reflection.GeneratedProtocolMessageType('PortComponentChangeAttributes', (_message.Message,), {
+  'DESCRIPTOR' : _PORTCOMPONENTCHANGEATTRIBUTES,
+  '__module__' : 'dmi.hw_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.PortComponentChangeAttributes)
+  })
+_sym_db.RegisterMessage(PortComponentChangeAttributes)
+
+PonIdConfig = _reflection.GeneratedProtocolMessageType('PonIdConfig', (_message.Message,), {
+  'DESCRIPTOR' : _PONIDCONFIG,
+  '__module__' : 'dmi.hw_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.PonIdConfig)
+  })
+_sym_db.RegisterMessage(PonIdConfig)
 
 ContainerComponentAttributes = _reflection.GeneratedProtocolMessageType('ContainerComponentAttributes', (_message.Message,), {
   'DESCRIPTOR' : _CONTAINERCOMPONENTATTRIBUTES,
