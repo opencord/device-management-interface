@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d397701c_81328aeb",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-08-13T08:06:07Z",
+      "side": 1,
+      "message": "Why use the type string here? These are seven bytes.",
+      "revId": "0ec9b9dbdb1c1c4dffd7ed13920f91d2305f1eeb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f6196fc_53dbc0b1",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-08-13T08:06:07Z",
+      "side": 1,
+      "message": "Typo: traNsmit",
+      "revId": "0ec9b9dbdb1c1c4dffd7ed13920f91d2305f1eeb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05c65bf1_56aec55b",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-08-13T08:06:07Z",
+      "side": 1,
+      "message": "Why use the type string here? These are seven bytes.",
+      "revId": "0ec9b9dbdb1c1c4dffd7ed13920f91d2305f1eeb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f48df57e_3cbd4caf",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2021-08-13T08:06:07Z",
+      "side": 1,
+      "message": "Typo: traNsmit\n\nWhy are we not using the default value from the standard here which is \"approx. 1 seconds\"?",
+      "revId": "0ec9b9dbdb1c1c4dffd7ed13920f91d2305f1eeb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
