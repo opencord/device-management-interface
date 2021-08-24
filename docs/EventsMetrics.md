@@ -29,4 +29,4 @@ message Event {
 ```
 Note: The on-demand metrics query using the API `GetMetric` would be passed back over GRPC and not over the kafka bus.
 
-The device shall not locally persist the events across the reboot. The NEM implementations are expected to purge all the unresolved events (events for which the corresponding RECOVERED events have not yet been sent) on the device reboot, as the device shall detect and report the events afresh after the reboot.
+The device/device manager implementations shall persist the active events across the device reboot. On the device reboot, the alarms which are no longer active shall be cleared.

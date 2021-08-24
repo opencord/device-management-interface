@@ -41,3 +41,7 @@ In the case when an OLT device gets upgraded; for other external systems like vO
 
 Some of the devices have the concept of a running and a startup configuration. The running configuration is what gets created/updated at runtime and would be dependant on what the Device Manager or VOLTHA asks the device to do. For these type of devices, every time the device boots up, it overrides it's running configuration with the startup configuration.
 The API UpdateStartupConfiguration can be used to modify this startup configuration of the devices. Most of the standard running configuration would come from VOLTHA or the Device Manager, but there could/would be some properitary configuration that the devices need and this can be modified using this API.
+
+The below diagram shows the FSM state transitions for the device image management.
+
+![Image Management FSM](images/device_image_management_fsm.png "Image Management FSM")
