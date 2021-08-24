@@ -27,15 +27,15 @@ message ImageInformation {
 
 message ImageStatus {
     enum ImageState {
-        UNDEFINED_STATE = 0;
-        COPYING_IMAGE = 1;
-        INSTALLING_IMAGE = 2;
-        COMMITTING_IMAGE = 3;
-        REBOOTING_DEVICE = 4;
-        UPGRADE_COMPLETE = 5;
-        UPGRADE_FAILED = 6;
-        ACTIVATION_COMPLETE = 7;
-        ACTIVATION_FAILED = 8;
+        UNDEFINED_STATE = 0; // Initial state
+        COPYING_IMAGE = 1; // Downloading the image on the standby partition
+        INSTALLING_IMAGE = 2; // Installing the image on the standby partition
+        COMMITTING_IMAGE = 3; // Committing the image and marking it as the active partition
+        REBOOTING_DEVICE = 4; // Rebooting the device
+        UPGRADE_COMPLETE = 5; // Image upgrade on the standby partition completed
+        UPGRADE_FAILED = 6; // Image upgrade on the standby partition failed
+        ACTIVATION_COMPLETE = 7; // Image activation completed
+        ACTIVATION_FAILED = 8; // Image activation failed
     }
 
     enum Reason {
