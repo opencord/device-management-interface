@@ -382,6 +382,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::dmi::PortComponentAttributes, physical_label_),
   PROTOBUF_FIELD_OFFSET(::dmi::PortComponentAttributes, mapping_label_),
   PROTOBUF_FIELD_OFFSET(::dmi::PortComponentAttributes, pon_id_config_),
+  PROTOBUF_FIELD_OFFSET(::dmi::PortComponentAttributes, speed_autonegotiation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::PortComponentChangeAttributes, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -480,14 +481,14 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 18, -1, sizeof(::dmi::ComponentState)},
   { 29, -1, sizeof(::dmi::ComponentSensorData)},
   { 43, -1, sizeof(::dmi::PortComponentAttributes)},
-  { 54, -1, sizeof(::dmi::PortComponentChangeAttributes)},
-  { 60, -1, sizeof(::dmi::PonIdConfig)},
-  { 67, -1, sizeof(::dmi::ContainerComponentAttributes)},
-  { 73, -1, sizeof(::dmi::PsuComponentAttributes)},
-  { 79, -1, sizeof(::dmi::TransceiverComponentsAttributes)},
-  { 91, -1, sizeof(::dmi::Component)},
-  { 121, -1, sizeof(::dmi::Hardware)},
-  { 129, -1, sizeof(::dmi::ModifiableComponent)},
+  { 55, -1, sizeof(::dmi::PortComponentChangeAttributes)},
+  { 61, -1, sizeof(::dmi::PonIdConfig)},
+  { 68, -1, sizeof(::dmi::ContainerComponentAttributes)},
+  { 74, -1, sizeof(::dmi::PsuComponentAttributes)},
+  { 80, -1, sizeof(::dmi::TransceiverComponentsAttributes)},
+  { 92, -1, sizeof(::dmi::Component)},
+  { 122, -1, sizeof(::dmi::Hardware)},
+  { 130, -1, sizeof(::dmi::ModifiableComponent)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -532,145 +533,146 @@ const char descriptor_table_protodef_dmi_2fhw_2eproto[] =
   "atus\022\025\n\runits_display\030\006 \001(\t\022-\n\ttimestamp"
   "\030\007 \001(\0132\032.google.protobuf.Timestamp\022\031\n\021va"
   "lue_update_rate\030\010 \001(\r\022\021\n\tdata_type\030\t \001(\t"
-  "\"\302\005\n\027PortComponentAttributes\022B\n\016connecto"
+  "\"\341\005\n\027PortComponentAttributes\022B\n\016connecto"
   "r_type\030\001 \001(\0162*.dmi.PortComponentAttribut"
   "es.ConnectorType\0221\n\005speed\030\002 \001(\0162\".dmi.Po"
   "rtComponentAttributes.Speed\0227\n\010protocol\030"
   "\003 \001(\0162%.dmi.PortComponentAttributes.Prot"
   "ocol\022\026\n\016physical_label\030\004 \001(\t\022\025\n\rmapping_"
   "label\030\005 \001(\t\022\'\n\rpon_id_config\030\006 \001(\0132\020.dmi"
-  ".PonIdConfig\"p\n\rConnectorType\022\034\n\030CONNECT"
-  "OR_TYPE_UNDEFINED\020\000\022\010\n\004RJ45\020\001\022\014\n\010FIBER_L"
-  "C\020\002\022\017\n\013FIBER_SC_PC\020\003\022\r\n\tFIBER_MPO\020\004\022\t\n\005R"
-  "S232\020\005\"\256\001\n\005Speed\022\023\n\017SPEED_UNDEFINED\020\000\022\013\n"
-  "\007DYNAMIC\020\001\022\r\n\tGIGABIT_1\020\002\022\016\n\nGIGABIT_10\020"
-  "\003\022\016\n\nGIGABIT_25\020\004\022\016\n\nGIGABIT_40\020\005\022\017\n\013GIG"
-  "ABIT_100\020\006\022\017\n\013GIGABIT_400\020\007\022\020\n\014MEGABIT_2"
-  "500\020\010\022\020\n\014MEGABIT_1250\020\t\"|\n\010Protocol\022\026\n\022P"
-  "ROTOCOL_UNDEFINED\020\000\022\014\n\010ETHERNET\020\001\022\010\n\004GPO"
-  "N\020\002\022\t\n\005XGPON\020\003\022\n\n\006XGSPON\020\004\022\t\n\005GFAST\020\005\022\n\n"
-  "\006SERIAL\020\006\022\010\n\004EPON\020\007\022\010\n\004BITS\020\010\"H\n\035PortCom"
-  "ponentChangeAttributes\022\'\n\rpon_id_config\030"
-  "\001 \001(\0132\020.dmi.PonIdConfig\"B\n\013PonIdConfig\022\016"
-  "\n\006pon_id\030\001 \001(\014\022#\n\033pon_id_transmit_period"
-  "icity\030\002 \001(\r\"6\n\034ContainerComponentAttribu"
-  "tes\022\026\n\016physical_label\030\001 \001(\t\"\263\001\n\026PsuCompo"
-  "nentAttributes\022G\n\021supported_voltage\030\001 \001("
-  "\0162,.dmi.PsuComponentAttributes.Supported"
-  "Voltage\"P\n\020SupportedVoltage\022\037\n\033SUPPORTED"
-  "_VOLTAGE_UNDEFINED\020\000\022\007\n\003V48\020\001\022\010\n\004V230\020\002\022"
-  "\010\n\004V115\020\003\"\357\004\n\037TransceiverComponentsAttri"
-  "butes\022D\n\013form_factor\030\001 \001(\0162/.dmi.Transce"
-  "iverComponentsAttributes.FormFactor\022=\n\nt"
-  "rans_type\030\002 \001(\0162).dmi.TransceiverCompone"
-  "ntsAttributes.Type\022\024\n\014max_distance\030\003 \001(\r"
-  "\022+\n\022max_distance_scale\030\004 \001(\0162\017.dmi.Value"
-  "Scale\022\025\n\rrx_wavelength\030\005 \003(\r\022\025\n\rtx_wavel"
-  "ength\030\006 \003(\r\022)\n\020wavelength_scale\030\007 \001(\0162\017."
-  "dmi.ValueScale\"\300\001\n\nFormFactor\022\027\n\023FORM_FA"
-  "CTOR_UNKNOWN\020\000\022\010\n\004QSFP\020\001\022\r\n\tQSFP_PLUS\020\002\022"
-  "\n\n\006QSFP28\020\003\022\007\n\003SFP\020\004\022\014\n\010SFP_PLUS\020\005\022\007\n\003XF"
-  "P\020\006\022\010\n\004CFP4\020\007\022\010\n\004CFP2\020\010\022\010\n\004CPAK\020\t\022\006\n\002X2\020"
-  "\n\022\t\n\005OTHER\020\013\022\007\n\003CFP\020\014\022\014\n\010CFP2_ACO\020\r\022\014\n\010C"
-  "FP2_DCO\020\016\"h\n\004Type\022\020\n\014TYPE_UNKNOWN\020\000\022\014\n\010E"
-  "THERNET\020\001\022\010\n\004GPON\020\002\022\t\n\005XGPON\020\003\022\n\n\006XGSPON"
-  "\020\004\022\010\n\004CPON\020\005\022\013\n\007NG_PON2\020\006\022\010\n\004EPON\020\007\"\350\005\n\t"
-  "Component\022\014\n\004name\030\001 \001(\t\022!\n\005class\030\002 \001(\0162\022"
-  ".dmi.ComponentType\022\023\n\013description\030\003 \001(\t\022"
-  "\016\n\006parent\030\004 \001(\t\022\026\n\016parent_rel_pos\030\005 \001(\005\022"
-  " \n\010children\030\006 \003(\0132\016.dmi.Component\022\024\n\014har"
-  "dware_rev\030\007 \001(\t\022\024\n\014firmware_rev\030\010 \001(\t\022\024\n"
-  "\014software_rev\030\t \001(\t\022\022\n\nserial_num\030\n \001(\t\022"
-  "\020\n\010mfg_name\030\013 \001(\t\022\022\n\nmodel_name\030\014 \001(\t\022\r\n"
-  "\005alias\030\r \001(\t\022\020\n\010asset_id\030\016 \001(\t\022\016\n\006is_fru"
-  "\030\017 \001(\010\022,\n\010mfg_date\030\020 \001(\0132\032.google.protob"
-  "uf.Timestamp\022\025\n\003uri\030\021 \001(\0132\010.dmi.Uri\022\027\n\004u"
-  "uid\030\022 \001(\0132\t.dmi.Uuid\022\"\n\005state\030\023 \001(\0132\023.dm"
-  "i.ComponentState\022-\n\013sensor_data\030\024 \003(\0132\030."
-  "dmi.ComponentSensorData\0221\n\tport_attr\0302 \001"
-  "(\0132\034.dmi.PortComponentAttributesH\000\022;\n\016co"
-  "ntainer_attr\0303 \001(\0132!.dmi.ContainerCompon"
-  "entAttributesH\000\022/\n\010psu_attr\0304 \001(\0132\033.dmi."
-  "PsuComponentAttributesH\000\022@\n\020transceiver_"
-  "attr\0305 \001(\0132$.dmi.TransceiverComponentsAt"
-  "tributesH\000B\n\n\010specific\"\212\001\n\010Hardware\022/\n\013l"
-  "ast_change\030\001 \001(\0132\032.google.protobuf.Times"
-  "tamp\022\034\n\004root\030\002 \001(\0132\016.dmi.Component\022/\n\013la"
-  "st_booted\030\003 \001(\0132\032.google.protobuf.Timest"
-  "amp\"\252\002\n\023ModifiableComponent\022\014\n\004name\030\001 \001("
-  "\t\022!\n\005class\030\002 \001(\0162\022.dmi.ComponentType\022\036\n\006"
-  "parent\030\003 \001(\0132\016.dmi.Component\022\026\n\016parent_r"
-  "el_pos\030\004 \001(\005\022\r\n\005alias\030\005 \001(\t\022\020\n\010asset_id\030"
-  "\006 \001(\t\022\025\n\003uri\030\007 \001(\0132\010.dmi.Uri\022-\n\013admin_st"
-  "ate\030\010 \001(\0162\030.dmi.ComponentAdminState\0227\n\tp"
-  "ort_attr\0302 \001(\0132\".dmi.PortComponentChange"
-  "AttributesH\000B\n\n\010specific*\264\003\n\rComponentTy"
-  "pe\022\034\n\030COMPONENT_TYPE_UNDEFINED\020\000\022\032\n\026COMP"
-  "ONENT_TYPE_UNKNOWN\020\001\022\032\n\026COMPONENT_TYPE_C"
-  "HASSIS\020\002\022\034\n\030COMPONENT_TYPE_BACKPLANE\020\003\022\034"
-  "\n\030COMPONENT_TYPE_CONTAINER\020\004\022\037\n\033COMPONEN"
-  "T_TYPE_POWER_SUPPLY\020\005\022\026\n\022COMPONENT_TYPE_"
-  "FAN\020\006\022\031\n\025COMPONENT_TYPE_SENSOR\020\007\022\031\n\025COMP"
-  "ONENT_TYPE_MODULE\020\010\022\027\n\023COMPONENT_TYPE_PO"
-  "RT\020\t\022\026\n\022COMPONENT_TYPE_CPU\020\n\022\032\n\026COMPONEN"
-  "T_TYPE_BATTERY\020\013\022\032\n\026COMPONENT_TYPE_STORA"
-  "GE\020\014\022\031\n\025COMPONENT_TYPE_MEMORY\020\r\022\036\n\032COMPO"
-  "NENT_TYPE_TRANSCEIVER\020\016*\263\001\n\023ComponentAdm"
-  "inState\022\036\n\032COMP_ADMIN_STATE_UNDEFINED\020\000\022"
-  "\034\n\030COMP_ADMIN_STATE_UNKNOWN\020\001\022\033\n\027COMP_AD"
-  "MIN_STATE_LOCKED\020\002\022\"\n\036COMP_ADMIN_STATE_S"
-  "HUTTING_DOWN\020\003\022\035\n\031COMP_ADMIN_STATE_UNLOC"
-  "KED\020\004*\250\001\n\022ComponentOperState\022\035\n\031COMP_OPE"
-  "R_STATE_UNDEFINED\020\000\022\033\n\027COMP_OPER_STATE_U"
-  "NKNOWN\020\001\022\034\n\030COMP_OPER_STATE_DISABLED\020\002\022\033"
-  "\n\027COMP_OPER_STATE_ENABLED\020\003\022\033\n\027COMP_OPER"
-  "_STATE_TESTING\020\004*\246\001\n\023ComponentUsageState"
-  "\022\036\n\032COMP_USAGE_STATE_UNDEFINED\020\000\022\034\n\030COMP"
-  "_USAGE_STATE_UNKNOWN\020\001\022\031\n\025COMP_USAGE_STA"
-  "TE_IDLE\020\002\022\033\n\027COMP_USAGE_STATE_ACTIVE\020\003\022\031"
-  "\n\025COMP_USAGE_STATE_BUSY\020\004*\217\002\n\023ComponentA"
-  "larmState\022\036\n\032COMP_ALARM_STATE_UNDEFINED\020"
-  "\000\022\034\n\030COMP_ALARM_STATE_UNKNOWN\020\001\022!\n\035COMP_"
-  "ALARM_STATE_UNDER_REPAIR\020\002\022\035\n\031COMP_ALARM"
-  "_STATE_CRITICAL\020\003\022\032\n\026COMP_ALARM_STATE_MA"
-  "JOR\020\004\022\032\n\026COMP_ALARM_STATE_MINOR\020\005\022\034\n\030COM"
-  "P_ALARM_STATE_WARNING\020\006\022\"\n\036COMP_ALARM_ST"
-  "ATE_INDETERMINATE\020\007*\274\001\n\025ComponentStandby"
-  "State\022 \n\034COMP_STANDBY_STATE_UNDEFINED\020\000\022"
-  "\036\n\032COMP_STANDBY_STATE_UNKNOWN\020\001\022\032\n\026COMP_"
-  "STANDBY_STATE_HOT\020\002\022\033\n\027COMP_STANDBY_STAT"
-  "E_COLD\020\003\022(\n$COMP_STANDBY_STATE_PROVIDING"
-  "_SERVICE\020\004*\211\003\n\rDataValueType\022\030\n\024VALUE_TY"
-  "PE_UNDEFINED\020\000\022\024\n\020VALUE_TYPE_OTHER\020\001\022\026\n\022"
-  "VALUE_TYPE_UNKNOWN\020\002\022\027\n\023VALUE_TYPE_VOLTS"
-  "_AC\020\003\022\027\n\023VALUE_TYPE_VOLTS_DC\020\004\022\026\n\022VALUE_"
-  "TYPE_AMPERES\020\005\022\024\n\020VALUE_TYPE_WATTS\020\006\022\024\n\020"
-  "VALUE_TYPE_HERTZ\020\007\022\026\n\022VALUE_TYPE_CELSIUS"
-  "\020\010\022\031\n\025VALUE_TYPE_PERCENT_RH\020\t\022\022\n\016VALUE_T"
-  "YPE_RPM\020\n\022\022\n\016VALUE_TYPE_CMM\020\013\022\032\n\026VALUE_T"
-  "YPE_TRUTH_VALUE\020\014\022\026\n\022VALUE_TYPE_PERCENT\020"
-  "\r\022\025\n\021VALUE_TYPE_METERS\020\016\022\024\n\020VALUE_TYPE_B"
-  "YTES\020\017*\244\003\n\nValueScale\022\031\n\025VALUE_SCALE_UND"
-  "EFINED\020\000\022\025\n\021VALUE_SCALE_YOCTO\020\001\022\025\n\021VALUE"
-  "_SCALE_ZEPTO\020\002\022\024\n\020VALUE_SCALE_ATTO\020\003\022\025\n\021"
-  "VALUE_SCALE_FEMTO\020\004\022\024\n\020VALUE_SCALE_PICO\020"
-  "\005\022\024\n\020VALUE_SCALE_NANO\020\006\022\025\n\021VALUE_SCALE_M"
-  "ICRO\020\007\022\025\n\021VALUE_SCALE_MILLI\020\010\022\025\n\021VALUE_S"
-  "CALE_UNITS\020\t\022\024\n\020VALUE_SCALE_KILO\020\n\022\024\n\020VA"
-  "LUE_SCALE_MEGA\020\013\022\024\n\020VALUE_SCALE_GIGA\020\014\022\024"
-  "\n\020VALUE_SCALE_TERA\020\r\022\024\n\020VALUE_SCALE_PETA"
-  "\020\016\022\023\n\017VALUE_SCALE_EXA\020\017\022\025\n\021VALUE_SCALE_Z"
-  "ETTA\020\020\022\025\n\021VALUE_SCALE_YOTTA\020\021*\202\001\n\014Sensor"
-  "Status\022\033\n\027SENSOR_STATUS_UNDEFINED\020\000\022\024\n\020S"
-  "ENSOR_STATUS_OK\020\001\022\035\n\031SENSOR_STATUS_UNAVA"
-  "ILABLE\020\002\022 \n\034SENSOR_STATUS_NONOPERATIONAL"
-  "\020\003B;Z9github.com/opencord/device-managem"
-  "ent-interface/v3/go/dmib\006proto3"
+  ".PonIdConfig\022\035\n\025speed_autonegotiation\030\007 "
+  "\001(\010\"p\n\rConnectorType\022\034\n\030CONNECTOR_TYPE_U"
+  "NDEFINED\020\000\022\010\n\004RJ45\020\001\022\014\n\010FIBER_LC\020\002\022\017\n\013FI"
+  "BER_SC_PC\020\003\022\r\n\tFIBER_MPO\020\004\022\t\n\005RS232\020\005\"\256\001"
+  "\n\005Speed\022\023\n\017SPEED_UNDEFINED\020\000\022\013\n\007DYNAMIC\020"
+  "\001\022\r\n\tGIGABIT_1\020\002\022\016\n\nGIGABIT_10\020\003\022\016\n\nGIGA"
+  "BIT_25\020\004\022\016\n\nGIGABIT_40\020\005\022\017\n\013GIGABIT_100\020"
+  "\006\022\017\n\013GIGABIT_400\020\007\022\020\n\014MEGABIT_2500\020\010\022\020\n\014"
+  "MEGABIT_1250\020\t\"|\n\010Protocol\022\026\n\022PROTOCOL_U"
+  "NDEFINED\020\000\022\014\n\010ETHERNET\020\001\022\010\n\004GPON\020\002\022\t\n\005XG"
+  "PON\020\003\022\n\n\006XGSPON\020\004\022\t\n\005GFAST\020\005\022\n\n\006SERIAL\020\006"
+  "\022\010\n\004EPON\020\007\022\010\n\004BITS\020\010\"H\n\035PortComponentCha"
+  "ngeAttributes\022\'\n\rpon_id_config\030\001 \001(\0132\020.d"
+  "mi.PonIdConfig\"B\n\013PonIdConfig\022\016\n\006pon_id\030"
+  "\001 \001(\014\022#\n\033pon_id_transmit_periodicity\030\002 \001"
+  "(\r\"6\n\034ContainerComponentAttributes\022\026\n\016ph"
+  "ysical_label\030\001 \001(\t\"\263\001\n\026PsuComponentAttri"
+  "butes\022G\n\021supported_voltage\030\001 \001(\0162,.dmi.P"
+  "suComponentAttributes.SupportedVoltage\"P"
+  "\n\020SupportedVoltage\022\037\n\033SUPPORTED_VOLTAGE_"
+  "UNDEFINED\020\000\022\007\n\003V48\020\001\022\010\n\004V230\020\002\022\010\n\004V115\020\003"
+  "\"\357\004\n\037TransceiverComponentsAttributes\022D\n\013"
+  "form_factor\030\001 \001(\0162/.dmi.TransceiverCompo"
+  "nentsAttributes.FormFactor\022=\n\ntrans_type"
+  "\030\002 \001(\0162).dmi.TransceiverComponentsAttrib"
+  "utes.Type\022\024\n\014max_distance\030\003 \001(\r\022+\n\022max_d"
+  "istance_scale\030\004 \001(\0162\017.dmi.ValueScale\022\025\n\r"
+  "rx_wavelength\030\005 \003(\r\022\025\n\rtx_wavelength\030\006 \003"
+  "(\r\022)\n\020wavelength_scale\030\007 \001(\0162\017.dmi.Value"
+  "Scale\"\300\001\n\nFormFactor\022\027\n\023FORM_FACTOR_UNKN"
+  "OWN\020\000\022\010\n\004QSFP\020\001\022\r\n\tQSFP_PLUS\020\002\022\n\n\006QSFP28"
+  "\020\003\022\007\n\003SFP\020\004\022\014\n\010SFP_PLUS\020\005\022\007\n\003XFP\020\006\022\010\n\004CF"
+  "P4\020\007\022\010\n\004CFP2\020\010\022\010\n\004CPAK\020\t\022\006\n\002X2\020\n\022\t\n\005OTHE"
+  "R\020\013\022\007\n\003CFP\020\014\022\014\n\010CFP2_ACO\020\r\022\014\n\010CFP2_DCO\020\016"
+  "\"h\n\004Type\022\020\n\014TYPE_UNKNOWN\020\000\022\014\n\010ETHERNET\020\001"
+  "\022\010\n\004GPON\020\002\022\t\n\005XGPON\020\003\022\n\n\006XGSPON\020\004\022\010\n\004CPO"
+  "N\020\005\022\013\n\007NG_PON2\020\006\022\010\n\004EPON\020\007\"\350\005\n\tComponent"
+  "\022\014\n\004name\030\001 \001(\t\022!\n\005class\030\002 \001(\0162\022.dmi.Comp"
+  "onentType\022\023\n\013description\030\003 \001(\t\022\016\n\006parent"
+  "\030\004 \001(\t\022\026\n\016parent_rel_pos\030\005 \001(\005\022 \n\010childr"
+  "en\030\006 \003(\0132\016.dmi.Component\022\024\n\014hardware_rev"
+  "\030\007 \001(\t\022\024\n\014firmware_rev\030\010 \001(\t\022\024\n\014software"
+  "_rev\030\t \001(\t\022\022\n\nserial_num\030\n \001(\t\022\020\n\010mfg_na"
+  "me\030\013 \001(\t\022\022\n\nmodel_name\030\014 \001(\t\022\r\n\005alias\030\r "
+  "\001(\t\022\020\n\010asset_id\030\016 \001(\t\022\016\n\006is_fru\030\017 \001(\010\022,\n"
+  "\010mfg_date\030\020 \001(\0132\032.google.protobuf.Timest"
+  "amp\022\025\n\003uri\030\021 \001(\0132\010.dmi.Uri\022\027\n\004uuid\030\022 \001(\013"
+  "2\t.dmi.Uuid\022\"\n\005state\030\023 \001(\0132\023.dmi.Compone"
+  "ntState\022-\n\013sensor_data\030\024 \003(\0132\030.dmi.Compo"
+  "nentSensorData\0221\n\tport_attr\0302 \001(\0132\034.dmi."
+  "PortComponentAttributesH\000\022;\n\016container_a"
+  "ttr\0303 \001(\0132!.dmi.ContainerComponentAttrib"
+  "utesH\000\022/\n\010psu_attr\0304 \001(\0132\033.dmi.PsuCompon"
+  "entAttributesH\000\022@\n\020transceiver_attr\0305 \001("
+  "\0132$.dmi.TransceiverComponentsAttributesH"
+  "\000B\n\n\010specific\"\212\001\n\010Hardware\022/\n\013last_chang"
+  "e\030\001 \001(\0132\032.google.protobuf.Timestamp\022\034\n\004r"
+  "oot\030\002 \001(\0132\016.dmi.Component\022/\n\013last_booted"
+  "\030\003 \001(\0132\032.google.protobuf.Timestamp\"\252\002\n\023M"
+  "odifiableComponent\022\014\n\004name\030\001 \001(\t\022!\n\005clas"
+  "s\030\002 \001(\0162\022.dmi.ComponentType\022\036\n\006parent\030\003 "
+  "\001(\0132\016.dmi.Component\022\026\n\016parent_rel_pos\030\004 "
+  "\001(\005\022\r\n\005alias\030\005 \001(\t\022\020\n\010asset_id\030\006 \001(\t\022\025\n\003"
+  "uri\030\007 \001(\0132\010.dmi.Uri\022-\n\013admin_state\030\010 \001(\016"
+  "2\030.dmi.ComponentAdminState\0227\n\tport_attr\030"
+  "2 \001(\0132\".dmi.PortComponentChangeAttribute"
+  "sH\000B\n\n\010specific*\264\003\n\rComponentType\022\034\n\030COM"
+  "PONENT_TYPE_UNDEFINED\020\000\022\032\n\026COMPONENT_TYP"
+  "E_UNKNOWN\020\001\022\032\n\026COMPONENT_TYPE_CHASSIS\020\002\022"
+  "\034\n\030COMPONENT_TYPE_BACKPLANE\020\003\022\034\n\030COMPONE"
+  "NT_TYPE_CONTAINER\020\004\022\037\n\033COMPONENT_TYPE_PO"
+  "WER_SUPPLY\020\005\022\026\n\022COMPONENT_TYPE_FAN\020\006\022\031\n\025"
+  "COMPONENT_TYPE_SENSOR\020\007\022\031\n\025COMPONENT_TYP"
+  "E_MODULE\020\010\022\027\n\023COMPONENT_TYPE_PORT\020\t\022\026\n\022C"
+  "OMPONENT_TYPE_CPU\020\n\022\032\n\026COMPONENT_TYPE_BA"
+  "TTERY\020\013\022\032\n\026COMPONENT_TYPE_STORAGE\020\014\022\031\n\025C"
+  "OMPONENT_TYPE_MEMORY\020\r\022\036\n\032COMPONENT_TYPE"
+  "_TRANSCEIVER\020\016*\263\001\n\023ComponentAdminState\022\036"
+  "\n\032COMP_ADMIN_STATE_UNDEFINED\020\000\022\034\n\030COMP_A"
+  "DMIN_STATE_UNKNOWN\020\001\022\033\n\027COMP_ADMIN_STATE"
+  "_LOCKED\020\002\022\"\n\036COMP_ADMIN_STATE_SHUTTING_D"
+  "OWN\020\003\022\035\n\031COMP_ADMIN_STATE_UNLOCKED\020\004*\250\001\n"
+  "\022ComponentOperState\022\035\n\031COMP_OPER_STATE_U"
+  "NDEFINED\020\000\022\033\n\027COMP_OPER_STATE_UNKNOWN\020\001\022"
+  "\034\n\030COMP_OPER_STATE_DISABLED\020\002\022\033\n\027COMP_OP"
+  "ER_STATE_ENABLED\020\003\022\033\n\027COMP_OPER_STATE_TE"
+  "STING\020\004*\246\001\n\023ComponentUsageState\022\036\n\032COMP_"
+  "USAGE_STATE_UNDEFINED\020\000\022\034\n\030COMP_USAGE_ST"
+  "ATE_UNKNOWN\020\001\022\031\n\025COMP_USAGE_STATE_IDLE\020\002"
+  "\022\033\n\027COMP_USAGE_STATE_ACTIVE\020\003\022\031\n\025COMP_US"
+  "AGE_STATE_BUSY\020\004*\217\002\n\023ComponentAlarmState"
+  "\022\036\n\032COMP_ALARM_STATE_UNDEFINED\020\000\022\034\n\030COMP"
+  "_ALARM_STATE_UNKNOWN\020\001\022!\n\035COMP_ALARM_STA"
+  "TE_UNDER_REPAIR\020\002\022\035\n\031COMP_ALARM_STATE_CR"
+  "ITICAL\020\003\022\032\n\026COMP_ALARM_STATE_MAJOR\020\004\022\032\n\026"
+  "COMP_ALARM_STATE_MINOR\020\005\022\034\n\030COMP_ALARM_S"
+  "TATE_WARNING\020\006\022\"\n\036COMP_ALARM_STATE_INDET"
+  "ERMINATE\020\007*\274\001\n\025ComponentStandbyState\022 \n\034"
+  "COMP_STANDBY_STATE_UNDEFINED\020\000\022\036\n\032COMP_S"
+  "TANDBY_STATE_UNKNOWN\020\001\022\032\n\026COMP_STANDBY_S"
+  "TATE_HOT\020\002\022\033\n\027COMP_STANDBY_STATE_COLD\020\003\022"
+  "(\n$COMP_STANDBY_STATE_PROVIDING_SERVICE\020"
+  "\004*\211\003\n\rDataValueType\022\030\n\024VALUE_TYPE_UNDEFI"
+  "NED\020\000\022\024\n\020VALUE_TYPE_OTHER\020\001\022\026\n\022VALUE_TYP"
+  "E_UNKNOWN\020\002\022\027\n\023VALUE_TYPE_VOLTS_AC\020\003\022\027\n\023"
+  "VALUE_TYPE_VOLTS_DC\020\004\022\026\n\022VALUE_TYPE_AMPE"
+  "RES\020\005\022\024\n\020VALUE_TYPE_WATTS\020\006\022\024\n\020VALUE_TYP"
+  "E_HERTZ\020\007\022\026\n\022VALUE_TYPE_CELSIUS\020\010\022\031\n\025VAL"
+  "UE_TYPE_PERCENT_RH\020\t\022\022\n\016VALUE_TYPE_RPM\020\n"
+  "\022\022\n\016VALUE_TYPE_CMM\020\013\022\032\n\026VALUE_TYPE_TRUTH"
+  "_VALUE\020\014\022\026\n\022VALUE_TYPE_PERCENT\020\r\022\025\n\021VALU"
+  "E_TYPE_METERS\020\016\022\024\n\020VALUE_TYPE_BYTES\020\017*\244\003"
+  "\n\nValueScale\022\031\n\025VALUE_SCALE_UNDEFINED\020\000\022"
+  "\025\n\021VALUE_SCALE_YOCTO\020\001\022\025\n\021VALUE_SCALE_ZE"
+  "PTO\020\002\022\024\n\020VALUE_SCALE_ATTO\020\003\022\025\n\021VALUE_SCA"
+  "LE_FEMTO\020\004\022\024\n\020VALUE_SCALE_PICO\020\005\022\024\n\020VALU"
+  "E_SCALE_NANO\020\006\022\025\n\021VALUE_SCALE_MICRO\020\007\022\025\n"
+  "\021VALUE_SCALE_MILLI\020\010\022\025\n\021VALUE_SCALE_UNIT"
+  "S\020\t\022\024\n\020VALUE_SCALE_KILO\020\n\022\024\n\020VALUE_SCALE"
+  "_MEGA\020\013\022\024\n\020VALUE_SCALE_GIGA\020\014\022\024\n\020VALUE_S"
+  "CALE_TERA\020\r\022\024\n\020VALUE_SCALE_PETA\020\016\022\023\n\017VAL"
+  "UE_SCALE_EXA\020\017\022\025\n\021VALUE_SCALE_ZETTA\020\020\022\025\n"
+  "\021VALUE_SCALE_YOTTA\020\021*\202\001\n\014SensorStatus\022\033\n"
+  "\027SENSOR_STATUS_UNDEFINED\020\000\022\024\n\020SENSOR_STA"
+  "TUS_OK\020\001\022\035\n\031SENSOR_STATUS_UNAVAILABLE\020\002\022"
+  " \n\034SENSOR_STATUS_NONOPERATIONAL\020\003B;Z9git"
+  "hub.com/opencord/device-management-inter"
+  "face/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_2eproto = {
   false, InitDefaults_dmi_2fhw_2eproto, 
   descriptor_table_protodef_dmi_2fhw_2eproto,
-  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6071,
+  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6102,
 };
 
 void AddDescriptors_dmi_2fhw_2eproto() {
@@ -3221,6 +3223,7 @@ const int PortComponentAttributes::kProtocolFieldNumber;
 const int PortComponentAttributes::kPhysicalLabelFieldNumber;
 const int PortComponentAttributes::kMappingLabelFieldNumber;
 const int PortComponentAttributes::kPonIdConfigFieldNumber;
+const int PortComponentAttributes::kSpeedAutonegotiationFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PortComponentAttributes::PortComponentAttributes()
@@ -3246,8 +3249,8 @@ PortComponentAttributes::PortComponentAttributes(const PortComponentAttributes& 
     pon_id_config_ = nullptr;
   }
   ::memcpy(&connector_type_, &from.connector_type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&protocol_) -
-    reinterpret_cast<char*>(&connector_type_)) + sizeof(protocol_));
+    static_cast<size_t>(reinterpret_cast<char*>(&speed_autonegotiation_) -
+    reinterpret_cast<char*>(&connector_type_)) + sizeof(speed_autonegotiation_));
   // @@protoc_insertion_point(copy_constructor:dmi.PortComponentAttributes)
 }
 
@@ -3257,8 +3260,8 @@ void PortComponentAttributes::SharedCtor() {
   physical_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mapping_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&pon_id_config_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&protocol_) -
-      reinterpret_cast<char*>(&pon_id_config_)) + sizeof(protocol_));
+      reinterpret_cast<char*>(&speed_autonegotiation_) -
+      reinterpret_cast<char*>(&pon_id_config_)) + sizeof(speed_autonegotiation_));
 }
 
 PortComponentAttributes::~PortComponentAttributes() {
@@ -3294,8 +3297,8 @@ void PortComponentAttributes::Clear() {
   }
   pon_id_config_ = nullptr;
   ::memset(&connector_type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&protocol_) -
-      reinterpret_cast<char*>(&connector_type_)) + sizeof(protocol_));
+      reinterpret_cast<char*>(&speed_autonegotiation_) -
+      reinterpret_cast<char*>(&connector_type_)) + sizeof(speed_autonegotiation_));
   _internal_metadata_.Clear();
 }
 
@@ -3379,6 +3382,13 @@ const char* PortComponentAttributes::_InternalParse(const char* begin, const cha
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool speed_autonegotiation = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 56) goto handle_unusual;
+        msg->set_speed_autonegotiation(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -3498,6 +3508,19 @@ bool PortComponentAttributes::MergePartialFromCodedStream(
         break;
       }
 
+      // bool speed_autonegotiation = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (56 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &speed_autonegotiation_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3569,6 +3592,11 @@ void PortComponentAttributes::SerializeWithCachedSizes(
       6, HasBitSetters::pon_id_config(this), output);
   }
 
+  // bool speed_autonegotiation = 7;
+  if (this->speed_autonegotiation() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->speed_autonegotiation(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3627,6 +3655,11 @@ void PortComponentAttributes::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         6, HasBitSetters::pon_id_config(this), target);
+  }
+
+  // bool speed_autonegotiation = 7;
+  if (this->speed_autonegotiation() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->speed_autonegotiation(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3689,6 +3722,11 @@ size_t PortComponentAttributes::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->protocol());
   }
 
+  // bool speed_autonegotiation = 7;
+  if (this->speed_autonegotiation() != 0) {
+    total_size += 1 + 1;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -3736,6 +3774,9 @@ void PortComponentAttributes::MergeFrom(const PortComponentAttributes& from) {
   if (from.protocol() != 0) {
     set_protocol(from.protocol());
   }
+  if (from.speed_autonegotiation() != 0) {
+    set_speed_autonegotiation(from.speed_autonegotiation());
+  }
 }
 
 void PortComponentAttributes::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3771,6 +3812,7 @@ void PortComponentAttributes::InternalSwap(PortComponentAttributes* other) {
   swap(connector_type_, other->connector_type_);
   swap(speed_, other->speed_);
   swap(protocol_, other->protocol_);
+  swap(speed_autonegotiation_, other->speed_autonegotiation_);
 }
 
 ::google::protobuf::Metadata PortComponentAttributes::GetMetadata() const {

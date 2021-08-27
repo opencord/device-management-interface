@@ -1492,6 +1492,12 @@ class PortComponentAttributes final :
   ::dmi::PortComponentAttributes_Protocol protocol() const;
   void set_protocol(::dmi::PortComponentAttributes_Protocol value);
 
+  // bool speed_autonegotiation = 7;
+  void clear_speed_autonegotiation();
+  static const int kSpeedAutonegotiationFieldNumber = 7;
+  bool speed_autonegotiation() const;
+  void set_speed_autonegotiation(bool value);
+
   // @@protoc_insertion_point(class_scope:dmi.PortComponentAttributes)
  private:
   class HasBitSetters;
@@ -1503,6 +1509,7 @@ class PortComponentAttributes final :
   int connector_type_;
   int speed_;
   int protocol_;
+  bool speed_autonegotiation_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
@@ -3776,6 +3783,20 @@ inline void PortComponentAttributes::set_allocated_pon_id_config(::dmi::PonIdCon
   }
   pon_id_config_ = pon_id_config;
   // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentAttributes.pon_id_config)
+}
+
+// bool speed_autonegotiation = 7;
+inline void PortComponentAttributes::clear_speed_autonegotiation() {
+  speed_autonegotiation_ = false;
+}
+inline bool PortComponentAttributes::speed_autonegotiation() const {
+  // @@protoc_insertion_point(field_get:dmi.PortComponentAttributes.speed_autonegotiation)
+  return speed_autonegotiation_;
+}
+inline void PortComponentAttributes::set_speed_autonegotiation(bool value) {
+  
+  speed_autonegotiation_ = value;
+  // @@protoc_insertion_point(field_set:dmi.PortComponentAttributes.speed_autonegotiation)
 }
 
 // -------------------------------------------------------------------
