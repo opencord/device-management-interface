@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd35cb69_ede25a15",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2021-08-27T10:12:04Z",
+      "side": 1,
+      "message": "Should we also put in the comment that this field is applicable only when the protocol is of type ETHERNET?",
+      "revId": "c2172ee3f34056196a8464922dc9ed443162ca59",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
