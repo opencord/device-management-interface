@@ -191,6 +191,7 @@ message PortComponentAttributes{
     // system
     string mapping_label = 5;
     PonIdConfig pon_id_config = 6;
+    bool speed_autonegotiation = 7; //Only valid for ethernet type port components. True if enabled, false otherwise.
 }
 
 message PortComponentChangeAttributes {
