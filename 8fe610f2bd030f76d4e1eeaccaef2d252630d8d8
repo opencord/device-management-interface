@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a80f0b03_0390fb4b",
+        "filename": "VERSION",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-14T22:58:54Z",
+      "side": 1,
+      "message": "I\u0027m ok with going to 1.2.0 but just out of curiosity, why not 1.1.2 ?",
+      "revId": "8fe610f2bd030f76d4e1eeaccaef2d252630d8d8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
