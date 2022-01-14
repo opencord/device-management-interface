@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f55c3fe_640db525",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-01-14T16:56:52Z",
+      "side": 1,
+      "message": "\u003e Patch Set 1: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_tag-collision/144/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_licensed/143/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_unit-test/143/ : SUCCESS\n\n@Andrea : I bumped the VERSION to 1.2.1 from 1.1.1 still there is a tag collision. Any ideas?",
+      "revId": "a25cd80ddd900af8bf9bcbb64ad91c07661d3585",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
