@@ -16,6 +16,24 @@
       "message": "\u003e Patch Set 1: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_tag-collision/144/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_licensed/143/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_device-management-interface_unit-test/143/ : SUCCESS\n\n@Andrea : I bumped the VERSION to 1.2.1 from 1.1.1 still there is a tag collision. Any ideas?",
       "revId": "a25cd80ddd900af8bf9bcbb64ad91c07661d3585",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8826038_5f525891",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-14T17:42:11Z",
+      "side": 1,
+      "message": "@Amit: Jenkins says: \"Invalid 1.2.1 version. Expected parent version 1.2.0 does not exist.\"\n\nPerhaps you have to do a 1.2.0 before?",
+      "parentUuid": "7f55c3fe_640db525",
+      "revId": "a25cd80ddd900af8bf9bcbb64ad91c07661d3585",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
