@@ -16,6 +16,24 @@
       "message": "I\u0027m ok with going to 1.2.0 but just out of curiosity, why not 1.1.2 ?",
       "revId": "8fe610f2bd030f76d4e1eeaccaef2d252630d8d8",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a606f81_4d6bb435",
+        "filename": "VERSION",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-01-17T10:46:54Z",
+      "side": 1,
+      "message": "Following is my thought process \u003cMAJOR\u003e.\u003cMINOR\u003e.\u003cPATCH\u003e as the version.\nMAJOR - Bump up when we do a change to the interface which is NOT backwards compatible\nMINOR - Bump up when we do a change to the interface which is backwards compatible\nPATCH - Bump up when there are fixes which does not change the interface\n\nBased on this I think the MINOR version needs a bump as we introduce new events on the interface but it\u0027s backwards compatible.",
+      "parentUuid": "a80f0b03_0390fb4b",
+      "revId": "8fe610f2bd030f76d4e1eeaccaef2d252630d8d8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }

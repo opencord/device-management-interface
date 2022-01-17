@@ -34,6 +34,24 @@
       "parentUuid": "7f55c3fe_640db525",
       "revId": "a25cd80ddd900af8bf9bcbb64ad91c07661d3585",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaae219f_35174fed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-01-17T10:46:54Z",
+      "side": 1,
+      "message": "Thanks Holger.. I guess I was not hopeful of finding the cause in the logs and pinged Andrea :)",
+      "parentUuid": "b8826038_5f525891",
+      "revId": "a25cd80ddd900af8bf9bcbb64ad91c07661d3585",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
