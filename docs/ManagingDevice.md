@@ -73,4 +73,13 @@ rpc RebootDevice(RebootDeviceRequest) returns (RebootDeviceResponse);
 ```
 This RPC is used to administratively reboot the device. The server side implementations should reboot the device only after successfully returning this RPC.
 
+## Port Speed configuration
+The Device management Interface does not support runtime NNI (network to network interface) Port Speed configuration on the OLT device. 
+The speed of the NNI ports is configured, for each port, at startup time through the startup configuration file that can be provided via the 
+`UpdateStartupConfiguration` API. If a change to the NNI port speed is needed a new startup configuration file will be given to the OLT via 
+the `UpdateStartupConfiguration` API, the OLT will be rebooted and port speed configuration will take effect. 
+
+Operators currently do not require runtime configuration of the NNI because it's not an element that is expected to change 
+at all once initial deployment is performed. 
+
 
