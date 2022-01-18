@@ -22,7 +22,7 @@ Each API of the `.protos` contained in the [protos](../protos/) directory has hi
 need to be taken into account, such as how to generate events and handle different states of operations.
 Please refer to each of those files.
 
-## Errors returned in the response messages
+## Errors returned in response messages
 
 Each of the response messages of the RPCs have a field called `status` which says if there is an application level error in execution of the RPC or not.
 
