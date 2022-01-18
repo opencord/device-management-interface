@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "997650b1_8524a849",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-18T10:42:43Z",
+      "side": 1,
+      "message": "See comments. Thanks!",
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0acfe79_b14bc3ff",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-18T10:42:43Z",
+      "side": 1,
+      "message": "lower case \u003d\u003e port speed",
+      "range": {
+        "startLine": 77,
+        "startChar": 93,
+        "endLine": 77,
+        "endChar": 102
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b3766e7_537d23ad",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-18T10:42:43Z",
+      "side": 1,
+      "message": "upper case \u003d\u003e Management",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 22
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7dc2b078_bce37a89",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-18T10:42:43Z",
+      "side": 1,
+      "message": "I would not stress that fact here that a startup configuration file will be given to the OLT. What we currently do is that we pass a URL for a file to the DM. For our ADTRAN implementation, this file does contain some XML data which is actually YANG modeled data to be configured via NETCONF as part of an edit-config NETCONF RPC, it is not a file we send to the OLT. For other devices this could be totally different. For example the file could contain some attributes which are evaluated by the DM and which then lead to some configuration actions for the OLT. In that case the OLT might not see any of the data in the startup configuration file at all. \nAlso the fact that the OLT gets rebooted is true for ADTRAN, but for other devices this might not be required. Thus I would prefer to remove the comment about the reboot.",
+      "range": {
+        "startLine": 78,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 110
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5331cc17_bccedf16",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-01-18T10:42:43Z",
+      "side": 1,
+      "message": "Could you please remove any spaces at the end of the lines? They do not harm but are shown in pink by the diff tool",
+      "range": {
+        "startLine": 83,
+        "startChar": 44,
+        "endLine": 83,
+        "endChar": 45
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
