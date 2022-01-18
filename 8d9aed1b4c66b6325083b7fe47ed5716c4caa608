@@ -16,6 +16,24 @@
       "message": "\"The\" typo\n\"ports are configured\"\n\"through the startup\"",
       "revId": "8d9aed1b4c66b6325083b7fe47ed5716c4caa608",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a579e9c_44aee8c5",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-18T20:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f8c3ead_4ae1a76a",
+      "revId": "8d9aed1b4c66b6325083b7fe47ed5716c4caa608",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }

@@ -64,6 +64,54 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9c329c5_560b0e8f",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-18T20:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b3766e7_537d23ad",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 22
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfcdabcd_71e88925",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-18T20:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0acfe79_b14bc3ff",
+      "range": {
+        "startLine": 77,
+        "startChar": 93,
+        "endLine": 77,
+        "endChar": 102
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7dc2b078_bce37a89",
@@ -87,6 +135,30 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ee1618e_be3a690b",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-18T20:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dc2b078_bce37a89",
+      "range": {
+        "startLine": 78,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 110
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5331cc17_bccedf16",
@@ -100,6 +172,30 @@
       "writtenOn": "2022-01-18T10:42:43Z",
       "side": 1,
       "message": "Could you please remove any spaces at the end of the lines? They do not harm but are shown in pink by the diff tool",
+      "range": {
+        "startLine": 83,
+        "startChar": 44,
+        "endLine": 83,
+        "endChar": 45
+      },
+      "revId": "5debfc6fb86e1dd539929109491d811c5582b582",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f382c0d_e966119c",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-18T20:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5331cc17_bccedf16",
       "range": {
         "startLine": 83,
         "startChar": 44,
