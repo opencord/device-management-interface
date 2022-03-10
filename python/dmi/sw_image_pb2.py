@@ -3,6 +3,7 @@
 # source: dmi/sw_image.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,303 +15,15 @@ _sym_db = _symbol_database.Default()
 from dmi import commons_pb2 as dmi_dot_commons__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='dmi/sw_image.proto',
-  package='dmi',
-  syntax='proto3',
-  serialized_options=b'Z9github.com/opencord/device-management-interface/v3/go/dmi',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x64mi/sw_image.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\"3\n\x0cImageVersion\x12\x12\n\nimage_name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"x\n\x10ImageInformation\x12 \n\x05image\x18\x01 \x01(\x0b\x32\x11.dmi.ImageVersion\x12\x1c\n\x14image_install_script\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x11\n\tsha256sum\x18\x05 \x01(\t\"\xe2\x04\n\x0bImageStatus\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\'\n\x06reason\x18\x02 \x01(\x0e\x32\x17.dmi.ImageStatus.Reason\x12*\n\x05state\x18\x03 \x01(\x0e\x32\x1b.dmi.ImageStatus.ImageState\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x15\n\rreason_detail\x18\x05 \x01(\t\"\xd0\x01\n\nImageState\x12\x13\n\x0fUNDEFINED_STATE\x10\x00\x12\x11\n\rCOPYING_IMAGE\x10\x01\x12\x14\n\x10INSTALLING_IMAGE\x10\x02\x12\x14\n\x10\x43OMMITTING_IMAGE\x10\x03\x12\x14\n\x10REBOOTING_DEVICE\x10\x04\x12\x14\n\x10UPGRADE_COMPLETE\x10\x05\x12\x12\n\x0eUPGRADE_FAILED\x10\x06\x12\x17\n\x13\x41\x43TIVATION_COMPLETE\x10\x07\x12\x15\n\x11\x41\x43TIVATION_FAILED\x10\x08\"\xe1\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x14\n\x10\x45RROR_IN_REQUEST\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x19\n\x15\x44\x45VICE_IN_WRONG_STATE\x10\x03\x12\x11\n\rINVALID_IMAGE\x10\x04\x12\x18\n\x14WRONG_IMAGE_CHECKSUM\x10\x05\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x06\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x07\x12\x18\n\x14\x44\x45VICE_NOT_REACHABLE\x10\x08\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3'
-  ,
-  dependencies=[dmi_dot_commons__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x64mi/sw_image.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\"3\n\x0cImageVersion\x12\x12\n\nimage_name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"x\n\x10ImageInformation\x12 \n\x05image\x18\x01 \x01(\x0b\x32\x11.dmi.ImageVersion\x12\x1c\n\x14image_install_script\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x11\n\tsha256sum\x18\x05 \x01(\t\"\xe2\x04\n\x0bImageStatus\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\'\n\x06reason\x18\x02 \x01(\x0e\x32\x17.dmi.ImageStatus.Reason\x12*\n\x05state\x18\x03 \x01(\x0e\x32\x1b.dmi.ImageStatus.ImageState\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x15\n\rreason_detail\x18\x05 \x01(\t\"\xd0\x01\n\nImageState\x12\x13\n\x0fUNDEFINED_STATE\x10\x00\x12\x11\n\rCOPYING_IMAGE\x10\x01\x12\x14\n\x10INSTALLING_IMAGE\x10\x02\x12\x14\n\x10\x43OMMITTING_IMAGE\x10\x03\x12\x14\n\x10REBOOTING_DEVICE\x10\x04\x12\x14\n\x10UPGRADE_COMPLETE\x10\x05\x12\x12\n\x0eUPGRADE_FAILED\x10\x06\x12\x17\n\x13\x41\x43TIVATION_COMPLETE\x10\x07\x12\x15\n\x11\x41\x43TIVATION_FAILED\x10\x08\"\xe1\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x14\n\x10\x45RROR_IN_REQUEST\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x19\n\x15\x44\x45VICE_IN_WRONG_STATE\x10\x03\x12\x11\n\rINVALID_IMAGE\x10\x04\x12\x18\n\x14WRONG_IMAGE_CHECKSUM\x10\x05\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x06\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x07\x12\x18\n\x14\x44\x45VICE_NOT_REACHABLE\x10\x08\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3')
 
 
 
-_IMAGESTATUS_IMAGESTATE = _descriptor.EnumDescriptor(
-  name='ImageState',
-  full_name='dmi.ImageStatus.ImageState',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='UNDEFINED_STATE', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='COPYING_IMAGE', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='INSTALLING_IMAGE', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='COMMITTING_IMAGE', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='REBOOTING_DEVICE', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='UPGRADE_COMPLETE', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='UPGRADE_FAILED', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ACTIVATION_COMPLETE', index=7, number=7,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ACTIVATION_FAILED', index=8, number=8,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=396,
-  serialized_end=604,
-)
-_sym_db.RegisterEnumDescriptor(_IMAGESTATUS_IMAGESTATE)
-
-_IMAGESTATUS_REASON = _descriptor.EnumDescriptor(
-  name='Reason',
-  full_name='dmi.ImageStatus.Reason',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='UNDEFINED_REASON', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ERROR_IN_REQUEST', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='INTERNAL_ERROR', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='DEVICE_IN_WRONG_STATE', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='INVALID_IMAGE', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='WRONG_IMAGE_CHECKSUM', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='OPERATION_ALREADY_IN_PROGRESS', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='UNKNOWN_DEVICE', index=7, number=7,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='DEVICE_NOT_REACHABLE', index=8, number=8,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=607,
-  serialized_end=832,
-)
-_sym_db.RegisterEnumDescriptor(_IMAGESTATUS_REASON)
-
-
-_IMAGEVERSION = _descriptor.Descriptor(
-  name='ImageVersion',
-  full_name='dmi.ImageVersion',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='image_name', full_name='dmi.ImageVersion.image_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version', full_name='dmi.ImageVersion.version', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=46,
-  serialized_end=97,
-)
-
-
-_IMAGEINFORMATION = _descriptor.Descriptor(
-  name='ImageInformation',
-  full_name='dmi.ImageInformation',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='image', full_name='dmi.ImageInformation.image', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='image_install_script', full_name='dmi.ImageInformation.image_install_script', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='image_url', full_name='dmi.ImageInformation.image_url', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sha256sum', full_name='dmi.ImageInformation.sha256sum', index=3,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=99,
-  serialized_end=219,
-)
-
-
-_IMAGESTATUS = _descriptor.Descriptor(
-  name='ImageStatus',
-  full_name='dmi.ImageStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='dmi.ImageStatus.status', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reason', full_name='dmi.ImageStatus.reason', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='state', full_name='dmi.ImageStatus.state', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='dmi.ImageStatus.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reason_detail', full_name='dmi.ImageStatus.reason_detail', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _IMAGESTATUS_IMAGESTATE,
-    _IMAGESTATUS_REASON,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=222,
-  serialized_end=832,
-)
-
-_IMAGEINFORMATION.fields_by_name['image'].message_type = _IMAGEVERSION
-_IMAGESTATUS.fields_by_name['status'].enum_type = dmi_dot_commons__pb2._STATUS
-_IMAGESTATUS.fields_by_name['reason'].enum_type = _IMAGESTATUS_REASON
-_IMAGESTATUS.fields_by_name['state'].enum_type = _IMAGESTATUS_IMAGESTATE
-_IMAGESTATUS_IMAGESTATE.containing_type = _IMAGESTATUS
-_IMAGESTATUS_REASON.containing_type = _IMAGESTATUS
-DESCRIPTOR.message_types_by_name['ImageVersion'] = _IMAGEVERSION
-DESCRIPTOR.message_types_by_name['ImageInformation'] = _IMAGEINFORMATION
-DESCRIPTOR.message_types_by_name['ImageStatus'] = _IMAGESTATUS
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_IMAGEVERSION = DESCRIPTOR.message_types_by_name['ImageVersion']
+_IMAGEINFORMATION = DESCRIPTOR.message_types_by_name['ImageInformation']
+_IMAGESTATUS = DESCRIPTOR.message_types_by_name['ImageStatus']
+_IMAGESTATUS_IMAGESTATE = _IMAGESTATUS.enum_types_by_name['ImageState']
+_IMAGESTATUS_REASON = _IMAGESTATUS.enum_types_by_name['Reason']
 ImageVersion = _reflection.GeneratedProtocolMessageType('ImageVersion', (_message.Message,), {
   'DESCRIPTOR' : _IMAGEVERSION,
   '__module__' : 'dmi.sw_image_pb2'
@@ -332,6 +45,18 @@ ImageStatus = _reflection.GeneratedProtocolMessageType('ImageStatus', (_message.
   })
 _sym_db.RegisterMessage(ImageStatus)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z9github.com/opencord/device-management-interface/v3/go/dmi'
+  _IMAGEVERSION._serialized_start=46
+  _IMAGEVERSION._serialized_end=97
+  _IMAGEINFORMATION._serialized_start=99
+  _IMAGEINFORMATION._serialized_end=219
+  _IMAGESTATUS._serialized_start=222
+  _IMAGESTATUS._serialized_end=832
+  _IMAGESTATUS_IMAGESTATE._serialized_start=396
+  _IMAGESTATUS_IMAGESTATE._serialized_end=604
+  _IMAGESTATUS_REASON._serialized_start=607
+  _IMAGESTATUS_REASON._serialized_end=832
 # @@protoc_insertion_point(module_scope)
