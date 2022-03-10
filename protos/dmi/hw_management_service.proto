@@ -64,6 +64,7 @@ message HWComponentInfoSetResponse {
         INVALID_PARAMS = 3;
         INTERNAL_ERROR = 4;
         DEVICE_UNREACHABLE = 5;
+        SET_UNSUPPORTED = 6;
     }
     Status status = 1;
     Reason reason = 2;

@@ -19,6 +19,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ContainerComponentAttributes_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PonIdConfig_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PsuComponentAttributes_dmi_2fhw_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TransceiverComponentChangeAttributes_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TransceiverComponentsAttributes_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uri_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uuid_dmi_2fhw_2eproto;
@@ -57,6 +58,10 @@ class PortComponentChangeAttributesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<PortComponentChangeAttributes> _instance;
 } _PortComponentChangeAttributes_default_instance_;
+class TransceiverComponentChangeAttributesDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<TransceiverComponentChangeAttributes> _instance;
+} _TransceiverComponentChangeAttributes_default_instance_;
 class PonIdConfigDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<PonIdConfig> _instance;
@@ -89,6 +94,7 @@ class ModifiableComponentDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ModifiableComponent> _instance;
   const ::dmi::PortComponentChangeAttributes* port_attr_;
+  const ::dmi::TransceiverComponentChangeAttributes* trx_attr_;
 } _ModifiableComponent_default_instance_;
 }  // namespace dmi
 static void InitDefaultsUuid_dmi_2fhw_2eproto() {
@@ -193,6 +199,20 @@ static void InitDefaultsPortComponentChangeAttributes_dmi_2fhw_2eproto() {
 ::google::protobuf::internal::SCCInfo<1> scc_info_PortComponentChangeAttributes_dmi_2fhw_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPortComponentChangeAttributes_dmi_2fhw_2eproto}, {
       &scc_info_PonIdConfig_dmi_2fhw_2eproto.base,}};
+
+static void InitDefaultsTransceiverComponentChangeAttributes_dmi_2fhw_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_TransceiverComponentChangeAttributes_default_instance_;
+    new (ptr) ::dmi::TransceiverComponentChangeAttributes();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::TransceiverComponentChangeAttributes::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_TransceiverComponentChangeAttributes_dmi_2fhw_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTransceiverComponentChangeAttributes_dmi_2fhw_2eproto}, {}};
 
 static void InitDefaultsPonIdConfig_dmi_2fhw_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -300,11 +320,12 @@ static void InitDefaultsModifiableComponent_dmi_2fhw_2eproto() {
   ::dmi::ModifiableComponent::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_ModifiableComponent_dmi_2fhw_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsModifiableComponent_dmi_2fhw_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_ModifiableComponent_dmi_2fhw_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsModifiableComponent_dmi_2fhw_2eproto}, {
       &scc_info_Component_dmi_2fhw_2eproto.base,
       &scc_info_Uri_dmi_2fhw_2eproto.base,
-      &scc_info_PortComponentChangeAttributes_dmi_2fhw_2eproto.base,}};
+      &scc_info_PortComponentChangeAttributes_dmi_2fhw_2eproto.base,
+      &scc_info_TransceiverComponentChangeAttributes_dmi_2fhw_2eproto.base,}};
 
 void InitDefaults_dmi_2fhw_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Uuid_dmi_2fhw_2eproto.base);
@@ -314,6 +335,7 @@ void InitDefaults_dmi_2fhw_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ComponentSensorData_dmi_2fhw_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PortComponentAttributes_dmi_2fhw_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PortComponentChangeAttributes_dmi_2fhw_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TransceiverComponentChangeAttributes_dmi_2fhw_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PonIdConfig_dmi_2fhw_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ContainerComponentAttributes_dmi_2fhw_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PsuComponentAttributes_dmi_2fhw_2eproto.base);
@@ -323,7 +345,7 @@ void InitDefaults_dmi_2fhw_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ModifiableComponent_dmi_2fhw_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_2eproto[14];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_2eproto[15];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_2eproto[15];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_2eproto = nullptr;
 
@@ -389,6 +411,12 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_2eproto::offsets[] PROTOBU
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dmi::PortComponentChangeAttributes, pon_id_config_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::TransceiverComponentChangeAttributes, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::TransceiverComponentChangeAttributes, trans_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::PonIdConfig, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -472,6 +500,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::dmi::ModifiableComponent, uri_),
   PROTOBUF_FIELD_OFFSET(::dmi::ModifiableComponent, admin_state_),
   offsetof(::dmi::ModifiableComponentDefaultTypeInternal, port_attr_),
+  offsetof(::dmi::ModifiableComponentDefaultTypeInternal, trx_attr_),
   PROTOBUF_FIELD_OFFSET(::dmi::ModifiableComponent, specific_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -482,13 +511,14 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 29, -1, sizeof(::dmi::ComponentSensorData)},
   { 43, -1, sizeof(::dmi::PortComponentAttributes)},
   { 55, -1, sizeof(::dmi::PortComponentChangeAttributes)},
-  { 61, -1, sizeof(::dmi::PonIdConfig)},
-  { 68, -1, sizeof(::dmi::ContainerComponentAttributes)},
-  { 74, -1, sizeof(::dmi::PsuComponentAttributes)},
-  { 80, -1, sizeof(::dmi::TransceiverComponentsAttributes)},
-  { 92, -1, sizeof(::dmi::Component)},
-  { 122, -1, sizeof(::dmi::Hardware)},
-  { 130, -1, sizeof(::dmi::ModifiableComponent)},
+  { 61, -1, sizeof(::dmi::TransceiverComponentChangeAttributes)},
+  { 67, -1, sizeof(::dmi::PonIdConfig)},
+  { 74, -1, sizeof(::dmi::ContainerComponentAttributes)},
+  { 80, -1, sizeof(::dmi::PsuComponentAttributes)},
+  { 86, -1, sizeof(::dmi::TransceiverComponentsAttributes)},
+  { 98, -1, sizeof(::dmi::Component)},
+  { 128, -1, sizeof(::dmi::Hardware)},
+  { 136, -1, sizeof(::dmi::ModifiableComponent)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -499,6 +529,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ComponentSensorData_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_PortComponentAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_PortComponentChangeAttributes_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_TransceiverComponentChangeAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_PonIdConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ContainerComponentAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_PsuComponentAttributes_default_instance_),
@@ -511,7 +542,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_2eproto = {
   {}, AddDescriptors_dmi_2fhw_2eproto, "dmi/hw.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_2eproto, 14, file_level_enum_descriptors_dmi_2fhw_2eproto, file_level_service_descriptors_dmi_2fhw_2eproto,
+  file_level_metadata_dmi_2fhw_2eproto, 15, file_level_enum_descriptors_dmi_2fhw_2eproto, file_level_service_descriptors_dmi_2fhw_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_2eproto[] =
@@ -553,126 +584,130 @@ const char descriptor_table_protodef_dmi_2fhw_2eproto[] =
   "PON\020\003\022\n\n\006XGSPON\020\004\022\t\n\005GFAST\020\005\022\n\n\006SERIAL\020\006"
   "\022\010\n\004EPON\020\007\022\010\n\004BITS\020\010\"H\n\035PortComponentCha"
   "ngeAttributes\022\'\n\rpon_id_config\030\001 \001(\0132\020.d"
-  "mi.PonIdConfig\"B\n\013PonIdConfig\022\016\n\006pon_id\030"
-  "\001 \001(\014\022#\n\033pon_id_transmit_periodicity\030\002 \001"
-  "(\r\"6\n\034ContainerComponentAttributes\022\026\n\016ph"
-  "ysical_label\030\001 \001(\t\"\263\001\n\026PsuComponentAttri"
-  "butes\022G\n\021supported_voltage\030\001 \001(\0162,.dmi.P"
-  "suComponentAttributes.SupportedVoltage\"P"
-  "\n\020SupportedVoltage\022\037\n\033SUPPORTED_VOLTAGE_"
-  "UNDEFINED\020\000\022\007\n\003V48\020\001\022\010\n\004V230\020\002\022\010\n\004V115\020\003"
-  "\"\357\004\n\037TransceiverComponentsAttributes\022D\n\013"
-  "form_factor\030\001 \001(\0162/.dmi.TransceiverCompo"
-  "nentsAttributes.FormFactor\022=\n\ntrans_type"
-  "\030\002 \001(\0162).dmi.TransceiverComponentsAttrib"
-  "utes.Type\022\024\n\014max_distance\030\003 \001(\r\022+\n\022max_d"
-  "istance_scale\030\004 \001(\0162\017.dmi.ValueScale\022\025\n\r"
-  "rx_wavelength\030\005 \003(\r\022\025\n\rtx_wavelength\030\006 \003"
-  "(\r\022)\n\020wavelength_scale\030\007 \001(\0162\017.dmi.Value"
-  "Scale\"\300\001\n\nFormFactor\022\027\n\023FORM_FACTOR_UNKN"
-  "OWN\020\000\022\010\n\004QSFP\020\001\022\r\n\tQSFP_PLUS\020\002\022\n\n\006QSFP28"
-  "\020\003\022\007\n\003SFP\020\004\022\014\n\010SFP_PLUS\020\005\022\007\n\003XFP\020\006\022\010\n\004CF"
-  "P4\020\007\022\010\n\004CFP2\020\010\022\010\n\004CPAK\020\t\022\006\n\002X2\020\n\022\t\n\005OTHE"
-  "R\020\013\022\007\n\003CFP\020\014\022\014\n\010CFP2_ACO\020\r\022\014\n\010CFP2_DCO\020\016"
-  "\"h\n\004Type\022\020\n\014TYPE_UNKNOWN\020\000\022\014\n\010ETHERNET\020\001"
-  "\022\010\n\004GPON\020\002\022\t\n\005XGPON\020\003\022\n\n\006XGSPON\020\004\022\010\n\004CPO"
-  "N\020\005\022\013\n\007NG_PON2\020\006\022\010\n\004EPON\020\007\"\350\005\n\tComponent"
-  "\022\014\n\004name\030\001 \001(\t\022!\n\005class\030\002 \001(\0162\022.dmi.Comp"
-  "onentType\022\023\n\013description\030\003 \001(\t\022\016\n\006parent"
-  "\030\004 \001(\t\022\026\n\016parent_rel_pos\030\005 \001(\005\022 \n\010childr"
-  "en\030\006 \003(\0132\016.dmi.Component\022\024\n\014hardware_rev"
-  "\030\007 \001(\t\022\024\n\014firmware_rev\030\010 \001(\t\022\024\n\014software"
-  "_rev\030\t \001(\t\022\022\n\nserial_num\030\n \001(\t\022\020\n\010mfg_na"
-  "me\030\013 \001(\t\022\022\n\nmodel_name\030\014 \001(\t\022\r\n\005alias\030\r "
-  "\001(\t\022\020\n\010asset_id\030\016 \001(\t\022\016\n\006is_fru\030\017 \001(\010\022,\n"
-  "\010mfg_date\030\020 \001(\0132\032.google.protobuf.Timest"
-  "amp\022\025\n\003uri\030\021 \001(\0132\010.dmi.Uri\022\027\n\004uuid\030\022 \001(\013"
-  "2\t.dmi.Uuid\022\"\n\005state\030\023 \001(\0132\023.dmi.Compone"
-  "ntState\022-\n\013sensor_data\030\024 \003(\0132\030.dmi.Compo"
-  "nentSensorData\0221\n\tport_attr\0302 \001(\0132\034.dmi."
-  "PortComponentAttributesH\000\022;\n\016container_a"
-  "ttr\0303 \001(\0132!.dmi.ContainerComponentAttrib"
-  "utesH\000\022/\n\010psu_attr\0304 \001(\0132\033.dmi.PsuCompon"
-  "entAttributesH\000\022@\n\020transceiver_attr\0305 \001("
-  "\0132$.dmi.TransceiverComponentsAttributesH"
-  "\000B\n\n\010specific\"\212\001\n\010Hardware\022/\n\013last_chang"
-  "e\030\001 \001(\0132\032.google.protobuf.Timestamp\022\034\n\004r"
-  "oot\030\002 \001(\0132\016.dmi.Component\022/\n\013last_booted"
-  "\030\003 \001(\0132\032.google.protobuf.Timestamp\"\252\002\n\023M"
-  "odifiableComponent\022\014\n\004name\030\001 \001(\t\022!\n\005clas"
-  "s\030\002 \001(\0162\022.dmi.ComponentType\022\036\n\006parent\030\003 "
-  "\001(\0132\016.dmi.Component\022\026\n\016parent_rel_pos\030\004 "
-  "\001(\005\022\r\n\005alias\030\005 \001(\t\022\020\n\010asset_id\030\006 \001(\t\022\025\n\003"
-  "uri\030\007 \001(\0132\010.dmi.Uri\022-\n\013admin_state\030\010 \001(\016"
-  "2\030.dmi.ComponentAdminState\0227\n\tport_attr\030"
-  "2 \001(\0132\".dmi.PortComponentChangeAttribute"
-  "sH\000B\n\n\010specific*\264\003\n\rComponentType\022\034\n\030COM"
-  "PONENT_TYPE_UNDEFINED\020\000\022\032\n\026COMPONENT_TYP"
-  "E_UNKNOWN\020\001\022\032\n\026COMPONENT_TYPE_CHASSIS\020\002\022"
-  "\034\n\030COMPONENT_TYPE_BACKPLANE\020\003\022\034\n\030COMPONE"
-  "NT_TYPE_CONTAINER\020\004\022\037\n\033COMPONENT_TYPE_PO"
-  "WER_SUPPLY\020\005\022\026\n\022COMPONENT_TYPE_FAN\020\006\022\031\n\025"
-  "COMPONENT_TYPE_SENSOR\020\007\022\031\n\025COMPONENT_TYP"
-  "E_MODULE\020\010\022\027\n\023COMPONENT_TYPE_PORT\020\t\022\026\n\022C"
-  "OMPONENT_TYPE_CPU\020\n\022\032\n\026COMPONENT_TYPE_BA"
-  "TTERY\020\013\022\032\n\026COMPONENT_TYPE_STORAGE\020\014\022\031\n\025C"
-  "OMPONENT_TYPE_MEMORY\020\r\022\036\n\032COMPONENT_TYPE"
-  "_TRANSCEIVER\020\016*\263\001\n\023ComponentAdminState\022\036"
-  "\n\032COMP_ADMIN_STATE_UNDEFINED\020\000\022\034\n\030COMP_A"
-  "DMIN_STATE_UNKNOWN\020\001\022\033\n\027COMP_ADMIN_STATE"
-  "_LOCKED\020\002\022\"\n\036COMP_ADMIN_STATE_SHUTTING_D"
-  "OWN\020\003\022\035\n\031COMP_ADMIN_STATE_UNLOCKED\020\004*\250\001\n"
-  "\022ComponentOperState\022\035\n\031COMP_OPER_STATE_U"
-  "NDEFINED\020\000\022\033\n\027COMP_OPER_STATE_UNKNOWN\020\001\022"
-  "\034\n\030COMP_OPER_STATE_DISABLED\020\002\022\033\n\027COMP_OP"
-  "ER_STATE_ENABLED\020\003\022\033\n\027COMP_OPER_STATE_TE"
-  "STING\020\004*\246\001\n\023ComponentUsageState\022\036\n\032COMP_"
-  "USAGE_STATE_UNDEFINED\020\000\022\034\n\030COMP_USAGE_ST"
-  "ATE_UNKNOWN\020\001\022\031\n\025COMP_USAGE_STATE_IDLE\020\002"
-  "\022\033\n\027COMP_USAGE_STATE_ACTIVE\020\003\022\031\n\025COMP_US"
-  "AGE_STATE_BUSY\020\004*\217\002\n\023ComponentAlarmState"
-  "\022\036\n\032COMP_ALARM_STATE_UNDEFINED\020\000\022\034\n\030COMP"
-  "_ALARM_STATE_UNKNOWN\020\001\022!\n\035COMP_ALARM_STA"
-  "TE_UNDER_REPAIR\020\002\022\035\n\031COMP_ALARM_STATE_CR"
-  "ITICAL\020\003\022\032\n\026COMP_ALARM_STATE_MAJOR\020\004\022\032\n\026"
-  "COMP_ALARM_STATE_MINOR\020\005\022\034\n\030COMP_ALARM_S"
-  "TATE_WARNING\020\006\022\"\n\036COMP_ALARM_STATE_INDET"
-  "ERMINATE\020\007*\274\001\n\025ComponentStandbyState\022 \n\034"
-  "COMP_STANDBY_STATE_UNDEFINED\020\000\022\036\n\032COMP_S"
-  "TANDBY_STATE_UNKNOWN\020\001\022\032\n\026COMP_STANDBY_S"
-  "TATE_HOT\020\002\022\033\n\027COMP_STANDBY_STATE_COLD\020\003\022"
-  "(\n$COMP_STANDBY_STATE_PROVIDING_SERVICE\020"
-  "\004*\211\003\n\rDataValueType\022\030\n\024VALUE_TYPE_UNDEFI"
-  "NED\020\000\022\024\n\020VALUE_TYPE_OTHER\020\001\022\026\n\022VALUE_TYP"
-  "E_UNKNOWN\020\002\022\027\n\023VALUE_TYPE_VOLTS_AC\020\003\022\027\n\023"
-  "VALUE_TYPE_VOLTS_DC\020\004\022\026\n\022VALUE_TYPE_AMPE"
-  "RES\020\005\022\024\n\020VALUE_TYPE_WATTS\020\006\022\024\n\020VALUE_TYP"
-  "E_HERTZ\020\007\022\026\n\022VALUE_TYPE_CELSIUS\020\010\022\031\n\025VAL"
-  "UE_TYPE_PERCENT_RH\020\t\022\022\n\016VALUE_TYPE_RPM\020\n"
-  "\022\022\n\016VALUE_TYPE_CMM\020\013\022\032\n\026VALUE_TYPE_TRUTH"
-  "_VALUE\020\014\022\026\n\022VALUE_TYPE_PERCENT\020\r\022\025\n\021VALU"
-  "E_TYPE_METERS\020\016\022\024\n\020VALUE_TYPE_BYTES\020\017*\244\003"
-  "\n\nValueScale\022\031\n\025VALUE_SCALE_UNDEFINED\020\000\022"
-  "\025\n\021VALUE_SCALE_YOCTO\020\001\022\025\n\021VALUE_SCALE_ZE"
-  "PTO\020\002\022\024\n\020VALUE_SCALE_ATTO\020\003\022\025\n\021VALUE_SCA"
-  "LE_FEMTO\020\004\022\024\n\020VALUE_SCALE_PICO\020\005\022\024\n\020VALU"
-  "E_SCALE_NANO\020\006\022\025\n\021VALUE_SCALE_MICRO\020\007\022\025\n"
-  "\021VALUE_SCALE_MILLI\020\010\022\025\n\021VALUE_SCALE_UNIT"
-  "S\020\t\022\024\n\020VALUE_SCALE_KILO\020\n\022\024\n\020VALUE_SCALE"
-  "_MEGA\020\013\022\024\n\020VALUE_SCALE_GIGA\020\014\022\024\n\020VALUE_S"
-  "CALE_TERA\020\r\022\024\n\020VALUE_SCALE_PETA\020\016\022\023\n\017VAL"
-  "UE_SCALE_EXA\020\017\022\025\n\021VALUE_SCALE_ZETTA\020\020\022\025\n"
-  "\021VALUE_SCALE_YOTTA\020\021*\202\001\n\014SensorStatus\022\033\n"
-  "\027SENSOR_STATUS_UNDEFINED\020\000\022\024\n\020SENSOR_STA"
-  "TUS_OK\020\001\022\035\n\031SENSOR_STATUS_UNAVAILABLE\020\002\022"
-  " \n\034SENSOR_STATUS_NONOPERATIONAL\020\003B;Z9git"
-  "hub.com/opencord/device-management-inter"
-  "face/v3/go/dmib\006proto3"
+  "mi.PonIdConfig\"P\n$TransceiverComponentCh"
+  "angeAttributes\022(\n\ntrans_type\030\001 \001(\0162\024.dmi"
+  ".TransceiverType\"B\n\013PonIdConfig\022\016\n\006pon_i"
+  "d\030\001 \001(\014\022#\n\033pon_id_transmit_periodicity\030\002"
+  " \001(\r\"6\n\034ContainerComponentAttributes\022\026\n\016"
+  "physical_label\030\001 \001(\t\"\263\001\n\026PsuComponentAtt"
+  "ributes\022G\n\021supported_voltage\030\001 \001(\0162,.dmi"
+  ".PsuComponentAttributes.SupportedVoltage"
+  "\"P\n\020SupportedVoltage\022\037\n\033SUPPORTED_VOLTAG"
+  "E_UNDEFINED\020\000\022\007\n\003V48\020\001\022\010\n\004V230\020\002\022\010\n\004V115"
+  "\020\003\"\360\003\n\037TransceiverComponentsAttributes\022D"
+  "\n\013form_factor\030\001 \001(\0162/.dmi.TransceiverCom"
+  "ponentsAttributes.FormFactor\022(\n\ntrans_ty"
+  "pe\030\002 \001(\0162\024.dmi.TransceiverType\022\024\n\014max_di"
+  "stance\030\003 \001(\r\022+\n\022max_distance_scale\030\004 \001(\016"
+  "2\017.dmi.ValueScale\022\025\n\rrx_wavelength\030\005 \003(\r"
+  "\022\025\n\rtx_wavelength\030\006 \003(\r\022)\n\020wavelength_sc"
+  "ale\030\007 \001(\0162\017.dmi.ValueScale\"\300\001\n\nFormFacto"
+  "r\022\027\n\023FORM_FACTOR_UNKNOWN\020\000\022\010\n\004QSFP\020\001\022\r\n\t"
+  "QSFP_PLUS\020\002\022\n\n\006QSFP28\020\003\022\007\n\003SFP\020\004\022\014\n\010SFP_"
+  "PLUS\020\005\022\007\n\003XFP\020\006\022\010\n\004CFP4\020\007\022\010\n\004CFP2\020\010\022\010\n\004C"
+  "PAK\020\t\022\006\n\002X2\020\n\022\t\n\005OTHER\020\013\022\007\n\003CFP\020\014\022\014\n\010CFP"
+  "2_ACO\020\r\022\014\n\010CFP2_DCO\020\016\"\350\005\n\tComponent\022\014\n\004n"
+  "ame\030\001 \001(\t\022!\n\005class\030\002 \001(\0162\022.dmi.Component"
+  "Type\022\023\n\013description\030\003 \001(\t\022\016\n\006parent\030\004 \001("
+  "\t\022\026\n\016parent_rel_pos\030\005 \001(\005\022 \n\010children\030\006 "
+  "\003(\0132\016.dmi.Component\022\024\n\014hardware_rev\030\007 \001("
+  "\t\022\024\n\014firmware_rev\030\010 \001(\t\022\024\n\014software_rev\030"
+  "\t \001(\t\022\022\n\nserial_num\030\n \001(\t\022\020\n\010mfg_name\030\013 "
+  "\001(\t\022\022\n\nmodel_name\030\014 \001(\t\022\r\n\005alias\030\r \001(\t\022\020"
+  "\n\010asset_id\030\016 \001(\t\022\016\n\006is_fru\030\017 \001(\010\022,\n\010mfg_"
+  "date\030\020 \001(\0132\032.google.protobuf.Timestamp\022\025"
+  "\n\003uri\030\021 \001(\0132\010.dmi.Uri\022\027\n\004uuid\030\022 \001(\0132\t.dm"
+  "i.Uuid\022\"\n\005state\030\023 \001(\0132\023.dmi.ComponentSta"
+  "te\022-\n\013sensor_data\030\024 \003(\0132\030.dmi.ComponentS"
+  "ensorData\0221\n\tport_attr\0302 \001(\0132\034.dmi.PortC"
+  "omponentAttributesH\000\022;\n\016container_attr\0303"
+  " \001(\0132!.dmi.ContainerComponentAttributesH"
+  "\000\022/\n\010psu_attr\0304 \001(\0132\033.dmi.PsuComponentAt"
+  "tributesH\000\022@\n\020transceiver_attr\0305 \001(\0132$.d"
+  "mi.TransceiverComponentsAttributesH\000B\n\n\010"
+  "specific\"\212\001\n\010Hardware\022/\n\013last_change\030\001 \001"
+  "(\0132\032.google.protobuf.Timestamp\022\034\n\004root\030\002"
+  " \001(\0132\016.dmi.Component\022/\n\013last_booted\030\003 \001("
+  "\0132\032.google.protobuf.Timestamp\"\351\002\n\023Modifi"
+  "ableComponent\022\014\n\004name\030\001 \001(\t\022!\n\005class\030\002 \001"
+  "(\0162\022.dmi.ComponentType\022\036\n\006parent\030\003 \001(\0132\016"
+  ".dmi.Component\022\026\n\016parent_rel_pos\030\004 \001(\005\022\r"
+  "\n\005alias\030\005 \001(\t\022\020\n\010asset_id\030\006 \001(\t\022\025\n\003uri\030\007"
+  " \001(\0132\010.dmi.Uri\022-\n\013admin_state\030\010 \001(\0162\030.dm"
+  "i.ComponentAdminState\0227\n\tport_attr\0302 \001(\013"
+  "2\".dmi.PortComponentChangeAttributesH\000\022="
+  "\n\010trx_attr\0303 \001(\0132).dmi.TransceiverCompon"
+  "entChangeAttributesH\000B\n\n\010specific*\264\003\n\rCo"
+  "mponentType\022\034\n\030COMPONENT_TYPE_UNDEFINED\020"
+  "\000\022\032\n\026COMPONENT_TYPE_UNKNOWN\020\001\022\032\n\026COMPONE"
+  "NT_TYPE_CHASSIS\020\002\022\034\n\030COMPONENT_TYPE_BACK"
+  "PLANE\020\003\022\034\n\030COMPONENT_TYPE_CONTAINER\020\004\022\037\n"
+  "\033COMPONENT_TYPE_POWER_SUPPLY\020\005\022\026\n\022COMPON"
+  "ENT_TYPE_FAN\020\006\022\031\n\025COMPONENT_TYPE_SENSOR\020"
+  "\007\022\031\n\025COMPONENT_TYPE_MODULE\020\010\022\027\n\023COMPONEN"
+  "T_TYPE_PORT\020\t\022\026\n\022COMPONENT_TYPE_CPU\020\n\022\032\n"
+  "\026COMPONENT_TYPE_BATTERY\020\013\022\032\n\026COMPONENT_T"
+  "YPE_STORAGE\020\014\022\031\n\025COMPONENT_TYPE_MEMORY\020\r"
+  "\022\036\n\032COMPONENT_TYPE_TRANSCEIVER\020\016*\263\001\n\023Com"
+  "ponentAdminState\022\036\n\032COMP_ADMIN_STATE_UND"
+  "EFINED\020\000\022\034\n\030COMP_ADMIN_STATE_UNKNOWN\020\001\022\033"
+  "\n\027COMP_ADMIN_STATE_LOCKED\020\002\022\"\n\036COMP_ADMI"
+  "N_STATE_SHUTTING_DOWN\020\003\022\035\n\031COMP_ADMIN_ST"
+  "ATE_UNLOCKED\020\004*\250\001\n\022ComponentOperState\022\035\n"
+  "\031COMP_OPER_STATE_UNDEFINED\020\000\022\033\n\027COMP_OPE"
+  "R_STATE_UNKNOWN\020\001\022\034\n\030COMP_OPER_STATE_DIS"
+  "ABLED\020\002\022\033\n\027COMP_OPER_STATE_ENABLED\020\003\022\033\n\027"
+  "COMP_OPER_STATE_TESTING\020\004*\246\001\n\023ComponentU"
+  "sageState\022\036\n\032COMP_USAGE_STATE_UNDEFINED\020"
+  "\000\022\034\n\030COMP_USAGE_STATE_UNKNOWN\020\001\022\031\n\025COMP_"
+  "USAGE_STATE_IDLE\020\002\022\033\n\027COMP_USAGE_STATE_A"
+  "CTIVE\020\003\022\031\n\025COMP_USAGE_STATE_BUSY\020\004*\217\002\n\023C"
+  "omponentAlarmState\022\036\n\032COMP_ALARM_STATE_U"
+  "NDEFINED\020\000\022\034\n\030COMP_ALARM_STATE_UNKNOWN\020\001"
+  "\022!\n\035COMP_ALARM_STATE_UNDER_REPAIR\020\002\022\035\n\031C"
+  "OMP_ALARM_STATE_CRITICAL\020\003\022\032\n\026COMP_ALARM"
+  "_STATE_MAJOR\020\004\022\032\n\026COMP_ALARM_STATE_MINOR"
+  "\020\005\022\034\n\030COMP_ALARM_STATE_WARNING\020\006\022\"\n\036COMP"
+  "_ALARM_STATE_INDETERMINATE\020\007*\274\001\n\025Compone"
+  "ntStandbyState\022 \n\034COMP_STANDBY_STATE_UND"
+  "EFINED\020\000\022\036\n\032COMP_STANDBY_STATE_UNKNOWN\020\001"
+  "\022\032\n\026COMP_STANDBY_STATE_HOT\020\002\022\033\n\027COMP_STA"
+  "NDBY_STATE_COLD\020\003\022(\n$COMP_STANDBY_STATE_"
+  "PROVIDING_SERVICE\020\004*\211\003\n\rDataValueType\022\030\n"
+  "\024VALUE_TYPE_UNDEFINED\020\000\022\024\n\020VALUE_TYPE_OT"
+  "HER\020\001\022\026\n\022VALUE_TYPE_UNKNOWN\020\002\022\027\n\023VALUE_T"
+  "YPE_VOLTS_AC\020\003\022\027\n\023VALUE_TYPE_VOLTS_DC\020\004\022"
+  "\026\n\022VALUE_TYPE_AMPERES\020\005\022\024\n\020VALUE_TYPE_WA"
+  "TTS\020\006\022\024\n\020VALUE_TYPE_HERTZ\020\007\022\026\n\022VALUE_TYP"
+  "E_CELSIUS\020\010\022\031\n\025VALUE_TYPE_PERCENT_RH\020\t\022\022"
+  "\n\016VALUE_TYPE_RPM\020\n\022\022\n\016VALUE_TYPE_CMM\020\013\022\032"
+  "\n\026VALUE_TYPE_TRUTH_VALUE\020\014\022\026\n\022VALUE_TYPE"
+  "_PERCENT\020\r\022\025\n\021VALUE_TYPE_METERS\020\016\022\024\n\020VAL"
+  "UE_TYPE_BYTES\020\017*\244\003\n\nValueScale\022\031\n\025VALUE_"
+  "SCALE_UNDEFINED\020\000\022\025\n\021VALUE_SCALE_YOCTO\020\001"
+  "\022\025\n\021VALUE_SCALE_ZEPTO\020\002\022\024\n\020VALUE_SCALE_A"
+  "TTO\020\003\022\025\n\021VALUE_SCALE_FEMTO\020\004\022\024\n\020VALUE_SC"
+  "ALE_PICO\020\005\022\024\n\020VALUE_SCALE_NANO\020\006\022\025\n\021VALU"
+  "E_SCALE_MICRO\020\007\022\025\n\021VALUE_SCALE_MILLI\020\010\022\025"
+  "\n\021VALUE_SCALE_UNITS\020\t\022\024\n\020VALUE_SCALE_KIL"
+  "O\020\n\022\024\n\020VALUE_SCALE_MEGA\020\013\022\024\n\020VALUE_SCALE"
+  "_GIGA\020\014\022\024\n\020VALUE_SCALE_TERA\020\r\022\024\n\020VALUE_S"
+  "CALE_PETA\020\016\022\023\n\017VALUE_SCALE_EXA\020\017\022\025\n\021VALU"
+  "E_SCALE_ZETTA\020\020\022\025\n\021VALUE_SCALE_YOTTA\020\021*\202"
+  "\001\n\014SensorStatus\022\033\n\027SENSOR_STATUS_UNDEFIN"
+  "ED\020\000\022\024\n\020SENSOR_STATUS_OK\020\001\022\035\n\031SENSOR_STA"
+  "TUS_UNAVAILABLE\020\002\022 \n\034SENSOR_STATUS_NONOP"
+  "ERATIONAL\020\003*\215\001\n\017TransceiverType\022\022\n\016TYPE_"
+  "UNDEFINED\020\000\022\014\n\010ETHERNET\020\001\022\010\n\004GPON\020\002\022\t\n\005X"
+  "GPON\020\003\022\n\n\006XGSPON\020\004\022\010\n\004CPON\020\005\022\013\n\007NG_PON2\020"
+  "\006\022\010\n\004EPON\020\007\022\026\n\021TYPE_NOT_DETECTED\020\377\001B;Z9g"
+  "ithub.com/opencord/device-management-int"
+  "erface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_2eproto = {
   false, InitDefaults_dmi_2fhw_2eproto, 
   descriptor_table_protodef_dmi_2fhw_2eproto,
-  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6102,
+  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6264,
 };
 
 void AddDescriptors_dmi_2fhw_2eproto() {
@@ -859,42 +894,9 @@ const TransceiverComponentsAttributes_FormFactor TransceiverComponentsAttributes
 const TransceiverComponentsAttributes_FormFactor TransceiverComponentsAttributes::FormFactor_MAX;
 const int TransceiverComponentsAttributes::FormFactor_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* TransceiverComponentsAttributes_Type_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[5];
-}
-bool TransceiverComponentsAttributes_Type_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::TYPE_UNKNOWN;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::ETHERNET;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::GPON;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::XGPON;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::XGSPON;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::CPON;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::NG_PON2;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::EPON;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::Type_MIN;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::Type_MAX;
-const int TransceiverComponentsAttributes::Type_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* ComponentType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[6];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[5];
 }
 bool ComponentType_IsValid(int value) {
   switch (value) {
@@ -921,7 +923,7 @@ bool ComponentType_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ComponentAdminState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[7];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[6];
 }
 bool ComponentAdminState_IsValid(int value) {
   switch (value) {
@@ -938,7 +940,7 @@ bool ComponentAdminState_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ComponentOperState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[8];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[7];
 }
 bool ComponentOperState_IsValid(int value) {
   switch (value) {
@@ -955,7 +957,7 @@ bool ComponentOperState_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ComponentUsageState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[9];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[8];
 }
 bool ComponentUsageState_IsValid(int value) {
   switch (value) {
@@ -972,7 +974,7 @@ bool ComponentUsageState_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ComponentAlarmState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[10];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[9];
 }
 bool ComponentAlarmState_IsValid(int value) {
   switch (value) {
@@ -992,7 +994,7 @@ bool ComponentAlarmState_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ComponentStandbyState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[11];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[10];
 }
 bool ComponentStandbyState_IsValid(int value) {
   switch (value) {
@@ -1009,7 +1011,7 @@ bool ComponentStandbyState_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* DataValueType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[12];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[11];
 }
 bool DataValueType_IsValid(int value) {
   switch (value) {
@@ -1037,7 +1039,7 @@ bool DataValueType_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ValueScale_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[13];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[12];
 }
 bool ValueScale_IsValid(int value) {
   switch (value) {
@@ -1067,7 +1069,7 @@ bool ValueScale_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* SensorStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
-  return file_level_enum_descriptors_dmi_2fhw_2eproto[14];
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[13];
 }
 bool SensorStatus_IsValid(int value) {
   switch (value) {
@@ -1075,6 +1077,27 @@ bool SensorStatus_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* TransceiverType_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_2eproto[14];
+}
+bool TransceiverType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 255:
       return true;
     default:
       return false;
@@ -4110,6 +4133,269 @@ void PortComponentChangeAttributes::InternalSwap(PortComponentChangeAttributes* 
 
 // ===================================================================
 
+void TransceiverComponentChangeAttributes::InitAsDefaultInstance() {
+}
+class TransceiverComponentChangeAttributes::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int TransceiverComponentChangeAttributes::kTransTypeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+TransceiverComponentChangeAttributes::TransceiverComponentChangeAttributes()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.TransceiverComponentChangeAttributes)
+}
+TransceiverComponentChangeAttributes::TransceiverComponentChangeAttributes(const TransceiverComponentChangeAttributes& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  trans_type_ = from.trans_type_;
+  // @@protoc_insertion_point(copy_constructor:dmi.TransceiverComponentChangeAttributes)
+}
+
+void TransceiverComponentChangeAttributes::SharedCtor() {
+  trans_type_ = 0;
+}
+
+TransceiverComponentChangeAttributes::~TransceiverComponentChangeAttributes() {
+  // @@protoc_insertion_point(destructor:dmi.TransceiverComponentChangeAttributes)
+  SharedDtor();
+}
+
+void TransceiverComponentChangeAttributes::SharedDtor() {
+}
+
+void TransceiverComponentChangeAttributes::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TransceiverComponentChangeAttributes& TransceiverComponentChangeAttributes::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_TransceiverComponentChangeAttributes_dmi_2fhw_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TransceiverComponentChangeAttributes::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.TransceiverComponentChangeAttributes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  trans_type_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* TransceiverComponentChangeAttributes::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<TransceiverComponentChangeAttributes*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.TransceiverType trans_type = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_trans_type(static_cast<::dmi::TransceiverType>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool TransceiverComponentChangeAttributes::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.TransceiverComponentChangeAttributes)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.TransceiverType trans_type = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_trans_type(static_cast< ::dmi::TransceiverType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.TransceiverComponentChangeAttributes)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.TransceiverComponentChangeAttributes)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void TransceiverComponentChangeAttributes::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.TransceiverComponentChangeAttributes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.TransceiverType trans_type = 1;
+  if (this->trans_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->trans_type(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.TransceiverComponentChangeAttributes)
+}
+
+::google::protobuf::uint8* TransceiverComponentChangeAttributes::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.TransceiverComponentChangeAttributes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.TransceiverType trans_type = 1;
+  if (this->trans_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->trans_type(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.TransceiverComponentChangeAttributes)
+  return target;
+}
+
+size_t TransceiverComponentChangeAttributes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.TransceiverComponentChangeAttributes)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.TransceiverType trans_type = 1;
+  if (this->trans_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->trans_type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TransceiverComponentChangeAttributes::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.TransceiverComponentChangeAttributes)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TransceiverComponentChangeAttributes* source =
+      ::google::protobuf::DynamicCastToGenerated<TransceiverComponentChangeAttributes>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.TransceiverComponentChangeAttributes)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.TransceiverComponentChangeAttributes)
+    MergeFrom(*source);
+  }
+}
+
+void TransceiverComponentChangeAttributes::MergeFrom(const TransceiverComponentChangeAttributes& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.TransceiverComponentChangeAttributes)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.trans_type() != 0) {
+    set_trans_type(from.trans_type());
+  }
+}
+
+void TransceiverComponentChangeAttributes::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.TransceiverComponentChangeAttributes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TransceiverComponentChangeAttributes::CopyFrom(const TransceiverComponentChangeAttributes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.TransceiverComponentChangeAttributes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransceiverComponentChangeAttributes::IsInitialized() const {
+  return true;
+}
+
+void TransceiverComponentChangeAttributes::Swap(TransceiverComponentChangeAttributes* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TransceiverComponentChangeAttributes::InternalSwap(TransceiverComponentChangeAttributes* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(trans_type_, other->trans_type_);
+}
+
+::google::protobuf::Metadata TransceiverComponentChangeAttributes::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_2eproto);
+  return ::file_level_metadata_dmi_2fhw_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void PonIdConfig::InitAsDefaultInstance() {
 }
 class PonIdConfig::HasBitSetters {
@@ -5090,11 +5376,11 @@ const char* TransceiverComponentsAttributes::_InternalParse(const char* begin, c
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+      // .dmi.TransceiverType trans_type = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_trans_type(static_cast<::dmi::TransceiverComponentsAttributes_Type>(val));
+        msg->set_trans_type(static_cast<::dmi::TransceiverType>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -5205,14 +5491,14 @@ bool TransceiverComponentsAttributes::MergePartialFromCodedStream(
         break;
       }
 
-      // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+      // .dmi.TransceiverType trans_type = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_trans_type(static_cast< ::dmi::TransceiverComponentsAttributes_Type >(value));
+          set_trans_type(static_cast< ::dmi::TransceiverType >(value));
         } else {
           goto handle_unusual;
         }
@@ -5325,7 +5611,7 @@ void TransceiverComponentsAttributes::SerializeWithCachedSizes(
       1, this->form_factor(), output);
   }
 
-  // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+  // .dmi.TransceiverType trans_type = 2;
   if (this->trans_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->trans_type(), output);
@@ -5389,7 +5675,7 @@ void TransceiverComponentsAttributes::SerializeWithCachedSizes(
       1, this->form_factor(), target);
   }
 
-  // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+  // .dmi.TransceiverType trans_type = 2;
   if (this->trans_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->trans_type(), target);
@@ -5495,7 +5781,7 @@ size_t TransceiverComponentsAttributes::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->form_factor());
   }
 
-  // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+  // .dmi.TransceiverType trans_type = 2;
   if (this->trans_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->trans_type());
@@ -7947,12 +8233,15 @@ void ModifiableComponent::InitAsDefaultInstance() {
       ::dmi::Uri::internal_default_instance());
   ::dmi::_ModifiableComponent_default_instance_.port_attr_ = const_cast< ::dmi::PortComponentChangeAttributes*>(
       ::dmi::PortComponentChangeAttributes::internal_default_instance());
+  ::dmi::_ModifiableComponent_default_instance_.trx_attr_ = const_cast< ::dmi::TransceiverComponentChangeAttributes*>(
+      ::dmi::TransceiverComponentChangeAttributes::internal_default_instance());
 }
 class ModifiableComponent::HasBitSetters {
  public:
   static const ::dmi::Component& parent(const ModifiableComponent* msg);
   static const ::dmi::Uri& uri(const ModifiableComponent* msg);
   static const ::dmi::PortComponentChangeAttributes& port_attr(const ModifiableComponent* msg);
+  static const ::dmi::TransceiverComponentChangeAttributes& trx_attr(const ModifiableComponent* msg);
 };
 
 const ::dmi::Component&
@@ -7966,6 +8255,10 @@ ModifiableComponent::HasBitSetters::uri(const ModifiableComponent* msg) {
 const ::dmi::PortComponentChangeAttributes&
 ModifiableComponent::HasBitSetters::port_attr(const ModifiableComponent* msg) {
   return *msg->specific_.port_attr_;
+}
+const ::dmi::TransceiverComponentChangeAttributes&
+ModifiableComponent::HasBitSetters::trx_attr(const ModifiableComponent* msg) {
+  return *msg->specific_.trx_attr_;
 }
 void ModifiableComponent::set_allocated_port_attr(::dmi::PortComponentChangeAttributes* port_attr) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -7981,6 +8274,20 @@ void ModifiableComponent::set_allocated_port_attr(::dmi::PortComponentChangeAttr
   }
   // @@protoc_insertion_point(field_set_allocated:dmi.ModifiableComponent.port_attr)
 }
+void ModifiableComponent::set_allocated_trx_attr(::dmi::TransceiverComponentChangeAttributes* trx_attr) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_specific();
+  if (trx_attr) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      trx_attr = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, trx_attr, submessage_arena);
+    }
+    set_has_trx_attr();
+    specific_.trx_attr_ = trx_attr;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.ModifiableComponent.trx_attr)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ModifiableComponent::kNameFieldNumber;
 const int ModifiableComponent::kClassFieldNumber;
@@ -7991,6 +8298,7 @@ const int ModifiableComponent::kAssetIdFieldNumber;
 const int ModifiableComponent::kUriFieldNumber;
 const int ModifiableComponent::kAdminStateFieldNumber;
 const int ModifiableComponent::kPortAttrFieldNumber;
+const int ModifiableComponent::kTrxAttrFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ModifiableComponent::ModifiableComponent()
@@ -8031,6 +8339,10 @@ ModifiableComponent::ModifiableComponent(const ModifiableComponent& from)
   switch (from.specific_case()) {
     case kPortAttr: {
       mutable_port_attr()->::dmi::PortComponentChangeAttributes::MergeFrom(from.port_attr());
+      break;
+    }
+    case kTrxAttr: {
+      mutable_trx_attr()->::dmi::TransceiverComponentChangeAttributes::MergeFrom(from.trx_attr());
       break;
     }
     case SPECIFIC_NOT_SET: {
@@ -8082,6 +8394,10 @@ void ModifiableComponent::clear_specific() {
   switch (specific_case()) {
     case kPortAttr: {
       delete specific_.port_attr_;
+      break;
+    }
+    case kTrxAttr: {
+      delete specific_.trx_attr_;
       break;
     }
     case SPECIFIC_NOT_SET: {
@@ -8233,6 +8549,19 @@ const char* ModifiableComponent::_InternalParse(const char* begin, const char* e
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::dmi::PortComponentChangeAttributes::_InternalParse;
         object = msg->mutable_port_attr();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+      case 51: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 154) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::TransceiverComponentChangeAttributes::_InternalParse;
+        object = msg->mutable_trx_attr();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -8392,6 +8721,17 @@ bool ModifiableComponent::MergePartialFromCodedStream(
         break;
       }
 
+      // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+      case 51: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (410 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_trx_attr()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -8484,6 +8824,12 @@ void ModifiableComponent::SerializeWithCachedSizes(
       50, HasBitSetters::port_attr(this), output);
   }
 
+  // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+  if (has_trx_attr()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      51, HasBitSetters::trx_attr(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -8566,6 +8912,13 @@ void ModifiableComponent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         50, HasBitSetters::port_attr(this), target);
+  }
+
+  // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+  if (has_trx_attr()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        51, HasBitSetters::trx_attr(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -8651,6 +9004,13 @@ size_t ModifiableComponent::ByteSizeLong() const {
           *specific_.port_attr_);
       break;
     }
+    // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+    case kTrxAttr: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *specific_.trx_attr_);
+      break;
+    }
     case SPECIFIC_NOT_SET: {
       break;
     }
@@ -8712,6 +9072,10 @@ void ModifiableComponent::MergeFrom(const ModifiableComponent& from) {
   switch (from.specific_case()) {
     case kPortAttr: {
       mutable_port_attr()->::dmi::PortComponentChangeAttributes::MergeFrom(from.port_attr());
+      break;
+    }
+    case kTrxAttr: {
+      mutable_trx_attr()->::dmi::TransceiverComponentChangeAttributes::MergeFrom(from.trx_attr());
       break;
     }
     case SPECIFIC_NOT_SET: {
@@ -8790,6 +9154,9 @@ template<> PROTOBUF_NOINLINE ::dmi::PortComponentAttributes* Arena::CreateMaybeM
 }
 template<> PROTOBUF_NOINLINE ::dmi::PortComponentChangeAttributes* Arena::CreateMaybeMessage< ::dmi::PortComponentChangeAttributes >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::PortComponentChangeAttributes >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::TransceiverComponentChangeAttributes* Arena::CreateMaybeMessage< ::dmi::TransceiverComponentChangeAttributes >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::TransceiverComponentChangeAttributes >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::PonIdConfig* Arena::CreateMaybeMessage< ::dmi::PonIdConfig >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::PonIdConfig >(arena);

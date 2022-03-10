@@ -214,12 +214,13 @@ enum HWComponentInfoSetResponse_Reason {
   HWComponentInfoSetResponse_Reason_INVALID_PARAMS = 3,
   HWComponentInfoSetResponse_Reason_INTERNAL_ERROR = 4,
   HWComponentInfoSetResponse_Reason_DEVICE_UNREACHABLE = 5,
+  HWComponentInfoSetResponse_Reason_SET_UNSUPPORTED = 6,
   HWComponentInfoSetResponse_Reason_HWComponentInfoSetResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   HWComponentInfoSetResponse_Reason_HWComponentInfoSetResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool HWComponentInfoSetResponse_Reason_IsValid(int value);
 const HWComponentInfoSetResponse_Reason HWComponentInfoSetResponse_Reason_Reason_MIN = HWComponentInfoSetResponse_Reason_UNDEFINED_REASON;
-const HWComponentInfoSetResponse_Reason HWComponentInfoSetResponse_Reason_Reason_MAX = HWComponentInfoSetResponse_Reason_DEVICE_UNREACHABLE;
+const HWComponentInfoSetResponse_Reason HWComponentInfoSetResponse_Reason_Reason_MAX = HWComponentInfoSetResponse_Reason_SET_UNSUPPORTED;
 const int HWComponentInfoSetResponse_Reason_Reason_ARRAYSIZE = HWComponentInfoSetResponse_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* HWComponentInfoSetResponse_Reason_descriptor();
@@ -1305,6 +1306,8 @@ class HWComponentInfoSetResponse final :
     HWComponentInfoSetResponse_Reason_INTERNAL_ERROR;
   static const Reason DEVICE_UNREACHABLE =
     HWComponentInfoSetResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason SET_UNSUPPORTED =
+    HWComponentInfoSetResponse_Reason_SET_UNSUPPORTED;
   static inline bool Reason_IsValid(int value) {
     return HWComponentInfoSetResponse_Reason_IsValid(value);
   }
