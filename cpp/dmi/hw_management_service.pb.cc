@@ -18,7 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uuid_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Hardware_dmi_2fhw_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ModifiableComponent_dmi_2fhw_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ModifiableComponent_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<9> scc_info_Component_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fmanagement_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EntitiesLogLevel_dmi_2fhw_5fmanagement_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fmanagement_5fservice_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ManagedDeviceInfo_dmi_2fhw_5fmanagement_5fservice_2eproto;

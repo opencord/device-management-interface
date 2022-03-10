@@ -198,6 +198,20 @@ message PortComponentChangeAttributes {
     PonIdConfig pon_id_config = 1;
 }
 
+message TransceiverComponentChangeAttributes {
+    enum PonTech {
+        DEFAULT = 0;
+        GPON = 1;
+        XGPON = 2;
+        XGSPON = 3;
+        EPON = 4;
+        NGPON2 = 5;
+        CPON = 6;
+    }
+
+    PonTech tech = 1;
+}
+
 message PonIdConfig {
     // The pon_id and pon_id_transmit_periodicity attributes are valid only for ports of type GPON, XGPON and XGSPON
     // For GPON pon_id is a 7 byte value
@@ -248,6 +262,9 @@ message TransceiverComponentsAttributes{
         CPON = 5;
         NG_PON2 = 6;
         EPON = 7;
+        // Add more here
+
+        NOT_DETECTED = 255;
     }
     FormFactor form_factor = 1;
     Type trans_type = 2;
@@ -320,5 +337,6 @@ message ModifiableComponent {
     // The attribute 'specific' can be populated for specific class of components
     oneof specific {
         PortComponentChangeAttributes port_attr = 50;
+        TransceiverComponentChangeAttributes trx_attr = 51;
     }
 }
