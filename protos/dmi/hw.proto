@@ -137,6 +137,20 @@ enum SensorStatus {
     SENSOR_STATUS_NONOPERATIONAL = 3;
 }
 
+enum TransceiverType {
+    TYPE_UNDEFINED = 0;
+    ETHERNET = 1;
+    GPON = 2;
+    XGPON = 3;
+    XGSPON = 4;
+    CPON = 5;
+    NG_PON2 = 6;
+    EPON = 7;
+    // Add more here
+
+    TYPE_NOT_DETECTED = 255;
+}
+
 message ComponentSensorData {
     int32 value = 1;
     DataValueType type = 2;
@@ -198,6 +212,10 @@ message PortComponentChangeAttributes {
     PonIdConfig pon_id_config = 1;
 }
 
+message TransceiverComponentChangeAttributes {
+    TransceiverType trans_type = 1;
+}
+
 message PonIdConfig {
     // The pon_id and pon_id_transmit_periodicity attributes are valid only for ports of type GPON, XGPON and XGSPON
     // For GPON pon_id is a 7 byte value
@@ -239,18 +257,8 @@ message TransceiverComponentsAttributes{
         CFP2_DCO = 14;
     }
 
-    enum Type {
-        TYPE_UNKNOWN = 0;
-        ETHERNET = 1;
-        GPON = 2;
-        XGPON = 3;
-        XGSPON = 4;
-        CPON = 5;
-        NG_PON2 = 6;
-        EPON = 7;
-    }
     FormFactor form_factor = 1;
-    Type trans_type = 2;
+    TransceiverType trans_type = 2;
     // The maximum reach that can be achieved by this transceiver
     uint32 max_distance = 3;
     ValueScale max_distance_scale = 4;
@@ -320,5 +328,6 @@ message ModifiableComponent {
     // The attribute 'specific' can be populated for specific class of components
     oneof specific {
         PortComponentChangeAttributes port_attr = 50;
+        TransceiverComponentChangeAttributes trx_attr = 51;
     }
 }

@@ -83,4 +83,12 @@ The new configuration will then be applied by the DM to the OLT. This may includ
 Operators currently do not require runtime configuration of the NNI because it's not an element that is expected to change
 at all once initial deployment is performed.
 
+## Transceiver Technology Configuration
+If the transceiver technology cannot be automatically detected on the OLT, the `SetHWComponentInfo` API on the DMI can
+be used to set the transceiver technology. Set the `HWComponentInfoSetRequest.ModifiableComponent.ComponentType` as
+`COMPONENT_TYPE_TRANSCEIVER` and `HWComponentInfoSetRequest.ModifiableComponent.TransceiverComponentChangeAttributes.TransceiverType`
+to the relevant transceiver technology.
+The [Combo and Any PON support](https://docs.google.com/document/d/129YDzShMvYACsrM0dWV60tV79BRPI6SsBpf_nm0Byxc/edit#heading=h.ejk2hfj4lhh7) has
+more details about dynamic detection and configuration of PON technology. Although this document focuses on PON technology configuration aspects,
+it still has some general concepts applicable for any other non-PON transceiver types.
 

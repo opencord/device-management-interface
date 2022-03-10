@@ -43,7 +43,7 @@ struct TableStruct_dmi_2fhw_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[14]
+  static const ::google::protobuf::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -84,6 +84,9 @@ extern PortComponentChangeAttributesDefaultTypeInternal _PortComponentChangeAttr
 class PsuComponentAttributes;
 class PsuComponentAttributesDefaultTypeInternal;
 extern PsuComponentAttributesDefaultTypeInternal _PsuComponentAttributes_default_instance_;
+class TransceiverComponentChangeAttributes;
+class TransceiverComponentChangeAttributesDefaultTypeInternal;
+extern TransceiverComponentChangeAttributesDefaultTypeInternal _TransceiverComponentChangeAttributes_default_instance_;
 class TransceiverComponentsAttributes;
 class TransceiverComponentsAttributesDefaultTypeInternal;
 extern TransceiverComponentsAttributesDefaultTypeInternal _TransceiverComponentsAttributes_default_instance_;
@@ -107,6 +110,7 @@ template<> ::dmi::PonIdConfig* Arena::CreateMaybeMessage<::dmi::PonIdConfig>(Are
 template<> ::dmi::PortComponentAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentAttributes>(Arena*);
 template<> ::dmi::PortComponentChangeAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentChangeAttributes>(Arena*);
 template<> ::dmi::PsuComponentAttributes* Arena::CreateMaybeMessage<::dmi::PsuComponentAttributes>(Arena*);
+template<> ::dmi::TransceiverComponentChangeAttributes* Arena::CreateMaybeMessage<::dmi::TransceiverComponentChangeAttributes>(Arena*);
 template<> ::dmi::TransceiverComponentsAttributes* Arena::CreateMaybeMessage<::dmi::TransceiverComponentsAttributes>(Arena*);
 template<> ::dmi::Uri* Arena::CreateMaybeMessage<::dmi::Uri>(Arena*);
 template<> ::dmi::Uuid* Arena::CreateMaybeMessage<::dmi::Uuid>(Arena*);
@@ -252,33 +256,6 @@ inline bool TransceiverComponentsAttributes_FormFactor_Parse(
     const ::std::string& name, TransceiverComponentsAttributes_FormFactor* value) {
   return ::google::protobuf::internal::ParseNamedEnum<TransceiverComponentsAttributes_FormFactor>(
     TransceiverComponentsAttributes_FormFactor_descriptor(), name, value);
-}
-enum TransceiverComponentsAttributes_Type {
-  TransceiverComponentsAttributes_Type_TYPE_UNKNOWN = 0,
-  TransceiverComponentsAttributes_Type_ETHERNET = 1,
-  TransceiverComponentsAttributes_Type_GPON = 2,
-  TransceiverComponentsAttributes_Type_XGPON = 3,
-  TransceiverComponentsAttributes_Type_XGSPON = 4,
-  TransceiverComponentsAttributes_Type_CPON = 5,
-  TransceiverComponentsAttributes_Type_NG_PON2 = 6,
-  TransceiverComponentsAttributes_Type_EPON = 7,
-  TransceiverComponentsAttributes_Type_TransceiverComponentsAttributes_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  TransceiverComponentsAttributes_Type_TransceiverComponentsAttributes_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool TransceiverComponentsAttributes_Type_IsValid(int value);
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes_Type_Type_MIN = TransceiverComponentsAttributes_Type_TYPE_UNKNOWN;
-const TransceiverComponentsAttributes_Type TransceiverComponentsAttributes_Type_Type_MAX = TransceiverComponentsAttributes_Type_EPON;
-const int TransceiverComponentsAttributes_Type_Type_ARRAYSIZE = TransceiverComponentsAttributes_Type_Type_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* TransceiverComponentsAttributes_Type_descriptor();
-inline const ::std::string& TransceiverComponentsAttributes_Type_Name(TransceiverComponentsAttributes_Type value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    TransceiverComponentsAttributes_Type_descriptor(), value);
-}
-inline bool TransceiverComponentsAttributes_Type_Parse(
-    const ::std::string& name, TransceiverComponentsAttributes_Type* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<TransceiverComponentsAttributes_Type>(
-    TransceiverComponentsAttributes_Type_descriptor(), name, value);
 }
 enum ComponentType {
   COMPONENT_TYPE_UNDEFINED = 0,
@@ -531,6 +508,34 @@ inline bool SensorStatus_Parse(
     const ::std::string& name, SensorStatus* value) {
   return ::google::protobuf::internal::ParseNamedEnum<SensorStatus>(
     SensorStatus_descriptor(), name, value);
+}
+enum TransceiverType {
+  TYPE_UNDEFINED = 0,
+  ETHERNET = 1,
+  GPON = 2,
+  XGPON = 3,
+  XGSPON = 4,
+  CPON = 5,
+  NG_PON2 = 6,
+  EPON = 7,
+  TYPE_NOT_DETECTED = 255,
+  TransceiverType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  TransceiverType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool TransceiverType_IsValid(int value);
+const TransceiverType TransceiverType_MIN = TYPE_UNDEFINED;
+const TransceiverType TransceiverType_MAX = TYPE_NOT_DETECTED;
+const int TransceiverType_ARRAYSIZE = TransceiverType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* TransceiverType_descriptor();
+inline const ::std::string& TransceiverType_Name(TransceiverType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    TransceiverType_descriptor(), value);
+}
+inline bool TransceiverType_Parse(
+    const ::std::string& name, TransceiverType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<TransceiverType>(
+    TransceiverType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1630,6 +1635,118 @@ class PortComponentChangeAttributes final :
 };
 // -------------------------------------------------------------------
 
+class TransceiverComponentChangeAttributes final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.TransceiverComponentChangeAttributes) */ {
+ public:
+  TransceiverComponentChangeAttributes();
+  virtual ~TransceiverComponentChangeAttributes();
+
+  TransceiverComponentChangeAttributes(const TransceiverComponentChangeAttributes& from);
+
+  inline TransceiverComponentChangeAttributes& operator=(const TransceiverComponentChangeAttributes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TransceiverComponentChangeAttributes(TransceiverComponentChangeAttributes&& from) noexcept
+    : TransceiverComponentChangeAttributes() {
+    *this = ::std::move(from);
+  }
+
+  inline TransceiverComponentChangeAttributes& operator=(TransceiverComponentChangeAttributes&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TransceiverComponentChangeAttributes& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TransceiverComponentChangeAttributes* internal_default_instance() {
+    return reinterpret_cast<const TransceiverComponentChangeAttributes*>(
+               &_TransceiverComponentChangeAttributes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(TransceiverComponentChangeAttributes* other);
+  friend void swap(TransceiverComponentChangeAttributes& a, TransceiverComponentChangeAttributes& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TransceiverComponentChangeAttributes* New() const final {
+    return CreateMaybeMessage<TransceiverComponentChangeAttributes>(nullptr);
+  }
+
+  TransceiverComponentChangeAttributes* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TransceiverComponentChangeAttributes>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TransceiverComponentChangeAttributes& from);
+  void MergeFrom(const TransceiverComponentChangeAttributes& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransceiverComponentChangeAttributes* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.TransceiverType trans_type = 1;
+  void clear_trans_type();
+  static const int kTransTypeFieldNumber = 1;
+  ::dmi::TransceiverType trans_type() const;
+  void set_trans_type(::dmi::TransceiverType value);
+
+  // @@protoc_insertion_point(class_scope:dmi.TransceiverComponentChangeAttributes)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int trans_type_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PonIdConfig final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.PonIdConfig) */ {
  public:
@@ -1668,7 +1785,7 @@ class PonIdConfig final :
                &_PonIdConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(PonIdConfig* other);
   friend void swap(PonIdConfig& a, PonIdConfig& b) {
@@ -1795,7 +1912,7 @@ class ContainerComponentAttributes final :
                &_ContainerComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(ContainerComponentAttributes* other);
   friend void swap(ContainerComponentAttributes& a, ContainerComponentAttributes& b) {
@@ -1915,7 +2032,7 @@ class PsuComponentAttributes final :
                &_PsuComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(PsuComponentAttributes* other);
   friend void swap(PsuComponentAttributes& a, PsuComponentAttributes& b) {
@@ -2057,7 +2174,7 @@ class TransceiverComponentsAttributes final :
                &_TransceiverComponentsAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(TransceiverComponentsAttributes* other);
   friend void swap(TransceiverComponentsAttributes& a, TransceiverComponentsAttributes& b) {
@@ -2164,44 +2281,6 @@ class TransceiverComponentsAttributes final :
     return TransceiverComponentsAttributes_FormFactor_Parse(name, value);
   }
 
-  typedef TransceiverComponentsAttributes_Type Type;
-  static const Type TYPE_UNKNOWN =
-    TransceiverComponentsAttributes_Type_TYPE_UNKNOWN;
-  static const Type ETHERNET =
-    TransceiverComponentsAttributes_Type_ETHERNET;
-  static const Type GPON =
-    TransceiverComponentsAttributes_Type_GPON;
-  static const Type XGPON =
-    TransceiverComponentsAttributes_Type_XGPON;
-  static const Type XGSPON =
-    TransceiverComponentsAttributes_Type_XGSPON;
-  static const Type CPON =
-    TransceiverComponentsAttributes_Type_CPON;
-  static const Type NG_PON2 =
-    TransceiverComponentsAttributes_Type_NG_PON2;
-  static const Type EPON =
-    TransceiverComponentsAttributes_Type_EPON;
-  static inline bool Type_IsValid(int value) {
-    return TransceiverComponentsAttributes_Type_IsValid(value);
-  }
-  static const Type Type_MIN =
-    TransceiverComponentsAttributes_Type_Type_MIN;
-  static const Type Type_MAX =
-    TransceiverComponentsAttributes_Type_Type_MAX;
-  static const int Type_ARRAYSIZE =
-    TransceiverComponentsAttributes_Type_Type_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  Type_descriptor() {
-    return TransceiverComponentsAttributes_Type_descriptor();
-  }
-  static inline const ::std::string& Type_Name(Type value) {
-    return TransceiverComponentsAttributes_Type_Name(value);
-  }
-  static inline bool Type_Parse(const ::std::string& name,
-      Type* value) {
-    return TransceiverComponentsAttributes_Type_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
 
   // repeated uint32 rx_wavelength = 5;
@@ -2234,11 +2313,11 @@ class TransceiverComponentsAttributes final :
   ::dmi::TransceiverComponentsAttributes_FormFactor form_factor() const;
   void set_form_factor(::dmi::TransceiverComponentsAttributes_FormFactor value);
 
-  // .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+  // .dmi.TransceiverType trans_type = 2;
   void clear_trans_type();
   static const int kTransTypeFieldNumber = 2;
-  ::dmi::TransceiverComponentsAttributes_Type trans_type() const;
-  void set_trans_type(::dmi::TransceiverComponentsAttributes_Type value);
+  ::dmi::TransceiverType trans_type() const;
+  void set_trans_type(::dmi::TransceiverType value);
 
   // uint32 max_distance = 3;
   void clear_max_distance();
@@ -2323,7 +2402,7 @@ class Component final :
                &_Component_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(Component* other);
   friend void swap(Component& a, Component& b) {
@@ -2734,7 +2813,7 @@ class Hardware final :
                &_Hardware_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(Hardware* other);
   friend void swap(Hardware& a, Hardware& b) {
@@ -2865,6 +2944,7 @@ class ModifiableComponent final :
 
   enum SpecificCase {
     kPortAttr = 50,
+    kTrxAttr = 51,
     SPECIFIC_NOT_SET = 0,
   };
 
@@ -2874,7 +2954,7 @@ class ModifiableComponent final :
                &_ModifiableComponent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(ModifiableComponent* other);
   friend void swap(ModifiableComponent& a, ModifiableComponent& b) {
@@ -3018,12 +3098,22 @@ class ModifiableComponent final :
   ::dmi::PortComponentChangeAttributes* mutable_port_attr();
   void set_allocated_port_attr(::dmi::PortComponentChangeAttributes* port_attr);
 
+  // .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+  bool has_trx_attr() const;
+  void clear_trx_attr();
+  static const int kTrxAttrFieldNumber = 51;
+  const ::dmi::TransceiverComponentChangeAttributes& trx_attr() const;
+  ::dmi::TransceiverComponentChangeAttributes* release_trx_attr();
+  ::dmi::TransceiverComponentChangeAttributes* mutable_trx_attr();
+  void set_allocated_trx_attr(::dmi::TransceiverComponentChangeAttributes* trx_attr);
+
   void clear_specific();
   SpecificCase specific_case() const;
   // @@protoc_insertion_point(class_scope:dmi.ModifiableComponent)
  private:
   class HasBitSetters;
   void set_has_port_attr();
+  void set_has_trx_attr();
 
   inline bool has_specific() const;
   inline void clear_has_specific();
@@ -3040,6 +3130,7 @@ class ModifiableComponent final :
   union SpecificUnion {
     SpecificUnion() {}
     ::dmi::PortComponentChangeAttributes* port_attr_;
+    ::dmi::TransceiverComponentChangeAttributes* trx_attr_;
   } specific_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -3856,6 +3947,24 @@ inline void PortComponentChangeAttributes::set_allocated_pon_id_config(::dmi::Po
 
 // -------------------------------------------------------------------
 
+// TransceiverComponentChangeAttributes
+
+// .dmi.TransceiverType trans_type = 1;
+inline void TransceiverComponentChangeAttributes::clear_trans_type() {
+  trans_type_ = 0;
+}
+inline ::dmi::TransceiverType TransceiverComponentChangeAttributes::trans_type() const {
+  // @@protoc_insertion_point(field_get:dmi.TransceiverComponentChangeAttributes.trans_type)
+  return static_cast< ::dmi::TransceiverType >(trans_type_);
+}
+inline void TransceiverComponentChangeAttributes::set_trans_type(::dmi::TransceiverType value) {
+  
+  trans_type_ = value;
+  // @@protoc_insertion_point(field_set:dmi.TransceiverComponentChangeAttributes.trans_type)
+}
+
+// -------------------------------------------------------------------
+
 // PonIdConfig
 
 // bytes pon_id = 1;
@@ -4018,15 +4127,15 @@ inline void TransceiverComponentsAttributes::set_form_factor(::dmi::TransceiverC
   // @@protoc_insertion_point(field_set:dmi.TransceiverComponentsAttributes.form_factor)
 }
 
-// .dmi.TransceiverComponentsAttributes.Type trans_type = 2;
+// .dmi.TransceiverType trans_type = 2;
 inline void TransceiverComponentsAttributes::clear_trans_type() {
   trans_type_ = 0;
 }
-inline ::dmi::TransceiverComponentsAttributes_Type TransceiverComponentsAttributes::trans_type() const {
+inline ::dmi::TransceiverType TransceiverComponentsAttributes::trans_type() const {
   // @@protoc_insertion_point(field_get:dmi.TransceiverComponentsAttributes.trans_type)
-  return static_cast< ::dmi::TransceiverComponentsAttributes_Type >(trans_type_);
+  return static_cast< ::dmi::TransceiverType >(trans_type_);
 }
-inline void TransceiverComponentsAttributes::set_trans_type(::dmi::TransceiverComponentsAttributes_Type value) {
+inline void TransceiverComponentsAttributes::set_trans_type(::dmi::TransceiverType value) {
   
   trans_type_ = value;
   // @@protoc_insertion_point(field_set:dmi.TransceiverComponentsAttributes.trans_type)
@@ -5690,6 +5799,47 @@ inline ::dmi::PortComponentChangeAttributes* ModifiableComponent::mutable_port_a
   return specific_.port_attr_;
 }
 
+// .dmi.TransceiverComponentChangeAttributes trx_attr = 51;
+inline bool ModifiableComponent::has_trx_attr() const {
+  return specific_case() == kTrxAttr;
+}
+inline void ModifiableComponent::set_has_trx_attr() {
+  _oneof_case_[0] = kTrxAttr;
+}
+inline void ModifiableComponent::clear_trx_attr() {
+  if (has_trx_attr()) {
+    delete specific_.trx_attr_;
+    clear_has_specific();
+  }
+}
+inline ::dmi::TransceiverComponentChangeAttributes* ModifiableComponent::release_trx_attr() {
+  // @@protoc_insertion_point(field_release:dmi.ModifiableComponent.trx_attr)
+  if (has_trx_attr()) {
+    clear_has_specific();
+      ::dmi::TransceiverComponentChangeAttributes* temp = specific_.trx_attr_;
+    specific_.trx_attr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::TransceiverComponentChangeAttributes& ModifiableComponent::trx_attr() const {
+  // @@protoc_insertion_point(field_get:dmi.ModifiableComponent.trx_attr)
+  return has_trx_attr()
+      ? *specific_.trx_attr_
+      : *reinterpret_cast< ::dmi::TransceiverComponentChangeAttributes*>(&::dmi::_TransceiverComponentChangeAttributes_default_instance_);
+}
+inline ::dmi::TransceiverComponentChangeAttributes* ModifiableComponent::mutable_trx_attr() {
+  if (!has_trx_attr()) {
+    clear_specific();
+    set_has_trx_attr();
+    specific_.trx_attr_ = CreateMaybeMessage< ::dmi::TransceiverComponentChangeAttributes >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.ModifiableComponent.trx_attr)
+  return specific_.trx_attr_;
+}
+
 inline bool ModifiableComponent::has_specific() const {
   return specific_case() != SPECIFIC_NOT_SET;
 }
@@ -5702,6 +5852,8 @@ inline ModifiableComponent::SpecificCase ModifiableComponent::specific_case() co
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -5761,11 +5913,6 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::TransceiverComponentsAttributes_FormFactor>() {
   return ::dmi::TransceiverComponentsAttributes_FormFactor_descriptor();
 }
-template <> struct is_proto_enum< ::dmi::TransceiverComponentsAttributes_Type> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::dmi::TransceiverComponentsAttributes_Type>() {
-  return ::dmi::TransceiverComponentsAttributes_Type_descriptor();
-}
 template <> struct is_proto_enum< ::dmi::ComponentType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::ComponentType>() {
@@ -5810,6 +5957,11 @@ template <> struct is_proto_enum< ::dmi::SensorStatus> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::SensorStatus>() {
   return ::dmi::SensorStatus_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::TransceiverType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::TransceiverType>() {
+  return ::dmi::TransceiverType_descriptor();
 }
 
 }  // namespace protobuf
