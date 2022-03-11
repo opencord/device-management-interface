@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "08ca2639_48e05a18",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-03-11T14:30:06Z",
+      "side": 1,
+      "message": "agreed to the comment requirement, please add elements in the docs and reference the COMBO pon doc",
+      "parentUuid": "b28de9d7_953e6de6",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7466e8b9_8d78a8c0",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 2
