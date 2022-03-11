@@ -70,6 +70,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "049ab998_2b911aec",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-03-11T19:00:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "08ca2639_48e05a18",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7466e8b9_8d78a8c0",
@@ -83,6 +101,24 @@
       "writtenOn": "2022-03-11T07:51:08Z",
       "side": 1,
       "message": "Please change name to PON_TECH_UNDEFINED, which is the naming scheme used for all enums.",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2495d35_81e054d7",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-03-11T19:00:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7466e8b9_8d78a8c0",
       "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -104,6 +140,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4accc198_673b9052",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-03-11T19:00:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d84498e3_17e4c175",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df861df2_17cf1f9e",
@@ -117,6 +171,30 @@
       "writtenOn": "2022-03-11T08:25:56Z",
       "side": 1,
       "message": "TYPE_NOT_DETECTED otherwise it might arise confusion with the transceiver not being detected in the port itself",
+      "range": {
+        "startLine": 267,
+        "startChar": 8,
+        "endLine": 267,
+        "endChar": 20
+      },
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e98e2638_21f624b7",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-03-11T19:00:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "df861df2_17cf1f9e",
       "range": {
         "startLine": 267,
         "startChar": 8,
