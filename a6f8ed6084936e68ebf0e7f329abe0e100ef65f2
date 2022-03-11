@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6badb4f2_12a62f23",
+        "filename": "docs/ManagingDevice.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-03-11T19:19:20Z",
+      "side": 1,
+      "message": "We don\u0027t need to set the ComponentType to COMPONENT_TYPE_TRANSCEIVER, we should only set the TransceiverType.\n\nAlso can you document here that implementations could support setting of the TransceiverType to something else only when the existing value is TYPE_NOT_DETECTED . Because it would not make sense if the DM figure out that the transceiver is of type GPON and someone tries to change it to something else.\n\nCan you also please add another enum value \"SET_UNSUPPORTED\" to the enum https://github.com/opencord/device-management-interface/blob/master/protos/dmi/hw_management_service.proto#L60 so that implementations can return is value if they don\u0027t support setting of the TransceiverType",
+      "revId": "a6f8ed6084936e68ebf0e7f329abe0e100ef65f2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
