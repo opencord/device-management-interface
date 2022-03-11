@@ -18,6 +18,23 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4f9abaf_23ccfae8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-03-11T08:25:56Z",
+      "side": 1,
+      "message": "also agreeing with Holger\u0027s comments. ",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7466e8b9_8d78a8c0",
@@ -48,6 +65,29 @@
       "writtenOn": "2022-03-11T07:51:08Z",
       "side": 1,
       "message": "Better \"pon_tech\"?",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df861df2_17cf1f9e",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-03-11T08:25:56Z",
+      "side": 1,
+      "message": "TYPE_NOT_DETECTED otherwise it might arise confusion with the transceiver not being detected in the port itself",
+      "range": {
+        "startLine": 267,
+        "startChar": 8,
+        "endLine": 267,
+        "endChar": 20
+      },
       "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
