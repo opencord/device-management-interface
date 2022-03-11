@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b28de9d7_953e6de6",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-03-11T14:26:57Z",
+      "side": 1,
+      "message": "Instead of defining a new enum, should we move the existing Type enum outside of the message (maybe call it TransceiverType) and use it in both places. We also would need to document clearly that the transceiver type can be changed from NOT_DETECTED to something else and never otherwise",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7466e8b9_8d78a8c0",
         "filename": "protos/dmi/hw.proto",
         "patchSetId": 2
