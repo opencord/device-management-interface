@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdc859ae_996b9066",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-03-11T07:51:08Z",
+      "side": 1,
+      "message": "Great, only some comments.",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7466e8b9_8d78a8c0",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-03-11T07:51:08Z",
+      "side": 1,
+      "message": "Please change name to PON_TECH_UNDEFINED, which is the naming scheme used for all enums.",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d84498e3_17e4c175",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-03-11T07:51:08Z",
+      "side": 1,
+      "message": "Better \"pon_tech\"?",
+      "revId": "b021b054b16782c9182f603fccb464fc994b6e57",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
