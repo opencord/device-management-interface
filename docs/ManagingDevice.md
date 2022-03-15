@@ -92,7 +92,7 @@ to the relevant transceiver technology.
 If the DM does not support setting transceiver technology, it should return the error code `SET_UNSUPPORTED` in `HWComponentInfoSetResponse`
 if the user tries to change/set the technology.
 
-The [Combo and Any PON support](https://docs.google.com/document/d/129YDzShMvYACsrM0dWV60tV79BRPI6SsBpf_nm0Byxc/edit#heading=h.ejk2hfj4lhh7) has
+The [Combo and Any PON support](https://docs.google.com/document/d/129YDzShMvYACsrM0dWV60tV79BRPI6SsBpf_nm0Byxc/edit?usp=sharing) has
 more details about dynamic detection and configuration of PON technology. Although this document focuses on PON technology configuration aspects,
 it still has some general concepts applicable for any other non-PON transceiver types.
 
