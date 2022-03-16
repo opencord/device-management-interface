@@ -67,6 +67,10 @@ enum EventIds {
     EVENT_HW_TEMPERATURE_SENSOR_FAILED = 506;
     EVENT_HW_ALL_TEMPERATURE_SENSORS_FAILED = 507;
 
+    // Events for the line cards on the HW Device
+    EVENT_LINE_CARD_PLUG_OUT = 600;
+    EVENT_LINE_CARD_PLUG_IN = 601;
+
     // More to be added
 }
 
