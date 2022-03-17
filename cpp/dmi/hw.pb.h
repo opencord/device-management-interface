@@ -518,6 +518,7 @@ enum TransceiverType {
   CPON = 5,
   NG_PON2 = 6,
   EPON = 7,
+  COMBO_GPON_XGSPON = 8,
   TYPE_NOT_DETECTED = 255,
   TransceiverType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   TransceiverType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
