@@ -697,17 +697,18 @@ const char descriptor_table_protodef_dmi_2fhw_2eproto[] =
   "\001\n\014SensorStatus\022\033\n\027SENSOR_STATUS_UNDEFIN"
   "ED\020\000\022\024\n\020SENSOR_STATUS_OK\020\001\022\035\n\031SENSOR_STA"
   "TUS_UNAVAILABLE\020\002\022 \n\034SENSOR_STATUS_NONOP"
-  "ERATIONAL\020\003*\215\001\n\017TransceiverType\022\022\n\016TYPE_"
+  "ERATIONAL\020\003*\244\001\n\017TransceiverType\022\022\n\016TYPE_"
   "UNDEFINED\020\000\022\014\n\010ETHERNET\020\001\022\010\n\004GPON\020\002\022\t\n\005X"
   "GPON\020\003\022\n\n\006XGSPON\020\004\022\010\n\004CPON\020\005\022\013\n\007NG_PON2\020"
-  "\006\022\010\n\004EPON\020\007\022\026\n\021TYPE_NOT_DETECTED\020\377\001B;Z9g"
-  "ithub.com/opencord/device-management-int"
-  "erface/v3/go/dmib\006proto3"
+  "\006\022\010\n\004EPON\020\007\022\025\n\021COMBO_GPON_XGSPON\020\010\022\026\n\021TY"
+  "PE_NOT_DETECTED\020\377\001B;Z9github.com/opencor"
+  "d/device-management-interface/v3/go/dmib"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_2eproto = {
   false, InitDefaults_dmi_2fhw_2eproto, 
   descriptor_table_protodef_dmi_2fhw_2eproto,
-  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6264,
+  "dmi/hw.proto", &assign_descriptors_table_dmi_2fhw_2eproto, 6287,
 };
 
 void AddDescriptors_dmi_2fhw_2eproto() {
@@ -1097,6 +1098,7 @@ bool TransceiverType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
     case 255:
       return true;
     default:

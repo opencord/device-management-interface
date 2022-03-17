@@ -146,6 +146,7 @@ enum TransceiverType {
     CPON = 5;
     NG_PON2 = 6;
     EPON = 7;
+    COMBO_GPON_XGSPON = 8;
     // Add more here
 
     TYPE_NOT_DETECTED = 255;
