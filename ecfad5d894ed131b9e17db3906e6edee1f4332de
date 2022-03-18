@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd2807c1_3b6a56b8",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-03-18T11:00:26Z",
+      "side": 1,
+      "message": "is COMBO_PON not enough ?",
+      "revId": "ecfad5d894ed131b9e17db3906e6edee1f4332de",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
