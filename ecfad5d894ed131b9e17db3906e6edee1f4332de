@@ -16,6 +16,24 @@
       "message": "is COMBO_PON not enough ?",
       "revId": "ecfad5d894ed131b9e17db3906e6edee1f4332de",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4240172_459e92bd",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-03-18T15:07:29Z",
+      "side": 1,
+      "message": "Not sure, maybe we could have other combinations like GPON + XGPON etc, so thought might as well make it more explicit in the name as to what the combination is.",
+      "parentUuid": "dd2807c1_3b6a56b8",
+      "revId": "ecfad5d894ed131b9e17db3906e6edee1f4332de",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
