@@ -889,49 +889,50 @@ const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
   "device_uuid\030\001 \001(\0132\t.dmi.Uuid\"(\n\tHeartbea"
   "t\022\033\n\023heartbeat_signature\030\001 \001(\007\"5\n\023Reboot"
   "DeviceRequest\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi"
-  ".Uuid\"\334\001\n\024RebootDeviceResponse\022\033\n\006status"
+  ".Uuid\"\367\001\n\024RebootDeviceResponse\022\033\n\006status"
   "\030\003 \001(\0162\013.dmi.Status\0220\n\006reason\030\004 \001(\0162 .dm"
   "i.RebootDeviceResponse.Reason\022\025\n\rreason_"
-  "detail\030\005 \001(\t\"^\n\006Reason\022\024\n\020UNDEFINED_REAS"
+  "detail\030\005 \001(\t\"y\n\006Reason\022\024\n\020UNDEFINED_REAS"
   "ON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERR"
-  "OR\020\002\022\026\n\022DEVICE_UNREACHABLE\020\0032\256\t\n\031NativeH"
-  "WManagementService\022S\n\023StartManagingDevic"
-  "e\022\030.dmi.ModifiableComponent\032 .dmi.StartM"
-  "anagingDeviceResponse0\001\022U\n\022StopManagingD"
-  "evice\022\036.dmi.StopManagingDeviceRequest\032\037."
-  "dmi.StopManagingDeviceResponse\022H\n\021GetMan"
-  "agedDevices\022\026.google.protobuf.Empty\032\033.dm"
-  "i.ManagedDevicesResponse\022W\n\024GetPhysicalI"
-  "nventory\022\035.dmi.PhysicalInventoryRequest\032"
-  "\036.dmi.PhysicalInventoryResponse0\001\022W\n\022Get"
-  "HWComponentInfo\022\036.dmi.HWComponentInfoGet"
-  "Request\032\037.dmi.HWComponentInfoGetResponse"
-  "0\001\022U\n\022SetHWComponentInfo\022\036.dmi.HWCompone"
-  "ntInfoSetRequest\032\037.dmi.HWComponentInfoSe"
-  "tResponse\022T\n\022SetLoggingEndpoint\022\036.dmi.Se"
-  "tLoggingEndpointRequest\032\036.dmi.SetRemoteE"
-  "ndpointResponse\022F\n\022GetLoggingEndpoint\022\017."
-  "dmi.HardwareID\032\037.dmi.GetLoggingEndpointR"
-  "esponse\022R\n\021SetMsgBusEndpoint\022\035.dmi.SetMs"
-  "gBusEndpointRequest\032\036.dmi.SetRemoteEndpo"
-  "intResponse\022K\n\021GetMsgBusEndpoint\022\026.googl"
-  "e.protobuf.Empty\032\036.dmi.GetMsgBusEndpoint"
-  "Response\022P\n\023GetLoggableEntities\022\037.dmi.Ge"
-  "tLoggableEntitiesRequest\032\030.dmi.GetLogLev"
-  "elResponse\022@\n\013SetLogLevel\022\027.dmi.SetLogLe"
-  "velRequest\032\030.dmi.SetLogLevelResponse\022@\n\013"
-  "GetLogLevel\022\027.dmi.GetLogLevelRequest\032\030.d"
-  "mi.GetLogLevelResponse\0228\n\016HeartbeatCheck"
-  "\022\026.google.protobuf.Empty\032\016.dmi.Heartbeat"
-  "\022C\n\014RebootDevice\022\030.dmi.RebootDeviceReque"
-  "st\032\031.dmi.RebootDeviceResponseB;Z9github."
-  "com/opencord/device-management-interface"
-  "/v3/go/dmib\006proto3"
+  "OR\020\002\022\026\n\022DEVICE_UNREACHABLE\020\003\022\031\n\025DEVICE_I"
+  "N_WRONG_STATE\020\0042\256\t\n\031NativeHWManagementSe"
+  "rvice\022S\n\023StartManagingDevice\022\030.dmi.Modif"
+  "iableComponent\032 .dmi.StartManagingDevice"
+  "Response0\001\022U\n\022StopManagingDevice\022\036.dmi.S"
+  "topManagingDeviceRequest\032\037.dmi.StopManag"
+  "ingDeviceResponse\022H\n\021GetManagedDevices\022\026"
+  ".google.protobuf.Empty\032\033.dmi.ManagedDevi"
+  "cesResponse\022W\n\024GetPhysicalInventory\022\035.dm"
+  "i.PhysicalInventoryRequest\032\036.dmi.Physica"
+  "lInventoryResponse0\001\022W\n\022GetHWComponentIn"
+  "fo\022\036.dmi.HWComponentInfoGetRequest\032\037.dmi"
+  ".HWComponentInfoGetResponse0\001\022U\n\022SetHWCo"
+  "mponentInfo\022\036.dmi.HWComponentInfoSetRequ"
+  "est\032\037.dmi.HWComponentInfoSetResponse\022T\n\022"
+  "SetLoggingEndpoint\022\036.dmi.SetLoggingEndpo"
+  "intRequest\032\036.dmi.SetRemoteEndpointRespon"
+  "se\022F\n\022GetLoggingEndpoint\022\017.dmi.HardwareI"
+  "D\032\037.dmi.GetLoggingEndpointResponse\022R\n\021Se"
+  "tMsgBusEndpoint\022\035.dmi.SetMsgBusEndpointR"
+  "equest\032\036.dmi.SetRemoteEndpointResponse\022K"
+  "\n\021GetMsgBusEndpoint\022\026.google.protobuf.Em"
+  "pty\032\036.dmi.GetMsgBusEndpointResponse\022P\n\023G"
+  "etLoggableEntities\022\037.dmi.GetLoggableEnti"
+  "tiesRequest\032\030.dmi.GetLogLevelResponse\022@\n"
+  "\013SetLogLevel\022\027.dmi.SetLogLevelRequest\032\030."
+  "dmi.SetLogLevelResponse\022@\n\013GetLogLevel\022\027"
+  ".dmi.GetLogLevelRequest\032\030.dmi.GetLogLeve"
+  "lResponse\0228\n\016HeartbeatCheck\022\026.google.pro"
+  "tobuf.Empty\032\016.dmi.Heartbeat\022C\n\014RebootDev"
+  "ice\022\030.dmi.RebootDeviceRequest\032\031.dmi.Rebo"
+  "otDeviceResponseB;Z9github.com/opencord/"
+  "device-management-interface/v3/go/dmib\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto,
-  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5698,
+  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5725,
 };
 
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto() {
@@ -1246,6 +1247,7 @@ bool RebootDeviceResponse_Reason_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -1257,6 +1259,7 @@ const RebootDeviceResponse_Reason RebootDeviceResponse::UNDEFINED_REASON;
 const RebootDeviceResponse_Reason RebootDeviceResponse::UNKNOWN_DEVICE;
 const RebootDeviceResponse_Reason RebootDeviceResponse::INTERNAL_ERROR;
 const RebootDeviceResponse_Reason RebootDeviceResponse::DEVICE_UNREACHABLE;
+const RebootDeviceResponse_Reason RebootDeviceResponse::DEVICE_IN_WRONG_STATE;
 const RebootDeviceResponse_Reason RebootDeviceResponse::Reason_MIN;
 const RebootDeviceResponse_Reason RebootDeviceResponse::Reason_MAX;
 const int RebootDeviceResponse::Reason_ARRAYSIZE;
