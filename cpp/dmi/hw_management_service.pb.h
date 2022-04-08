@@ -425,12 +425,13 @@ enum RebootDeviceResponse_Reason {
   RebootDeviceResponse_Reason_UNKNOWN_DEVICE = 1,
   RebootDeviceResponse_Reason_INTERNAL_ERROR = 2,
   RebootDeviceResponse_Reason_DEVICE_UNREACHABLE = 3,
+  RebootDeviceResponse_Reason_DEVICE_IN_WRONG_STATE = 4,
   RebootDeviceResponse_Reason_RebootDeviceResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   RebootDeviceResponse_Reason_RebootDeviceResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool RebootDeviceResponse_Reason_IsValid(int value);
 const RebootDeviceResponse_Reason RebootDeviceResponse_Reason_Reason_MIN = RebootDeviceResponse_Reason_UNDEFINED_REASON;
-const RebootDeviceResponse_Reason RebootDeviceResponse_Reason_Reason_MAX = RebootDeviceResponse_Reason_DEVICE_UNREACHABLE;
+const RebootDeviceResponse_Reason RebootDeviceResponse_Reason_Reason_MAX = RebootDeviceResponse_Reason_DEVICE_IN_WRONG_STATE;
 const int RebootDeviceResponse_Reason_Reason_ARRAYSIZE = RebootDeviceResponse_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* RebootDeviceResponse_Reason_descriptor();
@@ -4129,6 +4130,8 @@ class RebootDeviceResponse final :
     RebootDeviceResponse_Reason_INTERNAL_ERROR;
   static const Reason DEVICE_UNREACHABLE =
     RebootDeviceResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason DEVICE_IN_WRONG_STATE =
+    RebootDeviceResponse_Reason_DEVICE_IN_WRONG_STATE;
   static inline bool Reason_IsValid(int value) {
     return RebootDeviceResponse_Reason_IsValid(value);
   }

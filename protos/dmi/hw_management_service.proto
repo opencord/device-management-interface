@@ -239,6 +239,7 @@ message RebootDeviceResponse {
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
         DEVICE_UNREACHABLE = 3;
+        DEVICE_IN_WRONG_STATE = 4;
     }
     Status status = 3;
     Reason reason = 4;
