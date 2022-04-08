@@ -239,6 +239,8 @@ message RebootDeviceResponse {
         UNKNOWN_DEVICE = 1;
         INTERNAL_ERROR = 2;
         DEVICE_UNREACHABLE = 3;
+        DEVICE_IN_WRONG_STATE = 4; // This reason would be returned by the Device Manager if doing the reboot could lead the device to an inconsistent state.
+                                   // For example, if a RebootRequest is issued while the startup configuration is being updated
     }
     Status status = 3;
     Reason reason = 4;
