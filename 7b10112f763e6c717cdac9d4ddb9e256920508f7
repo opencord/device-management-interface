@@ -16,6 +16,23 @@
       "message": "Great!",
       "revId": "7b10112f763e6c717cdac9d4ddb9e256920508f7",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a537689a_16345f3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-04-08T15:06:15Z",
+      "side": 1,
+      "message": "Can we document what means WRONG_STATE ?",
+      "revId": "7b10112f763e6c717cdac9d4ddb9e256920508f7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
