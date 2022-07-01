@@ -63,7 +63,7 @@ test: go-test python-test cpp-test
 venv_protos:
 	virtualenv -p python3 $@;\
 	source ./$@/bin/activate ; set -u ;\
-	pip install grpcio-tools googleapis-common-protos
+	pip install grpcio-tools==1.44.0 googleapis-common-protos==1.44.0
 
 # Python targets
 python-protos: $(PROTO_PYTHON_PB2)
