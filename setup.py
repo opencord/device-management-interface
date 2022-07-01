@@ -38,7 +38,7 @@ setup(
     packages = find_packages(where="python"),
     package_dir = {"": "python"},
     install_requires = [
-        "googleapis-common-protos~=1.5.6"
+        "googleapis-common-protos~=1.56.3"
     ],
     include_package_data=True,
 )

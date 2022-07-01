@@ -105,6 +105,8 @@ message StopManagingDeviceResponse {
     enum Reason {
         UNDEFINED_REASON = 0;
         UNKNOWN_DEVICE = 1;
+        // DEVICE_UNREACHABLE is to be returned when the device manager cannot reach the device and stop managing it
+        DEVICE_UNREACHABLE = 2;
     }
     Status status = 1;
     Reason reason = 2;

@@ -262,12 +262,13 @@ inline bool StartManagingDeviceResponse_Reason_Parse(
 enum StopManagingDeviceResponse_Reason {
   StopManagingDeviceResponse_Reason_UNDEFINED_REASON = 0,
   StopManagingDeviceResponse_Reason_UNKNOWN_DEVICE = 1,
+  StopManagingDeviceResponse_Reason_DEVICE_UNREACHABLE = 2,
   StopManagingDeviceResponse_Reason_StopManagingDeviceResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   StopManagingDeviceResponse_Reason_StopManagingDeviceResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool StopManagingDeviceResponse_Reason_IsValid(int value);
 const StopManagingDeviceResponse_Reason StopManagingDeviceResponse_Reason_Reason_MIN = StopManagingDeviceResponse_Reason_UNDEFINED_REASON;
-const StopManagingDeviceResponse_Reason StopManagingDeviceResponse_Reason_Reason_MAX = StopManagingDeviceResponse_Reason_UNKNOWN_DEVICE;
+const StopManagingDeviceResponse_Reason StopManagingDeviceResponse_Reason_Reason_MAX = StopManagingDeviceResponse_Reason_DEVICE_UNREACHABLE;
 const int StopManagingDeviceResponse_Reason_Reason_ARRAYSIZE = StopManagingDeviceResponse_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* StopManagingDeviceResponse_Reason_descriptor();
@@ -1769,6 +1770,8 @@ class StopManagingDeviceResponse final :
     StopManagingDeviceResponse_Reason_UNDEFINED_REASON;
   static const Reason UNKNOWN_DEVICE =
     StopManagingDeviceResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason DEVICE_UNREACHABLE =
+    StopManagingDeviceResponse_Reason_DEVICE_UNREACHABLE;
   static inline bool Reason_IsValid(int value) {
     return StopManagingDeviceResponse_Reason_IsValid(value);
   }
