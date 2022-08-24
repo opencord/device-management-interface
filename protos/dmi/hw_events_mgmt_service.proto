@@ -129,6 +129,9 @@ message EventsConfigurationRequest {
         EventsCfg changes = 2;
         bool reset_to_default = 3;
     }
+    // For events which can be configured on a particular component this id can be used to identify the component
+    // For e.g. for events of the transceivers
+    Uuid component_uuid = 4;
 }
 
 message EventsConfigurationResponse {
