@@ -1,0 +1,10 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Mahir Gunyel <mahir.gunyel@netsia.com>
+Code-Review+1: Girish Gowdra <girish.gowdra@intel.com>
+Code-Review+1: Holger Schulz <holger.schulz@adtran.com>
+Code-Review+2: Amit Ghosh <amit.ghosh@radisys.com>
+Submitted-by: Amit Ghosh <amit.ghosh@radisys.com>
+Submitted-at: Tue, 30 Aug 2022 08:34:44 +0000
+Reviewed-on: https://gerrit.opencord.org/c/device-management-interface/+/33164
+Project: device-management-interface
+Branch: refs/heads/master
