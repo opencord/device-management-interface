@@ -431,12 +431,13 @@ enum DataValueType {
   VALUE_TYPE_PERCENT = 13,
   VALUE_TYPE_METERS = 14,
   VALUE_TYPE_BYTES = 15,
+  VALUE_TYPE_DBM = 16,
   DataValueType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   DataValueType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool DataValueType_IsValid(int value);
 const DataValueType DataValueType_MIN = VALUE_TYPE_UNDEFINED;
-const DataValueType DataValueType_MAX = VALUE_TYPE_BYTES;
+const DataValueType DataValueType_MAX = VALUE_TYPE_DBM;
 const int DataValueType_ARRAYSIZE = DataValueType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DataValueType_descriptor();
