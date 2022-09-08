@@ -322,6 +322,12 @@ class ValueType final :
 
   // accessors -------------------------------------------------------
 
+  // .dmi.DataValueType typeOfVal = 4;
+  void clear_typeofval();
+  static const int kTypeOfValFieldNumber = 4;
+  ::dmi::DataValueType typeofval() const;
+  void set_typeofval(::dmi::DataValueType value);
+
   // int64 int_val = 1;
   private:
   bool has_int_val() const;
@@ -362,6 +368,7 @@ class ValueType final :
   inline void clear_has_val();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int typeofval_;
   union ValUnion {
     ValUnion() {}
     ::google::protobuf::int64 int_val_;
@@ -1909,6 +1916,20 @@ inline void ValueType::set_float_val(float value) {
   }
   val_.float_val_ = value;
   // @@protoc_insertion_point(field_set:dmi.ValueType.float_val)
+}
+
+// .dmi.DataValueType typeOfVal = 4;
+inline void ValueType::clear_typeofval() {
+  typeofval_ = 0;
+}
+inline ::dmi::DataValueType ValueType::typeofval() const {
+  // @@protoc_insertion_point(field_get:dmi.ValueType.typeOfVal)
+  return static_cast< ::dmi::DataValueType >(typeofval_);
+}
+inline void ValueType::set_typeofval(::dmi::DataValueType value) {
+  
+  typeofval_ = value;
+  // @@protoc_insertion_point(field_set:dmi.ValueType.typeOfVal)
 }
 
 inline bool ValueType::has_val() const {

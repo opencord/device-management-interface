@@ -16,6 +16,11 @@ enum EventIds {
     // Events from the Transceivers
     EVENT_TRANSCEIVER_PLUG_OUT = 100;
     EVENT_TRANSCEIVER_PLUG_IN = 101;
+    // The threshold based events on the transceivers should be configured on 
+    // the ports components of that transceiver and not on the transceiver 
+    // component itself. This is because there could be different thresholds 
+    // on the different ports of a transceiver (example for a GPON XGSPONCOMBO 
+    // transceiver the power thresholds could be different for the GPON vs XGSPON)
     EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHOLD = 102;
     EVENT_TRANSCEIVER_VOLTAGE_BELOW_THRESHOLD = 103;
     EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD = 104;
@@ -80,6 +85,8 @@ message ValueType {
         uint64 uint_val = 2;
         float float_val = 3;
     }
+
+    DataValueType typeOfVal = 4;
 }
 
 message WaterMarks {

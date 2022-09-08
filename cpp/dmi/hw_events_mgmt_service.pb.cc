@@ -272,6 +272,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   offsetof(::dmi::ValueTypeDefaultTypeInternal, int_val_),
   offsetof(::dmi::ValueTypeDefaultTypeInternal, uint_val_),
   offsetof(::dmi::ValueTypeDefaultTypeInternal, float_val_),
+  PROTOBUF_FIELD_OFFSET(::dmi::ValueType, typeofval_),
   PROTOBUF_FIELD_OFFSET(::dmi::ValueType, val_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::WaterMarks, _internal_metadata_),
@@ -357,16 +358,16 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::ValueType)},
-  { 9, -1, sizeof(::dmi::WaterMarks)},
-  { 16, -1, sizeof(::dmi::Thresholds)},
-  { 24, -1, sizeof(::dmi::ThresholdInformation)},
-  { 31, -1, sizeof(::dmi::EventCfg)},
-  { 39, -1, sizeof(::dmi::EventsCfg)},
-  { 45, -1, sizeof(::dmi::ListEventsResponse)},
-  { 54, -1, sizeof(::dmi::EventsConfigurationRequest)},
-  { 64, -1, sizeof(::dmi::EventsConfigurationResponse)},
-  { 72, -1, sizeof(::dmi::EventMetaData)},
-  { 80, -1, sizeof(::dmi::Event)},
+  { 10, -1, sizeof(::dmi::WaterMarks)},
+  { 17, -1, sizeof(::dmi::Thresholds)},
+  { 25, -1, sizeof(::dmi::ThresholdInformation)},
+  { 32, -1, sizeof(::dmi::EventCfg)},
+  { 40, -1, sizeof(::dmi::EventsCfg)},
+  { 46, -1, sizeof(::dmi::ListEventsResponse)},
+  { 55, -1, sizeof(::dmi::EventsConfigurationRequest)},
+  { 65, -1, sizeof(::dmi::EventsConfigurationResponse)},
+  { 73, -1, sizeof(::dmi::EventMetaData)},
+  { 81, -1, sizeof(::dmi::Event)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -393,108 +394,109 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "\n dmi/hw_events_mgmt_service.proto\022\003dmi\032"
   "\021dmi/commons.proto\032\014dmi/hw.proto\032\037google"
   "/protobuf/timestamp.proto\032\033google/protob"
-  "uf/empty.proto\"N\n\tValueType\022\021\n\007int_val\030\001"
+  "uf/empty.proto\"u\n\tValueType\022\021\n\007int_val\030\001"
   " \001(\003H\000\022\022\n\010uint_val\030\002 \001(\004H\000\022\023\n\tfloat_val\030"
-  "\003 \001(\002H\000B\005\n\003val\"G\n\nWaterMarks\022\034\n\004high\030\001 \001"
-  "(\0132\016.dmi.ValueType\022\033\n\003low\030\002 \001(\0132\016.dmi.Va"
-  "lueType\"]\n\nThresholds\022 \n\005upper\030\001 \001(\0132\017.d"
-  "mi.WaterMarksH\000\022 \n\005lower\030\002 \001(\0132\017.dmi.Wat"
-  "erMarksH\000B\013\n\tthreshold\"c\n\024ThresholdInfor"
-  "mation\022&\n\016observed_value\030\001 \001(\0132\016.dmi.Val"
-  "ueType\022#\n\nthresholds\030\002 \001(\0132\017.dmi.Thresho"
-  "lds\"g\n\010EventCfg\022\037\n\010event_id\030\001 \001(\0162\r.dmi."
-  "EventIds\022\025\n\ris_configured\030\002 \001(\010\022#\n\nthres"
-  "holds\030\003 \001(\0132\017.dmi.Thresholds\")\n\tEventsCf"
-  "g\022\034\n\005items\030\001 \003(\0132\r.dmi.EventCfg\"\370\001\n\022List"
-  "EventsResponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Sta"
-  "tus\022.\n\006reason\030\002 \001(\0162\036.dmi.ListEventsResp"
-  "onse.Reason\022\036\n\006events\030\003 \001(\0132\016.dmi.Events"
-  "Cfg\022\025\n\rreason_detail\030\004 \001(\t\"^\n\006Reason\022\024\n\020"
-  "UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022"
-  "\n\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_UNREACHABLE"
-  "\020\003\"\253\001\n\032EventsConfigurationRequest\022\036\n\013dev"
-  "ice_uuid\030\001 \001(\0132\t.dmi.Uuid\022!\n\007changes\030\002 \001"
-  "(\0132\016.dmi.EventsCfgH\000\022\032\n\020reset_to_default"
-  "\030\003 \001(\010H\000\022!\n\016component_uuid\030\004 \001(\0132\t.dmi.U"
-  "uidB\013\n\toperation\"\376\001\n\033EventsConfiguration"
-  "Response\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0227\n"
-  "\006reason\030\002 \001(\0162\'.dmi.EventsConfigurationR"
-  "esponse.Reason\022\025\n\rreason_detail\030\003 \001(\t\"r\n"
-  "\006Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN"
-  "_DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\022\n\016INVALID"
-  "_CONFIG\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"j\n\rEve"
-  "ntMetaData\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uu"
-  "id\022!\n\016component_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n"
-  "\016component_name\030\003 \001(\t\"\310\001\n\005Event\022*\n\016event"
-  "_metadata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010e"
-  "vent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_t"
-  "s\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016t"
-  "hreshold_info\030\004 \001(\0132\031.dmi.ThresholdInfor"
-  "mation\022\020\n\010add_info\030\005 \001(\t*\202\020\n\010EventIds\022\030\n"
-  "\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCE"
-  "IVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLU"
-  "G_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOV"
-  "E_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTA"
-  "GE_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVE"
-  "R_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT"
-  "_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD"
-  "\020i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_TH"
-  "RESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_B"
-  "ELOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX"
-  "_POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSC"
-  "EIVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVEN"
-  "T_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n"
-  "\022.\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THR"
-  "ESHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\022"
-  "7\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRES"
-  "HOLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VO"
-  "LTAGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVE"
-  "NT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHO"
-  "LD_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMP"
-  "ERATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3E"
-  "VENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD"
-  "_RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURREN"
-  "T_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_T"
-  "RANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECO"
-  "VERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BE"
-  "LOW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANS"
-  "CEIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERE"
-  "D\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_"
-  "THRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIV"
-  "ER_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG"
-  "_OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT"
-  "_PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_REC"
-  "OVERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVE"
-  "NT_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020"
-  "\256\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$"
-  "EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022"
-  "&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\022"
-  "3\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_"
-  "RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_AB"
-  "OVE_FATAL_RECOVERED\020\223\003\022\032\n\025EVENT_HW_DEVIC"
-  "E_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPERATUR"
-  "E_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVICE_T"
-  "EMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_HW_DE"
-  "VICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERE"
-  "D\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_ABOV"
-  "E_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEVICE_"
-  "REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SENSOR"
-  "_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATURE_S"
-  "ENSORS_FAILED\020\373\003\022\035\n\030EVENT_LINE_CARD_PLUG"
-  "_OUT\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001"
-  "\n\035NativeEventsManagementService\0226\n\nListE"
-  "vents\022\017.dmi.HardwareID\032\027.dmi.ListEventsR"
-  "esponse\022^\n\031UpdateEventsConfiguration\022\037.d"
-  "mi.EventsConfigurationRequest\032 .dmi.Even"
-  "tsConfigurationResponse\0224\n\014StreamEvents\022"
-  "\026.google.protobuf.Empty\032\n.dmi.Event0\001B;Z"
-  "9github.com/opencord/device-management-i"
-  "nterface/v3/go/dmib\006proto3"
+  "\003 \001(\002H\000\022%\n\ttypeOfVal\030\004 \001(\0162\022.dmi.DataVal"
+  "ueTypeB\005\n\003val\"G\n\nWaterMarks\022\034\n\004high\030\001 \001("
+  "\0132\016.dmi.ValueType\022\033\n\003low\030\002 \001(\0132\016.dmi.Val"
+  "ueType\"]\n\nThresholds\022 \n\005upper\030\001 \001(\0132\017.dm"
+  "i.WaterMarksH\000\022 \n\005lower\030\002 \001(\0132\017.dmi.Wate"
+  "rMarksH\000B\013\n\tthreshold\"c\n\024ThresholdInform"
+  "ation\022&\n\016observed_value\030\001 \001(\0132\016.dmi.Valu"
+  "eType\022#\n\nthresholds\030\002 \001(\0132\017.dmi.Threshol"
+  "ds\"g\n\010EventCfg\022\037\n\010event_id\030\001 \001(\0162\r.dmi.E"
+  "ventIds\022\025\n\ris_configured\030\002 \001(\010\022#\n\nthresh"
+  "olds\030\003 \001(\0132\017.dmi.Thresholds\")\n\tEventsCfg"
+  "\022\034\n\005items\030\001 \003(\0132\r.dmi.EventCfg\"\370\001\n\022ListE"
+  "ventsResponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Stat"
+  "us\022.\n\006reason\030\002 \001(\0162\036.dmi.ListEventsRespo"
+  "nse.Reason\022\036\n\006events\030\003 \001(\0132\016.dmi.EventsC"
+  "fg\022\025\n\rreason_detail\030\004 \001(\t\"^\n\006Reason\022\024\n\020U"
+  "NDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n"
+  "\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_UNREACHABLE\020"
+  "\003\"\253\001\n\032EventsConfigurationRequest\022\036\n\013devi"
+  "ce_uuid\030\001 \001(\0132\t.dmi.Uuid\022!\n\007changes\030\002 \001("
+  "\0132\016.dmi.EventsCfgH\000\022\032\n\020reset_to_default\030"
+  "\003 \001(\010H\000\022!\n\016component_uuid\030\004 \001(\0132\t.dmi.Uu"
+  "idB\013\n\toperation\"\376\001\n\033EventsConfigurationR"
+  "esponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0227\n\006"
+  "reason\030\002 \001(\0162\'.dmi.EventsConfigurationRe"
+  "sponse.Reason\022\025\n\rreason_detail\030\003 \001(\t\"r\n\006"
+  "Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_"
+  "DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\022\n\016INVALID_"
+  "CONFIG\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"j\n\rEven"
+  "tMetaData\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uui"
+  "d\022!\n\016component_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n\016"
+  "component_name\030\003 \001(\t\"\310\001\n\005Event\022*\n\016event_"
+  "metadata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010ev"
+  "ent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_ts"
+  "\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016th"
+  "reshold_info\030\004 \001(\0132\031.dmi.ThresholdInform"
+  "ation\022\020\n\010add_info\030\005 \001(\t*\202\020\n\010EventIds\022\030\n\024"
+  "EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCEI"
+  "VER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLUG"
+  "_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOVE"
+  "_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTAG"
+  "E_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVER"
+  "_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT_"
+  "TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD\020"
+  "i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_THR"
+  "ESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_BE"
+  "LOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX_"
+  "POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSCE"
+  "IVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVENT"
+  "_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n\022"
+  ".\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THRE"
+  "SHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\0227"
+  "\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESH"
+  "OLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VOL"
+  "TAGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVEN"
+  "T_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOL"
+  "D_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMPE"
+  "RATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3EV"
+  "ENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD_"
+  "RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURRENT"
+  "_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_TR"
+  "ANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECOV"
+  "ERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BEL"
+  "OW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANSC"
+  "EIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERED"
+  "\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_T"
+  "HRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIVE"
+  "R_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG_"
+  "OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT_"
+  "PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_RECO"
+  "VERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVEN"
+  "T_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020\256"
+  "\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$E"
+  "VENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022&"
+  "\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\0223"
+  "\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_R"
+  "ECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_ABO"
+  "VE_FATAL_RECOVERED\020\223\003\022\032\n\025EVENT_HW_DEVICE"
+  "_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPERATURE"
+  "_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVICE_TE"
+  "MPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_HW_DEV"
+  "ICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERED"
+  "\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_ABOVE"
+  "_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEVICE_R"
+  "EBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SENSOR_"
+  "FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATURE_SE"
+  "NSORS_FAILED\020\373\003\022\035\n\030EVENT_LINE_CARD_PLUG_"
+  "OUT\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001\n"
+  "\035NativeEventsManagementService\0226\n\nListEv"
+  "ents\022\017.dmi.HardwareID\032\027.dmi.ListEventsRe"
+  "sponse\022^\n\031UpdateEventsConfiguration\022\037.dm"
+  "i.EventsConfigurationRequest\032 .dmi.Event"
+  "sConfigurationResponse\0224\n\014StreamEvents\022\026"
+  ".google.protobuf.Empty\032\n.dmi.Event0\001B;Z9"
+  "github.com/opencord/device-management-in"
+  "terface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 3986,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4025,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -638,6 +640,7 @@ class ValueType::HasBitSetters {
 const int ValueType::kIntValFieldNumber;
 const int ValueType::kUintValFieldNumber;
 const int ValueType::kFloatValFieldNumber;
+const int ValueType::kTypeOfValFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ValueType::ValueType()
@@ -649,6 +652,7 @@ ValueType::ValueType(const ValueType& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  typeofval_ = from.typeofval_;
   clear_has_val();
   switch (from.val_case()) {
     case kIntVal: {
@@ -671,6 +675,7 @@ ValueType::ValueType(const ValueType& from)
 }
 
 void ValueType::SharedCtor() {
+  typeofval_ = 0;
   clear_has_val();
 }
 
@@ -723,6 +728,7 @@ void ValueType::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  typeofval_ = 0;
   clear_val();
   _internal_metadata_.Clear();
 }
@@ -759,6 +765,14 @@ const char* ValueType::_InternalParse(const char* begin, const char* end, void* 
         if (static_cast<::google::protobuf::uint8>(tag) != 29) goto handle_unusual;
         msg->set_float_val(::google::protobuf::io::UnalignedLoad<float>(ptr));
         ptr += sizeof(float);
+        break;
+      }
+      // .dmi.DataValueType typeOfVal = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_typeofval(static_cast<::dmi::DataValueType>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -830,6 +844,20 @@ bool ValueType::MergePartialFromCodedStream(
         break;
       }
 
+      // .dmi.DataValueType typeOfVal = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_typeofval(static_cast< ::dmi::DataValueType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -872,6 +900,12 @@ void ValueType::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->float_val(), output);
   }
 
+  // .dmi.DataValueType typeOfVal = 4;
+  if (this->typeofval() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->typeofval(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -900,6 +934,12 @@ void ValueType::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->float_val(), target);
   }
 
+  // .dmi.DataValueType typeOfVal = 4;
+  if (this->typeofval() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->typeofval(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -920,6 +960,12 @@ size_t ValueType::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .dmi.DataValueType typeOfVal = 4;
+  if (this->typeofval() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->typeofval());
+  }
 
   switch (val_case()) {
     // int64 int_val = 1;
@@ -972,6 +1018,9 @@ void ValueType::MergeFrom(const ValueType& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.typeofval() != 0) {
+    set_typeofval(from.typeofval());
+  }
   switch (from.val_case()) {
     case kIntVal: {
       set_int_val(from.int_val());
@@ -1016,6 +1065,7 @@ void ValueType::Swap(ValueType* other) {
 void ValueType::InternalSwap(ValueType* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(typeofval_, other->typeofval_);
   swap(val_, other->val_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
