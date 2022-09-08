@@ -107,6 +107,7 @@ enum DataValueType {
     VALUE_TYPE_PERCENT = 13;
     VALUE_TYPE_METERS = 14;
     VALUE_TYPE_BYTES = 15;
+    VALUE_TYPE_DBM = 16;
 }
 
 enum ValueScale {
