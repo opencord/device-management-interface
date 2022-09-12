@@ -82,6 +82,50 @@ message StartupConfigInfoResponse {
     string reason_detail = 5;
 }
 
+message UploadDebugInfoRequest {
+    Uuid device_uuid = 1;
+    // location_url is the remote location where the information needed for troubleshooting should be uploaded.
+    // Authentication (user/pass) if any should be in the location_url string
+    // The locaion_url would contain the protocol, credentials, the IP address/DNS of the server and the path of the directory
+    // e.g. sftp://upload_user:upload_pass@192.168.0.1:22/hw_debug_info/
+    string location_url = 3;
+}
+
+// Implementations would be expected to stream multiple UploadDebugInfoStatus indicating the progress of the upload
+message UploadDebugInfoStatus {
+    Uuid device_uuid = 1;
+
+    enum UploadStatus {
+        UNDEFINED_UPLOAD_STATUS = 0;
+        COMPLETE = 1;
+        IN_PROGRESS = 2;
+        ERROR = 3;
+    }
+
+    UploadStatus status = 2;
+    // percent_uploaded is the percentage of the upload that is done
+    // should be a value between 0 and 100 when status is IN_PROGRESS
+    // should be 100 when status is COMPLETE
+    // can be set to -1 if the device manager implementations cannot support
+    // the progress percentage
+    int32 percent_uploaded = 3;
+
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        INTERNAL_ERROR = 2;
+        DEVICE_UNREACHABLE = 3;
+        REMOTE_LOCATION_UNREACHABLE = 4;
+        REMOTE_LOCATION_PERMISSION_DENIED = 5;
+        ERROR_DURING_UPLOAD = 6;
+    }
+    Reason reason = 4; // reason specifies why the status is ERROR
+    string location_url = 5;
+    // file_name is the file at location_url where the debug information was uploaded.
+    // Implementations need to ensure that file_name is unique at the remote location.
+    string file_name = 6;
+}
+
 service NativeSoftwareManagementService {
     // Get the software version information of the Active and Standby images
     rpc GetSoftwareVersion(HardwareID) returns(GetSoftwareVersionInformationResponse);
@@ -103,6 +147,9 @@ service NativeSoftwareManagementService {
 
     // This API can be used to retrieve information about the current startup configuration that a device is using
     rpc GetStartupConfigurationInfo(StartupConfigInfoRequest) returns(StartupConfigInfoResponse);
+
+    // This API can be used to upload to a remote location, information useful for troubleshooting problems on the hardware
+    rpc UploadDebugInfo(UploadDebugInfoRequest) returns(stream UploadDebugInfoStatus);
 
     // If needed we can add this later
     //rpc SubscribeToEvents() returns (stream );

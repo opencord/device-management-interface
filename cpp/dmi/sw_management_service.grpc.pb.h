@@ -95,6 +95,16 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>> PrepareAsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>>(PrepareAsyncGetStartupConfigurationInfoRaw(context, request, cq));
     }
+    // This API can be used to upload to a remote location, information useful for troubleshooting problems on the hardware
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::UploadDebugInfoStatus>> UploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::dmi::UploadDebugInfoStatus>>(UploadDebugInfoRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>> AsyncUploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>>(AsyncUploadDebugInfoRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>> PrepareAsyncUploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>>(PrepareAsyncUploadDebugInfoRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -151,6 +161,12 @@ class NativeSoftwareManagementService final {
       #else
       virtual void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // This API can be used to upload to a remote location, information useful for troubleshooting problems on the hardware
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void UploadDebugInfo(::grpc::ClientContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::ClientReadReactor< ::dmi::UploadDebugInfoStatus>* reactor) = 0;
+      #else
+      virtual void UploadDebugInfo(::grpc::ClientContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::UploadDebugInfoStatus>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -176,6 +192,9 @@ class NativeSoftwareManagementService final {
     virtual ::grpc::ClientAsyncReaderInterface< ::dmi::ConfigResponse>* PrepareAsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>* AsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::StartupConfigInfoResponse>* PrepareAsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::dmi::UploadDebugInfoStatus>* UploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>* AsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::dmi::UploadDebugInfoStatus>* PrepareAsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -230,6 +249,15 @@ class NativeSoftwareManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>> PrepareAsyncGetStartupConfigurationInfo(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>>(PrepareAsyncGetStartupConfigurationInfoRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientReader< ::dmi::UploadDebugInfoStatus>> UploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::dmi::UploadDebugInfoStatus>>(UploadDebugInfoRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>> AsyncUploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>>(AsyncUploadDebugInfoRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>> PrepareAsyncUploadDebugInfo(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>>(PrepareAsyncUploadDebugInfoRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -277,6 +305,11 @@ class NativeSoftwareManagementService final {
       #else
       void GetStartupConfigurationInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::StartupConfigInfoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UploadDebugInfo(::grpc::ClientContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::ClientReadReactor< ::dmi::UploadDebugInfoStatus>* reactor) override;
+      #else
+      void UploadDebugInfo(::grpc::ClientContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::UploadDebugInfoStatus>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -304,12 +337,16 @@ class NativeSoftwareManagementService final {
     ::grpc::ClientAsyncReader< ::dmi::ConfigResponse>* PrepareAsyncUpdateStartupConfigurationRaw(::grpc::ClientContext* context, const ::dmi::ConfigRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>* AsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::StartupConfigInfoResponse>* PrepareAsyncGetStartupConfigurationInfoRaw(::grpc::ClientContext* context, const ::dmi::StartupConfigInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::dmi::UploadDebugInfoStatus>* UploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request) override;
+    ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>* AsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>* PrepareAsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetSoftwareVersion_;
     const ::grpc::internal::RpcMethod rpcmethod_DownloadImage_;
     const ::grpc::internal::RpcMethod rpcmethod_ActivateImage_;
     const ::grpc::internal::RpcMethod rpcmethod_RevertToStandbyImage_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateStartupConfiguration_;
     const ::grpc::internal::RpcMethod rpcmethod_GetStartupConfigurationInfo_;
+    const ::grpc::internal::RpcMethod rpcmethod_UploadDebugInfo_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -332,6 +369,8 @@ class NativeSoftwareManagementService final {
     virtual ::grpc::Status UpdateStartupConfiguration(::grpc::ServerContext* context, const ::dmi::ConfigRequest* request, ::grpc::ServerWriter< ::dmi::ConfigResponse>* writer);
     // This API can be used to retrieve information about the current startup configuration that a device is using
     virtual ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* context, const ::dmi::StartupConfigInfoRequest* request, ::dmi::StartupConfigInfoResponse* response);
+    // This API can be used to upload to a remote location, information useful for troubleshooting problems on the hardware
+    virtual ::grpc::Status UploadDebugInfo(::grpc::ServerContext* context, const ::dmi::UploadDebugInfoRequest* request, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetSoftwareVersion : public BaseClass {
@@ -453,7 +492,27 @@ class NativeSoftwareManagementService final {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetSoftwareVersion<WithAsyncMethod_DownloadImage<WithAsyncMethod_ActivateImage<WithAsyncMethod_RevertToStandbyImage<WithAsyncMethod_UpdateStartupConfiguration<WithAsyncMethod_GetStartupConfigurationInfo<Service > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UploadDebugInfo() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUploadDebugInfo(::grpc::ServerContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::ServerAsyncWriter< ::dmi::UploadDebugInfoStatus>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetSoftwareVersion<WithAsyncMethod_DownloadImage<WithAsyncMethod_ActivateImage<WithAsyncMethod_RevertToStandbyImage<WithAsyncMethod_UpdateStartupConfiguration<WithAsyncMethod_GetStartupConfigurationInfo<WithAsyncMethod_UploadDebugInfo<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetSoftwareVersion : public BaseClass {
    private:
@@ -700,11 +759,49 @@ class NativeSoftwareManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_UploadDebugInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::dmi::UploadDebugInfoRequest, ::dmi::UploadDebugInfoStatus>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::UploadDebugInfoRequest* request) { return this->UploadDebugInfo(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::dmi::UploadDebugInfoStatus>* UploadDebugInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::dmi::UploadDebugInfoStatus>* UploadDebugInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<Service > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<ExperimentalWithCallbackMethod_UploadDebugInfo<Service > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<Service > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_GetSoftwareVersion<ExperimentalWithCallbackMethod_DownloadImage<ExperimentalWithCallbackMethod_ActivateImage<ExperimentalWithCallbackMethod_RevertToStandbyImage<ExperimentalWithCallbackMethod_UpdateStartupConfiguration<ExperimentalWithCallbackMethod_GetStartupConfigurationInfo<ExperimentalWithCallbackMethod_UploadDebugInfo<Service > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetSoftwareVersion : public BaseClass {
    private:
@@ -803,6 +900,23 @@ class NativeSoftwareManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetStartupConfigurationInfo(::grpc::ServerContext* /*context*/, const ::dmi::StartupConfigInfoRequest* /*request*/, ::dmi::StartupConfigInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UploadDebugInfo() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -925,6 +1039,26 @@ class NativeSoftwareManagementService final {
     }
     void RequestGetStartupConfigurationInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UploadDebugInfo() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUploadDebugInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1156,6 +1290,44 @@ class NativeSoftwareManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_UploadDebugInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->UploadDebugInfo(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* UploadDebugInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* UploadDebugInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetSoftwareVersion : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1318,8 +1490,35 @@ class NativeSoftwareManagementService final {
     // replace default version of method with split streamed
     virtual ::grpc::Status StreamedUpdateStartupConfiguration(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::ConfigRequest,::dmi::ConfigResponse>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_DownloadImage<WithSplitStreamingMethod_ActivateImage<WithSplitStreamingMethod_RevertToStandbyImage<WithSplitStreamingMethod_UpdateStartupConfiguration<Service > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetSoftwareVersion<WithSplitStreamingMethod_DownloadImage<WithSplitStreamingMethod_ActivateImage<WithSplitStreamingMethod_RevertToStandbyImage<WithSplitStreamingMethod_UpdateStartupConfiguration<WithStreamedUnaryMethod_GetStartupConfigurationInfo<Service > > > > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_UploadDebugInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_UploadDebugInfo() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::dmi::UploadDebugInfoRequest, ::dmi::UploadDebugInfoStatus>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::dmi::UploadDebugInfoRequest, ::dmi::UploadDebugInfoStatus>* streamer) {
+                       return this->StreamedUploadDebugInfo(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_UploadDebugInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UploadDebugInfo(::grpc::ServerContext* /*context*/, const ::dmi::UploadDebugInfoRequest* /*request*/, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedUploadDebugInfo(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::UploadDebugInfoRequest,::dmi::UploadDebugInfoStatus>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_DownloadImage<WithSplitStreamingMethod_ActivateImage<WithSplitStreamingMethod_RevertToStandbyImage<WithSplitStreamingMethod_UpdateStartupConfiguration<WithSplitStreamingMethod_UploadDebugInfo<Service > > > > > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_GetSoftwareVersion<WithSplitStreamingMethod_DownloadImage<WithSplitStreamingMethod_ActivateImage<WithSplitStreamingMethod_RevertToStandbyImage<WithSplitStreamingMethod_UpdateStartupConfiguration<WithStreamedUnaryMethod_GetStartupConfigurationInfo<WithSplitStreamingMethod_UploadDebugInfo<Service > > > > > > > StreamedService;
 };
 
 }  // namespace dmi

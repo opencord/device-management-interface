@@ -28,6 +28,7 @@ static const char* NativeSoftwareManagementService_method_names[] = {
   "/dmi.NativeSoftwareManagementService/RevertToStandbyImage",
   "/dmi.NativeSoftwareManagementService/UpdateStartupConfiguration",
   "/dmi.NativeSoftwareManagementService/GetStartupConfigurationInfo",
+  "/dmi.NativeSoftwareManagementService/UploadDebugInfo",
 };
 
 std::unique_ptr< NativeSoftwareManagementService::Stub> NativeSoftwareManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,6 +44,7 @@ NativeSoftwareManagementService::Stub::Stub(const std::shared_ptr< ::grpc::Chann
   , rpcmethod_RevertToStandbyImage_(NativeSoftwareManagementService_method_names[3], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_UpdateStartupConfiguration_(NativeSoftwareManagementService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_GetStartupConfigurationInfo_(NativeSoftwareManagementService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UploadDebugInfo_(NativeSoftwareManagementService_method_names[6], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status NativeSoftwareManagementService::Stub::GetSoftwareVersion(::grpc::ClientContext* context, const ::dmi::HardwareID& request, ::dmi::GetSoftwareVersionInformationResponse* response) {
@@ -165,6 +167,22 @@ void NativeSoftwareManagementService::Stub::experimental_async::GetStartupConfig
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::StartupConfigInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetStartupConfigurationInfo_, context, request, false);
 }
 
+::grpc::ClientReader< ::dmi::UploadDebugInfoStatus>* NativeSoftwareManagementService::Stub::UploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::dmi::UploadDebugInfoStatus>::Create(channel_.get(), rpcmethod_UploadDebugInfo_, context, request);
+}
+
+void NativeSoftwareManagementService::Stub::experimental_async::UploadDebugInfo(::grpc::ClientContext* context, ::dmi::UploadDebugInfoRequest* request, ::grpc::experimental::ClientReadReactor< ::dmi::UploadDebugInfoStatus>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::dmi::UploadDebugInfoStatus>::Create(stub_->channel_.get(), stub_->rpcmethod_UploadDebugInfo_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>* NativeSoftwareManagementService::Stub::AsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::UploadDebugInfoStatus>::Create(channel_.get(), cq, rpcmethod_UploadDebugInfo_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::dmi::UploadDebugInfoStatus>* NativeSoftwareManagementService::Stub::PrepareAsyncUploadDebugInfoRaw(::grpc::ClientContext* context, const ::dmi::UploadDebugInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::dmi::UploadDebugInfoStatus>::Create(channel_.get(), cq, rpcmethod_UploadDebugInfo_, context, request, false, nullptr);
+}
+
 NativeSoftwareManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeSoftwareManagementService_method_names[0],
@@ -226,6 +244,16 @@ NativeSoftwareManagementService::Service::Service() {
              ::dmi::StartupConfigInfoResponse* resp) {
                return service->GetStartupConfigurationInfo(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeSoftwareManagementService_method_names[6],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< NativeSoftwareManagementService::Service, ::dmi::UploadDebugInfoRequest, ::dmi::UploadDebugInfoStatus>(
+          [](NativeSoftwareManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::UploadDebugInfoRequest* req,
+             ::grpc_impl::ServerWriter<::dmi::UploadDebugInfoStatus>* writer) {
+               return service->UploadDebugInfo(ctx, req, writer);
+             }, this)));
 }
 
 NativeSoftwareManagementService::Service::~Service() {
@@ -270,6 +298,13 @@ NativeSoftwareManagementService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeSoftwareManagementService::Service::UploadDebugInfo(::grpc::ServerContext* context, const ::dmi::UploadDebugInfoRequest* request, ::grpc::ServerWriter< ::dmi::UploadDebugInfoStatus>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
