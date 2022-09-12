@@ -17,7 +17,7 @@ from dmi import hw_pb2 as dmi_dot_hw__pb2
 from dmi import sw_image_pb2 as dmi_dot_sw__image__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"\xad\x02\n%GetSoftwareVersionInformationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x41\n\x06reason\x18\x02 \x01(\x0e\x32\x31.dmi.GetSoftwareVersionInformationResponse.Reason\x12-\n\x04info\x18\x03 \x01(\x0b\x32\x1f.dmi.SoftwareVersionInformation\x12\x15\n\rreason_detail\x18\x04 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation\"C\n\rConfigRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x12\n\nconfig_url\x18\x02 \x01(\t\"\xa3\x02\n\x0e\x43onfigResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12*\n\x06reason\x18\x02 \x01(\x0e\x32\x1a.dmi.ConfigResponse.Reason\x12\x15\n\rreason_detail\x18\x03 \x01(\t\"\xb0\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x19\n\x15\x45RROR_FETCHING_CONFIG\x10\x03\x12\x12\n\x0eINVALID_CONFIG\x10\x04\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x05\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x06\":\n\x18StartupConfigInfoRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"\x8b\x02\n\x19StartupConfigInfoResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x35\n\x06reason\x18\x02 \x01(\x0e\x32%.dmi.StartupConfigInfoResponse.Reason\x12\x12\n\nconfig_url\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x15\n\rreason_detail\x18\x05 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\x32\xce\x03\n\x1fNativeSoftwareManagementService\x12Q\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a*.dmi.GetSoftwareVersionInformationResponse\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12G\n\x1aUpdateStartupConfiguration\x12\x12.dmi.ConfigRequest\x1a\x13.dmi.ConfigResponse0\x01\x12\\\n\x1bGetStartupConfigurationInfo\x12\x1d.dmi.StartupConfigInfoRequest\x1a\x1e.dmi.StartupConfigInfoResponseB;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x64mi/sw_management_service.proto\x12\x03\x64mi\x1a\x11\x64mi/commons.proto\x1a\x0c\x64mi/hw.proto\x1a\x12\x64mi/sw_image.proto\"u\n\x1aSoftwareVersionInformation\x12*\n\x0f\x61\x63tive_versions\x18\x01 \x03(\x0b\x32\x11.dmi.ImageVersion\x12+\n\x10standby_versions\x18\x02 \x03(\x0b\x32\x11.dmi.ImageVersion\"\xad\x02\n%GetSoftwareVersionInformationResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x41\n\x06reason\x18\x02 \x01(\x0e\x32\x31.dmi.GetSoftwareVersionInformationResponse.Reason\x12-\n\x04info\x18\x03 \x01(\x0b\x32\x1f.dmi.SoftwareVersionInformation\x12\x15\n\rreason_detail\x18\x04 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"a\n\x14\x44ownloadImageRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12)\n\nimage_info\x18\x02 \x01(\x0b\x32\x15.dmi.ImageInformation\"C\n\rConfigRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x12\n\nconfig_url\x18\x02 \x01(\t\"\xa3\x02\n\x0e\x43onfigResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12*\n\x06reason\x18\x02 \x01(\x0e\x32\x1a.dmi.ConfigResponse.Reason\x12\x15\n\rreason_detail\x18\x03 \x01(\t\"\xb0\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x19\n\x15\x45RROR_FETCHING_CONFIG\x10\x03\x12\x12\n\x0eINVALID_CONFIG\x10\x04\x12!\n\x1dOPERATION_ALREADY_IN_PROGRESS\x10\x05\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x06\":\n\x18StartupConfigInfoRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\"\x8b\x02\n\x19StartupConfigInfoResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0e\x32\x0b.dmi.Status\x12\x35\n\x06reason\x18\x02 \x01(\x0e\x32%.dmi.StartupConfigInfoResponse.Reason\x12\x12\n\nconfig_url\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12\x15\n\rreason_detail\x18\x05 \x01(\t\"^\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\"N\n\x16UploadDebugInfoRequest\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x14\n\x0clocation_url\x18\x03 \x01(\t\"\xf6\x02\n\x17UploadDebugInfoResponse\x12\x1e\n\x0b\x64\x65vice_uuid\x18\x01 \x01(\x0b\x32\t.dmi.Uuid\x12\x1b\n\x06status\x18\x02 \x01(\x0e\x32\x0b.dmi.Status\x12\x33\n\x06reason\x18\x03 \x01(\x0e\x32#.dmi.UploadDebugInfoResponse.Reason\x12\x14\n\x0clocation_url\x18\x04 \x01(\t\x12\x11\n\tfile_name\x18\x05 \x01(\t\"\xbf\x01\n\x06Reason\x12\x14\n\x10UNDEFINED_REASON\x10\x00\x12\x12\n\x0eUNKNOWN_DEVICE\x10\x01\x12\x12\n\x0eINTERNAL_ERROR\x10\x02\x12\x16\n\x12\x44\x45VICE_UNREACHABLE\x10\x03\x12\x1f\n\x1bREMOTE_LOCATION_UNREACHABLE\x10\x04\x12%\n!REMOTE_LOCATION_PERMISSION_DENIED\x10\x05\x12\x17\n\x13\x45RROR_DURING_UPLOAD\x10\x06\x32\x9e\x04\n\x1fNativeSoftwareManagementService\x12Q\n\x12GetSoftwareVersion\x12\x0f.dmi.HardwareID\x1a*.dmi.GetSoftwareVersionInformationResponse\x12>\n\rDownloadImage\x12\x19.dmi.DownloadImageRequest\x1a\x10.dmi.ImageStatus0\x01\x12\x34\n\rActivateImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12;\n\x14RevertToStandbyImage\x12\x0f.dmi.HardwareID\x1a\x10.dmi.ImageStatus0\x01\x12G\n\x1aUpdateStartupConfiguration\x12\x12.dmi.ConfigRequest\x1a\x13.dmi.ConfigResponse0\x01\x12\\\n\x1bGetStartupConfigurationInfo\x12\x1d.dmi.StartupConfigInfoRequest\x1a\x1e.dmi.StartupConfigInfoResponse\x12N\n\x0fUploadDebugInfo\x12\x1b.dmi.UploadDebugInfoRequest\x1a\x1c.dmi.UploadDebugInfoResponse0\x01\x42;Z9github.com/opencord/device-management-interface/v3/go/dmib\x06proto3')
 
 
 
@@ -28,9 +28,12 @@ _CONFIGREQUEST = DESCRIPTOR.message_types_by_name['ConfigRequest']
 _CONFIGRESPONSE = DESCRIPTOR.message_types_by_name['ConfigResponse']
 _STARTUPCONFIGINFOREQUEST = DESCRIPTOR.message_types_by_name['StartupConfigInfoRequest']
 _STARTUPCONFIGINFORESPONSE = DESCRIPTOR.message_types_by_name['StartupConfigInfoResponse']
+_UPLOADDEBUGINFOREQUEST = DESCRIPTOR.message_types_by_name['UploadDebugInfoRequest']
+_UPLOADDEBUGINFORESPONSE = DESCRIPTOR.message_types_by_name['UploadDebugInfoResponse']
 _GETSOFTWAREVERSIONINFORMATIONRESPONSE_REASON = _GETSOFTWAREVERSIONINFORMATIONRESPONSE.enum_types_by_name['Reason']
 _CONFIGRESPONSE_REASON = _CONFIGRESPONSE.enum_types_by_name['Reason']
 _STARTUPCONFIGINFORESPONSE_REASON = _STARTUPCONFIGINFORESPONSE.enum_types_by_name['Reason']
+_UPLOADDEBUGINFORESPONSE_REASON = _UPLOADDEBUGINFORESPONSE.enum_types_by_name['Reason']
 SoftwareVersionInformation = _reflection.GeneratedProtocolMessageType('SoftwareVersionInformation', (_message.Message,), {
   'DESCRIPTOR' : _SOFTWAREVERSIONINFORMATION,
   '__module__' : 'dmi.sw_management_service_pb2'
@@ -80,6 +83,20 @@ StartupConfigInfoResponse = _reflection.GeneratedProtocolMessageType('StartupCon
   })
 _sym_db.RegisterMessage(StartupConfigInfoResponse)
 
+UploadDebugInfoRequest = _reflection.GeneratedProtocolMessageType('UploadDebugInfoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPLOADDEBUGINFOREQUEST,
+  '__module__' : 'dmi.sw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.UploadDebugInfoRequest)
+  })
+_sym_db.RegisterMessage(UploadDebugInfoRequest)
+
+UploadDebugInfoResponse = _reflection.GeneratedProtocolMessageType('UploadDebugInfoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPLOADDEBUGINFORESPONSE,
+  '__module__' : 'dmi.sw_management_service_pb2'
+  # @@protoc_insertion_point(class_scope:dmi.UploadDebugInfoResponse)
+  })
+_sym_db.RegisterMessage(UploadDebugInfoResponse)
+
 _NATIVESOFTWAREMANAGEMENTSERVICE = DESCRIPTOR.services_by_name['NativeSoftwareManagementService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -105,6 +122,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STARTUPCONFIGINFORESPONSE._serialized_end=1306
   _STARTUPCONFIGINFORESPONSE_REASON._serialized_start=420
   _STARTUPCONFIGINFORESPONSE_REASON._serialized_end=514
-  _NATIVESOFTWAREMANAGEMENTSERVICE._serialized_start=1309
-  _NATIVESOFTWAREMANAGEMENTSERVICE._serialized_end=1771
+  _UPLOADDEBUGINFOREQUEST._serialized_start=1308
+  _UPLOADDEBUGINFOREQUEST._serialized_end=1386
+  _UPLOADDEBUGINFORESPONSE._serialized_start=1389
+  _UPLOADDEBUGINFORESPONSE._serialized_end=1763
+  _UPLOADDEBUGINFORESPONSE_REASON._serialized_start=1572
+  _UPLOADDEBUGINFORESPONSE_REASON._serialized_end=1763
+  _NATIVESOFTWAREMANAGEMENTSERVICE._serialized_start=1766
+  _NATIVESOFTWAREMANAGEMENTSERVICE._serialized_end=2308
 # @@protoc_insertion_point(module_scope)
