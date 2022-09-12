@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "456d949b_792ea41b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-09-12T08:43:34Z",
+      "side": 1,
+      "message": "Please have a look at some minor changes I propose.",
+      "revId": "ce12952a4192900ad40b87a01720d6c66d62d7a9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c186824_c10ca0c2",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-09-12T08:43:34Z",
+      "side": 1,
+      "message": "\u003d\u003e \"the port components\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 7,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "ce12952a4192900ad40b87a01720d6c66d62d7a9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ffb92b6_dc5dbf2d",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-09-12T08:43:34Z",
+      "side": 1,
+      "message": "\u003d\u003e \"for example\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 48,
+        "endLine": 22,
+        "endChar": 56
+      },
+      "revId": "ce12952a4192900ad40b87a01720d6c66d62d7a9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fe4bfdb_63a52bf6",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-09-12T08:43:34Z",
+      "side": 1,
+      "message": "\u003d\u003e \"for the GPON and XGSPON ports\"",
+      "range": {
+        "startLine": 23,
+        "startChar": 70,
+        "endLine": 24,
+        "endChar": 21
+      },
+      "revId": "ce12952a4192900ad40b87a01720d6c66d62d7a9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd8d4ed2_06df8968",
+        "filename": "protos/dmi/hw_events_mgmt_service.proto",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2022-09-12T08:43:34Z",
+      "side": 1,
+      "message": "\u003d\u003e \"kilobytes\"",
+      "range": {
+        "startLine": 85,
+        "startChar": 18,
+        "endLine": 85,
+        "endChar": 28
+      },
+      "revId": "ce12952a4192900ad40b87a01720d6c66d62d7a9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
