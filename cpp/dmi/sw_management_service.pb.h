@@ -45,7 +45,7 @@ struct TableStruct_dmi_2fsw_5fmanagement_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -74,6 +74,12 @@ extern StartupConfigInfoRequestDefaultTypeInternal _StartupConfigInfoRequest_def
 class StartupConfigInfoResponse;
 class StartupConfigInfoResponseDefaultTypeInternal;
 extern StartupConfigInfoResponseDefaultTypeInternal _StartupConfigInfoResponse_default_instance_;
+class UploadDebugInfoRequest;
+class UploadDebugInfoRequestDefaultTypeInternal;
+extern UploadDebugInfoRequestDefaultTypeInternal _UploadDebugInfoRequest_default_instance_;
+class UploadDebugInfoResponse;
+class UploadDebugInfoResponseDefaultTypeInternal;
+extern UploadDebugInfoResponseDefaultTypeInternal _UploadDebugInfoResponse_default_instance_;
 }  // namespace dmi
 namespace google {
 namespace protobuf {
@@ -84,6 +90,8 @@ template<> ::dmi::GetSoftwareVersionInformationResponse* Arena::CreateMaybeMessa
 template<> ::dmi::SoftwareVersionInformation* Arena::CreateMaybeMessage<::dmi::SoftwareVersionInformation>(Arena*);
 template<> ::dmi::StartupConfigInfoRequest* Arena::CreateMaybeMessage<::dmi::StartupConfigInfoRequest>(Arena*);
 template<> ::dmi::StartupConfigInfoResponse* Arena::CreateMaybeMessage<::dmi::StartupConfigInfoResponse>(Arena*);
+template<> ::dmi::UploadDebugInfoRequest* Arena::CreateMaybeMessage<::dmi::UploadDebugInfoRequest>(Arena*);
+template<> ::dmi::UploadDebugInfoResponse* Arena::CreateMaybeMessage<::dmi::UploadDebugInfoResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace dmi {
@@ -159,6 +167,32 @@ inline bool StartupConfigInfoResponse_Reason_Parse(
     const ::std::string& name, StartupConfigInfoResponse_Reason* value) {
   return ::google::protobuf::internal::ParseNamedEnum<StartupConfigInfoResponse_Reason>(
     StartupConfigInfoResponse_Reason_descriptor(), name, value);
+}
+enum UploadDebugInfoResponse_Reason {
+  UploadDebugInfoResponse_Reason_UNDEFINED_REASON = 0,
+  UploadDebugInfoResponse_Reason_UNKNOWN_DEVICE = 1,
+  UploadDebugInfoResponse_Reason_INTERNAL_ERROR = 2,
+  UploadDebugInfoResponse_Reason_DEVICE_UNREACHABLE = 3,
+  UploadDebugInfoResponse_Reason_REMOTE_LOCATION_UNREACHABLE = 4,
+  UploadDebugInfoResponse_Reason_REMOTE_LOCATION_PERMISSION_DENIED = 5,
+  UploadDebugInfoResponse_Reason_ERROR_DURING_UPLOAD = 6,
+  UploadDebugInfoResponse_Reason_UploadDebugInfoResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  UploadDebugInfoResponse_Reason_UploadDebugInfoResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool UploadDebugInfoResponse_Reason_IsValid(int value);
+const UploadDebugInfoResponse_Reason UploadDebugInfoResponse_Reason_Reason_MIN = UploadDebugInfoResponse_Reason_UNDEFINED_REASON;
+const UploadDebugInfoResponse_Reason UploadDebugInfoResponse_Reason_Reason_MAX = UploadDebugInfoResponse_Reason_ERROR_DURING_UPLOAD;
+const int UploadDebugInfoResponse_Reason_Reason_ARRAYSIZE = UploadDebugInfoResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* UploadDebugInfoResponse_Reason_descriptor();
+inline const ::std::string& UploadDebugInfoResponse_Reason_Name(UploadDebugInfoResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    UploadDebugInfoResponse_Reason_descriptor(), value);
+}
+inline bool UploadDebugInfoResponse_Reason_Parse(
+    const ::std::string& name, UploadDebugInfoResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<UploadDebugInfoResponse_Reason>(
+    UploadDebugInfoResponse_Reason_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1199,6 +1233,331 @@ class StartupConfigInfoResponse final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fsw_5fmanagement_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class UploadDebugInfoRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.UploadDebugInfoRequest) */ {
+ public:
+  UploadDebugInfoRequest();
+  virtual ~UploadDebugInfoRequest();
+
+  UploadDebugInfoRequest(const UploadDebugInfoRequest& from);
+
+  inline UploadDebugInfoRequest& operator=(const UploadDebugInfoRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UploadDebugInfoRequest(UploadDebugInfoRequest&& from) noexcept
+    : UploadDebugInfoRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UploadDebugInfoRequest& operator=(UploadDebugInfoRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const UploadDebugInfoRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UploadDebugInfoRequest* internal_default_instance() {
+    return reinterpret_cast<const UploadDebugInfoRequest*>(
+               &_UploadDebugInfoRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(UploadDebugInfoRequest* other);
+  friend void swap(UploadDebugInfoRequest& a, UploadDebugInfoRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UploadDebugInfoRequest* New() const final {
+    return CreateMaybeMessage<UploadDebugInfoRequest>(nullptr);
+  }
+
+  UploadDebugInfoRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UploadDebugInfoRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UploadDebugInfoRequest& from);
+  void MergeFrom(const UploadDebugInfoRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UploadDebugInfoRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string location_url = 3;
+  void clear_location_url();
+  static const int kLocationUrlFieldNumber = 3;
+  const ::std::string& location_url() const;
+  void set_location_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_location_url(::std::string&& value);
+  #endif
+  void set_location_url(const char* value);
+  void set_location_url(const char* value, size_t size);
+  ::std::string* mutable_location_url();
+  ::std::string* release_location_url();
+  void set_allocated_location_url(::std::string* location_url);
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // @@protoc_insertion_point(class_scope:dmi.UploadDebugInfoRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr location_url_;
+  ::dmi::Uuid* device_uuid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fsw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UploadDebugInfoResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.UploadDebugInfoResponse) */ {
+ public:
+  UploadDebugInfoResponse();
+  virtual ~UploadDebugInfoResponse();
+
+  UploadDebugInfoResponse(const UploadDebugInfoResponse& from);
+
+  inline UploadDebugInfoResponse& operator=(const UploadDebugInfoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UploadDebugInfoResponse(UploadDebugInfoResponse&& from) noexcept
+    : UploadDebugInfoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UploadDebugInfoResponse& operator=(UploadDebugInfoResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const UploadDebugInfoResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UploadDebugInfoResponse* internal_default_instance() {
+    return reinterpret_cast<const UploadDebugInfoResponse*>(
+               &_UploadDebugInfoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(UploadDebugInfoResponse* other);
+  friend void swap(UploadDebugInfoResponse& a, UploadDebugInfoResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UploadDebugInfoResponse* New() const final {
+    return CreateMaybeMessage<UploadDebugInfoResponse>(nullptr);
+  }
+
+  UploadDebugInfoResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UploadDebugInfoResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UploadDebugInfoResponse& from);
+  void MergeFrom(const UploadDebugInfoResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UploadDebugInfoResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef UploadDebugInfoResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    UploadDebugInfoResponse_Reason_UNDEFINED_REASON;
+  static const Reason UNKNOWN_DEVICE =
+    UploadDebugInfoResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason INTERNAL_ERROR =
+    UploadDebugInfoResponse_Reason_INTERNAL_ERROR;
+  static const Reason DEVICE_UNREACHABLE =
+    UploadDebugInfoResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason REMOTE_LOCATION_UNREACHABLE =
+    UploadDebugInfoResponse_Reason_REMOTE_LOCATION_UNREACHABLE;
+  static const Reason REMOTE_LOCATION_PERMISSION_DENIED =
+    UploadDebugInfoResponse_Reason_REMOTE_LOCATION_PERMISSION_DENIED;
+  static const Reason ERROR_DURING_UPLOAD =
+    UploadDebugInfoResponse_Reason_ERROR_DURING_UPLOAD;
+  static inline bool Reason_IsValid(int value) {
+    return UploadDebugInfoResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    UploadDebugInfoResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    UploadDebugInfoResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    UploadDebugInfoResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return UploadDebugInfoResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return UploadDebugInfoResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return UploadDebugInfoResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string location_url = 4;
+  void clear_location_url();
+  static const int kLocationUrlFieldNumber = 4;
+  const ::std::string& location_url() const;
+  void set_location_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_location_url(::std::string&& value);
+  #endif
+  void set_location_url(const char* value);
+  void set_location_url(const char* value, size_t size);
+  ::std::string* mutable_location_url();
+  ::std::string* release_location_url();
+  void set_allocated_location_url(::std::string* location_url);
+
+  // string file_name = 5;
+  void clear_file_name();
+  static const int kFileNameFieldNumber = 5;
+  const ::std::string& file_name() const;
+  void set_file_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_file_name(::std::string&& value);
+  #endif
+  void set_file_name(const char* value);
+  void set_file_name(const char* value, size_t size);
+  ::std::string* mutable_file_name();
+  ::std::string* release_file_name();
+  void set_allocated_file_name(::std::string* file_name);
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // .dmi.Status status = 2;
+  void clear_status();
+  static const int kStatusFieldNumber = 2;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.UploadDebugInfoResponse.Reason reason = 3;
+  void clear_reason();
+  static const int kReasonFieldNumber = 3;
+  ::dmi::UploadDebugInfoResponse_Reason reason() const;
+  void set_reason(::dmi::UploadDebugInfoResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.UploadDebugInfoResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr location_url_;
+  ::google::protobuf::internal::ArenaStringPtr file_name_;
+  ::dmi::Uuid* device_uuid_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fsw_5fmanagement_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -1921,9 +2280,298 @@ inline void StartupConfigInfoResponse::set_allocated_reason_detail(::std::string
   // @@protoc_insertion_point(field_set_allocated:dmi.StartupConfigInfoResponse.reason_detail)
 }
 
+// -------------------------------------------------------------------
+
+// UploadDebugInfoRequest
+
+// .dmi.Uuid device_uuid = 1;
+inline bool UploadDebugInfoRequest::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& UploadDebugInfoRequest::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoRequest.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* UploadDebugInfoRequest::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.UploadDebugInfoRequest.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* UploadDebugInfoRequest::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.UploadDebugInfoRequest.device_uuid)
+  return device_uuid_;
+}
+inline void UploadDebugInfoRequest::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.UploadDebugInfoRequest.device_uuid)
+}
+
+// string location_url = 3;
+inline void UploadDebugInfoRequest::clear_location_url() {
+  location_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UploadDebugInfoRequest::location_url() const {
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoRequest.location_url)
+  return location_url_.GetNoArena();
+}
+inline void UploadDebugInfoRequest::set_location_url(const ::std::string& value) {
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.UploadDebugInfoRequest.location_url)
+}
+#if LANG_CXX11
+inline void UploadDebugInfoRequest::set_location_url(::std::string&& value) {
+  
+  location_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.UploadDebugInfoRequest.location_url)
+}
+#endif
+inline void UploadDebugInfoRequest::set_location_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.UploadDebugInfoRequest.location_url)
+}
+inline void UploadDebugInfoRequest::set_location_url(const char* value, size_t size) {
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.UploadDebugInfoRequest.location_url)
+}
+inline ::std::string* UploadDebugInfoRequest::mutable_location_url() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.UploadDebugInfoRequest.location_url)
+  return location_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UploadDebugInfoRequest::release_location_url() {
+  // @@protoc_insertion_point(field_release:dmi.UploadDebugInfoRequest.location_url)
+  
+  return location_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UploadDebugInfoRequest::set_allocated_location_url(::std::string* location_url) {
+  if (location_url != nullptr) {
+    
+  } else {
+    
+  }
+  location_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), location_url);
+  // @@protoc_insertion_point(field_set_allocated:dmi.UploadDebugInfoRequest.location_url)
+}
+
+// -------------------------------------------------------------------
+
+// UploadDebugInfoResponse
+
+// .dmi.Uuid device_uuid = 1;
+inline bool UploadDebugInfoResponse::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& UploadDebugInfoResponse::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoResponse.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* UploadDebugInfoResponse::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.UploadDebugInfoResponse.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* UploadDebugInfoResponse::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.UploadDebugInfoResponse.device_uuid)
+  return device_uuid_;
+}
+inline void UploadDebugInfoResponse::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.UploadDebugInfoResponse.device_uuid)
+}
+
+// .dmi.Status status = 2;
+inline void UploadDebugInfoResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status UploadDebugInfoResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void UploadDebugInfoResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.UploadDebugInfoResponse.status)
+}
+
+// .dmi.UploadDebugInfoResponse.Reason reason = 3;
+inline void UploadDebugInfoResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::UploadDebugInfoResponse_Reason UploadDebugInfoResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoResponse.reason)
+  return static_cast< ::dmi::UploadDebugInfoResponse_Reason >(reason_);
+}
+inline void UploadDebugInfoResponse::set_reason(::dmi::UploadDebugInfoResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.UploadDebugInfoResponse.reason)
+}
+
+// string location_url = 4;
+inline void UploadDebugInfoResponse::clear_location_url() {
+  location_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UploadDebugInfoResponse::location_url() const {
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoResponse.location_url)
+  return location_url_.GetNoArena();
+}
+inline void UploadDebugInfoResponse::set_location_url(const ::std::string& value) {
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.UploadDebugInfoResponse.location_url)
+}
+#if LANG_CXX11
+inline void UploadDebugInfoResponse::set_location_url(::std::string&& value) {
+  
+  location_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.UploadDebugInfoResponse.location_url)
+}
+#endif
+inline void UploadDebugInfoResponse::set_location_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.UploadDebugInfoResponse.location_url)
+}
+inline void UploadDebugInfoResponse::set_location_url(const char* value, size_t size) {
+  
+  location_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.UploadDebugInfoResponse.location_url)
+}
+inline ::std::string* UploadDebugInfoResponse::mutable_location_url() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.UploadDebugInfoResponse.location_url)
+  return location_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UploadDebugInfoResponse::release_location_url() {
+  // @@protoc_insertion_point(field_release:dmi.UploadDebugInfoResponse.location_url)
+  
+  return location_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UploadDebugInfoResponse::set_allocated_location_url(::std::string* location_url) {
+  if (location_url != nullptr) {
+    
+  } else {
+    
+  }
+  location_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), location_url);
+  // @@protoc_insertion_point(field_set_allocated:dmi.UploadDebugInfoResponse.location_url)
+}
+
+// string file_name = 5;
+inline void UploadDebugInfoResponse::clear_file_name() {
+  file_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UploadDebugInfoResponse::file_name() const {
+  // @@protoc_insertion_point(field_get:dmi.UploadDebugInfoResponse.file_name)
+  return file_name_.GetNoArena();
+}
+inline void UploadDebugInfoResponse::set_file_name(const ::std::string& value) {
+  
+  file_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.UploadDebugInfoResponse.file_name)
+}
+#if LANG_CXX11
+inline void UploadDebugInfoResponse::set_file_name(::std::string&& value) {
+  
+  file_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.UploadDebugInfoResponse.file_name)
+}
+#endif
+inline void UploadDebugInfoResponse::set_file_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  file_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.UploadDebugInfoResponse.file_name)
+}
+inline void UploadDebugInfoResponse::set_file_name(const char* value, size_t size) {
+  
+  file_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.UploadDebugInfoResponse.file_name)
+}
+inline ::std::string* UploadDebugInfoResponse::mutable_file_name() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.UploadDebugInfoResponse.file_name)
+  return file_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UploadDebugInfoResponse::release_file_name() {
+  // @@protoc_insertion_point(field_release:dmi.UploadDebugInfoResponse.file_name)
+  
+  return file_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UploadDebugInfoResponse::set_allocated_file_name(::std::string* file_name) {
+  if (file_name != nullptr) {
+    
+  } else {
+    
+  }
+  file_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), file_name);
+  // @@protoc_insertion_point(field_set_allocated:dmi.UploadDebugInfoResponse.file_name)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -1958,6 +2606,11 @@ template <> struct is_proto_enum< ::dmi::StartupConfigInfoResponse_Reason> : ::s
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::StartupConfigInfoResponse_Reason>() {
   return ::dmi::StartupConfigInfoResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::UploadDebugInfoResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::UploadDebugInfoResponse_Reason>() {
+  return ::dmi::UploadDebugInfoResponse_Reason_descriptor();
 }
 
 }  // namespace protobuf
