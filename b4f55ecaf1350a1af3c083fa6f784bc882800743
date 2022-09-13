@@ -33,6 +33,24 @@
       "message": "typo: troubleshooting\npls check if we can use \"file\" instead of \"information\" in the comment.",
       "revId": "b4f55ecaf1350a1af3c083fa6f784bc882800743",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "900af84c_e54c5458",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-09-13T15:21:10Z",
+      "side": 1,
+      "message": "Fixed the typo. Regarding the name, I used information so as not to impose that it has to be a single file only. Different implementations of the DeviceManager and the Hardware could choose what(and how many) is relevant for them to upload to help in troubleshooting.",
+      "parentUuid": "a1b8ebcd_b69873c4",
+      "revId": "b4f55ecaf1350a1af3c083fa6f784bc882800743",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
