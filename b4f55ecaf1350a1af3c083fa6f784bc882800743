@@ -16,6 +16,23 @@
       "message": "Looks good!",
       "revId": "b4f55ecaf1350a1af3c083fa6f784bc882800743",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1b8ebcd_b69873c4",
+        "filename": "protos/dmi/sw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000788
+      },
+      "writtenOn": "2022-09-13T15:12:48Z",
+      "side": 1,
+      "message": "typo: troubleshooting\npls check if we can use \"file\" instead of \"information\" in the comment.",
+      "revId": "b4f55ecaf1350a1af3c083fa6f784bc882800743",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
