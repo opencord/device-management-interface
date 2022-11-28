@@ -2309,6 +2309,18 @@ class TransceiverComponentsAttributes final :
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
       mutable_tx_wavelength();
 
+  // repeated int32 tx_power = 8;
+  int tx_power_size() const;
+  void clear_tx_power();
+  static const int kTxPowerFieldNumber = 8;
+  ::google::protobuf::int32 tx_power(int index) const;
+  void set_tx_power(int index, ::google::protobuf::int32 value);
+  void add_tx_power(::google::protobuf::int32 value);
+  const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      tx_power() const;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_tx_power();
+
   // .dmi.TransceiverComponentsAttributes.FormFactor form_factor = 1;
   void clear_form_factor();
   static const int kFormFactorFieldNumber = 1;
@@ -2339,6 +2351,12 @@ class TransceiverComponentsAttributes final :
   ::dmi::ValueScale wavelength_scale() const;
   void set_wavelength_scale(::dmi::ValueScale value);
 
+  // .dmi.ValueScale tx_power_scale = 9;
+  void clear_tx_power_scale();
+  static const int kTxPowerScaleFieldNumber = 9;
+  ::dmi::ValueScale tx_power_scale() const;
+  void set_tx_power_scale(::dmi::ValueScale value);
+
   // @@protoc_insertion_point(class_scope:dmi.TransceiverComponentsAttributes)
  private:
   class HasBitSetters;
@@ -2348,11 +2366,14 @@ class TransceiverComponentsAttributes final :
   mutable std::atomic<int> _rx_wavelength_cached_byte_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > tx_wavelength_;
   mutable std::atomic<int> _tx_wavelength_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > tx_power_;
+  mutable std::atomic<int> _tx_power_cached_byte_size_;
   int form_factor_;
   int trans_type_;
   ::google::protobuf::uint32 max_distance_;
   int max_distance_scale_;
   int wavelength_scale_;
+  int tx_power_scale_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
@@ -4243,6 +4264,50 @@ inline void TransceiverComponentsAttributes::set_wavelength_scale(::dmi::ValueSc
   
   wavelength_scale_ = value;
   // @@protoc_insertion_point(field_set:dmi.TransceiverComponentsAttributes.wavelength_scale)
+}
+
+// repeated int32 tx_power = 8;
+inline int TransceiverComponentsAttributes::tx_power_size() const {
+  return tx_power_.size();
+}
+inline void TransceiverComponentsAttributes::clear_tx_power() {
+  tx_power_.Clear();
+}
+inline ::google::protobuf::int32 TransceiverComponentsAttributes::tx_power(int index) const {
+  // @@protoc_insertion_point(field_get:dmi.TransceiverComponentsAttributes.tx_power)
+  return tx_power_.Get(index);
+}
+inline void TransceiverComponentsAttributes::set_tx_power(int index, ::google::protobuf::int32 value) {
+  tx_power_.Set(index, value);
+  // @@protoc_insertion_point(field_set:dmi.TransceiverComponentsAttributes.tx_power)
+}
+inline void TransceiverComponentsAttributes::add_tx_power(::google::protobuf::int32 value) {
+  tx_power_.Add(value);
+  // @@protoc_insertion_point(field_add:dmi.TransceiverComponentsAttributes.tx_power)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+TransceiverComponentsAttributes::tx_power() const {
+  // @@protoc_insertion_point(field_list:dmi.TransceiverComponentsAttributes.tx_power)
+  return tx_power_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+TransceiverComponentsAttributes::mutable_tx_power() {
+  // @@protoc_insertion_point(field_mutable_list:dmi.TransceiverComponentsAttributes.tx_power)
+  return &tx_power_;
+}
+
+// .dmi.ValueScale tx_power_scale = 9;
+inline void TransceiverComponentsAttributes::clear_tx_power_scale() {
+  tx_power_scale_ = 0;
+}
+inline ::dmi::ValueScale TransceiverComponentsAttributes::tx_power_scale() const {
+  // @@protoc_insertion_point(field_get:dmi.TransceiverComponentsAttributes.tx_power_scale)
+  return static_cast< ::dmi::ValueScale >(tx_power_scale_);
+}
+inline void TransceiverComponentsAttributes::set_tx_power_scale(::dmi::ValueScale value) {
+  
+  tx_power_scale_ = value;
+  // @@protoc_insertion_point(field_set:dmi.TransceiverComponentsAttributes.tx_power_scale)
 }
 
 // -------------------------------------------------------------------
