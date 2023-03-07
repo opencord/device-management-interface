@@ -118,6 +118,7 @@ message UploadDebugInfoStatus {
         REMOTE_LOCATION_UNREACHABLE = 4;
         REMOTE_LOCATION_PERMISSION_DENIED = 5;
         ERROR_DURING_UPLOAD = 6;
+        DEVICE_BUSY = 7;
     }
     Reason reason = 4; // reason specifies why the status is ERROR
     string location_url = 5;

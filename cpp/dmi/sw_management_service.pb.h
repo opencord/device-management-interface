@@ -199,12 +199,13 @@ enum UploadDebugInfoStatus_Reason {
   UploadDebugInfoStatus_Reason_REMOTE_LOCATION_UNREACHABLE = 4,
   UploadDebugInfoStatus_Reason_REMOTE_LOCATION_PERMISSION_DENIED = 5,
   UploadDebugInfoStatus_Reason_ERROR_DURING_UPLOAD = 6,
+  UploadDebugInfoStatus_Reason_DEVICE_BUSY = 7,
   UploadDebugInfoStatus_Reason_UploadDebugInfoStatus_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   UploadDebugInfoStatus_Reason_UploadDebugInfoStatus_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool UploadDebugInfoStatus_Reason_IsValid(int value);
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MIN = UploadDebugInfoStatus_Reason_UNDEFINED_REASON;
-const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MAX = UploadDebugInfoStatus_Reason_ERROR_DURING_UPLOAD;
+const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MAX = UploadDebugInfoStatus_Reason_DEVICE_BUSY;
 const int UploadDebugInfoStatus_Reason_Reason_ARRAYSIZE = UploadDebugInfoStatus_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* UploadDebugInfoStatus_Reason_descriptor();
@@ -1526,6 +1527,8 @@ class UploadDebugInfoStatus final :
     UploadDebugInfoStatus_Reason_REMOTE_LOCATION_PERMISSION_DENIED;
   static const Reason ERROR_DURING_UPLOAD =
     UploadDebugInfoStatus_Reason_ERROR_DURING_UPLOAD;
+  static const Reason DEVICE_BUSY =
+    UploadDebugInfoStatus_Reason_DEVICE_BUSY;
   static inline bool Reason_IsValid(int value) {
     return UploadDebugInfoStatus_Reason_IsValid(value);
   }

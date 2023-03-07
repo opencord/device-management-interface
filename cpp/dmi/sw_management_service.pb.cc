@@ -347,7 +347,7 @@ const char descriptor_table_protodef_dmi_2fsw_5fmanagement_5fservice_2eproto[] =
   "\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERROR"
   "\020\002\022\026\n\022DEVICE_UNREACHABLE\020\003\"N\n\026UploadDebu"
   "gInfoRequest\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi."
-  "Uuid\022\024\n\014location_url\030\003 \001(\t\"\377\003\n\025UploadDeb"
+  "Uuid\022\024\n\014location_url\030\003 \001(\t\"\220\004\n\025UploadDeb"
   "ugInfoStatus\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi."
   "Uuid\0227\n\006status\030\002 \001(\0162\'.dmi.UploadDebugIn"
   "foStatus.UploadStatus\022\030\n\020percent_uploade"
@@ -355,32 +355,33 @@ const char descriptor_table_protodef_dmi_2fsw_5fmanagement_5fservice_2eproto[] =
   "gInfoStatus.Reason\022\024\n\014location_url\030\005 \001(\t"
   "\022\021\n\tfile_name\030\006 \001(\t\"U\n\014UploadStatus\022\033\n\027U"
   "NDEFINED_UPLOAD_STATUS\020\000\022\014\n\010COMPLETE\020\001\022\017"
-  "\n\013IN_PROGRESS\020\002\022\t\n\005ERROR\020\003\"\277\001\n\006Reason\022\024\n"
+  "\n\013IN_PROGRESS\020\002\022\t\n\005ERROR\020\003\"\320\001\n\006Reason\022\024\n"
   "\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022"
   "\022\n\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_UNREACHABL"
   "E\020\003\022\037\n\033REMOTE_LOCATION_UNREACHABLE\020\004\022%\n!"
   "REMOTE_LOCATION_PERMISSION_DENIED\020\005\022\027\n\023E"
-  "RROR_DURING_UPLOAD\020\0062\234\004\n\037NativeSoftwareM"
-  "anagementService\022Q\n\022GetSoftwareVersion\022\017"
-  ".dmi.HardwareID\032*.dmi.GetSoftwareVersion"
-  "InformationResponse\022>\n\rDownloadImage\022\031.d"
-  "mi.DownloadImageRequest\032\020.dmi.ImageStatu"
-  "s0\001\0224\n\rActivateImage\022\017.dmi.HardwareID\032\020."
-  "dmi.ImageStatus0\001\022;\n\024RevertToStandbyImag"
-  "e\022\017.dmi.HardwareID\032\020.dmi.ImageStatus0\001\022G"
-  "\n\032UpdateStartupConfiguration\022\022.dmi.Confi"
-  "gRequest\032\023.dmi.ConfigResponse0\001\022\\\n\033GetSt"
-  "artupConfigurationInfo\022\035.dmi.StartupConf"
-  "igInfoRequest\032\036.dmi.StartupConfigInfoRes"
-  "ponse\022L\n\017UploadDebugInfo\022\033.dmi.UploadDeb"
-  "ugInfoRequest\032\032.dmi.UploadDebugInfoStatu"
-  "s0\001B;Z9github.com/opencord/device-manage"
-  "ment-interface/v3/go/dmib\006proto3"
+  "RROR_DURING_UPLOAD\020\006\022\017\n\013DEVICE_BUSY\020\0072\234\004"
+  "\n\037NativeSoftwareManagementService\022Q\n\022Get"
+  "SoftwareVersion\022\017.dmi.HardwareID\032*.dmi.G"
+  "etSoftwareVersionInformationResponse\022>\n\r"
+  "DownloadImage\022\031.dmi.DownloadImageRequest"
+  "\032\020.dmi.ImageStatus0\001\0224\n\rActivateImage\022\017."
+  "dmi.HardwareID\032\020.dmi.ImageStatus0\001\022;\n\024Re"
+  "vertToStandbyImage\022\017.dmi.HardwareID\032\020.dm"
+  "i.ImageStatus0\001\022G\n\032UpdateStartupConfigur"
+  "ation\022\022.dmi.ConfigRequest\032\023.dmi.ConfigRe"
+  "sponse0\001\022\\\n\033GetStartupConfigurationInfo\022"
+  "\035.dmi.StartupConfigInfoRequest\032\036.dmi.Sta"
+  "rtupConfigInfoResponse\022L\n\017UploadDebugInf"
+  "o\022\033.dmi.UploadDebugInfoRequest\032\032.dmi.Upl"
+  "oadDebugInfoStatus0\001B;Z9github.com/openc"
+  "ord/device-management-interface/v3/go/dm"
+  "ib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fsw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fsw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fsw_5fmanagement_5fservice_2eproto,
-  "dmi/sw_management_service.proto", &assign_descriptors_table_dmi_2fsw_5fmanagement_5fservice_2eproto, 2512,
+  "dmi/sw_management_service.proto", &assign_descriptors_table_dmi_2fsw_5fmanagement_5fservice_2eproto, 2529,
 };
 
 void AddDescriptors_dmi_2fsw_5fmanagement_5fservice_2eproto() {
@@ -515,6 +516,7 @@ bool UploadDebugInfoStatus_Reason_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
       return true;
     default:
       return false;
@@ -529,6 +531,7 @@ const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::DEVICE_UNREACHABLE;
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::REMOTE_LOCATION_UNREACHABLE;
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::REMOTE_LOCATION_PERMISSION_DENIED;
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::ERROR_DURING_UPLOAD;
+const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::DEVICE_BUSY;
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::Reason_MIN;
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus::Reason_MAX;
 const int UploadDebugInfoStatus::Reason_ARRAYSIZE;
