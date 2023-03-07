@@ -18,11 +18,11 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uuid_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ValueType_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EventsCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Thresholds_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WaterMarks_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_EventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ThresholdInformation_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace dmi {
@@ -149,9 +149,10 @@ static void InitDefaultsEventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::dmi::EventCfg::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_EventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
-      &scc_info_Thresholds_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_EventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsEventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
+      &scc_info_Thresholds_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
 
 static void InitDefaultsEventsCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -304,6 +305,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   PROTOBUF_FIELD_OFFSET(::dmi::EventCfg, event_id_),
   PROTOBUF_FIELD_OFFSET(::dmi::EventCfg, is_configured_),
   PROTOBUF_FIELD_OFFSET(::dmi::EventCfg, thresholds_),
+  PROTOBUF_FIELD_OFFSET(::dmi::EventCfg, component_uuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::EventsCfg, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -327,7 +329,6 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   PROTOBUF_FIELD_OFFSET(::dmi::EventsConfigurationRequest, device_uuid_),
   offsetof(::dmi::EventsConfigurationRequestDefaultTypeInternal, changes_),
   offsetof(::dmi::EventsConfigurationRequestDefaultTypeInternal, reset_to_default_),
-  PROTOBUF_FIELD_OFFSET(::dmi::EventsConfigurationRequest, component_uuid_),
   PROTOBUF_FIELD_OFFSET(::dmi::EventsConfigurationRequest, operation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::EventsConfigurationResponse, _internal_metadata_),
@@ -362,9 +363,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 17, -1, sizeof(::dmi::Thresholds)},
   { 25, -1, sizeof(::dmi::ThresholdInformation)},
   { 32, -1, sizeof(::dmi::EventCfg)},
-  { 40, -1, sizeof(::dmi::EventsCfg)},
-  { 46, -1, sizeof(::dmi::ListEventsResponse)},
-  { 55, -1, sizeof(::dmi::EventsConfigurationRequest)},
+  { 41, -1, sizeof(::dmi::EventsCfg)},
+  { 47, -1, sizeof(::dmi::ListEventsResponse)},
+  { 56, -1, sizeof(::dmi::EventsConfigurationRequest)},
   { 65, -1, sizeof(::dmi::EventsConfigurationResponse)},
   { 73, -1, sizeof(::dmi::EventMetaData)},
   { 81, -1, sizeof(::dmi::Event)},
@@ -404,99 +405,99 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "rMarksH\000B\013\n\tthreshold\"c\n\024ThresholdInform"
   "ation\022&\n\016observed_value\030\001 \001(\0132\016.dmi.Valu"
   "eType\022#\n\nthresholds\030\002 \001(\0132\017.dmi.Threshol"
-  "ds\"g\n\010EventCfg\022\037\n\010event_id\030\001 \001(\0162\r.dmi.E"
-  "ventIds\022\025\n\ris_configured\030\002 \001(\010\022#\n\nthresh"
-  "olds\030\003 \001(\0132\017.dmi.Thresholds\")\n\tEventsCfg"
-  "\022\034\n\005items\030\001 \003(\0132\r.dmi.EventCfg\"\370\001\n\022ListE"
-  "ventsResponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Stat"
-  "us\022.\n\006reason\030\002 \001(\0162\036.dmi.ListEventsRespo"
-  "nse.Reason\022\036\n\006events\030\003 \001(\0132\016.dmi.EventsC"
-  "fg\022\025\n\rreason_detail\030\004 \001(\t\"^\n\006Reason\022\024\n\020U"
-  "NDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n"
-  "\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_UNREACHABLE\020"
-  "\003\"\253\001\n\032EventsConfigurationRequest\022\036\n\013devi"
-  "ce_uuid\030\001 \001(\0132\t.dmi.Uuid\022!\n\007changes\030\002 \001("
-  "\0132\016.dmi.EventsCfgH\000\022\032\n\020reset_to_default\030"
-  "\003 \001(\010H\000\022!\n\016component_uuid\030\004 \001(\0132\t.dmi.Uu"
-  "idB\013\n\toperation\"\376\001\n\033EventsConfigurationR"
-  "esponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0227\n\006"
-  "reason\030\002 \001(\0162\'.dmi.EventsConfigurationRe"
-  "sponse.Reason\022\025\n\rreason_detail\030\003 \001(\t\"r\n\006"
-  "Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_"
-  "DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\022\n\016INVALID_"
-  "CONFIG\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"j\n\rEven"
-  "tMetaData\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uui"
-  "d\022!\n\016component_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n\016"
-  "component_name\030\003 \001(\t\"\310\001\n\005Event\022*\n\016event_"
-  "metadata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010ev"
-  "ent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_ts"
-  "\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016th"
-  "reshold_info\030\004 \001(\0132\031.dmi.ThresholdInform"
-  "ation\022\020\n\010add_info\030\005 \001(\t*\202\020\n\010EventIds\022\030\n\024"
-  "EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCEI"
-  "VER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLUG"
-  "_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOVE"
-  "_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTAG"
-  "E_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVER"
-  "_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT_"
-  "TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD\020"
-  "i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_THR"
-  "ESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_BE"
-  "LOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX_"
-  "POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSCE"
-  "IVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVENT"
-  "_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n\022"
-  ".\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THRE"
-  "SHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\0227"
-  "\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESH"
-  "OLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VOL"
-  "TAGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVEN"
-  "T_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOL"
-  "D_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMPE"
-  "RATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3EV"
-  "ENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD_"
-  "RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURRENT"
-  "_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_TR"
-  "ANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECOV"
-  "ERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BEL"
-  "OW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANSC"
-  "EIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERED"
-  "\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_T"
-  "HRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIVE"
-  "R_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG_"
-  "OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT_"
-  "PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_RECO"
-  "VERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVEN"
-  "T_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020\256"
-  "\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$E"
-  "VENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022&"
-  "\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\0223"
-  "\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_R"
-  "ECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_ABO"
-  "VE_FATAL_RECOVERED\020\223\003\022\032\n\025EVENT_HW_DEVICE"
-  "_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPERATURE"
-  "_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVICE_TE"
-  "MPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_HW_DEV"
-  "ICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERED"
-  "\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_ABOVE"
-  "_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEVICE_R"
-  "EBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SENSOR_"
-  "FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATURE_SE"
-  "NSORS_FAILED\020\373\003\022\035\n\030EVENT_LINE_CARD_PLUG_"
-  "OUT\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001\n"
-  "\035NativeEventsManagementService\0226\n\nListEv"
-  "ents\022\017.dmi.HardwareID\032\027.dmi.ListEventsRe"
-  "sponse\022^\n\031UpdateEventsConfiguration\022\037.dm"
-  "i.EventsConfigurationRequest\032 .dmi.Event"
-  "sConfigurationResponse\0224\n\014StreamEvents\022\026"
-  ".google.protobuf.Empty\032\n.dmi.Event0\001B;Z9"
-  "github.com/opencord/device-management-in"
-  "terface/v3/go/dmib\006proto3"
+  "ds\"\212\001\n\010EventCfg\022\037\n\010event_id\030\001 \001(\0162\r.dmi."
+  "EventIds\022\025\n\ris_configured\030\002 \001(\010\022#\n\nthres"
+  "holds\030\003 \001(\0132\017.dmi.Thresholds\022!\n\016componen"
+  "t_uuid\030\004 \001(\0132\t.dmi.Uuid\")\n\tEventsCfg\022\034\n\005"
+  "items\030\001 \003(\0132\r.dmi.EventCfg\"\370\001\n\022ListEvent"
+  "sResponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\022."
+  "\n\006reason\030\002 \001(\0162\036.dmi.ListEventsResponse."
+  "Reason\022\036\n\006events\030\003 \001(\0132\016.dmi.EventsCfg\022\025"
+  "\n\rreason_detail\030\004 \001(\t\"^\n\006Reason\022\024\n\020UNDEF"
+  "INED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INT"
+  "ERNAL_ERROR\020\002\022\026\n\022DEVICE_UNREACHABLE\020\003\"\210\001"
+  "\n\032EventsConfigurationRequest\022\036\n\013device_u"
+  "uid\030\001 \001(\0132\t.dmi.Uuid\022!\n\007changes\030\002 \001(\0132\016."
+  "dmi.EventsCfgH\000\022\032\n\020reset_to_default\030\003 \001("
+  "\010H\000B\013\n\toperation\"\376\001\n\033EventsConfiguration"
+  "Response\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0227\n"
+  "\006reason\030\002 \001(\0162\'.dmi.EventsConfigurationR"
+  "esponse.Reason\022\025\n\rreason_detail\030\003 \001(\t\"r\n"
+  "\006Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN"
+  "_DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\022\n\016INVALID"
+  "_CONFIG\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"j\n\rEve"
+  "ntMetaData\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uu"
+  "id\022!\n\016component_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n"
+  "\016component_name\030\003 \001(\t\"\310\001\n\005Event\022*\n\016event"
+  "_metadata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010e"
+  "vent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_t"
+  "s\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016t"
+  "hreshold_info\030\004 \001(\0132\031.dmi.ThresholdInfor"
+  "mation\022\020\n\010add_info\030\005 \001(\t*\202\020\n\010EventIds\022\030\n"
+  "\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCE"
+  "IVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLU"
+  "G_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOV"
+  "E_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTA"
+  "GE_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVE"
+  "R_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT"
+  "_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD"
+  "\020i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_TH"
+  "RESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_B"
+  "ELOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX"
+  "_POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSC"
+  "EIVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVEN"
+  "T_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n"
+  "\022.\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THR"
+  "ESHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\022"
+  "7\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRES"
+  "HOLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VO"
+  "LTAGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVE"
+  "NT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHO"
+  "LD_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMP"
+  "ERATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3E"
+  "VENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD"
+  "_RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURREN"
+  "T_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_T"
+  "RANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECO"
+  "VERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BE"
+  "LOW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANS"
+  "CEIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERE"
+  "D\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_"
+  "THRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIV"
+  "ER_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG"
+  "_OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT"
+  "_PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_REC"
+  "OVERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVE"
+  "NT_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020"
+  "\256\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$"
+  "EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022"
+  "&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\022"
+  "3\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_"
+  "RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_AB"
+  "OVE_FATAL_RECOVERED\020\223\003\022\032\n\025EVENT_HW_DEVIC"
+  "E_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPERATUR"
+  "E_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVICE_T"
+  "EMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_HW_DE"
+  "VICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERE"
+  "D\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_ABOV"
+  "E_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEVICE_"
+  "REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SENSOR"
+  "_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATURE_S"
+  "ENSORS_FAILED\020\373\003\022\035\n\030EVENT_LINE_CARD_PLUG"
+  "_OUT\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001"
+  "\n\035NativeEventsManagementService\0226\n\nListE"
+  "vents\022\017.dmi.HardwareID\032\027.dmi.ListEventsR"
+  "esponse\022^\n\031UpdateEventsConfiguration\022\037.d"
+  "mi.EventsConfigurationRequest\032 .dmi.Even"
+  "tsConfigurationResponse\0224\n\014StreamEvents\022"
+  "\026.google.protobuf.Empty\032\n.dmi.Event0\001B;Z"
+  "9github.com/opencord/device-management-i"
+  "nterface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4025,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4026,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -2201,20 +2202,34 @@ void ThresholdInformation::InternalSwap(ThresholdInformation* other) {
 void EventCfg::InitAsDefaultInstance() {
   ::dmi::_EventCfg_default_instance_._instance.get_mutable()->thresholds_ = const_cast< ::dmi::Thresholds*>(
       ::dmi::Thresholds::internal_default_instance());
+  ::dmi::_EventCfg_default_instance_._instance.get_mutable()->component_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
 }
 class EventCfg::HasBitSetters {
  public:
   static const ::dmi::Thresholds& thresholds(const EventCfg* msg);
+  static const ::dmi::Uuid& component_uuid(const EventCfg* msg);
 };
 
 const ::dmi::Thresholds&
 EventCfg::HasBitSetters::thresholds(const EventCfg* msg) {
   return *msg->thresholds_;
 }
+const ::dmi::Uuid&
+EventCfg::HasBitSetters::component_uuid(const EventCfg* msg) {
+  return *msg->component_uuid_;
+}
+void EventCfg::clear_component_uuid() {
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int EventCfg::kEventIdFieldNumber;
 const int EventCfg::kIsConfiguredFieldNumber;
 const int EventCfg::kThresholdsFieldNumber;
+const int EventCfg::kComponentUuidFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EventCfg::EventCfg()
@@ -2230,6 +2245,11 @@ EventCfg::EventCfg(const EventCfg& from)
     thresholds_ = new ::dmi::Thresholds(*from.thresholds_);
   } else {
     thresholds_ = nullptr;
+  }
+  if (from.has_component_uuid()) {
+    component_uuid_ = new ::dmi::Uuid(*from.component_uuid_);
+  } else {
+    component_uuid_ = nullptr;
   }
   ::memcpy(&event_id_, &from.event_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_configured_) -
@@ -2252,6 +2272,7 @@ EventCfg::~EventCfg() {
 
 void EventCfg::SharedDtor() {
   if (this != internal_default_instance()) delete thresholds_;
+  if (this != internal_default_instance()) delete component_uuid_;
 }
 
 void EventCfg::SetCachedSize(int size) const {
@@ -2273,6 +2294,10 @@ void EventCfg::Clear() {
     delete thresholds_;
   }
   thresholds_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
   ::memset(&event_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_configured_) -
       reinterpret_cast<char*>(&event_id_)) + sizeof(is_configured_));
@@ -2314,6 +2339,19 @@ const char* EventCfg::_InternalParse(const char* begin, const char* end, void* o
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::dmi::Thresholds::_InternalParse;
         object = msg->mutable_thresholds();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.Uuid component_uuid = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_component_uuid();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2388,6 +2426,17 @@ bool EventCfg::MergePartialFromCodedStream(
         break;
       }
 
+      // .dmi.Uuid component_uuid = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2432,6 +2481,12 @@ void EventCfg::SerializeWithCachedSizes(
       3, HasBitSetters::thresholds(this), output);
   }
 
+  // .dmi.Uuid component_uuid = 4;
+  if (this->has_component_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::component_uuid(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2463,6 +2518,13 @@ void EventCfg::SerializeWithCachedSizes(
         3, HasBitSetters::thresholds(this), target);
   }
 
+  // .dmi.Uuid component_uuid = 4;
+  if (this->has_component_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::component_uuid(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -2489,6 +2551,13 @@ size_t EventCfg::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *thresholds_);
+  }
+
+  // .dmi.Uuid component_uuid = 4;
+  if (this->has_component_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *component_uuid_);
   }
 
   // .dmi.EventIds event_id = 1;
@@ -2532,6 +2601,9 @@ void EventCfg::MergeFrom(const EventCfg& from) {
   if (from.has_thresholds()) {
     mutable_thresholds()->::dmi::Thresholds::MergeFrom(from.thresholds());
   }
+  if (from.has_component_uuid()) {
+    mutable_component_uuid()->::dmi::Uuid::MergeFrom(from.component_uuid());
+  }
   if (from.event_id() != 0) {
     set_event_id(from.event_id());
   }
@@ -2566,6 +2638,7 @@ void EventCfg::InternalSwap(EventCfg* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(thresholds_, other->thresholds_);
+  swap(component_uuid_, other->component_uuid_);
   swap(event_id_, other->event_id_);
   swap(is_configured_, other->is_configured_);
 }
@@ -3326,14 +3399,11 @@ void EventsConfigurationRequest::InitAsDefaultInstance() {
   ::dmi::_EventsConfigurationRequest_default_instance_.changes_ = const_cast< ::dmi::EventsCfg*>(
       ::dmi::EventsCfg::internal_default_instance());
   ::dmi::_EventsConfigurationRequest_default_instance_.reset_to_default_ = false;
-  ::dmi::_EventsConfigurationRequest_default_instance_._instance.get_mutable()->component_uuid_ = const_cast< ::dmi::Uuid*>(
-      ::dmi::Uuid::internal_default_instance());
 }
 class EventsConfigurationRequest::HasBitSetters {
  public:
   static const ::dmi::Uuid& device_uuid(const EventsConfigurationRequest* msg);
   static const ::dmi::EventsCfg& changes(const EventsConfigurationRequest* msg);
-  static const ::dmi::Uuid& component_uuid(const EventsConfigurationRequest* msg);
 };
 
 const ::dmi::Uuid&
@@ -3343,10 +3413,6 @@ EventsConfigurationRequest::HasBitSetters::device_uuid(const EventsConfiguration
 const ::dmi::EventsCfg&
 EventsConfigurationRequest::HasBitSetters::changes(const EventsConfigurationRequest* msg) {
   return *msg->operation_.changes_;
-}
-const ::dmi::Uuid&
-EventsConfigurationRequest::HasBitSetters::component_uuid(const EventsConfigurationRequest* msg) {
-  return *msg->component_uuid_;
 }
 void EventsConfigurationRequest::clear_device_uuid() {
   if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
@@ -3368,17 +3434,10 @@ void EventsConfigurationRequest::set_allocated_changes(::dmi::EventsCfg* changes
   }
   // @@protoc_insertion_point(field_set_allocated:dmi.EventsConfigurationRequest.changes)
 }
-void EventsConfigurationRequest::clear_component_uuid() {
-  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
-    delete component_uuid_;
-  }
-  component_uuid_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int EventsConfigurationRequest::kDeviceUuidFieldNumber;
 const int EventsConfigurationRequest::kChangesFieldNumber;
 const int EventsConfigurationRequest::kResetToDefaultFieldNumber;
-const int EventsConfigurationRequest::kComponentUuidFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EventsConfigurationRequest::EventsConfigurationRequest()
@@ -3394,11 +3453,6 @@ EventsConfigurationRequest::EventsConfigurationRequest(const EventsConfiguration
     device_uuid_ = new ::dmi::Uuid(*from.device_uuid_);
   } else {
     device_uuid_ = nullptr;
-  }
-  if (from.has_component_uuid()) {
-    component_uuid_ = new ::dmi::Uuid(*from.component_uuid_);
-  } else {
-    component_uuid_ = nullptr;
   }
   clear_has_operation();
   switch (from.operation_case()) {
@@ -3420,9 +3474,7 @@ EventsConfigurationRequest::EventsConfigurationRequest(const EventsConfiguration
 void EventsConfigurationRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_EventsConfigurationRequest_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
-  ::memset(&device_uuid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&component_uuid_) -
-      reinterpret_cast<char*>(&device_uuid_)) + sizeof(component_uuid_));
+  device_uuid_ = nullptr;
   clear_has_operation();
 }
 
@@ -3433,7 +3485,6 @@ EventsConfigurationRequest::~EventsConfigurationRequest() {
 
 void EventsConfigurationRequest::SharedDtor() {
   if (this != internal_default_instance()) delete device_uuid_;
-  if (this != internal_default_instance()) delete component_uuid_;
   if (has_operation()) {
     clear_operation();
   }
@@ -3477,10 +3528,6 @@ void EventsConfigurationRequest::Clear() {
     delete device_uuid_;
   }
   device_uuid_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
-    delete component_uuid_;
-  }
-  component_uuid_ = nullptr;
   clear_operation();
   _internal_metadata_.Clear();
 }
@@ -3529,19 +3576,6 @@ const char* EventsConfigurationRequest::_InternalParse(const char* begin, const 
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_reset_to_default(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // .dmi.Uuid component_uuid = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::dmi::Uuid::_InternalParse;
-        object = msg->mutable_component_uuid();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -3610,17 +3644,6 @@ bool EventsConfigurationRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // .dmi.Uuid component_uuid = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_component_uuid()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3665,12 +3688,6 @@ void EventsConfigurationRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->reset_to_default(), output);
   }
 
-  // .dmi.Uuid component_uuid = 4;
-  if (this->has_component_uuid()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::component_uuid(this), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3703,13 +3720,6 @@ void EventsConfigurationRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->reset_to_default(), target);
   }
 
-  // .dmi.Uuid component_uuid = 4;
-  if (this->has_component_uuid()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, HasBitSetters::component_uuid(this), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -3736,13 +3746,6 @@ size_t EventsConfigurationRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *device_uuid_);
-  }
-
-  // .dmi.Uuid component_uuid = 4;
-  if (this->has_component_uuid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *component_uuid_);
   }
 
   switch (operation_case()) {
@@ -3792,9 +3795,6 @@ void EventsConfigurationRequest::MergeFrom(const EventsConfigurationRequest& fro
   if (from.has_device_uuid()) {
     mutable_device_uuid()->::dmi::Uuid::MergeFrom(from.device_uuid());
   }
-  if (from.has_component_uuid()) {
-    mutable_component_uuid()->::dmi::Uuid::MergeFrom(from.component_uuid());
-  }
   switch (from.operation_case()) {
     case kChanges: {
       mutable_changes()->::dmi::EventsCfg::MergeFrom(from.changes());
@@ -3836,7 +3836,6 @@ void EventsConfigurationRequest::InternalSwap(EventsConfigurationRequest* other)
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(device_uuid_, other->device_uuid_);
-  swap(component_uuid_, other->component_uuid_);
   swap(operation_, other->operation_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

@@ -879,6 +879,15 @@ class EventCfg final :
   ::dmi::Thresholds* mutable_thresholds();
   void set_allocated_thresholds(::dmi::Thresholds* thresholds);
 
+  // .dmi.Uuid component_uuid = 4;
+  bool has_component_uuid() const;
+  void clear_component_uuid();
+  static const int kComponentUuidFieldNumber = 4;
+  const ::dmi::Uuid& component_uuid() const;
+  ::dmi::Uuid* release_component_uuid();
+  ::dmi::Uuid* mutable_component_uuid();
+  void set_allocated_component_uuid(::dmi::Uuid* component_uuid);
+
   // .dmi.EventIds event_id = 1;
   void clear_event_id();
   static const int kEventIdFieldNumber = 1;
@@ -897,6 +906,7 @@ class EventCfg final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::dmi::Thresholds* thresholds_;
+  ::dmi::Uuid* component_uuid_;
   int event_id_;
   bool is_configured_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1306,15 +1316,6 @@ class EventsConfigurationRequest final :
   ::dmi::Uuid* mutable_device_uuid();
   void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
 
-  // .dmi.Uuid component_uuid = 4;
-  bool has_component_uuid() const;
-  void clear_component_uuid();
-  static const int kComponentUuidFieldNumber = 4;
-  const ::dmi::Uuid& component_uuid() const;
-  ::dmi::Uuid* release_component_uuid();
-  ::dmi::Uuid* mutable_component_uuid();
-  void set_allocated_component_uuid(::dmi::Uuid* component_uuid);
-
   // .dmi.EventsCfg changes = 2;
   bool has_changes() const;
   void clear_changes();
@@ -1346,7 +1347,6 @@ class EventsConfigurationRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::dmi::Uuid* device_uuid_;
-  ::dmi::Uuid* component_uuid_;
   union OperationUnion {
     OperationUnion() {}
     ::dmi::EventsCfg* changes_;
@@ -2331,6 +2331,51 @@ inline void EventCfg::set_allocated_thresholds(::dmi::Thresholds* thresholds) {
   // @@protoc_insertion_point(field_set_allocated:dmi.EventCfg.thresholds)
 }
 
+// .dmi.Uuid component_uuid = 4;
+inline bool EventCfg::has_component_uuid() const {
+  return this != internal_default_instance() && component_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& EventCfg::component_uuid() const {
+  const ::dmi::Uuid* p = component_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.EventCfg.component_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* EventCfg::release_component_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.EventCfg.component_uuid)
+  
+  ::dmi::Uuid* temp = component_uuid_;
+  component_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* EventCfg::mutable_component_uuid() {
+  
+  if (component_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    component_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.EventCfg.component_uuid)
+  return component_uuid_;
+}
+inline void EventCfg::set_allocated_component_uuid(::dmi::Uuid* component_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(component_uuid_);
+  }
+  if (component_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      component_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  component_uuid_ = component_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.EventCfg.component_uuid)
+}
+
 // -------------------------------------------------------------------
 
 // EventsCfg
@@ -2618,51 +2663,6 @@ inline void EventsConfigurationRequest::set_reset_to_default(bool value) {
   }
   operation_.reset_to_default_ = value;
   // @@protoc_insertion_point(field_set:dmi.EventsConfigurationRequest.reset_to_default)
-}
-
-// .dmi.Uuid component_uuid = 4;
-inline bool EventsConfigurationRequest::has_component_uuid() const {
-  return this != internal_default_instance() && component_uuid_ != nullptr;
-}
-inline const ::dmi::Uuid& EventsConfigurationRequest::component_uuid() const {
-  const ::dmi::Uuid* p = component_uuid_;
-  // @@protoc_insertion_point(field_get:dmi.EventsConfigurationRequest.component_uuid)
-  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
-      &::dmi::_Uuid_default_instance_);
-}
-inline ::dmi::Uuid* EventsConfigurationRequest::release_component_uuid() {
-  // @@protoc_insertion_point(field_release:dmi.EventsConfigurationRequest.component_uuid)
-  
-  ::dmi::Uuid* temp = component_uuid_;
-  component_uuid_ = nullptr;
-  return temp;
-}
-inline ::dmi::Uuid* EventsConfigurationRequest::mutable_component_uuid() {
-  
-  if (component_uuid_ == nullptr) {
-    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
-    component_uuid_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:dmi.EventsConfigurationRequest.component_uuid)
-  return component_uuid_;
-}
-inline void EventsConfigurationRequest::set_allocated_component_uuid(::dmi::Uuid* component_uuid) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(component_uuid_);
-  }
-  if (component_uuid) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      component_uuid = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, component_uuid, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  component_uuid_ = component_uuid;
-  // @@protoc_insertion_point(field_set_allocated:dmi.EventsConfigurationRequest.component_uuid)
 }
 
 inline bool EventsConfigurationRequest::has_operation() const {
