@@ -195,17 +195,20 @@ enum UploadDebugInfoStatus_Reason {
   UploadDebugInfoStatus_Reason_UNDEFINED_REASON = 0,
   UploadDebugInfoStatus_Reason_UNKNOWN_DEVICE = 1,
   UploadDebugInfoStatus_Reason_INTERNAL_ERROR = 2,
-  UploadDebugInfoStatus_Reason_DEVICE_UNREACHABLE = 3,
+  UploadDebugInfoStatus_Reason_DEVICE_NOT_REACHABLE = 3,
   UploadDebugInfoStatus_Reason_REMOTE_LOCATION_UNREACHABLE = 4,
   UploadDebugInfoStatus_Reason_REMOTE_LOCATION_PERMISSION_DENIED = 5,
   UploadDebugInfoStatus_Reason_ERROR_DURING_UPLOAD = 6,
   UploadDebugInfoStatus_Reason_DEVICE_BUSY = 7,
+  UploadDebugInfoStatus_Reason_ERROR_IN_REQUEST = 8,
+  UploadDebugInfoStatus_Reason_DEVICE_IN_WRONG_STATE = 9,
+  UploadDebugInfoStatus_Reason_OPERATION_ALREADY_IN_PROGRESS = 10,
   UploadDebugInfoStatus_Reason_UploadDebugInfoStatus_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   UploadDebugInfoStatus_Reason_UploadDebugInfoStatus_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool UploadDebugInfoStatus_Reason_IsValid(int value);
 const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MIN = UploadDebugInfoStatus_Reason_UNDEFINED_REASON;
-const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MAX = UploadDebugInfoStatus_Reason_DEVICE_BUSY;
+const UploadDebugInfoStatus_Reason UploadDebugInfoStatus_Reason_Reason_MAX = UploadDebugInfoStatus_Reason_OPERATION_ALREADY_IN_PROGRESS;
 const int UploadDebugInfoStatus_Reason_Reason_ARRAYSIZE = UploadDebugInfoStatus_Reason_Reason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* UploadDebugInfoStatus_Reason_descriptor();
@@ -1519,8 +1522,8 @@ class UploadDebugInfoStatus final :
     UploadDebugInfoStatus_Reason_UNKNOWN_DEVICE;
   static const Reason INTERNAL_ERROR =
     UploadDebugInfoStatus_Reason_INTERNAL_ERROR;
-  static const Reason DEVICE_UNREACHABLE =
-    UploadDebugInfoStatus_Reason_DEVICE_UNREACHABLE;
+  static const Reason DEVICE_NOT_REACHABLE =
+    UploadDebugInfoStatus_Reason_DEVICE_NOT_REACHABLE;
   static const Reason REMOTE_LOCATION_UNREACHABLE =
     UploadDebugInfoStatus_Reason_REMOTE_LOCATION_UNREACHABLE;
   static const Reason REMOTE_LOCATION_PERMISSION_DENIED =
@@ -1529,6 +1532,12 @@ class UploadDebugInfoStatus final :
     UploadDebugInfoStatus_Reason_ERROR_DURING_UPLOAD;
   static const Reason DEVICE_BUSY =
     UploadDebugInfoStatus_Reason_DEVICE_BUSY;
+  static const Reason ERROR_IN_REQUEST =
+    UploadDebugInfoStatus_Reason_ERROR_IN_REQUEST;
+  static const Reason DEVICE_IN_WRONG_STATE =
+    UploadDebugInfoStatus_Reason_DEVICE_IN_WRONG_STATE;
+  static const Reason OPERATION_ALREADY_IN_PROGRESS =
+    UploadDebugInfoStatus_Reason_OPERATION_ALREADY_IN_PROGRESS;
   static inline bool Reason_IsValid(int value) {
     return UploadDebugInfoStatus_Reason_IsValid(value);
   }
