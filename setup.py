@@ -38,6 +38,7 @@ setup(
     packages = find_packages(where="python"),
     package_dir = {"": "python"},
     install_requires = [
+        "protobuf >=3.6.0, <4.0.0dev",
         "googleapis-common-protos==1.56.2"
     ],
     include_package_data=True,
