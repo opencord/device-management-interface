@@ -5,86 +5,78 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-
-extern PROTOBUF_INTERNAL_EXPORT_dmi_2fsw_5fimage_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fsw_5fimage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto;
 namespace dmi {
 class ImageVersionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ImageVersion> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ImageVersion> _instance;
 } _ImageVersion_default_instance_;
 class ImageInformationDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ImageInformation> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ImageInformation> _instance;
 } _ImageInformation_default_instance_;
 class ImageStatusDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ImageStatus> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ImageStatus> _instance;
 } _ImageStatus_default_instance_;
 }  // namespace dmi
-static void InitDefaultsImageVersion_dmi_2fsw_5fimage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::dmi::_ImageVersion_default_instance_;
-    new (ptr) ::dmi::ImageVersion();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::dmi::ImageVersion::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsImageVersion_dmi_2fsw_5fimage_2eproto}, {}};
-
-static void InitDefaultsImageInformation_dmi_2fsw_5fimage_2eproto() {
+static void InitDefaultsscc_info_ImageInformation_dmi_2fsw_5fimage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::dmi::_ImageInformation_default_instance_;
     new (ptr) ::dmi::ImageInformation();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::dmi::ImageInformation::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsImageInformation_dmi_2fsw_5fimage_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ImageInformation_dmi_2fsw_5fimage_2eproto}, {
       &scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base,}};
 
-static void InitDefaultsImageStatus_dmi_2fsw_5fimage_2eproto() {
+static void InitDefaultsscc_info_ImageStatus_dmi_2fsw_5fimage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::dmi::_ImageStatus_default_instance_;
     new (ptr) ::dmi::ImageStatus();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::dmi::ImageStatus::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsImageStatus_dmi_2fsw_5fimage_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ImageStatus_dmi_2fsw_5fimage_2eproto}, {}};
 
-void InitDefaults_dmi_2fsw_5fimage_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base);
+static void InitDefaultsscc_info_ImageVersion_dmi_2fsw_5fimage_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_ImageVersion_default_instance_;
+    new (ptr) ::dmi::ImageVersion();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::ImageVersion::InitAsDefaultInstance();
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fsw_5fimage_2eproto[3];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto[2];
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fsw_5fimage_2eproto = nullptr;
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ImageVersion_dmi_2fsw_5fimage_2eproto}, {}};
 
-const ::google::protobuf::uint32 TableStruct_dmi_2fsw_5fimage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_dmi_2fsw_5fimage_2eproto[3];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto[2];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_dmi_2fsw_5fimage_2eproto = nullptr;
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dmi_2fsw_5fimage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::ImageVersion, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -112,25 +104,19 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fsw_5fimage_2eproto::offsets[]
   PROTOBUF_FIELD_OFFSET(::dmi::ImageStatus, description_),
   PROTOBUF_FIELD_OFFSET(::dmi::ImageStatus, reason_detail_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::ImageVersion)},
   { 7, -1, sizeof(::dmi::ImageInformation)},
   { 16, -1, sizeof(::dmi::ImageStatus)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ImageVersion_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ImageInformation_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ImageStatus_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dmi::_ImageVersion_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dmi::_ImageInformation_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dmi::_ImageStatus_default_instance_),
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fsw_5fimage_2eproto = {
-  {}, AddDescriptors_dmi_2fsw_5fimage_2eproto, "dmi/sw_image.proto", schemas,
-  file_default_instances, TableStruct_dmi_2fsw_5fimage_2eproto::offsets,
-  file_level_metadata_dmi_2fsw_5fimage_2eproto, 3, file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto, file_level_service_descriptors_dmi_2fsw_5fimage_2eproto,
-};
-
-const char descriptor_table_protodef_dmi_2fsw_5fimage_2eproto[] =
+const char descriptor_table_protodef_dmi_2fsw_5fimage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\022dmi/sw_image.proto\022\003dmi\032\021dmi/commons.p"
   "roto\"3\n\014ImageVersion\022\022\n\nimage_name\030\001 \001(\t"
   "\022\017\n\007version\030\002 \001(\t\"x\n\020ImageInformation\022 \n"
@@ -155,25 +141,27 @@ const char descriptor_table_protodef_dmi_2fsw_5fimage_2eproto[] =
   "ub.com/opencord/device-management-interf"
   "ace/v3/go/dmib\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fsw_5fimage_2eproto = {
-  false, InitDefaults_dmi_2fsw_5fimage_2eproto, 
-  descriptor_table_protodef_dmi_2fsw_5fimage_2eproto,
-  "dmi/sw_image.proto", &assign_descriptors_table_dmi_2fsw_5fimage_2eproto, 901,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_dmi_2fsw_5fimage_2eproto_deps[1] = {
+  &::descriptor_table_dmi_2fcommons_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dmi_2fsw_5fimage_2eproto_sccs[3] = {
+  &scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base,
+  &scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base,
+  &scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dmi_2fsw_5fimage_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dmi_2fsw_5fimage_2eproto = {
+  false, false, descriptor_table_protodef_dmi_2fsw_5fimage_2eproto, "dmi/sw_image.proto", 901,
+  &descriptor_table_dmi_2fsw_5fimage_2eproto_once, descriptor_table_dmi_2fsw_5fimage_2eproto_sccs, descriptor_table_dmi_2fsw_5fimage_2eproto_deps, 3, 1,
+  schemas, file_default_instances, TableStruct_dmi_2fsw_5fimage_2eproto::offsets,
+  file_level_metadata_dmi_2fsw_5fimage_2eproto, 3, file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto, file_level_service_descriptors_dmi_2fsw_5fimage_2eproto,
 };
 
-void AddDescriptors_dmi_2fsw_5fimage_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
-  {
-    ::AddDescriptors_dmi_2fcommons_2eproto,
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_dmi_2fsw_5fimage_2eproto, deps, 1);
-}
-
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_dmi_2fsw_5fimage_2eproto = []() { AddDescriptors_dmi_2fsw_5fimage_2eproto(); return true; }();
+static bool dynamic_init_dummy_dmi_2fsw_5fimage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_dmi_2fsw_5fimage_2eproto)), true);
 namespace dmi {
-const ::google::protobuf::EnumDescriptor* ImageStatus_ImageState_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fsw_5fimage_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ImageStatus_ImageState_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dmi_2fsw_5fimage_2eproto);
   return file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto[0];
 }
 bool ImageStatus_ImageState_IsValid(int value) {
@@ -193,22 +181,22 @@ bool ImageStatus_ImageState_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ImageStatus_ImageState ImageStatus::UNDEFINED_STATE;
-const ImageStatus_ImageState ImageStatus::COPYING_IMAGE;
-const ImageStatus_ImageState ImageStatus::INSTALLING_IMAGE;
-const ImageStatus_ImageState ImageStatus::COMMITTING_IMAGE;
-const ImageStatus_ImageState ImageStatus::REBOOTING_DEVICE;
-const ImageStatus_ImageState ImageStatus::UPGRADE_COMPLETE;
-const ImageStatus_ImageState ImageStatus::UPGRADE_FAILED;
-const ImageStatus_ImageState ImageStatus::ACTIVATION_COMPLETE;
-const ImageStatus_ImageState ImageStatus::ACTIVATION_FAILED;
-const ImageStatus_ImageState ImageStatus::ImageState_MIN;
-const ImageStatus_ImageState ImageStatus::ImageState_MAX;
-const int ImageStatus::ImageState_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* ImageStatus_Reason_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fsw_5fimage_2eproto);
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ImageStatus_ImageState ImageStatus::UNDEFINED_STATE;
+constexpr ImageStatus_ImageState ImageStatus::COPYING_IMAGE;
+constexpr ImageStatus_ImageState ImageStatus::INSTALLING_IMAGE;
+constexpr ImageStatus_ImageState ImageStatus::COMMITTING_IMAGE;
+constexpr ImageStatus_ImageState ImageStatus::REBOOTING_DEVICE;
+constexpr ImageStatus_ImageState ImageStatus::UPGRADE_COMPLETE;
+constexpr ImageStatus_ImageState ImageStatus::UPGRADE_FAILED;
+constexpr ImageStatus_ImageState ImageStatus::ACTIVATION_COMPLETE;
+constexpr ImageStatus_ImageState ImageStatus::ACTIVATION_FAILED;
+constexpr ImageStatus_ImageState ImageStatus::ImageState_MIN;
+constexpr ImageStatus_ImageState ImageStatus::ImageState_MAX;
+constexpr int ImageStatus::ImageState_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ImageStatus_Reason_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dmi_2fsw_5fimage_2eproto);
   return file_level_enum_descriptors_dmi_2fsw_5fimage_2eproto[1];
 }
 bool ImageStatus_Reason_IsValid(int value) {
@@ -228,285 +216,172 @@ bool ImageStatus_Reason_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ImageStatus_Reason ImageStatus::UNDEFINED_REASON;
-const ImageStatus_Reason ImageStatus::ERROR_IN_REQUEST;
-const ImageStatus_Reason ImageStatus::INTERNAL_ERROR;
-const ImageStatus_Reason ImageStatus::DEVICE_IN_WRONG_STATE;
-const ImageStatus_Reason ImageStatus::INVALID_IMAGE;
-const ImageStatus_Reason ImageStatus::WRONG_IMAGE_CHECKSUM;
-const ImageStatus_Reason ImageStatus::OPERATION_ALREADY_IN_PROGRESS;
-const ImageStatus_Reason ImageStatus::UNKNOWN_DEVICE;
-const ImageStatus_Reason ImageStatus::DEVICE_NOT_REACHABLE;
-const ImageStatus_Reason ImageStatus::Reason_MIN;
-const ImageStatus_Reason ImageStatus::Reason_MAX;
-const int ImageStatus::Reason_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ImageStatus_Reason ImageStatus::UNDEFINED_REASON;
+constexpr ImageStatus_Reason ImageStatus::ERROR_IN_REQUEST;
+constexpr ImageStatus_Reason ImageStatus::INTERNAL_ERROR;
+constexpr ImageStatus_Reason ImageStatus::DEVICE_IN_WRONG_STATE;
+constexpr ImageStatus_Reason ImageStatus::INVALID_IMAGE;
+constexpr ImageStatus_Reason ImageStatus::WRONG_IMAGE_CHECKSUM;
+constexpr ImageStatus_Reason ImageStatus::OPERATION_ALREADY_IN_PROGRESS;
+constexpr ImageStatus_Reason ImageStatus::UNKNOWN_DEVICE;
+constexpr ImageStatus_Reason ImageStatus::DEVICE_NOT_REACHABLE;
+constexpr ImageStatus_Reason ImageStatus::Reason_MIN;
+constexpr ImageStatus_Reason ImageStatus::Reason_MAX;
+constexpr int ImageStatus::Reason_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
 void ImageVersion::InitAsDefaultInstance() {
 }
-class ImageVersion::HasBitSetters {
+class ImageVersion::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ImageVersion::kImageNameFieldNumber;
-const int ImageVersion::kVersionFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ImageVersion::ImageVersion()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+ImageVersion::ImageVersion(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:dmi.ImageVersion)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:dmi.ImageVersion)
 }
 ImageVersion::ImageVersion(const ImageVersion& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  image_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.image_name().size() > 0) {
-    image_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_name_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  image_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image_name().empty()) {
+    image_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_image_name(),
+      GetArena());
   }
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.version().size() > 0) {
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
+  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_version().empty()) {
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_version(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:dmi.ImageVersion)
 }
 
 void ImageVersion::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base);
-  image_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base);
+  image_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ImageVersion::~ImageVersion() {
   // @@protoc_insertion_point(destructor:dmi.ImageVersion)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ImageVersion::SharedDtor() {
-  image_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  image_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ImageVersion::ArenaDtor(void* object) {
+  ImageVersion* _this = reinterpret_cast< ImageVersion* >(object);
+  (void)_this;
+}
+void ImageVersion::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ImageVersion::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const ImageVersion& ImageVersion::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ImageVersion_dmi_2fsw_5fimage_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void ImageVersion::Clear() {
 // @@protoc_insertion_point(message_clear_start:dmi.ImageVersion)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  image_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  image_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  version_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ImageVersion::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ImageVersion*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* ImageVersion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string image_name = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageVersion.image_name");
-        object = msg->mutable_image_name();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_image_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageVersion.image_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string version = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageVersion.version");
-        object = msg->mutable_version();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_version();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageVersion.version"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ImageVersion::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:dmi.ImageVersion)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string image_name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_image_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->image_name().data(), static_cast<int>(this->image_name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageVersion.image_name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string version = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_version()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->version().data(), static_cast<int>(this->version().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageVersion.version"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:dmi.ImageVersion)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:dmi.ImageVersion)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ImageVersion::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:dmi.ImageVersion)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string image_name = 1;
-  if (this->image_name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_name().data(), static_cast<int>(this->image_name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageVersion.image_name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->image_name(), output);
-  }
-
-  // string version = 2;
-  if (this->version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageVersion.version");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->version(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:dmi.ImageVersion)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* ImageVersion::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ImageVersion::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:dmi.ImageVersion)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string image_name = 1;
   if (this->image_name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_name().data(), static_cast<int>(this->image_name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image_name().data(), static_cast<int>(this->_internal_image_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageVersion.image_name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->image_name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_image_name(), target);
   }
 
   // string version = 2;
   if (this->version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_version().data(), static_cast<int>(this->_internal_version().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageVersion.version");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->version(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_version(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dmi.ImageVersion)
   return target;
@@ -516,43 +391,42 @@ size_t ImageVersion::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dmi.ImageVersion)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string image_name = 1;
   if (this->image_name().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->image_name());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image_name());
   }
 
   // string version = 2;
   if (this->version().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->version());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_version());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void ImageVersion::MergeFrom(const ::google::protobuf::Message& from) {
+void ImageVersion::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:dmi.ImageVersion)
   GOOGLE_DCHECK_NE(&from, this);
   const ImageVersion* source =
-      ::google::protobuf::DynamicCastToGenerated<ImageVersion>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ImageVersion>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.ImageVersion)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.ImageVersion)
     MergeFrom(*source);
@@ -562,21 +436,19 @@ void ImageVersion::MergeFrom(const ::google::protobuf::Message& from) {
 void ImageVersion::MergeFrom(const ImageVersion& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dmi.ImageVersion)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.image_name().size() > 0) {
-
-    image_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_name_);
+    _internal_set_image_name(from._internal_image_name());
   }
   if (from.version().size() > 0) {
-
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
+    _internal_set_version(from._internal_version());
   }
 }
 
-void ImageVersion::CopyFrom(const ::google::protobuf::Message& from) {
+void ImageVersion::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:dmi.ImageVersion)
   if (&from == this) return;
   Clear();
@@ -594,22 +466,15 @@ bool ImageVersion::IsInitialized() const {
   return true;
 }
 
-void ImageVersion::Swap(ImageVersion* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ImageVersion::InternalSwap(ImageVersion* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  image_name_.Swap(&other->image_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  version_.Swap(&other->version_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  image_name_.Swap(&other->image_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  version_.Swap(&other->version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::google::protobuf::Metadata ImageVersion::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fsw_5fimage_2eproto);
-  return ::file_level_metadata_dmi_2fsw_5fimage_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata ImageVersion::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -619,44 +484,40 @@ void ImageInformation::InitAsDefaultInstance() {
   ::dmi::_ImageInformation_default_instance_._instance.get_mutable()->image_ = const_cast< ::dmi::ImageVersion*>(
       ::dmi::ImageVersion::internal_default_instance());
 }
-class ImageInformation::HasBitSetters {
+class ImageInformation::_Internal {
  public:
   static const ::dmi::ImageVersion& image(const ImageInformation* msg);
 };
 
 const ::dmi::ImageVersion&
-ImageInformation::HasBitSetters::image(const ImageInformation* msg) {
+ImageInformation::_Internal::image(const ImageInformation* msg) {
   return *msg->image_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ImageInformation::kImageFieldNumber;
-const int ImageInformation::kImageInstallScriptFieldNumber;
-const int ImageInformation::kImageUrlFieldNumber;
-const int ImageInformation::kSha256SumFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ImageInformation::ImageInformation()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+ImageInformation::ImageInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:dmi.ImageInformation)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:dmi.ImageInformation)
 }
 ImageInformation::ImageInformation(const ImageInformation& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  image_install_script_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.image_install_script().size() > 0) {
-    image_install_script_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_install_script_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  image_install_script_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image_install_script().empty()) {
+    image_install_script_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_image_install_script(),
+      GetArena());
   }
-  image_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.image_url().size() > 0) {
-    image_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_url_);
+  image_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image_url().empty()) {
+    image_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_image_url(),
+      GetArena());
   }
-  sha256sum_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.sha256sum().size() > 0) {
-    sha256sum_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sha256sum_);
+  sha256sum_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_sha256sum().empty()) {
+    sha256sum_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_sha256sum(),
+      GetArena());
   }
-  if (from.has_image()) {
+  if (from._internal_has_image()) {
     image_ = new ::dmi::ImageVersion(*from.image_);
   } else {
     image_ = nullptr;
@@ -665,334 +526,169 @@ ImageInformation::ImageInformation(const ImageInformation& from)
 }
 
 void ImageInformation::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base);
-  image_install_script_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  image_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sha256sum_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base);
+  image_install_script_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  sha256sum_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   image_ = nullptr;
 }
 
 ImageInformation::~ImageInformation() {
   // @@protoc_insertion_point(destructor:dmi.ImageInformation)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ImageInformation::SharedDtor() {
-  image_install_script_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  image_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sha256sum_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  image_install_script_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  sha256sum_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete image_;
 }
 
+void ImageInformation::ArenaDtor(void* object) {
+  ImageInformation* _this = reinterpret_cast< ImageInformation* >(object);
+  (void)_this;
+}
+void ImageInformation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ImageInformation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const ImageInformation& ImageInformation::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ImageInformation_dmi_2fsw_5fimage_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void ImageInformation::Clear() {
 // @@protoc_insertion_point(message_clear_start:dmi.ImageInformation)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  image_install_script_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  image_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sha256sum_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && image_ != nullptr) {
+  image_install_script_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  image_url_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  sha256sum_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && image_ != nullptr) {
     delete image_;
   }
   image_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ImageInformation::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ImageInformation*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* ImageInformation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .dmi.ImageVersion image = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::dmi::ImageVersion::_InternalParse;
-        object = msg->mutable_image();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_image(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string image_install_script = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageInformation.image_install_script");
-        object = msg->mutable_image_install_script();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_image_install_script();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageInformation.image_install_script"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string image_url = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageInformation.image_url");
-        object = msg->mutable_image_url();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_image_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageInformation.image_url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string sha256sum = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageInformation.sha256sum");
-        object = msg->mutable_sha256sum();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_sha256sum();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageInformation.sha256sum"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ImageInformation::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:dmi.ImageInformation)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .dmi.ImageVersion image = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_image()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string image_install_script = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_image_install_script()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->image_install_script().data(), static_cast<int>(this->image_install_script().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageInformation.image_install_script"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string image_url = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_image_url()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->image_url().data(), static_cast<int>(this->image_url().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageInformation.image_url"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string sha256sum = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_sha256sum()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->sha256sum().data(), static_cast<int>(this->sha256sum().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageInformation.sha256sum"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:dmi.ImageInformation)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:dmi.ImageInformation)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ImageInformation::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:dmi.ImageInformation)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .dmi.ImageVersion image = 1;
-  if (this->has_image()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::image(this), output);
-  }
-
-  // string image_install_script = 2;
-  if (this->image_install_script().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_install_script().data(), static_cast<int>(this->image_install_script().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageInformation.image_install_script");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->image_install_script(), output);
-  }
-
-  // string image_url = 3;
-  if (this->image_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_url().data(), static_cast<int>(this->image_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageInformation.image_url");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->image_url(), output);
-  }
-
-  // string sha256sum = 5;
-  if (this->sha256sum().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sha256sum().data(), static_cast<int>(this->sha256sum().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageInformation.sha256sum");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->sha256sum(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:dmi.ImageInformation)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* ImageInformation::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ImageInformation::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:dmi.ImageInformation)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .dmi.ImageVersion image = 1;
   if (this->has_image()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::image(this), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::image(this), target, stream);
   }
 
   // string image_install_script = 2;
   if (this->image_install_script().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_install_script().data(), static_cast<int>(this->image_install_script().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image_install_script().data(), static_cast<int>(this->_internal_image_install_script().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageInformation.image_install_script");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->image_install_script(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_image_install_script(), target);
   }
 
   // string image_url = 3;
   if (this->image_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->image_url().data(), static_cast<int>(this->image_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image_url().data(), static_cast<int>(this->_internal_image_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageInformation.image_url");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->image_url(), target);
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_image_url(), target);
   }
 
   // string sha256sum = 5;
   if (this->sha256sum().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sha256sum().data(), static_cast<int>(this->sha256sum().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_sha256sum().data(), static_cast<int>(this->_internal_sha256sum().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageInformation.sha256sum");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->sha256sum(), target);
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_sha256sum(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dmi.ImageInformation)
   return target;
@@ -1002,57 +698,56 @@ size_t ImageInformation::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dmi.ImageInformation)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string image_install_script = 2;
   if (this->image_install_script().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->image_install_script());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image_install_script());
   }
 
   // string image_url = 3;
   if (this->image_url().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->image_url());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image_url());
   }
 
   // string sha256sum = 5;
   if (this->sha256sum().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->sha256sum());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_sha256sum());
   }
 
   // .dmi.ImageVersion image = 1;
   if (this->has_image()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *image_);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void ImageInformation::MergeFrom(const ::google::protobuf::Message& from) {
+void ImageInformation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:dmi.ImageInformation)
   GOOGLE_DCHECK_NE(&from, this);
   const ImageInformation* source =
-      ::google::protobuf::DynamicCastToGenerated<ImageInformation>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ImageInformation>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.ImageInformation)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.ImageInformation)
     MergeFrom(*source);
@@ -1062,28 +757,25 @@ void ImageInformation::MergeFrom(const ::google::protobuf::Message& from) {
 void ImageInformation::MergeFrom(const ImageInformation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dmi.ImageInformation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.image_install_script().size() > 0) {
-
-    image_install_script_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_install_script_);
+    _internal_set_image_install_script(from._internal_image_install_script());
   }
   if (from.image_url().size() > 0) {
-
-    image_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_url_);
+    _internal_set_image_url(from._internal_image_url());
   }
   if (from.sha256sum().size() > 0) {
-
-    sha256sum_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sha256sum_);
+    _internal_set_sha256sum(from._internal_sha256sum());
   }
   if (from.has_image()) {
-    mutable_image()->::dmi::ImageVersion::MergeFrom(from.image());
+    _internal_mutable_image()->::dmi::ImageVersion::MergeFrom(from._internal_image());
   }
 }
 
-void ImageInformation::CopyFrom(const ::google::protobuf::Message& from) {
+void ImageInformation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:dmi.ImageInformation)
   if (&from == this) return;
   Clear();
@@ -1101,25 +793,17 @@ bool ImageInformation::IsInitialized() const {
   return true;
 }
 
-void ImageInformation::Swap(ImageInformation* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ImageInformation::InternalSwap(ImageInformation* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  image_install_script_.Swap(&other->image_install_script_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  image_url_.Swap(&other->image_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  sha256sum_.Swap(&other->sha256sum_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  image_install_script_.Swap(&other->image_install_script_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  image_url_.Swap(&other->image_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  sha256sum_.Swap(&other->sha256sum_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(image_, other->image_);
 }
 
-::google::protobuf::Metadata ImageInformation::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fsw_5fimage_2eproto);
-  return ::file_level_metadata_dmi_2fsw_5fimage_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata ImageInformation::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1127,34 +811,28 @@ void ImageInformation::InternalSwap(ImageInformation* other) {
 
 void ImageStatus::InitAsDefaultInstance() {
 }
-class ImageStatus::HasBitSetters {
+class ImageStatus::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ImageStatus::kStatusFieldNumber;
-const int ImageStatus::kReasonFieldNumber;
-const int ImageStatus::kStateFieldNumber;
-const int ImageStatus::kDescriptionFieldNumber;
-const int ImageStatus::kReasonDetailFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ImageStatus::ImageStatus()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+ImageStatus::ImageStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:dmi.ImageStatus)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:dmi.ImageStatus)
 }
 ImageStatus::ImageStatus(const ImageStatus& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.description().size() > 0) {
-    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_description(),
+      GetArena());
   }
-  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.reason_detail().size() > 0) {
-    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  reason_detail_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason_detail().empty()) {
+    reason_detail_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_reason_detail(),
+      GetArena());
   }
   ::memcpy(&status_, &from.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&state_) -
@@ -1163,10 +841,9 @@ ImageStatus::ImageStatus(const ImageStatus& from)
 }
 
 void ImageStatus::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base);
-  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base);
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reason_detail_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
       reinterpret_cast<char*>(&status_)) + sizeof(state_));
@@ -1175,332 +852,166 @@ void ImageStatus::SharedCtor() {
 ImageStatus::~ImageStatus() {
   // @@protoc_insertion_point(destructor:dmi.ImageStatus)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ImageStatus::SharedDtor() {
-  description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reason_detail_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ImageStatus::ArenaDtor(void* object) {
+  ImageStatus* _this = reinterpret_cast< ImageStatus* >(object);
+  (void)_this;
+}
+void ImageStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ImageStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const ImageStatus& ImageStatus::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ImageStatus_dmi_2fsw_5fimage_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void ImageStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:dmi.ImageStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  reason_detail_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
       reinterpret_cast<char*>(&status_)) + sizeof(state_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ImageStatus::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ImageStatus*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+const char* ImageStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // .dmi.Status status = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_status(static_cast<::dmi::Status>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::dmi::Status>(val));
+        } else goto handle_unusual;
+        continue;
       // .dmi.ImageStatus.Reason reason = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_reason(static_cast<::dmi::ImageStatus_Reason>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_reason(static_cast<::dmi::ImageStatus_Reason>(val));
+        } else goto handle_unusual;
+        continue;
       // .dmi.ImageStatus.ImageState state = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_state(static_cast<::dmi::ImageStatus_ImageState>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_state(static_cast<::dmi::ImageStatus_ImageState>(val));
+        } else goto handle_unusual;
+        continue;
       // string description = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageStatus.description");
-        object = msg->mutable_description();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageStatus.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string reason_detail = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("dmi.ImageStatus.reason_detail");
-        object = msg->mutable_reason_detail();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_reason_detail();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dmi.ImageStatus.reason_detail"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
+          ctx->SetLastTag(tag);
+          goto success;
         }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
     }  // switch
   }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ImageStatus::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:dmi.ImageStatus)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .dmi.Status status = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_status(static_cast< ::dmi::Status >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .dmi.ImageStatus.Reason reason = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_reason(static_cast< ::dmi::ImageStatus_Reason >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .dmi.ImageStatus.ImageState state = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_state(static_cast< ::dmi::ImageStatus_ImageState >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string description = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_description()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->description().data(), static_cast<int>(this->description().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageStatus.description"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string reason_detail = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_reason_detail()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "dmi.ImageStatus.reason_detail"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
 success:
-  // @@protoc_insertion_point(parse_success:dmi.ImageStatus)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:dmi.ImageStatus)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ImageStatus::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:dmi.ImageStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .dmi.Status status = 1;
-  if (this->status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->status(), output);
-  }
-
-  // .dmi.ImageStatus.Reason reason = 2;
-  if (this->reason() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->reason(), output);
-  }
-
-  // .dmi.ImageStatus.ImageState state = 3;
-  if (this->state() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      3, this->state(), output);
-  }
-
-  // string description = 4;
-  if (this->description().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageStatus.description");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->description(), output);
-  }
-
-  // string reason_detail = 5;
-  if (this->reason_detail().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "dmi.ImageStatus.reason_detail");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->reason_detail(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:dmi.ImageStatus)
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-::google::protobuf::uint8* ImageStatus::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ImageStatus::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:dmi.ImageStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .dmi.Status status = 1;
   if (this->status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_status(), target);
   }
 
   // .dmi.ImageStatus.Reason reason = 2;
   if (this->reason() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->reason(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_reason(), target);
   }
 
   // .dmi.ImageStatus.ImageState state = 3;
   if (this->state() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      3, this->state(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_state(), target);
   }
 
   // string description = 4;
   if (this->description().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageStatus.description");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->description(), target);
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_description(), target);
   }
 
   // string reason_detail = 5;
   if (this->reason_detail().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason_detail().data(), static_cast<int>(this->_internal_reason_detail().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "dmi.ImageStatus.reason_detail");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->reason_detail(), target);
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_reason_detail(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dmi.ImageStatus)
   return target;
@@ -1510,61 +1021,60 @@ size_t ImageStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dmi.ImageStatus)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string description = 4;
   if (this->description().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->description());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
   }
 
   // string reason_detail = 5;
   if (this->reason_detail().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->reason_detail());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason_detail());
   }
 
   // .dmi.Status status = 1;
   if (this->status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
   // .dmi.ImageStatus.Reason reason = 2;
   if (this->reason() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_reason());
   }
 
   // .dmi.ImageStatus.ImageState state = 3;
   if (this->state() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void ImageStatus::MergeFrom(const ::google::protobuf::Message& from) {
+void ImageStatus::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:dmi.ImageStatus)
   GOOGLE_DCHECK_NE(&from, this);
   const ImageStatus* source =
-      ::google::protobuf::DynamicCastToGenerated<ImageStatus>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ImageStatus>(
           &from);
   if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.ImageStatus)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.ImageStatus)
     MergeFrom(*source);
@@ -1574,30 +1084,28 @@ void ImageStatus::MergeFrom(const ::google::protobuf::Message& from) {
 void ImageStatus::MergeFrom(const ImageStatus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dmi.ImageStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+    _internal_set_description(from._internal_description());
   }
   if (from.reason_detail().size() > 0) {
-
-    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+    _internal_set_reason_detail(from._internal_reason_detail());
   }
   if (from.status() != 0) {
-    set_status(from.status());
+    _internal_set_status(from._internal_status());
   }
   if (from.reason() != 0) {
-    set_reason(from.reason());
+    _internal_set_reason(from._internal_reason());
   }
   if (from.state() != 0) {
-    set_state(from.state());
+    _internal_set_state(from._internal_state());
   }
 }
 
-void ImageStatus::CopyFrom(const ::google::protobuf::Message& from) {
+void ImageStatus::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:dmi.ImageStatus)
   if (&from == this) return;
   Clear();
@@ -1615,43 +1123,37 @@ bool ImageStatus::IsInitialized() const {
   return true;
 }
 
-void ImageStatus::Swap(ImageStatus* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ImageStatus::InternalSwap(ImageStatus* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(status_, other->status_);
-  swap(reason_, other->reason_);
-  swap(state_, other->state_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  reason_detail_.Swap(&other->reason_detail_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ImageStatus, state_)
+      + sizeof(ImageStatus::state_)
+      - PROTOBUF_FIELD_OFFSET(ImageStatus, status_)>(
+          reinterpret_cast<char*>(&status_),
+          reinterpret_cast<char*>(&other->status_));
 }
 
-::google::protobuf::Metadata ImageStatus::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fsw_5fimage_2eproto);
-  return ::file_level_metadata_dmi_2fsw_5fimage_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata ImageStatus::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dmi
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::dmi::ImageVersion* Arena::CreateMaybeMessage< ::dmi::ImageVersion >(Arena* arena) {
-  return Arena::CreateInternal< ::dmi::ImageVersion >(arena);
+  return Arena::CreateMessageInternal< ::dmi::ImageVersion >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::ImageInformation* Arena::CreateMaybeMessage< ::dmi::ImageInformation >(Arena* arena) {
-  return Arena::CreateInternal< ::dmi::ImageInformation >(arena);
+  return Arena::CreateMessageInternal< ::dmi::ImageInformation >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::ImageStatus* Arena::CreateMaybeMessage< ::dmi::ImageStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::dmi::ImageStatus >(arena);
+  return Arena::CreateMessageInternal< ::dmi::ImageStatus >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>
