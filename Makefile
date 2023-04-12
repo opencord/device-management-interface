@@ -24,7 +24,8 @@ SHELL = bash -e -o pipefail
 # tool containers
 VOLTHA_TOOLS_VERSION ?= 2.5.2
 
-PROTOC    = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc protoc
+PROTOC = $(shell which protoc)
+PROTOC_GEN_GO = $(shell which protoc-gen-go)
 PROTOC_SH = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/go/src/github.com/opencord/device-management-interface/v3 $(shell test -t 0 && echo "-it") --workdir=/go/src/github.com/opencord/device-management-interface/v3 voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc sh -c
 GO        = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") -v gocache:/.cache -v gocache-${VOLTHA_TOOLS_VERSION}:/go/pkg voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-golang go
 
@@ -36,7 +37,7 @@ endef
 # Variables
 PROTO_FILES := $(sort $(wildcard protos/dmi/*.proto))
 
-PROTO_GO_DEST_DIR := go
+PROTO_GO_DEST_DIR := go/dmi
 PROTO_GO_PB:= $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_GO_DEST_DIR)/$(call if_package_path,$(f))/%.pb.go,$(f)))
 
 PROTO_PYTHON_DEST_DIR := python/dmi
@@ -88,24 +89,21 @@ go-protos: dmi.pb
 	    echo \$$x; \
 	    protoc --go_out=plugins=grpc:/go/src -I protos \$$x; \
 	  done"
-
+	
 dmi.pb:
 	@echo "Creating $@"
-	@${PROTOC} -I protos \
-	  --include_imports --include_source_info \
-	  --descriptor_set_out=$@ \
-	  ${PROTO_FILES}
+	@for proto_file in $(PROTO_FILES); do \
+		${PROTOC} -I protos --include_imports --include_source_info --descriptor_set_out=$@ $$proto_file;\
+	done
 
 # Cpp targets
 cpp-protos:
-	echo "Creating *.pb.cpp files"
-	@${PROTOC_SH} " \
-      set -e -o pipefail; \
-      for x in ${PROTO_FILES}; do \
-		echo \$$x; \
-		protoc --cpp_out=\$(PROTO_CPP_DEST_DIR) -I protos \$$x; \
-		protoc --grpc_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin -I protos \$$x; \
-	  done"
+	@echo "Creating *.pb.cpp files"
+	@mkdir -p $(PROTO_CPP_DEST_DIR) # Create the output directory if it doesn't exist
+	@for proto_file in $(PROTO_FILES); do \
+		${PROTOC} -I protos --cpp_out=$(PROTO_CPP_DEST_DIR) $$proto_file; \
+		${PROTOC} -I protos --grpc_out=$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin $$proto_file; \
+	done	  
 
 go-test:
 	test/test-go-proto-consistency.sh
@@ -121,3 +119,10 @@ python-build: setup.py python-protos
 
 cpp-test:
 	test/test-cpp-proto-consistency.sh
+
+clean:
+	rm -rf $(PROTO_CPP_DEST_DIR)
+	rm -rf $(PROTO_GO_DEST_DIR)
+	rm -rf $(PROTO_PYTHON_DEST_DIR)
+
+
