@@ -433,7 +433,7 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "vent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_t"
   "s\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016t"
   "hreshold_info\030\004 \001(\0132\031.dmi.ThresholdInfor"
-  "mation\022\020\n\010add_info\030\005 \001(\t*\202\020\n\010EventIds\022\030\n"
+  "mation\022\020\n\010add_info\030\005 \001(\t*\342\022\n\010EventIds\022\030\n"
   "\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCE"
   "IVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLU"
   "G_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOV"
@@ -474,30 +474,39 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\022"
   "3\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_"
   "RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_AB"
-  "OVE_FATAL_RECOVERED\020\223\003\022\032\n\025EVENT_HW_DEVIC"
-  "E_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPERATUR"
-  "E_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVICE_T"
-  "EMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_HW_DE"
-  "VICE_TEMPERATURE_ABOVE_CRITICAL_RECOVERE"
-  "D\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_ABOV"
-  "E_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEVICE_"
-  "REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SENSOR"
-  "_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATURE_S"
-  "ENSORS_FAILED\020\373\003\022\035\n\030EVENT_LINE_CARD_PLUG"
-  "_OUT\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001"
-  "\n\035NativeEventsManagementService\0226\n\nListE"
-  "vents\022\017.dmi.HardwareID\032\027.dmi.ListEventsR"
-  "esponse\022^\n\031UpdateEventsConfiguration\022\037.d"
-  "mi.EventsConfigurationRequest\032 .dmi.Even"
-  "tsConfigurationResponse\0224\n\014StreamEvents\022"
-  "\026.google.protobuf.Empty\032\n.dmi.Event0\001B;Z"
-  "9github.com/opencord/device-management-i"
-  "nterface/v3/go/dmib\006proto3"
+  "OVE_FATAL_RECOVERED\020\223\003\022$\n\037EVENT_CPU_USAG"
+  "E_ABOVE_THRESHOLD\020\224\003\022.\n)EVENT_CPU_USAGE_"
+  "ABOVE_THRESHOLD_RECOVERED\020\225\003\022\032\n\025EVENT_HW"
+  "_DEVICE_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMP"
+  "ERATURE_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DE"
+  "VICE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT"
+  "_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RE"
+  "COVERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATUR"
+  "E_ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_D"
+  "EVICE_REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_"
+  "SENSOR_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERA"
+  "TURE_SENSORS_FAILED\020\373\003\022(\n#EVENT_HW_DISK_"
+  "USAGE_ABOVE_THRESHOLD\020\374\003\0222\n-EVENT_HW_DIS"
+  "K_USAGE_ABOVE_THRESHOLD_RECOVERED\020\375\003\022*\n%"
+  "EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD\020\376\003"
+  "\0224\n/EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOL"
+  "D_RECOVERED\020\377\003\022\036\n\031EVENT_HW_NTP_SYNC_FAIL"
+  "URE\020\200\004\022(\n#EVENT_HW_NTP_SYNC_FAILURE_RECO"
+  "VERED\020\201\004\022\035\n\030EVENT_LINE_CARD_PLUG_OUT\020\330\004\022"
+  "\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001\n\035Native"
+  "EventsManagementService\0226\n\nListEvents\022\017."
+  "dmi.HardwareID\032\027.dmi.ListEventsResponse\022"
+  "^\n\031UpdateEventsConfiguration\022\037.dmi.Event"
+  "sConfigurationRequest\032 .dmi.EventsConfig"
+  "urationResponse\0224\n\014StreamEvents\022\026.google"
+  ".protobuf.Empty\032\n.dmi.Event0\001B;Z9github."
+  "com/opencord/device-management-interface"
+  "/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4026,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4378,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -609,6 +618,8 @@ bool EventIds_IsValid(int value) {
     case 401:
     case 402:
     case 403:
+    case 404:
+    case 405:
     case 500:
     case 501:
     case 502:
@@ -617,6 +628,12 @@ bool EventIds_IsValid(int value) {
     case 505:
     case 506:
     case 507:
+    case 508:
+    case 509:
+    case 510:
+    case 511:
+    case 512:
+    case 513:
     case 600:
     case 601:
       return true;

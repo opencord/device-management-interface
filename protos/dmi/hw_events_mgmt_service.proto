@@ -62,6 +62,8 @@ enum EventIds {
     EVENT_CPU_TEMPERATURE_ABOVE_FATAL = 401;
     EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_RECOVERED = 402;
     EVENT_CPU_TEMPERATURE_ABOVE_FATAL_RECOVERED = 403;
+    EVENT_CPU_USAGE_ABOVE_THRESHOLD = 404;
+    EVENT_CPU_USAGE_ABOVE_THRESHOLD_RECOVERED = 405;
 
     // Events for the complete HW Device
     EVENT_HW_DEVICE_RESET = 500;
@@ -72,6 +74,12 @@ enum EventIds {
     EVENT_HW_DEVICE_REBOOT = 505;
     EVENT_HW_TEMPERATURE_SENSOR_FAILED = 506;
     EVENT_HW_ALL_TEMPERATURE_SENSORS_FAILED = 507;
+    EVENT_HW_DISK_USAGE_ABOVE_THRESHOLD = 508;
+    EVENT_HW_DISK_USAGE_ABOVE_THRESHOLD_RECOVERED = 509;
+    EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD = 510;
+    EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD_RECOVERED = 511;
+    EVENT_HW_NTP_SYNC_FAILURE = 512;
+    EVENT_HW_NTP_SYNC_FAILURE_RECOVERED = 513;
 
     // Events for the line cards on the HW Device
     EVENT_LINE_CARD_PLUG_OUT = 600;
@@ -114,6 +122,9 @@ message EventCfg {
     EventIds event_id = 1;
     bool is_configured = 2;
     // Optional threshold values, applicable only for some specific events
+    // If an event needs thresholds but the user does not pass the thresholds here, the Device Manager implementations
+    // could choose to use defaults applicable for the specific component (recommended) or return an error for such
+    // an EventConfigurationRequest with reason as INVALID_CONFIG
     Thresholds thresholds = 3;
     // For events which can be configured on a particular component this id can be used to identify the component
     // For e.g. for events of the transceivers
