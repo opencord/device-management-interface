@@ -43,7 +43,7 @@ struct TableStruct_dmi_2fhw_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[15]
+  static const ::google::protobuf::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -72,6 +72,9 @@ extern HardwareIDDefaultTypeInternal _HardwareID_default_instance_;
 class ModifiableComponent;
 class ModifiableComponentDefaultTypeInternal;
 extern ModifiableComponentDefaultTypeInternal _ModifiableComponent_default_instance_;
+class PonDistance;
+class PonDistanceDefaultTypeInternal;
+extern PonDistanceDefaultTypeInternal _PonDistance_default_instance_;
 class PonIdConfig;
 class PonIdConfigDefaultTypeInternal;
 extern PonIdConfigDefaultTypeInternal _PonIdConfig_default_instance_;
@@ -106,6 +109,7 @@ template<> ::dmi::ContainerComponentAttributes* Arena::CreateMaybeMessage<::dmi:
 template<> ::dmi::Hardware* Arena::CreateMaybeMessage<::dmi::Hardware>(Arena*);
 template<> ::dmi::HardwareID* Arena::CreateMaybeMessage<::dmi::HardwareID>(Arena*);
 template<> ::dmi::ModifiableComponent* Arena::CreateMaybeMessage<::dmi::ModifiableComponent>(Arena*);
+template<> ::dmi::PonDistance* Arena::CreateMaybeMessage<::dmi::PonDistance>(Arena*);
 template<> ::dmi::PonIdConfig* Arena::CreateMaybeMessage<::dmi::PonIdConfig>(Arena*);
 template<> ::dmi::PortComponentAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentAttributes>(Arena*);
 template<> ::dmi::PortComponentChangeAttributes* Arena::CreateMaybeMessage<::dmi::PortComponentChangeAttributes>(Arena*);
@@ -1481,6 +1485,15 @@ class PortComponentAttributes final :
   ::dmi::PonIdConfig* mutable_pon_id_config();
   void set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config);
 
+  // .dmi.PonDistance distance = 8;
+  bool has_distance() const;
+  void clear_distance();
+  static const int kDistanceFieldNumber = 8;
+  const ::dmi::PonDistance& distance() const;
+  ::dmi::PonDistance* release_distance();
+  ::dmi::PonDistance* mutable_distance();
+  void set_allocated_distance(::dmi::PonDistance* distance);
+
   // .dmi.PortComponentAttributes.ConnectorType connector_type = 1;
   void clear_connector_type();
   static const int kConnectorTypeFieldNumber = 1;
@@ -1513,10 +1526,130 @@ class PortComponentAttributes final :
   ::google::protobuf::internal::ArenaStringPtr physical_label_;
   ::google::protobuf::internal::ArenaStringPtr mapping_label_;
   ::dmi::PonIdConfig* pon_id_config_;
+  ::dmi::PonDistance* distance_;
   int connector_type_;
   int speed_;
   int protocol_;
   bool speed_autonegotiation_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PonDistance final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.PonDistance) */ {
+ public:
+  PonDistance();
+  virtual ~PonDistance();
+
+  PonDistance(const PonDistance& from);
+
+  inline PonDistance& operator=(const PonDistance& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PonDistance(PonDistance&& from) noexcept
+    : PonDistance() {
+    *this = ::std::move(from);
+  }
+
+  inline PonDistance& operator=(PonDistance&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PonDistance& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PonDistance* internal_default_instance() {
+    return reinterpret_cast<const PonDistance*>(
+               &_PonDistance_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(PonDistance* other);
+  friend void swap(PonDistance& a, PonDistance& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PonDistance* New() const final {
+    return CreateMaybeMessage<PonDistance>(nullptr);
+  }
+
+  PonDistance* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PonDistance>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PonDistance& from);
+  void MergeFrom(const PonDistance& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PonDistance* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // uint32 max_distance = 1;
+  void clear_max_distance();
+  static const int kMaxDistanceFieldNumber = 1;
+  ::google::protobuf::uint32 max_distance() const;
+  void set_max_distance(::google::protobuf::uint32 value);
+
+  // uint32 max_differential_distance = 2;
+  void clear_max_differential_distance();
+  static const int kMaxDifferentialDistanceFieldNumber = 2;
+  ::google::protobuf::uint32 max_differential_distance() const;
+  void set_max_differential_distance(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:dmi.PonDistance)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint32 max_distance_;
+  ::google::protobuf::uint32 max_differential_distance_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
@@ -1560,7 +1693,7 @@ class PortComponentChangeAttributes final :
                &_PortComponentChangeAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(PortComponentChangeAttributes* other);
   friend void swap(PortComponentChangeAttributes& a, PortComponentChangeAttributes& b) {
@@ -1626,12 +1759,22 @@ class PortComponentChangeAttributes final :
   ::dmi::PonIdConfig* mutable_pon_id_config();
   void set_allocated_pon_id_config(::dmi::PonIdConfig* pon_id_config);
 
+  // .dmi.PonDistance distance = 2;
+  bool has_distance() const;
+  void clear_distance();
+  static const int kDistanceFieldNumber = 2;
+  const ::dmi::PonDistance& distance() const;
+  ::dmi::PonDistance* release_distance();
+  ::dmi::PonDistance* mutable_distance();
+  void set_allocated_distance(::dmi::PonDistance* distance);
+
   // @@protoc_insertion_point(class_scope:dmi.PortComponentChangeAttributes)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::dmi::PonIdConfig* pon_id_config_;
+  ::dmi::PonDistance* distance_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_2eproto;
 };
@@ -1675,7 +1818,7 @@ class TransceiverComponentChangeAttributes final :
                &_TransceiverComponentChangeAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(TransceiverComponentChangeAttributes* other);
   friend void swap(TransceiverComponentChangeAttributes& a, TransceiverComponentChangeAttributes& b) {
@@ -1787,7 +1930,7 @@ class PonIdConfig final :
                &_PonIdConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(PonIdConfig* other);
   friend void swap(PonIdConfig& a, PonIdConfig& b) {
@@ -1914,7 +2057,7 @@ class ContainerComponentAttributes final :
                &_ContainerComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(ContainerComponentAttributes* other);
   friend void swap(ContainerComponentAttributes& a, ContainerComponentAttributes& b) {
@@ -2034,7 +2177,7 @@ class PsuComponentAttributes final :
                &_PsuComponentAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(PsuComponentAttributes* other);
   friend void swap(PsuComponentAttributes& a, PsuComponentAttributes& b) {
@@ -2176,7 +2319,7 @@ class TransceiverComponentsAttributes final :
                &_TransceiverComponentsAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(TransceiverComponentsAttributes* other);
   friend void swap(TransceiverComponentsAttributes& a, TransceiverComponentsAttributes& b) {
@@ -2425,7 +2568,7 @@ class Component final :
                &_Component_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(Component* other);
   friend void swap(Component& a, Component& b) {
@@ -2836,7 +2979,7 @@ class Hardware final :
                &_Hardware_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(Hardware* other);
   friend void swap(Hardware& a, Hardware& b) {
@@ -2977,7 +3120,7 @@ class ModifiableComponent final :
                &_ModifiableComponent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(ModifiableComponent* other);
   friend void swap(ModifiableComponent& a, ModifiableComponent& b) {
@@ -3913,6 +4056,89 @@ inline void PortComponentAttributes::set_speed_autonegotiation(bool value) {
   // @@protoc_insertion_point(field_set:dmi.PortComponentAttributes.speed_autonegotiation)
 }
 
+// .dmi.PonDistance distance = 8;
+inline bool PortComponentAttributes::has_distance() const {
+  return this != internal_default_instance() && distance_ != nullptr;
+}
+inline void PortComponentAttributes::clear_distance() {
+  if (GetArenaNoVirtual() == nullptr && distance_ != nullptr) {
+    delete distance_;
+  }
+  distance_ = nullptr;
+}
+inline const ::dmi::PonDistance& PortComponentAttributes::distance() const {
+  const ::dmi::PonDistance* p = distance_;
+  // @@protoc_insertion_point(field_get:dmi.PortComponentAttributes.distance)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::PonDistance*>(
+      &::dmi::_PonDistance_default_instance_);
+}
+inline ::dmi::PonDistance* PortComponentAttributes::release_distance() {
+  // @@protoc_insertion_point(field_release:dmi.PortComponentAttributes.distance)
+  
+  ::dmi::PonDistance* temp = distance_;
+  distance_ = nullptr;
+  return temp;
+}
+inline ::dmi::PonDistance* PortComponentAttributes::mutable_distance() {
+  
+  if (distance_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::PonDistance>(GetArenaNoVirtual());
+    distance_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.PortComponentAttributes.distance)
+  return distance_;
+}
+inline void PortComponentAttributes::set_allocated_distance(::dmi::PonDistance* distance) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete distance_;
+  }
+  if (distance) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      distance = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, distance, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  distance_ = distance;
+  // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentAttributes.distance)
+}
+
+// -------------------------------------------------------------------
+
+// PonDistance
+
+// uint32 max_distance = 1;
+inline void PonDistance::clear_max_distance() {
+  max_distance_ = 0u;
+}
+inline ::google::protobuf::uint32 PonDistance::max_distance() const {
+  // @@protoc_insertion_point(field_get:dmi.PonDistance.max_distance)
+  return max_distance_;
+}
+inline void PonDistance::set_max_distance(::google::protobuf::uint32 value) {
+  
+  max_distance_ = value;
+  // @@protoc_insertion_point(field_set:dmi.PonDistance.max_distance)
+}
+
+// uint32 max_differential_distance = 2;
+inline void PonDistance::clear_max_differential_distance() {
+  max_differential_distance_ = 0u;
+}
+inline ::google::protobuf::uint32 PonDistance::max_differential_distance() const {
+  // @@protoc_insertion_point(field_get:dmi.PonDistance.max_differential_distance)
+  return max_differential_distance_;
+}
+inline void PonDistance::set_max_differential_distance(::google::protobuf::uint32 value) {
+  
+  max_differential_distance_ = value;
+  // @@protoc_insertion_point(field_set:dmi.PonDistance.max_differential_distance)
+}
+
 // -------------------------------------------------------------------
 
 // PortComponentChangeAttributes
@@ -3966,6 +4192,57 @@ inline void PortComponentChangeAttributes::set_allocated_pon_id_config(::dmi::Po
   }
   pon_id_config_ = pon_id_config;
   // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentChangeAttributes.pon_id_config)
+}
+
+// .dmi.PonDistance distance = 2;
+inline bool PortComponentChangeAttributes::has_distance() const {
+  return this != internal_default_instance() && distance_ != nullptr;
+}
+inline void PortComponentChangeAttributes::clear_distance() {
+  if (GetArenaNoVirtual() == nullptr && distance_ != nullptr) {
+    delete distance_;
+  }
+  distance_ = nullptr;
+}
+inline const ::dmi::PonDistance& PortComponentChangeAttributes::distance() const {
+  const ::dmi::PonDistance* p = distance_;
+  // @@protoc_insertion_point(field_get:dmi.PortComponentChangeAttributes.distance)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::PonDistance*>(
+      &::dmi::_PonDistance_default_instance_);
+}
+inline ::dmi::PonDistance* PortComponentChangeAttributes::release_distance() {
+  // @@protoc_insertion_point(field_release:dmi.PortComponentChangeAttributes.distance)
+  
+  ::dmi::PonDistance* temp = distance_;
+  distance_ = nullptr;
+  return temp;
+}
+inline ::dmi::PonDistance* PortComponentChangeAttributes::mutable_distance() {
+  
+  if (distance_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::PonDistance>(GetArenaNoVirtual());
+    distance_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.PortComponentChangeAttributes.distance)
+  return distance_;
+}
+inline void PortComponentChangeAttributes::set_allocated_distance(::dmi::PonDistance* distance) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete distance_;
+  }
+  if (distance) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      distance = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, distance, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  distance_ = distance;
+  // @@protoc_insertion_point(field_set_allocated:dmi.PortComponentChangeAttributes.distance)
 }
 
 // -------------------------------------------------------------------
@@ -5919,6 +6196,8 @@ inline ModifiableComponent::SpecificCase ModifiableComponent::specific_case() co
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
