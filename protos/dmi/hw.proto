@@ -208,10 +208,27 @@ message PortComponentAttributes{
     string mapping_label = 5;
     PonIdConfig pon_id_config = 6;
     bool speed_autonegotiation = 7; //Only valid for ethernet type port components. True if enabled, false otherwise.
+    PonDistance  distance = 8; //Pon max distance and max differential reach distance.
 }
 
+message PonDistance {
+    /*
+     * The ITU-T G.987.x series of Recommendations addresses the linear extent parameters of XG-PON
+     * using the single concept of fibre distance. An ONU is characterized by its fibre distance, and for
+     * each pair of ONUs on the same OLT PON interface, the differential fibre distance is the difference
+     * between the two individual fibre distances. Each specific PMD layer parameter set contains a
+     * provision to support a specific maximum fibre distance. The XG-PON TC layer specification
+     * contains a provision to support specific ranges of maximum fibre distance and maximum
+     * differential fibre distance. These ranges can be configurable for a given system. One can expect that
+     * for each XG-PON deployment, the configured TC layer maximum fibre distance will match the
+     * maximum fibre distance supported by the selected PMD layer parameter set.
+    */
+    uint32 max_distance = 1;  //Distance in kilometers the maximum logical distance on an ONU on the PON
+    uint32 max_differential_reach = 2;  // maximum distance between the closest ONU to the farthest ONU in kms.
+}
 message PortComponentChangeAttributes {
     PonIdConfig pon_id_config = 1;
+    PonDistance  distance = 2; //Pon max distance and max differential reach distance.
 }
 
 message TransceiverComponentChangeAttributes {
