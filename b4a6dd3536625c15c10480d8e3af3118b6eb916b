@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d540945_83ba9ed2",
+        "filename": "VERSION",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2023-09-15T13:40:07Z",
+      "side": 1,
+      "message": "I would suggest to change the version to 1.15.0 as it\u0027s not a patch the change we are doing but a new backwards compatible feature",
+      "revId": "b4a6dd3536625c15c10480d8e3af3118b6eb916b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
