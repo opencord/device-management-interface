@@ -16,6 +16,24 @@
       "message": "VERSION file update is missing. Please increment the minor version",
       "revId": "6a500a41a6e92bc3a5bdf747755835874657e8da",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f8cabad_d5534960",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000537
+      },
+      "writtenOn": "2023-09-15T11:14:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6242c727_621ca58b",
+      "revId": "6a500a41a6e92bc3a5bdf747755835874657e8da",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
