@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6242c727_621ca58b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2023-09-15T10:54:50Z",
+      "side": 1,
+      "message": "VERSION file update is missing. Please increment the minor version",
+      "revId": "6a500a41a6e92bc3a5bdf747755835874657e8da",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
