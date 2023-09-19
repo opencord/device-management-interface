@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "324b24cf_d075fdcd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2023-09-19T11:11:20Z",
+      "side": 1,
+      "message": "Minor changes",
+      "revId": "26506ad8e9a094bbcdbaa8d5eb70048c3a776361",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15724449_4f98f977",
+        "filename": "protos/dmi/hw.proto",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2023-09-19T11:11:20Z",
+      "side": 1,
+      "message": "The ITU-T G.987.x series uses the term \"maximum differential fibre distance\", so \u0027max_differential_distance\u0027 may be a better name for the parameter.\n\n\nThe short form of the unit is km not kms (see also ITU-T G.987.2).",
+      "revId": "26506ad8e9a094bbcdbaa8d5eb70048c3a776361",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
