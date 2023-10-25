@@ -274,6 +274,7 @@ message TransceiverComponentsAttributes{
         CFP = 12;
         CFP2_ACO = 13;
         CFP2_DCO = 14;
+        QSFP_DD = 15;
     }
 
     FormFactor form_factor = 1;

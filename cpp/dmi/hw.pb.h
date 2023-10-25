@@ -243,12 +243,13 @@ enum TransceiverComponentsAttributes_FormFactor {
   TransceiverComponentsAttributes_FormFactor_CFP = 12,
   TransceiverComponentsAttributes_FormFactor_CFP2_ACO = 13,
   TransceiverComponentsAttributes_FormFactor_CFP2_DCO = 14,
+  TransceiverComponentsAttributes_FormFactor_QSFP_DD = 15,
   TransceiverComponentsAttributes_FormFactor_TransceiverComponentsAttributes_FormFactor_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   TransceiverComponentsAttributes_FormFactor_TransceiverComponentsAttributes_FormFactor_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool TransceiverComponentsAttributes_FormFactor_IsValid(int value);
 const TransceiverComponentsAttributes_FormFactor TransceiverComponentsAttributes_FormFactor_FormFactor_MIN = TransceiverComponentsAttributes_FormFactor_FORM_FACTOR_UNKNOWN;
-const TransceiverComponentsAttributes_FormFactor TransceiverComponentsAttributes_FormFactor_FormFactor_MAX = TransceiverComponentsAttributes_FormFactor_CFP2_DCO;
+const TransceiverComponentsAttributes_FormFactor TransceiverComponentsAttributes_FormFactor_FormFactor_MAX = TransceiverComponentsAttributes_FormFactor_QSFP_DD;
 const int TransceiverComponentsAttributes_FormFactor_FormFactor_ARRAYSIZE = TransceiverComponentsAttributes_FormFactor_FormFactor_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* TransceiverComponentsAttributes_FormFactor_descriptor();
@@ -2405,6 +2406,8 @@ class TransceiverComponentsAttributes final :
     TransceiverComponentsAttributes_FormFactor_CFP2_ACO;
   static const FormFactor CFP2_DCO =
     TransceiverComponentsAttributes_FormFactor_CFP2_DCO;
+  static const FormFactor QSFP_DD =
+    TransceiverComponentsAttributes_FormFactor_QSFP_DD;
   static inline bool FormFactor_IsValid(int value) {
     return TransceiverComponentsAttributes_FormFactor_IsValid(value);
   }
