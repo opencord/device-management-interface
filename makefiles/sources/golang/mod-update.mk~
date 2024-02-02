@@ -1,0 +1,33 @@
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+.PHONY: mod-update
+mod-update: go-version mod-tidy mod-vendor
+
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+.PHONY: go-version
+go-version :
+	$(call banner-enter,Target $@)
+	${GO} version
+	$(call banner-leave,Target $@)
+
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+.PHONY: mod-tidy
+mod-tidy :
+	$(call banner-enter,Target $@)
+	${GO} mod tidy
+	$(call banner-leave,Target $@)
+
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+.PHONY: mod-vendor
+mod-vendor : mod-tidy
+mod-vendor :
+	$(call banner-enter,Target $@)
+	$(if $(LOCAL_FIX_PERMS),chmod o+w $(CURDIR))
+	${GO} mod vendor
+	$(if $(LOCAL_FIX_PERMS),chmod o-w $(CURDIR))
+	$(call banner-leave,Target $@)
+
+# [EOF]
