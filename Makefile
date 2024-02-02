@@ -1,28 +1,68 @@
-# Copyright 2020-present Open Networking Foundation
+# -*- makefile -*-
+# -----------------------------------------------------------------------#
+# Copyright 2016-2024 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# -----------------------------------------------------------------------
 
-# Makefile for device-management-interface
-default: test
+.DEFAULT_GOAL := help
+
+##-------------------##
+##---]  GLOBALS  [---##
+##-------------------##
+TOP ?= $(strip $(dir $(abspath $(lastword $(MAKEFILE_LIST))) ) )
+TOP := $(patsubst %/,%,$(TOP))
+ONF_MAKEDIR ?= $(TOP)/makefiles
+
+##--------------------##
+##---]  INCLUDES  [---##
+##--------------------##
+include $(TOP)/config.mk
+
+include $(ONF_MAKEDIR)/consts.mk
+# [TODO:WIP] include makefiles/include.mk
+
+# -----------------------------------------------------------------------
+# [TODO] Cannot screen for uninitialized shell vars ATM
+# 12:58:12 ./venv_protos/bin/activate: line 57: PS1: unbound variable
+# [TODO] Remove when makefiles/virtualenv/include.mk i sin use
+# export SHELL := bash -eo pipefail
+# -----------------------------------------------------------------------
+include $(ONF_MAKEDIR)/etc/include.mk
+include $(ONF_MAKEDIR)/utils/include.mk
+
+venv-name := venv_protos
+include $(ONF_MAKEDIR)/virtualenv/include.mk
+
+# [TODO] include $(ONF_MAKEDIR)/lint/include.mk
+include $(ONF_MAKEDIR)/sources/golang/mod-update.mk
 
 # initialize path of grpc_cpp_plugin binary
 GRPC_CPP_PLUGIN_PATH ?= $(shell which grpc_cpp_plugin)
 
 # set default shell options
-SHELL = bash -e -o pipefail
+# SHELL = bash -e -o pipefail
 
 # tool containers
 VOLTHA_TOOLS_VERSION ?= 2.5.2
+
+## -----------------------------------------------------------------------
+## [TODO]
+##   - see makefiles/docker/include.mk
+##       - Source is repo:onf-make
+##       - Most inlined macros can be removed/replaced with library logic
+##   - see repo(s) voltha-* for examples
+## -----------------------------------------------------------------------
 
 PROTOC    = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/app $(shell test -t 0 && echo "-it") voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc protoc
 PROTOC_SH = docker run --rm --user $$(id -u):$$(id -g) -v ${CURDIR}:/go/src/github.com/opencord/device-management-interface/v3 $(shell test -t 0 && echo "-it") --workdir=/go/src/github.com/opencord/device-management-interface/v3 voltha/voltha-ci-tools:${VOLTHA_TOOLS_VERSION}-protoc sh -c
@@ -44,6 +84,7 @@ PROTO_PYTHON_PB2 := $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$
 
 PROTO_CPP_DEST_DIR := cpp
 PROTO_CPP_PB := $(foreach f, $(PROTO_FILES), $(patsubst protos/dmi/%.proto,$(PROTO_CPP_DEST_DIR)/$(call if_package_path,$(f))/%.pb.cc,$(f)))
+
 # Force pb file to be regenrated every time.  Otherwise the make process assumes generated version is still valid
 .PHONY: dmi.pb
 
@@ -52,6 +93,12 @@ print:
 	@echo "Go PB files: $(PROTO_GO_PB)"
 	@echo "python PB files: $(PROTO_PYTHON_PB)"
 
+## -----------------------------------------------------------------------
+## [TODO]: Makefile target protos
+## [TODO]: Compare proto target logic with repo:voltha-protos.
+## [TODO]: Very similar, may be able to refactor as a make function
+##         or library shell script then parameterize target logic.
+## -----------------------------------------------------------------------
 # Generic targets
 protos: go-protos python-protos cpp-protos
 
@@ -59,18 +106,22 @@ build: protos
 
 test: go-test python-test cpp-test
 
-
-venv_protos:
-	virtualenv -p python3 $@;\
-	source ./$@/bin/activate ; set -u ;\
-	pip install grpcio-tools googleapis-common-protos
-
+# -----------------------------------------------------------------------
 # Python targets
+# -----------------------------------------------------------------------
+# [HUH?]
+#   o make protos build test was run for this patch.
+#   o So why is job failing on python regenerating prototypes.
+#   o Temporary hack: git diff will show if delta is due to a content
+#     change or if a dependency problem may be needlessly regenerating.
+# [SEE ALSO]
+# https://jenkins.opencord.org/job/verify_device-management-interface_unit-test/196/console
+# -----------------------------------------------------------------------
 python-protos: $(PROTO_PYTHON_PB2)
+	git diff # Temporary: remove after 2024-03-01
 
-$(PROTO_PYTHON_DEST_DIR)/%_pb2.py: protos/dmi/%.proto Makefile venv_protos
-	source ./venv_protos/bin/activate ; set -u ;\
-	python -m grpc_tools.protoc \
+$(PROTO_PYTHON_DEST_DIR)/%_pb2.py: protos/dmi/%.proto Makefile $(venv-name)
+	$(activate) && python -m grpc_tools.protoc \
     -I protos \
     --python_out=python \
     --grpc_python_out=python \
@@ -107,17 +158,58 @@ cpp-protos:
 		protoc --grpc_out=\$(PROTO_CPP_DEST_DIR) --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin -I protos \$$x; \
 	  done"
 
-go-test:
+go-test: go-mod-verify
 	test/test-go-proto-consistency.sh
-	${GO} mod verify
+#	${GO} mod verify
 
 python-test: tox.ini
 	test/test-python-proto-consistency.sh
 	tox
 
 python-build: setup.py python-protos
-	rm -rf dist/
+	$(RM) -r dist/
 	python ./setup.py sdist
 
 cpp-test:
 	test/test-cpp-proto-consistency.sh
+
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+clean ::
+	$(RM) -r $(venv-name) # HUH(?) library target exists for this
+
+sterile :: clean #
+
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+help ::
+	@echo "Usage: $(MAKE) [options] [target] ..."
+
+	@printf '  %-30.30s %s\n' '$(venv-name)'\
+	  'Install a python virtualenv interpreter'
+
+	@printf '  %-30.30s %s\n' 'build'\
+	  '[ALIAS] for make protos'
+	@printf '  %-30.30s %s\n' 'protos'\
+	  'Generate prototypes: cpp, golang & python'
+	@printf '  %-30.30s %s\n' 'test'\
+	  'Validate generated prototypes: cpp, golang & python'
+
+	@printf '  %-30.30s %s\n' 'cpp-protos'\
+	  'Generate prototypes: CPP'
+	@printf '  %-30.30s %s\n' 'cpp-test'\
+	  'Validate consistency: CPP prototypes'
+
+	@printf '  %-30.30s %s\n' 'go-protos'\
+	  'Generate prototypes: golang'
+	@printf '  %-30.30s %s\n' 'go-test'\
+	  'Validate consistency: golang prototypes, go.mod and vendor/'
+
+	@printf '  %-30.30s %s\n' 'python-build'\
+	  ''
+	@printf '  %-30.30s %s\n' 'python-protos'\
+	  'Generate prototypes: python'
+	@printf '  %-30.30s %s\n' 'python-test'\
+	  'Validate consistency: python prototypes'
+
+# [EOF]
