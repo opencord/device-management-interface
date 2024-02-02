@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62264bb5_81082717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-02-02T20:55:05Z",
+      "side": 1,
+      "message": "Patch FAIL: Why are prototypes regenerating ?!?\nProtos were regenerated in a clean sandbox and checked in as part of the patch.\n\nAdding \"git diff\" for temporary debugging.\n",
+      "revId": "94d537d51663489510714c7e4d6e77b466080c07",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
