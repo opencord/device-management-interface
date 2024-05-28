@@ -3174,6 +3174,18 @@ class SetLogLevelRequest final :
   ::dmi::Uuid* mutable_device_uuid();
   void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
 
+  // bool is_dm_loglevel = 3;
+  void clear_is_dm_loglevel();
+  static const int kIsDmLoglevelFieldNumber = 3;
+  bool is_dm_loglevel() const;
+  void set_is_dm_loglevel(bool value);
+
+  // .dmi.LogLevel dm_loglevel = 4;
+  void clear_dm_loglevel();
+  static const int kDmLoglevelFieldNumber = 4;
+  ::dmi::LogLevel dm_loglevel() const;
+  void set_dm_loglevel(::dmi::LogLevel value);
+
   // @@protoc_insertion_point(class_scope:dmi.SetLogLevelRequest)
  private:
   class HasBitSetters;
@@ -3181,6 +3193,8 @@ class SetLogLevelRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::dmi::EntitiesLogLevel > loglevels_;
   ::dmi::Uuid* device_uuid_;
+  bool is_dm_loglevel_;
+  int dm_loglevel_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
 };
@@ -6153,6 +6167,34 @@ inline const ::google::protobuf::RepeatedPtrField< ::dmi::EntitiesLogLevel >&
 SetLogLevelRequest::loglevels() const {
   // @@protoc_insertion_point(field_list:dmi.SetLogLevelRequest.loglevels)
   return loglevels_;
+}
+
+// bool is_dm_loglevel = 3;
+inline void SetLogLevelRequest::clear_is_dm_loglevel() {
+  is_dm_loglevel_ = false;
+}
+inline bool SetLogLevelRequest::is_dm_loglevel() const {
+  // @@protoc_insertion_point(field_get:dmi.SetLogLevelRequest.is_dm_loglevel)
+  return is_dm_loglevel_;
+}
+inline void SetLogLevelRequest::set_is_dm_loglevel(bool value) {
+  
+  is_dm_loglevel_ = value;
+  // @@protoc_insertion_point(field_set:dmi.SetLogLevelRequest.is_dm_loglevel)
+}
+
+// .dmi.LogLevel dm_loglevel = 4;
+inline void SetLogLevelRequest::clear_dm_loglevel() {
+  dm_loglevel_ = 0;
+}
+inline ::dmi::LogLevel SetLogLevelRequest::dm_loglevel() const {
+  // @@protoc_insertion_point(field_get:dmi.SetLogLevelRequest.dm_loglevel)
+  return static_cast< ::dmi::LogLevel >(dm_loglevel_);
+}
+inline void SetLogLevelRequest::set_dm_loglevel(::dmi::LogLevel value) {
+  
+  dm_loglevel_ = value;
+  // @@protoc_insertion_point(field_set:dmi.SetLogLevelRequest.dm_loglevel)
 }
 
 // -------------------------------------------------------------------

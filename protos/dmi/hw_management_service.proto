@@ -187,6 +187,10 @@ message EntitiesLogLevel {
 message SetLogLevelRequest {
     Uuid device_uuid = 1;
     repeated EntitiesLogLevel loglevels = 2;
+    // Setting is_dm_loglevel to true means the request is to set the log level of the Device Manager implementation itself and not for a specific device. 
+    // If is_dm_loglevel is set to true then the values of device_uuid and loglevels are ignored
+    bool is_dm_loglevel = 3;
+    LogLevel dm_loglevel = 4; // dm_loglevel has meaning only if is_dm_loglevel is set to true, else it is ignored.
 }
 
 message SetLogLevelResponse {

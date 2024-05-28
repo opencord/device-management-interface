@@ -668,6 +668,8 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dmi::SetLogLevelRequest, device_uuid_),
   PROTOBUF_FIELD_OFFSET(::dmi::SetLogLevelRequest, loglevels_),
+  PROTOBUF_FIELD_OFFSET(::dmi::SetLogLevelRequest, is_dm_loglevel_),
+  PROTOBUF_FIELD_OFFSET(::dmi::SetLogLevelRequest, dm_loglevel_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::SetLogLevelResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -740,13 +742,13 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 119, -1, sizeof(::dmi::GetMsgBusEndpointResponse)},
   { 128, -1, sizeof(::dmi::EntitiesLogLevel)},
   { 135, -1, sizeof(::dmi::SetLogLevelRequest)},
-  { 142, -1, sizeof(::dmi::SetLogLevelResponse)},
-  { 151, -1, sizeof(::dmi::GetLogLevelRequest)},
-  { 158, -1, sizeof(::dmi::GetLogLevelResponse)},
-  { 168, -1, sizeof(::dmi::GetLoggableEntitiesRequest)},
-  { 174, -1, sizeof(::dmi::Heartbeat)},
-  { 180, -1, sizeof(::dmi::RebootDeviceRequest)},
-  { 186, -1, sizeof(::dmi::RebootDeviceResponse)},
+  { 144, -1, sizeof(::dmi::SetLogLevelResponse)},
+  { 153, -1, sizeof(::dmi::GetLogLevelRequest)},
+  { 160, -1, sizeof(::dmi::GetLogLevelResponse)},
+  { 170, -1, sizeof(::dmi::GetLoggableEntitiesRequest)},
+  { 176, -1, sizeof(::dmi::Heartbeat)},
+  { 182, -1, sizeof(::dmi::RebootDeviceRequest)},
+  { 188, -1, sizeof(::dmi::RebootDeviceResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -866,73 +868,75 @@ const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
   "J\n\006Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016INTER"
   "NAL_ERROR\020\001\022\026\n\022DEVICE_UNREACHABLE\020\002\"E\n\020E"
   "ntitiesLogLevel\022\037\n\010logLevel\030\001 \001(\0162\r.dmi."
-  "LogLevel\022\020\n\010entities\030\002 \003(\t\"^\n\022SetLogLeve"
-  "lRequest\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid"
-  "\022(\n\tloglevels\030\002 \003(\0132\025.dmi.EntitiesLogLev"
-  "el\"\222\002\n\023SetLogLevelResponse\022\036\n\013device_uui"
-  "d\030\001 \001(\0132\t.dmi.Uuid\022\033\n\006status\030\002 \001(\0162\013.dmi"
-  ".Status\022/\n\006reason\030\003 \001(\0162\037.dmi.SetLogLeve"
-  "lResponse.Reason\022\025\n\rreason_detail\030\004 \001(\t\""
-  "v\n\006Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNO"
-  "WN_DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\026\n\022UNKNO"
-  "WN_LOG_ENTITY\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\""
-  "F\n\022GetLogLevelRequest\022\036\n\013device_uuid\030\001 \001"
-  "(\0132\t.dmi.Uuid\022\020\n\010entities\030\002 \003(\t\"\274\002\n\023GetL"
-  "ogLevelResponse\022\036\n\013device_uuid\030\001 \001(\0132\t.d"
-  "mi.Uuid\022(\n\tlogLevels\030\002 \003(\0132\025.dmi.Entitie"
-  "sLogLevel\022\033\n\006status\030\003 \001(\0162\013.dmi.Status\022/"
-  "\n\006reason\030\004 \001(\0162\037.dmi.GetLogLevelResponse"
-  ".Reason\022\025\n\rreason_detail\030\005 \001(\t\"v\n\006Reason"
-  "\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE"
-  "\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\026\n\022UNKNOWN_LOG_EN"
-  "TITY\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"<\n\032GetLog"
-  "gableEntitiesRequest\022\036\n\013device_uuid\030\001 \001("
-  "\0132\t.dmi.Uuid\"(\n\tHeartbeat\022\033\n\023heartbeat_s"
-  "ignature\030\001 \001(\007\"5\n\023RebootDeviceRequest\022\036\n"
-  "\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\"\367\001\n\024Reboot"
-  "DeviceResponse\022\033\n\006status\030\003 \001(\0162\013.dmi.Sta"
-  "tus\0220\n\006reason\030\004 \001(\0162 .dmi.RebootDeviceRe"
-  "sponse.Reason\022\025\n\rreason_detail\030\005 \001(\t\"y\n\006"
-  "Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_"
-  "DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_U"
-  "NREACHABLE\020\003\022\031\n\025DEVICE_IN_WRONG_STATE\020\0042"
-  "\256\t\n\031NativeHWManagementService\022S\n\023StartMa"
-  "nagingDevice\022\030.dmi.ModifiableComponent\032 "
-  ".dmi.StartManagingDeviceResponse0\001\022U\n\022St"
-  "opManagingDevice\022\036.dmi.StopManagingDevic"
-  "eRequest\032\037.dmi.StopManagingDeviceRespons"
-  "e\022H\n\021GetManagedDevices\022\026.google.protobuf"
-  ".Empty\032\033.dmi.ManagedDevicesResponse\022W\n\024G"
-  "etPhysicalInventory\022\035.dmi.PhysicalInvent"
-  "oryRequest\032\036.dmi.PhysicalInventoryRespon"
-  "se0\001\022W\n\022GetHWComponentInfo\022\036.dmi.HWCompo"
-  "nentInfoGetRequest\032\037.dmi.HWComponentInfo"
-  "GetResponse0\001\022U\n\022SetHWComponentInfo\022\036.dm"
-  "i.HWComponentInfoSetRequest\032\037.dmi.HWComp"
-  "onentInfoSetResponse\022T\n\022SetLoggingEndpoi"
-  "nt\022\036.dmi.SetLoggingEndpointRequest\032\036.dmi"
-  ".SetRemoteEndpointResponse\022F\n\022GetLogging"
-  "Endpoint\022\017.dmi.HardwareID\032\037.dmi.GetLoggi"
-  "ngEndpointResponse\022R\n\021SetMsgBusEndpoint\022"
-  "\035.dmi.SetMsgBusEndpointRequest\032\036.dmi.Set"
-  "RemoteEndpointResponse\022K\n\021GetMsgBusEndpo"
-  "int\022\026.google.protobuf.Empty\032\036.dmi.GetMsg"
-  "BusEndpointResponse\022P\n\023GetLoggableEntiti"
-  "es\022\037.dmi.GetLoggableEntitiesRequest\032\030.dm"
-  "i.GetLogLevelResponse\022@\n\013SetLogLevel\022\027.d"
-  "mi.SetLogLevelRequest\032\030.dmi.SetLogLevelR"
-  "esponse\022@\n\013GetLogLevel\022\027.dmi.GetLogLevel"
-  "Request\032\030.dmi.GetLogLevelResponse\0228\n\016Hea"
-  "rtbeatCheck\022\026.google.protobuf.Empty\032\016.dm"
-  "i.Heartbeat\022C\n\014RebootDevice\022\030.dmi.Reboot"
-  "DeviceRequest\032\031.dmi.RebootDeviceResponse"
-  "B;Z9github.com/opencord/device-managemen"
-  "t-interface/v3/go/dmib\006proto3"
+  "LogLevel\022\020\n\010entities\030\002 \003(\t\"\232\001\n\022SetLogLev"
+  "elRequest\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uui"
+  "d\022(\n\tloglevels\030\002 \003(\0132\025.dmi.EntitiesLogLe"
+  "vel\022\026\n\016is_dm_loglevel\030\003 \001(\010\022\"\n\013dm_loglev"
+  "el\030\004 \001(\0162\r.dmi.LogLevel\"\222\002\n\023SetLogLevelR"
+  "esponse\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\022"
+  "\033\n\006status\030\002 \001(\0162\013.dmi.Status\022/\n\006reason\030\003"
+  " \001(\0162\037.dmi.SetLogLevelResponse.Reason\022\025\n"
+  "\rreason_detail\030\004 \001(\t\"v\n\006Reason\022\024\n\020UNDEFI"
+  "NED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTE"
+  "RNAL_ERROR\020\002\022\026\n\022UNKNOWN_LOG_ENTITY\020\003\022\026\n\022"
+  "DEVICE_UNREACHABLE\020\004\"F\n\022GetLogLevelReque"
+  "st\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\022\020\n\010en"
+  "tities\030\002 \003(\t\"\274\002\n\023GetLogLevelResponse\022\036\n\013"
+  "device_uuid\030\001 \001(\0132\t.dmi.Uuid\022(\n\tlogLevel"
+  "s\030\002 \003(\0132\025.dmi.EntitiesLogLevel\022\033\n\006status"
+  "\030\003 \001(\0162\013.dmi.Status\022/\n\006reason\030\004 \001(\0162\037.dm"
+  "i.GetLogLevelResponse.Reason\022\025\n\rreason_d"
+  "etail\030\005 \001(\t\"v\n\006Reason\022\024\n\020UNDEFINED_REASO"
+  "N\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERRO"
+  "R\020\002\022\026\n\022UNKNOWN_LOG_ENTITY\020\003\022\026\n\022DEVICE_UN"
+  "REACHABLE\020\004\"<\n\032GetLoggableEntitiesReques"
+  "t\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\"(\n\tHea"
+  "rtbeat\022\033\n\023heartbeat_signature\030\001 \001(\007\"5\n\023R"
+  "ebootDeviceRequest\022\036\n\013device_uuid\030\001 \001(\0132"
+  "\t.dmi.Uuid\"\367\001\n\024RebootDeviceResponse\022\033\n\006s"
+  "tatus\030\003 \001(\0162\013.dmi.Status\0220\n\006reason\030\004 \001(\016"
+  "2 .dmi.RebootDeviceResponse.Reason\022\025\n\rre"
+  "ason_detail\030\005 \001(\t\"y\n\006Reason\022\024\n\020UNDEFINED"
+  "_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNA"
+  "L_ERROR\020\002\022\026\n\022DEVICE_UNREACHABLE\020\003\022\031\n\025DEV"
+  "ICE_IN_WRONG_STATE\020\0042\256\t\n\031NativeHWManagem"
+  "entService\022S\n\023StartManagingDevice\022\030.dmi."
+  "ModifiableComponent\032 .dmi.StartManagingD"
+  "eviceResponse0\001\022U\n\022StopManagingDevice\022\036."
+  "dmi.StopManagingDeviceRequest\032\037.dmi.Stop"
+  "ManagingDeviceResponse\022H\n\021GetManagedDevi"
+  "ces\022\026.google.protobuf.Empty\032\033.dmi.Manage"
+  "dDevicesResponse\022W\n\024GetPhysicalInventory"
+  "\022\035.dmi.PhysicalInventoryRequest\032\036.dmi.Ph"
+  "ysicalInventoryResponse0\001\022W\n\022GetHWCompon"
+  "entInfo\022\036.dmi.HWComponentInfoGetRequest\032"
+  "\037.dmi.HWComponentInfoGetResponse0\001\022U\n\022Se"
+  "tHWComponentInfo\022\036.dmi.HWComponentInfoSe"
+  "tRequest\032\037.dmi.HWComponentInfoSetRespons"
+  "e\022T\n\022SetLoggingEndpoint\022\036.dmi.SetLogging"
+  "EndpointRequest\032\036.dmi.SetRemoteEndpointR"
+  "esponse\022F\n\022GetLoggingEndpoint\022\017.dmi.Hard"
+  "wareID\032\037.dmi.GetLoggingEndpointResponse\022"
+  "R\n\021SetMsgBusEndpoint\022\035.dmi.SetMsgBusEndp"
+  "ointRequest\032\036.dmi.SetRemoteEndpointRespo"
+  "nse\022K\n\021GetMsgBusEndpoint\022\026.google.protob"
+  "uf.Empty\032\036.dmi.GetMsgBusEndpointResponse"
+  "\022P\n\023GetLoggableEntities\022\037.dmi.GetLoggabl"
+  "eEntitiesRequest\032\030.dmi.GetLogLevelRespon"
+  "se\022@\n\013SetLogLevel\022\027.dmi.SetLogLevelReque"
+  "st\032\030.dmi.SetLogLevelResponse\022@\n\013GetLogLe"
+  "vel\022\027.dmi.GetLogLevelRequest\032\030.dmi.GetLo"
+  "gLevelResponse\0228\n\016HeartbeatCheck\022\026.googl"
+  "e.protobuf.Empty\032\016.dmi.Heartbeat\022C\n\014Rebo"
+  "otDevice\022\030.dmi.RebootDeviceRequest\032\031.dmi"
+  ".RebootDeviceResponseB;Z9github.com/open"
+  "cord/device-management-interface/v3/go/d"
+  "mib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto,
-  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5749,
+  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5810,
 };
 
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto() {
@@ -8270,6 +8274,8 @@ void SetLogLevelRequest::clear_device_uuid() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SetLogLevelRequest::kDeviceUuidFieldNumber;
 const int SetLogLevelRequest::kLoglevelsFieldNumber;
+const int SetLogLevelRequest::kIsDmLoglevelFieldNumber;
+const int SetLogLevelRequest::kDmLoglevelFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SetLogLevelRequest::SetLogLevelRequest()
@@ -8287,13 +8293,18 @@ SetLogLevelRequest::SetLogLevelRequest(const SetLogLevelRequest& from)
   } else {
     device_uuid_ = nullptr;
   }
+  ::memcpy(&is_dm_loglevel_, &from.is_dm_loglevel_,
+    static_cast<size_t>(reinterpret_cast<char*>(&dm_loglevel_) -
+    reinterpret_cast<char*>(&is_dm_loglevel_)) + sizeof(dm_loglevel_));
   // @@protoc_insertion_point(copy_constructor:dmi.SetLogLevelRequest)
 }
 
 void SetLogLevelRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_SetLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
-  device_uuid_ = nullptr;
+  ::memset(&device_uuid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dm_loglevel_) -
+      reinterpret_cast<char*>(&device_uuid_)) + sizeof(dm_loglevel_));
 }
 
 SetLogLevelRequest::~SetLogLevelRequest() {
@@ -8325,6 +8336,9 @@ void SetLogLevelRequest::Clear() {
     delete device_uuid_;
   }
   device_uuid_ = nullptr;
+  ::memset(&is_dm_loglevel_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dm_loglevel_) -
+      reinterpret_cast<char*>(&is_dm_loglevel_)) + sizeof(dm_loglevel_));
   _internal_metadata_.Clear();
 }
 
@@ -8368,6 +8382,21 @@ const char* SetLogLevelRequest::_InternalParse(const char* begin, const char* en
               {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
+        break;
+      }
+      // bool is_dm_loglevel = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        msg->set_is_dm_loglevel(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.LogLevel dm_loglevel = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_dm_loglevel(static_cast<::dmi::LogLevel>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -8422,6 +8451,33 @@ bool SetLogLevelRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // bool is_dm_loglevel = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_dm_loglevel_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.LogLevel dm_loglevel = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_dm_loglevel(static_cast< ::dmi::LogLevel >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -8464,6 +8520,17 @@ void SetLogLevelRequest::SerializeWithCachedSizes(
       output);
   }
 
+  // bool is_dm_loglevel = 3;
+  if (this->is_dm_loglevel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_dm_loglevel(), output);
+  }
+
+  // .dmi.LogLevel dm_loglevel = 4;
+  if (this->dm_loglevel() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->dm_loglevel(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -8490,6 +8557,17 @@ void SetLogLevelRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, this->loglevels(static_cast<int>(i)), target);
+  }
+
+  // bool is_dm_loglevel = 3;
+  if (this->is_dm_loglevel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_dm_loglevel(), target);
+  }
+
+  // .dmi.LogLevel dm_loglevel = 4;
+  if (this->dm_loglevel() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->dm_loglevel(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -8531,6 +8609,17 @@ size_t SetLogLevelRequest::ByteSizeLong() const {
         *device_uuid_);
   }
 
+  // bool is_dm_loglevel = 3;
+  if (this->is_dm_loglevel() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // .dmi.LogLevel dm_loglevel = 4;
+  if (this->dm_loglevel() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->dm_loglevel());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -8562,6 +8651,12 @@ void SetLogLevelRequest::MergeFrom(const SetLogLevelRequest& from) {
   if (from.has_device_uuid()) {
     mutable_device_uuid()->::dmi::Uuid::MergeFrom(from.device_uuid());
   }
+  if (from.is_dm_loglevel() != 0) {
+    set_is_dm_loglevel(from.is_dm_loglevel());
+  }
+  if (from.dm_loglevel() != 0) {
+    set_dm_loglevel(from.dm_loglevel());
+  }
 }
 
 void SetLogLevelRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -8591,6 +8686,8 @@ void SetLogLevelRequest::InternalSwap(SetLogLevelRequest* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&loglevels_)->InternalSwap(CastToBase(&other->loglevels_));
   swap(device_uuid_, other->device_uuid_);
+  swap(is_dm_loglevel_, other->is_dm_loglevel_);
+  swap(dm_loglevel_, other->dm_loglevel_);
 }
 
 ::google::protobuf::Metadata SetLogLevelRequest::GetMetadata() const {
