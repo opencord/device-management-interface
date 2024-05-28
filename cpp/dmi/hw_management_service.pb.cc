@@ -111,6 +111,22 @@ class GetLoggableEntitiesRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<GetLoggableEntitiesRequest> _instance;
 } _GetLoggableEntitiesRequest_default_instance_;
+class SetDmLogLevelRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SetDmLogLevelRequest> _instance;
+} _SetDmLogLevelRequest_default_instance_;
+class SetDmLogLevelResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SetDmLogLevelResponse> _instance;
+} _SetDmLogLevelResponse_default_instance_;
+class GetDmLogLevelRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GetDmLogLevelRequest> _instance;
+} _GetDmLogLevelRequest_default_instance_;
+class GetDmLogLevelResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GetDmLogLevelResponse> _instance;
+} _GetDmLogLevelResponse_default_instance_;
 class HeartbeatDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Heartbeat> _instance;
@@ -450,6 +466,62 @@ static void InitDefaultsGetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservi
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {
       &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
 
+static void InitDefaultsSetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_SetDmLogLevelRequest_default_instance_;
+    new (ptr) ::dmi::SetDmLogLevelRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::SetDmLogLevelRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_SetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
+static void InitDefaultsSetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_SetDmLogLevelResponse_default_instance_;
+    new (ptr) ::dmi::SetDmLogLevelResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::SetDmLogLevelResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_SetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
+static void InitDefaultsGetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_GetDmLogLevelRequest_default_instance_;
+    new (ptr) ::dmi::GetDmLogLevelRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::GetDmLogLevelRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_GetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
+static void InitDefaultsGetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_GetDmLogLevelResponse_default_instance_;
+    new (ptr) ::dmi::GetDmLogLevelResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::GetDmLogLevelResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_GetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
 static void InitDefaultsHeartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -516,13 +588,17 @@ void InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_GetLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GetLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GetLoggableEntitiesRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Heartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RebootDeviceRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RebootDeviceResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[25];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[12];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[29];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[14];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -701,6 +777,34 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dmi::GetLoggableEntitiesRequest, device_uuid_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelRequest, level_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::dmi::SetDmLogLevelResponse, reason_detail_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelResponse, level_),
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::dmi::GetDmLogLevelResponse, reason_detail_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::Heartbeat, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -744,9 +848,13 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 151, -1, sizeof(::dmi::GetLogLevelRequest)},
   { 158, -1, sizeof(::dmi::GetLogLevelResponse)},
   { 168, -1, sizeof(::dmi::GetLoggableEntitiesRequest)},
-  { 174, -1, sizeof(::dmi::Heartbeat)},
-  { 180, -1, sizeof(::dmi::RebootDeviceRequest)},
-  { 186, -1, sizeof(::dmi::RebootDeviceResponse)},
+  { 174, -1, sizeof(::dmi::SetDmLogLevelRequest)},
+  { 180, -1, sizeof(::dmi::SetDmLogLevelResponse)},
+  { 188, -1, sizeof(::dmi::GetDmLogLevelRequest)},
+  { 193, -1, sizeof(::dmi::GetDmLogLevelResponse)},
+  { 202, -1, sizeof(::dmi::Heartbeat)},
+  { 208, -1, sizeof(::dmi::RebootDeviceRequest)},
+  { 214, -1, sizeof(::dmi::RebootDeviceResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -772,6 +880,10 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLogLevelRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLogLevelResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetLoggableEntitiesRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_SetDmLogLevelRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_SetDmLogLevelResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetDmLogLevelRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GetDmLogLevelResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_Heartbeat_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_RebootDeviceRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_RebootDeviceResponse_default_instance_),
@@ -780,7 +892,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   {}, AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, "dmi/hw_management_service.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 25, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
+  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 29, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
@@ -887,52 +999,68 @@ const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
   "\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\026\n\022UNKNOWN_LOG_EN"
   "TITY\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"<\n\032GetLog"
   "gableEntitiesRequest\022\036\n\013device_uuid\030\001 \001("
-  "\0132\t.dmi.Uuid\"(\n\tHeartbeat\022\033\n\023heartbeat_s"
-  "ignature\030\001 \001(\007\"5\n\023RebootDeviceRequest\022\036\n"
-  "\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\"\367\001\n\024Reboot"
-  "DeviceResponse\022\033\n\006status\030\003 \001(\0162\013.dmi.Sta"
-  "tus\0220\n\006reason\030\004 \001(\0162 .dmi.RebootDeviceRe"
-  "sponse.Reason\022\025\n\rreason_detail\030\005 \001(\t\"y\n\006"
-  "Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_"
-  "DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020\002\022\026\n\022DEVICE_U"
-  "NREACHABLE\020\003\022\031\n\025DEVICE_IN_WRONG_STATE\020\0042"
-  "\256\t\n\031NativeHWManagementService\022S\n\023StartMa"
-  "nagingDevice\022\030.dmi.ModifiableComponent\032 "
-  ".dmi.StartManagingDeviceResponse0\001\022U\n\022St"
-  "opManagingDevice\022\036.dmi.StopManagingDevic"
-  "eRequest\032\037.dmi.StopManagingDeviceRespons"
-  "e\022H\n\021GetManagedDevices\022\026.google.protobuf"
-  ".Empty\032\033.dmi.ManagedDevicesResponse\022W\n\024G"
-  "etPhysicalInventory\022\035.dmi.PhysicalInvent"
-  "oryRequest\032\036.dmi.PhysicalInventoryRespon"
-  "se0\001\022W\n\022GetHWComponentInfo\022\036.dmi.HWCompo"
-  "nentInfoGetRequest\032\037.dmi.HWComponentInfo"
-  "GetResponse0\001\022U\n\022SetHWComponentInfo\022\036.dm"
-  "i.HWComponentInfoSetRequest\032\037.dmi.HWComp"
-  "onentInfoSetResponse\022T\n\022SetLoggingEndpoi"
-  "nt\022\036.dmi.SetLoggingEndpointRequest\032\036.dmi"
-  ".SetRemoteEndpointResponse\022F\n\022GetLogging"
-  "Endpoint\022\017.dmi.HardwareID\032\037.dmi.GetLoggi"
-  "ngEndpointResponse\022R\n\021SetMsgBusEndpoint\022"
-  "\035.dmi.SetMsgBusEndpointRequest\032\036.dmi.Set"
-  "RemoteEndpointResponse\022K\n\021GetMsgBusEndpo"
-  "int\022\026.google.protobuf.Empty\032\036.dmi.GetMsg"
-  "BusEndpointResponse\022P\n\023GetLoggableEntiti"
-  "es\022\037.dmi.GetLoggableEntitiesRequest\032\030.dm"
-  "i.GetLogLevelResponse\022@\n\013SetLogLevel\022\027.d"
-  "mi.SetLogLevelRequest\032\030.dmi.SetLogLevelR"
-  "esponse\022@\n\013GetLogLevel\022\027.dmi.GetLogLevel"
-  "Request\032\030.dmi.GetLogLevelResponse\0228\n\016Hea"
-  "rtbeatCheck\022\026.google.protobuf.Empty\032\016.dm"
-  "i.Heartbeat\022C\n\014RebootDevice\022\030.dmi.Reboot"
-  "DeviceRequest\032\031.dmi.RebootDeviceResponse"
-  "B;Z9github.com/opencord/device-managemen"
-  "t-interface/v3/go/dmib\006proto3"
+  "\0132\t.dmi.Uuid\"4\n\024SetDmLogLevelRequest\022\034\n\005"
+  "level\030\001 \001(\0162\r.dmi.LogLevel\"\311\001\n\025SetDmLogL"
+  "evelResponse\022\033\n\006status\030\001 \001(\0162\013.dmi.Statu"
+  "s\0221\n\006reason\030\002 \001(\0162!.dmi.SetDmLogLevelRes"
+  "ponse.Reason\022\025\n\rreason_detail\030\003 \001(\t\"I\n\006R"
+  "eason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016INTERNAL_"
+  "ERROR\020\001\022\025\n\021UNKNOWN_LOG_LEVEL\020\002\"\026\n\024GetDmL"
+  "ogLevelRequest\"\320\001\n\025GetDmLogLevelResponse"
+  "\022\034\n\005level\030\001 \001(\0162\r.dmi.LogLevel\022\033\n\006status"
+  "\030\002 \001(\0162\013.dmi.Status\0221\n\006reason\030\003 \001(\0162!.dm"
+  "i.GetDmLogLevelResponse.Reason\022\025\n\rreason"
+  "_detail\030\004 \001(\t\"2\n\006Reason\022\024\n\020UNDEFINED_REA"
+  "SON\020\000\022\022\n\016INTERNAL_ERROR\020\001\"(\n\tHeartbeat\022\033"
+  "\n\023heartbeat_signature\030\001 \001(\007\"5\n\023RebootDev"
+  "iceRequest\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uu"
+  "id\"\367\001\n\024RebootDeviceResponse\022\033\n\006status\030\003 "
+  "\001(\0162\013.dmi.Status\0220\n\006reason\030\004 \001(\0162 .dmi.R"
+  "ebootDeviceResponse.Reason\022\025\n\rreason_det"
+  "ail\030\005 \001(\t\"y\n\006Reason\022\024\n\020UNDEFINED_REASON\020"
+  "\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020"
+  "\002\022\026\n\022DEVICE_UNREACHABLE\020\003\022\031\n\025DEVICE_IN_W"
+  "RONG_STATE\020\0042\276\n\n\031NativeHWManagementServi"
+  "ce\022S\n\023StartManagingDevice\022\030.dmi.Modifiab"
+  "leComponent\032 .dmi.StartManagingDeviceRes"
+  "ponse0\001\022U\n\022StopManagingDevice\022\036.dmi.Stop"
+  "ManagingDeviceRequest\032\037.dmi.StopManaging"
+  "DeviceResponse\022H\n\021GetManagedDevices\022\026.go"
+  "ogle.protobuf.Empty\032\033.dmi.ManagedDevices"
+  "Response\022W\n\024GetPhysicalInventory\022\035.dmi.P"
+  "hysicalInventoryRequest\032\036.dmi.PhysicalIn"
+  "ventoryResponse0\001\022W\n\022GetHWComponentInfo\022"
+  "\036.dmi.HWComponentInfoGetRequest\032\037.dmi.HW"
+  "ComponentInfoGetResponse0\001\022U\n\022SetHWCompo"
+  "nentInfo\022\036.dmi.HWComponentInfoSetRequest"
+  "\032\037.dmi.HWComponentInfoSetResponse\022T\n\022Set"
+  "LoggingEndpoint\022\036.dmi.SetLoggingEndpoint"
+  "Request\032\036.dmi.SetRemoteEndpointResponse\022"
+  "F\n\022GetLoggingEndpoint\022\017.dmi.HardwareID\032\037"
+  ".dmi.GetLoggingEndpointResponse\022R\n\021SetMs"
+  "gBusEndpoint\022\035.dmi.SetMsgBusEndpointRequ"
+  "est\032\036.dmi.SetRemoteEndpointResponse\022K\n\021G"
+  "etMsgBusEndpoint\022\026.google.protobuf.Empty"
+  "\032\036.dmi.GetMsgBusEndpointResponse\022P\n\023GetL"
+  "oggableEntities\022\037.dmi.GetLoggableEntitie"
+  "sRequest\032\030.dmi.GetLogLevelResponse\022@\n\013Se"
+  "tLogLevel\022\027.dmi.SetLogLevelRequest\032\030.dmi"
+  ".SetLogLevelResponse\022@\n\013GetLogLevel\022\027.dm"
+  "i.GetLogLevelRequest\032\030.dmi.GetLogLevelRe"
+  "sponse\0228\n\016HeartbeatCheck\022\026.google.protob"
+  "uf.Empty\032\016.dmi.Heartbeat\022C\n\014RebootDevice"
+  "\022\030.dmi.RebootDeviceRequest\032\031.dmi.RebootD"
+  "eviceResponse\022F\n\rSetDmLogLevel\022\031.dmi.Set"
+  "DmLogLevelRequest\032\032.dmi.SetDmLogLevelRes"
+  "ponse\022F\n\rGetDmLogLevel\022\031.dmi.GetDmLogLev"
+  "elRequest\032\032.dmi.GetDmLogLevelResponseB;Z"
+  "9github.com/opencord/device-management-i"
+  "nterface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto,
-  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 5749,
+  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 6386,
 };
 
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto() {
@@ -1239,9 +1367,53 @@ const GetLogLevelResponse_Reason GetLogLevelResponse::Reason_MIN;
 const GetLogLevelResponse_Reason GetLogLevelResponse::Reason_MAX;
 const int GetLogLevelResponse::Reason_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* RebootDeviceResponse_Reason_descriptor() {
+const ::google::protobuf::EnumDescriptor* SetDmLogLevelResponse_Reason_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
   return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[11];
+}
+bool SetDmLogLevelResponse_Reason_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse::UNDEFINED_REASON;
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse::INTERNAL_ERROR;
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse::UNKNOWN_LOG_LEVEL;
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse::Reason_MIN;
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse::Reason_MAX;
+const int SetDmLogLevelResponse::Reason_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* GetDmLogLevelResponse_Reason_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[12];
+}
+bool GetDmLogLevelResponse_Reason_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse::UNDEFINED_REASON;
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse::INTERNAL_ERROR;
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse::Reason_MIN;
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse::Reason_MAX;
+const int GetDmLogLevelResponse::Reason_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* RebootDeviceResponse_Reason_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[13];
 }
 bool RebootDeviceResponse_Reason_IsValid(int value) {
   switch (value) {
@@ -10255,6 +10427,1315 @@ void GetLoggableEntitiesRequest::InternalSwap(GetLoggableEntitiesRequest* other)
 
 // ===================================================================
 
+void SetDmLogLevelRequest::InitAsDefaultInstance() {
+}
+class SetDmLogLevelRequest::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SetDmLogLevelRequest::kLevelFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SetDmLogLevelRequest::SetDmLogLevelRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.SetDmLogLevelRequest)
+}
+SetDmLogLevelRequest::SetDmLogLevelRequest(const SetDmLogLevelRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  level_ = from.level_;
+  // @@protoc_insertion_point(copy_constructor:dmi.SetDmLogLevelRequest)
+}
+
+void SetDmLogLevelRequest::SharedCtor() {
+  level_ = 0;
+}
+
+SetDmLogLevelRequest::~SetDmLogLevelRequest() {
+  // @@protoc_insertion_point(destructor:dmi.SetDmLogLevelRequest)
+  SharedDtor();
+}
+
+void SetDmLogLevelRequest::SharedDtor() {
+}
+
+void SetDmLogLevelRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const SetDmLogLevelRequest& SetDmLogLevelRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void SetDmLogLevelRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.SetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  level_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SetDmLogLevelRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SetDmLogLevelRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.LogLevel level = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_level(static_cast<::dmi::LogLevel>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool SetDmLogLevelRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.SetDmLogLevelRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.LogLevel level = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_level(static_cast< ::dmi::LogLevel >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.SetDmLogLevelRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.SetDmLogLevelRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void SetDmLogLevelRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.SetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->level(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.SetDmLogLevelRequest)
+}
+
+::google::protobuf::uint8* SetDmLogLevelRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.SetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->level(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.SetDmLogLevelRequest)
+  return target;
+}
+
+size_t SetDmLogLevelRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.SetDmLogLevelRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->level());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SetDmLogLevelRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.SetDmLogLevelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SetDmLogLevelRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<SetDmLogLevelRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.SetDmLogLevelRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.SetDmLogLevelRequest)
+    MergeFrom(*source);
+  }
+}
+
+void SetDmLogLevelRequest::MergeFrom(const SetDmLogLevelRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.SetDmLogLevelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.level() != 0) {
+    set_level(from.level());
+  }
+}
+
+void SetDmLogLevelRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.SetDmLogLevelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SetDmLogLevelRequest::CopyFrom(const SetDmLogLevelRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.SetDmLogLevelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetDmLogLevelRequest::IsInitialized() const {
+  return true;
+}
+
+void SetDmLogLevelRequest::Swap(SetDmLogLevelRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SetDmLogLevelRequest::InternalSwap(SetDmLogLevelRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(level_, other->level_);
+}
+
+::google::protobuf::Metadata SetDmLogLevelRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void SetDmLogLevelResponse::InitAsDefaultInstance() {
+}
+class SetDmLogLevelResponse::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SetDmLogLevelResponse::kStatusFieldNumber;
+const int SetDmLogLevelResponse::kReasonFieldNumber;
+const int SetDmLogLevelResponse::kReasonDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SetDmLogLevelResponse::SetDmLogLevelResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.SetDmLogLevelResponse)
+}
+SetDmLogLevelResponse::SetDmLogLevelResponse(const SetDmLogLevelResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.reason_detail().size() > 0) {
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  // @@protoc_insertion_point(copy_constructor:dmi.SetDmLogLevelResponse)
+}
+
+void SetDmLogLevelResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+}
+
+SetDmLogLevelResponse::~SetDmLogLevelResponse() {
+  // @@protoc_insertion_point(destructor:dmi.SetDmLogLevelResponse)
+  SharedDtor();
+}
+
+void SetDmLogLevelResponse::SharedDtor() {
+  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void SetDmLogLevelResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const SetDmLogLevelResponse& SetDmLogLevelResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void SetDmLogLevelResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.SetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SetDmLogLevelResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SetDmLogLevelResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_status(static_cast<::dmi::Status>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reason(static_cast<::dmi::SetDmLogLevelResponse_Reason>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.SetDmLogLevelResponse.reason_detail");
+        object = msg->mutable_reason_detail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool SetDmLogLevelResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.SetDmLogLevelResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::dmi::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reason(static_cast< ::dmi::SetDmLogLevelResponse_Reason >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_reason_detail()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.SetDmLogLevelResponse.reason_detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.SetDmLogLevelResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.SetDmLogLevelResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void SetDmLogLevelResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.SetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->status(), output);
+  }
+
+  // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->reason(), output);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.SetDmLogLevelResponse.reason_detail");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->reason_detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.SetDmLogLevelResponse)
+}
+
+::google::protobuf::uint8* SetDmLogLevelResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.SetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->status(), target);
+  }
+
+  // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->reason(), target);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.SetDmLogLevelResponse.reason_detail");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->reason_detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.SetDmLogLevelResponse)
+  return target;
+}
+
+size_t SetDmLogLevelResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.SetDmLogLevelResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->reason_detail());
+  }
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SetDmLogLevelResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.SetDmLogLevelResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SetDmLogLevelResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<SetDmLogLevelResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.SetDmLogLevelResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.SetDmLogLevelResponse)
+    MergeFrom(*source);
+  }
+}
+
+void SetDmLogLevelResponse::MergeFrom(const SetDmLogLevelResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.SetDmLogLevelResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason_detail().size() > 0) {
+
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  if (from.status() != 0) {
+    set_status(from.status());
+  }
+  if (from.reason() != 0) {
+    set_reason(from.reason());
+  }
+}
+
+void SetDmLogLevelResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.SetDmLogLevelResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SetDmLogLevelResponse::CopyFrom(const SetDmLogLevelResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.SetDmLogLevelResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetDmLogLevelResponse::IsInitialized() const {
+  return true;
+}
+
+void SetDmLogLevelResponse::Swap(SetDmLogLevelResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SetDmLogLevelResponse::InternalSwap(SetDmLogLevelResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(status_, other->status_);
+  swap(reason_, other->reason_);
+}
+
+::google::protobuf::Metadata SetDmLogLevelResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void GetDmLogLevelRequest::InitAsDefaultInstance() {
+}
+class GetDmLogLevelRequest::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetDmLogLevelRequest::GetDmLogLevelRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.GetDmLogLevelRequest)
+}
+GetDmLogLevelRequest::GetDmLogLevelRequest(const GetDmLogLevelRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:dmi.GetDmLogLevelRequest)
+}
+
+void GetDmLogLevelRequest::SharedCtor() {
+}
+
+GetDmLogLevelRequest::~GetDmLogLevelRequest() {
+  // @@protoc_insertion_point(destructor:dmi.GetDmLogLevelRequest)
+  SharedDtor();
+}
+
+void GetDmLogLevelRequest::SharedDtor() {
+}
+
+void GetDmLogLevelRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetDmLogLevelRequest& GetDmLogLevelRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetDmLogLevelRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetDmLogLevelRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.GetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* GetDmLogLevelRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<GetDmLogLevelRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool GetDmLogLevelRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.GetDmLogLevelRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.GetDmLogLevelRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.GetDmLogLevelRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void GetDmLogLevelRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.GetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.GetDmLogLevelRequest)
+}
+
+::google::protobuf::uint8* GetDmLogLevelRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.GetDmLogLevelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.GetDmLogLevelRequest)
+  return target;
+}
+
+size_t GetDmLogLevelRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.GetDmLogLevelRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetDmLogLevelRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.GetDmLogLevelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetDmLogLevelRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<GetDmLogLevelRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.GetDmLogLevelRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.GetDmLogLevelRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetDmLogLevelRequest::MergeFrom(const GetDmLogLevelRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.GetDmLogLevelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void GetDmLogLevelRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.GetDmLogLevelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetDmLogLevelRequest::CopyFrom(const GetDmLogLevelRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.GetDmLogLevelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetDmLogLevelRequest::IsInitialized() const {
+  return true;
+}
+
+void GetDmLogLevelRequest::Swap(GetDmLogLevelRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetDmLogLevelRequest::InternalSwap(GetDmLogLevelRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata GetDmLogLevelRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void GetDmLogLevelResponse::InitAsDefaultInstance() {
+}
+class GetDmLogLevelResponse::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GetDmLogLevelResponse::kLevelFieldNumber;
+const int GetDmLogLevelResponse::kStatusFieldNumber;
+const int GetDmLogLevelResponse::kReasonFieldNumber;
+const int GetDmLogLevelResponse::kReasonDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetDmLogLevelResponse::GetDmLogLevelResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.GetDmLogLevelResponse)
+}
+GetDmLogLevelResponse::GetDmLogLevelResponse(const GetDmLogLevelResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.reason_detail().size() > 0) {
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  ::memcpy(&level_, &from.level_,
+    static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
+    reinterpret_cast<char*>(&level_)) + sizeof(reason_));
+  // @@protoc_insertion_point(copy_constructor:dmi.GetDmLogLevelResponse)
+}
+
+void GetDmLogLevelResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_GetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&level_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&level_)) + sizeof(reason_));
+}
+
+GetDmLogLevelResponse::~GetDmLogLevelResponse() {
+  // @@protoc_insertion_point(destructor:dmi.GetDmLogLevelResponse)
+  SharedDtor();
+}
+
+void GetDmLogLevelResponse::SharedDtor() {
+  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetDmLogLevelResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetDmLogLevelResponse& GetDmLogLevelResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GetDmLogLevelResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetDmLogLevelResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.GetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&level_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&level_)) + sizeof(reason_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* GetDmLogLevelResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<GetDmLogLevelResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.LogLevel level = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_level(static_cast<::dmi::LogLevel>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.Status status = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_status(static_cast<::dmi::Status>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reason(static_cast<::dmi::GetDmLogLevelResponse_Reason>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string reason_detail = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.GetDmLogLevelResponse.reason_detail");
+        object = msg->mutable_reason_detail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool GetDmLogLevelResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.GetDmLogLevelResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.LogLevel level = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_level(static_cast< ::dmi::LogLevel >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.Status status = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::dmi::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reason(static_cast< ::dmi::GetDmLogLevelResponse_Reason >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string reason_detail = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_reason_detail()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.GetDmLogLevelResponse.reason_detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.GetDmLogLevelResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.GetDmLogLevelResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void GetDmLogLevelResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.GetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->level(), output);
+  }
+
+  // .dmi.Status status = 2;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->status(), output);
+  }
+
+  // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+  if (this->reason() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->reason(), output);
+  }
+
+  // string reason_detail = 4;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GetDmLogLevelResponse.reason_detail");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->reason_detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.GetDmLogLevelResponse)
+}
+
+::google::protobuf::uint8* GetDmLogLevelResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.GetDmLogLevelResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->level(), target);
+  }
+
+  // .dmi.Status status = 2;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->status(), target);
+  }
+
+  // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+  if (this->reason() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->reason(), target);
+  }
+
+  // string reason_detail = 4;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GetDmLogLevelResponse.reason_detail");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->reason_detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.GetDmLogLevelResponse)
+  return target;
+}
+
+size_t GetDmLogLevelResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.GetDmLogLevelResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason_detail = 4;
+  if (this->reason_detail().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->reason_detail());
+  }
+
+  // .dmi.LogLevel level = 1;
+  if (this->level() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->level());
+  }
+
+  // .dmi.Status status = 2;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+  if (this->reason() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetDmLogLevelResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.GetDmLogLevelResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetDmLogLevelResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<GetDmLogLevelResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.GetDmLogLevelResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.GetDmLogLevelResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetDmLogLevelResponse::MergeFrom(const GetDmLogLevelResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.GetDmLogLevelResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason_detail().size() > 0) {
+
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  if (from.level() != 0) {
+    set_level(from.level());
+  }
+  if (from.status() != 0) {
+    set_status(from.status());
+  }
+  if (from.reason() != 0) {
+    set_reason(from.reason());
+  }
+}
+
+void GetDmLogLevelResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.GetDmLogLevelResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetDmLogLevelResponse::CopyFrom(const GetDmLogLevelResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.GetDmLogLevelResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetDmLogLevelResponse::IsInitialized() const {
+  return true;
+}
+
+void GetDmLogLevelResponse::Swap(GetDmLogLevelResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetDmLogLevelResponse::InternalSwap(GetDmLogLevelResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(level_, other->level_);
+  swap(status_, other->status_);
+  swap(reason_, other->reason_);
+}
+
+::google::protobuf::Metadata GetDmLogLevelResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Heartbeat::InitAsDefaultInstance() {
 }
 class Heartbeat::HasBitSetters {
@@ -11269,6 +12750,18 @@ template<> PROTOBUF_NOINLINE ::dmi::GetLogLevelResponse* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::dmi::GetLoggableEntitiesRequest* Arena::CreateMaybeMessage< ::dmi::GetLoggableEntitiesRequest >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::GetLoggableEntitiesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::SetDmLogLevelRequest* Arena::CreateMaybeMessage< ::dmi::SetDmLogLevelRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::SetDmLogLevelRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::SetDmLogLevelResponse* Arena::CreateMaybeMessage< ::dmi::SetDmLogLevelResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::SetDmLogLevelResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::GetDmLogLevelRequest* Arena::CreateMaybeMessage< ::dmi::GetDmLogLevelRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::GetDmLogLevelRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::GetDmLogLevelResponse* Arena::CreateMaybeMessage< ::dmi::GetDmLogLevelResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::GetDmLogLevelResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::Heartbeat* Arena::CreateMaybeMessage< ::dmi::Heartbeat >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::Heartbeat >(arena);

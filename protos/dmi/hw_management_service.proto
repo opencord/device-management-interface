@@ -227,6 +227,36 @@ message GetLoggableEntitiesRequest {
     Uuid device_uuid = 1;
 }
 
+message SetDmLogLevelRequest {
+    LogLevel level = 1;
+}
+
+message SetDmLogLevelResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        INTERNAL_ERROR = 1;
+        UNKNOWN_LOG_LEVEL = 2;
+    }
+    Status status = 1;
+    Reason reason = 2;
+    string reason_detail = 3;
+}
+
+message GetDmLogLevelRequest {
+}
+
+message GetDmLogLevelResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        INTERNAL_ERROR = 1;
+    }
+
+    LogLevel level = 1;
+    Status status = 2;
+    Reason reason = 3;
+    string reason_detail = 4;
+}
+
 message Heartbeat {
     fixed32 heartbeat_signature = 1;
 }
@@ -309,4 +339,10 @@ service NativeHWManagementService {
 
     // Performs the reboot of the device
     rpc RebootDevice(RebootDeviceRequest) returns(RebootDeviceResponse);
+
+    // Sets the log level of the Device Manager itself
+    rpc SetDmLogLevel(SetDmLogLevelRequest) returns(SetDmLogLevelResponse);
+
+    // Gets the log level at which the Device Manager is running
+    rpc GetDmLogLevel(GetDmLogLevelRequest) returns(GetDmLogLevelResponse);
 }

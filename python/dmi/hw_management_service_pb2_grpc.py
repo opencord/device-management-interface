@@ -91,6 +91,16 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__management__service__pb2.RebootDeviceRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.RebootDeviceResponse.FromString,
                 )
+        self.SetDmLogLevel = channel.unary_unary(
+                '/dmi.NativeHWManagementService/SetDmLogLevel',
+                request_serializer=dmi_dot_hw__management__service__pb2.SetDmLogLevelRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.SetDmLogLevelResponse.FromString,
+                )
+        self.GetDmLogLevel = channel.unary_unary(
+                '/dmi.NativeHWManagementService/GetDmLogLevel',
+                request_serializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -216,6 +226,20 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetDmLogLevel(self, request, context):
+        """Sets the log level of the Device Manager itself
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDmLogLevel(self, request, context):
+        """Gets the log level at which the Device Manager is running
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -293,6 +317,16 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.RebootDevice,
                     request_deserializer=dmi_dot_hw__management__service__pb2.RebootDeviceRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.RebootDeviceResponse.SerializeToString,
+            ),
+            'SetDmLogLevel': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetDmLogLevel,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.SetDmLogLevelRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.SetDmLogLevelResponse.SerializeToString,
+            ),
+            'GetDmLogLevel': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDmLogLevel,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -556,5 +590,39 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/RebootDevice',
             dmi_dot_hw__management__service__pb2.RebootDeviceRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.RebootDeviceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetDmLogLevel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/SetDmLogLevel',
+            dmi_dot_hw__management__service__pb2.SetDmLogLevelRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.SetDmLogLevelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDmLogLevel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetDmLogLevel',
+            dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -45,7 +45,7 @@ struct TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[25]
+  static const ::google::protobuf::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,6 +56,12 @@ namespace dmi {
 class EntitiesLogLevel;
 class EntitiesLogLevelDefaultTypeInternal;
 extern EntitiesLogLevelDefaultTypeInternal _EntitiesLogLevel_default_instance_;
+class GetDmLogLevelRequest;
+class GetDmLogLevelRequestDefaultTypeInternal;
+extern GetDmLogLevelRequestDefaultTypeInternal _GetDmLogLevelRequest_default_instance_;
+class GetDmLogLevelResponse;
+class GetDmLogLevelResponseDefaultTypeInternal;
+extern GetDmLogLevelResponseDefaultTypeInternal _GetDmLogLevelResponse_default_instance_;
 class GetLogLevelRequest;
 class GetLogLevelRequestDefaultTypeInternal;
 extern GetLogLevelRequestDefaultTypeInternal _GetLogLevelRequest_default_instance_;
@@ -104,6 +110,12 @@ extern RebootDeviceRequestDefaultTypeInternal _RebootDeviceRequest_default_insta
 class RebootDeviceResponse;
 class RebootDeviceResponseDefaultTypeInternal;
 extern RebootDeviceResponseDefaultTypeInternal _RebootDeviceResponse_default_instance_;
+class SetDmLogLevelRequest;
+class SetDmLogLevelRequestDefaultTypeInternal;
+extern SetDmLogLevelRequestDefaultTypeInternal _SetDmLogLevelRequest_default_instance_;
+class SetDmLogLevelResponse;
+class SetDmLogLevelResponseDefaultTypeInternal;
+extern SetDmLogLevelResponseDefaultTypeInternal _SetDmLogLevelResponse_default_instance_;
 class SetLogLevelRequest;
 class SetLogLevelRequestDefaultTypeInternal;
 extern SetLogLevelRequestDefaultTypeInternal _SetLogLevelRequest_default_instance_;
@@ -132,6 +144,8 @@ extern StopManagingDeviceResponseDefaultTypeInternal _StopManagingDeviceResponse
 namespace google {
 namespace protobuf {
 template<> ::dmi::EntitiesLogLevel* Arena::CreateMaybeMessage<::dmi::EntitiesLogLevel>(Arena*);
+template<> ::dmi::GetDmLogLevelRequest* Arena::CreateMaybeMessage<::dmi::GetDmLogLevelRequest>(Arena*);
+template<> ::dmi::GetDmLogLevelResponse* Arena::CreateMaybeMessage<::dmi::GetDmLogLevelResponse>(Arena*);
 template<> ::dmi::GetLogLevelRequest* Arena::CreateMaybeMessage<::dmi::GetLogLevelRequest>(Arena*);
 template<> ::dmi::GetLogLevelResponse* Arena::CreateMaybeMessage<::dmi::GetLogLevelResponse>(Arena*);
 template<> ::dmi::GetLoggableEntitiesRequest* Arena::CreateMaybeMessage<::dmi::GetLoggableEntitiesRequest>(Arena*);
@@ -148,6 +162,8 @@ template<> ::dmi::PhysicalInventoryRequest* Arena::CreateMaybeMessage<::dmi::Phy
 template<> ::dmi::PhysicalInventoryResponse* Arena::CreateMaybeMessage<::dmi::PhysicalInventoryResponse>(Arena*);
 template<> ::dmi::RebootDeviceRequest* Arena::CreateMaybeMessage<::dmi::RebootDeviceRequest>(Arena*);
 template<> ::dmi::RebootDeviceResponse* Arena::CreateMaybeMessage<::dmi::RebootDeviceResponse>(Arena*);
+template<> ::dmi::SetDmLogLevelRequest* Arena::CreateMaybeMessage<::dmi::SetDmLogLevelRequest>(Arena*);
+template<> ::dmi::SetDmLogLevelResponse* Arena::CreateMaybeMessage<::dmi::SetDmLogLevelResponse>(Arena*);
 template<> ::dmi::SetLogLevelRequest* Arena::CreateMaybeMessage<::dmi::SetLogLevelRequest>(Arena*);
 template<> ::dmi::SetLogLevelResponse* Arena::CreateMaybeMessage<::dmi::SetLogLevelResponse>(Arena*);
 template<> ::dmi::SetLoggingEndpointRequest* Arena::CreateMaybeMessage<::dmi::SetLoggingEndpointRequest>(Arena*);
@@ -420,6 +436,49 @@ inline bool GetLogLevelResponse_Reason_Parse(
     const ::std::string& name, GetLogLevelResponse_Reason* value) {
   return ::google::protobuf::internal::ParseNamedEnum<GetLogLevelResponse_Reason>(
     GetLogLevelResponse_Reason_descriptor(), name, value);
+}
+enum SetDmLogLevelResponse_Reason {
+  SetDmLogLevelResponse_Reason_UNDEFINED_REASON = 0,
+  SetDmLogLevelResponse_Reason_INTERNAL_ERROR = 1,
+  SetDmLogLevelResponse_Reason_UNKNOWN_LOG_LEVEL = 2,
+  SetDmLogLevelResponse_Reason_SetDmLogLevelResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  SetDmLogLevelResponse_Reason_SetDmLogLevelResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool SetDmLogLevelResponse_Reason_IsValid(int value);
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse_Reason_Reason_MIN = SetDmLogLevelResponse_Reason_UNDEFINED_REASON;
+const SetDmLogLevelResponse_Reason SetDmLogLevelResponse_Reason_Reason_MAX = SetDmLogLevelResponse_Reason_UNKNOWN_LOG_LEVEL;
+const int SetDmLogLevelResponse_Reason_Reason_ARRAYSIZE = SetDmLogLevelResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* SetDmLogLevelResponse_Reason_descriptor();
+inline const ::std::string& SetDmLogLevelResponse_Reason_Name(SetDmLogLevelResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    SetDmLogLevelResponse_Reason_descriptor(), value);
+}
+inline bool SetDmLogLevelResponse_Reason_Parse(
+    const ::std::string& name, SetDmLogLevelResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<SetDmLogLevelResponse_Reason>(
+    SetDmLogLevelResponse_Reason_descriptor(), name, value);
+}
+enum GetDmLogLevelResponse_Reason {
+  GetDmLogLevelResponse_Reason_UNDEFINED_REASON = 0,
+  GetDmLogLevelResponse_Reason_INTERNAL_ERROR = 1,
+  GetDmLogLevelResponse_Reason_GetDmLogLevelResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  GetDmLogLevelResponse_Reason_GetDmLogLevelResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool GetDmLogLevelResponse_Reason_IsValid(int value);
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse_Reason_Reason_MIN = GetDmLogLevelResponse_Reason_UNDEFINED_REASON;
+const GetDmLogLevelResponse_Reason GetDmLogLevelResponse_Reason_Reason_MAX = GetDmLogLevelResponse_Reason_INTERNAL_ERROR;
+const int GetDmLogLevelResponse_Reason_Reason_ARRAYSIZE = GetDmLogLevelResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* GetDmLogLevelResponse_Reason_descriptor();
+inline const ::std::string& GetDmLogLevelResponse_Reason_Name(GetDmLogLevelResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    GetDmLogLevelResponse_Reason_descriptor(), value);
+}
+inline bool GetDmLogLevelResponse_Reason_Parse(
+    const ::std::string& name, GetDmLogLevelResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<GetDmLogLevelResponse_Reason>(
+    GetDmLogLevelResponse_Reason_descriptor(), name, value);
 }
 enum RebootDeviceResponse_Reason {
   RebootDeviceResponse_Reason_UNDEFINED_REASON = 0,
@@ -3804,6 +3863,552 @@ class GetLoggableEntitiesRequest final :
 };
 // -------------------------------------------------------------------
 
+class SetDmLogLevelRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.SetDmLogLevelRequest) */ {
+ public:
+  SetDmLogLevelRequest();
+  virtual ~SetDmLogLevelRequest();
+
+  SetDmLogLevelRequest(const SetDmLogLevelRequest& from);
+
+  inline SetDmLogLevelRequest& operator=(const SetDmLogLevelRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SetDmLogLevelRequest(SetDmLogLevelRequest&& from) noexcept
+    : SetDmLogLevelRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDmLogLevelRequest& operator=(SetDmLogLevelRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const SetDmLogLevelRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SetDmLogLevelRequest* internal_default_instance() {
+    return reinterpret_cast<const SetDmLogLevelRequest*>(
+               &_SetDmLogLevelRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(SetDmLogLevelRequest* other);
+  friend void swap(SetDmLogLevelRequest& a, SetDmLogLevelRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SetDmLogLevelRequest* New() const final {
+    return CreateMaybeMessage<SetDmLogLevelRequest>(nullptr);
+  }
+
+  SetDmLogLevelRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SetDmLogLevelRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SetDmLogLevelRequest& from);
+  void MergeFrom(const SetDmLogLevelRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetDmLogLevelRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.LogLevel level = 1;
+  void clear_level();
+  static const int kLevelFieldNumber = 1;
+  ::dmi::LogLevel level() const;
+  void set_level(::dmi::LogLevel value);
+
+  // @@protoc_insertion_point(class_scope:dmi.SetDmLogLevelRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int level_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetDmLogLevelResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.SetDmLogLevelResponse) */ {
+ public:
+  SetDmLogLevelResponse();
+  virtual ~SetDmLogLevelResponse();
+
+  SetDmLogLevelResponse(const SetDmLogLevelResponse& from);
+
+  inline SetDmLogLevelResponse& operator=(const SetDmLogLevelResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SetDmLogLevelResponse(SetDmLogLevelResponse&& from) noexcept
+    : SetDmLogLevelResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDmLogLevelResponse& operator=(SetDmLogLevelResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const SetDmLogLevelResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SetDmLogLevelResponse* internal_default_instance() {
+    return reinterpret_cast<const SetDmLogLevelResponse*>(
+               &_SetDmLogLevelResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(SetDmLogLevelResponse* other);
+  friend void swap(SetDmLogLevelResponse& a, SetDmLogLevelResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SetDmLogLevelResponse* New() const final {
+    return CreateMaybeMessage<SetDmLogLevelResponse>(nullptr);
+  }
+
+  SetDmLogLevelResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SetDmLogLevelResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SetDmLogLevelResponse& from);
+  void MergeFrom(const SetDmLogLevelResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetDmLogLevelResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef SetDmLogLevelResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    SetDmLogLevelResponse_Reason_UNDEFINED_REASON;
+  static const Reason INTERNAL_ERROR =
+    SetDmLogLevelResponse_Reason_INTERNAL_ERROR;
+  static const Reason UNKNOWN_LOG_LEVEL =
+    SetDmLogLevelResponse_Reason_UNKNOWN_LOG_LEVEL;
+  static inline bool Reason_IsValid(int value) {
+    return SetDmLogLevelResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    SetDmLogLevelResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    SetDmLogLevelResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    SetDmLogLevelResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return SetDmLogLevelResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return SetDmLogLevelResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return SetDmLogLevelResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 3;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 3;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.Status status = 1;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.SetDmLogLevelResponse.Reason reason = 2;
+  void clear_reason();
+  static const int kReasonFieldNumber = 2;
+  ::dmi::SetDmLogLevelResponse_Reason reason() const;
+  void set_reason(::dmi::SetDmLogLevelResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.SetDmLogLevelResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetDmLogLevelRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.GetDmLogLevelRequest) */ {
+ public:
+  GetDmLogLevelRequest();
+  virtual ~GetDmLogLevelRequest();
+
+  GetDmLogLevelRequest(const GetDmLogLevelRequest& from);
+
+  inline GetDmLogLevelRequest& operator=(const GetDmLogLevelRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetDmLogLevelRequest(GetDmLogLevelRequest&& from) noexcept
+    : GetDmLogLevelRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetDmLogLevelRequest& operator=(GetDmLogLevelRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetDmLogLevelRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetDmLogLevelRequest* internal_default_instance() {
+    return reinterpret_cast<const GetDmLogLevelRequest*>(
+               &_GetDmLogLevelRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(GetDmLogLevelRequest* other);
+  friend void swap(GetDmLogLevelRequest& a, GetDmLogLevelRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetDmLogLevelRequest* New() const final {
+    return CreateMaybeMessage<GetDmLogLevelRequest>(nullptr);
+  }
+
+  GetDmLogLevelRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetDmLogLevelRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetDmLogLevelRequest& from);
+  void MergeFrom(const GetDmLogLevelRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetDmLogLevelRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:dmi.GetDmLogLevelRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetDmLogLevelResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.GetDmLogLevelResponse) */ {
+ public:
+  GetDmLogLevelResponse();
+  virtual ~GetDmLogLevelResponse();
+
+  GetDmLogLevelResponse(const GetDmLogLevelResponse& from);
+
+  inline GetDmLogLevelResponse& operator=(const GetDmLogLevelResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetDmLogLevelResponse(GetDmLogLevelResponse&& from) noexcept
+    : GetDmLogLevelResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetDmLogLevelResponse& operator=(GetDmLogLevelResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetDmLogLevelResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetDmLogLevelResponse* internal_default_instance() {
+    return reinterpret_cast<const GetDmLogLevelResponse*>(
+               &_GetDmLogLevelResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(GetDmLogLevelResponse* other);
+  friend void swap(GetDmLogLevelResponse& a, GetDmLogLevelResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetDmLogLevelResponse* New() const final {
+    return CreateMaybeMessage<GetDmLogLevelResponse>(nullptr);
+  }
+
+  GetDmLogLevelResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetDmLogLevelResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetDmLogLevelResponse& from);
+  void MergeFrom(const GetDmLogLevelResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetDmLogLevelResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef GetDmLogLevelResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    GetDmLogLevelResponse_Reason_UNDEFINED_REASON;
+  static const Reason INTERNAL_ERROR =
+    GetDmLogLevelResponse_Reason_INTERNAL_ERROR;
+  static inline bool Reason_IsValid(int value) {
+    return GetDmLogLevelResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    GetDmLogLevelResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    GetDmLogLevelResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    GetDmLogLevelResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return GetDmLogLevelResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return GetDmLogLevelResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return GetDmLogLevelResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 4;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 4;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.LogLevel level = 1;
+  void clear_level();
+  static const int kLevelFieldNumber = 1;
+  ::dmi::LogLevel level() const;
+  void set_level(::dmi::LogLevel value);
+
+  // .dmi.Status status = 2;
+  void clear_status();
+  static const int kStatusFieldNumber = 2;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.GetDmLogLevelResponse.Reason reason = 3;
+  void clear_reason();
+  static const int kReasonFieldNumber = 3;
+  ::dmi::GetDmLogLevelResponse_Reason reason() const;
+  void set_reason(::dmi::GetDmLogLevelResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.GetDmLogLevelResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int level_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Heartbeat final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.Heartbeat) */ {
  public:
@@ -3842,7 +4447,7 @@ class Heartbeat final :
                &_Heartbeat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   void Swap(Heartbeat* other);
   friend void swap(Heartbeat& a, Heartbeat& b) {
@@ -3954,7 +4559,7 @@ class RebootDeviceRequest final :
                &_RebootDeviceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   void Swap(RebootDeviceRequest* other);
   friend void swap(RebootDeviceRequest& a, RebootDeviceRequest& b) {
@@ -4069,7 +4674,7 @@ class RebootDeviceResponse final :
                &_RebootDeviceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   void Swap(RebootDeviceResponse* other);
   friend void swap(RebootDeviceResponse& a, RebootDeviceResponse& b) {
@@ -6614,6 +7219,212 @@ inline void GetLoggableEntitiesRequest::set_allocated_device_uuid(::dmi::Uuid* d
 
 // -------------------------------------------------------------------
 
+// SetDmLogLevelRequest
+
+// .dmi.LogLevel level = 1;
+inline void SetDmLogLevelRequest::clear_level() {
+  level_ = 0;
+}
+inline ::dmi::LogLevel SetDmLogLevelRequest::level() const {
+  // @@protoc_insertion_point(field_get:dmi.SetDmLogLevelRequest.level)
+  return static_cast< ::dmi::LogLevel >(level_);
+}
+inline void SetDmLogLevelRequest::set_level(::dmi::LogLevel value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:dmi.SetDmLogLevelRequest.level)
+}
+
+// -------------------------------------------------------------------
+
+// SetDmLogLevelResponse
+
+// .dmi.Status status = 1;
+inline void SetDmLogLevelResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status SetDmLogLevelResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.SetDmLogLevelResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void SetDmLogLevelResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.SetDmLogLevelResponse.status)
+}
+
+// .dmi.SetDmLogLevelResponse.Reason reason = 2;
+inline void SetDmLogLevelResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::SetDmLogLevelResponse_Reason SetDmLogLevelResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.SetDmLogLevelResponse.reason)
+  return static_cast< ::dmi::SetDmLogLevelResponse_Reason >(reason_);
+}
+inline void SetDmLogLevelResponse::set_reason(::dmi::SetDmLogLevelResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.SetDmLogLevelResponse.reason)
+}
+
+// string reason_detail = 3;
+inline void SetDmLogLevelResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SetDmLogLevelResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.SetDmLogLevelResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void SetDmLogLevelResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.SetDmLogLevelResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void SetDmLogLevelResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.SetDmLogLevelResponse.reason_detail)
+}
+#endif
+inline void SetDmLogLevelResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.SetDmLogLevelResponse.reason_detail)
+}
+inline void SetDmLogLevelResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.SetDmLogLevelResponse.reason_detail)
+}
+inline ::std::string* SetDmLogLevelResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.SetDmLogLevelResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SetDmLogLevelResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.SetDmLogLevelResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SetDmLogLevelResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.SetDmLogLevelResponse.reason_detail)
+}
+
+// -------------------------------------------------------------------
+
+// GetDmLogLevelRequest
+
+// -------------------------------------------------------------------
+
+// GetDmLogLevelResponse
+
+// .dmi.LogLevel level = 1;
+inline void GetDmLogLevelResponse::clear_level() {
+  level_ = 0;
+}
+inline ::dmi::LogLevel GetDmLogLevelResponse::level() const {
+  // @@protoc_insertion_point(field_get:dmi.GetDmLogLevelResponse.level)
+  return static_cast< ::dmi::LogLevel >(level_);
+}
+inline void GetDmLogLevelResponse::set_level(::dmi::LogLevel value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:dmi.GetDmLogLevelResponse.level)
+}
+
+// .dmi.Status status = 2;
+inline void GetDmLogLevelResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status GetDmLogLevelResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.GetDmLogLevelResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void GetDmLogLevelResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.GetDmLogLevelResponse.status)
+}
+
+// .dmi.GetDmLogLevelResponse.Reason reason = 3;
+inline void GetDmLogLevelResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::GetDmLogLevelResponse_Reason GetDmLogLevelResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.GetDmLogLevelResponse.reason)
+  return static_cast< ::dmi::GetDmLogLevelResponse_Reason >(reason_);
+}
+inline void GetDmLogLevelResponse::set_reason(::dmi::GetDmLogLevelResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.GetDmLogLevelResponse.reason)
+}
+
+// string reason_detail = 4;
+inline void GetDmLogLevelResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GetDmLogLevelResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.GetDmLogLevelResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void GetDmLogLevelResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.GetDmLogLevelResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void GetDmLogLevelResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.GetDmLogLevelResponse.reason_detail)
+}
+#endif
+inline void GetDmLogLevelResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.GetDmLogLevelResponse.reason_detail)
+}
+inline void GetDmLogLevelResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.GetDmLogLevelResponse.reason_detail)
+}
+inline ::std::string* GetDmLogLevelResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.GetDmLogLevelResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GetDmLogLevelResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.GetDmLogLevelResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetDmLogLevelResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.GetDmLogLevelResponse.reason_detail)
+}
+
+// -------------------------------------------------------------------
+
 // Heartbeat
 
 // fixed32 heartbeat_signature = 1;
@@ -6815,6 +7626,14 @@ inline void RebootDeviceResponse::set_allocated_reason_detail(::std::string* rea
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6877,6 +7696,16 @@ template <> struct is_proto_enum< ::dmi::GetLogLevelResponse_Reason> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::GetLogLevelResponse_Reason>() {
   return ::dmi::GetLogLevelResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::SetDmLogLevelResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::SetDmLogLevelResponse_Reason>() {
+  return ::dmi::SetDmLogLevelResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::GetDmLogLevelResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::GetDmLogLevelResponse_Reason>() {
+  return ::dmi::GetDmLogLevelResponse_Reason_descriptor();
 }
 template <> struct is_proto_enum< ::dmi::RebootDeviceResponse_Reason> : ::std::true_type {};
 template <>

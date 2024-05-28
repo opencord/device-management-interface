@@ -37,6 +37,8 @@ static const char* NativeHWManagementService_method_names[] = {
   "/dmi.NativeHWManagementService/GetLogLevel",
   "/dmi.NativeHWManagementService/HeartbeatCheck",
   "/dmi.NativeHWManagementService/RebootDevice",
+  "/dmi.NativeHWManagementService/SetDmLogLevel",
+  "/dmi.NativeHWManagementService/GetDmLogLevel",
 };
 
 std::unique_ptr< NativeHWManagementService::Stub> NativeHWManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -61,6 +63,8 @@ NativeHWManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_GetLogLevel_(NativeHWManagementService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_HeartbeatCheck_(NativeHWManagementService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RebootDevice_(NativeHWManagementService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetDmLogLevel_(NativeHWManagementService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetDmLogLevel_(NativeHWManagementService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) {
@@ -447,6 +451,62 @@ void NativeHWManagementService::Stub::experimental_async::RebootDevice(::grpc::C
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::RebootDeviceResponse>::Create(channel_.get(), cq, rpcmethod_RebootDevice_, context, request, false);
 }
 
+::grpc::Status NativeHWManagementService::Stub::SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::dmi::SetDmLogLevelResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetDmLogLevel_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetDmLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetDmLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetDmLogLevel_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetDmLogLevel_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>* NativeHWManagementService::Stub::AsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetDmLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_SetDmLogLevel_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>* NativeHWManagementService::Stub::PrepareAsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::SetDmLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_SetDmLogLevel_, context, request, false);
+}
+
+::grpc::Status NativeHWManagementService::Stub::GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::dmi::GetDmLogLevelResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetDmLogLevel_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDmLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDmLogLevel_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDmLogLevel_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDmLogLevel_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* NativeHWManagementService::Stub::AsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetDmLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetDmLogLevel_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* NativeHWManagementService::Stub::PrepareAsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetDmLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetDmLogLevel_, context, request, false);
+}
+
 NativeHWManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[0],
@@ -598,6 +658,26 @@ NativeHWManagementService::Service::Service() {
              ::dmi::RebootDeviceResponse* resp) {
                return service->RebootDevice(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::SetDmLogLevelRequest* req,
+             ::dmi::SetDmLogLevelResponse* resp) {
+               return service->SetDmLogLevel(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::GetDmLogLevelRequest* req,
+             ::dmi::GetDmLogLevelResponse* resp) {
+               return service->GetDmLogLevel(ctx, req, resp);
+             }, this)));
 }
 
 NativeHWManagementService::Service::~Service() {
@@ -702,6 +782,20 @@ NativeHWManagementService::Service::~Service() {
 }
 
 ::grpc::Status NativeHWManagementService::Service::RebootDevice(::grpc::ServerContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::SetDmLogLevel(::grpc::ServerContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::GetDmLogLevel(::grpc::ServerContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response) {
   (void) context;
   (void) request;
   (void) response;

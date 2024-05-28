@@ -177,6 +177,22 @@ class NativeHWManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>> PrepareAsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>>(PrepareAsyncRebootDeviceRaw(context, request, cq));
     }
+    // Sets the log level of the Device Manager itself
+    virtual ::grpc::Status SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::dmi::SetDmLogLevelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>> AsyncSetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>>(AsyncSetDmLogLevelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>> PrepareAsyncSetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>>(PrepareAsyncSetDmLogLevelRaw(context, request, cq));
+    }
+    // Gets the log level at which the Device Manager is running
+    virtual ::grpc::Status GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::dmi::GetDmLogLevelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>> AsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>>(AsyncGetDmLogLevelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>> PrepareAsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>>(PrepareAsyncGetDmLogLevelRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -369,6 +385,32 @@ class NativeHWManagementService final {
       #else
       virtual void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Sets the log level of the Device Manager itself
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Gets the log level at which the Device Manager is running
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -411,6 +453,10 @@ class NativeHWManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::Heartbeat>* PrepareAsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>* AsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::RebootDeviceResponse>* PrepareAsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>* AsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>* PrepareAsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>* AsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>* PrepareAsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -525,6 +571,20 @@ class NativeHWManagementService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>> PrepareAsyncRebootDevice(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>>(PrepareAsyncRebootDeviceRaw(context, request, cq));
+    }
+    ::grpc::Status SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::dmi::SetDmLogLevelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>> AsyncSetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>>(AsyncSetDmLogLevelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>> PrepareAsyncSetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>>(PrepareAsyncSetDmLogLevelRaw(context, request, cq));
+    }
+    ::grpc::Status GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::dmi::GetDmLogLevelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>> AsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>>(AsyncGetDmLogLevelRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>> PrepareAsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>>(PrepareAsyncGetDmLogLevelRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -688,6 +748,30 @@ class NativeHWManagementService final {
       #else
       void RebootDevice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::RebootDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void SetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::SetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -732,6 +816,10 @@ class NativeHWManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::Heartbeat>* PrepareAsyncHeartbeatCheckRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* AsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::RebootDeviceResponse>* PrepareAsyncRebootDeviceRaw(::grpc::ClientContext* context, const ::dmi::RebootDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>* AsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>* PrepareAsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* AsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* PrepareAsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StartManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_StopManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_GetManagedDevices_;
@@ -747,6 +835,8 @@ class NativeHWManagementService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetLogLevel_;
     const ::grpc::internal::RpcMethod rpcmethod_HeartbeatCheck_;
     const ::grpc::internal::RpcMethod rpcmethod_RebootDevice_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetDmLogLevel_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetDmLogLevel_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -799,6 +889,10 @@ class NativeHWManagementService final {
     virtual ::grpc::Status HeartbeatCheck(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::dmi::Heartbeat* response);
     // Performs the reboot of the device
     virtual ::grpc::Status RebootDevice(::grpc::ServerContext* context, const ::dmi::RebootDeviceRequest* request, ::dmi::RebootDeviceResponse* response);
+    // Sets the log level of the Device Manager itself
+    virtual ::grpc::Status SetDmLogLevel(::grpc::ServerContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response);
+    // Gets the log level at which the Device Manager is running
+    virtual ::grpc::Status GetDmLogLevel(::grpc::ServerContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StartManagingDevice : public BaseClass {
@@ -1100,7 +1194,47 @@ class NativeHWManagementService final {
       ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<WithAsyncMethod_RebootDevice<Service > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetDmLogLevel() {
+      ::grpc::Service::MarkMethodAsync(15);
+    }
+    ~WithAsyncMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetDmLogLevel(::grpc::ServerContext* context, ::dmi::SetDmLogLevelRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::SetDmLogLevelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetDmLogLevel() {
+      ::grpc::Service::MarkMethodAsync(16);
+    }
+    ~WithAsyncMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetDmLogLevel(::grpc::ServerContext* context, ::dmi::GetDmLogLevelRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::GetDmLogLevelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<WithAsyncMethod_RebootDevice<WithAsyncMethod_SetDmLogLevel<WithAsyncMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_StartManagingDevice : public BaseClass {
    private:
@@ -1779,11 +1913,105 @@ class NativeHWManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_SetDmLogLevel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(15,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response) { return this->SetDmLogLevel(context, request, response); }));}
+    void SetMessageAllocatorFor_SetDmLogLevel(
+        ::grpc::experimental::MessageAllocator< ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SetDmLogLevel(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SetDmLogLevel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetDmLogLevel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(16,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response) { return this->GetDmLogLevel(context, request, response); }));}
+    void SetMessageAllocatorFor_GetDmLogLevel(
+        ::grpc::experimental::MessageAllocator< ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetDmLogLevel(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetDmLogLevel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<Service > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<Service > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StartManagingDevice : public BaseClass {
    private:
@@ -2035,6 +2263,40 @@ class NativeHWManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status RebootDevice(::grpc::ServerContext* /*context*/, const ::dmi::RebootDeviceRequest* /*request*/, ::dmi::RebootDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetDmLogLevel() {
+      ::grpc::Service::MarkMethodGeneric(15);
+    }
+    ~WithGenericMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetDmLogLevel() {
+      ::grpc::Service::MarkMethodGeneric(16);
+    }
+    ~WithGenericMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2337,6 +2599,46 @@ class NativeHWManagementService final {
     }
     void RequestRebootDevice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetDmLogLevel() {
+      ::grpc::Service::MarkMethodRaw(15);
+    }
+    ~WithRawMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetDmLogLevel(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetDmLogLevel() {
+      ::grpc::Service::MarkMethodRaw(16);
+    }
+    ~WithRawMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetDmLogLevel(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2910,6 +3212,82 @@ class NativeHWManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_SetDmLogLevel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(15,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetDmLogLevel(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SetDmLogLevel(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SetDmLogLevel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetDmLogLevel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(16,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDmLogLevel(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetDmLogLevel(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetDmLogLevel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StopManagingDevice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3233,7 +3611,61 @@ class NativeHWManagementService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedRebootDevice(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::RebootDeviceRequest,::dmi::RebootDeviceResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<Service > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetDmLogLevel() {
+      ::grpc::Service::MarkMethodStreamed(15,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::SetDmLogLevelRequest, ::dmi::SetDmLogLevelResponse>* streamer) {
+                       return this->StreamedSetDmLogLevel(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::SetDmLogLevelRequest* /*request*/, ::dmi::SetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetDmLogLevel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::SetDmLogLevelRequest,::dmi::SetDmLogLevelResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetDmLogLevel : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetDmLogLevel() {
+      ::grpc::Service::MarkMethodStreamed(16,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::GetDmLogLevelRequest, ::dmi::GetDmLogLevelResponse>* streamer) {
+                       return this->StreamedGetDmLogLevel(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetDmLogLevel() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetDmLogLevel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::GetDmLogLevelRequest,::dmi::GetDmLogLevelResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_StartManagingDevice : public BaseClass {
    private:
@@ -3316,7 +3748,7 @@ class NativeHWManagementService final {
     virtual ::grpc::Status StreamedGetHWComponentInfo(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::HWComponentInfoGetRequest,::dmi::HWComponentInfoGetResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_StartManagingDevice<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<Service > > > SplitStreamedService;
-  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<Service > > > > > > > > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace dmi
