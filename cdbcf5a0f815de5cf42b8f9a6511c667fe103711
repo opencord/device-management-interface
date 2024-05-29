@@ -34,6 +34,24 @@
       "parentUuid": "25841a4d_9f704e14",
       "revId": "cdbcf5a0f815de5cf42b8f9a6511c667fe103711",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab7d8cfc_326a0c84",
+        "filename": "protos/dmi/hw_management_service.proto",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000689
+      },
+      "writtenOn": "2024-05-29T09:55:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad010a90_e3084cbc",
+      "revId": "cdbcf5a0f815de5cf42b8f9a6511c667fe103711",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
