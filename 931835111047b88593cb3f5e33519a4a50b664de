@@ -33,6 +33,24 @@
       "message": "@joey Do you know why the builds are not executing?\n@Abhilash @Mahir Can you please share if you have any comments on this change?",
       "revId": "931835111047b88593cb3f5e33519a4a50b664de",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d8e7df7_fbcd8e86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-05-30T13:23:22Z",
+      "side": 1,
+      "message": "Hi Amit,\n\nThis relates to something I mentioned during the last two TST meetings.\n\nThere is an ongoing effort to reduce monthly budgetary costs for all projects.\nDuring recent AWS cleanup someone inadvertently deleted a few AMI images\nthinking they were unused.  Unfortunately these images are a core dependency\nfor all Broadband/VOLTHA jobs.  All jenkins jobs are currently failing due\nto a lack of system/jenkins node to run them on.\n\nGiven our images contain some older interpreter and library versions\nI am working on gathering system details and will be reconstructing\nthe instances from scratch and a clean ubuntu installation.",
+      "parentUuid": "aea9b2f5_c6c47e1d",
+      "revId": "931835111047b88593cb3f5e33519a4a50b664de",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
