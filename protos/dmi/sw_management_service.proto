@@ -130,6 +130,7 @@ message UploadDebugInfoStatus {
     string location_url = 5;
     // file_name is the file at location_url where the debug information was uploaded.
     // Implementations need to ensure that file_name is unique at the remote location.
+    // file_name to be shared in the response stream when the upload begins.
     string file_name = 6;
 }
 
