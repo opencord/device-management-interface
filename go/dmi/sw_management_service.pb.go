@@ -654,6 +654,7 @@ type UploadDebugInfoStatus struct {
 	LocationUrl     string                       `protobuf:"bytes,5,opt,name=location_url,json=locationUrl,proto3" json:"location_url,omitempty"`
 	// file_name is the file at location_url where the debug information was uploaded.
 	// Implementations need to ensure that file_name is unique at the remote location.
+	// file_name to be shared in the response stream when the upload begins.
 	FileName             string   `protobuf:"bytes,6,opt,name=file_name,json=fileName,proto3" json:"file_name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
