@@ -46,7 +46,7 @@ struct TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[11]
+  static const ::google::protobuf::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -54,6 +54,12 @@ struct TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto {
 };
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto();
 namespace dmi {
+class AdminStateChange;
+class AdminStateChangeDefaultTypeInternal;
+extern AdminStateChangeDefaultTypeInternal _AdminStateChange_default_instance_;
+class AlarmStateChange;
+class AlarmStateChangeDefaultTypeInternal;
+extern AlarmStateChangeDefaultTypeInternal _AlarmStateChange_default_instance_;
 class Event;
 class EventDefaultTypeInternal;
 extern EventDefaultTypeInternal _Event_default_instance_;
@@ -75,12 +81,24 @@ extern EventsConfigurationResponseDefaultTypeInternal _EventsConfigurationRespon
 class ListEventsResponse;
 class ListEventsResponseDefaultTypeInternal;
 extern ListEventsResponseDefaultTypeInternal _ListEventsResponse_default_instance_;
+class OperStateChange;
+class OperStateChangeDefaultTypeInternal;
+extern OperStateChangeDefaultTypeInternal _OperStateChange_default_instance_;
+class StandbyStateChange;
+class StandbyStateChangeDefaultTypeInternal;
+extern StandbyStateChangeDefaultTypeInternal _StandbyStateChange_default_instance_;
+class StateChangeInfo;
+class StateChangeInfoDefaultTypeInternal;
+extern StateChangeInfoDefaultTypeInternal _StateChangeInfo_default_instance_;
 class ThresholdInformation;
 class ThresholdInformationDefaultTypeInternal;
 extern ThresholdInformationDefaultTypeInternal _ThresholdInformation_default_instance_;
 class Thresholds;
 class ThresholdsDefaultTypeInternal;
 extern ThresholdsDefaultTypeInternal _Thresholds_default_instance_;
+class UsageStateChange;
+class UsageStateChangeDefaultTypeInternal;
+extern UsageStateChangeDefaultTypeInternal _UsageStateChange_default_instance_;
 class ValueType;
 class ValueTypeDefaultTypeInternal;
 extern ValueTypeDefaultTypeInternal _ValueType_default_instance_;
@@ -90,6 +108,8 @@ extern WaterMarksDefaultTypeInternal _WaterMarks_default_instance_;
 }  // namespace dmi
 namespace google {
 namespace protobuf {
+template<> ::dmi::AdminStateChange* Arena::CreateMaybeMessage<::dmi::AdminStateChange>(Arena*);
+template<> ::dmi::AlarmStateChange* Arena::CreateMaybeMessage<::dmi::AlarmStateChange>(Arena*);
 template<> ::dmi::Event* Arena::CreateMaybeMessage<::dmi::Event>(Arena*);
 template<> ::dmi::EventCfg* Arena::CreateMaybeMessage<::dmi::EventCfg>(Arena*);
 template<> ::dmi::EventMetaData* Arena::CreateMaybeMessage<::dmi::EventMetaData>(Arena*);
@@ -97,8 +117,12 @@ template<> ::dmi::EventsCfg* Arena::CreateMaybeMessage<::dmi::EventsCfg>(Arena*)
 template<> ::dmi::EventsConfigurationRequest* Arena::CreateMaybeMessage<::dmi::EventsConfigurationRequest>(Arena*);
 template<> ::dmi::EventsConfigurationResponse* Arena::CreateMaybeMessage<::dmi::EventsConfigurationResponse>(Arena*);
 template<> ::dmi::ListEventsResponse* Arena::CreateMaybeMessage<::dmi::ListEventsResponse>(Arena*);
+template<> ::dmi::OperStateChange* Arena::CreateMaybeMessage<::dmi::OperStateChange>(Arena*);
+template<> ::dmi::StandbyStateChange* Arena::CreateMaybeMessage<::dmi::StandbyStateChange>(Arena*);
+template<> ::dmi::StateChangeInfo* Arena::CreateMaybeMessage<::dmi::StateChangeInfo>(Arena*);
 template<> ::dmi::ThresholdInformation* Arena::CreateMaybeMessage<::dmi::ThresholdInformation>(Arena*);
 template<> ::dmi::Thresholds* Arena::CreateMaybeMessage<::dmi::Thresholds>(Arena*);
+template<> ::dmi::UsageStateChange* Arena::CreateMaybeMessage<::dmi::UsageStateChange>(Arena*);
 template<> ::dmi::ValueType* Arena::CreateMaybeMessage<::dmi::ValueType>(Arena*);
 template<> ::dmi::WaterMarks* Arena::CreateMaybeMessage<::dmi::WaterMarks>(Arena*);
 }  // namespace protobuf
@@ -208,12 +232,17 @@ enum EventIds {
   EVENT_HW_NTP_SYNC_FAILURE_RECOVERED = 513,
   EVENT_LINE_CARD_PLUG_OUT = 600,
   EVENT_LINE_CARD_PLUG_IN = 601,
+  EVENT_COMPONENT_ADMIN_STATE_CHANGED = 700,
+  EVENT_COMPONENT_OPER_STATE_CHANGED = 701,
+  EVENT_COMPONENT_ALARM_STATE_CHANGED = 702,
+  EVENT_COMPONENT_USAGE_STATE_CHANGED = 703,
+  EVENT_COMPONENT_STANDBY_STATE_CHANGED = 704,
   EventIds_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   EventIds_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool EventIds_IsValid(int value);
 const EventIds EventIds_MIN = EVENT_NAME_UNDEFINED;
-const EventIds EventIds_MAX = EVENT_LINE_CARD_PLUG_IN;
+const EventIds EventIds_MAX = EVENT_COMPONENT_STANDBY_STATE_CHANGED;
 const int EventIds_ARRAYSIZE = EventIds_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EventIds_descriptor();
@@ -1673,6 +1702,780 @@ class EventMetaData final :
 };
 // -------------------------------------------------------------------
 
+class AdminStateChange final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.AdminStateChange) */ {
+ public:
+  AdminStateChange();
+  virtual ~AdminStateChange();
+
+  AdminStateChange(const AdminStateChange& from);
+
+  inline AdminStateChange& operator=(const AdminStateChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AdminStateChange(AdminStateChange&& from) noexcept
+    : AdminStateChange() {
+    *this = ::std::move(from);
+  }
+
+  inline AdminStateChange& operator=(AdminStateChange&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AdminStateChange& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AdminStateChange* internal_default_instance() {
+    return reinterpret_cast<const AdminStateChange*>(
+               &_AdminStateChange_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(AdminStateChange* other);
+  friend void swap(AdminStateChange& a, AdminStateChange& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AdminStateChange* New() const final {
+    return CreateMaybeMessage<AdminStateChange>(nullptr);
+  }
+
+  AdminStateChange* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AdminStateChange>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AdminStateChange& from);
+  void MergeFrom(const AdminStateChange& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdminStateChange* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.ComponentAdminState old = 1;
+  void clear_old();
+  static const int kOldFieldNumber = 1;
+  ::dmi::ComponentAdminState old() const;
+  void set_old(::dmi::ComponentAdminState value);
+
+  // .dmi.ComponentAdminState new = 2;
+  void clear_new_();
+  static const int kNewFieldNumber = 2;
+  ::dmi::ComponentAdminState new_() const;
+  void set_new_(::dmi::ComponentAdminState value);
+
+  // @@protoc_insertion_point(class_scope:dmi.AdminStateChange)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int old_;
+  int new__;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OperStateChange final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.OperStateChange) */ {
+ public:
+  OperStateChange();
+  virtual ~OperStateChange();
+
+  OperStateChange(const OperStateChange& from);
+
+  inline OperStateChange& operator=(const OperStateChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  OperStateChange(OperStateChange&& from) noexcept
+    : OperStateChange() {
+    *this = ::std::move(from);
+  }
+
+  inline OperStateChange& operator=(OperStateChange&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const OperStateChange& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const OperStateChange* internal_default_instance() {
+    return reinterpret_cast<const OperStateChange*>(
+               &_OperStateChange_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(OperStateChange* other);
+  friend void swap(OperStateChange& a, OperStateChange& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OperStateChange* New() const final {
+    return CreateMaybeMessage<OperStateChange>(nullptr);
+  }
+
+  OperStateChange* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<OperStateChange>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const OperStateChange& from);
+  void MergeFrom(const OperStateChange& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OperStateChange* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.ComponentOperState old = 1;
+  void clear_old();
+  static const int kOldFieldNumber = 1;
+  ::dmi::ComponentOperState old() const;
+  void set_old(::dmi::ComponentOperState value);
+
+  // .dmi.ComponentOperState new = 2;
+  void clear_new_();
+  static const int kNewFieldNumber = 2;
+  ::dmi::ComponentOperState new_() const;
+  void set_new_(::dmi::ComponentOperState value);
+
+  // @@protoc_insertion_point(class_scope:dmi.OperStateChange)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int old_;
+  int new__;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AlarmStateChange final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.AlarmStateChange) */ {
+ public:
+  AlarmStateChange();
+  virtual ~AlarmStateChange();
+
+  AlarmStateChange(const AlarmStateChange& from);
+
+  inline AlarmStateChange& operator=(const AlarmStateChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AlarmStateChange(AlarmStateChange&& from) noexcept
+    : AlarmStateChange() {
+    *this = ::std::move(from);
+  }
+
+  inline AlarmStateChange& operator=(AlarmStateChange&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AlarmStateChange& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AlarmStateChange* internal_default_instance() {
+    return reinterpret_cast<const AlarmStateChange*>(
+               &_AlarmStateChange_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(AlarmStateChange* other);
+  friend void swap(AlarmStateChange& a, AlarmStateChange& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AlarmStateChange* New() const final {
+    return CreateMaybeMessage<AlarmStateChange>(nullptr);
+  }
+
+  AlarmStateChange* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AlarmStateChange>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AlarmStateChange& from);
+  void MergeFrom(const AlarmStateChange& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AlarmStateChange* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.ComponentAlarmState old = 1;
+  void clear_old();
+  static const int kOldFieldNumber = 1;
+  ::dmi::ComponentAlarmState old() const;
+  void set_old(::dmi::ComponentAlarmState value);
+
+  // .dmi.ComponentAlarmState new = 2;
+  void clear_new_();
+  static const int kNewFieldNumber = 2;
+  ::dmi::ComponentAlarmState new_() const;
+  void set_new_(::dmi::ComponentAlarmState value);
+
+  // @@protoc_insertion_point(class_scope:dmi.AlarmStateChange)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int old_;
+  int new__;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UsageStateChange final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.UsageStateChange) */ {
+ public:
+  UsageStateChange();
+  virtual ~UsageStateChange();
+
+  UsageStateChange(const UsageStateChange& from);
+
+  inline UsageStateChange& operator=(const UsageStateChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UsageStateChange(UsageStateChange&& from) noexcept
+    : UsageStateChange() {
+    *this = ::std::move(from);
+  }
+
+  inline UsageStateChange& operator=(UsageStateChange&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const UsageStateChange& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UsageStateChange* internal_default_instance() {
+    return reinterpret_cast<const UsageStateChange*>(
+               &_UsageStateChange_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(UsageStateChange* other);
+  friend void swap(UsageStateChange& a, UsageStateChange& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UsageStateChange* New() const final {
+    return CreateMaybeMessage<UsageStateChange>(nullptr);
+  }
+
+  UsageStateChange* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UsageStateChange>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UsageStateChange& from);
+  void MergeFrom(const UsageStateChange& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UsageStateChange* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.ComponentUsageState old = 1;
+  void clear_old();
+  static const int kOldFieldNumber = 1;
+  ::dmi::ComponentUsageState old() const;
+  void set_old(::dmi::ComponentUsageState value);
+
+  // .dmi.ComponentUsageState new = 2;
+  void clear_new_();
+  static const int kNewFieldNumber = 2;
+  ::dmi::ComponentUsageState new_() const;
+  void set_new_(::dmi::ComponentUsageState value);
+
+  // @@protoc_insertion_point(class_scope:dmi.UsageStateChange)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int old_;
+  int new__;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StandbyStateChange final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.StandbyStateChange) */ {
+ public:
+  StandbyStateChange();
+  virtual ~StandbyStateChange();
+
+  StandbyStateChange(const StandbyStateChange& from);
+
+  inline StandbyStateChange& operator=(const StandbyStateChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StandbyStateChange(StandbyStateChange&& from) noexcept
+    : StandbyStateChange() {
+    *this = ::std::move(from);
+  }
+
+  inline StandbyStateChange& operator=(StandbyStateChange&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const StandbyStateChange& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StandbyStateChange* internal_default_instance() {
+    return reinterpret_cast<const StandbyStateChange*>(
+               &_StandbyStateChange_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(StandbyStateChange* other);
+  friend void swap(StandbyStateChange& a, StandbyStateChange& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StandbyStateChange* New() const final {
+    return CreateMaybeMessage<StandbyStateChange>(nullptr);
+  }
+
+  StandbyStateChange* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StandbyStateChange>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StandbyStateChange& from);
+  void MergeFrom(const StandbyStateChange& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StandbyStateChange* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.ComponentStandbyState old = 1;
+  void clear_old();
+  static const int kOldFieldNumber = 1;
+  ::dmi::ComponentStandbyState old() const;
+  void set_old(::dmi::ComponentStandbyState value);
+
+  // .dmi.ComponentStandbyState new = 2;
+  void clear_new_();
+  static const int kNewFieldNumber = 2;
+  ::dmi::ComponentStandbyState new_() const;
+  void set_new_(::dmi::ComponentStandbyState value);
+
+  // @@protoc_insertion_point(class_scope:dmi.StandbyStateChange)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int old_;
+  int new__;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StateChangeInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.StateChangeInfo) */ {
+ public:
+  StateChangeInfo();
+  virtual ~StateChangeInfo();
+
+  StateChangeInfo(const StateChangeInfo& from);
+
+  inline StateChangeInfo& operator=(const StateChangeInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StateChangeInfo(StateChangeInfo&& from) noexcept
+    : StateChangeInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline StateChangeInfo& operator=(StateChangeInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const StateChangeInfo& default_instance();
+
+  enum StateChangeCase {
+    kAdminStateChange = 1,
+    kOperStateChange = 2,
+    kAlarmStateChange = 3,
+    kUsageStateChange = 4,
+    kStandbyStateChange = 5,
+    STATE_CHANGE_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StateChangeInfo* internal_default_instance() {
+    return reinterpret_cast<const StateChangeInfo*>(
+               &_StateChangeInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(StateChangeInfo* other);
+  friend void swap(StateChangeInfo& a, StateChangeInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StateChangeInfo* New() const final {
+    return CreateMaybeMessage<StateChangeInfo>(nullptr);
+  }
+
+  StateChangeInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StateChangeInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StateChangeInfo& from);
+  void MergeFrom(const StateChangeInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StateChangeInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .dmi.AdminStateChange admin_state_change = 1;
+  bool has_admin_state_change() const;
+  void clear_admin_state_change();
+  static const int kAdminStateChangeFieldNumber = 1;
+  const ::dmi::AdminStateChange& admin_state_change() const;
+  ::dmi::AdminStateChange* release_admin_state_change();
+  ::dmi::AdminStateChange* mutable_admin_state_change();
+  void set_allocated_admin_state_change(::dmi::AdminStateChange* admin_state_change);
+
+  // .dmi.OperStateChange oper_state_change = 2;
+  bool has_oper_state_change() const;
+  void clear_oper_state_change();
+  static const int kOperStateChangeFieldNumber = 2;
+  const ::dmi::OperStateChange& oper_state_change() const;
+  ::dmi::OperStateChange* release_oper_state_change();
+  ::dmi::OperStateChange* mutable_oper_state_change();
+  void set_allocated_oper_state_change(::dmi::OperStateChange* oper_state_change);
+
+  // .dmi.AlarmStateChange alarm_state_change = 3;
+  bool has_alarm_state_change() const;
+  void clear_alarm_state_change();
+  static const int kAlarmStateChangeFieldNumber = 3;
+  const ::dmi::AlarmStateChange& alarm_state_change() const;
+  ::dmi::AlarmStateChange* release_alarm_state_change();
+  ::dmi::AlarmStateChange* mutable_alarm_state_change();
+  void set_allocated_alarm_state_change(::dmi::AlarmStateChange* alarm_state_change);
+
+  // .dmi.UsageStateChange usage_state_change = 4;
+  bool has_usage_state_change() const;
+  void clear_usage_state_change();
+  static const int kUsageStateChangeFieldNumber = 4;
+  const ::dmi::UsageStateChange& usage_state_change() const;
+  ::dmi::UsageStateChange* release_usage_state_change();
+  ::dmi::UsageStateChange* mutable_usage_state_change();
+  void set_allocated_usage_state_change(::dmi::UsageStateChange* usage_state_change);
+
+  // .dmi.StandbyStateChange standby_state_change = 5;
+  bool has_standby_state_change() const;
+  void clear_standby_state_change();
+  static const int kStandbyStateChangeFieldNumber = 5;
+  const ::dmi::StandbyStateChange& standby_state_change() const;
+  ::dmi::StandbyStateChange* release_standby_state_change();
+  ::dmi::StandbyStateChange* mutable_standby_state_change();
+  void set_allocated_standby_state_change(::dmi::StandbyStateChange* standby_state_change);
+
+  void clear_state_change();
+  StateChangeCase state_change_case() const;
+  // @@protoc_insertion_point(class_scope:dmi.StateChangeInfo)
+ private:
+  class HasBitSetters;
+  void set_has_admin_state_change();
+  void set_has_oper_state_change();
+  void set_has_alarm_state_change();
+  void set_has_usage_state_change();
+  void set_has_standby_state_change();
+
+  inline bool has_state_change() const;
+  inline void clear_has_state_change();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union StateChangeUnion {
+    StateChangeUnion() {}
+    ::dmi::AdminStateChange* admin_state_change_;
+    ::dmi::OperStateChange* oper_state_change_;
+    ::dmi::AlarmStateChange* alarm_state_change_;
+    ::dmi::UsageStateChange* usage_state_change_;
+    ::dmi::StandbyStateChange* standby_state_change_;
+  } state_change_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Event final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.Event) */ {
  public:
@@ -1711,7 +2514,7 @@ class Event final :
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    16;
 
   void Swap(Event* other);
   friend void swap(Event& a, Event& b) {
@@ -1809,6 +2612,15 @@ class Event final :
   ::dmi::ThresholdInformation* mutable_threshold_info();
   void set_allocated_threshold_info(::dmi::ThresholdInformation* threshold_info);
 
+  // .dmi.StateChangeInfo state_change_info = 6;
+  bool has_state_change_info() const;
+  void clear_state_change_info();
+  static const int kStateChangeInfoFieldNumber = 6;
+  const ::dmi::StateChangeInfo& state_change_info() const;
+  ::dmi::StateChangeInfo* release_state_change_info();
+  ::dmi::StateChangeInfo* mutable_state_change_info();
+  void set_allocated_state_change_info(::dmi::StateChangeInfo* state_change_info);
+
   // .dmi.EventIds event_id = 2;
   void clear_event_id();
   static const int kEventIdFieldNumber = 2;
@@ -1824,6 +2636,7 @@ class Event final :
   ::dmi::EventMetaData* event_metadata_;
   ::google::protobuf::Timestamp* raised_ts_;
   ::dmi::ThresholdInformation* threshold_info_;
+  ::dmi::StateChangeInfo* state_change_info_;
   int event_id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
@@ -2916,6 +3729,384 @@ inline void EventMetaData::set_allocated_component_name(::std::string* component
 
 // -------------------------------------------------------------------
 
+// AdminStateChange
+
+// .dmi.ComponentAdminState old = 1;
+inline void AdminStateChange::clear_old() {
+  old_ = 0;
+}
+inline ::dmi::ComponentAdminState AdminStateChange::old() const {
+  // @@protoc_insertion_point(field_get:dmi.AdminStateChange.old)
+  return static_cast< ::dmi::ComponentAdminState >(old_);
+}
+inline void AdminStateChange::set_old(::dmi::ComponentAdminState value) {
+  
+  old_ = value;
+  // @@protoc_insertion_point(field_set:dmi.AdminStateChange.old)
+}
+
+// .dmi.ComponentAdminState new = 2;
+inline void AdminStateChange::clear_new_() {
+  new__ = 0;
+}
+inline ::dmi::ComponentAdminState AdminStateChange::new_() const {
+  // @@protoc_insertion_point(field_get:dmi.AdminStateChange.new)
+  return static_cast< ::dmi::ComponentAdminState >(new__);
+}
+inline void AdminStateChange::set_new_(::dmi::ComponentAdminState value) {
+  
+  new__ = value;
+  // @@protoc_insertion_point(field_set:dmi.AdminStateChange.new)
+}
+
+// -------------------------------------------------------------------
+
+// OperStateChange
+
+// .dmi.ComponentOperState old = 1;
+inline void OperStateChange::clear_old() {
+  old_ = 0;
+}
+inline ::dmi::ComponentOperState OperStateChange::old() const {
+  // @@protoc_insertion_point(field_get:dmi.OperStateChange.old)
+  return static_cast< ::dmi::ComponentOperState >(old_);
+}
+inline void OperStateChange::set_old(::dmi::ComponentOperState value) {
+  
+  old_ = value;
+  // @@protoc_insertion_point(field_set:dmi.OperStateChange.old)
+}
+
+// .dmi.ComponentOperState new = 2;
+inline void OperStateChange::clear_new_() {
+  new__ = 0;
+}
+inline ::dmi::ComponentOperState OperStateChange::new_() const {
+  // @@protoc_insertion_point(field_get:dmi.OperStateChange.new)
+  return static_cast< ::dmi::ComponentOperState >(new__);
+}
+inline void OperStateChange::set_new_(::dmi::ComponentOperState value) {
+  
+  new__ = value;
+  // @@protoc_insertion_point(field_set:dmi.OperStateChange.new)
+}
+
+// -------------------------------------------------------------------
+
+// AlarmStateChange
+
+// .dmi.ComponentAlarmState old = 1;
+inline void AlarmStateChange::clear_old() {
+  old_ = 0;
+}
+inline ::dmi::ComponentAlarmState AlarmStateChange::old() const {
+  // @@protoc_insertion_point(field_get:dmi.AlarmStateChange.old)
+  return static_cast< ::dmi::ComponentAlarmState >(old_);
+}
+inline void AlarmStateChange::set_old(::dmi::ComponentAlarmState value) {
+  
+  old_ = value;
+  // @@protoc_insertion_point(field_set:dmi.AlarmStateChange.old)
+}
+
+// .dmi.ComponentAlarmState new = 2;
+inline void AlarmStateChange::clear_new_() {
+  new__ = 0;
+}
+inline ::dmi::ComponentAlarmState AlarmStateChange::new_() const {
+  // @@protoc_insertion_point(field_get:dmi.AlarmStateChange.new)
+  return static_cast< ::dmi::ComponentAlarmState >(new__);
+}
+inline void AlarmStateChange::set_new_(::dmi::ComponentAlarmState value) {
+  
+  new__ = value;
+  // @@protoc_insertion_point(field_set:dmi.AlarmStateChange.new)
+}
+
+// -------------------------------------------------------------------
+
+// UsageStateChange
+
+// .dmi.ComponentUsageState old = 1;
+inline void UsageStateChange::clear_old() {
+  old_ = 0;
+}
+inline ::dmi::ComponentUsageState UsageStateChange::old() const {
+  // @@protoc_insertion_point(field_get:dmi.UsageStateChange.old)
+  return static_cast< ::dmi::ComponentUsageState >(old_);
+}
+inline void UsageStateChange::set_old(::dmi::ComponentUsageState value) {
+  
+  old_ = value;
+  // @@protoc_insertion_point(field_set:dmi.UsageStateChange.old)
+}
+
+// .dmi.ComponentUsageState new = 2;
+inline void UsageStateChange::clear_new_() {
+  new__ = 0;
+}
+inline ::dmi::ComponentUsageState UsageStateChange::new_() const {
+  // @@protoc_insertion_point(field_get:dmi.UsageStateChange.new)
+  return static_cast< ::dmi::ComponentUsageState >(new__);
+}
+inline void UsageStateChange::set_new_(::dmi::ComponentUsageState value) {
+  
+  new__ = value;
+  // @@protoc_insertion_point(field_set:dmi.UsageStateChange.new)
+}
+
+// -------------------------------------------------------------------
+
+// StandbyStateChange
+
+// .dmi.ComponentStandbyState old = 1;
+inline void StandbyStateChange::clear_old() {
+  old_ = 0;
+}
+inline ::dmi::ComponentStandbyState StandbyStateChange::old() const {
+  // @@protoc_insertion_point(field_get:dmi.StandbyStateChange.old)
+  return static_cast< ::dmi::ComponentStandbyState >(old_);
+}
+inline void StandbyStateChange::set_old(::dmi::ComponentStandbyState value) {
+  
+  old_ = value;
+  // @@protoc_insertion_point(field_set:dmi.StandbyStateChange.old)
+}
+
+// .dmi.ComponentStandbyState new = 2;
+inline void StandbyStateChange::clear_new_() {
+  new__ = 0;
+}
+inline ::dmi::ComponentStandbyState StandbyStateChange::new_() const {
+  // @@protoc_insertion_point(field_get:dmi.StandbyStateChange.new)
+  return static_cast< ::dmi::ComponentStandbyState >(new__);
+}
+inline void StandbyStateChange::set_new_(::dmi::ComponentStandbyState value) {
+  
+  new__ = value;
+  // @@protoc_insertion_point(field_set:dmi.StandbyStateChange.new)
+}
+
+// -------------------------------------------------------------------
+
+// StateChangeInfo
+
+// .dmi.AdminStateChange admin_state_change = 1;
+inline bool StateChangeInfo::has_admin_state_change() const {
+  return state_change_case() == kAdminStateChange;
+}
+inline void StateChangeInfo::set_has_admin_state_change() {
+  _oneof_case_[0] = kAdminStateChange;
+}
+inline void StateChangeInfo::clear_admin_state_change() {
+  if (has_admin_state_change()) {
+    delete state_change_.admin_state_change_;
+    clear_has_state_change();
+  }
+}
+inline ::dmi::AdminStateChange* StateChangeInfo::release_admin_state_change() {
+  // @@protoc_insertion_point(field_release:dmi.StateChangeInfo.admin_state_change)
+  if (has_admin_state_change()) {
+    clear_has_state_change();
+      ::dmi::AdminStateChange* temp = state_change_.admin_state_change_;
+    state_change_.admin_state_change_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::AdminStateChange& StateChangeInfo::admin_state_change() const {
+  // @@protoc_insertion_point(field_get:dmi.StateChangeInfo.admin_state_change)
+  return has_admin_state_change()
+      ? *state_change_.admin_state_change_
+      : *reinterpret_cast< ::dmi::AdminStateChange*>(&::dmi::_AdminStateChange_default_instance_);
+}
+inline ::dmi::AdminStateChange* StateChangeInfo::mutable_admin_state_change() {
+  if (!has_admin_state_change()) {
+    clear_state_change();
+    set_has_admin_state_change();
+    state_change_.admin_state_change_ = CreateMaybeMessage< ::dmi::AdminStateChange >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.StateChangeInfo.admin_state_change)
+  return state_change_.admin_state_change_;
+}
+
+// .dmi.OperStateChange oper_state_change = 2;
+inline bool StateChangeInfo::has_oper_state_change() const {
+  return state_change_case() == kOperStateChange;
+}
+inline void StateChangeInfo::set_has_oper_state_change() {
+  _oneof_case_[0] = kOperStateChange;
+}
+inline void StateChangeInfo::clear_oper_state_change() {
+  if (has_oper_state_change()) {
+    delete state_change_.oper_state_change_;
+    clear_has_state_change();
+  }
+}
+inline ::dmi::OperStateChange* StateChangeInfo::release_oper_state_change() {
+  // @@protoc_insertion_point(field_release:dmi.StateChangeInfo.oper_state_change)
+  if (has_oper_state_change()) {
+    clear_has_state_change();
+      ::dmi::OperStateChange* temp = state_change_.oper_state_change_;
+    state_change_.oper_state_change_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::OperStateChange& StateChangeInfo::oper_state_change() const {
+  // @@protoc_insertion_point(field_get:dmi.StateChangeInfo.oper_state_change)
+  return has_oper_state_change()
+      ? *state_change_.oper_state_change_
+      : *reinterpret_cast< ::dmi::OperStateChange*>(&::dmi::_OperStateChange_default_instance_);
+}
+inline ::dmi::OperStateChange* StateChangeInfo::mutable_oper_state_change() {
+  if (!has_oper_state_change()) {
+    clear_state_change();
+    set_has_oper_state_change();
+    state_change_.oper_state_change_ = CreateMaybeMessage< ::dmi::OperStateChange >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.StateChangeInfo.oper_state_change)
+  return state_change_.oper_state_change_;
+}
+
+// .dmi.AlarmStateChange alarm_state_change = 3;
+inline bool StateChangeInfo::has_alarm_state_change() const {
+  return state_change_case() == kAlarmStateChange;
+}
+inline void StateChangeInfo::set_has_alarm_state_change() {
+  _oneof_case_[0] = kAlarmStateChange;
+}
+inline void StateChangeInfo::clear_alarm_state_change() {
+  if (has_alarm_state_change()) {
+    delete state_change_.alarm_state_change_;
+    clear_has_state_change();
+  }
+}
+inline ::dmi::AlarmStateChange* StateChangeInfo::release_alarm_state_change() {
+  // @@protoc_insertion_point(field_release:dmi.StateChangeInfo.alarm_state_change)
+  if (has_alarm_state_change()) {
+    clear_has_state_change();
+      ::dmi::AlarmStateChange* temp = state_change_.alarm_state_change_;
+    state_change_.alarm_state_change_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::AlarmStateChange& StateChangeInfo::alarm_state_change() const {
+  // @@protoc_insertion_point(field_get:dmi.StateChangeInfo.alarm_state_change)
+  return has_alarm_state_change()
+      ? *state_change_.alarm_state_change_
+      : *reinterpret_cast< ::dmi::AlarmStateChange*>(&::dmi::_AlarmStateChange_default_instance_);
+}
+inline ::dmi::AlarmStateChange* StateChangeInfo::mutable_alarm_state_change() {
+  if (!has_alarm_state_change()) {
+    clear_state_change();
+    set_has_alarm_state_change();
+    state_change_.alarm_state_change_ = CreateMaybeMessage< ::dmi::AlarmStateChange >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.StateChangeInfo.alarm_state_change)
+  return state_change_.alarm_state_change_;
+}
+
+// .dmi.UsageStateChange usage_state_change = 4;
+inline bool StateChangeInfo::has_usage_state_change() const {
+  return state_change_case() == kUsageStateChange;
+}
+inline void StateChangeInfo::set_has_usage_state_change() {
+  _oneof_case_[0] = kUsageStateChange;
+}
+inline void StateChangeInfo::clear_usage_state_change() {
+  if (has_usage_state_change()) {
+    delete state_change_.usage_state_change_;
+    clear_has_state_change();
+  }
+}
+inline ::dmi::UsageStateChange* StateChangeInfo::release_usage_state_change() {
+  // @@protoc_insertion_point(field_release:dmi.StateChangeInfo.usage_state_change)
+  if (has_usage_state_change()) {
+    clear_has_state_change();
+      ::dmi::UsageStateChange* temp = state_change_.usage_state_change_;
+    state_change_.usage_state_change_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::UsageStateChange& StateChangeInfo::usage_state_change() const {
+  // @@protoc_insertion_point(field_get:dmi.StateChangeInfo.usage_state_change)
+  return has_usage_state_change()
+      ? *state_change_.usage_state_change_
+      : *reinterpret_cast< ::dmi::UsageStateChange*>(&::dmi::_UsageStateChange_default_instance_);
+}
+inline ::dmi::UsageStateChange* StateChangeInfo::mutable_usage_state_change() {
+  if (!has_usage_state_change()) {
+    clear_state_change();
+    set_has_usage_state_change();
+    state_change_.usage_state_change_ = CreateMaybeMessage< ::dmi::UsageStateChange >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.StateChangeInfo.usage_state_change)
+  return state_change_.usage_state_change_;
+}
+
+// .dmi.StandbyStateChange standby_state_change = 5;
+inline bool StateChangeInfo::has_standby_state_change() const {
+  return state_change_case() == kStandbyStateChange;
+}
+inline void StateChangeInfo::set_has_standby_state_change() {
+  _oneof_case_[0] = kStandbyStateChange;
+}
+inline void StateChangeInfo::clear_standby_state_change() {
+  if (has_standby_state_change()) {
+    delete state_change_.standby_state_change_;
+    clear_has_state_change();
+  }
+}
+inline ::dmi::StandbyStateChange* StateChangeInfo::release_standby_state_change() {
+  // @@protoc_insertion_point(field_release:dmi.StateChangeInfo.standby_state_change)
+  if (has_standby_state_change()) {
+    clear_has_state_change();
+      ::dmi::StandbyStateChange* temp = state_change_.standby_state_change_;
+    state_change_.standby_state_change_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::dmi::StandbyStateChange& StateChangeInfo::standby_state_change() const {
+  // @@protoc_insertion_point(field_get:dmi.StateChangeInfo.standby_state_change)
+  return has_standby_state_change()
+      ? *state_change_.standby_state_change_
+      : *reinterpret_cast< ::dmi::StandbyStateChange*>(&::dmi::_StandbyStateChange_default_instance_);
+}
+inline ::dmi::StandbyStateChange* StateChangeInfo::mutable_standby_state_change() {
+  if (!has_standby_state_change()) {
+    clear_state_change();
+    set_has_standby_state_change();
+    state_change_.standby_state_change_ = CreateMaybeMessage< ::dmi::StandbyStateChange >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.StateChangeInfo.standby_state_change)
+  return state_change_.standby_state_change_;
+}
+
+inline bool StateChangeInfo::has_state_change() const {
+  return state_change_case() != STATE_CHANGE_NOT_SET;
+}
+inline void StateChangeInfo::clear_has_state_change() {
+  _oneof_case_[0] = STATE_CHANGE_NOT_SET;
+}
+inline StateChangeInfo::StateChangeCase StateChangeInfo::state_change_case() const {
+  return StateChangeInfo::StateChangeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
 // Event
 
 // .dmi.EventMetaData event_metadata = 1;
@@ -3133,9 +4324,72 @@ inline void Event::set_allocated_add_info(::std::string* add_info) {
   // @@protoc_insertion_point(field_set_allocated:dmi.Event.add_info)
 }
 
+// .dmi.StateChangeInfo state_change_info = 6;
+inline bool Event::has_state_change_info() const {
+  return this != internal_default_instance() && state_change_info_ != nullptr;
+}
+inline void Event::clear_state_change_info() {
+  if (GetArenaNoVirtual() == nullptr && state_change_info_ != nullptr) {
+    delete state_change_info_;
+  }
+  state_change_info_ = nullptr;
+}
+inline const ::dmi::StateChangeInfo& Event::state_change_info() const {
+  const ::dmi::StateChangeInfo* p = state_change_info_;
+  // @@protoc_insertion_point(field_get:dmi.Event.state_change_info)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::StateChangeInfo*>(
+      &::dmi::_StateChangeInfo_default_instance_);
+}
+inline ::dmi::StateChangeInfo* Event::release_state_change_info() {
+  // @@protoc_insertion_point(field_release:dmi.Event.state_change_info)
+  
+  ::dmi::StateChangeInfo* temp = state_change_info_;
+  state_change_info_ = nullptr;
+  return temp;
+}
+inline ::dmi::StateChangeInfo* Event::mutable_state_change_info() {
+  
+  if (state_change_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::StateChangeInfo>(GetArenaNoVirtual());
+    state_change_info_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.Event.state_change_info)
+  return state_change_info_;
+}
+inline void Event::set_allocated_state_change_info(::dmi::StateChangeInfo* state_change_info) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete state_change_info_;
+  }
+  if (state_change_info) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      state_change_info = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, state_change_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  state_change_info_ = state_change_info;
+  // @@protoc_insertion_point(field_set_allocated:dmi.Event.state_change_info)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

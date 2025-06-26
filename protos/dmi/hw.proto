@@ -44,6 +44,12 @@ enum ComponentAdminState {
     COMP_ADMIN_STATE_LOCKED = 2;
     COMP_ADMIN_STATE_SHUTTING_DOWN = 3;
     COMP_ADMIN_STATE_UNLOCKED = 4;
+    // Indicates that the component is in a prohibited administrative state, meaning operations are not allowed.
+    // Typically used to enforce security or policy restrictions.
+    COMP_ADMIN_STATE_ISOLATED = 6;    
+    // Indicates that the component is administratively isolated from the rest of the system.
+    // Used when a component must be separated for maintenance, troubleshooting, or security reasons.
+    COMP_ADMIN_STATE_PROHIBITED = 5;
 }
 
 enum ComponentOperState {
@@ -52,6 +58,23 @@ enum ComponentOperState {
     COMP_OPER_STATE_DISABLED = 2;
     COMP_OPER_STATE_ENABLED = 3;
     COMP_OPER_STATE_TESTING = 4;
+    // Indicates that the component is operating normally.
+    COMP_OPER_STATE_NORMAL = 5;
+    // Indicates that the component is currently being configured.
+    COMP_OPER_STATE_CONFIGURING = 6;
+    // Indicates that the component is automatically loading configuration or software.
+    COMP_OPER_STATE_AUTOMATIC_LOADING = 7;
+    // Indicates that the component has encountered a failure.
+    COMP_OPER_STATE_FAILED = 8;
+    // Indicates that the component is temporarily shut down.
+    // The component is in a high temperature shutdown state due to exceeding safe operating temperature limits.
+    COMP_OPER_STATE_HIGH_TEMP_SHUTDOWN= 9;
+    // Indicates that the component is manually shut down.
+    COMP_OPER_STATE_MANUAL_SHUTDOWN = 10;
+    // Indicates that the component is shut down to save power.
+    COMP_OPER_STATE_POWER_SAVING_SHUTDOWN = 11;
+    // Indicates that the component's type does not match the expected type.
+    COMP_OPER_STATE_TYPE_MISMATCH = 12;  
 }
 
 enum ComponentUsageState {

@@ -85,6 +85,14 @@ enum EventIds {
     EVENT_LINE_CARD_PLUG_OUT = 600;
     EVENT_LINE_CARD_PLUG_IN = 601;
 
+    // Indicates that the a state of a component has changed.
+    // The StateChangeInfo message inside the event conveys the old and new states.
+    EVENT_COMPONENT_ADMIN_STATE_CHANGED = 700;
+    EVENT_COMPONENT_OPER_STATE_CHANGED = 701;
+    EVENT_COMPONENT_ALARM_STATE_CHANGED = 702;
+    EVENT_COMPONENT_USAGE_STATE_CHANGED = 703;
+    EVENT_COMPONENT_STANDBY_STATE_CHANGED = 704;
+
     // More to be added
 }
 
@@ -176,6 +184,40 @@ message EventMetaData {
     string component_name = 3;
 }
 
+message AdminStateChange {
+    ComponentAdminState old = 1;
+    ComponentAdminState new = 2;
+}
+
+message OperStateChange {
+    ComponentOperState old = 1;
+    ComponentOperState new = 2;
+}
+
+message AlarmStateChange {
+    ComponentAlarmState old = 1;
+    ComponentAlarmState new = 2;
+}
+
+message UsageStateChange {
+    ComponentUsageState old = 1;
+    ComponentUsageState new = 2;
+}
+
+message StandbyStateChange {
+    ComponentStandbyState old = 1;
+    ComponentStandbyState new = 2;
+}
+
+message StateChangeInfo {
+    oneof state_change {
+        AdminStateChange admin_state_change = 1;
+        OperStateChange oper_state_change = 2;
+        AlarmStateChange alarm_state_change = 3;
+        UsageStateChange usage_state_change = 4;
+        StandbyStateChange standby_state_change = 5;
+    }
+}
 // The Events are conveyed to external systems either by submitting them on a message bus or using gRPC server streaming.
 // The message bus topic to which are Events are submitted would be configured as startup
 // configuration of the components
@@ -188,6 +230,7 @@ message Event {
     ThresholdInformation threshold_info = 4;
     // Any additional info regarding the event
     string add_info = 5;
+    StateChangeInfo state_change_info = 6; // Only set for state change events
 }
 
 service NativeEventsManagementService {
