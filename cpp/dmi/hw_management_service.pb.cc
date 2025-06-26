@@ -139,6 +139,30 @@ class RebootDeviceResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<RebootDeviceResponse> _instance;
 } _RebootDeviceResponse_default_instance_;
+class DisableHWComponentRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DisableHWComponentRequest> _instance;
+} _DisableHWComponentRequest_default_instance_;
+class DisableHWComponentResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DisableHWComponentResponse> _instance;
+} _DisableHWComponentResponse_default_instance_;
+class ResetHWComponentRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ResetHWComponentRequest> _instance;
+} _ResetHWComponentRequest_default_instance_;
+class ResetHWComponentResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ResetHWComponentResponse> _instance;
+} _ResetHWComponentResponse_default_instance_;
+class EnableHWComponentRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<EnableHWComponentRequest> _instance;
+} _EnableHWComponentRequest_default_instance_;
+class EnableHWComponentResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<EnableHWComponentResponse> _instance;
+} _EnableHWComponentResponse_default_instance_;
 }  // namespace dmi
 static void InitDefaultsPhysicalInventoryRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -565,6 +589,93 @@ static void InitDefaultsRebootDeviceResponse_dmi_2fhw_5fmanagement_5fservice_2ep
 ::google::protobuf::internal::SCCInfo<0> scc_info_RebootDeviceResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRebootDeviceResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
 
+static void InitDefaultsDisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_DisableHWComponentRequest_default_instance_;
+    new (ptr) ::dmi::DisableHWComponentRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::DisableHWComponentRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_DisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {
+      &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
+
+static void InitDefaultsDisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_DisableHWComponentResponse_default_instance_;
+    new (ptr) ::dmi::DisableHWComponentResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::DisableHWComponentResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_DisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
+static void InitDefaultsResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_ResetHWComponentRequest_default_instance_;
+    new (ptr) ::dmi::ResetHWComponentRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::ResetHWComponentRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_ResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {
+      &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
+
+static void InitDefaultsResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_ResetHWComponentResponse_default_instance_;
+    new (ptr) ::dmi::ResetHWComponentResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::ResetHWComponentResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_ResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
+static void InitDefaultsEnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_EnableHWComponentRequest_default_instance_;
+    new (ptr) ::dmi::EnableHWComponentRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::EnableHWComponentRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_EnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto}, {
+      &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
+
+static void InitDefaultsEnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_EnableHWComponentResponse_default_instance_;
+    new (ptr) ::dmi::EnableHWComponentResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::EnableHWComponentResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_EnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto}, {}};
+
 void InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_PhysicalInventoryRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PhysicalInventoryResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
@@ -595,10 +706,16 @@ void InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Heartbeat_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RebootDeviceRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RebootDeviceResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[29];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[14];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[35];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[17];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -824,6 +941,54 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fmanagement_5fservice_2ep
   PROTOBUF_FIELD_OFFSET(::dmi::RebootDeviceResponse, status_),
   PROTOBUF_FIELD_OFFSET(::dmi::RebootDeviceResponse, reason_),
   PROTOBUF_FIELD_OFFSET(::dmi::RebootDeviceResponse, reason_detail_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentRequest, device_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentRequest, component_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentRequest, component_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::dmi::DisableHWComponentResponse, reason_detail_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentRequest, device_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentRequest, component_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentRequest, component_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::dmi::ResetHWComponentResponse, reason_detail_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentRequest, device_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentRequest, component_uuid_),
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentRequest, component_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::dmi::EnableHWComponentResponse, reason_detail_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::PhysicalInventoryRequest)},
@@ -855,6 +1020,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 202, -1, sizeof(::dmi::Heartbeat)},
   { 208, -1, sizeof(::dmi::RebootDeviceRequest)},
   { 214, -1, sizeof(::dmi::RebootDeviceResponse)},
+  { 222, -1, sizeof(::dmi::DisableHWComponentRequest)},
+  { 230, -1, sizeof(::dmi::DisableHWComponentResponse)},
+  { 238, -1, sizeof(::dmi::ResetHWComponentRequest)},
+  { 246, -1, sizeof(::dmi::ResetHWComponentResponse)},
+  { 254, -1, sizeof(::dmi::EnableHWComponentRequest)},
+  { 262, -1, sizeof(::dmi::EnableHWComponentResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -887,12 +1058,18 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_Heartbeat_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_RebootDeviceRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_RebootDeviceResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_DisableHWComponentRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_DisableHWComponentResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ResetHWComponentRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_ResetHWComponentResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_EnableHWComponentRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_EnableHWComponentResponse_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   {}, AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, "dmi/hw_management_service.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 29, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
+  file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto, 35, file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
@@ -1020,47 +1197,85 @@ const char descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto[] =
   "ail\030\005 \001(\t\"y\n\006Reason\022\024\n\020UNDEFINED_REASON\020"
   "\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\022\n\016INTERNAL_ERROR\020"
   "\002\022\026\n\022DEVICE_UNREACHABLE\020\003\022\031\n\025DEVICE_IN_W"
-  "RONG_STATE\020\0042\276\n\n\031NativeHWManagementServi"
-  "ce\022S\n\023StartManagingDevice\022\030.dmi.Modifiab"
-  "leComponent\032 .dmi.StartManagingDeviceRes"
-  "ponse0\001\022U\n\022StopManagingDevice\022\036.dmi.Stop"
-  "ManagingDeviceRequest\032\037.dmi.StopManaging"
-  "DeviceResponse\022H\n\021GetManagedDevices\022\026.go"
-  "ogle.protobuf.Empty\032\033.dmi.ManagedDevices"
-  "Response\022W\n\024GetPhysicalInventory\022\035.dmi.P"
-  "hysicalInventoryRequest\032\036.dmi.PhysicalIn"
-  "ventoryResponse0\001\022W\n\022GetHWComponentInfo\022"
-  "\036.dmi.HWComponentInfoGetRequest\032\037.dmi.HW"
-  "ComponentInfoGetResponse0\001\022U\n\022SetHWCompo"
-  "nentInfo\022\036.dmi.HWComponentInfoSetRequest"
-  "\032\037.dmi.HWComponentInfoSetResponse\022T\n\022Set"
-  "LoggingEndpoint\022\036.dmi.SetLoggingEndpoint"
-  "Request\032\036.dmi.SetRemoteEndpointResponse\022"
-  "F\n\022GetLoggingEndpoint\022\017.dmi.HardwareID\032\037"
-  ".dmi.GetLoggingEndpointResponse\022R\n\021SetMs"
-  "gBusEndpoint\022\035.dmi.SetMsgBusEndpointRequ"
-  "est\032\036.dmi.SetRemoteEndpointResponse\022K\n\021G"
-  "etMsgBusEndpoint\022\026.google.protobuf.Empty"
-  "\032\036.dmi.GetMsgBusEndpointResponse\022P\n\023GetL"
-  "oggableEntities\022\037.dmi.GetLoggableEntitie"
-  "sRequest\032\030.dmi.GetLogLevelResponse\022@\n\013Se"
-  "tLogLevel\022\027.dmi.SetLogLevelRequest\032\030.dmi"
-  ".SetLogLevelResponse\022@\n\013GetLogLevel\022\027.dm"
-  "i.GetLogLevelRequest\032\030.dmi.GetLogLevelRe"
-  "sponse\0228\n\016HeartbeatCheck\022\026.google.protob"
-  "uf.Empty\032\016.dmi.Heartbeat\022C\n\014RebootDevice"
-  "\022\030.dmi.RebootDeviceRequest\032\031.dmi.RebootD"
-  "eviceResponse\022F\n\rSetDmLogLevel\022\031.dmi.Set"
-  "DmLogLevelRequest\032\032.dmi.SetDmLogLevelRes"
-  "ponse\022F\n\rGetDmLogLevel\022\031.dmi.GetDmLogLev"
-  "elRequest\032\032.dmi.GetDmLogLevelResponseB;Z"
-  "9github.com/opencord/device-management-i"
-  "nterface/v3/go/dmib\006proto3"
+  "RONG_STATE\020\004\"v\n\031DisableHWComponentReques"
+  "t\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\022!\n\016com"
+  "ponent_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n\016componen"
+  "t_name\030\003 \001(\t\"\255\002\n\032DisableHWComponentRespo"
+  "nse\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0226\n\006reas"
+  "on\030\002 \001(\0162&.dmi.DisableHWComponentRespons"
+  "e.Reason\022\025\n\rreason_detail\030\003 \001(\t\"\242\001\n\006Reas"
+  "on\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVI"
+  "CE\020\001\022\025\n\021UNKNOWN_COMPONENT\020\002\022\022\n\016INTERNAL_"
+  "ERROR\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\022\027\n\023DISAB"
+  "LE_UNSUPPORTED\020\005\022\022\n\016INVALID_PARAMS\020\006\"t\n\027"
+  "ResetHWComponentRequest\022\036\n\013device_uuid\030\001"
+  " \001(\0132\t.dmi.Uuid\022!\n\016component_uuid\030\002 \001(\0132"
+  "\t.dmi.Uuid\022\026\n\016component_name\030\003 \001(\t\"\247\002\n\030R"
+  "esetHWComponentResponse\022\033\n\006status\030\001 \001(\0162"
+  "\013.dmi.Status\0224\n\006reason\030\002 \001(\0162$.dmi.Reset"
+  "HWComponentResponse.Reason\022\025\n\rreason_det"
+  "ail\030\003 \001(\t\"\240\001\n\006Reason\022\024\n\020UNDEFINED_REASON"
+  "\020\000\022\022\n\016UNKNOWN_DEVICE\020\001\022\025\n\021UNKNOWN_COMPON"
+  "ENT\020\002\022\022\n\016INTERNAL_ERROR\020\003\022\026\n\022DEVICE_UNRE"
+  "ACHABLE\020\004\022\025\n\021RESET_UNSUPPORTED\020\005\022\022\n\016INVA"
+  "LID_PARAMS\020\006\"u\n\030EnableHWComponentRequest"
+  "\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uuid\022!\n\016comp"
+  "onent_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n\016component"
+  "_name\030\003 \001(\t\"\252\002\n\031EnableHWComponentRespons"
+  "e\022\033\n\006status\030\001 \001(\0162\013.dmi.Status\0225\n\006reason"
+  "\030\002 \001(\0162%.dmi.EnableHWComponentResponse.R"
+  "eason\022\025\n\rreason_detail\030\003 \001(\t\"\241\001\n\006Reason\022"
+  "\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNOWN_DEVICE\020"
+  "\001\022\025\n\021UNKNOWN_COMPONENT\020\002\022\022\n\016INTERNAL_ERR"
+  "OR\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\022\026\n\022ENABLE_U"
+  "NSUPPORTED\020\005\022\022\n\016INVALID_PARAMS\020\0062\272\014\n\031Nat"
+  "iveHWManagementService\022S\n\023StartManagingD"
+  "evice\022\030.dmi.ModifiableComponent\032 .dmi.St"
+  "artManagingDeviceResponse0\001\022U\n\022StopManag"
+  "ingDevice\022\036.dmi.StopManagingDeviceReques"
+  "t\032\037.dmi.StopManagingDeviceResponse\022H\n\021Ge"
+  "tManagedDevices\022\026.google.protobuf.Empty\032"
+  "\033.dmi.ManagedDevicesResponse\022W\n\024GetPhysi"
+  "calInventory\022\035.dmi.PhysicalInventoryRequ"
+  "est\032\036.dmi.PhysicalInventoryResponse0\001\022W\n"
+  "\022GetHWComponentInfo\022\036.dmi.HWComponentInf"
+  "oGetRequest\032\037.dmi.HWComponentInfoGetResp"
+  "onse0\001\022U\n\022SetHWComponentInfo\022\036.dmi.HWCom"
+  "ponentInfoSetRequest\032\037.dmi.HWComponentIn"
+  "foSetResponse\022T\n\022SetLoggingEndpoint\022\036.dm"
+  "i.SetLoggingEndpointRequest\032\036.dmi.SetRem"
+  "oteEndpointResponse\022F\n\022GetLoggingEndpoin"
+  "t\022\017.dmi.HardwareID\032\037.dmi.GetLoggingEndpo"
+  "intResponse\022R\n\021SetMsgBusEndpoint\022\035.dmi.S"
+  "etMsgBusEndpointRequest\032\036.dmi.SetRemoteE"
+  "ndpointResponse\022K\n\021GetMsgBusEndpoint\022\026.g"
+  "oogle.protobuf.Empty\032\036.dmi.GetMsgBusEndp"
+  "ointResponse\022P\n\023GetLoggableEntities\022\037.dm"
+  "i.GetLoggableEntitiesRequest\032\030.dmi.GetLo"
+  "gLevelResponse\022@\n\013SetLogLevel\022\027.dmi.SetL"
+  "ogLevelRequest\032\030.dmi.SetLogLevelResponse"
+  "\022@\n\013GetLogLevel\022\027.dmi.GetLogLevelRequest"
+  "\032\030.dmi.GetLogLevelResponse\0228\n\016HeartbeatC"
+  "heck\022\026.google.protobuf.Empty\032\016.dmi.Heart"
+  "beat\022C\n\014RebootDevice\022\030.dmi.RebootDeviceR"
+  "equest\032\031.dmi.RebootDeviceResponse\022F\n\rSet"
+  "DmLogLevel\022\031.dmi.SetDmLogLevelRequest\032\032."
+  "dmi.SetDmLogLevelResponse\022F\n\rGetDmLogLev"
+  "el\022\031.dmi.GetDmLogLevelRequest\032\032.dmi.GetD"
+  "mLogLevelResponse\022U\n\022DisableHWComponent\022"
+  "\036.dmi.DisableHWComponentRequest\032\037.dmi.Di"
+  "sableHWComponentResponse\022O\n\020ResetHWCompo"
+  "nent\022\034.dmi.ResetHWComponentRequest\032\035.dmi"
+  ".ResetHWComponentResponse\022R\n\021EnableHWCom"
+  "ponent\022\035.dmi.EnableHWComponentRequest\032\036."
+  "dmi.EnableHWComponentResponseB;Z9github."
+  "com/opencord/device-management-interface"
+  "/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmanagement_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmanagement_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmanagement_5fservice_2eproto,
-  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 6386,
+  "dmi/hw_management_service.proto", &assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto, 7898,
 };
 
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto() {
@@ -1437,6 +1652,99 @@ const RebootDeviceResponse_Reason RebootDeviceResponse::DEVICE_IN_WRONG_STATE;
 const RebootDeviceResponse_Reason RebootDeviceResponse::Reason_MIN;
 const RebootDeviceResponse_Reason RebootDeviceResponse::Reason_MAX;
 const int RebootDeviceResponse::Reason_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* DisableHWComponentResponse_Reason_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[14];
+}
+bool DisableHWComponentResponse_Reason_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::UNDEFINED_REASON;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::UNKNOWN_DEVICE;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::UNKNOWN_COMPONENT;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::INTERNAL_ERROR;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::DEVICE_UNREACHABLE;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::DISABLE_UNSUPPORTED;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::INVALID_PARAMS;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::Reason_MIN;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse::Reason_MAX;
+const int DisableHWComponentResponse::Reason_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* ResetHWComponentResponse_Reason_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[15];
+}
+bool ResetHWComponentResponse_Reason_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::UNDEFINED_REASON;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::UNKNOWN_DEVICE;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::UNKNOWN_COMPONENT;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::INTERNAL_ERROR;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::DEVICE_UNREACHABLE;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::RESET_UNSUPPORTED;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::INVALID_PARAMS;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::Reason_MIN;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse::Reason_MAX;
+const int ResetHWComponentResponse::Reason_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* EnableHWComponentResponse_Reason_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fmanagement_5fservice_2eproto[16];
+}
+bool EnableHWComponentResponse_Reason_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::UNDEFINED_REASON;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::UNKNOWN_DEVICE;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::UNKNOWN_COMPONENT;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::INTERNAL_ERROR;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::DEVICE_UNREACHABLE;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::ENABLE_UNSUPPORTED;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::INVALID_PARAMS;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::Reason_MIN;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse::Reason_MAX;
+const int EnableHWComponentResponse::Reason_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -12681,6 +12989,2526 @@ void RebootDeviceResponse::InternalSwap(RebootDeviceResponse* other) {
 }
 
 
+// ===================================================================
+
+void DisableHWComponentRequest::InitAsDefaultInstance() {
+  ::dmi::_DisableHWComponentRequest_default_instance_._instance.get_mutable()->device_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+  ::dmi::_DisableHWComponentRequest_default_instance_._instance.get_mutable()->component_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+}
+class DisableHWComponentRequest::HasBitSetters {
+ public:
+  static const ::dmi::Uuid& device_uuid(const DisableHWComponentRequest* msg);
+  static const ::dmi::Uuid& component_uuid(const DisableHWComponentRequest* msg);
+};
+
+const ::dmi::Uuid&
+DisableHWComponentRequest::HasBitSetters::device_uuid(const DisableHWComponentRequest* msg) {
+  return *msg->device_uuid_;
+}
+const ::dmi::Uuid&
+DisableHWComponentRequest::HasBitSetters::component_uuid(const DisableHWComponentRequest* msg) {
+  return *msg->component_uuid_;
+}
+void DisableHWComponentRequest::clear_device_uuid() {
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+}
+void DisableHWComponentRequest::clear_component_uuid() {
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DisableHWComponentRequest::kDeviceUuidFieldNumber;
+const int DisableHWComponentRequest::kComponentUuidFieldNumber;
+const int DisableHWComponentRequest::kComponentNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DisableHWComponentRequest::DisableHWComponentRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.DisableHWComponentRequest)
+}
+DisableHWComponentRequest::DisableHWComponentRequest(const DisableHWComponentRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.component_name().size() > 0) {
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    device_uuid_ = new ::dmi::Uuid(*from.device_uuid_);
+  } else {
+    device_uuid_ = nullptr;
+  }
+  if (from.has_component_uuid()) {
+    component_uuid_ = new ::dmi::Uuid(*from.component_uuid_);
+  } else {
+    component_uuid_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:dmi.DisableHWComponentRequest)
+}
+
+void DisableHWComponentRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_DisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&device_uuid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&component_uuid_) -
+      reinterpret_cast<char*>(&device_uuid_)) + sizeof(component_uuid_));
+}
+
+DisableHWComponentRequest::~DisableHWComponentRequest() {
+  // @@protoc_insertion_point(destructor:dmi.DisableHWComponentRequest)
+  SharedDtor();
+}
+
+void DisableHWComponentRequest::SharedDtor() {
+  component_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete device_uuid_;
+  if (this != internal_default_instance()) delete component_uuid_;
+}
+
+void DisableHWComponentRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DisableHWComponentRequest& DisableHWComponentRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_DisableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DisableHWComponentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.DisableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* DisableHWComponentRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<DisableHWComponentRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_device_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_component_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string component_name = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.DisableHWComponentRequest.component_name");
+        object = msg->mutable_component_name();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool DisableHWComponentRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.DisableHWComponentRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string component_name = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_component_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->component_name().data(), static_cast<int>(this->component_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.DisableHWComponentRequest.component_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.DisableHWComponentRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.DisableHWComponentRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void DisableHWComponentRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.DisableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::device_uuid(this), output);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::component_uuid(this), output);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.DisableHWComponentRequest.component_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->component_name(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.DisableHWComponentRequest)
+}
+
+::google::protobuf::uint8* DisableHWComponentRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.DisableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::device_uuid(this), target);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::component_uuid(this), target);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.DisableHWComponentRequest.component_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->component_name(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.DisableHWComponentRequest)
+  return target;
+}
+
+size_t DisableHWComponentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.DisableHWComponentRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->component_name());
+  }
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *device_uuid_);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *component_uuid_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DisableHWComponentRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.DisableHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DisableHWComponentRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<DisableHWComponentRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.DisableHWComponentRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.DisableHWComponentRequest)
+    MergeFrom(*source);
+  }
+}
+
+void DisableHWComponentRequest::MergeFrom(const DisableHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.DisableHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.component_name().size() > 0) {
+
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    mutable_device_uuid()->::dmi::Uuid::MergeFrom(from.device_uuid());
+  }
+  if (from.has_component_uuid()) {
+    mutable_component_uuid()->::dmi::Uuid::MergeFrom(from.component_uuid());
+  }
+}
+
+void DisableHWComponentRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.DisableHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DisableHWComponentRequest::CopyFrom(const DisableHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.DisableHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DisableHWComponentRequest::IsInitialized() const {
+  return true;
+}
+
+void DisableHWComponentRequest::Swap(DisableHWComponentRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DisableHWComponentRequest::InternalSwap(DisableHWComponentRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  component_name_.Swap(&other->component_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(device_uuid_, other->device_uuid_);
+  swap(component_uuid_, other->component_uuid_);
+}
+
+::google::protobuf::Metadata DisableHWComponentRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void DisableHWComponentResponse::InitAsDefaultInstance() {
+}
+class DisableHWComponentResponse::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DisableHWComponentResponse::kStatusFieldNumber;
+const int DisableHWComponentResponse::kReasonFieldNumber;
+const int DisableHWComponentResponse::kReasonDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DisableHWComponentResponse::DisableHWComponentResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.DisableHWComponentResponse)
+}
+DisableHWComponentResponse::DisableHWComponentResponse(const DisableHWComponentResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.reason_detail().size() > 0) {
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  // @@protoc_insertion_point(copy_constructor:dmi.DisableHWComponentResponse)
+}
+
+void DisableHWComponentResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_DisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+}
+
+DisableHWComponentResponse::~DisableHWComponentResponse() {
+  // @@protoc_insertion_point(destructor:dmi.DisableHWComponentResponse)
+  SharedDtor();
+}
+
+void DisableHWComponentResponse::SharedDtor() {
+  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void DisableHWComponentResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DisableHWComponentResponse& DisableHWComponentResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_DisableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DisableHWComponentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.DisableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* DisableHWComponentResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<DisableHWComponentResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_status(static_cast<::dmi::Status>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.DisableHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reason(static_cast<::dmi::DisableHWComponentResponse_Reason>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.DisableHWComponentResponse.reason_detail");
+        object = msg->mutable_reason_detail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool DisableHWComponentResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.DisableHWComponentResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::dmi::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.DisableHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reason(static_cast< ::dmi::DisableHWComponentResponse_Reason >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_reason_detail()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.DisableHWComponentResponse.reason_detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.DisableHWComponentResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.DisableHWComponentResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void DisableHWComponentResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.DisableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->status(), output);
+  }
+
+  // .dmi.DisableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->reason(), output);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.DisableHWComponentResponse.reason_detail");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->reason_detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.DisableHWComponentResponse)
+}
+
+::google::protobuf::uint8* DisableHWComponentResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.DisableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->status(), target);
+  }
+
+  // .dmi.DisableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->reason(), target);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.DisableHWComponentResponse.reason_detail");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->reason_detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.DisableHWComponentResponse)
+  return target;
+}
+
+size_t DisableHWComponentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.DisableHWComponentResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->reason_detail());
+  }
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // .dmi.DisableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DisableHWComponentResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.DisableHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DisableHWComponentResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<DisableHWComponentResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.DisableHWComponentResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.DisableHWComponentResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DisableHWComponentResponse::MergeFrom(const DisableHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.DisableHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason_detail().size() > 0) {
+
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  if (from.status() != 0) {
+    set_status(from.status());
+  }
+  if (from.reason() != 0) {
+    set_reason(from.reason());
+  }
+}
+
+void DisableHWComponentResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.DisableHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DisableHWComponentResponse::CopyFrom(const DisableHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.DisableHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DisableHWComponentResponse::IsInitialized() const {
+  return true;
+}
+
+void DisableHWComponentResponse::Swap(DisableHWComponentResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DisableHWComponentResponse::InternalSwap(DisableHWComponentResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(status_, other->status_);
+  swap(reason_, other->reason_);
+}
+
+::google::protobuf::Metadata DisableHWComponentResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void ResetHWComponentRequest::InitAsDefaultInstance() {
+  ::dmi::_ResetHWComponentRequest_default_instance_._instance.get_mutable()->device_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+  ::dmi::_ResetHWComponentRequest_default_instance_._instance.get_mutable()->component_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+}
+class ResetHWComponentRequest::HasBitSetters {
+ public:
+  static const ::dmi::Uuid& device_uuid(const ResetHWComponentRequest* msg);
+  static const ::dmi::Uuid& component_uuid(const ResetHWComponentRequest* msg);
+};
+
+const ::dmi::Uuid&
+ResetHWComponentRequest::HasBitSetters::device_uuid(const ResetHWComponentRequest* msg) {
+  return *msg->device_uuid_;
+}
+const ::dmi::Uuid&
+ResetHWComponentRequest::HasBitSetters::component_uuid(const ResetHWComponentRequest* msg) {
+  return *msg->component_uuid_;
+}
+void ResetHWComponentRequest::clear_device_uuid() {
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+}
+void ResetHWComponentRequest::clear_component_uuid() {
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ResetHWComponentRequest::kDeviceUuidFieldNumber;
+const int ResetHWComponentRequest::kComponentUuidFieldNumber;
+const int ResetHWComponentRequest::kComponentNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ResetHWComponentRequest::ResetHWComponentRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.ResetHWComponentRequest)
+}
+ResetHWComponentRequest::ResetHWComponentRequest(const ResetHWComponentRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.component_name().size() > 0) {
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    device_uuid_ = new ::dmi::Uuid(*from.device_uuid_);
+  } else {
+    device_uuid_ = nullptr;
+  }
+  if (from.has_component_uuid()) {
+    component_uuid_ = new ::dmi::Uuid(*from.component_uuid_);
+  } else {
+    component_uuid_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:dmi.ResetHWComponentRequest)
+}
+
+void ResetHWComponentRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&device_uuid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&component_uuid_) -
+      reinterpret_cast<char*>(&device_uuid_)) + sizeof(component_uuid_));
+}
+
+ResetHWComponentRequest::~ResetHWComponentRequest() {
+  // @@protoc_insertion_point(destructor:dmi.ResetHWComponentRequest)
+  SharedDtor();
+}
+
+void ResetHWComponentRequest::SharedDtor() {
+  component_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete device_uuid_;
+  if (this != internal_default_instance()) delete component_uuid_;
+}
+
+void ResetHWComponentRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ResetHWComponentRequest& ResetHWComponentRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ResetHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ResetHWComponentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.ResetHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ResetHWComponentRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ResetHWComponentRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_device_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_component_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string component_name = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.ResetHWComponentRequest.component_name");
+        object = msg->mutable_component_name();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool ResetHWComponentRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.ResetHWComponentRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string component_name = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_component_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->component_name().data(), static_cast<int>(this->component_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.ResetHWComponentRequest.component_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.ResetHWComponentRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.ResetHWComponentRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void ResetHWComponentRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.ResetHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::device_uuid(this), output);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::component_uuid(this), output);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.ResetHWComponentRequest.component_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->component_name(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.ResetHWComponentRequest)
+}
+
+::google::protobuf::uint8* ResetHWComponentRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.ResetHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::device_uuid(this), target);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::component_uuid(this), target);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.ResetHWComponentRequest.component_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->component_name(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.ResetHWComponentRequest)
+  return target;
+}
+
+size_t ResetHWComponentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.ResetHWComponentRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->component_name());
+  }
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *device_uuid_);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *component_uuid_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ResetHWComponentRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.ResetHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ResetHWComponentRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<ResetHWComponentRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.ResetHWComponentRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.ResetHWComponentRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ResetHWComponentRequest::MergeFrom(const ResetHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.ResetHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.component_name().size() > 0) {
+
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    mutable_device_uuid()->::dmi::Uuid::MergeFrom(from.device_uuid());
+  }
+  if (from.has_component_uuid()) {
+    mutable_component_uuid()->::dmi::Uuid::MergeFrom(from.component_uuid());
+  }
+}
+
+void ResetHWComponentRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.ResetHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ResetHWComponentRequest::CopyFrom(const ResetHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.ResetHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResetHWComponentRequest::IsInitialized() const {
+  return true;
+}
+
+void ResetHWComponentRequest::Swap(ResetHWComponentRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ResetHWComponentRequest::InternalSwap(ResetHWComponentRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  component_name_.Swap(&other->component_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(device_uuid_, other->device_uuid_);
+  swap(component_uuid_, other->component_uuid_);
+}
+
+::google::protobuf::Metadata ResetHWComponentRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void ResetHWComponentResponse::InitAsDefaultInstance() {
+}
+class ResetHWComponentResponse::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ResetHWComponentResponse::kStatusFieldNumber;
+const int ResetHWComponentResponse::kReasonFieldNumber;
+const int ResetHWComponentResponse::kReasonDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ResetHWComponentResponse::ResetHWComponentResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.ResetHWComponentResponse)
+}
+ResetHWComponentResponse::ResetHWComponentResponse(const ResetHWComponentResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.reason_detail().size() > 0) {
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  // @@protoc_insertion_point(copy_constructor:dmi.ResetHWComponentResponse)
+}
+
+void ResetHWComponentResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+}
+
+ResetHWComponentResponse::~ResetHWComponentResponse() {
+  // @@protoc_insertion_point(destructor:dmi.ResetHWComponentResponse)
+  SharedDtor();
+}
+
+void ResetHWComponentResponse::SharedDtor() {
+  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void ResetHWComponentResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ResetHWComponentResponse& ResetHWComponentResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ResetHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ResetHWComponentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.ResetHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ResetHWComponentResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ResetHWComponentResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_status(static_cast<::dmi::Status>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ResetHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reason(static_cast<::dmi::ResetHWComponentResponse_Reason>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.ResetHWComponentResponse.reason_detail");
+        object = msg->mutable_reason_detail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool ResetHWComponentResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.ResetHWComponentResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::dmi::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ResetHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reason(static_cast< ::dmi::ResetHWComponentResponse_Reason >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_reason_detail()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.ResetHWComponentResponse.reason_detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.ResetHWComponentResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.ResetHWComponentResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void ResetHWComponentResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.ResetHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->status(), output);
+  }
+
+  // .dmi.ResetHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->reason(), output);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.ResetHWComponentResponse.reason_detail");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->reason_detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.ResetHWComponentResponse)
+}
+
+::google::protobuf::uint8* ResetHWComponentResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.ResetHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->status(), target);
+  }
+
+  // .dmi.ResetHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->reason(), target);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.ResetHWComponentResponse.reason_detail");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->reason_detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.ResetHWComponentResponse)
+  return target;
+}
+
+size_t ResetHWComponentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.ResetHWComponentResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->reason_detail());
+  }
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // .dmi.ResetHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ResetHWComponentResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.ResetHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ResetHWComponentResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<ResetHWComponentResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.ResetHWComponentResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.ResetHWComponentResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ResetHWComponentResponse::MergeFrom(const ResetHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.ResetHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason_detail().size() > 0) {
+
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  if (from.status() != 0) {
+    set_status(from.status());
+  }
+  if (from.reason() != 0) {
+    set_reason(from.reason());
+  }
+}
+
+void ResetHWComponentResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.ResetHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ResetHWComponentResponse::CopyFrom(const ResetHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.ResetHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResetHWComponentResponse::IsInitialized() const {
+  return true;
+}
+
+void ResetHWComponentResponse::Swap(ResetHWComponentResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ResetHWComponentResponse::InternalSwap(ResetHWComponentResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(status_, other->status_);
+  swap(reason_, other->reason_);
+}
+
+::google::protobuf::Metadata ResetHWComponentResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void EnableHWComponentRequest::InitAsDefaultInstance() {
+  ::dmi::_EnableHWComponentRequest_default_instance_._instance.get_mutable()->device_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+  ::dmi::_EnableHWComponentRequest_default_instance_._instance.get_mutable()->component_uuid_ = const_cast< ::dmi::Uuid*>(
+      ::dmi::Uuid::internal_default_instance());
+}
+class EnableHWComponentRequest::HasBitSetters {
+ public:
+  static const ::dmi::Uuid& device_uuid(const EnableHWComponentRequest* msg);
+  static const ::dmi::Uuid& component_uuid(const EnableHWComponentRequest* msg);
+};
+
+const ::dmi::Uuid&
+EnableHWComponentRequest::HasBitSetters::device_uuid(const EnableHWComponentRequest* msg) {
+  return *msg->device_uuid_;
+}
+const ::dmi::Uuid&
+EnableHWComponentRequest::HasBitSetters::component_uuid(const EnableHWComponentRequest* msg) {
+  return *msg->component_uuid_;
+}
+void EnableHWComponentRequest::clear_device_uuid() {
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+}
+void EnableHWComponentRequest::clear_component_uuid() {
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int EnableHWComponentRequest::kDeviceUuidFieldNumber;
+const int EnableHWComponentRequest::kComponentUuidFieldNumber;
+const int EnableHWComponentRequest::kComponentNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+EnableHWComponentRequest::EnableHWComponentRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.EnableHWComponentRequest)
+}
+EnableHWComponentRequest::EnableHWComponentRequest(const EnableHWComponentRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.component_name().size() > 0) {
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    device_uuid_ = new ::dmi::Uuid(*from.device_uuid_);
+  } else {
+    device_uuid_ = nullptr;
+  }
+  if (from.has_component_uuid()) {
+    component_uuid_ = new ::dmi::Uuid(*from.component_uuid_);
+  } else {
+    component_uuid_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:dmi.EnableHWComponentRequest)
+}
+
+void EnableHWComponentRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_EnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  component_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&device_uuid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&component_uuid_) -
+      reinterpret_cast<char*>(&device_uuid_)) + sizeof(component_uuid_));
+}
+
+EnableHWComponentRequest::~EnableHWComponentRequest() {
+  // @@protoc_insertion_point(destructor:dmi.EnableHWComponentRequest)
+  SharedDtor();
+}
+
+void EnableHWComponentRequest::SharedDtor() {
+  component_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete device_uuid_;
+  if (this != internal_default_instance()) delete component_uuid_;
+}
+
+void EnableHWComponentRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const EnableHWComponentRequest& EnableHWComponentRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EnableHWComponentRequest_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void EnableHWComponentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.EnableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && device_uuid_ != nullptr) {
+    delete device_uuid_;
+  }
+  device_uuid_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && component_uuid_ != nullptr) {
+    delete component_uuid_;
+  }
+  component_uuid_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* EnableHWComponentRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<EnableHWComponentRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_device_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::Uuid::_InternalParse;
+        object = msg->mutable_component_uuid();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string component_name = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.EnableHWComponentRequest.component_name");
+        object = msg->mutable_component_name();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool EnableHWComponentRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.EnableHWComponentRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Uuid device_uuid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.Uuid component_uuid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component_uuid()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string component_name = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_component_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->component_name().data(), static_cast<int>(this->component_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.EnableHWComponentRequest.component_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.EnableHWComponentRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.EnableHWComponentRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void EnableHWComponentRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.EnableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::device_uuid(this), output);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::component_uuid(this), output);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.EnableHWComponentRequest.component_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->component_name(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.EnableHWComponentRequest)
+}
+
+::google::protobuf::uint8* EnableHWComponentRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.EnableHWComponentRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::device_uuid(this), target);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::component_uuid(this), target);
+  }
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->component_name().data(), static_cast<int>(this->component_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.EnableHWComponentRequest.component_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->component_name(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.EnableHWComponentRequest)
+  return target;
+}
+
+size_t EnableHWComponentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.EnableHWComponentRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string component_name = 3;
+  if (this->component_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->component_name());
+  }
+
+  // .dmi.Uuid device_uuid = 1;
+  if (this->has_device_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *device_uuid_);
+  }
+
+  // .dmi.Uuid component_uuid = 2;
+  if (this->has_component_uuid()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *component_uuid_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void EnableHWComponentRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.EnableHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const EnableHWComponentRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<EnableHWComponentRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.EnableHWComponentRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.EnableHWComponentRequest)
+    MergeFrom(*source);
+  }
+}
+
+void EnableHWComponentRequest::MergeFrom(const EnableHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.EnableHWComponentRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.component_name().size() > 0) {
+
+    component_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_name_);
+  }
+  if (from.has_device_uuid()) {
+    mutable_device_uuid()->::dmi::Uuid::MergeFrom(from.device_uuid());
+  }
+  if (from.has_component_uuid()) {
+    mutable_component_uuid()->::dmi::Uuid::MergeFrom(from.component_uuid());
+  }
+}
+
+void EnableHWComponentRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.EnableHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EnableHWComponentRequest::CopyFrom(const EnableHWComponentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.EnableHWComponentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EnableHWComponentRequest::IsInitialized() const {
+  return true;
+}
+
+void EnableHWComponentRequest::Swap(EnableHWComponentRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void EnableHWComponentRequest::InternalSwap(EnableHWComponentRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  component_name_.Swap(&other->component_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(device_uuid_, other->device_uuid_);
+  swap(component_uuid_, other->component_uuid_);
+}
+
+::google::protobuf::Metadata EnableHWComponentRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void EnableHWComponentResponse::InitAsDefaultInstance() {
+}
+class EnableHWComponentResponse::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int EnableHWComponentResponse::kStatusFieldNumber;
+const int EnableHWComponentResponse::kReasonFieldNumber;
+const int EnableHWComponentResponse::kReasonDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+EnableHWComponentResponse::EnableHWComponentResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.EnableHWComponentResponse)
+}
+EnableHWComponentResponse::EnableHWComponentResponse(const EnableHWComponentResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.reason_detail().size() > 0) {
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  // @@protoc_insertion_point(copy_constructor:dmi.EnableHWComponentResponse)
+}
+
+void EnableHWComponentResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_EnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  reason_detail_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+}
+
+EnableHWComponentResponse::~EnableHWComponentResponse() {
+  // @@protoc_insertion_point(destructor:dmi.EnableHWComponentResponse)
+  SharedDtor();
+}
+
+void EnableHWComponentResponse::SharedDtor() {
+  reason_detail_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void EnableHWComponentResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const EnableHWComponentResponse& EnableHWComponentResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EnableHWComponentResponse_dmi_2fhw_5fmanagement_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void EnableHWComponentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.EnableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reason_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(reason_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* EnableHWComponentResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<EnableHWComponentResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_status(static_cast<::dmi::Status>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.EnableHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_reason(static_cast<::dmi::EnableHWComponentResponse_Reason>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.EnableHWComponentResponse.reason_detail");
+        object = msg->mutable_reason_detail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool EnableHWComponentResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.EnableHWComponentResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.Status status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::dmi::Status >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.EnableHWComponentResponse.Reason reason = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_reason(static_cast< ::dmi::EnableHWComponentResponse_Reason >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string reason_detail = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_reason_detail()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.EnableHWComponentResponse.reason_detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.EnableHWComponentResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.EnableHWComponentResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void EnableHWComponentResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.EnableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->status(), output);
+  }
+
+  // .dmi.EnableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->reason(), output);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.EnableHWComponentResponse.reason_detail");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->reason_detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.EnableHWComponentResponse)
+}
+
+::google::protobuf::uint8* EnableHWComponentResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.EnableHWComponentResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->status(), target);
+  }
+
+  // .dmi.EnableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->reason(), target);
+  }
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->reason_detail().data(), static_cast<int>(this->reason_detail().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.EnableHWComponentResponse.reason_detail");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->reason_detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.EnableHWComponentResponse)
+  return target;
+}
+
+size_t EnableHWComponentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.EnableHWComponentResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason_detail = 3;
+  if (this->reason_detail().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->reason_detail());
+  }
+
+  // .dmi.Status status = 1;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
+  }
+
+  // .dmi.EnableHWComponentResponse.Reason reason = 2;
+  if (this->reason() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->reason());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void EnableHWComponentResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.EnableHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const EnableHWComponentResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<EnableHWComponentResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.EnableHWComponentResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.EnableHWComponentResponse)
+    MergeFrom(*source);
+  }
+}
+
+void EnableHWComponentResponse::MergeFrom(const EnableHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.EnableHWComponentResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason_detail().size() > 0) {
+
+    reason_detail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.reason_detail_);
+  }
+  if (from.status() != 0) {
+    set_status(from.status());
+  }
+  if (from.reason() != 0) {
+    set_reason(from.reason());
+  }
+}
+
+void EnableHWComponentResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.EnableHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EnableHWComponentResponse::CopyFrom(const EnableHWComponentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.EnableHWComponentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EnableHWComponentResponse::IsInitialized() const {
+  return true;
+}
+
+void EnableHWComponentResponse::Swap(EnableHWComponentResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void EnableHWComponentResponse::InternalSwap(EnableHWComponentResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_detail_.Swap(&other->reason_detail_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(status_, other->status_);
+  swap(reason_, other->reason_);
+}
+
+::google::protobuf::Metadata EnableHWComponentResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fmanagement_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fmanagement_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dmi
 namespace google {
@@ -12771,6 +15599,24 @@ template<> PROTOBUF_NOINLINE ::dmi::RebootDeviceRequest* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::dmi::RebootDeviceResponse* Arena::CreateMaybeMessage< ::dmi::RebootDeviceResponse >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::RebootDeviceResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::DisableHWComponentRequest* Arena::CreateMaybeMessage< ::dmi::DisableHWComponentRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::DisableHWComponentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::DisableHWComponentResponse* Arena::CreateMaybeMessage< ::dmi::DisableHWComponentResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::DisableHWComponentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::ResetHWComponentRequest* Arena::CreateMaybeMessage< ::dmi::ResetHWComponentRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::ResetHWComponentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::ResetHWComponentResponse* Arena::CreateMaybeMessage< ::dmi::ResetHWComponentResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::ResetHWComponentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::EnableHWComponentRequest* Arena::CreateMaybeMessage< ::dmi::EnableHWComponentRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::EnableHWComponentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::EnableHWComponentResponse* Arena::CreateMaybeMessage< ::dmi::EnableHWComponentResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::EnableHWComponentResponse >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

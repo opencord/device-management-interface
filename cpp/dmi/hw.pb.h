@@ -302,12 +302,14 @@ enum ComponentAdminState {
   COMP_ADMIN_STATE_LOCKED = 2,
   COMP_ADMIN_STATE_SHUTTING_DOWN = 3,
   COMP_ADMIN_STATE_UNLOCKED = 4,
+  COMP_ADMIN_STATE_ISOLATED = 6,
+  COMP_ADMIN_STATE_PROHIBITED = 5,
   ComponentAdminState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ComponentAdminState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ComponentAdminState_IsValid(int value);
 const ComponentAdminState ComponentAdminState_MIN = COMP_ADMIN_STATE_UNDEFINED;
-const ComponentAdminState ComponentAdminState_MAX = COMP_ADMIN_STATE_UNLOCKED;
+const ComponentAdminState ComponentAdminState_MAX = COMP_ADMIN_STATE_ISOLATED;
 const int ComponentAdminState_ARRAYSIZE = ComponentAdminState_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ComponentAdminState_descriptor();
@@ -326,12 +328,20 @@ enum ComponentOperState {
   COMP_OPER_STATE_DISABLED = 2,
   COMP_OPER_STATE_ENABLED = 3,
   COMP_OPER_STATE_TESTING = 4,
+  COMP_OPER_STATE_NORMAL = 5,
+  COMP_OPER_STATE_CONFIGURING = 6,
+  COMP_OPER_STATE_AUTOMATIC_LOADING = 7,
+  COMP_OPER_STATE_FAILED = 8,
+  COMP_OPER_STATE_HIGH_TEMP_SHUTDOWN = 9,
+  COMP_OPER_STATE_MANUAL_SHUTDOWN = 10,
+  COMP_OPER_STATE_POWER_SAVING_SHUTDOWN = 11,
+  COMP_OPER_STATE_TYPE_MISMATCH = 12,
   ComponentOperState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ComponentOperState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ComponentOperState_IsValid(int value);
 const ComponentOperState ComponentOperState_MIN = COMP_OPER_STATE_UNDEFINED;
-const ComponentOperState ComponentOperState_MAX = COMP_OPER_STATE_TESTING;
+const ComponentOperState ComponentOperState_MAX = COMP_OPER_STATE_TYPE_MISMATCH;
 const int ComponentOperState_ARRAYSIZE = ComponentOperState_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ComponentOperState_descriptor();

@@ -39,6 +39,9 @@ static const char* NativeHWManagementService_method_names[] = {
   "/dmi.NativeHWManagementService/RebootDevice",
   "/dmi.NativeHWManagementService/SetDmLogLevel",
   "/dmi.NativeHWManagementService/GetDmLogLevel",
+  "/dmi.NativeHWManagementService/DisableHWComponent",
+  "/dmi.NativeHWManagementService/ResetHWComponent",
+  "/dmi.NativeHWManagementService/EnableHWComponent",
 };
 
 std::unique_ptr< NativeHWManagementService::Stub> NativeHWManagementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -65,6 +68,9 @@ NativeHWManagementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
   , rpcmethod_RebootDevice_(NativeHWManagementService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetDmLogLevel_(NativeHWManagementService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetDmLogLevel_(NativeHWManagementService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DisableHWComponent_(NativeHWManagementService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ResetHWComponent_(NativeHWManagementService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EnableHWComponent_(NativeHWManagementService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::dmi::StartManagingDeviceResponse>* NativeHWManagementService::Stub::StartManagingDeviceRaw(::grpc::ClientContext* context, const ::dmi::ModifiableComponent& request) {
@@ -507,6 +513,90 @@ void NativeHWManagementService::Stub::experimental_async::GetDmLogLevel(::grpc::
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::GetDmLogLevelResponse>::Create(channel_.get(), cq, rpcmethod_GetDmLogLevel_, context, request, false);
 }
 
+::grpc::Status NativeHWManagementService::Stub::DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::dmi::DisableHWComponentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DisableHWComponent_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DisableHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DisableHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DisableHWComponent_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DisableHWComponent_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>* NativeHWManagementService::Stub::AsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::DisableHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_DisableHWComponent_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>* NativeHWManagementService::Stub::PrepareAsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::DisableHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_DisableHWComponent_, context, request, false);
+}
+
+::grpc::Status NativeHWManagementService::Stub::ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::dmi::ResetHWComponentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ResetHWComponent_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ResetHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ResetHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ResetHWComponent_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ResetHWComponent_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>* NativeHWManagementService::Stub::AsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ResetHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_ResetHWComponent_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>* NativeHWManagementService::Stub::PrepareAsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::ResetHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_ResetHWComponent_, context, request, false);
+}
+
+::grpc::Status NativeHWManagementService::Stub::EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::dmi::EnableHWComponentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_EnableHWComponent_, context, request, response);
+}
+
+void NativeHWManagementService::Stub::experimental_async::EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_EnableHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_EnableHWComponent_, context, request, response, std::move(f));
+}
+
+void NativeHWManagementService::Stub::experimental_async::EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_EnableHWComponent_, context, request, response, reactor);
+}
+
+void NativeHWManagementService::Stub::experimental_async::EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_EnableHWComponent_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>* NativeHWManagementService::Stub::AsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::EnableHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_EnableHWComponent_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>* NativeHWManagementService::Stub::PrepareAsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::dmi::EnableHWComponentResponse>::Create(channel_.get(), cq, rpcmethod_EnableHWComponent_, context, request, false);
+}
+
 NativeHWManagementService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       NativeHWManagementService_method_names[0],
@@ -678,6 +768,36 @@ NativeHWManagementService::Service::Service() {
              ::dmi::GetDmLogLevelResponse* resp) {
                return service->GetDmLogLevel(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::DisableHWComponentRequest* req,
+             ::dmi::DisableHWComponentResponse* resp) {
+               return service->DisableHWComponent(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::ResetHWComponentRequest* req,
+             ::dmi::ResetHWComponentResponse* resp) {
+               return service->ResetHWComponent(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      NativeHWManagementService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< NativeHWManagementService::Service, ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>(
+          [](NativeHWManagementService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::dmi::EnableHWComponentRequest* req,
+             ::dmi::EnableHWComponentResponse* resp) {
+               return service->EnableHWComponent(ctx, req, resp);
+             }, this)));
 }
 
 NativeHWManagementService::Service::~Service() {
@@ -796,6 +916,27 @@ NativeHWManagementService::Service::~Service() {
 }
 
 ::grpc::Status NativeHWManagementService::Service::GetDmLogLevel(::grpc::ServerContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::DisableHWComponent(::grpc::ServerContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::ResetHWComponent(::grpc::ServerContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status NativeHWManagementService::Service::EnableHWComponent(::grpc::ServerContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response) {
   (void) context;
   (void) request;
   (void) response;

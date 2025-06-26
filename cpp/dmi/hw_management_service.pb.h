@@ -45,7 +45,7 @@ struct TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[29]
+  static const ::google::protobuf::internal::ParseTable schema[35]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -53,6 +53,18 @@ struct TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto {
 };
 void AddDescriptors_dmi_2fhw_5fmanagement_5fservice_2eproto();
 namespace dmi {
+class DisableHWComponentRequest;
+class DisableHWComponentRequestDefaultTypeInternal;
+extern DisableHWComponentRequestDefaultTypeInternal _DisableHWComponentRequest_default_instance_;
+class DisableHWComponentResponse;
+class DisableHWComponentResponseDefaultTypeInternal;
+extern DisableHWComponentResponseDefaultTypeInternal _DisableHWComponentResponse_default_instance_;
+class EnableHWComponentRequest;
+class EnableHWComponentRequestDefaultTypeInternal;
+extern EnableHWComponentRequestDefaultTypeInternal _EnableHWComponentRequest_default_instance_;
+class EnableHWComponentResponse;
+class EnableHWComponentResponseDefaultTypeInternal;
+extern EnableHWComponentResponseDefaultTypeInternal _EnableHWComponentResponse_default_instance_;
 class EntitiesLogLevel;
 class EntitiesLogLevelDefaultTypeInternal;
 extern EntitiesLogLevelDefaultTypeInternal _EntitiesLogLevel_default_instance_;
@@ -110,6 +122,12 @@ extern RebootDeviceRequestDefaultTypeInternal _RebootDeviceRequest_default_insta
 class RebootDeviceResponse;
 class RebootDeviceResponseDefaultTypeInternal;
 extern RebootDeviceResponseDefaultTypeInternal _RebootDeviceResponse_default_instance_;
+class ResetHWComponentRequest;
+class ResetHWComponentRequestDefaultTypeInternal;
+extern ResetHWComponentRequestDefaultTypeInternal _ResetHWComponentRequest_default_instance_;
+class ResetHWComponentResponse;
+class ResetHWComponentResponseDefaultTypeInternal;
+extern ResetHWComponentResponseDefaultTypeInternal _ResetHWComponentResponse_default_instance_;
 class SetDmLogLevelRequest;
 class SetDmLogLevelRequestDefaultTypeInternal;
 extern SetDmLogLevelRequestDefaultTypeInternal _SetDmLogLevelRequest_default_instance_;
@@ -143,6 +161,10 @@ extern StopManagingDeviceResponseDefaultTypeInternal _StopManagingDeviceResponse
 }  // namespace dmi
 namespace google {
 namespace protobuf {
+template<> ::dmi::DisableHWComponentRequest* Arena::CreateMaybeMessage<::dmi::DisableHWComponentRequest>(Arena*);
+template<> ::dmi::DisableHWComponentResponse* Arena::CreateMaybeMessage<::dmi::DisableHWComponentResponse>(Arena*);
+template<> ::dmi::EnableHWComponentRequest* Arena::CreateMaybeMessage<::dmi::EnableHWComponentRequest>(Arena*);
+template<> ::dmi::EnableHWComponentResponse* Arena::CreateMaybeMessage<::dmi::EnableHWComponentResponse>(Arena*);
 template<> ::dmi::EntitiesLogLevel* Arena::CreateMaybeMessage<::dmi::EntitiesLogLevel>(Arena*);
 template<> ::dmi::GetDmLogLevelRequest* Arena::CreateMaybeMessage<::dmi::GetDmLogLevelRequest>(Arena*);
 template<> ::dmi::GetDmLogLevelResponse* Arena::CreateMaybeMessage<::dmi::GetDmLogLevelResponse>(Arena*);
@@ -162,6 +184,8 @@ template<> ::dmi::PhysicalInventoryRequest* Arena::CreateMaybeMessage<::dmi::Phy
 template<> ::dmi::PhysicalInventoryResponse* Arena::CreateMaybeMessage<::dmi::PhysicalInventoryResponse>(Arena*);
 template<> ::dmi::RebootDeviceRequest* Arena::CreateMaybeMessage<::dmi::RebootDeviceRequest>(Arena*);
 template<> ::dmi::RebootDeviceResponse* Arena::CreateMaybeMessage<::dmi::RebootDeviceResponse>(Arena*);
+template<> ::dmi::ResetHWComponentRequest* Arena::CreateMaybeMessage<::dmi::ResetHWComponentRequest>(Arena*);
+template<> ::dmi::ResetHWComponentResponse* Arena::CreateMaybeMessage<::dmi::ResetHWComponentResponse>(Arena*);
 template<> ::dmi::SetDmLogLevelRequest* Arena::CreateMaybeMessage<::dmi::SetDmLogLevelRequest>(Arena*);
 template<> ::dmi::SetDmLogLevelResponse* Arena::CreateMaybeMessage<::dmi::SetDmLogLevelResponse>(Arena*);
 template<> ::dmi::SetLogLevelRequest* Arena::CreateMaybeMessage<::dmi::SetLogLevelRequest>(Arena*);
@@ -503,6 +527,84 @@ inline bool RebootDeviceResponse_Reason_Parse(
     const ::std::string& name, RebootDeviceResponse_Reason* value) {
   return ::google::protobuf::internal::ParseNamedEnum<RebootDeviceResponse_Reason>(
     RebootDeviceResponse_Reason_descriptor(), name, value);
+}
+enum DisableHWComponentResponse_Reason {
+  DisableHWComponentResponse_Reason_UNDEFINED_REASON = 0,
+  DisableHWComponentResponse_Reason_UNKNOWN_DEVICE = 1,
+  DisableHWComponentResponse_Reason_UNKNOWN_COMPONENT = 2,
+  DisableHWComponentResponse_Reason_INTERNAL_ERROR = 3,
+  DisableHWComponentResponse_Reason_DEVICE_UNREACHABLE = 4,
+  DisableHWComponentResponse_Reason_DISABLE_UNSUPPORTED = 5,
+  DisableHWComponentResponse_Reason_INVALID_PARAMS = 6,
+  DisableHWComponentResponse_Reason_DisableHWComponentResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DisableHWComponentResponse_Reason_DisableHWComponentResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool DisableHWComponentResponse_Reason_IsValid(int value);
+const DisableHWComponentResponse_Reason DisableHWComponentResponse_Reason_Reason_MIN = DisableHWComponentResponse_Reason_UNDEFINED_REASON;
+const DisableHWComponentResponse_Reason DisableHWComponentResponse_Reason_Reason_MAX = DisableHWComponentResponse_Reason_INVALID_PARAMS;
+const int DisableHWComponentResponse_Reason_Reason_ARRAYSIZE = DisableHWComponentResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DisableHWComponentResponse_Reason_descriptor();
+inline const ::std::string& DisableHWComponentResponse_Reason_Name(DisableHWComponentResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DisableHWComponentResponse_Reason_descriptor(), value);
+}
+inline bool DisableHWComponentResponse_Reason_Parse(
+    const ::std::string& name, DisableHWComponentResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DisableHWComponentResponse_Reason>(
+    DisableHWComponentResponse_Reason_descriptor(), name, value);
+}
+enum ResetHWComponentResponse_Reason {
+  ResetHWComponentResponse_Reason_UNDEFINED_REASON = 0,
+  ResetHWComponentResponse_Reason_UNKNOWN_DEVICE = 1,
+  ResetHWComponentResponse_Reason_UNKNOWN_COMPONENT = 2,
+  ResetHWComponentResponse_Reason_INTERNAL_ERROR = 3,
+  ResetHWComponentResponse_Reason_DEVICE_UNREACHABLE = 4,
+  ResetHWComponentResponse_Reason_RESET_UNSUPPORTED = 5,
+  ResetHWComponentResponse_Reason_INVALID_PARAMS = 6,
+  ResetHWComponentResponse_Reason_ResetHWComponentResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  ResetHWComponentResponse_Reason_ResetHWComponentResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool ResetHWComponentResponse_Reason_IsValid(int value);
+const ResetHWComponentResponse_Reason ResetHWComponentResponse_Reason_Reason_MIN = ResetHWComponentResponse_Reason_UNDEFINED_REASON;
+const ResetHWComponentResponse_Reason ResetHWComponentResponse_Reason_Reason_MAX = ResetHWComponentResponse_Reason_INVALID_PARAMS;
+const int ResetHWComponentResponse_Reason_Reason_ARRAYSIZE = ResetHWComponentResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* ResetHWComponentResponse_Reason_descriptor();
+inline const ::std::string& ResetHWComponentResponse_Reason_Name(ResetHWComponentResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    ResetHWComponentResponse_Reason_descriptor(), value);
+}
+inline bool ResetHWComponentResponse_Reason_Parse(
+    const ::std::string& name, ResetHWComponentResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ResetHWComponentResponse_Reason>(
+    ResetHWComponentResponse_Reason_descriptor(), name, value);
+}
+enum EnableHWComponentResponse_Reason {
+  EnableHWComponentResponse_Reason_UNDEFINED_REASON = 0,
+  EnableHWComponentResponse_Reason_UNKNOWN_DEVICE = 1,
+  EnableHWComponentResponse_Reason_UNKNOWN_COMPONENT = 2,
+  EnableHWComponentResponse_Reason_INTERNAL_ERROR = 3,
+  EnableHWComponentResponse_Reason_DEVICE_UNREACHABLE = 4,
+  EnableHWComponentResponse_Reason_ENABLE_UNSUPPORTED = 5,
+  EnableHWComponentResponse_Reason_INVALID_PARAMS = 6,
+  EnableHWComponentResponse_Reason_EnableHWComponentResponse_Reason_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  EnableHWComponentResponse_Reason_EnableHWComponentResponse_Reason_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool EnableHWComponentResponse_Reason_IsValid(int value);
+const EnableHWComponentResponse_Reason EnableHWComponentResponse_Reason_Reason_MIN = EnableHWComponentResponse_Reason_UNDEFINED_REASON;
+const EnableHWComponentResponse_Reason EnableHWComponentResponse_Reason_Reason_MAX = EnableHWComponentResponse_Reason_INVALID_PARAMS;
+const int EnableHWComponentResponse_Reason_Reason_ARRAYSIZE = EnableHWComponentResponse_Reason_Reason_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* EnableHWComponentResponse_Reason_descriptor();
+inline const ::std::string& EnableHWComponentResponse_Reason_Name(EnableHWComponentResponse_Reason value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    EnableHWComponentResponse_Reason_descriptor(), value);
+}
+inline bool EnableHWComponentResponse_Reason_Parse(
+    const ::std::string& name, EnableHWComponentResponse_Reason* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<EnableHWComponentResponse_Reason>(
+    EnableHWComponentResponse_Reason_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -4800,6 +4902,936 @@ class RebootDeviceResponse final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class DisableHWComponentRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.DisableHWComponentRequest) */ {
+ public:
+  DisableHWComponentRequest();
+  virtual ~DisableHWComponentRequest();
+
+  DisableHWComponentRequest(const DisableHWComponentRequest& from);
+
+  inline DisableHWComponentRequest& operator=(const DisableHWComponentRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DisableHWComponentRequest(DisableHWComponentRequest&& from) noexcept
+    : DisableHWComponentRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DisableHWComponentRequest& operator=(DisableHWComponentRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DisableHWComponentRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DisableHWComponentRequest* internal_default_instance() {
+    return reinterpret_cast<const DisableHWComponentRequest*>(
+               &_DisableHWComponentRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    29;
+
+  void Swap(DisableHWComponentRequest* other);
+  friend void swap(DisableHWComponentRequest& a, DisableHWComponentRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DisableHWComponentRequest* New() const final {
+    return CreateMaybeMessage<DisableHWComponentRequest>(nullptr);
+  }
+
+  DisableHWComponentRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DisableHWComponentRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DisableHWComponentRequest& from);
+  void MergeFrom(const DisableHWComponentRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DisableHWComponentRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string component_name = 3;
+  void clear_component_name();
+  static const int kComponentNameFieldNumber = 3;
+  const ::std::string& component_name() const;
+  void set_component_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_component_name(::std::string&& value);
+  #endif
+  void set_component_name(const char* value);
+  void set_component_name(const char* value, size_t size);
+  ::std::string* mutable_component_name();
+  ::std::string* release_component_name();
+  void set_allocated_component_name(::std::string* component_name);
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // .dmi.Uuid component_uuid = 2;
+  bool has_component_uuid() const;
+  void clear_component_uuid();
+  static const int kComponentUuidFieldNumber = 2;
+  const ::dmi::Uuid& component_uuid() const;
+  ::dmi::Uuid* release_component_uuid();
+  ::dmi::Uuid* mutable_component_uuid();
+  void set_allocated_component_uuid(::dmi::Uuid* component_uuid);
+
+  // @@protoc_insertion_point(class_scope:dmi.DisableHWComponentRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr component_name_;
+  ::dmi::Uuid* device_uuid_;
+  ::dmi::Uuid* component_uuid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DisableHWComponentResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.DisableHWComponentResponse) */ {
+ public:
+  DisableHWComponentResponse();
+  virtual ~DisableHWComponentResponse();
+
+  DisableHWComponentResponse(const DisableHWComponentResponse& from);
+
+  inline DisableHWComponentResponse& operator=(const DisableHWComponentResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DisableHWComponentResponse(DisableHWComponentResponse&& from) noexcept
+    : DisableHWComponentResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DisableHWComponentResponse& operator=(DisableHWComponentResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DisableHWComponentResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DisableHWComponentResponse* internal_default_instance() {
+    return reinterpret_cast<const DisableHWComponentResponse*>(
+               &_DisableHWComponentResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  void Swap(DisableHWComponentResponse* other);
+  friend void swap(DisableHWComponentResponse& a, DisableHWComponentResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DisableHWComponentResponse* New() const final {
+    return CreateMaybeMessage<DisableHWComponentResponse>(nullptr);
+  }
+
+  DisableHWComponentResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DisableHWComponentResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DisableHWComponentResponse& from);
+  void MergeFrom(const DisableHWComponentResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DisableHWComponentResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef DisableHWComponentResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    DisableHWComponentResponse_Reason_UNDEFINED_REASON;
+  static const Reason UNKNOWN_DEVICE =
+    DisableHWComponentResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason UNKNOWN_COMPONENT =
+    DisableHWComponentResponse_Reason_UNKNOWN_COMPONENT;
+  static const Reason INTERNAL_ERROR =
+    DisableHWComponentResponse_Reason_INTERNAL_ERROR;
+  static const Reason DEVICE_UNREACHABLE =
+    DisableHWComponentResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason DISABLE_UNSUPPORTED =
+    DisableHWComponentResponse_Reason_DISABLE_UNSUPPORTED;
+  static const Reason INVALID_PARAMS =
+    DisableHWComponentResponse_Reason_INVALID_PARAMS;
+  static inline bool Reason_IsValid(int value) {
+    return DisableHWComponentResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    DisableHWComponentResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    DisableHWComponentResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    DisableHWComponentResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return DisableHWComponentResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return DisableHWComponentResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return DisableHWComponentResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 3;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 3;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.Status status = 1;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.DisableHWComponentResponse.Reason reason = 2;
+  void clear_reason();
+  static const int kReasonFieldNumber = 2;
+  ::dmi::DisableHWComponentResponse_Reason reason() const;
+  void set_reason(::dmi::DisableHWComponentResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.DisableHWComponentResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResetHWComponentRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.ResetHWComponentRequest) */ {
+ public:
+  ResetHWComponentRequest();
+  virtual ~ResetHWComponentRequest();
+
+  ResetHWComponentRequest(const ResetHWComponentRequest& from);
+
+  inline ResetHWComponentRequest& operator=(const ResetHWComponentRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ResetHWComponentRequest(ResetHWComponentRequest&& from) noexcept
+    : ResetHWComponentRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ResetHWComponentRequest& operator=(ResetHWComponentRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ResetHWComponentRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ResetHWComponentRequest* internal_default_instance() {
+    return reinterpret_cast<const ResetHWComponentRequest*>(
+               &_ResetHWComponentRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  void Swap(ResetHWComponentRequest* other);
+  friend void swap(ResetHWComponentRequest& a, ResetHWComponentRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResetHWComponentRequest* New() const final {
+    return CreateMaybeMessage<ResetHWComponentRequest>(nullptr);
+  }
+
+  ResetHWComponentRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResetHWComponentRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ResetHWComponentRequest& from);
+  void MergeFrom(const ResetHWComponentRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResetHWComponentRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string component_name = 3;
+  void clear_component_name();
+  static const int kComponentNameFieldNumber = 3;
+  const ::std::string& component_name() const;
+  void set_component_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_component_name(::std::string&& value);
+  #endif
+  void set_component_name(const char* value);
+  void set_component_name(const char* value, size_t size);
+  ::std::string* mutable_component_name();
+  ::std::string* release_component_name();
+  void set_allocated_component_name(::std::string* component_name);
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // .dmi.Uuid component_uuid = 2;
+  bool has_component_uuid() const;
+  void clear_component_uuid();
+  static const int kComponentUuidFieldNumber = 2;
+  const ::dmi::Uuid& component_uuid() const;
+  ::dmi::Uuid* release_component_uuid();
+  ::dmi::Uuid* mutable_component_uuid();
+  void set_allocated_component_uuid(::dmi::Uuid* component_uuid);
+
+  // @@protoc_insertion_point(class_scope:dmi.ResetHWComponentRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr component_name_;
+  ::dmi::Uuid* device_uuid_;
+  ::dmi::Uuid* component_uuid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResetHWComponentResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.ResetHWComponentResponse) */ {
+ public:
+  ResetHWComponentResponse();
+  virtual ~ResetHWComponentResponse();
+
+  ResetHWComponentResponse(const ResetHWComponentResponse& from);
+
+  inline ResetHWComponentResponse& operator=(const ResetHWComponentResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ResetHWComponentResponse(ResetHWComponentResponse&& from) noexcept
+    : ResetHWComponentResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ResetHWComponentResponse& operator=(ResetHWComponentResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ResetHWComponentResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ResetHWComponentResponse* internal_default_instance() {
+    return reinterpret_cast<const ResetHWComponentResponse*>(
+               &_ResetHWComponentResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    32;
+
+  void Swap(ResetHWComponentResponse* other);
+  friend void swap(ResetHWComponentResponse& a, ResetHWComponentResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResetHWComponentResponse* New() const final {
+    return CreateMaybeMessage<ResetHWComponentResponse>(nullptr);
+  }
+
+  ResetHWComponentResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResetHWComponentResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ResetHWComponentResponse& from);
+  void MergeFrom(const ResetHWComponentResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResetHWComponentResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef ResetHWComponentResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    ResetHWComponentResponse_Reason_UNDEFINED_REASON;
+  static const Reason UNKNOWN_DEVICE =
+    ResetHWComponentResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason UNKNOWN_COMPONENT =
+    ResetHWComponentResponse_Reason_UNKNOWN_COMPONENT;
+  static const Reason INTERNAL_ERROR =
+    ResetHWComponentResponse_Reason_INTERNAL_ERROR;
+  static const Reason DEVICE_UNREACHABLE =
+    ResetHWComponentResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason RESET_UNSUPPORTED =
+    ResetHWComponentResponse_Reason_RESET_UNSUPPORTED;
+  static const Reason INVALID_PARAMS =
+    ResetHWComponentResponse_Reason_INVALID_PARAMS;
+  static inline bool Reason_IsValid(int value) {
+    return ResetHWComponentResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    ResetHWComponentResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    ResetHWComponentResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    ResetHWComponentResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return ResetHWComponentResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return ResetHWComponentResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return ResetHWComponentResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 3;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 3;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.Status status = 1;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.ResetHWComponentResponse.Reason reason = 2;
+  void clear_reason();
+  static const int kReasonFieldNumber = 2;
+  ::dmi::ResetHWComponentResponse_Reason reason() const;
+  void set_reason(::dmi::ResetHWComponentResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.ResetHWComponentResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EnableHWComponentRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.EnableHWComponentRequest) */ {
+ public:
+  EnableHWComponentRequest();
+  virtual ~EnableHWComponentRequest();
+
+  EnableHWComponentRequest(const EnableHWComponentRequest& from);
+
+  inline EnableHWComponentRequest& operator=(const EnableHWComponentRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EnableHWComponentRequest(EnableHWComponentRequest&& from) noexcept
+    : EnableHWComponentRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline EnableHWComponentRequest& operator=(EnableHWComponentRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EnableHWComponentRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EnableHWComponentRequest* internal_default_instance() {
+    return reinterpret_cast<const EnableHWComponentRequest*>(
+               &_EnableHWComponentRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    33;
+
+  void Swap(EnableHWComponentRequest* other);
+  friend void swap(EnableHWComponentRequest& a, EnableHWComponentRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EnableHWComponentRequest* New() const final {
+    return CreateMaybeMessage<EnableHWComponentRequest>(nullptr);
+  }
+
+  EnableHWComponentRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EnableHWComponentRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EnableHWComponentRequest& from);
+  void MergeFrom(const EnableHWComponentRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EnableHWComponentRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string component_name = 3;
+  void clear_component_name();
+  static const int kComponentNameFieldNumber = 3;
+  const ::std::string& component_name() const;
+  void set_component_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_component_name(::std::string&& value);
+  #endif
+  void set_component_name(const char* value);
+  void set_component_name(const char* value, size_t size);
+  ::std::string* mutable_component_name();
+  ::std::string* release_component_name();
+  void set_allocated_component_name(::std::string* component_name);
+
+  // .dmi.Uuid device_uuid = 1;
+  bool has_device_uuid() const;
+  void clear_device_uuid();
+  static const int kDeviceUuidFieldNumber = 1;
+  const ::dmi::Uuid& device_uuid() const;
+  ::dmi::Uuid* release_device_uuid();
+  ::dmi::Uuid* mutable_device_uuid();
+  void set_allocated_device_uuid(::dmi::Uuid* device_uuid);
+
+  // .dmi.Uuid component_uuid = 2;
+  bool has_component_uuid() const;
+  void clear_component_uuid();
+  static const int kComponentUuidFieldNumber = 2;
+  const ::dmi::Uuid& component_uuid() const;
+  ::dmi::Uuid* release_component_uuid();
+  ::dmi::Uuid* mutable_component_uuid();
+  void set_allocated_component_uuid(::dmi::Uuid* component_uuid);
+
+  // @@protoc_insertion_point(class_scope:dmi.EnableHWComponentRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr component_name_;
+  ::dmi::Uuid* device_uuid_;
+  ::dmi::Uuid* component_uuid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EnableHWComponentResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.EnableHWComponentResponse) */ {
+ public:
+  EnableHWComponentResponse();
+  virtual ~EnableHWComponentResponse();
+
+  EnableHWComponentResponse(const EnableHWComponentResponse& from);
+
+  inline EnableHWComponentResponse& operator=(const EnableHWComponentResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EnableHWComponentResponse(EnableHWComponentResponse&& from) noexcept
+    : EnableHWComponentResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline EnableHWComponentResponse& operator=(EnableHWComponentResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EnableHWComponentResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EnableHWComponentResponse* internal_default_instance() {
+    return reinterpret_cast<const EnableHWComponentResponse*>(
+               &_EnableHWComponentResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  void Swap(EnableHWComponentResponse* other);
+  friend void swap(EnableHWComponentResponse& a, EnableHWComponentResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EnableHWComponentResponse* New() const final {
+    return CreateMaybeMessage<EnableHWComponentResponse>(nullptr);
+  }
+
+  EnableHWComponentResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EnableHWComponentResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EnableHWComponentResponse& from);
+  void MergeFrom(const EnableHWComponentResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EnableHWComponentResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef EnableHWComponentResponse_Reason Reason;
+  static const Reason UNDEFINED_REASON =
+    EnableHWComponentResponse_Reason_UNDEFINED_REASON;
+  static const Reason UNKNOWN_DEVICE =
+    EnableHWComponentResponse_Reason_UNKNOWN_DEVICE;
+  static const Reason UNKNOWN_COMPONENT =
+    EnableHWComponentResponse_Reason_UNKNOWN_COMPONENT;
+  static const Reason INTERNAL_ERROR =
+    EnableHWComponentResponse_Reason_INTERNAL_ERROR;
+  static const Reason DEVICE_UNREACHABLE =
+    EnableHWComponentResponse_Reason_DEVICE_UNREACHABLE;
+  static const Reason ENABLE_UNSUPPORTED =
+    EnableHWComponentResponse_Reason_ENABLE_UNSUPPORTED;
+  static const Reason INVALID_PARAMS =
+    EnableHWComponentResponse_Reason_INVALID_PARAMS;
+  static inline bool Reason_IsValid(int value) {
+    return EnableHWComponentResponse_Reason_IsValid(value);
+  }
+  static const Reason Reason_MIN =
+    EnableHWComponentResponse_Reason_Reason_MIN;
+  static const Reason Reason_MAX =
+    EnableHWComponentResponse_Reason_Reason_MAX;
+  static const int Reason_ARRAYSIZE =
+    EnableHWComponentResponse_Reason_Reason_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Reason_descriptor() {
+    return EnableHWComponentResponse_Reason_descriptor();
+  }
+  static inline const ::std::string& Reason_Name(Reason value) {
+    return EnableHWComponentResponse_Reason_Name(value);
+  }
+  static inline bool Reason_Parse(const ::std::string& name,
+      Reason* value) {
+    return EnableHWComponentResponse_Reason_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string reason_detail = 3;
+  void clear_reason_detail();
+  static const int kReasonDetailFieldNumber = 3;
+  const ::std::string& reason_detail() const;
+  void set_reason_detail(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason_detail(::std::string&& value);
+  #endif
+  void set_reason_detail(const char* value);
+  void set_reason_detail(const char* value, size_t size);
+  ::std::string* mutable_reason_detail();
+  ::std::string* release_reason_detail();
+  void set_allocated_reason_detail(::std::string* reason_detail);
+
+  // .dmi.Status status = 1;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::dmi::Status status() const;
+  void set_status(::dmi::Status value);
+
+  // .dmi.EnableHWComponentResponse.Reason reason = 2;
+  void clear_reason();
+  static const int kReasonFieldNumber = 2;
+  ::dmi::EnableHWComponentResponse_Reason reason() const;
+  void set_reason(::dmi::EnableHWComponentResponse_Reason value);
+
+  // @@protoc_insertion_point(class_scope:dmi.EnableHWComponentResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr reason_detail_;
+  int status_;
+  int reason_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fmanagement_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -7575,9 +8607,717 @@ inline void RebootDeviceResponse::set_allocated_reason_detail(::std::string* rea
   // @@protoc_insertion_point(field_set_allocated:dmi.RebootDeviceResponse.reason_detail)
 }
 
+// -------------------------------------------------------------------
+
+// DisableHWComponentRequest
+
+// .dmi.Uuid device_uuid = 1;
+inline bool DisableHWComponentRequest::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& DisableHWComponentRequest::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentRequest.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* DisableHWComponentRequest::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.DisableHWComponentRequest.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* DisableHWComponentRequest::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.DisableHWComponentRequest.device_uuid)
+  return device_uuid_;
+}
+inline void DisableHWComponentRequest::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.DisableHWComponentRequest.device_uuid)
+}
+
+// .dmi.Uuid component_uuid = 2;
+inline bool DisableHWComponentRequest::has_component_uuid() const {
+  return this != internal_default_instance() && component_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& DisableHWComponentRequest::component_uuid() const {
+  const ::dmi::Uuid* p = component_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentRequest.component_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* DisableHWComponentRequest::release_component_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.DisableHWComponentRequest.component_uuid)
+  
+  ::dmi::Uuid* temp = component_uuid_;
+  component_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* DisableHWComponentRequest::mutable_component_uuid() {
+  
+  if (component_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    component_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.DisableHWComponentRequest.component_uuid)
+  return component_uuid_;
+}
+inline void DisableHWComponentRequest::set_allocated_component_uuid(::dmi::Uuid* component_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(component_uuid_);
+  }
+  if (component_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      component_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  component_uuid_ = component_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.DisableHWComponentRequest.component_uuid)
+}
+
+// string component_name = 3;
+inline void DisableHWComponentRequest::clear_component_name() {
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DisableHWComponentRequest::component_name() const {
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentRequest.component_name)
+  return component_name_.GetNoArena();
+}
+inline void DisableHWComponentRequest::set_component_name(const ::std::string& value) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.DisableHWComponentRequest.component_name)
+}
+#if LANG_CXX11
+inline void DisableHWComponentRequest::set_component_name(::std::string&& value) {
+  
+  component_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.DisableHWComponentRequest.component_name)
+}
+#endif
+inline void DisableHWComponentRequest::set_component_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.DisableHWComponentRequest.component_name)
+}
+inline void DisableHWComponentRequest::set_component_name(const char* value, size_t size) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.DisableHWComponentRequest.component_name)
+}
+inline ::std::string* DisableHWComponentRequest::mutable_component_name() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.DisableHWComponentRequest.component_name)
+  return component_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DisableHWComponentRequest::release_component_name() {
+  // @@protoc_insertion_point(field_release:dmi.DisableHWComponentRequest.component_name)
+  
+  return component_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DisableHWComponentRequest::set_allocated_component_name(::std::string* component_name) {
+  if (component_name != nullptr) {
+    
+  } else {
+    
+  }
+  component_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), component_name);
+  // @@protoc_insertion_point(field_set_allocated:dmi.DisableHWComponentRequest.component_name)
+}
+
+// -------------------------------------------------------------------
+
+// DisableHWComponentResponse
+
+// .dmi.Status status = 1;
+inline void DisableHWComponentResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status DisableHWComponentResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void DisableHWComponentResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.DisableHWComponentResponse.status)
+}
+
+// .dmi.DisableHWComponentResponse.Reason reason = 2;
+inline void DisableHWComponentResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::DisableHWComponentResponse_Reason DisableHWComponentResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentResponse.reason)
+  return static_cast< ::dmi::DisableHWComponentResponse_Reason >(reason_);
+}
+inline void DisableHWComponentResponse::set_reason(::dmi::DisableHWComponentResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.DisableHWComponentResponse.reason)
+}
+
+// string reason_detail = 3;
+inline void DisableHWComponentResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DisableHWComponentResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.DisableHWComponentResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void DisableHWComponentResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.DisableHWComponentResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void DisableHWComponentResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.DisableHWComponentResponse.reason_detail)
+}
+#endif
+inline void DisableHWComponentResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.DisableHWComponentResponse.reason_detail)
+}
+inline void DisableHWComponentResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.DisableHWComponentResponse.reason_detail)
+}
+inline ::std::string* DisableHWComponentResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.DisableHWComponentResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DisableHWComponentResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.DisableHWComponentResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DisableHWComponentResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.DisableHWComponentResponse.reason_detail)
+}
+
+// -------------------------------------------------------------------
+
+// ResetHWComponentRequest
+
+// .dmi.Uuid device_uuid = 1;
+inline bool ResetHWComponentRequest::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& ResetHWComponentRequest::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentRequest.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* ResetHWComponentRequest::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.ResetHWComponentRequest.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* ResetHWComponentRequest::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.ResetHWComponentRequest.device_uuid)
+  return device_uuid_;
+}
+inline void ResetHWComponentRequest::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.ResetHWComponentRequest.device_uuid)
+}
+
+// .dmi.Uuid component_uuid = 2;
+inline bool ResetHWComponentRequest::has_component_uuid() const {
+  return this != internal_default_instance() && component_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& ResetHWComponentRequest::component_uuid() const {
+  const ::dmi::Uuid* p = component_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentRequest.component_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* ResetHWComponentRequest::release_component_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.ResetHWComponentRequest.component_uuid)
+  
+  ::dmi::Uuid* temp = component_uuid_;
+  component_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* ResetHWComponentRequest::mutable_component_uuid() {
+  
+  if (component_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    component_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.ResetHWComponentRequest.component_uuid)
+  return component_uuid_;
+}
+inline void ResetHWComponentRequest::set_allocated_component_uuid(::dmi::Uuid* component_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(component_uuid_);
+  }
+  if (component_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      component_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  component_uuid_ = component_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.ResetHWComponentRequest.component_uuid)
+}
+
+// string component_name = 3;
+inline void ResetHWComponentRequest::clear_component_name() {
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ResetHWComponentRequest::component_name() const {
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentRequest.component_name)
+  return component_name_.GetNoArena();
+}
+inline void ResetHWComponentRequest::set_component_name(const ::std::string& value) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.ResetHWComponentRequest.component_name)
+}
+#if LANG_CXX11
+inline void ResetHWComponentRequest::set_component_name(::std::string&& value) {
+  
+  component_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.ResetHWComponentRequest.component_name)
+}
+#endif
+inline void ResetHWComponentRequest::set_component_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.ResetHWComponentRequest.component_name)
+}
+inline void ResetHWComponentRequest::set_component_name(const char* value, size_t size) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.ResetHWComponentRequest.component_name)
+}
+inline ::std::string* ResetHWComponentRequest::mutable_component_name() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.ResetHWComponentRequest.component_name)
+  return component_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ResetHWComponentRequest::release_component_name() {
+  // @@protoc_insertion_point(field_release:dmi.ResetHWComponentRequest.component_name)
+  
+  return component_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ResetHWComponentRequest::set_allocated_component_name(::std::string* component_name) {
+  if (component_name != nullptr) {
+    
+  } else {
+    
+  }
+  component_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), component_name);
+  // @@protoc_insertion_point(field_set_allocated:dmi.ResetHWComponentRequest.component_name)
+}
+
+// -------------------------------------------------------------------
+
+// ResetHWComponentResponse
+
+// .dmi.Status status = 1;
+inline void ResetHWComponentResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status ResetHWComponentResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void ResetHWComponentResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.ResetHWComponentResponse.status)
+}
+
+// .dmi.ResetHWComponentResponse.Reason reason = 2;
+inline void ResetHWComponentResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::ResetHWComponentResponse_Reason ResetHWComponentResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentResponse.reason)
+  return static_cast< ::dmi::ResetHWComponentResponse_Reason >(reason_);
+}
+inline void ResetHWComponentResponse::set_reason(::dmi::ResetHWComponentResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.ResetHWComponentResponse.reason)
+}
+
+// string reason_detail = 3;
+inline void ResetHWComponentResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ResetHWComponentResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.ResetHWComponentResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void ResetHWComponentResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.ResetHWComponentResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void ResetHWComponentResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.ResetHWComponentResponse.reason_detail)
+}
+#endif
+inline void ResetHWComponentResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.ResetHWComponentResponse.reason_detail)
+}
+inline void ResetHWComponentResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.ResetHWComponentResponse.reason_detail)
+}
+inline ::std::string* ResetHWComponentResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.ResetHWComponentResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ResetHWComponentResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.ResetHWComponentResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ResetHWComponentResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.ResetHWComponentResponse.reason_detail)
+}
+
+// -------------------------------------------------------------------
+
+// EnableHWComponentRequest
+
+// .dmi.Uuid device_uuid = 1;
+inline bool EnableHWComponentRequest::has_device_uuid() const {
+  return this != internal_default_instance() && device_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& EnableHWComponentRequest::device_uuid() const {
+  const ::dmi::Uuid* p = device_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentRequest.device_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* EnableHWComponentRequest::release_device_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.EnableHWComponentRequest.device_uuid)
+  
+  ::dmi::Uuid* temp = device_uuid_;
+  device_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* EnableHWComponentRequest::mutable_device_uuid() {
+  
+  if (device_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    device_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.EnableHWComponentRequest.device_uuid)
+  return device_uuid_;
+}
+inline void EnableHWComponentRequest::set_allocated_device_uuid(::dmi::Uuid* device_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(device_uuid_);
+  }
+  if (device_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      device_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  device_uuid_ = device_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.EnableHWComponentRequest.device_uuid)
+}
+
+// .dmi.Uuid component_uuid = 2;
+inline bool EnableHWComponentRequest::has_component_uuid() const {
+  return this != internal_default_instance() && component_uuid_ != nullptr;
+}
+inline const ::dmi::Uuid& EnableHWComponentRequest::component_uuid() const {
+  const ::dmi::Uuid* p = component_uuid_;
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentRequest.component_uuid)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::Uuid*>(
+      &::dmi::_Uuid_default_instance_);
+}
+inline ::dmi::Uuid* EnableHWComponentRequest::release_component_uuid() {
+  // @@protoc_insertion_point(field_release:dmi.EnableHWComponentRequest.component_uuid)
+  
+  ::dmi::Uuid* temp = component_uuid_;
+  component_uuid_ = nullptr;
+  return temp;
+}
+inline ::dmi::Uuid* EnableHWComponentRequest::mutable_component_uuid() {
+  
+  if (component_uuid_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::Uuid>(GetArenaNoVirtual());
+    component_uuid_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.EnableHWComponentRequest.component_uuid)
+  return component_uuid_;
+}
+inline void EnableHWComponentRequest::set_allocated_component_uuid(::dmi::Uuid* component_uuid) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(component_uuid_);
+  }
+  if (component_uuid) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      component_uuid = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component_uuid, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  component_uuid_ = component_uuid;
+  // @@protoc_insertion_point(field_set_allocated:dmi.EnableHWComponentRequest.component_uuid)
+}
+
+// string component_name = 3;
+inline void EnableHWComponentRequest::clear_component_name() {
+  component_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& EnableHWComponentRequest::component_name() const {
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentRequest.component_name)
+  return component_name_.GetNoArena();
+}
+inline void EnableHWComponentRequest::set_component_name(const ::std::string& value) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.EnableHWComponentRequest.component_name)
+}
+#if LANG_CXX11
+inline void EnableHWComponentRequest::set_component_name(::std::string&& value) {
+  
+  component_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.EnableHWComponentRequest.component_name)
+}
+#endif
+inline void EnableHWComponentRequest::set_component_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.EnableHWComponentRequest.component_name)
+}
+inline void EnableHWComponentRequest::set_component_name(const char* value, size_t size) {
+  
+  component_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.EnableHWComponentRequest.component_name)
+}
+inline ::std::string* EnableHWComponentRequest::mutable_component_name() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.EnableHWComponentRequest.component_name)
+  return component_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EnableHWComponentRequest::release_component_name() {
+  // @@protoc_insertion_point(field_release:dmi.EnableHWComponentRequest.component_name)
+  
+  return component_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EnableHWComponentRequest::set_allocated_component_name(::std::string* component_name) {
+  if (component_name != nullptr) {
+    
+  } else {
+    
+  }
+  component_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), component_name);
+  // @@protoc_insertion_point(field_set_allocated:dmi.EnableHWComponentRequest.component_name)
+}
+
+// -------------------------------------------------------------------
+
+// EnableHWComponentResponse
+
+// .dmi.Status status = 1;
+inline void EnableHWComponentResponse::clear_status() {
+  status_ = 0;
+}
+inline ::dmi::Status EnableHWComponentResponse::status() const {
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentResponse.status)
+  return static_cast< ::dmi::Status >(status_);
+}
+inline void EnableHWComponentResponse::set_status(::dmi::Status value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:dmi.EnableHWComponentResponse.status)
+}
+
+// .dmi.EnableHWComponentResponse.Reason reason = 2;
+inline void EnableHWComponentResponse::clear_reason() {
+  reason_ = 0;
+}
+inline ::dmi::EnableHWComponentResponse_Reason EnableHWComponentResponse::reason() const {
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentResponse.reason)
+  return static_cast< ::dmi::EnableHWComponentResponse_Reason >(reason_);
+}
+inline void EnableHWComponentResponse::set_reason(::dmi::EnableHWComponentResponse_Reason value) {
+  
+  reason_ = value;
+  // @@protoc_insertion_point(field_set:dmi.EnableHWComponentResponse.reason)
+}
+
+// string reason_detail = 3;
+inline void EnableHWComponentResponse::clear_reason_detail() {
+  reason_detail_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& EnableHWComponentResponse::reason_detail() const {
+  // @@protoc_insertion_point(field_get:dmi.EnableHWComponentResponse.reason_detail)
+  return reason_detail_.GetNoArena();
+}
+inline void EnableHWComponentResponse::set_reason_detail(const ::std::string& value) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.EnableHWComponentResponse.reason_detail)
+}
+#if LANG_CXX11
+inline void EnableHWComponentResponse::set_reason_detail(::std::string&& value) {
+  
+  reason_detail_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.EnableHWComponentResponse.reason_detail)
+}
+#endif
+inline void EnableHWComponentResponse::set_reason_detail(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.EnableHWComponentResponse.reason_detail)
+}
+inline void EnableHWComponentResponse::set_reason_detail(const char* value, size_t size) {
+  
+  reason_detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.EnableHWComponentResponse.reason_detail)
+}
+inline ::std::string* EnableHWComponentResponse::mutable_reason_detail() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.EnableHWComponentResponse.reason_detail)
+  return reason_detail_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EnableHWComponentResponse::release_reason_detail() {
+  // @@protoc_insertion_point(field_release:dmi.EnableHWComponentResponse.reason_detail)
+  
+  return reason_detail_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EnableHWComponentResponse::set_allocated_reason_detail(::std::string* reason_detail) {
+  if (reason_detail != nullptr) {
+    
+  } else {
+    
+  }
+  reason_detail_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason_detail);
+  // @@protoc_insertion_point(field_set_allocated:dmi.EnableHWComponentResponse.reason_detail)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -7711,6 +9451,21 @@ template <> struct is_proto_enum< ::dmi::RebootDeviceResponse_Reason> : ::std::t
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::RebootDeviceResponse_Reason>() {
   return ::dmi::RebootDeviceResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::DisableHWComponentResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::DisableHWComponentResponse_Reason>() {
+  return ::dmi::DisableHWComponentResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::ResetHWComponentResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::ResetHWComponentResponse_Reason>() {
+  return ::dmi::ResetHWComponentResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::EnableHWComponentResponse_Reason> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::EnableHWComponentResponse_Reason>() {
+  return ::dmi::EnableHWComponentResponse_Reason_descriptor();
 }
 
 }  // namespace protobuf
