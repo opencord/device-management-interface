@@ -17,6 +17,11 @@
 #include <google/protobuf/port_def.inc>
 
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uuid_dmi_2fhw_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ValueType_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EventsCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
@@ -24,6 +29,7 @@ extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::goo
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WaterMarks_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_EventCfg_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ThresholdInformation_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace dmi {
 class ValueTypeDefaultTypeInternal {
@@ -73,6 +79,35 @@ class EventMetaDataDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<EventMetaData> _instance;
 } _EventMetaData_default_instance_;
+class AdminStateChangeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<AdminStateChange> _instance;
+} _AdminStateChange_default_instance_;
+class OperStateChangeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<OperStateChange> _instance;
+} _OperStateChange_default_instance_;
+class AlarmStateChangeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<AlarmStateChange> _instance;
+} _AlarmStateChange_default_instance_;
+class UsageStateChangeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<UsageStateChange> _instance;
+} _UsageStateChange_default_instance_;
+class StandbyStateChangeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<StandbyStateChange> _instance;
+} _StandbyStateChange_default_instance_;
+class StateChangeInfoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<StateChangeInfo> _instance;
+  const ::dmi::AdminStateChange* admin_state_change_;
+  const ::dmi::OperStateChange* oper_state_change_;
+  const ::dmi::AlarmStateChange* alarm_state_change_;
+  const ::dmi::UsageStateChange* usage_state_change_;
+  const ::dmi::StandbyStateChange* standby_state_change_;
+} _StateChangeInfo_default_instance_;
 class EventDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Event> _instance;
@@ -229,6 +264,95 @@ static void InitDefaultsEventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
       &scc_info_Uuid_dmi_2fhw_2eproto.base,}};
 
+static void InitDefaultsAdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_AdminStateChange_default_instance_;
+    new (ptr) ::dmi::AdminStateChange();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::AdminStateChange::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
+static void InitDefaultsOperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_OperStateChange_default_instance_;
+    new (ptr) ::dmi::OperStateChange();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::OperStateChange::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsOperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
+static void InitDefaultsAlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_AlarmStateChange_default_instance_;
+    new (ptr) ::dmi::AlarmStateChange();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::AlarmStateChange::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
+static void InitDefaultsUsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_UsageStateChange_default_instance_;
+    new (ptr) ::dmi::UsageStateChange();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::UsageStateChange::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
+static void InitDefaultsStandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_StandbyStateChange_default_instance_;
+    new (ptr) ::dmi::StandbyStateChange();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::StandbyStateChange::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
+static void InitDefaultsStateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_StateChangeInfo_default_instance_;
+    new (ptr) ::dmi::StateChangeInfo();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::StateChangeInfo::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<5> scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsStateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
+      &scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
+
 static void InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -240,11 +364,12 @@ static void InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::dmi::Event::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
       &scc_info_EventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
-      &scc_info_ThresholdInformation_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
+      &scc_info_ThresholdInformation_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
 
 void InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ValueType_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
@@ -257,10 +382,16 @@ void InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_EventsConfigurationRequest_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EventsConfigurationResponse_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[11];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[17];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = nullptr;
 
@@ -347,6 +478,52 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   PROTOBUF_FIELD_OFFSET(::dmi::EventMetaData, component_uuid_),
   PROTOBUF_FIELD_OFFSET(::dmi::EventMetaData, component_name_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::AdminStateChange, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::AdminStateChange, old_),
+  PROTOBUF_FIELD_OFFSET(::dmi::AdminStateChange, new__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::OperStateChange, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::OperStateChange, old_),
+  PROTOBUF_FIELD_OFFSET(::dmi::OperStateChange, new__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::AlarmStateChange, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::AlarmStateChange, old_),
+  PROTOBUF_FIELD_OFFSET(::dmi::AlarmStateChange, new__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::UsageStateChange, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::UsageStateChange, old_),
+  PROTOBUF_FIELD_OFFSET(::dmi::UsageStateChange, new__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::StandbyStateChange, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::StandbyStateChange, old_),
+  PROTOBUF_FIELD_OFFSET(::dmi::StandbyStateChange, new__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::StateChangeInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::dmi::StateChangeInfo, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::dmi::StateChangeInfoDefaultTypeInternal, admin_state_change_),
+  offsetof(::dmi::StateChangeInfoDefaultTypeInternal, oper_state_change_),
+  offsetof(::dmi::StateChangeInfoDefaultTypeInternal, alarm_state_change_),
+  offsetof(::dmi::StateChangeInfoDefaultTypeInternal, usage_state_change_),
+  offsetof(::dmi::StateChangeInfoDefaultTypeInternal, standby_state_change_),
+  PROTOBUF_FIELD_OFFSET(::dmi::StateChangeInfo, state_change_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::Event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -356,6 +533,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   PROTOBUF_FIELD_OFFSET(::dmi::Event, raised_ts_),
   PROTOBUF_FIELD_OFFSET(::dmi::Event, threshold_info_),
   PROTOBUF_FIELD_OFFSET(::dmi::Event, add_info_),
+  PROTOBUF_FIELD_OFFSET(::dmi::Event, state_change_info_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::ValueType)},
@@ -368,7 +546,13 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 56, -1, sizeof(::dmi::EventsConfigurationRequest)},
   { 65, -1, sizeof(::dmi::EventsConfigurationResponse)},
   { 73, -1, sizeof(::dmi::EventMetaData)},
-  { 81, -1, sizeof(::dmi::Event)},
+  { 81, -1, sizeof(::dmi::AdminStateChange)},
+  { 88, -1, sizeof(::dmi::OperStateChange)},
+  { 95, -1, sizeof(::dmi::AlarmStateChange)},
+  { 102, -1, sizeof(::dmi::UsageStateChange)},
+  { 109, -1, sizeof(::dmi::StandbyStateChange)},
+  { 116, -1, sizeof(::dmi::StateChangeInfo)},
+  { 127, -1, sizeof(::dmi::Event)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -382,13 +566,19 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_EventsConfigurationRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_EventsConfigurationResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_EventMetaData_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_AdminStateChange_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_OperStateChange_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_AlarmStateChange_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_UsageStateChange_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_StandbyStateChange_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_StateChangeInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_Event_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   {}, AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, "dmi/hw_events_mgmt_service.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 11, file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
+  file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 17, file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[] =
@@ -428,85 +618,111 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "_CONFIG\020\003\022\026\n\022DEVICE_UNREACHABLE\020\004\"j\n\rEve"
   "ntMetaData\022\036\n\013device_uuid\030\001 \001(\0132\t.dmi.Uu"
   "id\022!\n\016component_uuid\030\002 \001(\0132\t.dmi.Uuid\022\026\n"
-  "\016component_name\030\003 \001(\t\"\310\001\n\005Event\022*\n\016event"
-  "_metadata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010e"
-  "vent_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_t"
-  "s\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\016t"
-  "hreshold_info\030\004 \001(\0132\031.dmi.ThresholdInfor"
-  "mation\022\020\n\010add_info\030\005 \001(\t*\342\022\n\010EventIds\022\030\n"
-  "\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCE"
-  "IVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLU"
-  "G_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOV"
-  "E_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTA"
-  "GE_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVE"
-  "R_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT"
-  "_TRANSCEIVER_TEMPERATURE_BELOW_THRESHOLD"
-  "\020i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_TH"
-  "RESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_B"
-  "ELOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX"
-  "_POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSC"
-  "EIVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVEN"
-  "T_TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n"
-  "\022.\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THR"
-  "ESHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\022"
-  "7\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRES"
-  "HOLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VO"
-  "LTAGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVE"
-  "NT_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHO"
-  "LD_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMP"
-  "ERATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3E"
-  "VENT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD"
-  "_RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURREN"
-  "T_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_T"
-  "RANSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECO"
-  "VERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BE"
-  "LOW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANS"
-  "CEIVER_TX_POWER_ABOVE_THRESHOLD_RECOVERE"
-  "D\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_"
-  "THRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIV"
-  "ER_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG"
-  "_OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT"
-  "_PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_REC"
-  "OVERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVE"
-  "NT_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020"
-  "\256\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$"
-  "EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022"
-  "&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\022"
-  "3\n.EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_"
-  "RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_AB"
-  "OVE_FATAL_RECOVERED\020\223\003\022$\n\037EVENT_CPU_USAG"
-  "E_ABOVE_THRESHOLD\020\224\003\022.\n)EVENT_CPU_USAGE_"
-  "ABOVE_THRESHOLD_RECOVERED\020\225\003\022\032\n\025EVENT_HW"
-  "_DEVICE_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMP"
-  "ERATURE_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DE"
-  "VICE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT"
-  "_HW_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RE"
-  "COVERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATUR"
-  "E_ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_D"
-  "EVICE_REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_"
-  "SENSOR_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERA"
-  "TURE_SENSORS_FAILED\020\373\003\022(\n#EVENT_HW_DISK_"
-  "USAGE_ABOVE_THRESHOLD\020\374\003\0222\n-EVENT_HW_DIS"
-  "K_USAGE_ABOVE_THRESHOLD_RECOVERED\020\375\003\022*\n%"
-  "EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD\020\376\003"
-  "\0224\n/EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOL"
-  "D_RECOVERED\020\377\003\022\036\n\031EVENT_HW_NTP_SYNC_FAIL"
-  "URE\020\200\004\022(\n#EVENT_HW_NTP_SYNC_FAILURE_RECO"
-  "VERED\020\201\004\022\035\n\030EVENT_LINE_CARD_PLUG_OUT\020\330\004\022"
-  "\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\0042\355\001\n\035Native"
-  "EventsManagementService\0226\n\nListEvents\022\017."
-  "dmi.HardwareID\032\027.dmi.ListEventsResponse\022"
-  "^\n\031UpdateEventsConfiguration\022\037.dmi.Event"
-  "sConfigurationRequest\032 .dmi.EventsConfig"
-  "urationResponse\0224\n\014StreamEvents\022\026.google"
-  ".protobuf.Empty\032\n.dmi.Event0\001B;Z9github."
-  "com/opencord/device-management-interface"
-  "/v3/go/dmib\006proto3"
+  "\016component_name\030\003 \001(\t\"`\n\020AdminStateChang"
+  "e\022%\n\003old\030\001 \001(\0162\030.dmi.ComponentAdminState"
+  "\022%\n\003new\030\002 \001(\0162\030.dmi.ComponentAdminState\""
+  "]\n\017OperStateChange\022$\n\003old\030\001 \001(\0162\027.dmi.Co"
+  "mponentOperState\022$\n\003new\030\002 \001(\0162\027.dmi.Comp"
+  "onentOperState\"`\n\020AlarmStateChange\022%\n\003ol"
+  "d\030\001 \001(\0162\030.dmi.ComponentAlarmState\022%\n\003new"
+  "\030\002 \001(\0162\030.dmi.ComponentAlarmState\"`\n\020Usag"
+  "eStateChange\022%\n\003old\030\001 \001(\0162\030.dmi.Componen"
+  "tUsageState\022%\n\003new\030\002 \001(\0162\030.dmi.Component"
+  "UsageState\"f\n\022StandbyStateChange\022\'\n\003old\030"
+  "\001 \001(\0162\032.dmi.ComponentStandbyState\022\'\n\003new"
+  "\030\002 \001(\0162\032.dmi.ComponentStandbyState\"\254\002\n\017S"
+  "tateChangeInfo\0223\n\022admin_state_change\030\001 \001"
+  "(\0132\025.dmi.AdminStateChangeH\000\0221\n\021oper_stat"
+  "e_change\030\002 \001(\0132\024.dmi.OperStateChangeH\000\0223"
+  "\n\022alarm_state_change\030\003 \001(\0132\025.dmi.AlarmSt"
+  "ateChangeH\000\0223\n\022usage_state_change\030\004 \001(\0132"
+  "\025.dmi.UsageStateChangeH\000\0227\n\024standby_stat"
+  "e_change\030\005 \001(\0132\027.dmi.StandbyStateChangeH"
+  "\000B\016\n\014state_change\"\371\001\n\005Event\022*\n\016event_met"
+  "adata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010event"
+  "_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_ts\030\003 "
+  "\001(\0132\032.google.protobuf.Timestamp\0221\n\016thres"
+  "hold_info\030\004 \001(\0132\031.dmi.ThresholdInformati"
+  "on\022\020\n\010add_info\030\005 \001(\t\022/\n\021state_change_inf"
+  "o\030\006 \001(\0132\024.dmi.StateChangeInfo*\265\024\n\010EventI"
+  "ds\022\030\n\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TR"
+  "ANSCEIVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVE"
+  "R_PLUG_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE"
+  "_ABOVE_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_"
+  "VOLTAGE_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANS"
+  "CEIVER_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-"
+  "EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRE"
+  "SHOLD\020i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABO"
+  "VE_THRESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURR"
+  "ENT_BELOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIV"
+  "ER_RX_POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_T"
+  "RANSCEIVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n"
+  "*EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESH"
+  "OLD\020n\022.\n*EVENT_TRANSCEIVER_TX_POWER_BELO"
+  "W_THRESHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILU"
+  "RE\020p\0227\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_"
+  "THRESHOLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIV"
+  "ER_VOLTAGE_BELOW_THRESHOLD_RECOVERED\020r\022;"
+  "\n7EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_TH"
+  "RESHOLD_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER"
+  "_TEMPERATURE_BELOW_THRESHOLD_RECOVERED\020t"
+  "\0227\n3EVENT_TRANSCEIVER_CURRENT_ABOVE_THRE"
+  "SHOLD_RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_C"
+  "URRENT_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EV"
+  "ENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD"
+  "_RECOVERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POW"
+  "ER_BELOW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_"
+  "TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD_REC"
+  "OVERED\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_B"
+  "ELOW_THRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRAN"
+  "SCEIVER_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU"
+  "_PLUG_OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021"
+  "EVENT_PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILUR"
+  "E_RECOVERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027"
+  "\n\022EVENT_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLU"
+  "G_IN\020\256\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257"
+  "\002\022)\n$EVENT_CPU_TEMPERATURE_ABOVE_CRITICA"
+  "L\020\220\003\022&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATA"
+  "L\020\221\003\0223\n.EVENT_CPU_TEMPERATURE_ABOVE_CRIT"
+  "ICAL_RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATU"
+  "RE_ABOVE_FATAL_RECOVERED\020\223\003\022$\n\037EVENT_CPU"
+  "_USAGE_ABOVE_THRESHOLD\020\224\003\022.\n)EVENT_CPU_U"
+  "SAGE_ABOVE_THRESHOLD_RECOVERED\020\225\003\022\032\n\025EVE"
+  "NT_HW_DEVICE_RESET\020\364\003\022/\n*EVENT_HW_DEVICE"
+  "_TEMPERATURE_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_"
+  "HW_DEVICE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4"
+  "EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITIC"
+  "AL_RECOVERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPE"
+  "RATURE_ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT"
+  "_HW_DEVICE_REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERA"
+  "TURE_SENSOR_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TE"
+  "MPERATURE_SENSORS_FAILED\020\373\003\022(\n#EVENT_HW_"
+  "DISK_USAGE_ABOVE_THRESHOLD\020\374\003\0222\n-EVENT_H"
+  "W_DISK_USAGE_ABOVE_THRESHOLD_RECOVERED\020\375"
+  "\003\022*\n%EVENT_HW_MEMORY_USAGE_ABOVE_THRESHO"
+  "LD\020\376\003\0224\n/EVENT_HW_MEMORY_USAGE_ABOVE_THR"
+  "ESHOLD_RECOVERED\020\377\003\022\036\n\031EVENT_HW_NTP_SYNC"
+  "_FAILURE\020\200\004\022(\n#EVENT_HW_NTP_SYNC_FAILURE"
+  "_RECOVERED\020\201\004\022\035\n\030EVENT_LINE_CARD_PLUG_OU"
+  "T\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\004\022(\n#EV"
+  "ENT_COMPONENT_ADMIN_STATE_CHANGED\020\274\005\022\'\n\""
+  "EVENT_COMPONENT_OPER_STATE_CHANGED\020\275\005\022(\n"
+  "#EVENT_COMPONENT_ALARM_STATE_CHANGED\020\276\005\022"
+  "(\n#EVENT_COMPONENT_USAGE_STATE_CHANGED\020\277"
+  "\005\022*\n%EVENT_COMPONENT_STANDBY_STATE_CHANG"
+  "ED\020\300\0052\355\001\n\035NativeEventsManagementService\022"
+  "6\n\nListEvents\022\017.dmi.HardwareID\032\027.dmi.Lis"
+  "tEventsResponse\022^\n\031UpdateEventsConfigura"
+  "tion\022\037.dmi.EventsConfigurationRequest\032 ."
+  "dmi.EventsConfigurationResponse\0224\n\014Strea"
+  "mEvents\022\026.google.protobuf.Empty\032\n.dmi.Ev"
+  "ent0\001B;Z9github.com/opencord/device-mana"
+  "gement-interface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 4378,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 5434,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -636,6 +852,11 @@ bool EventIds_IsValid(int value) {
     case 513:
     case 600:
     case 601:
+    case 700:
+    case 701:
+    case 702:
+    case 703:
+    case 704:
       return true;
     default:
       return false;
@@ -4705,6 +4926,2220 @@ void EventMetaData::InternalSwap(EventMetaData* other) {
 
 // ===================================================================
 
+void AdminStateChange::InitAsDefaultInstance() {
+}
+class AdminStateChange::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int AdminStateChange::kOldFieldNumber;
+const int AdminStateChange::kNewFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AdminStateChange::AdminStateChange()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.AdminStateChange)
+}
+AdminStateChange::AdminStateChange(const AdminStateChange& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&old_, &from.old_,
+    static_cast<size_t>(reinterpret_cast<char*>(&new__) -
+    reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  // @@protoc_insertion_point(copy_constructor:dmi.AdminStateChange)
+}
+
+void AdminStateChange::SharedCtor() {
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+}
+
+AdminStateChange::~AdminStateChange() {
+  // @@protoc_insertion_point(destructor:dmi.AdminStateChange)
+  SharedDtor();
+}
+
+void AdminStateChange::SharedDtor() {
+}
+
+void AdminStateChange::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AdminStateChange& AdminStateChange::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AdminStateChange::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.AdminStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* AdminStateChange::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<AdminStateChange*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.ComponentAdminState old = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_old(static_cast<::dmi::ComponentAdminState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ComponentAdminState new = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_new_(static_cast<::dmi::ComponentAdminState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool AdminStateChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.AdminStateChange)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.ComponentAdminState old = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_old(static_cast< ::dmi::ComponentAdminState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ComponentAdminState new = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_new_(static_cast< ::dmi::ComponentAdminState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.AdminStateChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.AdminStateChange)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void AdminStateChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.AdminStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAdminState old = 1;
+  if (this->old() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->old(), output);
+  }
+
+  // .dmi.ComponentAdminState new = 2;
+  if (this->new_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->new_(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.AdminStateChange)
+}
+
+::google::protobuf::uint8* AdminStateChange::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.AdminStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAdminState old = 1;
+  if (this->old() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->old(), target);
+  }
+
+  // .dmi.ComponentAdminState new = 2;
+  if (this->new_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->new_(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.AdminStateChange)
+  return target;
+}
+
+size_t AdminStateChange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.AdminStateChange)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAdminState old = 1;
+  if (this->old() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->old());
+  }
+
+  // .dmi.ComponentAdminState new = 2;
+  if (this->new_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->new_());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AdminStateChange::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.AdminStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AdminStateChange* source =
+      ::google::protobuf::DynamicCastToGenerated<AdminStateChange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.AdminStateChange)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.AdminStateChange)
+    MergeFrom(*source);
+  }
+}
+
+void AdminStateChange::MergeFrom(const AdminStateChange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.AdminStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.old() != 0) {
+    set_old(from.old());
+  }
+  if (from.new_() != 0) {
+    set_new_(from.new_());
+  }
+}
+
+void AdminStateChange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.AdminStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AdminStateChange::CopyFrom(const AdminStateChange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.AdminStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AdminStateChange::IsInitialized() const {
+  return true;
+}
+
+void AdminStateChange::Swap(AdminStateChange* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AdminStateChange::InternalSwap(AdminStateChange* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(old_, other->old_);
+  swap(new__, other->new__);
+}
+
+::google::protobuf::Metadata AdminStateChange::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void OperStateChange::InitAsDefaultInstance() {
+}
+class OperStateChange::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int OperStateChange::kOldFieldNumber;
+const int OperStateChange::kNewFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+OperStateChange::OperStateChange()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.OperStateChange)
+}
+OperStateChange::OperStateChange(const OperStateChange& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&old_, &from.old_,
+    static_cast<size_t>(reinterpret_cast<char*>(&new__) -
+    reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  // @@protoc_insertion_point(copy_constructor:dmi.OperStateChange)
+}
+
+void OperStateChange::SharedCtor() {
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+}
+
+OperStateChange::~OperStateChange() {
+  // @@protoc_insertion_point(destructor:dmi.OperStateChange)
+  SharedDtor();
+}
+
+void OperStateChange::SharedDtor() {
+}
+
+void OperStateChange::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OperStateChange& OperStateChange::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OperStateChange::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.OperStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* OperStateChange::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<OperStateChange*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.ComponentOperState old = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_old(static_cast<::dmi::ComponentOperState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ComponentOperState new = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_new_(static_cast<::dmi::ComponentOperState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool OperStateChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.OperStateChange)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.ComponentOperState old = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_old(static_cast< ::dmi::ComponentOperState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ComponentOperState new = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_new_(static_cast< ::dmi::ComponentOperState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.OperStateChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.OperStateChange)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void OperStateChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.OperStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentOperState old = 1;
+  if (this->old() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->old(), output);
+  }
+
+  // .dmi.ComponentOperState new = 2;
+  if (this->new_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->new_(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.OperStateChange)
+}
+
+::google::protobuf::uint8* OperStateChange::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.OperStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentOperState old = 1;
+  if (this->old() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->old(), target);
+  }
+
+  // .dmi.ComponentOperState new = 2;
+  if (this->new_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->new_(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.OperStateChange)
+  return target;
+}
+
+size_t OperStateChange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.OperStateChange)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.ComponentOperState old = 1;
+  if (this->old() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->old());
+  }
+
+  // .dmi.ComponentOperState new = 2;
+  if (this->new_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->new_());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OperStateChange::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.OperStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OperStateChange* source =
+      ::google::protobuf::DynamicCastToGenerated<OperStateChange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.OperStateChange)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.OperStateChange)
+    MergeFrom(*source);
+  }
+}
+
+void OperStateChange::MergeFrom(const OperStateChange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.OperStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.old() != 0) {
+    set_old(from.old());
+  }
+  if (from.new_() != 0) {
+    set_new_(from.new_());
+  }
+}
+
+void OperStateChange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.OperStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OperStateChange::CopyFrom(const OperStateChange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.OperStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OperStateChange::IsInitialized() const {
+  return true;
+}
+
+void OperStateChange::Swap(OperStateChange* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void OperStateChange::InternalSwap(OperStateChange* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(old_, other->old_);
+  swap(new__, other->new__);
+}
+
+::google::protobuf::Metadata OperStateChange::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void AlarmStateChange::InitAsDefaultInstance() {
+}
+class AlarmStateChange::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int AlarmStateChange::kOldFieldNumber;
+const int AlarmStateChange::kNewFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AlarmStateChange::AlarmStateChange()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.AlarmStateChange)
+}
+AlarmStateChange::AlarmStateChange(const AlarmStateChange& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&old_, &from.old_,
+    static_cast<size_t>(reinterpret_cast<char*>(&new__) -
+    reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  // @@protoc_insertion_point(copy_constructor:dmi.AlarmStateChange)
+}
+
+void AlarmStateChange::SharedCtor() {
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+}
+
+AlarmStateChange::~AlarmStateChange() {
+  // @@protoc_insertion_point(destructor:dmi.AlarmStateChange)
+  SharedDtor();
+}
+
+void AlarmStateChange::SharedDtor() {
+}
+
+void AlarmStateChange::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AlarmStateChange& AlarmStateChange::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AlarmStateChange::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.AlarmStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* AlarmStateChange::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<AlarmStateChange*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.ComponentAlarmState old = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_old(static_cast<::dmi::ComponentAlarmState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ComponentAlarmState new = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_new_(static_cast<::dmi::ComponentAlarmState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool AlarmStateChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.AlarmStateChange)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.ComponentAlarmState old = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_old(static_cast< ::dmi::ComponentAlarmState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ComponentAlarmState new = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_new_(static_cast< ::dmi::ComponentAlarmState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.AlarmStateChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.AlarmStateChange)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void AlarmStateChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.AlarmStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAlarmState old = 1;
+  if (this->old() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->old(), output);
+  }
+
+  // .dmi.ComponentAlarmState new = 2;
+  if (this->new_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->new_(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.AlarmStateChange)
+}
+
+::google::protobuf::uint8* AlarmStateChange::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.AlarmStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAlarmState old = 1;
+  if (this->old() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->old(), target);
+  }
+
+  // .dmi.ComponentAlarmState new = 2;
+  if (this->new_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->new_(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.AlarmStateChange)
+  return target;
+}
+
+size_t AlarmStateChange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.AlarmStateChange)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.ComponentAlarmState old = 1;
+  if (this->old() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->old());
+  }
+
+  // .dmi.ComponentAlarmState new = 2;
+  if (this->new_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->new_());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AlarmStateChange::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.AlarmStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AlarmStateChange* source =
+      ::google::protobuf::DynamicCastToGenerated<AlarmStateChange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.AlarmStateChange)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.AlarmStateChange)
+    MergeFrom(*source);
+  }
+}
+
+void AlarmStateChange::MergeFrom(const AlarmStateChange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.AlarmStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.old() != 0) {
+    set_old(from.old());
+  }
+  if (from.new_() != 0) {
+    set_new_(from.new_());
+  }
+}
+
+void AlarmStateChange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.AlarmStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AlarmStateChange::CopyFrom(const AlarmStateChange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.AlarmStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AlarmStateChange::IsInitialized() const {
+  return true;
+}
+
+void AlarmStateChange::Swap(AlarmStateChange* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AlarmStateChange::InternalSwap(AlarmStateChange* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(old_, other->old_);
+  swap(new__, other->new__);
+}
+
+::google::protobuf::Metadata AlarmStateChange::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void UsageStateChange::InitAsDefaultInstance() {
+}
+class UsageStateChange::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int UsageStateChange::kOldFieldNumber;
+const int UsageStateChange::kNewFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+UsageStateChange::UsageStateChange()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.UsageStateChange)
+}
+UsageStateChange::UsageStateChange(const UsageStateChange& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&old_, &from.old_,
+    static_cast<size_t>(reinterpret_cast<char*>(&new__) -
+    reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  // @@protoc_insertion_point(copy_constructor:dmi.UsageStateChange)
+}
+
+void UsageStateChange::SharedCtor() {
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+}
+
+UsageStateChange::~UsageStateChange() {
+  // @@protoc_insertion_point(destructor:dmi.UsageStateChange)
+  SharedDtor();
+}
+
+void UsageStateChange::SharedDtor() {
+}
+
+void UsageStateChange::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UsageStateChange& UsageStateChange::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UsageStateChange::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.UsageStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* UsageStateChange::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<UsageStateChange*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.ComponentUsageState old = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_old(static_cast<::dmi::ComponentUsageState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ComponentUsageState new = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_new_(static_cast<::dmi::ComponentUsageState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool UsageStateChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.UsageStateChange)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.ComponentUsageState old = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_old(static_cast< ::dmi::ComponentUsageState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ComponentUsageState new = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_new_(static_cast< ::dmi::ComponentUsageState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.UsageStateChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.UsageStateChange)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void UsageStateChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.UsageStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentUsageState old = 1;
+  if (this->old() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->old(), output);
+  }
+
+  // .dmi.ComponentUsageState new = 2;
+  if (this->new_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->new_(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.UsageStateChange)
+}
+
+::google::protobuf::uint8* UsageStateChange::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.UsageStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentUsageState old = 1;
+  if (this->old() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->old(), target);
+  }
+
+  // .dmi.ComponentUsageState new = 2;
+  if (this->new_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->new_(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.UsageStateChange)
+  return target;
+}
+
+size_t UsageStateChange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.UsageStateChange)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.ComponentUsageState old = 1;
+  if (this->old() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->old());
+  }
+
+  // .dmi.ComponentUsageState new = 2;
+  if (this->new_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->new_());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void UsageStateChange::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.UsageStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UsageStateChange* source =
+      ::google::protobuf::DynamicCastToGenerated<UsageStateChange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.UsageStateChange)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.UsageStateChange)
+    MergeFrom(*source);
+  }
+}
+
+void UsageStateChange::MergeFrom(const UsageStateChange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.UsageStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.old() != 0) {
+    set_old(from.old());
+  }
+  if (from.new_() != 0) {
+    set_new_(from.new_());
+  }
+}
+
+void UsageStateChange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.UsageStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UsageStateChange::CopyFrom(const UsageStateChange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.UsageStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UsageStateChange::IsInitialized() const {
+  return true;
+}
+
+void UsageStateChange::Swap(UsageStateChange* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void UsageStateChange::InternalSwap(UsageStateChange* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(old_, other->old_);
+  swap(new__, other->new__);
+}
+
+::google::protobuf::Metadata UsageStateChange::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void StandbyStateChange::InitAsDefaultInstance() {
+}
+class StandbyStateChange::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int StandbyStateChange::kOldFieldNumber;
+const int StandbyStateChange::kNewFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+StandbyStateChange::StandbyStateChange()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.StandbyStateChange)
+}
+StandbyStateChange::StandbyStateChange(const StandbyStateChange& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&old_, &from.old_,
+    static_cast<size_t>(reinterpret_cast<char*>(&new__) -
+    reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  // @@protoc_insertion_point(copy_constructor:dmi.StandbyStateChange)
+}
+
+void StandbyStateChange::SharedCtor() {
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+}
+
+StandbyStateChange::~StandbyStateChange() {
+  // @@protoc_insertion_point(destructor:dmi.StandbyStateChange)
+  SharedDtor();
+}
+
+void StandbyStateChange::SharedDtor() {
+}
+
+void StandbyStateChange::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StandbyStateChange& StandbyStateChange::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StandbyStateChange::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.StandbyStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&old_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&new__) -
+      reinterpret_cast<char*>(&old_)) + sizeof(new__));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* StandbyStateChange::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<StandbyStateChange*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.ComponentStandbyState old = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_old(static_cast<::dmi::ComponentStandbyState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .dmi.ComponentStandbyState new = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_new_(static_cast<::dmi::ComponentStandbyState>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool StandbyStateChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.StandbyStateChange)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.ComponentStandbyState old = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_old(static_cast< ::dmi::ComponentStandbyState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.ComponentStandbyState new = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_new_(static_cast< ::dmi::ComponentStandbyState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.StandbyStateChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.StandbyStateChange)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void StandbyStateChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.StandbyStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentStandbyState old = 1;
+  if (this->old() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->old(), output);
+  }
+
+  // .dmi.ComponentStandbyState new = 2;
+  if (this->new_() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->new_(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.StandbyStateChange)
+}
+
+::google::protobuf::uint8* StandbyStateChange::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.StandbyStateChange)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.ComponentStandbyState old = 1;
+  if (this->old() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->old(), target);
+  }
+
+  // .dmi.ComponentStandbyState new = 2;
+  if (this->new_() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->new_(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.StandbyStateChange)
+  return target;
+}
+
+size_t StandbyStateChange::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.StandbyStateChange)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .dmi.ComponentStandbyState old = 1;
+  if (this->old() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->old());
+  }
+
+  // .dmi.ComponentStandbyState new = 2;
+  if (this->new_() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->new_());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StandbyStateChange::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.StandbyStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StandbyStateChange* source =
+      ::google::protobuf::DynamicCastToGenerated<StandbyStateChange>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.StandbyStateChange)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.StandbyStateChange)
+    MergeFrom(*source);
+  }
+}
+
+void StandbyStateChange::MergeFrom(const StandbyStateChange& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.StandbyStateChange)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.old() != 0) {
+    set_old(from.old());
+  }
+  if (from.new_() != 0) {
+    set_new_(from.new_());
+  }
+}
+
+void StandbyStateChange::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.StandbyStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StandbyStateChange::CopyFrom(const StandbyStateChange& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.StandbyStateChange)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StandbyStateChange::IsInitialized() const {
+  return true;
+}
+
+void StandbyStateChange::Swap(StandbyStateChange* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StandbyStateChange::InternalSwap(StandbyStateChange* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(old_, other->old_);
+  swap(new__, other->new__);
+}
+
+::google::protobuf::Metadata StandbyStateChange::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void StateChangeInfo::InitAsDefaultInstance() {
+  ::dmi::_StateChangeInfo_default_instance_.admin_state_change_ = const_cast< ::dmi::AdminStateChange*>(
+      ::dmi::AdminStateChange::internal_default_instance());
+  ::dmi::_StateChangeInfo_default_instance_.oper_state_change_ = const_cast< ::dmi::OperStateChange*>(
+      ::dmi::OperStateChange::internal_default_instance());
+  ::dmi::_StateChangeInfo_default_instance_.alarm_state_change_ = const_cast< ::dmi::AlarmStateChange*>(
+      ::dmi::AlarmStateChange::internal_default_instance());
+  ::dmi::_StateChangeInfo_default_instance_.usage_state_change_ = const_cast< ::dmi::UsageStateChange*>(
+      ::dmi::UsageStateChange::internal_default_instance());
+  ::dmi::_StateChangeInfo_default_instance_.standby_state_change_ = const_cast< ::dmi::StandbyStateChange*>(
+      ::dmi::StandbyStateChange::internal_default_instance());
+}
+class StateChangeInfo::HasBitSetters {
+ public:
+  static const ::dmi::AdminStateChange& admin_state_change(const StateChangeInfo* msg);
+  static const ::dmi::OperStateChange& oper_state_change(const StateChangeInfo* msg);
+  static const ::dmi::AlarmStateChange& alarm_state_change(const StateChangeInfo* msg);
+  static const ::dmi::UsageStateChange& usage_state_change(const StateChangeInfo* msg);
+  static const ::dmi::StandbyStateChange& standby_state_change(const StateChangeInfo* msg);
+};
+
+const ::dmi::AdminStateChange&
+StateChangeInfo::HasBitSetters::admin_state_change(const StateChangeInfo* msg) {
+  return *msg->state_change_.admin_state_change_;
+}
+const ::dmi::OperStateChange&
+StateChangeInfo::HasBitSetters::oper_state_change(const StateChangeInfo* msg) {
+  return *msg->state_change_.oper_state_change_;
+}
+const ::dmi::AlarmStateChange&
+StateChangeInfo::HasBitSetters::alarm_state_change(const StateChangeInfo* msg) {
+  return *msg->state_change_.alarm_state_change_;
+}
+const ::dmi::UsageStateChange&
+StateChangeInfo::HasBitSetters::usage_state_change(const StateChangeInfo* msg) {
+  return *msg->state_change_.usage_state_change_;
+}
+const ::dmi::StandbyStateChange&
+StateChangeInfo::HasBitSetters::standby_state_change(const StateChangeInfo* msg) {
+  return *msg->state_change_.standby_state_change_;
+}
+void StateChangeInfo::set_allocated_admin_state_change(::dmi::AdminStateChange* admin_state_change) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_state_change();
+  if (admin_state_change) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      admin_state_change = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, admin_state_change, submessage_arena);
+    }
+    set_has_admin_state_change();
+    state_change_.admin_state_change_ = admin_state_change;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.StateChangeInfo.admin_state_change)
+}
+void StateChangeInfo::set_allocated_oper_state_change(::dmi::OperStateChange* oper_state_change) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_state_change();
+  if (oper_state_change) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      oper_state_change = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, oper_state_change, submessage_arena);
+    }
+    set_has_oper_state_change();
+    state_change_.oper_state_change_ = oper_state_change;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.StateChangeInfo.oper_state_change)
+}
+void StateChangeInfo::set_allocated_alarm_state_change(::dmi::AlarmStateChange* alarm_state_change) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_state_change();
+  if (alarm_state_change) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      alarm_state_change = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, alarm_state_change, submessage_arena);
+    }
+    set_has_alarm_state_change();
+    state_change_.alarm_state_change_ = alarm_state_change;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.StateChangeInfo.alarm_state_change)
+}
+void StateChangeInfo::set_allocated_usage_state_change(::dmi::UsageStateChange* usage_state_change) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_state_change();
+  if (usage_state_change) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      usage_state_change = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, usage_state_change, submessage_arena);
+    }
+    set_has_usage_state_change();
+    state_change_.usage_state_change_ = usage_state_change;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.StateChangeInfo.usage_state_change)
+}
+void StateChangeInfo::set_allocated_standby_state_change(::dmi::StandbyStateChange* standby_state_change) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_state_change();
+  if (standby_state_change) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      standby_state_change = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, standby_state_change, submessage_arena);
+    }
+    set_has_standby_state_change();
+    state_change_.standby_state_change_ = standby_state_change;
+  }
+  // @@protoc_insertion_point(field_set_allocated:dmi.StateChangeInfo.standby_state_change)
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int StateChangeInfo::kAdminStateChangeFieldNumber;
+const int StateChangeInfo::kOperStateChangeFieldNumber;
+const int StateChangeInfo::kAlarmStateChangeFieldNumber;
+const int StateChangeInfo::kUsageStateChangeFieldNumber;
+const int StateChangeInfo::kStandbyStateChangeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+StateChangeInfo::StateChangeInfo()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.StateChangeInfo)
+}
+StateChangeInfo::StateChangeInfo(const StateChangeInfo& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  clear_has_state_change();
+  switch (from.state_change_case()) {
+    case kAdminStateChange: {
+      mutable_admin_state_change()->::dmi::AdminStateChange::MergeFrom(from.admin_state_change());
+      break;
+    }
+    case kOperStateChange: {
+      mutable_oper_state_change()->::dmi::OperStateChange::MergeFrom(from.oper_state_change());
+      break;
+    }
+    case kAlarmStateChange: {
+      mutable_alarm_state_change()->::dmi::AlarmStateChange::MergeFrom(from.alarm_state_change());
+      break;
+    }
+    case kUsageStateChange: {
+      mutable_usage_state_change()->::dmi::UsageStateChange::MergeFrom(from.usage_state_change());
+      break;
+    }
+    case kStandbyStateChange: {
+      mutable_standby_state_change()->::dmi::StandbyStateChange::MergeFrom(from.standby_state_change());
+      break;
+    }
+    case STATE_CHANGE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:dmi.StateChangeInfo)
+}
+
+void StateChangeInfo::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  clear_has_state_change();
+}
+
+StateChangeInfo::~StateChangeInfo() {
+  // @@protoc_insertion_point(destructor:dmi.StateChangeInfo)
+  SharedDtor();
+}
+
+void StateChangeInfo::SharedDtor() {
+  if (has_state_change()) {
+    clear_state_change();
+  }
+}
+
+void StateChangeInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const StateChangeInfo& StateChangeInfo::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void StateChangeInfo::clear_state_change() {
+// @@protoc_insertion_point(one_of_clear_start:dmi.StateChangeInfo)
+  switch (state_change_case()) {
+    case kAdminStateChange: {
+      delete state_change_.admin_state_change_;
+      break;
+    }
+    case kOperStateChange: {
+      delete state_change_.oper_state_change_;
+      break;
+    }
+    case kAlarmStateChange: {
+      delete state_change_.alarm_state_change_;
+      break;
+    }
+    case kUsageStateChange: {
+      delete state_change_.usage_state_change_;
+      break;
+    }
+    case kStandbyStateChange: {
+      delete state_change_.standby_state_change_;
+      break;
+    }
+    case STATE_CHANGE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = STATE_CHANGE_NOT_SET;
+}
+
+
+void StateChangeInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.StateChangeInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_state_change();
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* StateChangeInfo::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<StateChangeInfo*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .dmi.AdminStateChange admin_state_change = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::AdminStateChange::_InternalParse;
+        object = msg->mutable_admin_state_change();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.OperStateChange oper_state_change = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::OperStateChange::_InternalParse;
+        object = msg->mutable_oper_state_change();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.AlarmStateChange alarm_state_change = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::AlarmStateChange::_InternalParse;
+        object = msg->mutable_alarm_state_change();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.UsageStateChange usage_state_change = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::UsageStateChange::_InternalParse;
+        object = msg->mutable_usage_state_change();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.StandbyStateChange standby_state_change = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::StandbyStateChange::_InternalParse;
+        object = msg->mutable_standby_state_change();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool StateChangeInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.StateChangeInfo)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .dmi.AdminStateChange admin_state_change = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_admin_state_change()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.OperStateChange oper_state_change = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_oper_state_change()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.AlarmStateChange alarm_state_change = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_alarm_state_change()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.UsageStateChange usage_state_change = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_usage_state_change()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.StandbyStateChange standby_state_change = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_standby_state_change()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.StateChangeInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.StateChangeInfo)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void StateChangeInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.StateChangeInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.AdminStateChange admin_state_change = 1;
+  if (has_admin_state_change()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::admin_state_change(this), output);
+  }
+
+  // .dmi.OperStateChange oper_state_change = 2;
+  if (has_oper_state_change()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::oper_state_change(this), output);
+  }
+
+  // .dmi.AlarmStateChange alarm_state_change = 3;
+  if (has_alarm_state_change()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::alarm_state_change(this), output);
+  }
+
+  // .dmi.UsageStateChange usage_state_change = 4;
+  if (has_usage_state_change()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::usage_state_change(this), output);
+  }
+
+  // .dmi.StandbyStateChange standby_state_change = 5;
+  if (has_standby_state_change()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, HasBitSetters::standby_state_change(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.StateChangeInfo)
+}
+
+::google::protobuf::uint8* StateChangeInfo::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.StateChangeInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .dmi.AdminStateChange admin_state_change = 1;
+  if (has_admin_state_change()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::admin_state_change(this), target);
+  }
+
+  // .dmi.OperStateChange oper_state_change = 2;
+  if (has_oper_state_change()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::oper_state_change(this), target);
+  }
+
+  // .dmi.AlarmStateChange alarm_state_change = 3;
+  if (has_alarm_state_change()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::alarm_state_change(this), target);
+  }
+
+  // .dmi.UsageStateChange usage_state_change = 4;
+  if (has_usage_state_change()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::usage_state_change(this), target);
+  }
+
+  // .dmi.StandbyStateChange standby_state_change = 5;
+  if (has_standby_state_change()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, HasBitSetters::standby_state_change(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.StateChangeInfo)
+  return target;
+}
+
+size_t StateChangeInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.StateChangeInfo)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (state_change_case()) {
+    // .dmi.AdminStateChange admin_state_change = 1;
+    case kAdminStateChange: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *state_change_.admin_state_change_);
+      break;
+    }
+    // .dmi.OperStateChange oper_state_change = 2;
+    case kOperStateChange: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *state_change_.oper_state_change_);
+      break;
+    }
+    // .dmi.AlarmStateChange alarm_state_change = 3;
+    case kAlarmStateChange: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *state_change_.alarm_state_change_);
+      break;
+    }
+    // .dmi.UsageStateChange usage_state_change = 4;
+    case kUsageStateChange: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *state_change_.usage_state_change_);
+      break;
+    }
+    // .dmi.StandbyStateChange standby_state_change = 5;
+    case kStandbyStateChange: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *state_change_.standby_state_change_);
+      break;
+    }
+    case STATE_CHANGE_NOT_SET: {
+      break;
+    }
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void StateChangeInfo::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.StateChangeInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  const StateChangeInfo* source =
+      ::google::protobuf::DynamicCastToGenerated<StateChangeInfo>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.StateChangeInfo)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.StateChangeInfo)
+    MergeFrom(*source);
+  }
+}
+
+void StateChangeInfo::MergeFrom(const StateChangeInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.StateChangeInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.state_change_case()) {
+    case kAdminStateChange: {
+      mutable_admin_state_change()->::dmi::AdminStateChange::MergeFrom(from.admin_state_change());
+      break;
+    }
+    case kOperStateChange: {
+      mutable_oper_state_change()->::dmi::OperStateChange::MergeFrom(from.oper_state_change());
+      break;
+    }
+    case kAlarmStateChange: {
+      mutable_alarm_state_change()->::dmi::AlarmStateChange::MergeFrom(from.alarm_state_change());
+      break;
+    }
+    case kUsageStateChange: {
+      mutable_usage_state_change()->::dmi::UsageStateChange::MergeFrom(from.usage_state_change());
+      break;
+    }
+    case kStandbyStateChange: {
+      mutable_standby_state_change()->::dmi::StandbyStateChange::MergeFrom(from.standby_state_change());
+      break;
+    }
+    case STATE_CHANGE_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void StateChangeInfo::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.StateChangeInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void StateChangeInfo::CopyFrom(const StateChangeInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.StateChangeInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StateChangeInfo::IsInitialized() const {
+  return true;
+}
+
+void StateChangeInfo::Swap(StateChangeInfo* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StateChangeInfo::InternalSwap(StateChangeInfo* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(state_change_, other->state_change_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::google::protobuf::Metadata StateChangeInfo::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Event::InitAsDefaultInstance() {
   ::dmi::_Event_default_instance_._instance.get_mutable()->event_metadata_ = const_cast< ::dmi::EventMetaData*>(
       ::dmi::EventMetaData::internal_default_instance());
@@ -4712,12 +7147,15 @@ void Event::InitAsDefaultInstance() {
       ::google::protobuf::Timestamp::internal_default_instance());
   ::dmi::_Event_default_instance_._instance.get_mutable()->threshold_info_ = const_cast< ::dmi::ThresholdInformation*>(
       ::dmi::ThresholdInformation::internal_default_instance());
+  ::dmi::_Event_default_instance_._instance.get_mutable()->state_change_info_ = const_cast< ::dmi::StateChangeInfo*>(
+      ::dmi::StateChangeInfo::internal_default_instance());
 }
 class Event::HasBitSetters {
  public:
   static const ::dmi::EventMetaData& event_metadata(const Event* msg);
   static const ::google::protobuf::Timestamp& raised_ts(const Event* msg);
   static const ::dmi::ThresholdInformation& threshold_info(const Event* msg);
+  static const ::dmi::StateChangeInfo& state_change_info(const Event* msg);
 };
 
 const ::dmi::EventMetaData&
@@ -4732,6 +7170,10 @@ const ::dmi::ThresholdInformation&
 Event::HasBitSetters::threshold_info(const Event* msg) {
   return *msg->threshold_info_;
 }
+const ::dmi::StateChangeInfo&
+Event::HasBitSetters::state_change_info(const Event* msg) {
+  return *msg->state_change_info_;
+}
 void Event::clear_raised_ts() {
   if (GetArenaNoVirtual() == nullptr && raised_ts_ != nullptr) {
     delete raised_ts_;
@@ -4744,6 +7186,7 @@ const int Event::kEventIdFieldNumber;
 const int Event::kRaisedTsFieldNumber;
 const int Event::kThresholdInfoFieldNumber;
 const int Event::kAddInfoFieldNumber;
+const int Event::kStateChangeInfoFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Event::Event()
@@ -4774,6 +7217,11 @@ Event::Event(const Event& from)
   } else {
     threshold_info_ = nullptr;
   }
+  if (from.has_state_change_info()) {
+    state_change_info_ = new ::dmi::StateChangeInfo(*from.state_change_info_);
+  } else {
+    state_change_info_ = nullptr;
+  }
   event_id_ = from.event_id_;
   // @@protoc_insertion_point(copy_constructor:dmi.Event)
 }
@@ -4797,6 +7245,7 @@ void Event::SharedDtor() {
   if (this != internal_default_instance()) delete event_metadata_;
   if (this != internal_default_instance()) delete raised_ts_;
   if (this != internal_default_instance()) delete threshold_info_;
+  if (this != internal_default_instance()) delete state_change_info_;
 }
 
 void Event::SetCachedSize(int size) const {
@@ -4827,6 +7276,10 @@ void Event::Clear() {
     delete threshold_info_;
   }
   threshold_info_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && state_change_info_ != nullptr) {
+    delete state_change_info_;
+  }
+  state_change_info_ = nullptr;
   event_id_ = 0;
   _internal_metadata_.Clear();
 }
@@ -4905,6 +7358,19 @@ const char* Event::_InternalParse(const char* begin, const char* end, void* obje
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .dmi.StateChangeInfo state_change_info = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::StateChangeInfo::_InternalParse;
+        object = msg->mutable_state_change_info();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -5003,6 +7469,17 @@ bool Event::MergePartialFromCodedStream(
         break;
       }
 
+      // .dmi.StateChangeInfo state_change_info = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_state_change_info()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -5064,6 +7541,12 @@ void Event::SerializeWithCachedSizes(
       5, this->add_info(), output);
   }
 
+  // .dmi.StateChangeInfo state_change_info = 6;
+  if (this->has_state_change_info()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, HasBitSetters::state_change_info(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -5115,6 +7598,13 @@ void Event::SerializeWithCachedSizes(
         5, this->add_info(), target);
   }
 
+  // .dmi.StateChangeInfo state_change_info = 6;
+  if (this->has_state_change_info()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, HasBitSetters::state_change_info(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -5164,6 +7654,13 @@ size_t Event::ByteSizeLong() const {
         *threshold_info_);
   }
 
+  // .dmi.StateChangeInfo state_change_info = 6;
+  if (this->has_state_change_info()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *state_change_info_);
+  }
+
   // .dmi.EventIds event_id = 2;
   if (this->event_id() != 0) {
     total_size += 1 +
@@ -5210,6 +7707,9 @@ void Event::MergeFrom(const Event& from) {
   if (from.has_threshold_info()) {
     mutable_threshold_info()->::dmi::ThresholdInformation::MergeFrom(from.threshold_info());
   }
+  if (from.has_state_change_info()) {
+    mutable_state_change_info()->::dmi::StateChangeInfo::MergeFrom(from.state_change_info());
+  }
   if (from.event_id() != 0) {
     set_event_id(from.event_id());
   }
@@ -5245,6 +7745,7 @@ void Event::InternalSwap(Event* other) {
   swap(event_metadata_, other->event_metadata_);
   swap(raised_ts_, other->raised_ts_);
   swap(threshold_info_, other->threshold_info_);
+  swap(state_change_info_, other->state_change_info_);
   swap(event_id_, other->event_id_);
 }
 
@@ -5287,6 +7788,24 @@ template<> PROTOBUF_NOINLINE ::dmi::EventsConfigurationResponse* Arena::CreateMa
 }
 template<> PROTOBUF_NOINLINE ::dmi::EventMetaData* Arena::CreateMaybeMessage< ::dmi::EventMetaData >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::EventMetaData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::AdminStateChange* Arena::CreateMaybeMessage< ::dmi::AdminStateChange >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::AdminStateChange >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::OperStateChange* Arena::CreateMaybeMessage< ::dmi::OperStateChange >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::OperStateChange >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::AlarmStateChange* Arena::CreateMaybeMessage< ::dmi::AlarmStateChange >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::AlarmStateChange >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::UsageStateChange* Arena::CreateMaybeMessage< ::dmi::UsageStateChange >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::UsageStateChange >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::StandbyStateChange* Arena::CreateMaybeMessage< ::dmi::StandbyStateChange >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::StandbyStateChange >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::StateChangeInfo* Arena::CreateMaybeMessage< ::dmi::StateChangeInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::StateChangeInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::Event* Arena::CreateMaybeMessage< ::dmi::Event >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::Event >(arena);

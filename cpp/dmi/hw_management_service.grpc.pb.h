@@ -193,6 +193,30 @@ class NativeHWManagementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>> PrepareAsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>>(PrepareAsyncGetDmLogLevelRaw(context, request, cq));
     }
+    // Disables a hardware component on a device.
+    virtual ::grpc::Status DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::dmi::DisableHWComponentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>> AsyncDisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>>(AsyncDisableHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>> PrepareAsyncDisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>>(PrepareAsyncDisableHWComponentRaw(context, request, cq));
+    }
+    // Resets a hardware component on a device.
+    virtual ::grpc::Status ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::dmi::ResetHWComponentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>> AsyncResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>>(AsyncResetHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>> PrepareAsyncResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>>(PrepareAsyncResetHWComponentRaw(context, request, cq));
+    }
+    // Enables a hardware component on a device.
+    virtual ::grpc::Status EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::dmi::EnableHWComponentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>> AsyncEnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>>(AsyncEnableHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>> PrepareAsyncEnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>>(PrepareAsyncEnableHWComponentRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -411,6 +435,45 @@ class NativeHWManagementService final {
       #else
       virtual void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Disables a hardware component on a device.
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Resets a hardware component on a device.
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Enables a hardware component on a device.
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -457,6 +520,12 @@ class NativeHWManagementService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::SetDmLogLevelResponse>* PrepareAsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>* AsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::GetDmLogLevelResponse>* PrepareAsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>* AsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::DisableHWComponentResponse>* PrepareAsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>* AsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::ResetHWComponentResponse>* PrepareAsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>* AsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::dmi::EnableHWComponentResponse>* PrepareAsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -585,6 +654,27 @@ class NativeHWManagementService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>> PrepareAsyncGetDmLogLevel(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>>(PrepareAsyncGetDmLogLevelRaw(context, request, cq));
+    }
+    ::grpc::Status DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::dmi::DisableHWComponentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>> AsyncDisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>>(AsyncDisableHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>> PrepareAsyncDisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>>(PrepareAsyncDisableHWComponentRaw(context, request, cq));
+    }
+    ::grpc::Status ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::dmi::ResetHWComponentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>> AsyncResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>>(AsyncResetHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>> PrepareAsyncResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>>(PrepareAsyncResetHWComponentRaw(context, request, cq));
+    }
+    ::grpc::Status EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::dmi::EnableHWComponentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>> AsyncEnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>>(AsyncEnableHWComponentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>> PrepareAsyncEnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>>(PrepareAsyncEnableHWComponentRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -772,6 +862,42 @@ class NativeHWManagementService final {
       #else
       void GetDmLogLevel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::GetDmLogLevelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DisableHWComponent(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DisableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::DisableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ResetHWComponent(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ResetHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::ResetHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void EnableHWComponent(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void EnableHWComponent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::dmi::EnableHWComponentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -820,6 +946,12 @@ class NativeHWManagementService final {
     ::grpc::ClientAsyncResponseReader< ::dmi::SetDmLogLevelResponse>* PrepareAsyncSetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::SetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* AsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::dmi::GetDmLogLevelResponse>* PrepareAsyncGetDmLogLevelRaw(::grpc::ClientContext* context, const ::dmi::GetDmLogLevelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>* AsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::DisableHWComponentResponse>* PrepareAsyncDisableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::DisableHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>* AsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::ResetHWComponentResponse>* PrepareAsyncResetHWComponentRaw(::grpc::ClientContext* context, const ::dmi::ResetHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>* AsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::dmi::EnableHWComponentResponse>* PrepareAsyncEnableHWComponentRaw(::grpc::ClientContext* context, const ::dmi::EnableHWComponentRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StartManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_StopManagingDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_GetManagedDevices_;
@@ -837,6 +969,9 @@ class NativeHWManagementService final {
     const ::grpc::internal::RpcMethod rpcmethod_RebootDevice_;
     const ::grpc::internal::RpcMethod rpcmethod_SetDmLogLevel_;
     const ::grpc::internal::RpcMethod rpcmethod_GetDmLogLevel_;
+    const ::grpc::internal::RpcMethod rpcmethod_DisableHWComponent_;
+    const ::grpc::internal::RpcMethod rpcmethod_ResetHWComponent_;
+    const ::grpc::internal::RpcMethod rpcmethod_EnableHWComponent_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -893,6 +1028,12 @@ class NativeHWManagementService final {
     virtual ::grpc::Status SetDmLogLevel(::grpc::ServerContext* context, const ::dmi::SetDmLogLevelRequest* request, ::dmi::SetDmLogLevelResponse* response);
     // Gets the log level at which the Device Manager is running
     virtual ::grpc::Status GetDmLogLevel(::grpc::ServerContext* context, const ::dmi::GetDmLogLevelRequest* request, ::dmi::GetDmLogLevelResponse* response);
+    // Disables a hardware component on a device.
+    virtual ::grpc::Status DisableHWComponent(::grpc::ServerContext* context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response);
+    // Resets a hardware component on a device.
+    virtual ::grpc::Status ResetHWComponent(::grpc::ServerContext* context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response);
+    // Enables a hardware component on a device.
+    virtual ::grpc::Status EnableHWComponent(::grpc::ServerContext* context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StartManagingDevice : public BaseClass {
@@ -1234,7 +1375,67 @@ class NativeHWManagementService final {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<WithAsyncMethod_RebootDevice<WithAsyncMethod_SetDmLogLevel<WithAsyncMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DisableHWComponent() {
+      ::grpc::Service::MarkMethodAsync(17);
+    }
+    ~WithAsyncMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDisableHWComponent(::grpc::ServerContext* context, ::dmi::DisableHWComponentRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::DisableHWComponentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ResetHWComponent() {
+      ::grpc::Service::MarkMethodAsync(18);
+    }
+    ~WithAsyncMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestResetHWComponent(::grpc::ServerContext* context, ::dmi::ResetHWComponentRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::ResetHWComponentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_EnableHWComponent() {
+      ::grpc::Service::MarkMethodAsync(19);
+    }
+    ~WithAsyncMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEnableHWComponent(::grpc::ServerContext* context, ::dmi::EnableHWComponentRequest* request, ::grpc::ServerAsyncResponseWriter< ::dmi::EnableHWComponentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StartManagingDevice<WithAsyncMethod_StopManagingDevice<WithAsyncMethod_GetManagedDevices<WithAsyncMethod_GetPhysicalInventory<WithAsyncMethod_GetHWComponentInfo<WithAsyncMethod_SetHWComponentInfo<WithAsyncMethod_SetLoggingEndpoint<WithAsyncMethod_GetLoggingEndpoint<WithAsyncMethod_SetMsgBusEndpoint<WithAsyncMethod_GetMsgBusEndpoint<WithAsyncMethod_GetLoggableEntities<WithAsyncMethod_SetLogLevel<WithAsyncMethod_GetLogLevel<WithAsyncMethod_HeartbeatCheck<WithAsyncMethod_RebootDevice<WithAsyncMethod_SetDmLogLevel<WithAsyncMethod_GetDmLogLevel<WithAsyncMethod_DisableHWComponent<WithAsyncMethod_ResetHWComponent<WithAsyncMethod_EnableHWComponent<Service > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_StartManagingDevice : public BaseClass {
    private:
@@ -2007,11 +2208,152 @@ class NativeHWManagementService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DisableHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(17,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::DisableHWComponentRequest* request, ::dmi::DisableHWComponentResponse* response) { return this->DisableHWComponent(context, request, response); }));}
+    void SetMessageAllocatorFor_DisableHWComponent(
+        ::grpc::experimental::MessageAllocator< ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DisableHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DisableHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ResetHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(18,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::ResetHWComponentRequest* request, ::dmi::ResetHWComponentResponse* response) { return this->ResetHWComponent(context, request, response); }));}
+    void SetMessageAllocatorFor_ResetHWComponent(
+        ::grpc::experimental::MessageAllocator< ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ResetHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ResetHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_EnableHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::dmi::EnableHWComponentRequest* request, ::dmi::EnableHWComponentResponse* response) { return this->EnableHWComponent(context, request, response); }));}
+    void SetMessageAllocatorFor_EnableHWComponent(
+        ::grpc::experimental::MessageAllocator< ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* EnableHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* EnableHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<ExperimentalWithCallbackMethod_DisableHWComponent<ExperimentalWithCallbackMethod_ResetHWComponent<ExperimentalWithCallbackMethod_EnableHWComponent<Service > > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_StartManagingDevice<ExperimentalWithCallbackMethod_StopManagingDevice<ExperimentalWithCallbackMethod_GetManagedDevices<ExperimentalWithCallbackMethod_GetPhysicalInventory<ExperimentalWithCallbackMethod_GetHWComponentInfo<ExperimentalWithCallbackMethod_SetHWComponentInfo<ExperimentalWithCallbackMethod_SetLoggingEndpoint<ExperimentalWithCallbackMethod_GetLoggingEndpoint<ExperimentalWithCallbackMethod_SetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetMsgBusEndpoint<ExperimentalWithCallbackMethod_GetLoggableEntities<ExperimentalWithCallbackMethod_SetLogLevel<ExperimentalWithCallbackMethod_GetLogLevel<ExperimentalWithCallbackMethod_HeartbeatCheck<ExperimentalWithCallbackMethod_RebootDevice<ExperimentalWithCallbackMethod_SetDmLogLevel<ExperimentalWithCallbackMethod_GetDmLogLevel<ExperimentalWithCallbackMethod_DisableHWComponent<ExperimentalWithCallbackMethod_ResetHWComponent<ExperimentalWithCallbackMethod_EnableHWComponent<Service > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_StartManagingDevice : public BaseClass {
    private:
@@ -2297,6 +2639,57 @@ class NativeHWManagementService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetDmLogLevel(::grpc::ServerContext* /*context*/, const ::dmi::GetDmLogLevelRequest* /*request*/, ::dmi::GetDmLogLevelResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DisableHWComponent() {
+      ::grpc::Service::MarkMethodGeneric(17);
+    }
+    ~WithGenericMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ResetHWComponent() {
+      ::grpc::Service::MarkMethodGeneric(18);
+    }
+    ~WithGenericMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_EnableHWComponent() {
+      ::grpc::Service::MarkMethodGeneric(19);
+    }
+    ~WithGenericMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2639,6 +3032,66 @@ class NativeHWManagementService final {
     }
     void RequestGetDmLogLevel(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DisableHWComponent() {
+      ::grpc::Service::MarkMethodRaw(17);
+    }
+    ~WithRawMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDisableHWComponent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ResetHWComponent() {
+      ::grpc::Service::MarkMethodRaw(18);
+    }
+    ~WithRawMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestResetHWComponent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_EnableHWComponent() {
+      ::grpc::Service::MarkMethodRaw(19);
+    }
+    ~WithRawMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestEnableHWComponent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3288,6 +3741,120 @@ class NativeHWManagementService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DisableHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(17,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DisableHWComponent(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DisableHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DisableHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ResetHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(18,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ResetHWComponent(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ResetHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ResetHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_EnableHWComponent() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->EnableHWComponent(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* EnableHWComponent(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* EnableHWComponent(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StopManagingDevice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3665,7 +4232,88 @@ class NativeHWManagementService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetDmLogLevel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::GetDmLogLevelRequest,::dmi::GetDmLogLevelResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DisableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DisableHWComponent() {
+      ::grpc::Service::MarkMethodStreamed(17,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::DisableHWComponentRequest, ::dmi::DisableHWComponentResponse>* streamer) {
+                       return this->StreamedDisableHWComponent(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DisableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DisableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::DisableHWComponentRequest* /*request*/, ::dmi::DisableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDisableHWComponent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::DisableHWComponentRequest,::dmi::DisableHWComponentResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ResetHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ResetHWComponent() {
+      ::grpc::Service::MarkMethodStreamed(18,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::ResetHWComponentRequest, ::dmi::ResetHWComponentResponse>* streamer) {
+                       return this->StreamedResetHWComponent(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ResetHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ResetHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::ResetHWComponentRequest* /*request*/, ::dmi::ResetHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedResetHWComponent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::ResetHWComponentRequest,::dmi::ResetHWComponentResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_EnableHWComponent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_EnableHWComponent() {
+      ::grpc::Service::MarkMethodStreamed(19,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::dmi::EnableHWComponentRequest, ::dmi::EnableHWComponentResponse>* streamer) {
+                       return this->StreamedEnableHWComponent(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_EnableHWComponent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status EnableHWComponent(::grpc::ServerContext* /*context*/, const ::dmi::EnableHWComponentRequest* /*request*/, ::dmi::EnableHWComponentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedEnableHWComponent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::dmi::EnableHWComponentRequest,::dmi::EnableHWComponentResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<WithStreamedUnaryMethod_DisableHWComponent<WithStreamedUnaryMethod_ResetHWComponent<WithStreamedUnaryMethod_EnableHWComponent<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_StartManagingDevice : public BaseClass {
    private:
@@ -3748,7 +4396,7 @@ class NativeHWManagementService final {
     virtual ::grpc::Status StreamedGetHWComponentInfo(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::dmi::HWComponentInfoGetRequest,::dmi::HWComponentInfoGetResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_StartManagingDevice<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<Service > > > SplitStreamedService;
-  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<Service > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_StartManagingDevice<WithStreamedUnaryMethod_StopManagingDevice<WithStreamedUnaryMethod_GetManagedDevices<WithSplitStreamingMethod_GetPhysicalInventory<WithSplitStreamingMethod_GetHWComponentInfo<WithStreamedUnaryMethod_SetHWComponentInfo<WithStreamedUnaryMethod_SetLoggingEndpoint<WithStreamedUnaryMethod_GetLoggingEndpoint<WithStreamedUnaryMethod_SetMsgBusEndpoint<WithStreamedUnaryMethod_GetMsgBusEndpoint<WithStreamedUnaryMethod_GetLoggableEntities<WithStreamedUnaryMethod_SetLogLevel<WithStreamedUnaryMethod_GetLogLevel<WithStreamedUnaryMethod_HeartbeatCheck<WithStreamedUnaryMethod_RebootDevice<WithStreamedUnaryMethod_SetDmLogLevel<WithStreamedUnaryMethod_GetDmLogLevel<WithStreamedUnaryMethod_DisableHWComponent<WithStreamedUnaryMethod_ResetHWComponent<WithStreamedUnaryMethod_EnableHWComponent<Service > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace dmi

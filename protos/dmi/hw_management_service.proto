@@ -279,6 +279,96 @@ message RebootDeviceResponse {
     string reason_detail = 5;
 }
 
+// Request to disable a hardware component on a device.
+// At least one of component_name or component_uuid must be provided, along with device_uuid.
+message DisableHWComponentRequest {
+    // UUID of the device containing the component to disable (required)
+    Uuid device_uuid = 1;
+    // UUID of the component to disable (optional, but either this or component_name must be set)
+    Uuid component_uuid = 2;
+    // Name of the component to disable (optional, but either this or component_uuid must be set)
+    string component_name = 3;
+}
+
+// Response for DisableHWComponent RPC.
+message DisableHWComponentResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        UNKNOWN_COMPONENT = 2;
+        INTERNAL_ERROR = 3;
+        DEVICE_UNREACHABLE = 4;
+        DISABLE_UNSUPPORTED = 5; // Disabling this component is not supported
+        INVALID_PARAMS = 6;      // Neither component_name nor component_uuid provided
+    }
+    // Indicates whether the operation was successful or not.
+    Status status = 1;
+    // Reason for failure, if any
+    Reason reason = 2;
+    // Human-readable details for logging or display
+    string reason_detail = 3;
+}
+
+// Request to reset a hardware component on a device.
+// At least one of component_name or component_uuid must be provided, along with device_uuid.
+message ResetHWComponentRequest {
+    // UUID of the device containing the component to reset (required)
+    Uuid device_uuid = 1;
+    // UUID of the component to reset (optional, but either this or component_name must be set)
+    Uuid component_uuid = 2;
+    // Name of the component to reset (optional, but either this or component_uuid must be set)
+    string component_name = 3;
+}
+
+// Response for ResetHWComponent RPC.
+message ResetHWComponentResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        UNKNOWN_COMPONENT = 2;
+        INTERNAL_ERROR = 3;
+        DEVICE_UNREACHABLE = 4;
+        RESET_UNSUPPORTED = 5; // Resetting this component is not supported
+        INVALID_PARAMS = 6;    // Neither component_name nor component_uuid provided
+    }
+    // Indicates whether the operation was successful or not.
+    Status status = 1;
+    // Reason for failure, if any
+    Reason reason = 2;
+    // Human-readable details for logging or display
+    string reason_detail = 3;
+}
+
+// Request to enable a hardware component on a device.
+// At least one of component_name or component_uuid must be provided, along with device_uuid.
+message EnableHWComponentRequest {
+    // UUID of the device containing the component to enable (required)
+    Uuid device_uuid = 1;
+    // UUID of the component to enable (optional, but either this or component_name must be set)
+    Uuid component_uuid = 2;
+    // Name of the component to enable (optional, but either this or component_uuid must be set)
+    string component_name = 3;
+}
+
+// Response for EnableHWComponent RPC.
+message EnableHWComponentResponse {
+    enum Reason {
+        UNDEFINED_REASON = 0;
+        UNKNOWN_DEVICE = 1;
+        UNKNOWN_COMPONENT = 2;
+        INTERNAL_ERROR = 3;
+        DEVICE_UNREACHABLE = 4;
+        ENABLE_UNSUPPORTED = 5; // Enabling this component is not supported
+        INVALID_PARAMS = 6;     // Neither component_name nor component_uuid provided
+    }
+    // Indicates whether the operation was successful or not.
+    Status status = 1;
+    // Reason for failure, if any
+    Reason reason = 2;
+    // Human-readable details for logging or display
+    string reason_detail = 3;
+}
+
 service NativeHWManagementService {
     // Initializes context for a device and sets up required states
     // In the call to StartManagingDevice, the fields of ModifiableComponent which are relevant
@@ -345,4 +435,13 @@ service NativeHWManagementService {
 
     // Gets the log level at which the Device Manager is running
     rpc GetDmLogLevel(GetDmLogLevelRequest) returns(GetDmLogLevelResponse);
+
+    // Disables a hardware component on a device.
+    rpc DisableHWComponent(DisableHWComponentRequest) returns(DisableHWComponentResponse);
+
+    // Resets a hardware component on a device.
+    rpc ResetHWComponent(ResetHWComponentRequest) returns(ResetHWComponentResponse);
+
+    // Enables a hardware component on a device.
+    rpc EnableHWComponent(EnableHWComponentRequest) returns(EnableHWComponentResponse);
 }

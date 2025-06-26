@@ -101,6 +101,21 @@ class NativeHWManagementServiceStub(object):
                 request_serializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.SerializeToString,
                 response_deserializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.FromString,
                 )
+        self.DisableHWComponent = channel.unary_unary(
+                '/dmi.NativeHWManagementService/DisableHWComponent',
+                request_serializer=dmi_dot_hw__management__service__pb2.DisableHWComponentRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.DisableHWComponentResponse.FromString,
+                )
+        self.ResetHWComponent = channel.unary_unary(
+                '/dmi.NativeHWManagementService/ResetHWComponent',
+                request_serializer=dmi_dot_hw__management__service__pb2.ResetHWComponentRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.ResetHWComponentResponse.FromString,
+                )
+        self.EnableHWComponent = channel.unary_unary(
+                '/dmi.NativeHWManagementService/EnableHWComponent',
+                request_serializer=dmi_dot_hw__management__service__pb2.EnableHWComponentRequest.SerializeToString,
+                response_deserializer=dmi_dot_hw__management__service__pb2.EnableHWComponentResponse.FromString,
+                )
 
 
 class NativeHWManagementServiceServicer(object):
@@ -240,6 +255,27 @@ class NativeHWManagementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DisableHWComponent(self, request, context):
+        """Disables a hardware component on a device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResetHWComponent(self, request, context):
+        """Resets a hardware component on a device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EnableHWComponent(self, request, context):
+        """Enables a hardware component on a device.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NativeHWManagementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -327,6 +363,21 @@ def add_NativeHWManagementServiceServicer_to_server(servicer, server):
                     servicer.GetDmLogLevel,
                     request_deserializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.FromString,
                     response_serializer=dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.SerializeToString,
+            ),
+            'DisableHWComponent': grpc.unary_unary_rpc_method_handler(
+                    servicer.DisableHWComponent,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.DisableHWComponentRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.DisableHWComponentResponse.SerializeToString,
+            ),
+            'ResetHWComponent': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResetHWComponent,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.ResetHWComponentRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.ResetHWComponentResponse.SerializeToString,
+            ),
+            'EnableHWComponent': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnableHWComponent,
+                    request_deserializer=dmi_dot_hw__management__service__pb2.EnableHWComponentRequest.FromString,
+                    response_serializer=dmi_dot_hw__management__service__pb2.EnableHWComponentResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -624,5 +675,56 @@ class NativeHWManagementService(object):
         return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/GetDmLogLevel',
             dmi_dot_hw__management__service__pb2.GetDmLogLevelRequest.SerializeToString,
             dmi_dot_hw__management__service__pb2.GetDmLogLevelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DisableHWComponent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/DisableHWComponent',
+            dmi_dot_hw__management__service__pb2.DisableHWComponentRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.DisableHWComponentResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResetHWComponent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/ResetHWComponent',
+            dmi_dot_hw__management__service__pb2.ResetHWComponentRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.ResetHWComponentResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EnableHWComponent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/dmi.NativeHWManagementService/EnableHWComponent',
+            dmi_dot_hw__management__service__pb2.EnableHWComponentRequest.SerializeToString,
+            dmi_dot_hw__management__service__pb2.EnableHWComponentResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
