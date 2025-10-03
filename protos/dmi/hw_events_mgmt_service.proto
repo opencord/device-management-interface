@@ -92,7 +92,9 @@ enum EventIds {
     EVENT_COMPONENT_ALARM_STATE_CHANGED = 702;
     EVENT_COMPONENT_USAGE_STATE_CHANGED = 703;
     EVENT_COMPONENT_STANDBY_STATE_CHANGED = 704;
-
+    // Generic event about a component, the payload contains GenericEventInfo in this case
+    // Use this event id only for events which do not have already a specific event id
+    EVENT_COMPONENT_GENERIC_EVENT = 705; 
     // More to be added
 }
 
@@ -218,6 +220,22 @@ message StateChangeInfo {
         StandbyStateChange standby_state_change = 5;
     }
 }
+
+message GenericEventInfo {
+    string message = 1;                // Human-readable message
+    string message_code = 2;           // Related events should have the same code
+ 
+    enum EventSeverity {
+        EVENT_SEVERITY_UNSPECIFIED = 0;
+        CRITICAL = 1;
+        MAJOR = 2;
+        MINOR = 3;
+        NORMAL = 4;
+        INFO = 5;
+    }
+
+    EventSeverity severity = 3;        // Severity of the event       
+}
 // The Events are conveyed to external systems either by submitting them on a message bus or using gRPC server streaming.
 // The message bus topic to which are Events are submitted would be configured as startup
 // configuration of the components
@@ -229,8 +247,9 @@ message Event {
     // Optional threshold information for an event
     ThresholdInformation threshold_info = 4;
     // Any additional info regarding the event
-    string add_info = 5;
+    string add_info = 5; // Stringified JSON with extra details
     StateChangeInfo state_change_info = 6; // Only set for state change events
+    GenericEventInfo generic_event_info = 7; // Only set for event_id = EVENT_COMPONENT_GENERIC_EVENT
 }
 
 service NativeEventsManagementService {
