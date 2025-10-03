@@ -46,7 +46,7 @@ struct TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[17]
+  static const ::google::protobuf::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -78,6 +78,9 @@ extern EventsConfigurationRequestDefaultTypeInternal _EventsConfigurationRequest
 class EventsConfigurationResponse;
 class EventsConfigurationResponseDefaultTypeInternal;
 extern EventsConfigurationResponseDefaultTypeInternal _EventsConfigurationResponse_default_instance_;
+class GenericEventInfo;
+class GenericEventInfoDefaultTypeInternal;
+extern GenericEventInfoDefaultTypeInternal _GenericEventInfo_default_instance_;
 class ListEventsResponse;
 class ListEventsResponseDefaultTypeInternal;
 extern ListEventsResponseDefaultTypeInternal _ListEventsResponse_default_instance_;
@@ -116,6 +119,7 @@ template<> ::dmi::EventMetaData* Arena::CreateMaybeMessage<::dmi::EventMetaData>
 template<> ::dmi::EventsCfg* Arena::CreateMaybeMessage<::dmi::EventsCfg>(Arena*);
 template<> ::dmi::EventsConfigurationRequest* Arena::CreateMaybeMessage<::dmi::EventsConfigurationRequest>(Arena*);
 template<> ::dmi::EventsConfigurationResponse* Arena::CreateMaybeMessage<::dmi::EventsConfigurationResponse>(Arena*);
+template<> ::dmi::GenericEventInfo* Arena::CreateMaybeMessage<::dmi::GenericEventInfo>(Arena*);
 template<> ::dmi::ListEventsResponse* Arena::CreateMaybeMessage<::dmi::ListEventsResponse>(Arena*);
 template<> ::dmi::OperStateChange* Arena::CreateMaybeMessage<::dmi::OperStateChange>(Arena*);
 template<> ::dmi::StandbyStateChange* Arena::CreateMaybeMessage<::dmi::StandbyStateChange>(Arena*);
@@ -175,6 +179,31 @@ inline bool EventsConfigurationResponse_Reason_Parse(
     const ::std::string& name, EventsConfigurationResponse_Reason* value) {
   return ::google::protobuf::internal::ParseNamedEnum<EventsConfigurationResponse_Reason>(
     EventsConfigurationResponse_Reason_descriptor(), name, value);
+}
+enum GenericEventInfo_EventSeverity {
+  GenericEventInfo_EventSeverity_EVENT_SEVERITY_UNSPECIFIED = 0,
+  GenericEventInfo_EventSeverity_CRITICAL = 1,
+  GenericEventInfo_EventSeverity_MAJOR = 2,
+  GenericEventInfo_EventSeverity_MINOR = 3,
+  GenericEventInfo_EventSeverity_NORMAL = 4,
+  GenericEventInfo_EventSeverity_INFO = 5,
+  GenericEventInfo_EventSeverity_GenericEventInfo_EventSeverity_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  GenericEventInfo_EventSeverity_GenericEventInfo_EventSeverity_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool GenericEventInfo_EventSeverity_IsValid(int value);
+const GenericEventInfo_EventSeverity GenericEventInfo_EventSeverity_EventSeverity_MIN = GenericEventInfo_EventSeverity_EVENT_SEVERITY_UNSPECIFIED;
+const GenericEventInfo_EventSeverity GenericEventInfo_EventSeverity_EventSeverity_MAX = GenericEventInfo_EventSeverity_INFO;
+const int GenericEventInfo_EventSeverity_EventSeverity_ARRAYSIZE = GenericEventInfo_EventSeverity_EventSeverity_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* GenericEventInfo_EventSeverity_descriptor();
+inline const ::std::string& GenericEventInfo_EventSeverity_Name(GenericEventInfo_EventSeverity value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    GenericEventInfo_EventSeverity_descriptor(), value);
+}
+inline bool GenericEventInfo_EventSeverity_Parse(
+    const ::std::string& name, GenericEventInfo_EventSeverity* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<GenericEventInfo_EventSeverity>(
+    GenericEventInfo_EventSeverity_descriptor(), name, value);
 }
 enum EventIds {
   EVENT_NAME_UNDEFINED = 0,
@@ -237,12 +266,13 @@ enum EventIds {
   EVENT_COMPONENT_ALARM_STATE_CHANGED = 702,
   EVENT_COMPONENT_USAGE_STATE_CHANGED = 703,
   EVENT_COMPONENT_STANDBY_STATE_CHANGED = 704,
+  EVENT_COMPONENT_GENERIC_EVENT = 705,
   EventIds_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   EventIds_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool EventIds_IsValid(int value);
 const EventIds EventIds_MIN = EVENT_NAME_UNDEFINED;
-const EventIds EventIds_MAX = EVENT_COMPONENT_STANDBY_STATE_CHANGED;
+const EventIds EventIds_MAX = EVENT_COMPONENT_GENERIC_EVENT;
 const int EventIds_ARRAYSIZE = EventIds_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EventIds_descriptor();
@@ -2476,6 +2506,197 @@ class StateChangeInfo final :
 };
 // -------------------------------------------------------------------
 
+class GenericEventInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.GenericEventInfo) */ {
+ public:
+  GenericEventInfo();
+  virtual ~GenericEventInfo();
+
+  GenericEventInfo(const GenericEventInfo& from);
+
+  inline GenericEventInfo& operator=(const GenericEventInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GenericEventInfo(GenericEventInfo&& from) noexcept
+    : GenericEventInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline GenericEventInfo& operator=(GenericEventInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GenericEventInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GenericEventInfo* internal_default_instance() {
+    return reinterpret_cast<const GenericEventInfo*>(
+               &_GenericEventInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(GenericEventInfo* other);
+  friend void swap(GenericEventInfo& a, GenericEventInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GenericEventInfo* New() const final {
+    return CreateMaybeMessage<GenericEventInfo>(nullptr);
+  }
+
+  GenericEventInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GenericEventInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GenericEventInfo& from);
+  void MergeFrom(const GenericEventInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GenericEventInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef GenericEventInfo_EventSeverity EventSeverity;
+  static const EventSeverity EVENT_SEVERITY_UNSPECIFIED =
+    GenericEventInfo_EventSeverity_EVENT_SEVERITY_UNSPECIFIED;
+  static const EventSeverity CRITICAL =
+    GenericEventInfo_EventSeverity_CRITICAL;
+  static const EventSeverity MAJOR =
+    GenericEventInfo_EventSeverity_MAJOR;
+  static const EventSeverity MINOR =
+    GenericEventInfo_EventSeverity_MINOR;
+  static const EventSeverity NORMAL =
+    GenericEventInfo_EventSeverity_NORMAL;
+  static const EventSeverity INFO =
+    GenericEventInfo_EventSeverity_INFO;
+  static inline bool EventSeverity_IsValid(int value) {
+    return GenericEventInfo_EventSeverity_IsValid(value);
+  }
+  static const EventSeverity EventSeverity_MIN =
+    GenericEventInfo_EventSeverity_EventSeverity_MIN;
+  static const EventSeverity EventSeverity_MAX =
+    GenericEventInfo_EventSeverity_EventSeverity_MAX;
+  static const int EventSeverity_ARRAYSIZE =
+    GenericEventInfo_EventSeverity_EventSeverity_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  EventSeverity_descriptor() {
+    return GenericEventInfo_EventSeverity_descriptor();
+  }
+  static inline const ::std::string& EventSeverity_Name(EventSeverity value) {
+    return GenericEventInfo_EventSeverity_Name(value);
+  }
+  static inline bool EventSeverity_Parse(const ::std::string& name,
+      EventSeverity* value) {
+    return GenericEventInfo_EventSeverity_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string message = 1;
+  void clear_message();
+  static const int kMessageFieldNumber = 1;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
+  // string message_code = 2;
+  void clear_message_code();
+  static const int kMessageCodeFieldNumber = 2;
+  const ::std::string& message_code() const;
+  void set_message_code(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message_code(::std::string&& value);
+  #endif
+  void set_message_code(const char* value);
+  void set_message_code(const char* value, size_t size);
+  ::std::string* mutable_message_code();
+  ::std::string* release_message_code();
+  void set_allocated_message_code(::std::string* message_code);
+
+  // string additional_info = 4;
+  void clear_additional_info();
+  static const int kAdditionalInfoFieldNumber = 4;
+  const ::std::string& additional_info() const;
+  void set_additional_info(const ::std::string& value);
+  #if LANG_CXX11
+  void set_additional_info(::std::string&& value);
+  #endif
+  void set_additional_info(const char* value);
+  void set_additional_info(const char* value, size_t size);
+  ::std::string* mutable_additional_info();
+  ::std::string* release_additional_info();
+  void set_allocated_additional_info(::std::string* additional_info);
+
+  // .dmi.GenericEventInfo.EventSeverity severity = 3;
+  void clear_severity();
+  static const int kSeverityFieldNumber = 3;
+  ::dmi::GenericEventInfo_EventSeverity severity() const;
+  void set_severity(::dmi::GenericEventInfo_EventSeverity value);
+
+  // @@protoc_insertion_point(class_scope:dmi.GenericEventInfo)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
+  ::google::protobuf::internal::ArenaStringPtr message_code_;
+  ::google::protobuf::internal::ArenaStringPtr additional_info_;
+  int severity_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Event final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:dmi.Event) */ {
  public:
@@ -2514,7 +2735,7 @@ class Event final :
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Event* other);
   friend void swap(Event& a, Event& b) {
@@ -2621,6 +2842,15 @@ class Event final :
   ::dmi::StateChangeInfo* mutable_state_change_info();
   void set_allocated_state_change_info(::dmi::StateChangeInfo* state_change_info);
 
+  // .dmi.GenericEventInfo generic_event_info = 7;
+  bool has_generic_event_info() const;
+  void clear_generic_event_info();
+  static const int kGenericEventInfoFieldNumber = 7;
+  const ::dmi::GenericEventInfo& generic_event_info() const;
+  ::dmi::GenericEventInfo* release_generic_event_info();
+  ::dmi::GenericEventInfo* mutable_generic_event_info();
+  void set_allocated_generic_event_info(::dmi::GenericEventInfo* generic_event_info);
+
   // .dmi.EventIds event_id = 2;
   void clear_event_id();
   static const int kEventIdFieldNumber = 2;
@@ -2637,6 +2867,7 @@ class Event final :
   ::google::protobuf::Timestamp* raised_ts_;
   ::dmi::ThresholdInformation* threshold_info_;
   ::dmi::StateChangeInfo* state_change_info_;
+  ::dmi::GenericEventInfo* generic_event_info_;
   int event_id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
@@ -4107,6 +4338,183 @@ inline StateChangeInfo::StateChangeCase StateChangeInfo::state_change_case() con
 }
 // -------------------------------------------------------------------
 
+// GenericEventInfo
+
+// string message = 1;
+inline void GenericEventInfo::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GenericEventInfo::message() const {
+  // @@protoc_insertion_point(field_get:dmi.GenericEventInfo.message)
+  return message_.GetNoArena();
+}
+inline void GenericEventInfo::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.GenericEventInfo.message)
+}
+#if LANG_CXX11
+inline void GenericEventInfo::set_message(::std::string&& value) {
+  
+  message_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.GenericEventInfo.message)
+}
+#endif
+inline void GenericEventInfo::set_message(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.GenericEventInfo.message)
+}
+inline void GenericEventInfo::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.GenericEventInfo.message)
+}
+inline ::std::string* GenericEventInfo::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.GenericEventInfo.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GenericEventInfo::release_message() {
+  // @@protoc_insertion_point(field_release:dmi.GenericEventInfo.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GenericEventInfo::set_allocated_message(::std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:dmi.GenericEventInfo.message)
+}
+
+// string message_code = 2;
+inline void GenericEventInfo::clear_message_code() {
+  message_code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GenericEventInfo::message_code() const {
+  // @@protoc_insertion_point(field_get:dmi.GenericEventInfo.message_code)
+  return message_code_.GetNoArena();
+}
+inline void GenericEventInfo::set_message_code(const ::std::string& value) {
+  
+  message_code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.GenericEventInfo.message_code)
+}
+#if LANG_CXX11
+inline void GenericEventInfo::set_message_code(::std::string&& value) {
+  
+  message_code_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.GenericEventInfo.message_code)
+}
+#endif
+inline void GenericEventInfo::set_message_code(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  message_code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.GenericEventInfo.message_code)
+}
+inline void GenericEventInfo::set_message_code(const char* value, size_t size) {
+  
+  message_code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.GenericEventInfo.message_code)
+}
+inline ::std::string* GenericEventInfo::mutable_message_code() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.GenericEventInfo.message_code)
+  return message_code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GenericEventInfo::release_message_code() {
+  // @@protoc_insertion_point(field_release:dmi.GenericEventInfo.message_code)
+  
+  return message_code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GenericEventInfo::set_allocated_message_code(::std::string* message_code) {
+  if (message_code != nullptr) {
+    
+  } else {
+    
+  }
+  message_code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message_code);
+  // @@protoc_insertion_point(field_set_allocated:dmi.GenericEventInfo.message_code)
+}
+
+// .dmi.GenericEventInfo.EventSeverity severity = 3;
+inline void GenericEventInfo::clear_severity() {
+  severity_ = 0;
+}
+inline ::dmi::GenericEventInfo_EventSeverity GenericEventInfo::severity() const {
+  // @@protoc_insertion_point(field_get:dmi.GenericEventInfo.severity)
+  return static_cast< ::dmi::GenericEventInfo_EventSeverity >(severity_);
+}
+inline void GenericEventInfo::set_severity(::dmi::GenericEventInfo_EventSeverity value) {
+  
+  severity_ = value;
+  // @@protoc_insertion_point(field_set:dmi.GenericEventInfo.severity)
+}
+
+// string additional_info = 4;
+inline void GenericEventInfo::clear_additional_info() {
+  additional_info_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GenericEventInfo::additional_info() const {
+  // @@protoc_insertion_point(field_get:dmi.GenericEventInfo.additional_info)
+  return additional_info_.GetNoArena();
+}
+inline void GenericEventInfo::set_additional_info(const ::std::string& value) {
+  
+  additional_info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:dmi.GenericEventInfo.additional_info)
+}
+#if LANG_CXX11
+inline void GenericEventInfo::set_additional_info(::std::string&& value) {
+  
+  additional_info_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:dmi.GenericEventInfo.additional_info)
+}
+#endif
+inline void GenericEventInfo::set_additional_info(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  additional_info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:dmi.GenericEventInfo.additional_info)
+}
+inline void GenericEventInfo::set_additional_info(const char* value, size_t size) {
+  
+  additional_info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:dmi.GenericEventInfo.additional_info)
+}
+inline ::std::string* GenericEventInfo::mutable_additional_info() {
+  
+  // @@protoc_insertion_point(field_mutable:dmi.GenericEventInfo.additional_info)
+  return additional_info_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GenericEventInfo::release_additional_info() {
+  // @@protoc_insertion_point(field_release:dmi.GenericEventInfo.additional_info)
+  
+  return additional_info_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GenericEventInfo::set_allocated_additional_info(::std::string* additional_info) {
+  if (additional_info != nullptr) {
+    
+  } else {
+    
+  }
+  additional_info_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), additional_info);
+  // @@protoc_insertion_point(field_set_allocated:dmi.GenericEventInfo.additional_info)
+}
+
+// -------------------------------------------------------------------
+
 // Event
 
 // .dmi.EventMetaData event_metadata = 1;
@@ -4375,9 +4783,62 @@ inline void Event::set_allocated_state_change_info(::dmi::StateChangeInfo* state
   // @@protoc_insertion_point(field_set_allocated:dmi.Event.state_change_info)
 }
 
+// .dmi.GenericEventInfo generic_event_info = 7;
+inline bool Event::has_generic_event_info() const {
+  return this != internal_default_instance() && generic_event_info_ != nullptr;
+}
+inline void Event::clear_generic_event_info() {
+  if (GetArenaNoVirtual() == nullptr && generic_event_info_ != nullptr) {
+    delete generic_event_info_;
+  }
+  generic_event_info_ = nullptr;
+}
+inline const ::dmi::GenericEventInfo& Event::generic_event_info() const {
+  const ::dmi::GenericEventInfo* p = generic_event_info_;
+  // @@protoc_insertion_point(field_get:dmi.Event.generic_event_info)
+  return p != nullptr ? *p : *reinterpret_cast<const ::dmi::GenericEventInfo*>(
+      &::dmi::_GenericEventInfo_default_instance_);
+}
+inline ::dmi::GenericEventInfo* Event::release_generic_event_info() {
+  // @@protoc_insertion_point(field_release:dmi.Event.generic_event_info)
+  
+  ::dmi::GenericEventInfo* temp = generic_event_info_;
+  generic_event_info_ = nullptr;
+  return temp;
+}
+inline ::dmi::GenericEventInfo* Event::mutable_generic_event_info() {
+  
+  if (generic_event_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::dmi::GenericEventInfo>(GetArenaNoVirtual());
+    generic_event_info_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:dmi.Event.generic_event_info)
+  return generic_event_info_;
+}
+inline void Event::set_allocated_generic_event_info(::dmi::GenericEventInfo* generic_event_info) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete generic_event_info_;
+  }
+  if (generic_event_info) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      generic_event_info = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, generic_event_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  generic_event_info_ = generic_event_info;
+  // @@protoc_insertion_point(field_set_allocated:dmi.Event.generic_event_info)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -4427,6 +4888,11 @@ template <> struct is_proto_enum< ::dmi::EventsConfigurationResponse_Reason> : :
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::dmi::EventsConfigurationResponse_Reason>() {
   return ::dmi::EventsConfigurationResponse_Reason_descriptor();
+}
+template <> struct is_proto_enum< ::dmi::GenericEventInfo_EventSeverity> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::dmi::GenericEventInfo_EventSeverity>() {
+  return ::dmi::GenericEventInfo_EventSeverity_descriptor();
 }
 template <> struct is_proto_enum< ::dmi::EventIds> : ::std::true_type {};
 template <>
