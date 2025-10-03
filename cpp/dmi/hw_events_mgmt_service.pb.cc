@@ -19,6 +19,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Uuid_dmi_2fhw_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AdminStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AlarmStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_OperStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto;
@@ -108,6 +109,10 @@ class StateChangeInfoDefaultTypeInternal {
   const ::dmi::UsageStateChange* usage_state_change_;
   const ::dmi::StandbyStateChange* standby_state_change_;
 } _StateChangeInfo_default_instance_;
+class GenericEventInfoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GenericEventInfo> _instance;
+} _GenericEventInfo_default_instance_;
 class EventDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Event> _instance;
@@ -353,6 +358,20 @@ static void InitDefaultsStateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2epro
       &scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
       &scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
 
+static void InitDefaultsGenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::dmi::_GenericEventInfo_default_instance_;
+    new (ptr) ::dmi::GenericEventInfo();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::dmi::GenericEventInfo::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {}};
+
 static void InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -364,12 +383,13 @@ static void InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::dmi::Event::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
+::google::protobuf::internal::SCCInfo<5> scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsEvent_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto}, {
       &scc_info_EventMetaData_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_ThresholdInformation_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
-      &scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
+      &scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,
+      &scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base,}};
 
 void InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ValueType_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
@@ -388,11 +408,12 @@ void InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_UsageStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_StandbyStateChange_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_StateChangeInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Event_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[17];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[3];
+::google::protobuf::Metadata file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[18];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[4];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -524,6 +545,14 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   offsetof(::dmi::StateChangeInfoDefaultTypeInternal, standby_state_change_),
   PROTOBUF_FIELD_OFFSET(::dmi::StateChangeInfo, state_change_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dmi::GenericEventInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::dmi::GenericEventInfo, message_),
+  PROTOBUF_FIELD_OFFSET(::dmi::GenericEventInfo, message_code_),
+  PROTOBUF_FIELD_OFFSET(::dmi::GenericEventInfo, severity_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dmi::Event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -534,6 +563,7 @@ const ::google::protobuf::uint32 TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_
   PROTOBUF_FIELD_OFFSET(::dmi::Event, threshold_info_),
   PROTOBUF_FIELD_OFFSET(::dmi::Event, add_info_),
   PROTOBUF_FIELD_OFFSET(::dmi::Event, state_change_info_),
+  PROTOBUF_FIELD_OFFSET(::dmi::Event, generic_event_info_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::dmi::ValueType)},
@@ -552,7 +582,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 102, -1, sizeof(::dmi::UsageStateChange)},
   { 109, -1, sizeof(::dmi::StandbyStateChange)},
   { 116, -1, sizeof(::dmi::StateChangeInfo)},
-  { 127, -1, sizeof(::dmi::Event)},
+  { 127, -1, sizeof(::dmi::GenericEventInfo)},
+  { 135, -1, sizeof(::dmi::Event)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -572,13 +603,14 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_UsageStateChange_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_StandbyStateChange_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_StateChangeInfo_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_GenericEventInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::dmi::_Event_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   {}, AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, "dmi/hw_events_mgmt_service.proto", schemas,
   file_default_instances, TableStruct_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto::offsets,
-  file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 17, file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
+  file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 18, file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, file_level_service_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
 };
 
 const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[] =
@@ -638,91 +670,99 @@ const char descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[
   "ateChangeH\000\0223\n\022usage_state_change\030\004 \001(\0132"
   "\025.dmi.UsageStateChangeH\000\0227\n\024standby_stat"
   "e_change\030\005 \001(\0132\027.dmi.StandbyStateChangeH"
-  "\000B\016\n\014state_change\"\371\001\n\005Event\022*\n\016event_met"
-  "adata\030\001 \001(\0132\022.dmi.EventMetaData\022\037\n\010event"
-  "_id\030\002 \001(\0162\r.dmi.EventIds\022-\n\traised_ts\030\003 "
-  "\001(\0132\032.google.protobuf.Timestamp\0221\n\016thres"
-  "hold_info\030\004 \001(\0132\031.dmi.ThresholdInformati"
-  "on\022\020\n\010add_info\030\005 \001(\t\022/\n\021state_change_inf"
-  "o\030\006 \001(\0132\024.dmi.StateChangeInfo*\265\024\n\010EventI"
-  "ds\022\030\n\024EVENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TR"
-  "ANSCEIVER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVE"
-  "R_PLUG_IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE"
-  "_ABOVE_THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_"
-  "VOLTAGE_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANS"
-  "CEIVER_TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-"
-  "EVENT_TRANSCEIVER_TEMPERATURE_BELOW_THRE"
-  "SHOLD\020i\022-\n)EVENT_TRANSCEIVER_CURRENT_ABO"
-  "VE_THRESHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURR"
-  "ENT_BELOW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIV"
-  "ER_RX_POWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_T"
-  "RANSCEIVER_RX_POWER_BELOW_THRESHOLD\020m\022.\n"
-  "*EVENT_TRANSCEIVER_TX_POWER_ABOVE_THRESH"
-  "OLD\020n\022.\n*EVENT_TRANSCEIVER_TX_POWER_BELO"
-  "W_THRESHOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILU"
-  "RE\020p\0227\n3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_"
-  "THRESHOLD_RECOVERED\020q\0227\n3EVENT_TRANSCEIV"
-  "ER_VOLTAGE_BELOW_THRESHOLD_RECOVERED\020r\022;"
-  "\n7EVENT_TRANSCEIVER_TEMPERATURE_ABOVE_TH"
-  "RESHOLD_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER"
-  "_TEMPERATURE_BELOW_THRESHOLD_RECOVERED\020t"
-  "\0227\n3EVENT_TRANSCEIVER_CURRENT_ABOVE_THRE"
-  "SHOLD_RECOVERED\020u\0227\n3EVENT_TRANSCEIVER_C"
-  "URRENT_BELOW_THRESHOLD_RECOVERED\020v\0228\n4EV"
-  "ENT_TRANSCEIVER_RX_POWER_ABOVE_THRESHOLD"
-  "_RECOVERED\020w\0228\n4EVENT_TRANSCEIVER_RX_POW"
-  "ER_BELOW_THRESHOLD_RECOVERED\020x\0228\n4EVENT_"
-  "TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD_REC"
-  "OVERED\020y\0228\n4EVENT_TRANSCEIVER_TX_POWER_B"
-  "ELOW_THRESHOLD_RECOVERED\020z\022\'\n#EVENT_TRAN"
-  "SCEIVER_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU"
-  "_PLUG_OUT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021"
-  "EVENT_PSU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILUR"
-  "E_RECOVERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027"
-  "\n\022EVENT_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLU"
-  "G_IN\020\256\002\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257"
-  "\002\022)\n$EVENT_CPU_TEMPERATURE_ABOVE_CRITICA"
-  "L\020\220\003\022&\n!EVENT_CPU_TEMPERATURE_ABOVE_FATA"
-  "L\020\221\003\0223\n.EVENT_CPU_TEMPERATURE_ABOVE_CRIT"
-  "ICAL_RECOVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATU"
-  "RE_ABOVE_FATAL_RECOVERED\020\223\003\022$\n\037EVENT_CPU"
-  "_USAGE_ABOVE_THRESHOLD\020\224\003\022.\n)EVENT_CPU_U"
-  "SAGE_ABOVE_THRESHOLD_RECOVERED\020\225\003\022\032\n\025EVE"
-  "NT_HW_DEVICE_RESET\020\364\003\022/\n*EVENT_HW_DEVICE"
-  "_TEMPERATURE_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_"
-  "HW_DEVICE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4"
-  "EVENT_HW_DEVICE_TEMPERATURE_ABOVE_CRITIC"
-  "AL_RECOVERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPE"
-  "RATURE_ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT"
-  "_HW_DEVICE_REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERA"
-  "TURE_SENSOR_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TE"
-  "MPERATURE_SENSORS_FAILED\020\373\003\022(\n#EVENT_HW_"
-  "DISK_USAGE_ABOVE_THRESHOLD\020\374\003\0222\n-EVENT_H"
-  "W_DISK_USAGE_ABOVE_THRESHOLD_RECOVERED\020\375"
-  "\003\022*\n%EVENT_HW_MEMORY_USAGE_ABOVE_THRESHO"
-  "LD\020\376\003\0224\n/EVENT_HW_MEMORY_USAGE_ABOVE_THR"
-  "ESHOLD_RECOVERED\020\377\003\022\036\n\031EVENT_HW_NTP_SYNC"
-  "_FAILURE\020\200\004\022(\n#EVENT_HW_NTP_SYNC_FAILURE"
-  "_RECOVERED\020\201\004\022\035\n\030EVENT_LINE_CARD_PLUG_OU"
-  "T\020\330\004\022\034\n\027EVENT_LINE_CARD_PLUG_IN\020\331\004\022(\n#EV"
-  "ENT_COMPONENT_ADMIN_STATE_CHANGED\020\274\005\022\'\n\""
-  "EVENT_COMPONENT_OPER_STATE_CHANGED\020\275\005\022(\n"
-  "#EVENT_COMPONENT_ALARM_STATE_CHANGED\020\276\005\022"
-  "(\n#EVENT_COMPONENT_USAGE_STATE_CHANGED\020\277"
-  "\005\022*\n%EVENT_COMPONENT_STANDBY_STATE_CHANG"
-  "ED\020\300\0052\355\001\n\035NativeEventsManagementService\022"
-  "6\n\nListEvents\022\017.dmi.HardwareID\032\027.dmi.Lis"
-  "tEventsResponse\022^\n\031UpdateEventsConfigura"
-  "tion\022\037.dmi.EventsConfigurationRequest\032 ."
-  "dmi.EventsConfigurationResponse\0224\n\014Strea"
-  "mEvents\022\026.google.protobuf.Empty\032\n.dmi.Ev"
-  "ent0\001B;Z9github.com/opencord/device-mana"
-  "gement-interface/v3/go/dmib\006proto3"
+  "\000B\016\n\014state_change\"\333\001\n\020GenericEventInfo\022\017"
+  "\n\007message\030\001 \001(\t\022\024\n\014message_code\030\002 \001(\t\0225\n"
+  "\010severity\030\003 \001(\0162#.dmi.GenericEventInfo.E"
+  "ventSeverity\"i\n\rEventSeverity\022\036\n\032EVENT_S"
+  "EVERITY_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\t\n\005M"
+  "AJOR\020\002\022\t\n\005MINOR\020\003\022\n\n\006NORMAL\020\004\022\010\n\004INFO\020\005\""
+  "\254\002\n\005Event\022*\n\016event_metadata\030\001 \001(\0132\022.dmi."
+  "EventMetaData\022\037\n\010event_id\030\002 \001(\0162\r.dmi.Ev"
+  "entIds\022-\n\traised_ts\030\003 \001(\0132\032.google.proto"
+  "buf.Timestamp\0221\n\016threshold_info\030\004 \001(\0132\031."
+  "dmi.ThresholdInformation\022\020\n\010add_info\030\005 \001"
+  "(\t\022/\n\021state_change_info\030\006 \001(\0132\024.dmi.Stat"
+  "eChangeInfo\0221\n\022generic_event_info\030\007 \001(\0132"
+  "\025.dmi.GenericEventInfo*\331\024\n\010EventIds\022\030\n\024E"
+  "VENT_NAME_UNDEFINED\020\000\022\036\n\032EVENT_TRANSCEIV"
+  "ER_PLUG_OUT\020d\022\035\n\031EVENT_TRANSCEIVER_PLUG_"
+  "IN\020e\022-\n)EVENT_TRANSCEIVER_VOLTAGE_ABOVE_"
+  "THRESHOLD\020f\022-\n)EVENT_TRANSCEIVER_VOLTAGE"
+  "_BELOW_THRESHOLD\020g\0221\n-EVENT_TRANSCEIVER_"
+  "TEMPERATURE_ABOVE_THRESHOLD\020h\0221\n-EVENT_T"
+  "RANSCEIVER_TEMPERATURE_BELOW_THRESHOLD\020i"
+  "\022-\n)EVENT_TRANSCEIVER_CURRENT_ABOVE_THRE"
+  "SHOLD\020j\022-\n)EVENT_TRANSCEIVER_CURRENT_BEL"
+  "OW_THRESHOLD\020k\022.\n*EVENT_TRANSCEIVER_RX_P"
+  "OWER_ABOVE_THRESHOLD\020l\022.\n*EVENT_TRANSCEI"
+  "VER_RX_POWER_BELOW_THRESHOLD\020m\022.\n*EVENT_"
+  "TRANSCEIVER_TX_POWER_ABOVE_THRESHOLD\020n\022."
+  "\n*EVENT_TRANSCEIVER_TX_POWER_BELOW_THRES"
+  "HOLD\020o\022\035\n\031EVENT_TRANSCEIVER_FAILURE\020p\0227\n"
+  "3EVENT_TRANSCEIVER_VOLTAGE_ABOVE_THRESHO"
+  "LD_RECOVERED\020q\0227\n3EVENT_TRANSCEIVER_VOLT"
+  "AGE_BELOW_THRESHOLD_RECOVERED\020r\022;\n7EVENT"
+  "_TRANSCEIVER_TEMPERATURE_ABOVE_THRESHOLD"
+  "_RECOVERED\020s\022;\n7EVENT_TRANSCEIVER_TEMPER"
+  "ATURE_BELOW_THRESHOLD_RECOVERED\020t\0227\n3EVE"
+  "NT_TRANSCEIVER_CURRENT_ABOVE_THRESHOLD_R"
+  "ECOVERED\020u\0227\n3EVENT_TRANSCEIVER_CURRENT_"
+  "BELOW_THRESHOLD_RECOVERED\020v\0228\n4EVENT_TRA"
+  "NSCEIVER_RX_POWER_ABOVE_THRESHOLD_RECOVE"
+  "RED\020w\0228\n4EVENT_TRANSCEIVER_RX_POWER_BELO"
+  "W_THRESHOLD_RECOVERED\020x\0228\n4EVENT_TRANSCE"
+  "IVER_TX_POWER_ABOVE_THRESHOLD_RECOVERED\020"
+  "y\0228\n4EVENT_TRANSCEIVER_TX_POWER_BELOW_TH"
+  "RESHOLD_RECOVERED\020z\022\'\n#EVENT_TRANSCEIVER"
+  "_FAILURE_RECOVERED\020{\022\027\n\022EVENT_PSU_PLUG_O"
+  "UT\020\310\001\022\026\n\021EVENT_PSU_PLUG_IN\020\311\001\022\026\n\021EVENT_P"
+  "SU_FAILURE\020\312\001\022 \n\033EVENT_PSU_FAILURE_RECOV"
+  "ERED\020\313\001\022\026\n\021EVENT_FAN_FAILURE\020\254\002\022\027\n\022EVENT"
+  "_FAN_PLUG_OUT\020\255\002\022\026\n\021EVENT_FAN_PLUG_IN\020\256\002"
+  "\022 \n\033EVENT_FAN_FAILURE_RECOVERED\020\257\002\022)\n$EV"
+  "ENT_CPU_TEMPERATURE_ABOVE_CRITICAL\020\220\003\022&\n"
+  "!EVENT_CPU_TEMPERATURE_ABOVE_FATAL\020\221\003\0223\n"
+  ".EVENT_CPU_TEMPERATURE_ABOVE_CRITICAL_RE"
+  "COVERED\020\222\003\0220\n+EVENT_CPU_TEMPERATURE_ABOV"
+  "E_FATAL_RECOVERED\020\223\003\022$\n\037EVENT_CPU_USAGE_"
+  "ABOVE_THRESHOLD\020\224\003\022.\n)EVENT_CPU_USAGE_AB"
+  "OVE_THRESHOLD_RECOVERED\020\225\003\022\032\n\025EVENT_HW_D"
+  "EVICE_RESET\020\364\003\022/\n*EVENT_HW_DEVICE_TEMPER"
+  "ATURE_ABOVE_CRITICAL\020\365\003\022,\n\'EVENT_HW_DEVI"
+  "CE_TEMPERATURE_ABOVE_FATAL\020\366\003\0229\n4EVENT_H"
+  "W_DEVICE_TEMPERATURE_ABOVE_CRITICAL_RECO"
+  "VERED\020\367\003\0226\n1EVENT_HW_DEVICE_TEMPERATURE_"
+  "ABOVE_FATAL_RECOVERED\020\370\003\022\033\n\026EVENT_HW_DEV"
+  "ICE_REBOOT\020\371\003\022\'\n\"EVENT_HW_TEMPERATURE_SE"
+  "NSOR_FAILED\020\372\003\022,\n\'EVENT_HW_ALL_TEMPERATU"
+  "RE_SENSORS_FAILED\020\373\003\022(\n#EVENT_HW_DISK_US"
+  "AGE_ABOVE_THRESHOLD\020\374\003\0222\n-EVENT_HW_DISK_"
+  "USAGE_ABOVE_THRESHOLD_RECOVERED\020\375\003\022*\n%EV"
+  "ENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD\020\376\003\0224"
+  "\n/EVENT_HW_MEMORY_USAGE_ABOVE_THRESHOLD_"
+  "RECOVERED\020\377\003\022\036\n\031EVENT_HW_NTP_SYNC_FAILUR"
+  "E\020\200\004\022(\n#EVENT_HW_NTP_SYNC_FAILURE_RECOVE"
+  "RED\020\201\004\022\035\n\030EVENT_LINE_CARD_PLUG_OUT\020\330\004\022\034\n"
+  "\027EVENT_LINE_CARD_PLUG_IN\020\331\004\022(\n#EVENT_COM"
+  "PONENT_ADMIN_STATE_CHANGED\020\274\005\022\'\n\"EVENT_C"
+  "OMPONENT_OPER_STATE_CHANGED\020\275\005\022(\n#EVENT_"
+  "COMPONENT_ALARM_STATE_CHANGED\020\276\005\022(\n#EVEN"
+  "T_COMPONENT_USAGE_STATE_CHANGED\020\277\005\022*\n%EV"
+  "ENT_COMPONENT_STANDBY_STATE_CHANGED\020\300\005\022\""
+  "\n\035EVENT_COMPONENT_GENERIC_EVENT\020\301\0052\355\001\n\035N"
+  "ativeEventsManagementService\0226\n\nListEven"
+  "ts\022\017.dmi.HardwareID\032\027.dmi.ListEventsResp"
+  "onse\022^\n\031UpdateEventsConfiguration\022\037.dmi."
+  "EventsConfigurationRequest\032 .dmi.EventsC"
+  "onfigurationResponse\0224\n\014StreamEvents\022\026.g"
+  "oogle.protobuf.Empty\032\n.dmi.Event0\001B;Z9gi"
+  "thub.com/opencord/device-management-inte"
+  "rface/v3/go/dmib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto,
-  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 5434,
+  "dmi/hw_events_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto, 5743,
 };
 
 void AddDescriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto() {
@@ -791,9 +831,38 @@ const EventsConfigurationResponse_Reason EventsConfigurationResponse::Reason_MIN
 const EventsConfigurationResponse_Reason EventsConfigurationResponse::Reason_MAX;
 const int EventsConfigurationResponse::Reason_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* EventIds_descriptor() {
+const ::google::protobuf::EnumDescriptor* GenericEventInfo_EventSeverity_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
   return file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[2];
+}
+bool GenericEventInfo_EventSeverity_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const GenericEventInfo_EventSeverity GenericEventInfo::EVENT_SEVERITY_UNSPECIFIED;
+const GenericEventInfo_EventSeverity GenericEventInfo::CRITICAL;
+const GenericEventInfo_EventSeverity GenericEventInfo::MAJOR;
+const GenericEventInfo_EventSeverity GenericEventInfo::MINOR;
+const GenericEventInfo_EventSeverity GenericEventInfo::NORMAL;
+const GenericEventInfo_EventSeverity GenericEventInfo::INFO;
+const GenericEventInfo_EventSeverity GenericEventInfo::EventSeverity_MIN;
+const GenericEventInfo_EventSeverity GenericEventInfo::EventSeverity_MAX;
+const int GenericEventInfo::EventSeverity_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* EventIds_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return file_level_enum_descriptors_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[3];
 }
 bool EventIds_IsValid(int value) {
   switch (value) {
@@ -857,6 +926,7 @@ bool EventIds_IsValid(int value) {
     case 702:
     case 703:
     case 704:
+    case 705:
       return true;
     default:
       return false;
@@ -7140,6 +7210,424 @@ void StateChangeInfo::InternalSwap(StateChangeInfo* other) {
 
 // ===================================================================
 
+void GenericEventInfo::InitAsDefaultInstance() {
+}
+class GenericEventInfo::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GenericEventInfo::kMessageFieldNumber;
+const int GenericEventInfo::kMessageCodeFieldNumber;
+const int GenericEventInfo::kSeverityFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GenericEventInfo::GenericEventInfo()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:dmi.GenericEventInfo)
+}
+GenericEventInfo::GenericEventInfo(const GenericEventInfo& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.message().size() > 0) {
+    message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
+  }
+  message_code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.message_code().size() > 0) {
+    message_code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_code_);
+  }
+  severity_ = from.severity_;
+  // @@protoc_insertion_point(copy_constructor:dmi.GenericEventInfo)
+}
+
+void GenericEventInfo::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  message_code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  severity_ = 0;
+}
+
+GenericEventInfo::~GenericEventInfo() {
+  // @@protoc_insertion_point(destructor:dmi.GenericEventInfo)
+  SharedDtor();
+}
+
+void GenericEventInfo::SharedDtor() {
+  message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  message_code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void GenericEventInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GenericEventInfo& GenericEventInfo::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_GenericEventInfo_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GenericEventInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:dmi.GenericEventInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  message_code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  severity_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* GenericEventInfo::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<GenericEventInfo*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string message = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.GenericEventInfo.message");
+        object = msg->mutable_message();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string message_code = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("dmi.GenericEventInfo.message_code");
+        object = msg->mutable_message_code();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .dmi.GenericEventInfo.EventSeverity severity = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_severity(static_cast<::dmi::GenericEventInfo_EventSeverity>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool GenericEventInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:dmi.GenericEventInfo)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string message = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_message()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->message().data(), static_cast<int>(this->message().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.GenericEventInfo.message"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string message_code = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_message_code()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->message_code().data(), static_cast<int>(this->message_code().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "dmi.GenericEventInfo.message_code"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .dmi.GenericEventInfo.EventSeverity severity = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_severity(static_cast< ::dmi::GenericEventInfo_EventSeverity >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:dmi.GenericEventInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:dmi.GenericEventInfo)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void GenericEventInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:dmi.GenericEventInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string message = 1;
+  if (this->message().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message().data(), static_cast<int>(this->message().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GenericEventInfo.message");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->message(), output);
+  }
+
+  // string message_code = 2;
+  if (this->message_code().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message_code().data(), static_cast<int>(this->message_code().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GenericEventInfo.message_code");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->message_code(), output);
+  }
+
+  // .dmi.GenericEventInfo.EventSeverity severity = 3;
+  if (this->severity() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->severity(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:dmi.GenericEventInfo)
+}
+
+::google::protobuf::uint8* GenericEventInfo::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:dmi.GenericEventInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string message = 1;
+  if (this->message().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message().data(), static_cast<int>(this->message().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GenericEventInfo.message");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->message(), target);
+  }
+
+  // string message_code = 2;
+  if (this->message_code().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->message_code().data(), static_cast<int>(this->message_code().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "dmi.GenericEventInfo.message_code");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->message_code(), target);
+  }
+
+  // .dmi.GenericEventInfo.EventSeverity severity = 3;
+  if (this->severity() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->severity(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:dmi.GenericEventInfo)
+  return target;
+}
+
+size_t GenericEventInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:dmi.GenericEventInfo)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 1;
+  if (this->message().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->message());
+  }
+
+  // string message_code = 2;
+  if (this->message_code().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->message_code());
+  }
+
+  // .dmi.GenericEventInfo.EventSeverity severity = 3;
+  if (this->severity() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->severity());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GenericEventInfo::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:dmi.GenericEventInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GenericEventInfo* source =
+      ::google::protobuf::DynamicCastToGenerated<GenericEventInfo>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dmi.GenericEventInfo)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dmi.GenericEventInfo)
+    MergeFrom(*source);
+  }
+}
+
+void GenericEventInfo::MergeFrom(const GenericEventInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:dmi.GenericEventInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.message().size() > 0) {
+
+    message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
+  }
+  if (from.message_code().size() > 0) {
+
+    message_code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_code_);
+  }
+  if (from.severity() != 0) {
+    set_severity(from.severity());
+  }
+}
+
+void GenericEventInfo::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:dmi.GenericEventInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GenericEventInfo::CopyFrom(const GenericEventInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:dmi.GenericEventInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GenericEventInfo::IsInitialized() const {
+  return true;
+}
+
+void GenericEventInfo::Swap(GenericEventInfo* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GenericEventInfo::InternalSwap(GenericEventInfo* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  message_.Swap(&other->message_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  message_code_.Swap(&other->message_code_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(severity_, other->severity_);
+}
+
+::google::protobuf::Metadata GenericEventInfo::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto);
+  return ::file_level_metadata_dmi_2fhw_5fevents_5fmgmt_5fservice_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Event::InitAsDefaultInstance() {
   ::dmi::_Event_default_instance_._instance.get_mutable()->event_metadata_ = const_cast< ::dmi::EventMetaData*>(
       ::dmi::EventMetaData::internal_default_instance());
@@ -7149,6 +7637,8 @@ void Event::InitAsDefaultInstance() {
       ::dmi::ThresholdInformation::internal_default_instance());
   ::dmi::_Event_default_instance_._instance.get_mutable()->state_change_info_ = const_cast< ::dmi::StateChangeInfo*>(
       ::dmi::StateChangeInfo::internal_default_instance());
+  ::dmi::_Event_default_instance_._instance.get_mutable()->generic_event_info_ = const_cast< ::dmi::GenericEventInfo*>(
+      ::dmi::GenericEventInfo::internal_default_instance());
 }
 class Event::HasBitSetters {
  public:
@@ -7156,6 +7646,7 @@ class Event::HasBitSetters {
   static const ::google::protobuf::Timestamp& raised_ts(const Event* msg);
   static const ::dmi::ThresholdInformation& threshold_info(const Event* msg);
   static const ::dmi::StateChangeInfo& state_change_info(const Event* msg);
+  static const ::dmi::GenericEventInfo& generic_event_info(const Event* msg);
 };
 
 const ::dmi::EventMetaData&
@@ -7174,6 +7665,10 @@ const ::dmi::StateChangeInfo&
 Event::HasBitSetters::state_change_info(const Event* msg) {
   return *msg->state_change_info_;
 }
+const ::dmi::GenericEventInfo&
+Event::HasBitSetters::generic_event_info(const Event* msg) {
+  return *msg->generic_event_info_;
+}
 void Event::clear_raised_ts() {
   if (GetArenaNoVirtual() == nullptr && raised_ts_ != nullptr) {
     delete raised_ts_;
@@ -7187,6 +7682,7 @@ const int Event::kRaisedTsFieldNumber;
 const int Event::kThresholdInfoFieldNumber;
 const int Event::kAddInfoFieldNumber;
 const int Event::kStateChangeInfoFieldNumber;
+const int Event::kGenericEventInfoFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Event::Event()
@@ -7222,6 +7718,11 @@ Event::Event(const Event& from)
   } else {
     state_change_info_ = nullptr;
   }
+  if (from.has_generic_event_info()) {
+    generic_event_info_ = new ::dmi::GenericEventInfo(*from.generic_event_info_);
+  } else {
+    generic_event_info_ = nullptr;
+  }
   event_id_ = from.event_id_;
   // @@protoc_insertion_point(copy_constructor:dmi.Event)
 }
@@ -7246,6 +7747,7 @@ void Event::SharedDtor() {
   if (this != internal_default_instance()) delete raised_ts_;
   if (this != internal_default_instance()) delete threshold_info_;
   if (this != internal_default_instance()) delete state_change_info_;
+  if (this != internal_default_instance()) delete generic_event_info_;
 }
 
 void Event::SetCachedSize(int size) const {
@@ -7280,6 +7782,10 @@ void Event::Clear() {
     delete state_change_info_;
   }
   state_change_info_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && generic_event_info_ != nullptr) {
+    delete generic_event_info_;
+  }
+  generic_event_info_ = nullptr;
   event_id_ = 0;
   _internal_metadata_.Clear();
 }
@@ -7367,6 +7873,19 @@ const char* Event::_InternalParse(const char* begin, const char* end, void* obje
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::dmi::StateChangeInfo::_InternalParse;
         object = msg->mutable_state_change_info();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .dmi.GenericEventInfo generic_event_info = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::dmi::GenericEventInfo::_InternalParse;
+        object = msg->mutable_generic_event_info();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -7480,6 +7999,17 @@ bool Event::MergePartialFromCodedStream(
         break;
       }
 
+      // .dmi.GenericEventInfo generic_event_info = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_generic_event_info()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -7547,6 +8077,12 @@ void Event::SerializeWithCachedSizes(
       6, HasBitSetters::state_change_info(this), output);
   }
 
+  // .dmi.GenericEventInfo generic_event_info = 7;
+  if (this->has_generic_event_info()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, HasBitSetters::generic_event_info(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -7605,6 +8141,13 @@ void Event::SerializeWithCachedSizes(
         6, HasBitSetters::state_change_info(this), target);
   }
 
+  // .dmi.GenericEventInfo generic_event_info = 7;
+  if (this->has_generic_event_info()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, HasBitSetters::generic_event_info(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -7661,6 +8204,13 @@ size_t Event::ByteSizeLong() const {
         *state_change_info_);
   }
 
+  // .dmi.GenericEventInfo generic_event_info = 7;
+  if (this->has_generic_event_info()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *generic_event_info_);
+  }
+
   // .dmi.EventIds event_id = 2;
   if (this->event_id() != 0) {
     total_size += 1 +
@@ -7710,6 +8260,9 @@ void Event::MergeFrom(const Event& from) {
   if (from.has_state_change_info()) {
     mutable_state_change_info()->::dmi::StateChangeInfo::MergeFrom(from.state_change_info());
   }
+  if (from.has_generic_event_info()) {
+    mutable_generic_event_info()->::dmi::GenericEventInfo::MergeFrom(from.generic_event_info());
+  }
   if (from.event_id() != 0) {
     set_event_id(from.event_id());
   }
@@ -7746,6 +8299,7 @@ void Event::InternalSwap(Event* other) {
   swap(raised_ts_, other->raised_ts_);
   swap(threshold_info_, other->threshold_info_);
   swap(state_change_info_, other->state_change_info_);
+  swap(generic_event_info_, other->generic_event_info_);
   swap(event_id_, other->event_id_);
 }
 
@@ -7806,6 +8360,9 @@ template<> PROTOBUF_NOINLINE ::dmi::StandbyStateChange* Arena::CreateMaybeMessag
 }
 template<> PROTOBUF_NOINLINE ::dmi::StateChangeInfo* Arena::CreateMaybeMessage< ::dmi::StateChangeInfo >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::StateChangeInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::dmi::GenericEventInfo* Arena::CreateMaybeMessage< ::dmi::GenericEventInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::dmi::GenericEventInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dmi::Event* Arena::CreateMaybeMessage< ::dmi::Event >(Arena* arena) {
   return Arena::CreateInternal< ::dmi::Event >(arena);

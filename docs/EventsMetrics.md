@@ -18,6 +18,7 @@ message Metric {
     ComponentSensorData value = 3;
 }
 
+// Asynchronous event message
 message Event {
     EventMetaData event_metadata = 1;
     EventIds event_id = 2;
@@ -28,6 +29,8 @@ message Event {
     string add_info = 5;
     // For component state change events, conveys the old and new states
     StateChangeInfo state_change_info = 6;
+    // For generic events (event_id = EVENT_COMPONENT_GENERIC_EVENT)
+    GenericEventInfo generic_event_info = 7;
 }
 ```
 
@@ -48,8 +51,25 @@ message AdminStateChange {
     ComponentAdminState old = 1;
     ComponentAdminState new = 2;
 }
-// ... similar for OperStateChange, AlarmStateChange, UsageStateChange, StandbyStateChange
+message OperStateChange {
+    ComponentOperState old = 1;
+    ComponentOperState new = 2;
+}
+message AlarmStateChange {
+    ComponentAlarmState old = 1;
+    ComponentAlarmState new = 2;
+}
+message UsageStateChange {
+    ComponentUsageState old = 1;
+    ComponentUsageState new = 2;
+}
+message StandbyStateChange {
+    ComponentStandbyState old = 1;
+    ComponentStandbyState new = 2;
+}
 ```
+
+> See [protos/dmi/hw_events_mgmt_service.proto](protos/dmi/hw_events_mgmt_service.proto) for the authoritative definitions.
 
 Note: The on-demand metrics query using the API `GetMetric` is returned over gRPC and not over the Kafka bus.
 
