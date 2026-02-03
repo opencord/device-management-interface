@@ -357,7 +357,7 @@ const char descriptor_table_protodef_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto
   "\001\n\006Reason\022\024\n\020UNDEFINED_REASON\020\000\022\022\n\016UNKNO"
   "WN_DEVICE\020\001\022\025\n\021UNKNOWN_COMPONENT\020\002\022\022\n\016IN"
   "TERNAL_ERROR\020\003\022\022\n\016INVALID_METRIC\020\004\022\026\n\022DE"
-  "VICE_UNREACHABLE\020\005*\331\005\n\013MetricNames\022\031\n\025ME"
+  "VICE_UNREACHABLE\020\005*\202\006\n\013MetricNames\022\031\n\025ME"
   "TRIC_NAME_UNDEFINED\020\000\022\024\n\020METRIC_FAN_SPEE"
   "D\020\001\022\023\n\017METRIC_CPU_TEMP\020d\022\037\n\033METRIC_CPU_U"
   "SAGE_PERCENTAGE\020e\022\034\n\027METRIC_TRANSCEIVER_"
@@ -365,32 +365,33 @@ const char descriptor_table_protodef_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto
   "\022\034\n\027METRIC_TRANSCEIVER_BIAS\020\312\001\022 \n\033METRIC"
   "_TRANSCEIVER_RX_POWER\020\313\001\022 \n\033METRIC_TRANS"
   "CEIVER_TX_POWER\020\314\001\022\"\n\035METRIC_TRANSCEIVER"
-  "_WAVELENGTH\020\315\001\022\025\n\020METRIC_DISK_TEMP\020\254\002\022\031\n"
-  "\024METRIC_DISK_CAPACITY\020\255\002\022\026\n\021METRIC_DISK_"
-  "USAGE\020\256\002\022!\n\034METRIC_DISK_USAGE_PERCENTAGE"
-  "\020\257\002\022&\n!METRIC_DISK_READ_WRITE_PERCENTAGE"
-  "\020\260\002\022(\n#METRIC_DISK_FAULTY_CELLS_PERCENTA"
-  "GE\020\261\002\022\024\n\017METRIC_RAM_TEMP\020\220\003\022\030\n\023METRIC_RA"
-  "M_CAPACITY\020\221\003\022\025\n\020METRIC_RAM_USAGE\020\222\003\022 \n\033"
-  "METRIC_RAM_USAGE_PERCENTAGE\020\223\003\022\025\n\020METRIC"
-  "_POWER_MAX\020\364\003\022\027\n\022METRIC_POWER_USAGE\020\365\003\022\""
-  "\n\035METRIC_POWER_USAGE_PERCENTAGE\020\366\003\022\"\n\035ME"
-  "TRIC_INNER_SURROUNDING_TEMP\020\330\0042\261\002\n\036Nativ"
-  "eMetricsManagementService\0228\n\013ListMetrics"
-  "\022\017.dmi.HardwareID\032\030.dmi.ListMetricsRespo"
-  "nse\022a\n\032UpdateMetricsConfiguration\022 .dmi."
-  "MetricsConfigurationRequest\032!.dmi.Metric"
-  "sConfigurationResponse\022:\n\tGetMetric\022\025.dm"
-  "i.GetMetricRequest\032\026.dmi.GetMetricRespon"
-  "se\0226\n\rStreamMetrics\022\026.google.protobuf.Em"
-  "pty\032\013.dmi.Metric0\001B;Z9github.com/opencor"
-  "d/device-management-interface/v3/go/dmib"
-  "\006proto3"
+  "_WAVELENGTH\020\315\001\022\'\n\"METRIC_TRANSCEIVER_XGS"
+  "PON_TX_POWER\020\316\001\022\025\n\020METRIC_DISK_TEMP\020\254\002\022\031"
+  "\n\024METRIC_DISK_CAPACITY\020\255\002\022\026\n\021METRIC_DISK"
+  "_USAGE\020\256\002\022!\n\034METRIC_DISK_USAGE_PERCENTAG"
+  "E\020\257\002\022&\n!METRIC_DISK_READ_WRITE_PERCENTAG"
+  "E\020\260\002\022(\n#METRIC_DISK_FAULTY_CELLS_PERCENT"
+  "AGE\020\261\002\022\024\n\017METRIC_RAM_TEMP\020\220\003\022\030\n\023METRIC_R"
+  "AM_CAPACITY\020\221\003\022\025\n\020METRIC_RAM_USAGE\020\222\003\022 \n"
+  "\033METRIC_RAM_USAGE_PERCENTAGE\020\223\003\022\025\n\020METRI"
+  "C_POWER_MAX\020\364\003\022\027\n\022METRIC_POWER_USAGE\020\365\003\022"
+  "\"\n\035METRIC_POWER_USAGE_PERCENTAGE\020\366\003\022\"\n\035M"
+  "ETRIC_INNER_SURROUNDING_TEMP\020\330\0042\261\002\n\036Nati"
+  "veMetricsManagementService\0228\n\013ListMetric"
+  "s\022\017.dmi.HardwareID\032\030.dmi.ListMetricsResp"
+  "onse\022a\n\032UpdateMetricsConfiguration\022 .dmi"
+  ".MetricsConfigurationRequest\032!.dmi.Metri"
+  "csConfigurationResponse\022:\n\tGetMetric\022\025.d"
+  "mi.GetMetricRequest\032\026.dmi.GetMetricRespo"
+  "nse\0226\n\rStreamMetrics\022\026.google.protobuf.E"
+  "mpty\032\013.dmi.Metric0\001B;Z9github.com/openco"
+  "rd/device-management-interface/v3/go/dmi"
+  "b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto = {
   false, InitDefaults_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto, 
   descriptor_table_protodef_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto,
-  "dmi/hw_metrics_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto, 2687,
+  "dmi/hw_metrics_mgmt_service.proto", &assign_descriptors_table_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto, 2728,
 };
 
 void AddDescriptors_dmi_2fhw_5fmetrics_5fmgmt_5fservice_2eproto() {
@@ -505,6 +506,7 @@ bool MetricNames_IsValid(int value) {
     case 203:
     case 204:
     case 205:
+    case 206:
     case 300:
     case 301:
     case 302:
