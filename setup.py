@@ -21,7 +21,7 @@ def version():
 
 
 setup(
-    name='device-management-interface',
+    name='device_management_interface',
     version=version(),
     description='Protobuf interface definitions',
     author='VOLTHA project',
