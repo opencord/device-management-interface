@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5902e3_6689dcae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2026-06-24T21:12:24Z",
+      "side": 1,
+      "message": "Overriding GHA review due to a config issue. This needs to be merged for GHA CI to work properly.",
+      "revId": "490176bf601c0d8263dd148dc0839eedc199d0a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
