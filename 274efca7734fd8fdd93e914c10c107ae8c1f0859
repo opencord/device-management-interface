@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4ffb451_45229aea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2026-06-25T01:19:13Z",
+      "side": 1,
+      "message": "Bypassing NACR; this needs to be merged immediately.",
+      "revId": "274efca7734fd8fdd93e914c10c107ae8c1f0859",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
