@@ -2,4 +2,3 @@
 host=gerrit.lfbroadband.org
 port=29418
 project=device-management-interface.git
-defaultremote=origin
