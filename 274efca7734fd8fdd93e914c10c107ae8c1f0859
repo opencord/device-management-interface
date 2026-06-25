@@ -1,0 +1,8 @@
+Verified+1: Voltha Jobbuilder <releng+voltha-jobbuilder@linuxfoundation.org>
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Thu, 25 Jun 2026 01:19:16 +0000
+Reviewed-on: https://gerrit.lfbroadband.org/c/device-management-interface/+/37929
+Project: device-management-interface
+Branch: refs/heads/master
