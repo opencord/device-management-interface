@@ -47,7 +47,7 @@ UNTRACKED_POST="$(git ls-files --exclude-standard --others)"
 
 if [ "$STAGED_POST" == "staged" ] || [ "$UNTRACKED_POST" != "" ] ; then
     echo "You have python proto build outputs that are not committed."
-    echo "Check git status and commit updated files."
+    echo "Check git status and update the checked-in generated files."
     git status
     exit 1
 else
