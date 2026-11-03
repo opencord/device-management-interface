@@ -63,7 +63,7 @@ rpc SetHWComponentInfo(HWComponentInfoSetRequest) returns(HWComponentInfoSetResp
 ```
 In the call to this RPC, both the `name` and the `uuid` of the component need to be passed in the `HWComponentInfoSetRequest`.
 
-Using this RPC, it is possible to modify the `name` of a component, and the Device Manager has to ensure that the name is unique, else it should return an error for this RPC. Although the `name` can be modified, it is recommended that NEM implementations do not do this because Device Managers and take advantage of this and come up with efficient implementations.
+Using this RPC, it is possible to modify the `name` of a component. The Device Manager must ensure that the new name is unique; otherwise, it should return an error. Although the `name` can be modified, it is recommended that NEM implementations avoid doing so, as Device Managers can take advantage of stable component names to implement more efficient solutions. Additionally, this RPC can also be used to change the IP address of the device by updating its URI attribute. However, changing the IP address is permitted only after the device has been successfully brought under management using the StartManagingDevice RPC.
 
 ## SetLoggingEndpoint
 ```protobuf
